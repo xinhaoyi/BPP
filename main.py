@@ -32,16 +32,20 @@ if __name__ == '__main__':
 
     # reactome_processor.execution_on_single_pathways("R-HSA-1430728")
 
+    # R-HSA-1640170
+    # reactome_processor.execution_on_single_pathways("R-HSA-1640170")
+
+
     # reactome_processor.execution_on_reactome()
 
-    # reactome_processor.execution_on_all_pathways()
+    reactome_processor.execution_on_all_pathways()
 
 
     time_end = time.time()  # record the ending time
 
     time_sum = time_end - time_start  # The difference is the execution time of the program in seconds
 
-    print("success! it takes " + str(time_sum) + " seconds")
+    print("success! it takes " + str(time_sum) + " seconds to extract the data from Reactome")
 
 # See PyCharm help at https://www.jetbrains.com/help/pycharm/
 

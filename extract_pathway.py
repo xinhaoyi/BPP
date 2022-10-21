@@ -28,19 +28,17 @@ class PathWayProcessor:
         return toplevel_pathways
 
 
-
 # The processor which deals with the reaction
 class ReactionProcessor:
     def __init__(self, graph: Graph):
         self.__graph = graph
-        self.id_index = 0
-        self.name_index = 1
+        # self.id_index = 0
+        # self.name_index = 1
+        self.entity_id_index = 0
+        self.reaction_id_index = 1
+        self.direction_index = 2
 
     def get_reactions_from_pathway(self, pathway_stId):
-        # if toplevel_pathway_stId == -1, it means we try to find reactions of homo sapiens for all the pathways
-        if (-1 == pathway_stId):
-            return self.get_all_reactions_of_homo_sapiens_in_Reactome()
-
         # we used to return "reaction_stId, reaction_displayName", but now only "reaction_stId"
         __instruction__ = "MATCH (n:Pathway)-[r:hasEvent*1..]->(m:Reaction) WHERE n.stId = '" + str(
             pathway_stId) + "' AND n.speciesName='Homo sapiens' RETURN m.stId"
@@ -52,11 +50,19 @@ class ReactionProcessor:
         # list of reaction_id
         return reactions
 
-    def get_all_reactions_of_homo_sapiens_in_Reactome(self):
+    def get_all_reactions_of_homo_sapiens_in_Reactome(self) -> list:
         reactions = self.__graph.run(
             "MATCH (n:Reaction) WHERE n.speciesName='Homo sapiens' RETURN n.stId").to_ndarray()
         reactions = reactions.flatten(order='C').tolist()
         return reactions
+
+    def get_all_reactions_of_homo_sapiens_based_on_all_top_pathways_in_Reactome(self, top_pathways) -> list:
+        reactions_set = set()
+        for top_pathway_id in top_pathways:
+            reactions = self.get_reactions_from_pathway(top_pathway_id)
+            for reaction in reactions:
+                reactions_set.add(reaction)
+        return list(reactions_set)
 
     def __get_input_relationship_edge_of_reaction(self, reaction_stId):
         __instruction_input__ = "MATCH (n:Reaction)-[r:input]->(m:PhysicalEntity) WHERE n.stId = '" + str(
@@ -67,7 +73,7 @@ class ReactionProcessor:
         num_of_input_edges = __input_edges__.shape[0]
 
         # we build a complementary vertex based on the number of input
-        supplement_vector = np.zeros(num_of_input_edges)
+        supplement_vector = np.negative(np.ones(num_of_input_edges))
 
         # we add a new column, then fill it with 0, which represents input
         __input_edges__ = np.insert(__input_edges__, 2, supplement_vector, axis=1)
@@ -92,7 +98,6 @@ class ReactionProcessor:
         # PhysicalEntity_id, Reaction_id, 1
         return __output_edges__.tolist()
 
-
     def get_all_related_edges_of_single_reaction(self, reaction_stId):
         # R-HSA-9613352
         # R-HSA-9646383
@@ -102,7 +107,6 @@ class ReactionProcessor:
 
         # PhysicalEntity_id, Reaction_id, 0/1
         return edges_for_reaction.tolist()
-
 
     def get_all_unique_edges_of_set_of_reactions(self, reaction_stIds):
         edges_for_set_of_reactions = np.empty(shape=(0, 3))
@@ -138,6 +142,7 @@ class ReactionProcessor:
         input: reactions - list of reaction_id
         output: physical entities - list of physical_entity_id
     '''
+
     def get_unique_physical_entities_from_set_of_reactions(self, reactions):
         physical_entities_set = set()
 
@@ -328,15 +333,17 @@ class PhysicalEntityProcessor:
         # list of physical_entity_id
         return components
 
-
     '''
         __get_unique_componets_from_physical_entities(self, physical_entities):
         input: list of physical_entity_id
-        output: list of physical_entity_id(components)
+        output: list of physical_entity_id(components), dict:physical_entity_id(node) -> set(physical_entity_id(component), physical_entity_id(component)....physical_entity_id(component)
         '''
+
     def get_unique_componets_from_set_of_physical_entities(self, physical_entities):
 
         component_ids_set = set()
+
+        components_dict = {}
 
         for physical_entity_id in physical_entities:
             component_ids = self.get_components_of_single_physical_entity(
@@ -348,11 +355,11 @@ class PhysicalEntityProcessor:
             for component_id in component_ids:
                 component_ids_set.add(component_id)
 
+            components_dict[physical_entity_id] = set(component_ids)
+
         component_ids_unique = list(component_ids_set)
 
-        return component_ids_unique
-
-
+        return component_ids_unique, components_dict
 
 
 # The processor which deal with Reactome DataBase
@@ -384,6 +391,7 @@ class ReactomeProcessor:
     get_all_top_pathways(self):
     output: a list of pathway_id
     '''
+
     def get_all_top_pathways(self):
         toplevel_pathways = self.__pathway_processor.get_all_top_level_pathways()
         print(toplevel_pathways)
@@ -393,7 +401,7 @@ class ReactomeProcessor:
         __instruction__ = "MATCH (n:Pathway) WHERE n.stId = '" + str(pathway_stId) + "' RETURN n.displayName"
         pathways = self.__graph.run(__instruction__).to_ndarray()
         pathways = pathways.flatten(order='C')
-        if(pathways.size == 1):
+        if (pathways.size == 1):
             return pathways[0]
         else:
             print("sorry, we can't find pathway with stId = '" + str(pathway_stId) + "'")
@@ -403,39 +411,134 @@ class ReactomeProcessor:
         __instruction__ = "MATCH (n:Reaction) WHERE n.stId = '" + str(reaction_stId) + "' RETURN n.displayName"
         reactions = self.__graph.run(__instruction__).to_ndarray()
         reactions = reactions.flatten(order='C')
-        if(reactions.size == 1):
+        if (reactions.size == 1):
             return reactions[0]
         else:
             print("sorry, we can't find reaction with stId = '" + str(reaction_stId) + "'")
             return ''
 
     def get_physical_entity_name_by_id(self, physical_entity_stId):
-        __instruction__ = "MATCH (n:PhysicalEntity) WHERE n.stId = '" + str(physical_entity_stId) + "' RETURN n.displayName"
+        __instruction__ = "MATCH (n:PhysicalEntity) WHERE n.stId = '" + str(
+            physical_entity_stId) + "' RETURN n.displayName"
         physical_entities = self.__graph.run(__instruction__).to_ndarray()
         physical_entities = physical_entities.flatten(order='C')
-        if(physical_entities.size == 1):
+        if (physical_entities.size == 1):
             return physical_entities[0]
         else:
             print("sorry, we can't find physical entity with stId = '" + str(physical_entity_stId) + "'")
             return ''
 
-    def get_all_unique_edges_for_single_pathway(self, pathway_id):
+    def get_all_relationships_for_single_pathway(self, pathway_id):
         reactions = self.__reaction_processor.get_reactions_from_pathway(pathway_id)
         unique_edges_for_single_pathway = self.__reaction_processor.get_all_unique_edges_of_set_of_reactions(reactions)
         return unique_edges_for_single_pathway
 
+    def extract_edges_nodes_relationships_all_components_and_dic_of_entity_components_for_one_pathway(self,
+                                                                                                      pathway_stId) -> \
+    tuple[list, list, list, list, list]:
 
-    def extract_edges_nodes_dimensionality_for_one_pathway(self, pathway_stId):
-        reactions = self.__reaction_processor.get_reactions_from_pathway(pathway_stId)
-        print("************" + self.get_pathway_name_by_id(pathway_stId) + "************")
+        """
+        extract
+        input: pathway_stId: the id of a pathway
+        output: reaction_ids of the pathway, node_ids of the pathway, component_ids of all the nodes of the pathway, dictionary of node_id to a set of its component_ids
 
-        # get unique physical entities for one pathway
-        physical_entity_ids_from_reactions_for_one_pathway = self.__reaction_processor.get_unique_physical_entities_from_set_of_reactions(
-            reactions)
+        """
+
+        if pathway_stId != -1:
+            # normal pathway
+            print("************" + self.get_pathway_name_by_id(pathway_stId) + "************")
+
+            reactions = self.__reaction_processor.get_reactions_from_pathway(pathway_stId)
+
+            # build a dictionary that mapping: reaction_id -> line_index
+            reactions_index_dic = {reaction_id: index for index, reaction_id in enumerate(reactions)}
+
+            # get unique physical entities for one pathway
+            physical_entity_ids_from_reactions_for_one_pathway = self.__reaction_processor.get_unique_physical_entities_from_set_of_reactions(
+                reactions)
+
+            # build a dictionary that mapping: entity_id -> line_index
+            entities_index_dic = {entity_id: index for index, entity_id in
+                                  enumerate(physical_entity_ids_from_reactions_for_one_pathway)}
+
+            relationships_between_nodes_edges = self.get_all_relationships_for_single_pathway(pathway_stId)
+
+        else:
+            # we'll calculate on the whole reactome
+
+            # The latter instruction is the old version that we will never use,
+            # as there will be a small amount(100+) of reactions that belongs to no pathways
+            # We just simply quit these datas
+
+            # reactions = self.__reaction_processor.get_all_reactions_of_homo_sapiens_in_Reactome()
+
+            top_pathways = self.__pathway_processor.get_all_top_level_pathways()
+
+            reactions = self.__reaction_processor.get_all_reactions_of_homo_sapiens_based_on_all_top_pathways_in_Reactome(
+                top_pathways)
+
+            # build a dictionary that mapping: reaction_id -> reaction_index
+            reactions_index_dic = {reaction_id: index for index, reaction_id in enumerate(reactions)}
+
+            physical_entity_ids_from_reactions_for_one_pathway = self.__reaction_processor.get_unique_physical_entities_from_set_of_reactions(
+                reactions)
+
+            # build a dictionary that mapping: entity_id -> entity_index
+            entities_index_dic = {entity_id: index for index, entity_id in
+                                  enumerate(physical_entity_ids_from_reactions_for_one_pathway)}
+
+            relationships_between_nodes_edges = self.__reaction_processor.get_all_unique_edges_of_set_of_reactions(
+                reactions)
+
+        relationships_between_nodes_and_edges_with_index_style = []
+
+        # relationship: node_id,reaction_id,direction(-1 or 1)
+        for relationship in relationships_between_nodes_edges:
+            # node_index,reaction_index,direction(-1 or 1)
+            line_message_list = []
+            entity_id = relationship[self.__reaction_processor.entity_id_index]
+            entity_index = entities_index_dic[entity_id]
+
+            reaction_id = relationship[self.__reaction_processor.reaction_id_index]
+            reaction_index = reactions_index_dic[reaction_id]
+
+            direaction = relationship[self.__reaction_processor.direction_index]
+
+            line_message_list.append(entity_index)
+            line_message_list.append(reaction_index)
+            line_message_list.append(direaction)
+
+            relationships_between_nodes_and_edges_with_index_style.append(line_message_list)
 
         # remove the duplicate components
-        component_ids_unique_for_one_pathway = self.__physical_entity_processor.get_unique_componets_from_set_of_physical_entities(
+        component_ids_unique_for_one_pathway, components_dic = self.__physical_entity_processor.get_unique_componets_from_set_of_physical_entities(
             physical_entity_ids_from_reactions_for_one_pathway)
+
+        # build a dictionary that mapping: component_id -> line_index
+        components_index_dic = {component_id: index for index, component_id in
+                                enumerate(component_ids_unique_for_one_pathway)}
+
+        # dela with the components message like -
+        # a list of ["node_id:component_id,component_id,component_id..", "node_id:component_id,component_id,component_id.."]
+        entity_index_to_components_indices_mapping_list = []
+        for node_id, set_of_components in components_dic.items():
+            node_id_index = entities_index_dic[node_id]
+            # component_msg = str(node_id_index) + ":"
+            # we won't store the index of entity, as it's in the same sequence with the data in nodes.txt
+            component_msg = ""
+            list_of_components = []
+            for component_id in set_of_components:
+                component_id_index = components_index_dic[component_id]
+                list_of_components.append(component_id_index)
+
+            list_of_components = sorted(list_of_components)
+
+            for component_id_index in list_of_components:
+                component_msg = component_msg + str(component_id_index) + ","
+
+            # remove the comma in the end
+            component_msg = component_msg[:-1]
+            entity_index_to_components_indices_mapping_list.append(component_msg)
 
         num_of_edges = str(len(reactions))
         num_of_nodes = str(len(physical_entity_ids_from_reactions_for_one_pathway))
@@ -446,19 +549,23 @@ class ReactomeProcessor:
         print("physical entities dimensionality(attributes): " + dimensionality)
         print("\n")
 
-        return reactions, physical_entity_ids_from_reactions_for_one_pathway, component_ids_unique_for_one_pathway
+        return reactions, physical_entity_ids_from_reactions_for_one_pathway, relationships_between_nodes_and_edges_with_index_style, component_ids_unique_for_one_pathway, entity_index_to_components_indices_mapping_list
+
+
+    def get_reactions_to_list_of_relationships_dic(self, reactions, relationships):
+
 
 
     def execution_on_single_pathways(self, pathway_stId):
         pathway_name = self.get_pathway_name_by_id(pathway_stId)
 
-        reactions, physical_entity_ids, component_ids = self.extract_edges_nodes_dimensionality_for_one_pathway(pathway_stId)
-
-        unique_edges_for_single_pathway = self.get_all_unique_edges_for_single_pathway(pathway_stId)
+        reactions, physical_entity_ids, relationships_between_nodes_edges, component_ids, components_dic = self.extract_edges_nodes_relationships_all_components_and_dic_of_entity_components_for_one_pathway(
+            pathway_stId)
 
         # store data into a txt file
         file_processor = FileProcessor()
-        file_processor.execute_for_single_path(pathway_name, reactions, physical_entity_ids, unique_edges_for_single_pathway)
+        file_processor.execute_for_single_pathway(pathway_name, reactions, physical_entity_ids,
+                                                  relationships_between_nodes_edges, component_ids, components_dic)
 
         # draw the histogram
         drawer = Drawer(len(reactions), len(physical_entity_ids), len(component_ids), pathway_name)
@@ -470,15 +577,14 @@ class ReactomeProcessor:
             self.execution_on_single_pathways(top_pathway_id)
 
     def execution_on_reactome(self):
-        reactions = self.__reaction_processor.get_all_reactions_of_homo_sapiens_in_Reactome()
 
-        physical_entities = self.__reaction_processor.get_unique_physical_entities_from_set_of_reactions(reactions)
+        reactions, physical_entities, relationships_with_index_style, components, entity_index_to_components_indices_mapping_list = self.extract_edges_nodes_relationships_all_components_and_dic_of_entity_components_for_one_pathway(
+            -1)
 
-        componets = self.__physical_entity_processor.get_unique_componets_from_set_of_physical_entities(physical_entities)
 
         num_of_edges = str(len(reactions))
         num_of_nodes = str(len(physical_entities))
-        dimensionality = str(len(componets))
+        dimensionality = str(len(components))
 
         print("************Reactome************")
 
@@ -487,14 +593,12 @@ class ReactomeProcessor:
         print("physical entities dimensionality(attributes): " + dimensionality)
         print("\n")
 
-        if not os.path.exists("./data/AllReactome"):
-            os.makedirs("./data/AllReactome")
-
+        if not os.path.exists("./data/All_data_in_Reactome"):
+            os.makedirs("./data/All_data_in_Reactome")
 
         # draw the histogram
         drawer = Drawer(num_of_edges, num_of_nodes, dimensionality, "AllReactome")
         drawer.generate_histogram()
-
 
     def test(self):
         reactions = self.__reaction_processor.get_reactions_from_pathway('R-HSA-1640170')
@@ -508,20 +612,39 @@ class ReactomeProcessor:
 
         print("sum_of_physical_entities = " + str(sum_of_physical_entities))
 
-        physical_entities_for_single_reaction = self.__reaction_processor.get_physical_entities_from_single_reaction('R-HSA-8964492')
+        physical_entities_for_single_reaction = self.__reaction_processor.get_physical_entities_from_single_reaction(
+            'R-HSA-8964492')
 
-        physical_entities_unique = self.__reaction_processor.get_unique_physical_entities_from_set_of_reactions(reactions)
+        physical_entities_unique = self.__reaction_processor.get_unique_physical_entities_from_set_of_reactions(
+            reactions)
 
         print(physical_entities_unique)
 
         print("sum_of_physical_entities_unique = " + str(len(physical_entities_unique)))
 
-        component_ids_unique = self.__physical_entity_processor.get_unique_componets_from_set_of_physical_entities(physical_entities_unique)
+        component_ids_unique = self.__physical_entity_processor.get_unique_componets_from_set_of_physical_entities(
+            physical_entities_unique)
 
         print("num of component_ids_unique = " + str(len(component_ids_unique)))
 
+    def test_reactions(self):
+        all_reactions = self.__reaction_processor.get_all_reactions_of_homo_sapiens_in_Reactome()
+        top_pathways = self.get_all_top_pathways()
+        number_with_duplicate_elements = 0
+        reactions_set = set()
+        for top_pathway_id in top_pathways:
+            reactions = self.__reaction_processor.get_reactions_from_pathway(top_pathway_id)
+            number_with_duplicate_elements = number_with_duplicate_elements + len(reactions)
+            for reaction in reactions:
+                reactions_set.add(reaction)
 
+        reactions_difference = set(all_reactions).difference(reactions_set)
 
+        print("The num of reactions with duplicate elements are: " + str(number_with_duplicate_elements))
+        print("The total num of reactions are: " + str(len(reactions_set)))
+
+        for reaction_id in reactions_difference:
+            print(reaction_id)
 
 
 # one jump to n jump
@@ -553,18 +676,22 @@ class Drawer:
 
         bar = (
             Bar()
-            .add_xaxis(x1)
-            .add_yaxis("Hyper Edges(Reactions)", y1)
-            .add_yaxis("Nodes(Physical Entity)", y2)
-            .add_yaxis("Dimensionality", y3)
-            .set_global_opts(title_opts=opts.TitleOpts(title=self.pathway_name)))
+                .add_xaxis(x1)
+                .add_yaxis("Hyper Edges(Reactions)", y1)
+                .add_yaxis("Nodes(Physical Entity)", y2)
+                .add_yaxis("Dimensionality(All components of nodes", y3)
+                .set_global_opts(title_opts=opts.TitleOpts(title=self.pathway_name)))
 
         bar.render(path)
 
 
 class FileProcessor:
     def __init__(self):
-        pass
+        self.filename_reactions = "edges.txt"
+        self.filename_physical_entities = "nodes.txt"
+        self.filename_relationships = "relationship.txt"
+        self.filename_components_mapping = "components-mapping.txt"
+        self.filename_components_all = "components-all.txt"
 
     # create the txt file to store the data
     def createFile(self, path, file_name):
@@ -597,22 +724,68 @@ class FileProcessor:
 
     # def writeMessageToFileTwoDimension(self):
 
-
-    def execute_for_single_path(self, pathway_name, reaction_ids, physical_entity_ids, unique_edges_for_single_pathway):
-        filename_reactions = "edges.txt"
-        filename_physical_entities = "nodes.txt"
-        filename_relationships = "relationship.txt"
+    def execute_for_single_pathway(self, pathway_name, reaction_ids, physical_entity_ids,
+                                   relationships_between_nodes_edges, component_ids, entity_component_mapping_list):
 
         path = "./data/" + pathway_name + "/"
 
         # write message to the file
         file_professor = FileProcessor()
 
-        file_professor.createFile(path, filename_reactions)
-        file_professor.createFile(path, filename_physical_entities)
-        file_professor.createFile(path, filename_relationships)
+        file_professor.createFile(path, self.filename_reactions)
+        file_professor.createFile(path, self.filename_physical_entities)
+        file_professor.createFile(path, self.filename_relationships)
+        file_professor.createFile(path, self.filename_components_all)
+        file_professor.createFile(path, self.filename_components_mapping)
 
-        file_professor.writeMessageToFile(path, filename_reactions, reaction_ids)
-        file_professor.writeMessageToFile(path, filename_physical_entities, physical_entity_ids)
-        file_professor.writeMessageToFile(path, filename_relationships, unique_edges_for_single_pathway)
+        file_professor.writeMessageToFile(path, self.filename_reactions, reaction_ids)
+        file_professor.writeMessageToFile(path, self.filename_physical_entities, physical_entity_ids)
+        file_professor.writeMessageToFile(path, self.filename_relationships, relationships_between_nodes_edges)
+        file_professor.writeMessageToFile(path, self.filename_components_all, component_ids)
+        file_professor.writeMessageToFile(path, self.filename_components_mapping, entity_component_mapping_list)
 
+    def read_file_via_lines(self, path, file_name):
+        url = path + '/' + file_name
+        file_handler = open(url, "r")
+
+        res_list = []
+
+        while (True):
+            # Get next line from file
+            line = file_handler.readline()
+
+            # If the line is empty then the end of file reached
+            if not line:
+                break
+            res_list.append(line)
+
+        return res_list
+
+
+if __name__ == '__main__':
+    # graph = Graph("bolt://localhost:7687", auth=('neo4j', '123456'))
+    #
+    # processor = PhysicalEntityProcessor(graph)
+    #
+    # components = processor.get_components_of_physical_entity('R-HSA-170079')
+
+    time_start = time.time()  # record the start time
+
+    reactome_processor = ReactomeProcessor('neo4j', '123456')
+
+    # reactome_processor.execution_on_single_pathways("R-HSA-1430728")
+
+    # R-HSA-1640170
+    # reactome_processor.execution_on_single_pathways("R-HSA-1640170")
+
+    # reactome_processor.execution_on_reactome()
+
+    # reactome_processor.execution_on_all_pathways()
+
+    reactome_processor.test_reactions()
+
+    time_end = time.time()  # record the ending time
+
+    time_sum = time_end - time_start  # The difference is the execution time of the program in seconds
+
+    print("success! it takes " + str(time_sum) + " seconds to extract the data from Reactome")
