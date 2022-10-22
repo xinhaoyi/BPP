@@ -452,7 +452,7 @@ class ReactomeProcessor:
             # normal pathway
             print("\n")
             print("\n")
-            print("\033[0;37;41m" + "************" + self.get_pathway_name_by_id(pathway_stId) + "************" + "\033[0m")
+            print("\033[1;36m" + "************" + self.get_pathway_name_by_id(pathway_stId) + "************" + "\033[0m")
 
             reactions = self.__reaction_processor.get_reactions_from_pathway(pathway_stId)
 
@@ -699,7 +699,7 @@ class ReactomeProcessor:
 
         entity_to_relationship_status_dic["total_num_of_entities"] = len(entity_index_to_list_of_relationships_dic)
 
-        for reaction_index, list_of_relationships in entity_index_to_list_of_relationships_dic.items():
+        for entity_index, list_of_relationships in entity_index_to_list_of_relationships_dic.items():
             num_of_relationships = len(list_of_relationships)
             if num_of_relationships in dic_key_name.keys():
                 key_name = dic_key_name.get(num_of_relationships)
@@ -762,10 +762,113 @@ class ReactomeProcessor:
             float(entity_num_with_more_than_eight_rela) / float(total_num)) + ")")
 
 
+    def get_entity_index_to_list_of_components_dic_based_on_entity_component_mapping_list(self, entity_component_mapping_list: list[str]):
+        entity_index_to_list_of_components_dic: dict[int, list[int]] = {}
+        entity_index = 0
+        for line_element in entity_component_mapping_list:
+            components_str_indexes = line_element.split(",")
+            components_indexes = []
+
+            for component_index in components_str_indexes:
+                component_index = int(component_index)
+                components_indexes.append(component_index)
+            entity_index_to_list_of_components_dic[entity_index] = components_indexes
+
+            entity_index = entity_index + 1
+
+        return entity_index_to_list_of_components_dic
+
+
+    def get_entity_components_status_dic_based_on_entity_index_to_list_of_components_dic(self, entity_index_to_list_of_components_dic):
+        entity_components_status_dic: {str: int} = {"total_num_of_entities": 0,
+                                                         "num_of_entities_with_one_component": 0,
+                                                         "num_of_entities_with_two_components": 0,
+                                                         "num_of_entities_with_three_components": 0,
+                                                         "num_of_entities_with_four_components": 0,
+                                                         "num_of_entities_with_five_components": 0,
+                                                         "num_of_entities_with_six_components": 0,
+                                                         "num_of_entities_with_seven_components": 0,
+                                                         "num_of_entities_with_eight_components": 0,
+                                                         "num_of_entities_with_more_than_eight_components": 0}
+
+        dic_key_name: {int: str} = {1: "num_of_entities_with_one_component",
+                                    2: "num_of_entities_with_two_components",
+                                    3: "num_of_entities_with_three_components",
+                                    4: "num_of_entities_with_four_components",
+                                    5: "num_of_entities_with_five_components",
+                                    6: "num_of_entities_with_six_components",
+                                    7: "num_of_entities_with_seven_components",
+                                    8: "num_of_entities_with_eight_components"}
+
+        entity_components_status_dic["total_num_of_entities"] = len(entity_index_to_list_of_components_dic)
+
+        for entity_index, list_of_components in entity_index_to_list_of_components_dic.items():
+            num_of_components = len(list_of_components)
+            if num_of_components in dic_key_name.keys():
+                key_name = dic_key_name.get(num_of_components)
+                temp_val = entity_components_status_dic.get(key_name)
+                entity_components_status_dic[dic_key_name.get(len(list_of_components))] = temp_val + 1
+            else:
+                temp_val = entity_components_status_dic.get(
+                    "num_of_entities_with_more_than_eight_components")
+                entity_components_status_dic[
+                    "num_of_entities_with_more_than_eight_components"] = temp_val + 1
+
+        return entity_components_status_dic
+
+    def print_entity_components_distribution_dic(self, entity_components_status_dic):
+        total_num = entity_components_status_dic.get("total_num_of_entities")
+        entity_num_with_one_component = entity_components_status_dic.get("num_of_entities_with_one_component")
+        entity_num_with_two_components = entity_components_status_dic.get("num_of_entities_with_two_components")
+        entity_num_with_three_components = entity_components_status_dic.get(
+            "num_of_entities_with_three_components")
+        entity_num_with_four_components = entity_components_status_dic.get(
+            "num_of_entities_with_four_components")
+        entity_num_with_five_components = entity_components_status_dic.get(
+            "num_of_entities_with_five_components")
+        entity_num_with_six_components = entity_components_status_dic.get("num_of_entities_with_six_components")
+        entity_num_with_seven_components = entity_components_status_dic.get(
+            "num_of_entities_with_seven_components")
+        entity_num_with_eight_components = entity_components_status_dic.get(
+            "num_of_entities_with_eight_components")
+        entity_num_with_more_than_eight_components = entity_components_status_dic.get(
+            "num_of_entities_with_more_than_eight_components")
+
+        print("total num of entities: " + str(total_num))
+        print("num of entities with one component: " + str(
+            entity_num_with_one_component) + " ( {:.2%}".format(
+            float(entity_num_with_one_component) / float(total_num)) + ")")
+        print("num of entities with two components: " + str(
+            entity_num_with_two_components) + " ( {:.2%}".format(
+            float(entity_num_with_two_components) / float(total_num)) + ")")
+        print("num of entities with three components: " + str(
+            entity_num_with_three_components) + " ( {:.2%}".format(
+            float(entity_num_with_three_components) / float(total_num)) + ")")
+        print("num of entities with four components: " + str(
+            entity_num_with_four_components) + " ( {:.2%}".format(
+            float(entity_num_with_four_components) / float(total_num)) + ")")
+        print("num of entities with five components: " + str(
+            entity_num_with_five_components) + " ( {:.2%}".format(
+            float(entity_num_with_five_components) / float(total_num)) + ")")
+        print("num of entities with six components: " + str(
+            entity_num_with_six_components) + " ( {:.2%}".format(
+            float(entity_num_with_six_components) / float(total_num)) + ")")
+        print("num of entities with seven components: " + str(
+            entity_num_with_seven_components) + " ( {:.2%}".format(
+            float(entity_num_with_seven_components) / float(total_num)) + ")")
+        print("num of entities with eight components: " + str(
+            entity_num_with_eight_components) + " ( {:.2%}".format(
+            float(entity_num_with_eight_components) / float(total_num)) + ")")
+        print("num of entities with more than eight components: " + str(
+            entity_num_with_more_than_eight_components) + " ( {:.2%}".format(
+            float(entity_num_with_more_than_eight_components) / float(total_num)) + ")")
+
+
+
     def execution_on_single_pathways(self, pathway_stId):
         pathway_name = self.get_pathway_name_by_id(pathway_stId)
 
-        reactions, physical_entity_ids, relationships_between_nodes_edges, component_ids, components_dic = self.extract_edges_nodes_relationships_all_components_and_dic_of_entity_components_for_one_pathway(
+        reactions, physical_entity_ids, relationships_between_nodes_edges, component_ids, entity_component_mapping_list = self.extract_edges_nodes_relationships_all_components_and_dic_of_entity_components_for_one_pathway(
             pathway_stId)
 
         # calculate the data distribution
@@ -798,10 +901,18 @@ class ReactomeProcessor:
         print("\n")
 
 
+        entity_index_to_list_of_components_dic = self.get_entity_index_to_list_of_components_dic_based_on_entity_component_mapping_list(entity_component_mapping_list)
+        entity_components_status_dic = self.get_entity_components_status_dic_based_on_entity_index_to_list_of_components_dic(entity_index_to_list_of_components_dic)
+
+        print("\033[1;32m" + "For entities and components:" + "\033[0m")
+        self.print_entity_components_distribution_dic(entity_components_status_dic)
+        print("\n")
+
+
         # store data into a txt file
         file_processor = FileProcessor()
         file_processor.execute_for_single_pathway(pathway_name, reactions, physical_entity_ids,
-                                                  relationships_between_nodes_edges, component_ids, components_dic)
+                                                  relationships_between_nodes_edges, component_ids, entity_component_mapping_list)
 
         # draw the histogram
         drawer = Drawer(len(reactions), len(physical_entity_ids), len(component_ids), pathway_name)
@@ -827,8 +938,6 @@ class ReactomeProcessor:
         print("physical entities(nodes): " + num_of_nodes)
         print("physical entities dimensionality(attributes): " + dimensionality)
         print("\n")
-
-        print("For all the relationships:")
 
         # calculate the data distribution
         reaction_index_to_list_of_relationships_dic, reaction_index_to_list_of_input_relationships_dic, reaction_index_to_list_of_output_relationships_dic = self.get_reactions_index_to_list_of_relationships_dic_based_on_relationships(
@@ -858,6 +967,16 @@ class ReactomeProcessor:
         print("\033[1;32m" + "For entities:" + "\033[0m")
         self.print_entity_status_dic(entity_to_relationship_status_dic)
         print("\n")
+
+        entity_index_to_list_of_components_dic = self.get_entity_index_to_list_of_components_dic_based_on_entity_component_mapping_list(
+            entity_index_to_components_indices_mapping_list)
+        entity_components_status_dic = self.get_entity_components_status_dic_based_on_entity_index_to_list_of_components_dic(
+            entity_index_to_list_of_components_dic)
+
+        print("\033[1;32m" + "For entities and components:" + "\033[0m")
+        self.print_entity_components_distribution_dic(entity_components_status_dic)
+        print("\n")
+
 
         if not os.path.exists("./data/All_data_in_Reactome"):
             os.makedirs("./data/All_data_in_Reactome")
@@ -1052,9 +1171,9 @@ if __name__ == '__main__':
     # R-HSA-1640170
     # reactome_processor.execution_on_single_pathways("R-HSA-1640170")
 
-    reactome_processor.execution_on_reactome()
+    # reactome_processor.execution_on_reactome()
 
-    # reactome_processor.execution_on_all_pathways()
+    reactome_processor.execution_on_all_pathways()
 
     # reactome_processor.test_reactions()
 
