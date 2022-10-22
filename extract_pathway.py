@@ -1,6 +1,7 @@
 # from neo4j import GraphDatabase
 import numpy as np
-from py2neo import Graph, Node, Relationship
+# from py2neo import Graph, Node, Relationship
+from py2neo import Graph
 import os
 import time
 from pyecharts import options as opts
@@ -9,6 +10,9 @@ from pyecharts.charts import Bar
 
 # The processor which deals with the pathway
 class PathWayProcessor:
+    '''
+
+    '''
     def __init__(self, graph: Graph):
         self.__graph = graph
 
@@ -312,7 +316,7 @@ class PhysicalEntityProcessor:
             physical_entity_id) + "' AND n.speciesName='Homo sapiens' RETURN n.schemaClass"
         __physical_entity_schemaClass__ndarray = self.__graph.run(__instruction__).to_ndarray()
         # if is None, it's possibly because that the node is An Simple Entity/OtherEntity/Drug which doesn't have n.speciesName
-        if (__physical_entity_schemaClass__ndarray == None or __physical_entity_schemaClass__ndarray.size == 0):
+        if __physical_entity_schemaClass__ndarray is None or __physical_entity_schemaClass__ndarray.size == 0:
             __instruction__ = "MATCH (n:PhysicalEntity) WHERE n.stId = '" + str(
                 physical_entity_id) + "' RETURN n.schemaClass"
             __physical_entity_schemaClass__ndarray = self.__graph.run(__instruction__).to_ndarray()
@@ -435,7 +439,7 @@ class ReactomeProcessor:
 
     def extract_edges_nodes_relationships_all_components_and_dic_of_entity_components_for_one_pathway(self,
                                                                                                       pathway_stId) -> \
-    tuple[list, list, list, list, list]:
+            tuple[list, list, list, list, list]:
 
         """
         extract
@@ -446,7 +450,9 @@ class ReactomeProcessor:
 
         if pathway_stId != -1:
             # normal pathway
-            print("************" + self.get_pathway_name_by_id(pathway_stId) + "************")
+            print("\n")
+            print("\n")
+            print("\033[0;37;41m" + "************" + self.get_pathway_name_by_id(pathway_stId) + "************" + "\033[0m")
 
             reactions = self.__reaction_processor.get_reactions_from_pathway(pathway_stId)
 
@@ -495,7 +501,7 @@ class ReactomeProcessor:
         # relationship: node_id,reaction_id,direction(-1 or 1)
         for relationship in relationships_between_nodes_edges:
             # node_index,reaction_index,direction(-1 or 1)
-            line_message_list = []
+            line_message = ""
             entity_id = relationship[self.__reaction_processor.entity_id_index]
             entity_index = entities_index_dic[entity_id]
 
@@ -504,11 +510,9 @@ class ReactomeProcessor:
 
             direaction = relationship[self.__reaction_processor.direction_index]
 
-            line_message_list.append(entity_index)
-            line_message_list.append(reaction_index)
-            line_message_list.append(direaction)
+            line_message = line_message + str(entity_index) + "," + str(reaction_index) + "," + str(direaction)
 
-            relationships_between_nodes_and_edges_with_index_style.append(line_message_list)
+            relationships_between_nodes_and_edges_with_index_style.append(line_message)
 
         # remove the duplicate components
         component_ids_unique_for_one_pathway, components_dic = self.__physical_entity_processor.get_unique_componets_from_set_of_physical_entities(
@@ -551,9 +555,211 @@ class ReactomeProcessor:
 
         return reactions, physical_entity_ids_from_reactions_for_one_pathway, relationships_between_nodes_and_edges_with_index_style, component_ids_unique_for_one_pathway, entity_index_to_components_indices_mapping_list
 
+    def get_reactions_index_to_list_of_relationships_dic_based_on_relationships(self, relationships: list[str]) -> \
+            tuple[dict[str, list], dict[str, list], dict[str, list]]:
+        # reactions: a list of reaction_id
+        # relationships: a list of {entity_index, reaction_index, direction}
+        reaction_index_to_list_of_relationships_dic: dict[str, list] = {}
+        reaction_index_to_list_of_input_relationships_dic: dict[str, list] = {}
+        reaction_index_to_list_of_output_relationships_dic: dict[str, list] = {}
+        for relationship in relationships:
+            line_elements = relationship.split(",")
+            entity_index = line_elements[self.__reaction_processor.entity_id_index]
+            reaction_index = line_elements[self.__reaction_processor.reaction_id_index]
+            direction = line_elements[self.__reaction_processor.direction_index]
+            if reaction_index in reaction_index_to_list_of_relationships_dic.keys():
+                list_of_relationships = reaction_index_to_list_of_relationships_dic[reaction_index]
+                list_of_relationships.append(relationship)
+            else:
+                reaction_index_to_list_of_relationships_dic[reaction_index] = list()
+                reaction_index_to_list_of_relationships_dic[reaction_index].append(relationship)
 
-    def get_reactions_to_list_of_relationships_dic(self, reactions, relationships):
+            if float(direction) < 0:
+                if reaction_index in reaction_index_to_list_of_input_relationships_dic.keys():
+                    list_of_input_relationships = reaction_index_to_list_of_input_relationships_dic[reaction_index]
+                    list_of_input_relationships.append(relationship)
+                else:
+                    reaction_index_to_list_of_input_relationships_dic[reaction_index] = list()
+                    reaction_index_to_list_of_input_relationships_dic[reaction_index].append(relationship)
 
+            if float(direction) > 0:
+                if reaction_index in reaction_index_to_list_of_output_relationships_dic.keys():
+                    list_of_output_relationships = reaction_index_to_list_of_output_relationships_dic[reaction_index]
+                    list_of_output_relationships.append(relationship)
+                else:
+                    reaction_index_to_list_of_output_relationships_dic[reaction_index] = list()
+                    reaction_index_to_list_of_output_relationships_dic[reaction_index].append(relationship)
+
+        return reaction_index_to_list_of_relationships_dic, reaction_index_to_list_of_input_relationships_dic, reaction_index_to_list_of_output_relationships_dic
+
+    def get_reaction_status_dic(self, reaction_index_to_list_of_relationships_dic) -> {str: int}:
+        reaction_to_relationship_status_dic: {str: int} = {"total_num_of_reactions": 0,
+                                                           "num_of_reactions_with_one_relationship": 0,
+                                                           "num_of_reactions_with_two_relationships": 0,
+                                                           "num_of_reactions_with_three_relationships": 0,
+                                                           "num_of_reactions_with_four_relationships": 0,
+                                                           "num_of_reactions_with_five_relationships": 0,
+                                                           "num_of_reactions_with_six_relationships": 0,
+                                                           "num_of_reactions_with_seven_relationships": 0,
+                                                           "num_of_reactions_with_eight_relationships": 0,
+                                                           "num_of_reactions_with_more_than_eight_relationships": 0}
+
+        dic_key_name: {int: str} = {1: "num_of_reactions_with_one_relationship",
+                                    2: "num_of_reactions_with_two_relationships",
+                                    3: "num_of_reactions_with_three_relationships",
+                                    4: "num_of_reactions_with_four_relationships",
+                                    5: "num_of_reactions_with_five_relationships",
+                                    6: "num_of_reactions_with_six_relationships",
+                                    7: "num_of_reactions_with_seven_relationships",
+                                    8: "num_of_reactions_with_eight_relationships"}
+
+        reaction_to_relationship_status_dic["total_num_of_reactions"] = len(reaction_index_to_list_of_relationships_dic)
+
+        for reaction_index, list_of_relationships in reaction_index_to_list_of_relationships_dic.items():
+            num_of_relationships = len(list_of_relationships)
+            if num_of_relationships in dic_key_name.keys():
+                key_name = dic_key_name.get(num_of_relationships)
+                temp_val = reaction_to_relationship_status_dic.get(key_name)
+                reaction_to_relationship_status_dic[dic_key_name.get(len(list_of_relationships))] = temp_val + 1
+            else:
+                temp_val = reaction_to_relationship_status_dic.get(
+                    "num_of_reactions_with_more_than_eight_relationships")
+                reaction_to_relationship_status_dic[
+                    "num_of_reactions_with_more_than_eight_relationships"] = temp_val + 1
+
+        return reaction_to_relationship_status_dic
+
+    def print_reaction_status_dic(self, reaction_to_relationship_status_dic: {str: int}, mode: str = ""):
+        if "input" == mode:
+            mode_message = "input "
+        elif "output" == mode:
+            mode_message = "output "
+        else:
+            mode_message = ""
+
+        total_num = reaction_to_relationship_status_dic.get("total_num_of_reactions")
+        reaction_num_with_one_rela = reaction_to_relationship_status_dic.get("num_of_reactions_with_one_relationship")
+        reaction_num_with_two_rela = reaction_to_relationship_status_dic.get("num_of_reactions_with_two_relationships")
+        reaction_num_with_three_rela = reaction_to_relationship_status_dic.get("num_of_reactions_with_three_relationships")
+        reaction_num_with_four_rela = reaction_to_relationship_status_dic.get("num_of_reactions_with_four_relationships")
+        reaction_num_with_five_rela = reaction_to_relationship_status_dic.get("num_of_reactions_with_five_relationships")
+        reaction_num_with_six_rela = reaction_to_relationship_status_dic.get("num_of_reactions_with_six_relationships")
+        reaction_num_with_seven_rela = reaction_to_relationship_status_dic.get("num_of_reactions_with_seven_relationships")
+        reaction_num_with_eight_rela = reaction_to_relationship_status_dic.get("num_of_reactions_with_eight_relationships")
+        reaction_num_with_more_than_eight_rela = reaction_to_relationship_status_dic.get("num_of_reactions_with_more_than_eight_relationships")
+
+        print("total num of reactions: " + str(total_num))
+        print("num of reactions with one " + mode_message + "node: " + str(reaction_num_with_one_rela) + " ( {:.2%}".format(float(reaction_num_with_one_rela) / float(total_num)) + ")")
+        print("num of reactions with two " + mode_message + "nodes: " + str(reaction_num_with_two_rela) + " ( {:.2%}".format(float(reaction_num_with_two_rela) / float(total_num)) + ")")
+        print("num of reactions with three " + mode_message + "nodes: " + str(reaction_num_with_three_rela) + " ( {:.2%}".format(float(reaction_num_with_three_rela) / float(total_num)) + ")")
+        print("num of reactions with four " + mode_message + "nodes: " + str(reaction_num_with_four_rela) + " ( {:.2%}".format(float(reaction_num_with_four_rela) / float(total_num)) + ")")
+        print("num of reactions with five " + mode_message + "nodes: " + str(reaction_num_with_five_rela) + " ( {:.2%}".format(float(reaction_num_with_five_rela) / float(total_num)) + ")")
+        print("num of reactions with six " + mode_message + "nodes: " + str(reaction_num_with_six_rela) + " ( {:.2%}".format(float(reaction_num_with_six_rela) / float(total_num)) + ")")
+        print("num of reactions with seven " + mode_message + "nodes: " + str(reaction_num_with_seven_rela) + " ( {:.2%}".format(float(reaction_num_with_seven_rela) / float(total_num)) + ")")
+        print("num of reactions with eight " + mode_message + "nodes: " + str(reaction_num_with_eight_rela) + " ( {:.2%}".format(float(reaction_num_with_eight_rela) / float(total_num)) + ")")
+        print("num of reactions with more than eight " + mode_message + "nodes: " + str(reaction_num_with_more_than_eight_rela) + " ( {:.2%}".format(float(reaction_num_with_more_than_eight_rela) / float(total_num)) + ")")
+
+    def get_entity_index_to_list_of_relationships_dic_based_on_relationships(self, relationships: list[str]) -> dict[str, list]:
+        entity_index_to_list_of_relationships_dic: dict[str, list] = {}
+
+        for relationship in relationships:
+            line_elements = relationship.split(",")
+            entity_index = line_elements[self.__reaction_processor.entity_id_index]
+            reaction_index = line_elements[self.__reaction_processor.reaction_id_index]
+            direction = line_elements[self.__reaction_processor.direction_index]
+            if entity_index in entity_index_to_list_of_relationships_dic.keys():
+                list_of_relationships = entity_index_to_list_of_relationships_dic[entity_index]
+                list_of_relationships.append(relationship)
+            else:
+                entity_index_to_list_of_relationships_dic[entity_index] = list()
+                entity_index_to_list_of_relationships_dic[entity_index].append(relationship)
+
+        return entity_index_to_list_of_relationships_dic
+
+    def get_entity_status_dic(self, entity_index_to_list_of_relationships_dic) -> {str: int}:
+        entity_to_relationship_status_dic: {str: int} = {"total_num_of_entities": 0,
+                                                           "num_of_entities_with_one_relationship": 0,
+                                                           "num_of_entities_with_two_relationships": 0,
+                                                           "num_of_entities_with_three_relationships": 0,
+                                                           "num_of_entities_with_four_relationships": 0,
+                                                           "num_of_entities_with_five_relationships": 0,
+                                                           "num_of_entities_with_six_relationships": 0,
+                                                           "num_of_entities_with_seven_relationships": 0,
+                                                           "num_of_entities_with_eight_relationships": 0,
+                                                           "num_of_entities_with_more_than_eight_relationships": 0}
+
+        dic_key_name: {int: str} = {1: "num_of_entities_with_one_relationship",
+                                    2: "num_of_entities_with_two_relationships",
+                                    3: "num_of_entities_with_three_relationships",
+                                    4: "num_of_entities_with_four_relationships",
+                                    5: "num_of_entities_with_five_relationships",
+                                    6: "num_of_entities_with_six_relationships",
+                                    7: "num_of_entities_with_seven_relationships",
+                                    8: "num_of_entities_with_eight_relationships"}
+
+        entity_to_relationship_status_dic["total_num_of_entities"] = len(entity_index_to_list_of_relationships_dic)
+
+        for reaction_index, list_of_relationships in entity_index_to_list_of_relationships_dic.items():
+            num_of_relationships = len(list_of_relationships)
+            if num_of_relationships in dic_key_name.keys():
+                key_name = dic_key_name.get(num_of_relationships)
+                temp_val = entity_to_relationship_status_dic.get(key_name)
+                entity_to_relationship_status_dic[dic_key_name.get(len(list_of_relationships))] = temp_val + 1
+            else:
+                temp_val = entity_to_relationship_status_dic.get(
+                    "num_of_entities_with_more_than_eight_relationships")
+                entity_to_relationship_status_dic[
+                    "num_of_entities_with_more_than_eight_relationships"] = temp_val + 1
+
+        return entity_to_relationship_status_dic
+
+
+    def print_entity_status_dic(self, entity_status_dic):
+        total_num = entity_status_dic.get("total_num_of_entities")
+        entity_num_with_one_rela = entity_status_dic.get("num_of_entities_with_one_relationship")
+        entity_num_with_two_rela = entity_status_dic.get("num_of_entities_with_two_relationships")
+        entity_num_with_three_rela = entity_status_dic.get(
+            "num_of_entities_with_three_relationships")
+        entity_num_with_four_rela = entity_status_dic.get(
+            "num_of_entities_with_four_relationships")
+        entity_num_with_five_rela = entity_status_dic.get(
+            "num_of_entities_with_five_relationships")
+        entity_num_with_six_rela = entity_status_dic.get("num_of_entities_with_six_relationships")
+        entity_num_with_seven_rela = entity_status_dic.get(
+            "num_of_entities_with_seven_relationships")
+        entity_num_with_eight_rela = entity_status_dic.get(
+            "num_of_entities_with_eight_relationships")
+        entity_num_with_more_than_eight_rela = entity_status_dic.get(
+            "num_of_entities_with_more_than_eight_relationships")
+
+        print("total num of entities: " + str(total_num))
+        print("num of entities with one reaction: " + str(
+            entity_num_with_one_rela) + " ( {:.2%}".format(
+            float(entity_num_with_one_rela) / float(total_num)) + ")")
+        print("num of entities with two reactions: " + str(
+            entity_num_with_two_rela) + " ( {:.2%}".format(
+            float(entity_num_with_two_rela) / float(total_num)) + ")")
+        print("num of entities with three reactions: " + str(
+            entity_num_with_three_rela) + " ( {:.2%}".format(
+            float(entity_num_with_three_rela) / float(total_num)) + ")")
+        print("num of entities with four reactions: " + str(
+            entity_num_with_four_rela) + " ( {:.2%}".format(
+            float(entity_num_with_four_rela) / float(total_num)) + ")")
+        print("num of entities with five reactions: " + str(
+            entity_num_with_five_rela) + " ( {:.2%}".format(
+            float(entity_num_with_five_rela) / float(total_num)) + ")")
+        print("num of entities with six reactions: " + str(
+            entity_num_with_six_rela) + " ( {:.2%}".format(
+            float(entity_num_with_six_rela) / float(total_num)) + ")")
+        print("num of entities with seven reactions: " + str(
+            entity_num_with_seven_rela) + " ( {:.2%}".format(
+            float(entity_num_with_seven_rela) / float(total_num)) + ")")
+        print("num of entities with eight reactions: " + str(
+            entity_num_with_eight_rela) + " ( {:.2%}".format(
+            float(entity_num_with_eight_rela) / float(total_num)) + ")")
+        print("num of entities with more than eight reactions: " + str(
+            entity_num_with_more_than_eight_rela) + " ( {:.2%}".format(
+            float(entity_num_with_more_than_eight_rela) / float(total_num)) + ")")
 
 
     def execution_on_single_pathways(self, pathway_stId):
@@ -561,6 +767,36 @@ class ReactomeProcessor:
 
         reactions, physical_entity_ids, relationships_between_nodes_edges, component_ids, components_dic = self.extract_edges_nodes_relationships_all_components_and_dic_of_entity_components_for_one_pathway(
             pathway_stId)
+
+        # calculate the data distribution
+        reaction_index_to_list_of_relationships_dic, reaction_index_to_list_of_input_relationships_dic, reaction_index_to_list_of_output_relationships_dic = self.get_reactions_index_to_list_of_relationships_dic_based_on_relationships(
+            relationships_between_nodes_edges)
+
+        reaction_to_relationship_status_dic = self.get_reaction_status_dic(reaction_index_to_list_of_relationships_dic)
+        reaction_to_input_relationship_status_dic = self.get_reaction_status_dic(reaction_index_to_list_of_input_relationships_dic)
+        reaction_to_output_relationship_status_dic = self.get_reaction_status_dic(
+            reaction_index_to_list_of_output_relationships_dic)
+
+        print("\033[1;32m" + "For all the relationships:" + "\033[0m")
+        self.print_reaction_status_dic(reaction_to_relationship_status_dic)
+        print("\n")
+
+        print("\033[1;32m" + "For input relationship:" + "\033[0m")
+        self.print_reaction_status_dic(reaction_to_input_relationship_status_dic, mode="input")
+        print("\n")
+
+        print("\033[1;32m" + "For output relationship:" + "\033[0m")
+        self.print_reaction_status_dic(reaction_to_output_relationship_status_dic, mode="output")
+        print("\n")
+
+
+        entity_index_to_list_of_relationships_dic = self.get_entity_index_to_list_of_relationships_dic_based_on_relationships(relationships_between_nodes_edges)
+        entity_to_relationship_status_dic = self.get_entity_status_dic(entity_index_to_list_of_relationships_dic)
+
+        print("\033[1;32m" + "For entities:" + "\033[0m")
+        self.print_entity_status_dic(entity_to_relationship_status_dic)
+        print("\n")
+
 
         # store data into a txt file
         file_processor = FileProcessor()
@@ -581,7 +817,6 @@ class ReactomeProcessor:
         reactions, physical_entities, relationships_with_index_style, components, entity_index_to_components_indices_mapping_list = self.extract_edges_nodes_relationships_all_components_and_dic_of_entity_components_for_one_pathway(
             -1)
 
-
         num_of_edges = str(len(reactions))
         num_of_nodes = str(len(physical_entities))
         dimensionality = str(len(components))
@@ -593,11 +828,47 @@ class ReactomeProcessor:
         print("physical entities dimensionality(attributes): " + dimensionality)
         print("\n")
 
+        print("For all the relationships:")
+
+        # calculate the data distribution
+        reaction_index_to_list_of_relationships_dic, reaction_index_to_list_of_input_relationships_dic, reaction_index_to_list_of_output_relationships_dic = self.get_reactions_index_to_list_of_relationships_dic_based_on_relationships(
+            relationships_with_index_style)
+
+        reaction_to_relationship_status_dic = self.get_reaction_status_dic(reaction_index_to_list_of_relationships_dic)
+        reaction_to_input_relationship_status_dic = self.get_reaction_status_dic(reaction_index_to_list_of_input_relationships_dic)
+        reaction_to_output_relationship_status_dic = self.get_reaction_status_dic(
+            reaction_index_to_list_of_output_relationships_dic)
+
+        print("\033[1;32m" + "For all the relationships:" + "\033[0m")
+        self.print_reaction_status_dic(reaction_to_relationship_status_dic)
+        print("\n")
+
+        print("\033[1;32m" + "For input relationship:" + "\033[0m")
+        self.print_reaction_status_dic(reaction_to_input_relationship_status_dic, mode="input")
+        print("\n")
+
+        print("\033[1;32m" + "For output relationship:" + "\033[0m")
+        self.print_reaction_status_dic(reaction_to_output_relationship_status_dic, mode="output")
+        print("\n")
+
+
+        entity_index_to_list_of_relationships_dic = self.get_entity_index_to_list_of_relationships_dic_based_on_relationships(relationships_with_index_style)
+        entity_to_relationship_status_dic = self.get_entity_status_dic(entity_index_to_list_of_relationships_dic)
+
+        print("\033[1;32m" + "For entities:" + "\033[0m")
+        self.print_entity_status_dic(entity_to_relationship_status_dic)
+        print("\n")
+
         if not os.path.exists("./data/All_data_in_Reactome"):
             os.makedirs("./data/All_data_in_Reactome")
 
+        # store data into a txt file
+        file_processor = FileProcessor()
+        file_processor.execute_for_single_pathway("All_data_in_Reactome", reactions, physical_entities,
+                                                  relationships_with_index_style, components, entity_index_to_components_indices_mapping_list)
+
         # draw the histogram
-        drawer = Drawer(num_of_edges, num_of_nodes, dimensionality, "AllReactome")
+        drawer = Drawer(num_of_edges, num_of_nodes, dimensionality, "All_data_in_Reactome")
         drawer.generate_histogram()
 
     def test(self):
@@ -773,16 +1044,19 @@ if __name__ == '__main__':
 
     reactome_processor = ReactomeProcessor('neo4j', '123456')
 
+
+    # R-HSA-9612973=
+    # reactome_processor.execution_on_single_pathways("R-HSA-9612973")
     # reactome_processor.execution_on_single_pathways("R-HSA-1430728")
 
     # R-HSA-1640170
     # reactome_processor.execution_on_single_pathways("R-HSA-1640170")
 
-    # reactome_processor.execution_on_reactome()
+    reactome_processor.execution_on_reactome()
 
     # reactome_processor.execution_on_all_pathways()
 
-    reactome_processor.test_reactions()
+    # reactome_processor.test_reactions()
 
     time_end = time.time()  # record the ending time
 

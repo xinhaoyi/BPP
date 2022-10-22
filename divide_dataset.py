@@ -1,5 +1,4 @@
 from __future__ import annotations
-import os
 import time
 
 import numpy as np
@@ -207,8 +206,6 @@ class DataDivider:
 
         components_list_of_pathway = list(components_set_of_pathway)
         return components_list_of_pathway
-
-
 
     def get_divided_components_of_pathway(self, pathway_name, train_entities, validation_entities, test_entities):
         train_components = self.__get_divided_components_based_on_divided_entities_of_pathway(pathway_name, train_entities)
