@@ -1,0 +1,481 @@
+2 H2O2 => O2 + 2 H2O
+26S proteasome degrades Ub-NFE2L2
+2xSOD1:CCS:Zn2+:2xCu1+ dimer dissociates
+ABCC1 transports BIL from cytosol to extracellular region (blood)
+AP-1 complex stimulates KDM6B transcription
+AP-1 stimulates IL1A transcription
+AP-1 stimulates transcription of IGFBP7
+AP-1 transcription factor binds IGFBP7 promoter
+AP-1 transcription factor binds IL1A promoter
+AR binds AR agonists
+AR binds AR antagonists
+ATF4 and CEBPB,CEBPG bind the ASNS gene
+ATF4 and a CEBP protein bind the ATF5 promoter
+ATF4 and a CEBP protein bind the TRIB3 promoter
+ATF4 and phospho-ATF2 bind the DDIT3 promoter
+ATF4 binds the ATF3 gene
+ATF4 binds the CEBPB gene
+ATF4 binds the DDIT3 promoter
+ATF4 binds the PPP1R15A (GADD34) promoter
+ATF4, CEBPB, and ATF3 bind the CHAC1 promoter
+ATF6 (ATF6-alpha) translocates from the cytosol to the nucleus
+ATF6 (ATF6-alpha) translocates from the endoplasmic reticulum to the Golgi
+ATF6:HSPA5 (ATF6-alpha:BiP) dissociates and HSPA5 binds unfolded protein
+ATM phosphorylates TP53 at S15
+ATP binding to HSP90 triggers conformation change
+ATP hydrolysis by HSP70
+ATP hydrolysis by HSP90
+ATP7A transfers Cu from ATOX1 to SOD3
+AcK- NFE2L2, MAFG and CREBBP, EP300 bind the G6PD
+AcK-NFE2L2 and ATF4 bind the SLC7A11 gene
+AcK-NFE2L2 and MAFK bind NQO1 gene
+AcK-NFE2L2 and MAFK bind the GSTA1 gene
+AcK-NFE2L2 binds the GCLC gene
+AcK-NFE2L2 binds the GCLM gene
+AcK-NFE2L2 binds the TXNRD1 promoter
+AcK-NFE2L2- dependent NQO1 gene expression
+AcK-NFE2L2-dependent GCLC gene expression
+AcK-NFE2L2-dependent GCLM gene expression
+AcK-NFE2L2-dependent GSTA1 gene expression
+AcK-NFE2L2-dependent P6GD gene expression
+AcK-NFE2L2-dependent SLC7A11 expression
+AcK-NFE2L2-dependent TXNRD1 gene expression
+Acetylated HSF1 dissociates from DNA
+Activated CEBPB and NFKB complex bind IL6 promoter
+Activated CEBPB and NFKB complex bind IL8 promoter
+Activated CEBPB binds CDKN2B promoter
+Activated CEBPB stimulates transcription of CDKN2B
+Activated ERKs phosphorylate ERF
+Activated JNKs phosphorylate c-JUN
+Activated STAT3 positively regulates CEBPB transcription
+Activated human JNKs migrate to nucleoplasm
+Activated human MKK3/MKK6 phosphorylates p38 MAPK complexed with MAPKAPK2 or MAPKAPK3
+Activated human MKK3/MKK6 phosphorylates p38 MAPK complexed with MAPKAPK5
+Active p38 MAPK phosphorylates MAPKAPK2 or 3
+Active p38 MAPK phosphorylates MAPKAPK5
+Androgens binds AR (in the HSP90 chaperone complex)
+Association of INK4 family proteins with CDK4/6
+BACH1 binds MAFK
+BACH1 gene produces BACH1
+BACH1 is phosphorylated at tyrosine 486
+BACH1 translocates from the cytosol to the nucleoplasm
+BACH1:FBXL17 binds SCF(SKP2) complex
+BIL binds ALB
+BIL scavenges NO
+BIL scavenges O2.-
+BIL translocates to the nucleus
+BIL:ALB scavenges O2.-
+BLVRA:Zn2+, BLVRB reduce BV to BIL
+BMT2 (SAMTOR) binds S-adenosylmethionine and dissociates from KICSTOR:GATOR1
+BTRC binds p-S335, 338 NFE2L2
+CASTOR1 homodimer binds L-arginine and dissociates from GATOR2
+CASTOR1 in CASTOR1:CASTOR2 binds L-arginine and dissociates from GATOR2
+CCS transfers Cu to SOD1 (mitochondrial)
+CCS transfers Cu to SOD1 and oxidizes cysteine residues in SOD1
+CDKN1A (p21) prevents association of Cyclin A:Cdk2 with Cdh1
+CDKN1A (p21) prevents phosphorylation of Cdh1 by Cyclin A:Cdk2
+CEBPB homodimerization
+CK2 phosphorylates NFE2L2
+CO binds to Cytochrome c oxidase
+CO binds to free ferrohemoglobin
+CO translocates from cytosol to extracellular region
+CO translocates from cytosol to mitochondrial inner membrane
+CREB3 translocates from the cytosol to the nucleus
+CREB3 translocates from the endoplasmic reticulum membrane to the Golgi membrane
+CREB3L1 translocates from the cytosol to the nucleus
+CREB3L1 translocates from the endoplasmic reticulum membrane to the Golgi membrane
+CREB3L2 translocates from the cytosol to the nucleus
+CREB3L2 translocates from the endoplasmic reticulum membrane to the Golgi membrane
+CREB3L3 translocates from the cytosol to the nucleus
+CREB3L3 translocates from the endoplasmic reticulum membrane to the Golgi membrane
+CREB3L4 translocates from the cytosol to the nucleus
+CREB3L4 translocates from the endoplasmic reticulum membrane to the Golgi membrane
+CREBBP, EP300 acetylates NFE2L2
+CREBRF binds CREB3
+CUL3:RBX1 ubiquitinates KEAP1
+Cdh1:APC/C complex binds EHMT1:EHMT2
+Cdh1:APC/C ubiquitinates EHMT1 and EHMT2
+Constitutive phosphorylation  by pERK1/2
+Constitutive phosphorylation by GSK3
+Cytosolic HIF1AN (FIH1) hydroxylates asparagine residues of Hypoxia-inducible Factor Alpha (HIF1A,HIF2A)
+Cytosolic PHD2,3 hydroxylates proline residues on EPAS1 (HIF2A)
+Cytosolic PHD2,3 hydroxylates proline residues on HIF1A
+Cytosolic PHD2,3 hydroxylates proline residues on HIF3A
+Cytosolic VBC complex ubiquitinylates hydroxyprolyl-HIF-alpha 
+Cytosolic VHL:EloB,C:CUL2:RBX1 binds hydroxyprolyl-HIF-alpha 
+DBC1 binds SIRT1
+DBC1 is phosphorylated by ATM/ART
+DSB inducing agents induce double strand DNA breaks
+Demethylation of H3K27Me3 by KDM6B stimulates p16INK4A transcription, while binding of PRC1.4 complex to H3K27Me3 represses p16INK4A transcription
+Dimerization of PERK
+Dissociation of HSF1:HSP90 complex in the nucleus
+Dissociation of PERK:BiP Heterodimer
+Dissociation of cytosolic HSF1:HSP90 complex
+Dissociation of cytosolic HSF1:HSP90:HDAC6:PTGES3 upon sensing protein aggregates
+E2F1, E2F2, or E2F3 and SP1 bind p14ARF promoter
+E2F1/2/3 stimulates EED transcription
+E2F1/2/3 stimulates EZH2 transcription
+E2F1/2/3 stimulates SUZ12 transcription
+E2F1/2/3:DP1/2 binds EED gene promoter
+E2F1/2/3:DP1/2 binds EZH2 gene promoter
+E2F1/2/3:DP1/2 binds SUZ12 gene promoter
+E2F1/E2F2/E2F3 and SP1 stimulate transcription of p14ARF mRNA
+EHMT1:EHMT2 methylates IL6 promoter
+EHMT1:EHMT2 methylates IL8 promoter
+EIF2AK3 (PERK) phosphorylates EIF2S1 (eIF2-alpha)Phosphorylation of eIF2-alpha by PERK
+EIF2AK4 (GCN2) binds tRNA
+EIF2AK4 (GCN2) dimer autophosphorylates
+EP400 binds CDKN1A promoter
+ERF binds ETS2 promoter
+ERF inhibits ETS2 expression
+ERK1/2-activated AP1 complex binds KDM6B promoter
+ERK1/2/5 activate RSK1/2/3
+Electron transfer from reduced cytochrome c to molecular oxygen
+Expression of ACADVL
+Expression of ADD1 (Adducin alpha)
+Expression of ARFGAP1 (GAP)
+Expression of ARNTL (BMAL1)
+Expression of ASNS (Asparagine Synthetase)
+Expression of ATF3
+Expression of ATP6VOD1
+Expression of BIP (78 kDa Glucose-regulated protein, GRP78, HSPA5)
+Expression of C19orf10
+Expression of CCL2
+Expression of CEBPB in response to stress
+Expression of CHAC1
+Expression of CLOCK
+Expression of CSRP1
+Expression of CTDSP2
+Expression of CXXC1
+Expression of Calreticulin
+Expression of Carbonic Anhydrase IX (CA9)
+Expression of Cullin-7
+Expression of DCTN1
+Expression of DDIT3 (CHOP, GADD153) in response to unfolded protein
+Expression of DDX11
+Expression of DNAJB11
+Expression of DNAJB9
+Expression of DNAJC3 (p58IPK)
+Expression of EDEM
+Expression of EXTL1
+Expression of EXTL2
+Expression of EXTL3
+Expression of Erythropoietin (EPO)
+Expression of FKBP14
+Expression of GFPT1
+Expression of GOSR2
+Expression of GRB10
+Expression of GSK3A
+Expression of HDGF
+Expression of HERPUD
+Expression of HIGD1A
+Expression of HSP90B1 (Endoplasmin)
+Expression of HYOU1
+Expression of IGFBP1
+Expression of IL-8
+Expression of KDELR3
+Expression of KLHDC3
+Expression of LMNA
+Expression of MINK1/TNIK is positively regulated by ROS
+Expression of NPAS2
+Expression of NR1D1 (REV-ERBA)
+Expression of PDIA5
+Expression of PDIA6 (Protein disulfide-isomerase A6)
+Expression of PLA2G4B
+Expression of PPARGC1A (PGC-1alpha)
+Expression of PPP2R5B
+Expression of SERP1 (RAMP4)
+Expression of SHC1
+Expression of SNCB
+Expression of SRPR (SRP Receptor subunit alpha)
+Expression of SRPRB (SRP Receptor subunit beta)
+Expression of SSR1 (Trap alpha)
+Expression of SULT1A3
+Expression of SYVN1 (HRD1)
+Expression of Sec12
+Expression of Sec31A
+Expression of TATDN2
+Expression of TPP1
+Expression of TRIB3 in response to stress
+Expression of TSPYL2
+Expression of Talin-1
+Expression of VEGFA
+Expression of WFS1
+Expression of WIPI1
+Expression of XBP1(S)
+Expression of YIF1A
+Expression of ZBTB17
+FBXL17 binds BACH1:MAFK
+FBXL17 ubiquitinates BACH1 (in BACH1:FBXL17:SCF (SKP2))
+FKBP4 binds HSP90:ATP:STIP1:HSP70:nascent protein
+FKBP4 replaces FKBP5 within HSP90:ATP:FKBP5:unfolded protein
+FKBP5 binds HSP90:ATP:STIP1:HSP70:nascent protein
+Fatty acid ligands activate PPARA
+FeHM dissociates from MetHb
+FeHM oxidises LDL,HDL
+Ferriheme dissociates from p-T-EIF2AK1:2xferriheme dimer
+Formation of Activated Protein 1 (AP-1) complex. cFOS/c-JUN heterodimer. 
+Formation of HIF:CBP:p300 complex at promoters
+Formation of PRC2-EZH2 complex
+GPX1 catalyzes 2 glutathione, reduced + H2O2 => glutathione, oxidized + 2 H2O
+GPX1 catalyzes reaction of reduced glutathione and H2O2 to form oxidized glutathione and H2O
+GPX2 catalyzes 2 glutathione, reduced + H2O2 => glutathione, oxidized + 2 H2O
+GPX3 catalyzes 2 glutathione, reduced + H2O2 => glutathione, oxidized + 2 H2O
+GPX5,6 reduce H2O2 to H2O
+GPX7,8 catalyze peroxidation of P4HB (PDI)
+GSK3B phosphorylates p-NFE2L2
+GSR catalyzes glutathione (oxidized) + NADPH + H+ => 2 glutathione (reduced) + NADP+
+H2O2 diffuses from the mitochondrial matrix to the cytosol
+H2O2 oxidises ferrohemoglobin to MetHb
+H2O2 reduces MetHb
+HBV X protein binds SQSTM1 oligomer
+HIF-alpha binds ARNT (HIF1-beta) forming HIF-alpha:ARNT
+HIF-alpha translocates from cytosol to nucleus
+HM13 cleaves HMOX1 dimer
+HMOX1 dimer translocates from ER membrane to mitochondrial outer membrane
+HMOX1 dimer, HMOX2 cleave heme
+HMOX1 gene produces HMOX1 dimer
+HMOX1 translocates from the cytosol to the nucleoplasm
+HSBP1 binds HSF1 trimer
+HSF1 acetylation at Lys80
+HSF1 trimer binds HSE on the target gene
+HSF1 trimer translocates to the nucleus
+HSF1-mediated gene expression
+HSP110s exchange ATP for ADP on HSP70s:ADP
+HSP40s activate intrinsic ATPase activity of HSP70s in the cytosol
+HSP40s activate intrinsic ATPase activity of HSP70s in the nucleoplasm
+HSP70 binds to HSP40:nascent protein
+HSP70:DNAJB1 binds HSF1
+HSP90:ATP:p23:FKBP52:SHR:SH translocates to the nucleus
+HSP90:FKBP4:PTGES3 binds HSF1 trimer
+Hemes bind LY96
+Hemes bind to BACH1:MAFK
+Hemes bind to CLEC1B dimer
+Hemes:LY96 activates TLR4
+Hikeshi binds HSP70s:ATP
+ID1 sequesters ETS2
+IMPACT binds GCN1
+IRE1 binds IRE1 forming dimer
+IRE1 dimer autophosphorylates
+IRE1:BiP dissociates in response to unfolded protein
+IRE1alpha hydrolyzes Xbp1 mRNA and Xbp1 mRNA is spliced
+Inactivation of Cyclin A:Cdk2 complexes by p27/p21
+Inactivation of Cyclin E:Cdk2 complexes by p27/p21
+Initiation of SAHF formation
+KAT5 acetylates ATM at DNA DSBs
+KAT5 acetylates ATM at shortened telomeres
+KDM6B binds iron
+KDM6B demethylates H3K27me3 on p16INK4A promoter
+KEAP1:CUL3:RBX1 ubiquitinates p-S349 SQSTM1 oligomer
+KEAP1:NEDD8-CUL3:RBX1 complex ubiquitinates NFE2L2
+MAP1LC3B binds KEAP1 and SQSTM1
+MAP3K5 (ASK1) phosphorylates MAP2K4 (SEK1)
+MAP3K5 phosphorylates MKK3 and MKK6
+MAPK3 (ERK1) and MAPK1 (ERK2) phosphorylate CEBPB
+MAPKAPK2 phosphorylates HSF1
+MAPKAPK2/3-mediated removal of PRC1.4 complex stimulates p14ARF transcription
+MAPKAPK5 phosphorylates TP53
+MAPKs phosphorylate ETS1 and ETS2
+MBTPS1 (S1P) cleaves ATF6 (ATF6-alpha)
+MBTPS1 (S1P) cleaves CREB3
+MBTPS1 (S1P) cleaves CREB3L1
+MBTPS1 (S1P) cleaves CREB3L2
+MBTPS1 (S1P) cleaves CREB3L3
+MBTPS1 (S1P) cleaves CREB3L4
+MBTPS2 (S2P) cleaves ATF6 (ATF6-alpha)
+MBTPS2 (S2P) cleaves CREB3
+MBTPS2 (S2P) cleaves CREB3L1
+MBTPS2 (S2P) cleaves CREB3L2
+MBTPS2 (S2P) cleaves CREB3L3
+MBTPS2 (S2P) cleaves CREB3L4
+MDM2 ubiquitinates TP53
+MRN activates ATM
+MRN bound to shortened telomeres activates ATM
+MRN complex binds DNA double strand breaks
+MRN complex binds shortened telomeres
+MRN complex bound to DNA ends recruits ATM
+MRN complex bound to shortened telomeres recruits ATM
+MT1A binds arsenic
+MT1A binds cadmium
+MT1A binds zinc
+MT1B binds cadmium
+MT1B binds zinc
+MT1E binds cadmium
+MT1E binds zinc
+MT1F binds cadmium
+MT1F binds zinc
+MT1G binds cadmium
+MT1G binds zinc
+MT1H binds cadmium
+MT1H binds zinc
+MT1M binds cadmium
+MT1M binds zinc
+MT1X binds cadmium
+MT1X binds zinc
+MT2A binds cadmium
+MT2A binds copper
+MT2A binds zinc
+MT3 binds cadmium
+MT3 binds copper
+MT3 binds zinc
+MT3 exchanges zinc for copper
+MT4 binds cadmium
+MT4 binds copper
+MT4 binds zinc
+MTF1 dimer:12Zn2+ binds CSRP1 gene
+MTF1 dimer:12Zn2+ binds SNCB gene (beta-synuclein)
+MUL1 ubiquitinates UBXN7
+MYC binds the NFE2L2 promoter
+MYC- and NICD1-dependent NFE2L2 gene expression
+NFE2L2 and MAFG bind the SQSTM1 gene
+NFE2L2 and MAFK bind the HMOX1 gene
+NFE2L2 binds CREBBP,EP300
+NFE2L2 binds KEAP1:NEDD8-CUL3:RBX1
+NFE2L2 binds the GSR gene
+NFE2L2 binds the GSTA3 promoter
+NFE2L2 binds the IDH1 gene
+NFE2L2 binds the ME1 gene
+NFE2L2 binds the PGD gene
+NFE2L2 binds the PRDX1 promoter
+NFE2L2 binds the SRXN1 gene
+NFE2L2 binds the TALDO1 gene
+NFE2L2 binds the TKT gene
+NFE2L2 inducers bind to KEAP1:CUL3:RBX1:NFE2L2
+NFE2L2 is ubiquitinated by BTRC:SKP1:CUL1:RBX1
+NFE2L2 translocates from cytosol to nucleoplasm
+NFE2L2-dependent GSR gene expression
+NFE2L2-dependent GSTA3 gene expression
+NFE2L2-dependent HMOX1 gene expression
+NFE2L2-dependent IDH1 gene expression
+NFE2L2-dependent ME1 gene expression
+NFE2L2-dependent PGD gene expression
+NFE2L2-dependent PRDX1 gene expression
+NFE2L2-dependent SQSTM1 gene expression
+NFE2L2-dependent SRXN1 gene expression
+NFE2L2-dependent TALDO1 gene expression
+NFE2L2-dependent TKT gene expression
+NICD1 binds the NFE2L2 promoter
+NOX2 generates superoxide from oxygen
+NOX4, NOX5 reduce O2 to O2.-
+NPC transports Hikeshi:HSP70s:ATP from cytosol to nucleoplasm
+NR1D1 (REV-ERBA) binds heme, the ARNTL gene, and recruits corepressors.
+NR1D1 (REV-ERBA) binds heme, the CLOCK gene, and recruits corepressors
+NR1D1 (REV-ERBA) binds heme, the NPAS2 gene, and recruits corepressors
+NR1D1 (REV-ERBA) binds heme, the NR1D1 gene, and recruits corepressors
+NR1D1 (REV-ERBA) binds heme, the PPARGC1A gene, and recruits corepressors
+NR3C1 binds NR3C1 agonists
+NR3C1 ligands bind NR3C1 (in the HSP90 chaperone complex)
+NR3C2 binds NR3C2 antagonists
+NR3C2 binds fludrocortisone
+NR3C2 ligands bind NR3C2 (in the HSP90 chaperone complex)
+NUDT2 hydrolyses GP4G to GTP, GMP
+Nuclear PHD1,3 hydroxylates proline residues on EPAS1 (HIF2A)
+Nuclear PHD1,3 hydroxylates proline residues on HIF1A
+Nuclear PHD1,3 hydroxylates proline residues on HIF3A
+Nuclear VBC complex ubiquitinylates HIF-alpha
+Nuclear VHL:EloB,C:CUL2:RBX1 binds hydroxyprolyl-HIF-alpha
+P4 bind PGR (in the HSP90 chaperone complex)
+PGR binds PGR agonists
+PGR binds PGR antagonists
+PGRMC2 binds Hemes
+PGRMC2:Hemes dissociates
+PGRMC2:Hemes translocate to the nucleus
+PKC phosphorylates NFE2L2
+PRC1.4 complex binds H3K27Me3 nucleosomes on CDKN2A promoter
+PRC2-EZH2 trimethylates nucleosomes associated with CDKN2A promoter
+PRDX1 overoxidizes
+PRDX1,2,5 catalyze TXN reduced + H2O2 => TXN oxidized + 2H2O
+PRDX3,5 catalyze TXN2 reduced + H2O2 => TXN2 oxidized + 2H2O
+PRDX5 reduces peroxynitrite to nitrite using TXN
+PRDX5 reduces peroxynitrite to nitrite using TXN2
+PRDX6:GSTP1 catalyzes 2 glutathione, reduced + H2O2 => glutathione, oxidized + 2 H2O
+PTK6 phosphorylates STAT3
+Phosphorylated ERF translocates to the cytosol
+Phosphorylated ETS1 binds p16INK4A promoter
+Phosphorylated ETS2 binds p16INK4A promoter
+Phosphorylated IRE1 dimer binds ADP
+Phosphorylated MKK3/MKK6 migrates to nucleus
+Phosphorylation of HSF1 at Ser230 induces transactivation
+Phosphorylation of HSF1 at Ser326 induces transactivation
+Phosphorylation of human JNKs by activated MKK4/MKK7
+Proteasome proteolyzes ub-HIF-alpha
+RAS signaling and prolonged interferon-beta stimulation promote generation of reactive oxygen species (ROS)
+RBX1:CUL3 dissociates from forming autophagosome
+ROS oxidize thioredoxin and activate MAP3K5
+RPA1 binds HSF1
+RPS6KA1/2/3 phosphorylates CEBPB on S321
+RRAGA,B exchanges GDP for GTP
+RRAGA,B hydrolyzes GTP
+RRAGC,D exchanges GTP for GDP
+RRAGC,D hydrolyzes GTP
+Regulation of IL6 transcription
+SAHF formation
+SESN1,2 binds L-leucine and dissociates from GATOR2
+SESN1,SESN1 bind SQSTM1 and KEAP1
+SIRT1 binds to HSF1
+SIRT1 deacetylates HSF1
+SLC46A1 transports hemes from extracellular region to cytosol
+SOD1 catalyzes 2H+ + 2O2.- => O2 + H2O2 (cytosol)
+SOD1 catalyzes 2H+ + O2.- => O2 + H2O2 (mitochondrial intermembrane space)
+SOD1:Zn2+ apoenzyme binds CCS:Cu1+ (mitochondrial)
+SOD1:Zn2+ apoenzyme binds CCS:Zn2+:2xCu1+
+SOD2 catalyzes 2H+ + 2O2.- => O2 + H2O2 (mitochondrial matrix)
+SOD3 catalyzes 2H+ + 2O2.- => O2 + H2O2 (extracellular)
+SQSTM1 oligomer is phosphorylated
+SQSTM1 oligomerizes
+SRXN1 reduces hyperoxidized PRDX1 dimer
+STIP1(HOP) binds HSP90 and HSP70:HSP40:nascent protein
+Secretion of SOD3
+Stimulation of IL8 transcription in senescent cells
+Superoxide and nitric oxide react to form peroxynitrite in mitochondria
+Superoxide and nitric oxide react to peroxynitrite
+Superoxide reduces cytochrome c
+TP53 binds the CDKN1A promoter
+TRIM21 ubiquitinates SQSTM1
+TXNIP binds NLRP3
+TXNRD2 catalyzes the reduction of TXN2 by NADPH
+Telomere shortening during replicative exhaustion
+Transcription of ATF5
+Transcription of DDIT3 (CHOP, GADD153) in response to amino acid deficiency
+Transcription of DDIT3 (CHOP, GADD153) in response to heme deficiency
+Transcription of PPP1R15A
+Transcriptional activation of CDKN1A by TP53 is inhibited by EP400
+Translation of ATF4 
+Translation of ATF5
+Translation of DDIT3
+Translation of PPP1R15A
+Translation of p14ARF mRNA is inhibited by miR-24
+Translation of p16INK4A mRNA is inhibited by miR-24
+Trimerization of HSF1 in the nucleus
+Trimerization of cytosolic HSF1
+UBXN7 binds VCP hexamer:UBF1:NPLOC4
+UBXN7:UBF1:NPLOC4:VCP hexamer binds NFE2L2:CRL3 complex
+Ub,pS335,S338,T NFE2L2 is degraded
+Ubiquitinated NFE2L2 is extracted from CRL3 complex for degradation
+XBP(S) mRNA is translated and XBP1(S) translocates to the nucleus
+XPO1 (CRM1) binds to BACH1:Hemes
+XPO1:BACH1:Hemes are transported out of the nucleus
+c-FOS activation by phospho ERK1/2
+glutathione (oxidized) + NADPH + H+ => 2 glutathione (reduced) + NADP+
+mTORC1 binds RHEB:GTP
+miR-24 binds p16INK4A and p14ARF mRNAs
+p-MAPKAPK3 phosphorylates BMI1
+p-S303,307-HSF1 binds YWHAE (14-3-3)
+p-S349 SQSTM1 oligomer binds KEAP1:CUL3:RBX1
+p-T,T486,T488-EIF2AK1 phosphorylates EIF2S1 (eIF2-alpha)
+p-T-EIF2AK1:ferriheme dimer autophosphorylates
+p-T38-ETS1/p-T72-ETS2 stimulates transcription of p16INK4A mRNA
+p-T899-EIF2AK4 (GCN2) phosphorylates EIF2AS1
+p-Y486 BACH1 translocates from the nucleoplasm to the cytosol
+p14ARF binds NFE2L2:CREBBP, EP300
+p14ARF forms a ternary complex with MDM2 and TP53
+p14ARF sequesters MDM2
+p14ARF translocates to the nucleus
+p23 (PTGES3) binds HSP90:ATP:FKBP4:nascent protein
+p23 (PTGES3) binds HSP90:ATP:FKBP5:nascent protein
+thioredoxin, oxidized + NADPH + H+ => thioredoxin, reduced + NADP+
+ub UBXN7 is degraded by the 26S proteasome
+ub-hydroxyPro-HIF-alpha:VHL:EloB,C:CUL2:RBX1 translocates from the nucleus to the cytosol
+v-ATPase:Ragulator:RRAGA,B:GTP:RRAGC,D:GDP binds mTORC1
+v-ATPase:Ragulator:RRAGA,B:GTP:RRAGC,D:GDP:SLC38A9:Arginine dissociates yielding v-ATPase:Ragulator:RRAGA,B:GTP:RRAGC,D:GDP and SLC38A9:Arginine
+v-ATPase:Ragulator:RagA,B:GDP:RagC,D:GDP binds SLC38A9:Arginine

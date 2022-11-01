@@ -1,0 +1,102 @@
+4xHC-TIMM10B
+ACAA1
+ACAA1(1-26)
+ACAA1(1-424)
+ACOX1
+ACOX1(1-438)
+ACOX1(439-660)
+ADP
+AGPS
+AGPS(1-58)
+AGPS(1-658)
+ASNA1:ATP dimer
+ATP
+BAG6:GET4:UBL4A
+Cargo of SAM50
+Cargo of TIMM22
+Cargo of TIMM23 PAM
+Cargo of TIMM23 SORT
+Cargo of TOMM40
+Cargo proteins containing PTS1
+Cargo proteins containing PTS2
+Class I Peroxisomal Membrane Proteins
+H2O
+HSD17B4(1-311)
+HSD17B4(1-736)
+HSD17B4(312-736)
+Mislocalized membrane protein
+Mislocalized membrane protein:SGTA dimer
+Mislocalized membrane protein:SGTA:BAG6:GET4:UBL4A:ASNA1:ATP
+Mitochondrial targeting peptides
+Mitochondrial targeting peptides (from inner membrane proteins)
+Mitochondrial targeting peptides (from matrix proteins)
+PEX13:PEX14:PEX2:PEX10:PEX12
+PEX16
+PEX16:PEX19:PEX3
+PEX19
+PEX19:PEX3
+PEX19:class I PMP
+PEX1:PEX6:PEX26
+PEX2:PEX10:PEX12:PEX5L:Ub:UBE2D1,2,3:PEX7:PEX13:PEX14
+PEX2:PEX10:PEX12:PEX5S,L:Ub:UBE2D1,2,3:PEX13:PEX14
+PEX2:PEX10:PEX12:Ub:PEX5L:PEX7:PEX13:PEX14
+PEX2:PEX10:PEX12:Ub:PEX5L:PEX7:PEX13:PEX14:PEX1:PEX6:PEX26:ZFAND6
+PEX2:PEX10:PEX12:Ub:PEX5S,L:PEX13:PEX14
+PEX2:PEX10:PEX12:Ub:PEX5S,L:PEX1:PEX6:PEX26:ZFAND6
+PEX3
+PEX3:PEX19:class I PMP
+PEX5 isoform L
+PEX5 isoform S
+PEX5L:PEX7:Cargo protein
+PEX5L:PEX7:Cargo:PEX13:PEX14:PEX2:PEX10:PEX12
+PEX5L:PEX7:PEX13:PEX14:PEX2:PEX10:PEX12
+PEX5S,L
+PEX5S,L:Cargo protein
+PEX5S,L:Cargo:PEX13:PEX14:PEX2:PEX10:PEX12
+PEX5S,L:PEX13:PEX14:PEX2:PEX10:PEX12
+PEX7
+PEX7:Cargo proteins
+PHYH
+PHYH(1-30)
+PHYH(1-338)
+Pi
+Precursor Cargo of TIMM23 PAM
+Precursor Cargo of TIMM23 SORT
+Products of MIA40:ERV1
+Proteins Chaperoned by TIMM8:TIMM13
+Proteins Chaperoned by TIMM9:TIMM10
+SCP2
+SCP2(1-424)
+SCP2(425-547)
+SGTA dimer
+Substrates of MIA40:ERV1
+TIMM22
+TIMM23 Complex
+TIMM23 PAM:Cargo
+TIMM23 PAM:Precursor Cargo
+TIMM23 SORT:Cargo
+TIMM23 SORT:Precursor Cargo
+TIMM8:TIMM13
+TIMM8:TIMM13:Protein
+TIMM9:TIMM10
+TIMM9:TIMM10:Protein
+TIMM9:TIMM10:TIMM10B:TIM22:Protein
+TYSND1
+TYSND1(1-110)
+TYSND1(111-566)
+Tail-anchored protein:ASNA1:ADP
+Tail-anchored protein:ASNA1:ADP:WRB:CAMLG
+Tail-anchored protein:SGTA dimer
+Tail-anchored protein:SGTA:BAG6:GET4:UBL4A:ASNA1:ATP
+Tail-anchored proteins
+UBE2D1,2,3
+USP9X
+USP9X:Ub:PEX5L
+USP9X:Ub:PEX5S
+Ub
+Ub:PEX5L
+Ub:PEX5S
+Ub:PEX5S,L
+Ub:UBE2D1,2,3
+WRB:CAMLG
+ZFAND6

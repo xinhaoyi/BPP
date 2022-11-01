@@ -1,0 +1,78 @@
+2,5-DHBA translocates from ER lumen to mitochondrial matrix
+ABCB1,ABCC2 transport ATVs from cytosol to extracellular region
+ABCC1,4,5 transport APAP-Cys,APAP-Mer from cytosol to extracellular region
+ABCC2, ABCC3 transport salicylate metabolites from cytosol to extracellular region of hepatic cells
+ABCC2,ABCG2 transport APAP-GlcA, APAP-SO3
+ABCC3,ABCC4 transport APAP-GlcA, APAP-SO3
+ABCC4 transports TPMP substrates from cytosol to extracellular region
+ABCC5 transports TPMP substrates from cytosol to extracellular region
+ACSM2B-like proteins transform 2,5-DHBA to 2,5-DHB-CoA
+ACY1:Zn2+ dimer deacetylates NAC to L-Cys
+ALB binds ST
+APAP translocates from extracellular region to cytosol
+ASA- (GI) translocates from cytosol to extracellular region
+ASA- acetylates ALB
+ASA- translocates from cytosol to ER lumen of GI cells
+ASA-,ST translocate from cytosol to ER lumen of hepatocytes
+Acetylsalicylic acid dissolves
+BCHE hydrolyzes ASA-
+CES1,CES2 hydrolyze ASA- to ST
+CES2 hydrolyzes ASA-
+CNDP2:2Mn2+ dimer hydrolyses APAP-CysGly
+CYP2,3 cytochromes hydroxylate ST to 2,3-DHBA
+CYP2,3 cytochromes hydroxylate ST to 2,5-DHBA
+CYP2E1 monooxygenates APAP to NAPQI
+CYP3A4 monooxygenates ATV to 2-OH-ATV
+CYP3A4 monooxygenates ATV to 4-OH-ATV
+CYP3A4 monooxygenates ATVL to 2-OH-ATVL
+CYP3A4 monooxygenates ATVL to 4-OH-ATVL
+GGT dimers hydrolyse APAP-SG
+GLYAT-like proteins transfer glycine to 2,5-DHB-CoA to form gentisuric acid
+GMPS dimer transforms 6TXMP to 6TGMP
+GSH cleaves AZA to 6MP
+GST dimers cleave AZA to 6MP
+GSTs transfer GSH to NAPQI to form APAP-SG
+GUK1 phosphorylates 6TGMP to 6TGDP
+GUK1 phosphorylates 6TdGMP to 6TdGDP
+Glycine conjugates translocates from mitochondrial matrix to cytosol
+HPRT1 tetramer transfers phosphoribosyl group to 6MP to form 6TIMP
+Hydroxyl radicals oxidize ST to 2,3-DHBA
+IMPDH tetramers dehydrogenate 6TIMP to 6TXMP
+NAPQI binds proteins in hepatocytes
+NAT1,2 acetylate APAP-Cys to APAP-Mer
+NME1:2 hexamer phosphorylates 6TGDP to 6TGTP
+NME1:2 hexamer phosphorylates 6TdGDP to 6TdGTP
+NUDT15 dimer dephosphorylates 6TdGTP to 6TdGMP
+PON1,3 hydrolyse 2-OH-ATVL to 2-OH-ATV
+PON1,3 hydrolyse 4-OH-ATVL to 4-OH-ATV
+PON1,3 hydrolyse ATVL to ATV
+SLC16A1:BSG cotransports monocarboxylates, H+ from extracellular region to cytosol
+SLC22A7 transports ASA-,ST from extracellular region to cytosol of hepatocytes
+SLC28A2,3 cotransport 6MP and Na+ from extracellular region to cytosol
+SLC29A1,2 transport 6MP from extracellular region to cytosol
+SLCO1B1,1B3,2B1-3 transport ATV from extracelluar region to cytosol
+SLCO2B1-1 transports ASA- from extracellular region to cytosol of GI cells
+ST metabolites diffuse out of ER lumen
+ST translocates from ER lumen to cytosol of GI cells
+ST translocates from cytosol to extracellular region
+ST translocates from cytosol to mitochondrial matrix of hepatocytes
+SULT dimers sulfate APAP to APAP-SO3
+TPMT transfers methyl group to 6MP, forming 6MeMP
+TPMT transfers methyl group to 6TIMP, forming 6MeTIMP
+UGT1A3 lactonizes 2-OH-ATV to 2-OH-ATVL
+UGT1A3 lactonizes 4-OH-ATV to 4-OH-ATVL
+UGT1A3 lactonizes ATV to ATVL
+UGT1A6 glucuronates ST
+UGTs glucuronate APAP to APAP-GlcA
+UGTs transfer GlcA from UDP-GlcA to O-centre substrates
+XDH oxidises 6MP to 6TU
+abacavir + 2 NAD+ => abacavir 5'-carboxylate + 2 NADH + 2 H+
+abacavir + AMP => abacavir monophosphate + adenosine
+abacavir + UDP-glucuronate => abacavir 5'-glucuronide + UDP
+abacavir [cytosol] + ATP + H2O => abacavir[extracellular] + ADP + phosphate
+abacavir [extracellular] => abacavir [cytosol]
+abacavir monophosphate + H2O => carbovir monophosphate + cyclopropylamine
+carbovir + IMP => carbovir monophosphate + inosine
+carbovir diphosphate + ATP => carbovir triphosphate + ADP
+carbovir monophosphate + ATP => carbovir diphosphate + ADP
+p-VAV1,2,3 exchange 6TGTP for GDP on RAC1

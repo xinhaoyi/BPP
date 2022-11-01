@@ -1,0 +1,1013 @@
+(CDK1,CDK2):CCNA phosphorylates MDM2 at T218
+14-3-3 proteins bind AKT-phosphorylated FOXO1
+14-3-3 proteins bind AKT-phosphorylated FOXO3
+14-3-3 proteins bind AKT-phosphorylated FOXO4
+2-4 nt.backtracking of Pol II complex on the template leading to elongation pausing
+26S proteasome degrades PolyUb-RUNX2
+26S proteasome degrades TP73 polyubiquitinated by ITCH
+7-14 nt. Backtracking of Pol II complex on the template leading to elongation arrest
+ABCA6 gene expression is stimulated by FOXO1,FOXO3
+ABL1 phosphorylates YAP1
+AGO1,2:small RNA complexes interact with chromatin
+AGO2 cleaves passenger strand of duplex siRNA
+AGRP gene expression is stimulated by FOXO1
+AKT phosphorylates FOXO transcription factors
+AKT phosphorylates KAT6A
+AKT phosphorylates MDM2
+AKT phosphorylates PHF20
+AKT phosphorylates TSC2, inhibiting it
+AKT-phosphorylated FOXO1,FOXO3,FOXO4 translocate to the cytosol
+AMPK phosphorylates TP53
+ANG cleaves tRNA to yield tRNA halves
+AP-2 (TFAP2) transcription factors form homo- and heterodimers
+APAF1 gene expression is stimulated by E2F1 and inhibited by E2F6
+ATAD2 binds ESR1
+ATM phosphorylates DYRK2
+ATM phosphorylates MDM2
+ATM phosphorylates PIDD1
+ATM phosphorylates TP53 at S15
+ATM phosphorylates TTC5
+ATM phosphorylates ZNF420
+ATP1B4 binds SNW1
+ATR phosphorylates TP53
+AURKA phosphorylates TP53
+AURKB binds TP53
+AURKB phosphorylates MECP2 at S423
+AURKB phosphorylates TP53
+AXIN1 gene expression is inhibited by ESR1 and stimulated by RUNX1
+Abortive Initiation After Second Transition
+Abortive Initiation Before Second Transition
+Abortive initiation after formation of the first phosphodiester bond
+Abortive termination of early transcription elongation by DSIF:NELF
+Abortive termination of elongation after arrest
+Acetylated RUNX3 binds to BRD2
+Acetylation of SL1
+Activated AKT phosphorylates RUNX2
+Activated AR binds RUNX2
+Activated CEBPB and NFKB complex bind IL6 promoter
+Activated ERKs phosphorylate RUNX2
+Activated ESR1 binds the RUNX2 gene promoter
+Activation of GT
+Addition of Nucleotides 5 through 9 on the growing Transcript
+Addition of nucleotides 10 and 11 on the growing transcript: Third Transition
+Addition of nucleotides between position +11 and +30
+Addition of nucleotides leads to transcript elongation
+Addition of the fourth nucleotide on the Nascent Transcript: Second Transition
+Addition of the third nucleotide on the nascent transcript
+Assembly of RNA Polymerase I Holoenzyme (human)
+Association of TFAM:mt promoter complex with POLRMT:TFB2M
+Association of mTERF with the termination sequence
+B-WICH complex binds rDNA promoter
+B-WICH recruits histone acetyltransferases
+B-WICH:histone acetyltransferase acetylates histone H3 at lysine-9
+BANP binds TP53
+BAX gene expression is stimulated by RUNX2
+BBC3 gene expression is stimulated by FOXO3,(FOXO1)
+BCDIN3D dimethylates 5' phosphate of pre-miR-145
+BCL2L11 (BIM) gene transcription is stimulated by RUNX3
+BCL2L11 gene expression is stimulated by FOXO1,FOXO3,(FOXO4) and NF-Y
+BCL6 gene expression is stimulated by FOXO3,FOXO4,(FOXO1)
+BDNF gene transcription
+BGLAP gene expression is stimulated by RUNX2, WWTR1 and RB1 and inhibited by AR, YAP1 and ZNF521
+BLK gene expression is stimulated by the complex of RUNX1 and ELF1, ELF2 or PAX5
+BRCA1 gene expression is inhibited by E2F6
+BRD7 binds TP53 and EP300
+BRD7 promotes EP300-mediated acetylation of TP53
+BTG1 gene expression is stimulated by FOXO3
+BTG2 binds CCR4-NOT complex
+Binding of RRN3 to RNA Polymerase I
+Binding of SNAPc, Oct-1, and Staf to Type 3 Promoter
+Binding of TFIIA and TFIIB to the pol II promoter:TFIID complex
+Binding of TFIIE to the growing preinitiation complex
+Binding of TFIIIA To type 1 Promoter
+Binding of TFIIIB to SNAPc:Oct-1:Staf:Type 3 Promoter Complex
+Binding of TFIIIB to TFIIC: Type 2 Promoter Complex
+Binding of TFIIIB to TFIIIC:TFIIIA:Type I Promoter complex
+Binding of TFIIIC to TFIIIA:Type I Promoter complex 
+Binding of TFIIIC to Type 2 promoter
+C3PO hydrolyzes cleaved passenger strand
+CAT gene expression is stimulated by FOXO3,FOXO6,(FOXO1)
+CAV1 gene expression is stimulated by FOXO1,FOXO3
+CBCAP complex binds 7-methylguanosine cap of snRNA
+CBFB binds RUNX1
+CBFB binds RUNX3
+CBX3 (HP1gamma) binds histone H3 dimethylated at lysine-9
+CBX3 and PRC1.6 associate with E2F6.com-1
+CBX5 gene expression is inhibited by E2F6
+CCND1 binds RUNX3 and displaces EP300
+CCND1 recruits HDAC4 to RUNX3
+CCND3,(CCND1,CCND2) binds RUNX1
+CCNG1 recruits PP2A-PPP2R5C to MDM2
+CCNG2 gene expression is stimulated by FOXO1,FOXO3,(FOXO4)
+CCNK binds CDK12
+CCNK binds CDK13
+CCNK:CDK12 binds RNA Pol II at DNA repair genes
+CDC7 gene expression is repressed by the PRC1L4 complex
+CDK1 phosphorylates RUNX2
+CDK12 phosphorylates RNA Pol II CTD at DNA repair genes
+CDK12 stimulates expression of DNA repair genes
+CDK2 phosphorylates TP53
+CDK4 phosphorylates RUNX2
+CDK5 phosphorylates TP53
+CDK6 binds RUNX1
+CDK7 phosphorylates serine-5 and serine-7 of heptad repeats in C-terminal domain of RNA polymerase II at snRNA promoter
+CDKN1A (p21) gene expression is positively regulated by RUNX3 and ZFHX3
+CDKN1A gene expression is inhibited by RUNX2
+CDKN1A gene expression is stimulated by TFAP2A and repressed by TFAP2C
+CDKN1A gene expression is synergistically activated by RUNX3, SMAD3 and SMAD4
+CDKN1A gene transcription is stimulated by FOXO1,FOXO3,FOXO4
+CDKN1B gene expression is stimulated by FOXO1,FOXO3,FOXO4
+CGA and CGB3 bind to form Human chorionic gonadotropin (hCG)
+CHEK1 phosphorylates E2F6
+CHEK1 phosphorylates TP53
+CHEK2 phosphorylates TP53
+CHEK2 phosphorylates TTC5
+CHM binds RGGT
+CITED2 gene expression is stimulated by FOXO1,FOXO3
+CK2 binds FACT
+CK2:FACT phosphorylates TP53
+CLDN5 (Claudin-5) gene expression is stimulated by RUNX1
+COL1A1 gene expression is stimulated by RUNX2 and RB1
+COL1A2 gene expression is stimulated by p-2S-SMAD3:p-2S-SMAD3:SMAD4
+CR1 gene expression is stimulated by RUNX1
+CREB1 gene expression is stimulated by MECP2
+CREBBP acetylates FOXO1
+CREBBP binds FOXO1
+CRH gene expression is repressed by MECP2
+CSF2 (GM-CSF) gene expression is stimulated by RUNX1 and CREBBP
+CTLA4 gene expression is stimulated by FOXP3 and inhibited by RUNX1
+CTNNB1:TCF7L2,LEF1 binds the CCND1 gene promoter
+Cleavage of Intronless Pre-mRNA at 3'-end
+Cleavage of intergenic spacer RNA to yield fragments of 150-300 nucleotides
+Cleavage of mRNA at the 3'-end
+Cleavage of the 3'-end of Replication Dependent Histone Pre-mRNA
+Cleavage of the 3'-end of the Histone Pre-mRNA
+Complexed PIWIL1 binds pre-piRNA
+Complexed PIWIL2 binds  pre-piRNA
+Complexed PIWIL2 binds cleaved transposon RNA
+Complexed PIWIL2:2'-O-methyl-piRNA cleaves transposon RNA
+Complexed PIWIL4 binds cleaved transposon RNA
+Core MLL complex methylates H3K4Me2-Nucleosome at the GP1BA gene promoter
+Core MLL complex methylates H3K4Me2-Nucleosome at the ITGA2B gene promoter
+Core MLL complex methylates H3K4Me2-Nucleosome at the MIR27A gene promoter
+Core MLL complex methylates H3K4Me2-Nucleosome at the THBS1 gene promoter
+D-fructose 6-phosphate <=> alpha-D-Glucose 6-phosphate
+DAXX binds Ub-MDM2 and USP7
+DDIT4 binds 14-3-3 dimer
+DEK binds TFAP2A homodimers
+DEXA:NR3C1 complex binds RUNX2 gene proximal promoter
+DICER1 cleaves tRNA
+DICER1 cleaves tRNA Lys TTT 3 in tRNA:HIV RNA hybrid
+DLL1 gene expression is inhibited by MECP2
+DLX5,(DLX6) binds RUNX2 gene promoter
+DNMT1 methylates cytosine in hemimethylated DNA
+DNMT1,3A,3B:PRC2 methylates cytosine and histone H3
+DNMT3A:DNMT3L binds chromatin
+DNMT3A:DNMT3L methylates cytosine in DNA
+DNMT3B:DNMT3L binds chromatin
+DNMT3B:DNMT3L methylates cytosine in DNA
+DSIF complex binds to RNA Pol II (hypophosphorylated)
+DYRK2 phosphorylates TP53
+Degradation of SMAD2/3:SMAD4 complex
+Degradation of Ub-SMAD7
+Degradation of ubiquitinated SKI/SKIL
+Dephosphorylated SMAD2/3 translocates to the cytosol
+Dephosphorylation and dissociation of RNA polymerase II at 3' end of snRNA gene
+Dicer cleaves double-stranded RNA to yield double-stranded siRNA
+Dicer cleaves pre-miRNA to yield duplex miRNA
+Dissociation of PTRF:Polymerase I/Nascent Pre rRNA Complex:TTF-I:Sal Box
+Duplex miRNA is loaded into Argonaute
+Duplex siRNA is loaded into Argonaute
+E2F1 binds APAF1 gene promoter
+E2F1 binds RAD51 gene promoter
+E2F1 gene transcription is inhibited by E2F6
+E2F6 binds APAF1 gene promoter
+E2F6 binds BRCA1 gene promoter
+E2F6 binds CBX5 gene promoter
+E2F6 binds RAD51 gene promoter
+E2F6 binds RBBP4 gene promoter
+E2F6 binds RBBP8 gene promoter
+E2F6 binds RRM2 gene promoter
+E2F6 binds TFDP1
+E2F6 binds TFDP2
+E2F6 binds the PRC1 complex
+E2F6 forms the PRC1L4 complex
+E2F6.com-1 complex binds the E2F1 gene promoter
+E2F6:TFDP1 binds EPC1
+E2F6:TFDP1 binds to MGA:MAX
+E2F6:TFDP1/2 binds the E2F1 gene promoter
+E2F6:TFDP1:EPC1 binds the PRC2 complex
+E2F7 and E2F8 homo- and heterodimers bind the E2F1 gene promoter
+E2F7 and E2F8 homo- and heterodimers inhibit E2F1 expression
+E2F7 binds E2F8
+E2F7 forms homodimers
+E2F8 forms homodimers
+EGFR gene expression is stimulated by TFAP2C
+EHMT1:EHMT2 complex binds E2F6.com-1 core
+EHMT1:EHMT2 dimethylates TP53
+ELAC2 cleaves pre-tRNA to yield 3' trailer (type II tRF or tRF-1)
+EP300 acetylates RUNX3
+EP300,CREBBP acetylate FOXO4
+EP300,CREBBP bind SOH-C481-FOXO4
+ESR1 binds the AXIN1 gene
+ESRRA:PPARG1CA binds the RUNX2 gene promoter
+ESRRA:PPARG1CB binds the RUNX2 gene promoter
+Electron transfer from reduced cytochrome c to molecular oxygen
+Elongating transcript encounters a lesion in the template
+Elongation of pre-rRNA transcript
+Endonucleolytic RISC hydrolyzes target RNAs
+Exportin complex translocates pre-miRNA to cytosol
+Exportin-5 recognizes 3' overhang of pre-miRNA 
+Expression of CCND1 is stimulated by CTNNB1:TCF4,LEF1
+Expression of CCND1 is stimulated by CTNNB1:TCF4,LEF1 and inhibited by VENTX:TCF4,LEF1
+Expression of CTGF
+Expression of NPPA (ANF)
+Extrusion of 5'-end of 30 nt long transcript through the pore in Pol II complex
+FASLG gene expression is stimulated by FOXO1,FOXO3,(FOXO4)
+FBXO32 gene expression is stimulated by FOXO1,FOXO3,(FOXO4)
+FBXW7 binds RUNX2 and GSK3B
+FBXW7 polyubiquitinates RUNX2
+FKBP5 gene expression is inhibited by MECP2
+FOXG1 binds FOXO:SMAD complexes
+FOXO1 and NR3C1 bind TRIM63 gene promoter
+FOXO1 and SIN3A:HDAC complex bind GCK gene promoter
+FOXO1 and p-2S-SMAD2/3:SMAD4 bind MSTN gene promoter
+FOXO1 binds AGRP gene promoter
+FOXO1 binds NPY gene promoter
+FOXO1 binds POMC gene promoter
+FOXO1 binds PPARGC1A
+FOXO1 binds RETN gene promoter
+FOXO1 binds SREBF1 gene promoter
+FOXO1,FOXO1:PPARGC1A,FOXO3,FOXO4,FOXO6 bind G6PC gene promoter
+FOXO1,FOXO3 and SMAD3 bind TRIM63 gene promoter
+FOXO1,FOXO3 bind ABCA6 gene promoter
+FOXO1,FOXO3 bind CITED2 gene promoter
+FOXO1,FOXO3 bind KLF4 gene promoter
+FOXO1,FOXO3 bind PINK1 gene promoter
+FOXO1,FOXO3 binds CAV1 gene promoter
+FOXO1,FOXO3,(FOXO4) bind BCL2L11 gene promoter
+FOXO1,FOXO3,(FOXO4) bind FASLG gene promoter
+FOXO1,FOXO3,(FOXO4) bind FBXO32 gene promoter
+FOXO1,FOXO3,(FOXO4) binds CCNG2 gene promoter
+FOXO1,FOXO3,FOXO4 bind CDKN1A gene promoter
+FOXO1,FOXO3,FOXO4 bind IGFBP1 gene promoter
+FOXO1,FOXO3,FOXO4 bind p-2S-SMAD2/3:SMAD4
+FOXO1,FOXO3,FOXO4 binds RBL2 gene
+FOXO1:PPARGC1A,FOXO4 binds PCK1 gene promoter
+FOXO3 binds BTG1 gene promoter
+FOXO3 binds SOD2 gene promoter
+FOXO3,(FOXO1) bind BBC3 gene first intron
+FOXO3,FOXO4 bind STK11 gene promoter
+FOXO3,FOXO4,(FOXO1) bind BCL6 gene promoter
+FOXO3,FOXO4,(FOXO1) bind GADD45A gene promoter
+FOXO3,FOXO6,(FOXO1) binds CAT gene promoter
+FOXO4 binds ATXN3
+FOXO4:ATXN3 binds SOD2 gene promoter
+FOXO6 binds PLXNA4 gene
+FOXO:SMAD complex binds CDKN1A gene promoter
+FOXP3 gene expression is stimulated by RUNX1:CBFB
+FOXP3 in complex with RUNX1 binds intron 1 of the IL2RA (CD25) gene
+FOXP3 in complex with RUNX1 binds the CTLA4 gene promoter
+FOXP3 in complex with RUNX1 binds to the TNFRSF18 (GITR) gene intron 1
+FURIN gene transcription is stimulated by SMAD2/SMAD3:SMAD4
+FURIN translocates to the plasma membrane
+Fall Back to Closed Pre-initiation Complex
+Formation of ARC coactivator complex
+Formation of CSL NCOR corepressor complex
+Formation of CSL-NICD coactivator complex
+Formation of DRIP coactivator complex
+Formation of DSIF complex 
+Formation of DSIF:NELF:early elongation complex
+Formation of Elongin BC complex
+Formation of Elongin complex
+Formation of FACT complex
+Formation of NELF complex 
+Formation of NR-MED1 Coactivator Complex
+Formation of NR-NCOR Corepressor Complex
+Formation of P-TEFb complex
+Formation of SL1
+Formation of TRAP coactivator complex
+Formation of TSC1:TSC2 complex
+Formation of energy-dependent Nucleolar Silencing Complex (eNoSC)
+Formation of the closed pre-initiation complex
+G6PC gene expression is stimulated by FOXO1,FOXO3,FOXO4,FOXO6
+GAD1 gene expression is stimulated by MECP2
+GAD2 gene expression is stimulated by MECP2
+GADD45A binds AURKA
+GADD45A binds PCNA
+GADD45A gene expression is stimulated by FOXO3,FOXO4,(FOXO1)
+GAMT gene expression is stimulated by MECP2
+GCK gene expression is inhibited by FOXO1, SIN3A and HDACs
+GP1BA gene transcription is stimulated by the complex containing RUNX1, PRMT1 and GATA1 and inhibited by the complex of RUNX1, SIN3A and PRMT6
+GPAM gene expression is stimulated by RUNX1 and ESR1
+GPRIN1 gene expression is stimulated by MECP2
+GPX2 catalyzes 2 glutathione, reduced + H2O2 => glutathione, oxidized + 2 H2O
+GRIA2 gene expression is inhibited by MECP2:SIN3A complex
+GRIN2A gene expression is stimulated by MECP2
+GRIN2B gene expression is inhibited by MECP2
+GSK3B phosphorylates RUNX2
+General transcription factors bind SNAPc:POU2F1:ZNF143:snRNA gene
+H19 is cleaved to produce miR-675
+HDAC4 deacetylates RUNX3
+HENMT1 methylates 2' hydroxyl at 3' end of piRNA in 4xMeR-PIWIL1:piRNA:TDRD6:TDRKH
+HENMT1 methylates 2' hydroxyl at 3' end of piRNA in 6xMeR-PIWIL2:piRNA:TDRD1:TDRD12:DDX4:ASZ:MOV10L1
+HENMT1 methylates 2' hydroxyl at 3' end of piRNA in MeR-PIWIL4:piRNA:TDRD9:MAEL:TDRKH
+HES1 gene transcription is inhibited by RUNX3
+HIPK2 phosphorylates MECP2
+HIPK2 phosphorylates RUNX1
+HIPK2 phosphorylates RUNX1 and EP300
+HIPK2 phosphorylates TP53
+HSPD1 gene expression is repressed by the complex of NPM1 and TFAP2A homodimer
+Hyperphosphorylation (Ser2) of RNA Pol II CTD by P-TEFb complex
+Hypophosphorylation of RNA Pol II CTD by FCP1P protein
+IFNG gene expression is stimulated by RUNX1 and inhibited by FOXP3
+IGFBP1 gene expression is stimulated by FOXO1,FOXO3,FOXO4
+IGFBP3 binds TMEM219
+IHH gene transcription is stimulated by RUNX2
+IL2 gene expression is stimulated by RUNX1 and NFATC2 and repressed by FOXP3
+IL2RA (CD25) gene expression is stimulated by FOXP3 and inhibited by RUNX1
+IL3 gene transcription is stimulated by RUNX1 and ELF1
+ING2 binds PI5P
+ING2 recruits EP300 to TP53
+ING2-bound EP300 acetylates TP53
+IRAK1 gene expression is inhibited by MECP2
+ITCH gene expression is stimulated by RUNX1 and YAP1
+ITCH polyubiquitinates TP73
+ITGA2B gene transcription is stimulated by the complex of RUNX1, GATA1 and PRMT1 and inhibited by the complex of RUNX1, SIN3A and PRMT6
+ITGA5 gene expression is stimulated by RUNX2:CBFB
+ITGAL gene,(ITGA4 gene) expression is stimulated by RUNX3:CBFB
+ITGBL1 gene expression is stimulated by RUNX2
+Importin-8 binds AGO2:miRNA
+Importin-8 imports AGO2:miRNA into the nucleus
+Inactivation of Cyclin A:Cdk2 complexes by p27/p21
+Inactivation of Cyclin E:Cdk2 complexes by p27/p21
+Initiation of RNA Polymerase III Productive Transcription
+Integrator complex processes the 3' end of snRNA
+JAG1 gene expression is inhibited by RUNX3
+JMY, TTC5 and EP300 bind
+KAT2B,EP300 acetylate FOXO3 under oxidative stress
+KAT6A acetylates TP53
+KAT6A and PML bind TP53
+KCTD1 binds TFAP2 homo- and heterodimers
+KCTD15 binds TFAP2 homo- and heterodimers
+KCTD6 gene expression is stimulated by RUNX1 and ESR1
+KIT gene expression is stimulated by TFAP2A,(TFAP2B) homodimers 
+KLF4 gene expression is stimulated by FOXO1,FOXO3
+KMT2A (MLL) binds RUNX1
+KMT2A trimethylates nucleosomes at the SPI1 gene locus producing H3K4Me3 mark
+KRAB-ZNF / KAP Interaction
+L3MBTL1 binds TP53 monomethylated on K382
+LGALS3 gene expression is stimulated by RUNX1 and RUNX2
+LIFR gene expression
+Loss of Rrn3 from RNA Polymerase I promoter escape complex
+MAP2K6 phosphorylates PIP4K2B
+MAPK1 and MAPK3 phosphorylate SMAD2 and SMAD3
+MAPKAPK5 phosphorylates TP53
+MBD2 binds methylcytosine in chromatin
+MDM2 binds RUNX3
+MDM2 binds TP53
+MDM2 forms homo- or heterodimers
+MDM2 homodimers auto-ubiquitinate
+MDM2 polyubiquitinates RUNX3
+MDM2 translocates to the cytosol
+MDM2 translocates to the nucleus
+MDM2 ubiquitinates DYRK2
+MDM2 ubiquitinates JMY
+MDM2 ubiquitinates TP53
+MDM2 ubiquitinates phosphorylated MDM4
+MECP2 and SOX2 bind MIR137 gene
+MECP2 binds 5hmC-DNA
+MECP2 binds 5mC-DNA
+MECP2 binds CREB1
+MECP2 binds CREB1 gene promoter
+MECP2 binds CRH gene promoter
+MECP2 binds DGCR8
+MECP2 binds DLL1 gene promoter
+MECP2 binds FKBP5 gene promoter
+MECP2 binds FOXG1
+MECP2 binds GAD1 gene promoter
+MECP2 binds GAD2 gene promoter
+MECP2 binds GAMT gene promoter
+MECP2 binds GPRIN1 gene promoter
+MECP2 binds GRIN2B gene promoter
+MECP2 binds HTT
+MECP2 binds IRAK1 gene
+MECP2 binds LBR
+MECP2 binds MEF2C gene promoter
+MECP2 binds MET gene promoter
+MECP2 binds MOBP gene promoter
+MECP2 binds NOTCH1 gene promoter
+MECP2 binds OPRK1 gene promoter
+MECP2 binds PPARG gene promoter
+MECP2 binds PTPN1 gene promoter
+MECP2 binds RBFOX1 gene promoter
+MECP2 binds SGK1 gene promoter
+MECP2 binds the GRIN2A gene promoter
+MECP2 binds the NCoR/SMRT complex
+MECP2 binds the PTPN4 gene promoter
+MECP2 binds the PVALB gene promoter
+MECP2 binds the SIN3A co-repressor complex
+MECP2 binds the TRPC3 gene
+MECP2 is phosphorylated at S423
+MECP2 is phosphorylated at T308
+MECP2 mRNA binds miR-132 RISC
+MECP2 mRNA translation is inhibited by miR-132
+MECP2:CREB1 binds SST gene promoter
+MECP2:CREB1 complex binds SLC2A3 gene
+MECP2:SIN3A complex binds GRIA2 gene promoter
+MECP2:SIN3A complex binds OPRM1 gene promoter
+MECP2:SIN3A complex binds the promoter of the BDNF gene
+MEF2C gene expression is inhibited by MECP2
+MEN1 binds SMAD2/3:SMAD4 heterotrimer
+MET gene transcription is stimulated by MECP2
+MIR132 gene expression is stimulated by p-S133-CREB1
+MIR137 gene expression is inhibited by MECP2 and SOX2
+MIR27A gene transcription is stimulated by the complex containing RUNX1, PRMT1 and GATA1 and inhibited by the complex of RUNX1, SIN3A and PRMT6
+MMP13 gene expression is stimulated by RUNX2:CBFB
+MOBP gene expression is inhibited by MECP2
+MSTN gene expression is stimulated by FOXO1 and p-2S-SMAD2/3:SMAD4
+MSX2 binds RUNX2 gene promoter
+MTA2-NuRD complex deacetylates TP53
+MYB gene transcription is stimulated by the RUNX1-containing TAL1 complex
+MYC trancscription is negatively regulated by SMAD2/3:SMAD4:RBL1:E2F4/5:DP1/2 complex
+MYL9 gene transcription is stimulated by RUNX1:CBFB
+MeR-PIWIL4:2'-O-methyl-piRNA:TDRD9:MAEL:TDRKH dissociates and MeR-PIWIL4:2'-O-methylpiRNA, TDRD9, MAEL translocate from cytosol to nucleus in an unknown association and order of events
+Microprocessor complex cleaves pri-miRNA to pre-miRNA
+NEDD4L binds phosphorylated linker region of SMAD2/3
+NEDD4L ubiquitinates SMAD2/3
+NF-Y and CREBBP,EP300 constitutively bind BCL2L11 gene promoter
+NFE2 gene expression is stimulated by RUNX1:CBFB
+NKX3-2 binds RUNX2 gene promoter
+NOC2L binds TP53
+NOTCH1 Coactivator Complex binds HES1 promoter
+NOTCH1 gene expression is inhibited by MECP2
+NOTCH1 stimulates HES1 transcription
+NPM1 binds TFAP2A homodimer
+NPY gene expression is stimulated by FOXO1
+NR4A3 gene expression is stimulated by RUNX1:CBFB
+NTP Binds Active Site of RNA Polymerase II
+NUAK1 phosphorylates TP53
+Newly Formed Phosphodiester Bond Stabilized and PPi Released
+NoRC:HDAC:DNMT deacetylates histone H4 and methylates histone H3
+NoRC:HDAC:DNMT methylates cytosine of the rRNA genes
+Nonendonucleolytic RISC binds exactly matching target RNAs
+Nucleolar Remodelling Complex (NoRC) binds intergenic region of rDNA
+Nucleophillic Attack by 3'-hydroxyl Oxygen of nascent transcript on the Alpha Phosphate of NTP
+OCLN (Occludin) gene expression is stimulated by RUNX1
+OPRK1 gene expression is stimulated by MECP2
+OPRM1 gene expression is repressed by MECP2
+PARP1 ADP-ribosylates SMAD3 and SMAD4
+PARP1 binds SMAD2/3:SMAD4 heterotrimer
+PCBP4 binds the CDKN1A mRNA
+PCBP4 modulates CDKN1A translation
+PCK1 gene expression is stimulated by FOXO1:PPARGC1A
+PDPK1 phosphorylates SGK1
+PF4 gene transcription is stimulated by RUNX1:CBFB
+PHF20 binds TP53 dimethylated on K370 and K382
+PI(4,5)P2 is dephosphorylated to PI5P by TMEM55B in the nucleus
+PI5P is phosphorylated to PI(4,5)P2 by PIP4K2 dimers in the nucleus
+PIDD1 associates with CRADD
+PIDD1 translocates to the cytosol
+PIN1 binds phosphorylated PIP4K2B
+PINK1 gene expression is stimulated by FOXO1,FOXO3
+PITX2 gene expression is stimulated by TFAP2A,TFAP2C homodimers:CITED2
+PLD6 dimer cleaves primary piRNA transcript to pre-piRNA
+PLK2 phosphorylates CENPJ
+PLK2 phosphorylates NPM1
+PLK3 phosphorylates CDC25C
+PLK3 phosphorylates TP53
+PLXNA4 gene expression is stimulated by FOXO6
+PML binds RUNX1
+POMC gene expression is inhibited by FOXO1
+POU2F1 (OCT1) or POU2F2 (OCT2), SP1, and ZNF143 (STAF) bind the DSE of snRNA gene (U1, U2, U4, U4atac, U5, U11, U12)
+PP2A-PP2R5C dephosphorylates MDM2
+PPARG gene expression is inhibited by MECP2
+PPM1A dephosphorylates nuclear SMAD2/3
+PPM1A protein phosphatase binds phosphorylated SMAD2/3
+PPM1D dephosphorylates RUNX2
+PRC2 recruits DNA methyltransferases
+PRC2 trimethylates histone H3 at lysine-27
+PRDM1 binds the TP53 gene
+PRDM1 represses TP53 expression
+PRDX1 overoxidizes
+PRDX1,2,5 catalyze TXN reduced + H2O2 => TXN oxidized + 2H2O
+PRKCB gene expression is stimulated by RUNX1
+PRKCQ gene expression is stimulated by RUNX1:CBFB
+PRMT1 arginine-methylates RUNX1
+PRMT5 binds TTC5
+PRMT5 methylates TP53
+PRMT6 arginine methylates H3K4me2-Nucleosome at the GP1BA gene promoter
+PRMT6 arginine methylates H3K4me2-Nucleosome at the ITGA2B gene promoter
+PRMT6 arginine methylates H3K4me2-Nucleosome at the MIR27A gene promoter
+PRMT6 arginine methylates H3K4me2-Nucleosome at the THBS1 gene promoter
+PTEN gene transcription is stimulated by TP53
+PTEN mRNA translation is inhibited by miR-137
+PTEN mRNA translation negatively regulated by microRNAs
+PTPN1 gene expression is inhibited by MECP2
+PTPN11 binds p-7Y-RUNX1
+PTPN11 dephosphorylates RUNX1
+PTPN4 gene expression is stimulated by MECP2
+PTRF Binds the Polymerase I Transcription Complex/Nascent Pre rRNA Complex paused at the TTF-I:Sal Box
+PVALB gene expression is repressed by MECP2
+Phosphorylated SMAD2 and SMAD3 form a complex with SMAD4
+Phosphorylation (Ser5) of RNA pol II CTD
+Phosphorylation of MDM4 by ATM
+Phosphorylation of MDM4 by CHEK2
+Phosphorylation of SMAD2 and SMAD3 linker regions by CDK8 or CDK9
+Phosphorylation of UBF-1:rDNA Promoter
+Pol II elongation complex moves on the template as transcript elongates
+Pol II mediated transcription of microRNA genes
+Polycomb Repressive Complex 2 (PRC2) Is recruited to chromatin
+Polymerase I Transcription Complex/Nascent Pre rRNA Complex pauses at the TTF-I:Sal Box
+Polyubiquitinated RUNX3 is degraded by the proteasome
+Polyubiquitinated RUNX3 translocates to the cytosol
+Pre-snRNA is elongated and capped with 7-methylguanosine
+Pre-snRNA transcript initiation, Integrator binding, LEC binding
+Primary piRNA transcript translocates from nucleoplasm to cytosol
+Proteasome degrades PolyUb-RUNX2
+Proteasome degrades polyubiquitinated RUNX2
+RABGGTA binds RABGGTB
+RAD51 gene expression is stimulated by E2F1 and inhibited by E2F6
+RBBP4 gene expression is inhibited by E2F6
+RBBP8 gene expression is inhibited by E2F6
+RBFOX1 gene expression is inhibited by MECP2
+RBL2 gene expression is stimulated by FOXO1,FOXO3,FOXO4
+RETN gene expression is stimulated by FOXO1
+RHEB in mTORC1:RHEB:GTP hydrolyses GTP
+RISC binds inexactly matching target RNAs
+RMB14 binds RUNX2
+RNA Polymerase II CTD (phosphorylated) binds to CE
+RNA Polymerase II Promoter Opening: First Transition
+RNA Polymerase III Abortive Initiation At Type 1 Open Promoters
+RNA Polymerase III Abortive Initiation At Type 2 Open Promoters
+RNA Polymerase III Abortive Initiation At Type 3 Open Promoters
+RNA Polymerase III Productive Transcription
+RNA Polymerase III Promoter Opening at Type 1 Promoters
+RNA Polymerase III Promoter Opening at Type 2 Promoters
+RNA Polymerase III Promoter Opening at Type 3 Promoters
+RNA Polymerase III Retractive RNase Activity at U-tract Pause Sites
+RNA Polymerase III Simple Start Sequence Initiation At Type 1 Promoters
+RNA Polymerase III Simple Start Sequence Initiation At Type 2 Promoters
+RNA Polymerase III Simple Start Sequence Initiation At Type 3 Promoters
+RNA Polymerase III Termination and release of transcribed RNA
+RNA Polymerase III Transcriptional Pause at Terminator Sequence
+RNA polymerase II binds initiation factors at promoter of snRNA gene (U1, U2, U4, U4atac, U5, U11, U12)
+RNA polymerase II polymerizes primary piRNA transcript
+RNF111 binds SMAD7
+RNF111 ubiquitinates SMAD7
+RNF34 or RFFL ubiquitinates phosphorylated TP53
+RORC gene expression is stimulated by RUNX3:CBFB
+ROS oxidize FOXO4 cysteine residues
+RPAP2 binds RNA polymerase II phosphorylated at serine-7 residues of heptad repeats in the C-terminal domain
+RRM2 gene expression is stimulated by E2F1 and inhibited by E2F6
+RRP8 binds RNA
+RUNX proteins bind the p14-ARF promoter at the CDKN2A locus
+RUNX1 and ELF1 bind the IL3 gene promoter
+RUNX1 and ELF1, ELF2 or PAX5 bind the BLK gene promoter
+RUNX1 and ESR1 bind the AXIN1 gene
+RUNX1 and ESR1 bind the GPAM gene enhancer
+RUNX1 and ESR1 bind the KCTD6 gene enhancer
+RUNX1 and FOXP3 bind the IFNG gene
+RUNX1 and FOXP3 bind the RSPO3 gene promoter
+RUNX1 and FOXP3 stimulate the RSPO3 gene expression
+RUNX1 and GATA1 bind the promoter of the GP1BA gene
+RUNX1 and GATA1 bind the promoter of the ITGA2B gene
+RUNX1 and GATA1 bind the promoter of the MIR27A gene
+RUNX1 and GATA1 bind the promoter of the THBS1 gene
+RUNX1 and NFATC2 bind the IL2 gene promoter
+RUNX1 binds ELF1
+RUNX1 binds ELF2
+RUNX1 binds ESR1
+RUNX1 binds FOXP3
+RUNX1 binds PAX5 (BSAP)
+RUNX1 binds PRC1 complexes
+RUNX1 binds PRMT1
+RUNX1 binds SIN3A,(SIN3B) co-repressor
+RUNX1 binds SRC
+RUNX1 binds YAP1
+RUNX1 binds intron 1 of IL2RA (CD25) gene
+RUNX1 binds the CLDN5 (Claudin-5) gene promoter
+RUNX1 binds the CR1 gene promoter
+RUNX1 binds the IFNG promoter
+RUNX1 binds the OCLN gene promoter
+RUNX1 binds the PRKCB gene promoter
+RUNX1 binds the SOCS3 gene
+RUNX1 binds the SOCS4 gene
+RUNX1 binds the SWI/SNF complex
+RUNX1 binds the TJP1 (ZO-1) gene promoter
+RUNX1 binds the core TAL1 complex
+RUNX1 binds the promoter of the CTLA4 gene
+RUNX1 binds to TNFRSF18 (GITR) gene promoter and intron 1
+RUNX1 gene expression is inhibited by RUNX3
+RUNX1 mRNA translation is inhibited by miR-17, miR-18a, miR-20a, miR-27a, miR-106a, miR-215, miR-302b, miR-378 and miR-675
+RUNX1, FOXP3 and NFATC2 bind the IL2 gene promoter
+RUNX1-containing TAL1 complex binds the MYB gene enhancer
+RUNX1:CBFB binds CREBBP
+RUNX1:CBFB binds EP300
+RUNX1:CBFB binds FOXP3 gene
+RUNX1:CBFB binds the LGALS3 gene promoter
+RUNX1:CBFB binds the LIFR gene promoter
+RUNX1:CBFB binds the MYL9 gene promoter
+RUNX1:CBFB binds the NFE2 gene promoter
+RUNX1:CBFB binds the NR4A3 gene promoter
+RUNX1:CBFB binds the PF4 gene promoter
+RUNX1:CBFB binds the PRKCQ gene promoter
+RUNX1:CBFB binds the SERPINB13 gene promoter
+RUNX1:CBFB, SIN3A(SIN3B), PRMT6 and HDAC1 bind the GP1BA promoter
+RUNX1:CBFB, SIN3A(SIN3B), PRMT6 and HDAC1 bind the ITGA2B promoter
+RUNX1:CBFB, SIN3A(SIN3B), PRMT6 and HDAC1 bind the MIR27A gene promoter
+RUNX1:CBFB, SIN3A(SIN3B), PRMT6 and HDAC1 bind the THBS1 gene promoter
+RUNX1:CBFB:CREBBP binds the CSF2 (GM-CSF) gene promoter
+RUNX1:CBFB:KMT2A binds SPI1 (PU.1) gene
+RUNX2 and RB1 bind the BGLAP gene promoter
+RUNX2 and RB1 bind the COL1A1 gene promoter
+RUNX2 and SMAD1 complex binds the SMAD6 gene promoter
+RUNX2 and SP7 bind the UCMA gene promoter
+RUNX2 binds BAX gene promoter
+RUNX2 binds CBFB
+RUNX2 binds CDKN1A gene promoter
+RUNX2 binds GLI2
+RUNX2 binds GLI3R
+RUNX2 binds GSK3B
+RUNX2 binds HAND2
+RUNX2 binds HDAC4
+RUNX2 binds HDAC6
+RUNX2 binds HEY1,HEY2,HES1
+RUNX2 binds MAF
+RUNX2 binds RB1
+RUNX2 binds SMAD1 in the nucleus
+RUNX2 binds SMURF1
+RUNX2 binds SMURF1 gene
+RUNX2 binds SOX9
+RUNX2 binds STAT1
+RUNX2 binds STUB1
+RUNX2 binds TWIST1,(TWIST2)
+RUNX2 binds ZNF521 and HDAC3
+RUNX2 binds the IHH gene promoter
+RUNX2 binds to HIVEP3 and WWP1
+RUNX2 binds to SATB2
+RUNX2 binds tyrosine phosphorylated YAP1
+RUNX2 gene expression from distal (P1) promoter is inhibited by NKX3-2, MSX2 and RUNX2-P1, and stimulated by DLX5,(DLX6)
+RUNX2 gene expression from proximal (P2) promoter is stimulated by ESR1:estrogen, ESRRA:PPARG1CA, TWIST1 and RUNX2-P2, and inhibited by ESRRA:PPARG1CB and DEXA:NR3C1
+RUNX2 translocates to the nucleus
+RUNX2-P1 binds RUNX2 gene promoter
+RUNX2-P2 binds RUNX2 gene promoter
+RUNX2:CBFB binds BGLAP gene promoter
+RUNX2:CBFB binds the ITGA5 gene promoter
+RUNX2:CBFB binds the ITGBL1 gene promoter
+RUNX2:CBFB binds the LGALS3 gene promoter
+RUNX2:CBFB binds the MMP13 gene promoter
+RUNX2:CBFB:p-Y-YAP1 binds the BGLAP gene promoter
+RUNX2:MAF complex binds the BGLAP gene promoter
+RUNX3 binds CTNNB1:TCF7L2,(LEF1,TCF7L1,TCF7)
+RUNX3 binds EP300
+RUNX3 binds SMAD3 and SMAD4
+RUNX3 binds SRC
+RUNX3 binds TEADs and YAP1
+RUNX3 binds TP53
+RUNX3 binds ZFHX3
+RUNX3 binds the BCL2L11 (BIM) gene
+RUNX3 binds the JAG1 gene promoter
+RUNX3 binds the NOTCH1 coactivator complex
+RUNX3 binds the RUNX1 promoter
+RUNX3 translocates to the nucleus
+RUNX3:CBFB binds the ITGAL gene,(ITGA4 gene) promoter
+RUNX3:CBFB binds the RORC gene promoter
+RUNX3:NOTCH1 coactivator complex binds the HES1 gene promoter
+Recognition and Binding of Core Promoter Elements by TFIID
+Recruitment of  RNA polymerase III to TFIIIB:TFIIIC:TFIIIA:Type 1 Promoter Complex
+Recruitment of Acetylated SL1 to phosUBF-1:rDNA Promoter
+Recruitment of Active RNA Polymerase I to SL1:phos.UBF-1:rDNA Promoter
+Recruitment of ERCC6 (CSB), EHMT2 (G9a), and NuRD to the promoter of rRNA gene
+Recruitment of RNA Polymerase II Holoenzyme by TFIIF to the pol II promoter:TFIID:TFIIA:TFIIB complex
+Recruitment of RNA Polymerase III to TFIIIB:SNAPc:Type 3 Promoter Complex
+Recruitment of RNA Polymerase III to the TFIIIB:TFIIIC: Type 2 Promoter Complex
+Recruitment of elongation factors to form elongation complex
+Regulation of IL6 transcription
+Removal of miRNA passenger strand
+Removal of siRNA passenger strand
+Resumption of RNA Polymerase III Productive Transcription
+Resumption of elongation after recovery from pausing
+SCF(SKP2) complex binds RUNX2
+SCF(SKP2) polyubiquitinates RUNX2
+SERPINB13 binds CTSK
+SERPINB13 binds cathepsin L
+SERPINB13 gene expression is inhibited by RUNX1:CBFB
+SESN1,2,3 bind AMPK
+SESN1,2,3 bind overoxidized PRDX1
+SETD8 methylates TP53
+SETD9 methylates TP53
+SFN dimer binds BAX
+SFN dimer binds CDK1 and CCNB1
+SFN dimerizes
+SGK1 gene expression is inhibited by MECP2
+SGK1 phosphorylates MDM2
+SIRT1 deacetylates FOXO1
+SIRT1 deacetylates TAF1B in SL1 complex
+SIRT1,SIRT3 deacetylate FOXO3
+SKI/SKIL binds SMAD complex, suppressing TGF-beta signaling
+SLC2A3 gene expression is stimulated by MECP2:CREB1 complex
+SMAD2/3 activation induces binding of RNF111/SMURF2 to SKI/SKIL
+SMAD2/3:SMAD4 complex positively regulates JUNB transcription
+SMAD2/3:SMAD4 heterotrimer binds SP1
+SMAD2/3:SMAD4 heterotrimer forms a complex with RBL1, E2F4/5 and DP1/2
+SMAD2/3:SMAD4:SP1 complex stimulates transcription of CDKN2B
+SMAD6 gene expression is stimulated by RUNX2 and SMAD1
+SMAD7 binds SERPINE1 gene promoter
+SMURF1 gene expression is stimulated by RUNX2
+SMURF1 polyubiquitinates RUNX2
+SMURF2 binds SMAD3 phosphorylated in the linker region
+SMURF2 monoubiquitinates SMAD3
+SMURFs ubiquitinate RUNX3
+SMYD2 methylates TP53
+SNAPc binds PSE of snRNA gene (U1, U2, U4, U4atac, U5, U11, U12)
+SOCS3 gene expression is inhibited by RUNX1
+SOCS4 gene expression is inhibited by RUNX1
+SOD2 gene expression is stimulated by FOXO4, FOXO3 and FOXO1
+SPI1 (PU.1) gene transcription is stimulated by RUNX1:CBFB:KMT2A
+SPP1 gene expression is stimulated by RUNX3
+SPT5 subunit of Pol II binds the RNA triphosphatase (RTP)
+SRC phosphorylates RUNX1
+SRC phosphorylates RUNX3
+SRC,YES1 bind YAP1
+SRC,YES1 phosphorylate YAP1
+SREBF1 gene expression is inhibited by FOXO1
+SST gene expression is stimulated by MECP2 and CREB1
+STAT1 stimulates SMAD7 gene transcription
+STEAP3 binds BNIP3L
+STK11 (LKB1) phosphorylates NUAK1
+STK11 gene transcription is stimulated by FOXO3,FOXO4
+STUB1 polyubiquitinates RUNX2
+SUMOylation of TFAP2A with SUMO1
+SUMOylation of TFAP2B with SUMO1
+SUMOylation of TFAP2C with SUMO1
+Semiquinone reacts with oxygen
+Separation of elongating transcript from template
+TAF1 phosphorylates TP53
+TCF7L1/TCF7L2/LEF1:CTNNB1 bind the MYC gene
+TCF7L1/TCF7L2/LEF1:CTNNB1 promote transcription of the MYC gene
+TDG excises 5-carboxylcytosine
+TDG excises 5-formylcytosine
+TEADs:YAP1 binds CTGF gene
+TET1,2,3 oxidizes 5-formylcytosine to 5-carboxylcytosine
+TET1,2,3 oxidizes 5-hydroxymethylcytosine to 5-formylcytosine
+TET1,2,3 oxidizes 5-methylcytosine to 5-hydroxymethylcytosine
+TFAM binds to mitochondrial promoters
+TFAP2 homo- and heterodimers bind CITED and EP300/CREBBP
+TFAP2A homodimer binds CDKN1A (p21) gene
+TFAP2A homodimer binds the TGFA gene promoter
+TFAP2A homodimer binds the VEGFA gene promoter
+TFAP2A in complex with DEK binds the APOE gene promoter
+TFAP2A,(TFAP2B) homodimers bind the KIT gene promoter
+TFAP2A,(TFAP2B,TFAP2C) homo- and heterodimers and YY1 stimulate ERBB2 gene expression
+TFAP2A,(TFAP2B,TFAP2C) homo- and heterodimers bind the ERBB2 gene promoter and recruit YY1
+TFAP2A,TFAP2C homodimers bind ESR1 promoter
+TFAP2A,TFAP2C homodimers bind the CGA gene
+TFAP2A,TFAP2C homodimers bind the CGB gene promoter
+TFAP2A,TFAP2C homodimers stimulate CGA gene expression
+TFAP2A,TFAP2C homodimers stimulate CGB3 gene expression
+TFAP2A,TFAP2C homodimers stimulate ESR1 gene expression
+TFAP2A,TFAP2C homodimers:CITED2 binds PITX2 gene promoter
+TFAP2B homodimer binds YEATS4
+TFAP2C homodimer binds MYC and KDM5B
+TFAP2C homodimer binds the CDKN1A (p21) gene promoter
+TFAP2C homodimer binds the EGFR gene promoter
+TFAP2C translocates to the nucleus
+TFIIS-mediated recovery of elongation from arrest
+TFPA2A homodimer and NPM1 bind the HSPD1 gene promoter
+TFPA2A homodimer and NPM1 bind the MYBL2 gene promoter
+TFPA2A homodimer and NPM1 bind the NOP2 gene promoter
+TGFA gene expression is stimulated by the TFAP2A homodimer
+TGIF recruits HDAC1 to SMAD2/3:SMAD4 heterotrimer
+THBS1 gene transcription is stimulated by the complex containing RUNX1, PRMT1 and GATA1 and inhibited by the complex of RUNX1, SIN3A and PRMT6
+TIGAR converts D-fructose-2,6-bisphosphate to D-fructose 6-phosphate
+TJP1 (ZO-1) gene expression is stimulated by RUNX1
+TMEM55B translocates to the nucleus
+TNFRSF18 (GITR) gene expression is stimulated by FOXP3 and inhibited by RUNX1
+TNRC6A binds AGO2:miRNA
+TNRC6A:AGO2:miRNA is transported into the nucleus
+TORC2 complex phosphorylates SGK1
+TP53 and AP-1 bind the MSH2 promoter
+TP53 and AP-1 stimulate MSH2 expression
+TP53 and CREBBP bind BNIP3L gene
+TP53 and E2F4 bind the CDC25C gene
+TP53 and E2F4 inhibit CDC25C expression
+TP53 binds HIPK1
+TP53 binds POU4F1
+TP53 binds POU4F2
+TP53 binds PPP1R13L
+TP53 binds STK11 and NUAK1
+TP53 binds TNFRSF10A,TNFRSF10B,TNFRSF10C,TNFRSF10D genes
+TP53 binds ZNF385A
+TP53 binds ZNF385A gene
+TP53 binds regulatory elements of SESN1,2,3 genes
+TP53 binds the AIFM2 gene promoter
+TP53 binds the APAF1 gene promoter
+TP53 binds the ARID3A gene
+TP53 binds the BBC3 (PUMA) promoter
+TP53 binds the BCL2L14 gene
+TP53 binds the BCL6 gene
+TP53 binds the BID gene promoter
+TP53 binds the BIRC5 gene
+TP53 binds the BTG2 gene
+TP53 binds the CASP10 gene
+TP53 binds the CASP6 gene
+TP53 binds the CCNG1 gene
+TP53 binds the CCNK gene
+TP53 binds the DDB2 gene
+TP53 binds the E2F7 gene
+TP53 binds the FANCC gene
+TP53 binds the GLS2 promoter
+TP53 binds the IGFBP3 gene
+TP53 binds the MDM2 gene
+TP53 binds the MLH1 gene
+TP53 binds the NDRG1 gene promoter
+TP53 binds the NLRC4 gene
+TP53 binds the PCBP4 gene
+TP53 binds the PIDD1 gene
+TP53 binds the PLAGL1 gene
+TP53 binds the PLK2 gene
+TP53 binds the PLK3 gene
+TP53 binds the PMAIP1 (NOXA) promoter
+TP53 binds the PMS2 gene
+TP53 binds the PRDM1 gene
+TP53 binds the PTEN promoter
+TP53 binds the RABGGTA gene
+TP53 binds the RGCC gene
+TP53 binds the RRM2B gene
+TP53 binds the SCO2 gene
+TP53 binds the SFN gene
+TP53 binds the STEAP3 gene
+TP53 binds the TIGAR gene
+TP53 binds the TP53AIP1 gene
+TP53 binds the TP53INP1 gene
+TP53 binds the TRIAP1 gene
+TP53 binds the complex of JMY, EP300 and TTC5
+TP53 family members bind PPP1R13B or TP53BP2
+TP53 family members bind the BAX promoter
+TP53 family members bind the CASP1 gene
+TP53 family members bind the FAS gene
+TP53 family members bind the TP53I3 (PIG3) gene promoter
+TP53 family members stimulate BAX transcription
+TP53 family members stimulate CASP1 expression
+TP53 family members stimulate FAS gene expression
+TP53 forms homotetramers
+TP53 in complex with EP300, PRMT1 and CARM1 binds the GADD45A promoter
+TP53 in complex with EP300, PRMT1 and CARM1 stimulates GADD45A transcription
+TP53 in complex with ZNF385A binds the CDKN1A promoter
+TP53 inhibits BIRC5 expression
+TP53 or TP63 binds the PERP gene
+TP53 or TP63 stimulates PERP gene expression
+TP53 stimulates AIFM2 gene expression
+TP53 stimulates APAF1 gene expression
+TP53 stimulates ARID3A gene expression
+TP53 stimulates BBC3 (PUMA) expression
+TP53 stimulates BCL2L14 gene expression
+TP53 stimulates BCL6 expression
+TP53 stimulates BID gene expression
+TP53 stimulates BNIP3L expression
+TP53 stimulates BTG2 expression
+TP53 stimulates CASP10 expression
+TP53 stimulates CASP6 expression
+TP53 stimulates CCNG1 gene expression
+TP53 stimulates CCNK expression
+TP53 stimulates CDKN1A (p21) transcription
+TP53 stimulates DDB2 expression
+TP53 stimulates E2F7 expression
+TP53 stimulates FANCC expression
+TP53 stimulates GLS2 transcription
+TP53 stimulates IGFBP3 expression
+TP53 stimulates MDM2 transcription
+TP53 stimulates MLH1 expression
+TP53 stimulates NDRG1 gene expression
+TP53 stimulates NLRC4 expression
+TP53 stimulates PCBP4 expression
+TP53 stimulates PIDD1 expression
+TP53 stimulates PLAGL1 expression
+TP53 stimulates PLK2 expression
+TP53 stimulates PLK3 expression
+TP53 stimulates PMAIP1 (NOXA) expression
+TP53 stimulates PMS2 expression
+TP53 stimulates PRDM1 expression
+TP53 stimulates RABGGTA expression
+TP53 stimulates RGCC expression
+TP53 stimulates SCO2 gene transcription
+TP53 stimulates SFN expression
+TP53 stimulates STEAP3 expression
+TP53 stimulates TIGAR expression
+TP53 stimulates TRIAP1 expression
+TP53 stimulates ZNF385A transcription
+TP53 stimulates and ZNF420 inhibits TP53AIP1 expression
+TP53 stimulates expression of SESN1,2,3 genes
+TP53 stimulates expression of TP53INP1
+TP53 stimulates expression of the TP53I3 (PIG3) gene
+TP53 stimulates transcription of RRM2B gene
+TP53 stimulates transcription of TNFRSF10A, TNFRSF10B,TNFRSF10C and TNFRSF10D genes
+TP53I3 dimerizes
+TP53I3 oxidoreductase generates unstable semiquinones
+TP53INP1 and HIPK2 bind TP53
+TP53RK phosphorylates TP53
+TP63/TP53 bind the DDIT4 gene promoter
+TP63/TP53 stimulates transcription of DDIT4 gene
+TP73 tetramer translocates to the nucleus
+TRIAP1 binds PRELID1, PRELID3A
+TRIAP1:PRELID1, PRELID3A transports PA from the outer to the inner mitochondrial membrane
+TRIM33 (Ectodermin) binds SMAD heterotrimer in the nucleus
+TRIM33 monoubiquitinates SMAD4
+TRIM63 gene expression is stimulated by FOXO1 and FOXO3
+TRPC3 gene transcription is stimulated by MECP2
+TTF-I binds to the Sal Box
+TTF1:rRNA promoter:ERCC6:EHMT2 complex dimethylates histone H3 at lysine-9.
+TWIST1 binds the RUNX2 gene promoter
+TXN disrupts FOXO4 complex with EP300
+The APOE gene transcription is stimulated by the complex of TFAP2A homodimer and DEK
+The MYBL2 gene expression is repressed by the complex of NPM1 and TFAP2A homodimer
+The NOP2 gene expression is repressed by the complex of NPM1 and TFAP2A homodimer
+The PIDDosome activates CASP2
+The PIDDosome binds CASP2
+The PRC1L4 complex binds the CDC7 gene promoter
+The PRC1L4 complex binds the UXT gene promoter
+The SMAD2/3:SMAD4 complex transfers to the nucleus
+The complex of RUNX1 and YAP1 binds the ITCH gene promoter
+The complex of RUNX2 and WWTR1 (TAZ) binds the BGLAP gene promoter
+The complex of RUNX3, SMAD3 and SMAD4 binds the CDKN1A gene promoter
+Transcription of intergenic spacer of the rRNA gene
+Translation of p16INK4A mRNA is inhibited by miR-24
+UBF-1 Binds rDNA Promoter
+UCMA gene expression is stimulated by RUNX2 and SP7
+UHRF1 binds chromatin with hemimethylated cytosine
+UHRF1:Chromatin binds DNMT1
+USP2 binds the heterodimer of MDM2 and MDM4
+USP2 deubiquitinates MDM2,MDM4
+USP7 deubiquitinates MDM2
+USP7 deubiquitinates TP53 and counteracts MDM2
+USP9X (FAM) binds to ubiquitinated SMAD4
+USP9X (FAM) deubiquitinates SMAD4
+UXT gene expression is repressed by the PRC1L4 complex
+Ubiquitin-dependent degradation of the SMAD complex terminates TGF-beta signaling
+Ubiquitinated SMAD4 translocates from the nucleus to the cytosol
+Ubiquitinated TP53 translocates to the cytosol
+Ubiquitination of SKI/SKIL by RNF111/SMURF2
+Unknown nuclease cleaves cleaved transposon RNA bound in MeR-PIWIL4:cleaved transposon RNA:TDRD9:MAEL:TDRKH
+Unknown nuclease cleaves cleaved transposon RNA in 6xMeR-PIWIL2:cleaved transposon RNA:TDRD1:TDRD12:DDX4:ASZ:MOV10L1
+Unknown nuclease cleaves pre-piRNA in 4xMeR-PIWIL1:pre-piRNA:TDRD6:TDRKH
+Unknown nuclease cleaves pre-piRNA in ASZ1:DDX4:MOV10L1:6xMeR-PIWIL2:pre-piRNA:TDRD1:TDRD12
+Unwinding DNA for the nascent transcript
+Unwinding of DNA for the Nascent Transcript: Second Transition
+VEGFA gene expression is inhibited by the TFAP2A homodimer
+VENTX binds the CDKN2A gene
+VENTX binds the CSF1R (M-CSF-R) gene promoter
+VENTX binds the IL6 gene promoter
+VENTX binds the TP53 gene promoter
+VENTX disrupts binding of CTNNB1 (beta-catenin) to TCF4 or LEF1
+VENTX stimulates CSF1R (M-CSF-R) expression
+VENTX stimulates TP53 gene expression
+VENTX stimulates p16-INK4A transcription
+WWOX binds TFAP2C
+WWP1 polyubiquitinates RUNX2
+WWTR1 (TAZ) binds RUNX2
+WWTR1 (TAZ) binds TEAD
+WWTR1 (TAZ), TBX5, and PCAF form a complex
+WWTR1 binds SMAD2/3:SMAD4 heterotrimer
+WWTR1:SMAD stimulates transcription of SERPINE1 while TGIF:SMAD and SMAD7 inhibit it
+WWTR1:SMAD stimulates transcription of SMAD7
+WWTR1:SMAD translocates to the nucleus
+WWTR1:p-2S-SMAD2,3:SMAD4 binds SERPINE1 gene promoter
+WWTR1:p-2S-SMAD2,3:SMAD4 binds SMAD7 gene promoter
+YAP1 binds TEAD1
+YAP1 binds TEAD2
+YAP1 binds TEAD3
+YAP1 binds TEAD4
+YAP1 binds TP73
+YBX1 binds COL1A2 gene promoter
+ZNF420 binds TP53AIP1 gene
+alpha-D-glucose 6-phosphate + NADP+ => D-glucono-1,5-lactone 6-phosphate + NADPH + H+
+eNoSC deacetylates histone H3
+eNoSC dimethylates histone H3 at lysine-9
+glutamine + H2O => glutamate + NH4+ [GLS]
+glutathione (oxidized) + NADPH + H+ => 2 glutathione (reduced) + NADP+
+miR-106a binds RUNX1 mRNA
+miR-137 binds PTEN mRNA
+miR-17 binds RUNX1 mRNA
+miR-18a binds RUNX1 mRNA
+miR-20a binds RUNX1 mRNA
+miR-215 binds RUNX1 mRNA
+miR-24 binds p16INK4A and p14ARF mRNAs
+miR-26A microRNAs bind PTEN mRNA
+miR-27a binds RUNX1 mRNA
+miR-302b binds RUNX1 mRNA
+miR-378 binds RUNX1 mRNA
+miR-675 binds RUNX1 mRNA
+p-2S-SMAD2,3:SMAD4 binds JUNB gene promoter
+p-2S-SMAD2,3:SMAD4:RBL1:E2F4,5:DP1,2 binds MYC gene promoter
+p-2S-SMAD2,3:SMAD4:SP1 binds CDKN2B gene promoter
+p-2S-SMAD3:p-2S-SMAD3:SMAD4 forms a complex with SP1 and EP300 at the COL1A2 gene promoter
+p-AMPK phosphorylates TSC1:TSC2
+p-S133-CREB1 binds MIR132 gene promoter
+p-S291-PHF20 translocates to cytosol
+p-S939,T1462-TSC2 binding to 14-3-3 dimer is negatively regulated by DDIT4
+p-Y-YAP1 translocates to the nucleus
+p14-ARF transcription is stimulated by RUNX proteins
+p14ARF forms a ternary complex with MDM2 and TP53
+p14ARF sequesters MDM2
+thioredoxin, oxidized + NADPH + H+ => thioredoxin, reduced + NADP+

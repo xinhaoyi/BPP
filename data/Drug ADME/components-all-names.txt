@@ -1,0 +1,105 @@
+2,3-DHBA
+2,3-dihydroxybenzoate
+2,5-DHB-CoA
+2,5-DHBA
+2,5-dihydroxybenzoate
+2-OH-ATV
+2-OH-ATVL
+4-OH-ATV
+4-OH-ATVL
+6MP
+6MeMP
+6MeTIMP
+6TGDP
+6TGMP
+6TGTP
+6TIMP
+6TU
+6TXMP
+6TdGDP
+6TdGMP
+6TdGTP
+ACA
+ADP
+ALB
+AMP
+APAP
+APAP-Cys
+APAP-CysGly
+APAP-GlcA
+APAP-Mer
+APAP-SG
+APAP-SO3
+ASA
+ASA-
+ASA- (GI cell)
+ASA- (hepatocyte)
+ATP
+ATV
+ATVL
+AZA
+Ac-CoA
+Acetaminophen (TN TYLENOL)
+Ade-Rib
+AdoHcy
+AdoMet
+CoA-SH
+DSQ
+DSQ-OG
+GDP
+GS-nitroimidazole
+GSH
+GlcA
+Gly
+H+
+H2O
+IMP
+Ino
+L-Cys
+L-Gln
+L-Glu
+LACT
+N-hydroxy-4-aminobiphenyl O-glucuronide
+NAC
+NAD+
+NADH
+NADP+
+NADPH
+NAPQI
+NHABP
+Na+
+O2
+PAP
+PAPS
+PPi
+PRPP
+PYR
+PhOH
+Phenyl glucuronate
+Pi
+Protein (hepatocyte)
+RAC1
+SAAG
+SAPG
+ST
+ST (GI cell)
+ST (hepatocyte)
+SUA
+UDP
+UDP-GlcA
+abacavir
+abacavir 5'-carboxylic acid
+abacavir 5'-glucuronide
+abacavir monophosphate
+acetate
+acetyl-ALB
+bHBA
+carbovir
+carbovir diphosphate
+carbovir monophosphate
+carbovir triphosphate
+cyclopropylamine
+gentisuric acid
+hydroxyl
+isoniazid
+salicyl-ALB

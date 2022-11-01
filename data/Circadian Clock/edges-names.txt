@@ -1,0 +1,59 @@
+BMAL1 binds CLOCK,NPAS2 forming BMAL1:CLOCK,NPAS2 heterodimer
+BMAL1:CLOCK,NPAS2 heterodimer is phosphorylated and translocates to the nucleus
+BTRC:CUL1:SKP1 (SCF-beta-TrCP1) ubiquitinylates PER proteins
+Beta-TrCP1 binds phosphorylated PER proteins
+CRY proteins are ubiquitinylated
+CRY proteins stabilize unphosphorylated BMAL1:CLOCK,NPAS2
+CRY:PER heterodimer binds the BMAL1:CLOCK/NPAS2 heterodimer
+CRY:PER:Kinase complex translocates to the nucleus
+CSNK1E,CSNK1D phosphorylate CRY and PER proteins
+Expression of ARNTL (BMAL1)
+Expression of AVP
+Expression of CCRN4L (NOCTURNIN)
+Expression of CLOCK
+Expression of CPT1A
+Expression of CRYPTOCHROME-1
+Expression of CRYPTOCHROME-2
+Expression of DBP
+Expression of DEC1 (BHLHE40, BHLHB2)
+Expression of DEC2 (BHLHE41, BHLHB3)
+Expression of FACTOR VII (F7)
+Expression of KLF15
+Expression of NAMPT (NamPRT, PBEF, Visfatin)
+Expression of NPAS2
+Expression of NR1D1 (REV-ERBA)
+Expression of PERIOD-1
+Expression of PERIOD-2
+Expression of PPARA
+Expression of PPARGC1A (PGC-1alpha)
+Expression of RORA (ROR-alpha)
+Expression of SERPINE1 (PAI-1)
+Expression of SREBF1 (SREBP1)
+FBXL3 binds phosphorylated CRY proteins
+Formation of CRY:PER:Kinase complex
+NR1D1 (REV-ERBA) binds heme, the ARNTL gene, and recruits corepressors.
+NR1D1 (REV-ERBA) binds heme, the CLOCK gene, and recruits corepressors
+NR1D1 (REV-ERBA) binds heme, the ELOVL3 gene, and recruits corepressors
+NR1D1 (REV-ERBA) binds heme, the NPAS2 gene, and recruits corepressors
+NR1D1 (REV-ERBA) binds heme, the NR1D1 gene, and recruits corepressors
+NR1D1 (REV-ERBA) binds heme, the PPARGC1A gene, and recruits corepressors
+RORA, EP300 bind CPT1A gene
+RORA, EP300 bind NPAS2 gene
+RORA, EP300 bind SREBF1 gene
+RORA, EP300, PPARGC1A bind NR1D1 gene
+RORA, EP300, PPARGC1A, NRIP1 bind ARNTL (BMAL1) gene
+p-BMAL1:p-CLOCK,NPAS2 binds AVP gene
+p-BMAL1:p-CLOCK,NPAS2 binds BHLHE40 gene
+p-BMAL1:p-CLOCK,NPAS2 binds BHLHE41 (DEC2) gene
+p-BMAL1:p-CLOCK,NPAS2 binds CCRN4L (NOCTURNIN) gene
+p-BMAL1:p-CLOCK,NPAS2 binds CRY1 gene
+p-BMAL1:p-CLOCK,NPAS2 binds DBP gene
+p-BMAL1:p-CLOCK,NPAS2 binds F7 gene
+p-BMAL1:p-CLOCK,NPAS2 binds KLF15 gene
+p-BMAL1:p-CLOCK,NPAS2 binds NAMPT gene
+p-BMAL1:p-CLOCK,NPAS2 binds NR1D1 gene
+p-BMAL1:p-CLOCK,NPAS2 binds PER1 gene
+p-BMAL1:p-CLOCK,NPAS2 binds PER2 gene
+p-BMAL1:p-CLOCK,NPAS2 binds PPARA gene
+p-BMAL1:p-CLOCK,NPAS2 binds RORA gene
+p-BMAL1:p-CLOCK,NPAS2 binds SERPINE1 gene

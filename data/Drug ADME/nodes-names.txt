@@ -1,0 +1,105 @@
+2,3-DHBA
+2,5-DHB-CoA
+2,5-DHBA
+2-OH-ATV
+2-OH-ATVL
+4-OH-ATV
+4-OH-ATVL
+6MP
+6MeMP
+6MeTIMP
+6TGDP
+6TGMP
+6TGTP
+6TIMP
+6TU
+6TXMP
+6TdGDP
+6TdGMP
+6TdGTP
+ABCC4 TPMP substrates
+ABCC5 TPMP substrates
+ADP
+ALB
+AMP
+APAP
+APAP-Cys
+APAP-Cys,APAP-Mer
+APAP-CysGly
+APAP-GlcA
+APAP-GlcA, APAP-SO3
+APAP-Mer
+APAP-SG
+APAP-SO3
+ASA
+ASA-
+ASA- (GI cell)
+ASA- (hepatocyte)
+ASA-, ST
+ASA-, ST (hepatocyte)
+ATP
+ATV
+ATVL
+ATVs
+AZA
+Ac-CoA
+Ade-Rib
+AdoHcy
+AdoMet
+CoA-SH
+GDP
+GS-nitroimidazole
+GSH
+GlcA
+Gly
+H+
+H2O
+IMP
+Ino
+L-Cys
+L-Gln
+L-Glu
+MCT substrates
+NAC
+NAD+
+NADH
+NADP+
+NADPH
+NAPQI
+NAPQI:Protein (hepatocyte)
+Na+
+O-centre functional group substrate
+O-glucuronide
+O2
+PAP
+PAPS
+PPi
+PRPP
+Pi
+Protein (hepatocyte)
+RAC1:6TGTP
+RAC1:GDP
+SAAG
+ST
+ST (GI cell)
+ST (hepatocyte)
+ST metabolites
+UDP
+UDP-GlcA
+abacavir
+abacavir 5'-carboxylic acid
+abacavir 5'-glucuronide
+abacavir monophosphate
+acetate
+acetyl-ALB
+carbovir
+carbovir diphosphate
+carbovir monophosphate
+carbovir triphosphate
+cyclopropylamine
+gentisuric acid
+glycine conjugates
+hydroxyl
+isoniazid
+salicyl-ALB
+salicylate metabolites

@@ -1,0 +1,1321 @@
+2AMAS
+2OG
+3,4-Hyp 5-Gal-Hyl collagen propeptides
+3,4-Hyp 5-Hyl collagen alpha-3(V) propeptide
+3,4-Hyp 5-Hyl collagen alpha-4(IV) NC1 domain
+3,4-Hyp 5-Hyl collagen propeptides
+3,4-Hyp Glu-Gal-Hyl collagen alpha-4(IV) NC1 domain
+3,4-Hyp Glu-Gal-Hyl-collagen propeptides
+3,4-Hyp collagen propeptides
+3,4-hydroxyprolyl collagen alpha-4(IV) NC1 domain
+3Hyp-4Hyp-COL9A3
+3x4Hyp-3Hyp-5Hyl-COL10A1
+3x4Hyp-3Hyp-5Hyl-COL11A1(36-1806)
+3x4Hyp-3Hyp-5Hyl-COL11A2
+3x4Hyp-3Hyp-5Hyl-COL12A1
+3x4Hyp-3Hyp-5Hyl-COL13A1
+3x4Hyp-3Hyp-5Hyl-COL13A1(?-717)
+3x4Hyp-3Hyp-5Hyl-COL14A1
+3x4Hyp-3Hyp-5Hyl-COL15A1(1212-1388)
+3x4Hyp-3Hyp-5Hyl-COL15A1(28-1388)
+3x4Hyp-3Hyp-5Hyl-COL16A1
+3x4Hyp-3Hyp-5Hyl-COL17A1(1-1497)
+3x4Hyp-3Hyp-5Hyl-COL17A1(?-1497)
+3x4Hyp-3Hyp-5Hyl-COL18A1(24-1754)
+3x4Hyp-3Hyp-5Hyl-COL18A1(?-1754)
+3x4Hyp-3Hyp-5Hyl-COL19A1
+3x4Hyp-3Hyp-5Hyl-COL1A1(23-1464)
+3x4Hyp-3Hyp-5Hyl-COL1A2(25-1366)
+3x4Hyp-3Hyp-5Hyl-COL20A1
+3x4Hyp-3Hyp-5Hyl-COL21A1
+3x4Hyp-3Hyp-5Hyl-COL22A1
+3x4Hyp-3Hyp-5Hyl-COL23A1
+3x4Hyp-3Hyp-5Hyl-COL23A1(?-540)
+3x4Hyp-3Hyp-5Hyl-COL24A1
+3x4Hyp-3Hyp-5Hyl-COL25A1(1-654)
+3x4Hyp-3Hyp-5Hyl-COL25A1(?-654)
+3x4Hyp-3Hyp-5Hyl-COL26A1
+3x4Hyp-3Hyp-5Hyl-COL27A1(42-1860)
+3x4Hyp-3Hyp-5Hyl-COL2A1(26-1487)
+3x4Hyp-3Hyp-5Hyl-COL3A1(24-1466)
+3x4Hyp-3Hyp-5Hyl-COL4A1(1445-1669)
+3x4Hyp-3Hyp-5Hyl-COL4A1(24-1669)
+3x4Hyp-3Hyp-5Hyl-COL4A2(1486-1712)
+3x4Hyp-3Hyp-5Hyl-COL4A2(26-1712)
+3x4Hyp-3Hyp-5Hyl-COL4A3(1426-1670)
+3x4Hyp-3Hyp-5Hyl-COL4A3(29-1670)
+3x4Hyp-3Hyp-5Hyl-COL4A4
+3x4Hyp-3Hyp-5Hyl-COL4A5
+3x4Hyp-3Hyp-5Hyl-COL4A6
+3x4Hyp-3Hyp-5Hyl-COL5A1(38-1838)
+3x4Hyp-3Hyp-5Hyl-COL5A2(27-1499)
+3x4Hyp-3Hyp-5Hyl-COL6A1
+3x4Hyp-3Hyp-5Hyl-COL6A2
+3x4Hyp-3Hyp-5Hyl-COL7A1
+3x4Hyp-3Hyp-5Hyl-COL7A1(2822-2944)
+3x4Hyp-3Hyp-5Hyl-COL8A1(28-744)
+3x4Hyp-3Hyp-5Hyl-COL8A2
+3x4Hyp-3Hyp-5Hyl-COL9A1
+3x4Hyp-3Hyp-5Hyl-COL9A2
+3x4Hyp-3Hyp-5Hyl-COL9A3
+3x4Hyp-3Hyp-COL10A1
+3x4Hyp-3Hyp-COL11A1(36-1806)
+3x4Hyp-3Hyp-COL11A2
+3x4Hyp-3Hyp-COL12A1
+3x4Hyp-3Hyp-COL13A1
+3x4Hyp-3Hyp-COL13A1(?-717)
+3x4Hyp-3Hyp-COL14A1
+3x4Hyp-3Hyp-COL15A1(1212-1388)
+3x4Hyp-3Hyp-COL15A1(28-1388)
+3x4Hyp-3Hyp-COL16A1
+3x4Hyp-3Hyp-COL17A1(1-1497)
+3x4Hyp-3Hyp-COL17A1(?-1497)
+3x4Hyp-3Hyp-COL18A1(?-1754)
+3x4Hyp-3Hyp-COL19A1
+3x4Hyp-3Hyp-COL1A1(23-1464)
+3x4Hyp-3Hyp-COL1A2(25-1366)
+3x4Hyp-3Hyp-COL20A1
+3x4Hyp-3Hyp-COL21A1
+3x4Hyp-3Hyp-COL22A1
+3x4Hyp-3Hyp-COL23A1
+3x4Hyp-3Hyp-COL23A1(?-540)
+3x4Hyp-3Hyp-COL24A1
+3x4Hyp-3Hyp-COL25A1(1-654)
+3x4Hyp-3Hyp-COL25A1(?-654)
+3x4Hyp-3Hyp-COL26A1
+3x4Hyp-3Hyp-COL27A1(42-1860)
+3x4Hyp-3Hyp-COL2A1(26-1487)
+3x4Hyp-3Hyp-COL3A1(24-1466)
+3x4Hyp-3Hyp-COL4A1(1445-1669)
+3x4Hyp-3Hyp-COL4A1(24-1669)
+3x4Hyp-3Hyp-COL4A2(1486-1712)
+3x4Hyp-3Hyp-COL4A2(26-1712)
+3x4Hyp-3Hyp-COL4A3(1426-1670)
+3x4Hyp-3Hyp-COL4A3(29-1670)
+3x4Hyp-3Hyp-COL4A4
+3x4Hyp-3Hyp-COL4A5
+3x4Hyp-3Hyp-COL4A6
+3x4Hyp-3Hyp-COL5A1(38-1838)
+3x4Hyp-3Hyp-COL5A2(27-1499)
+3x4Hyp-3Hyp-COL5A3
+3x4Hyp-3Hyp-COL6A1
+3x4Hyp-3Hyp-COL6A2
+3x4Hyp-3Hyp-COL7A1
+3x4Hyp-3Hyp-COL7A1(2822-2944)
+3x4Hyp-3Hyp-COL8A1(28-744)
+3x4Hyp-3Hyp-COL8A2
+3x4Hyp-3Hyp-COL9A1
+3x4Hyp-3Hyp-COL9A2
+3x4Hyp-3Hyp-GalHyl-COL10A1
+3x4Hyp-3Hyp-GalHyl-COL11A1(36-1806)
+3x4Hyp-3Hyp-GalHyl-COL11A2
+3x4Hyp-3Hyp-GalHyl-COL12A1
+3x4Hyp-3Hyp-GalHyl-COL13A1
+3x4Hyp-3Hyp-GalHyl-COL13A1(?-717)
+3x4Hyp-3Hyp-GalHyl-COL14A1
+3x4Hyp-3Hyp-GalHyl-COL15A1(1212-1388)
+3x4Hyp-3Hyp-GalHyl-COL15A1(28-1388)
+3x4Hyp-3Hyp-GalHyl-COL16A1
+3x4Hyp-3Hyp-GalHyl-COL17A1(1-1497)
+3x4Hyp-3Hyp-GalHyl-COL17A1(?-1497)
+3x4Hyp-3Hyp-GalHyl-COL18A1(24-1754)
+3x4Hyp-3Hyp-GalHyl-COL18A1(?-1754)
+3x4Hyp-3Hyp-GalHyl-COL19A1
+3x4Hyp-3Hyp-GalHyl-COL1A1(23-1464)
+3x4Hyp-3Hyp-GalHyl-COL1A2(25-1366)
+3x4Hyp-3Hyp-GalHyl-COL20A1
+3x4Hyp-3Hyp-GalHyl-COL21A1
+3x4Hyp-3Hyp-GalHyl-COL23A1
+3x4Hyp-3Hyp-GalHyl-COL23A1(?-540)
+3x4Hyp-3Hyp-GalHyl-COL24A1
+3x4Hyp-3Hyp-GalHyl-COL25A1(1-654)
+3x4Hyp-3Hyp-GalHyl-COL25A1(?-654)
+3x4Hyp-3Hyp-GalHyl-COL26A1
+3x4Hyp-3Hyp-GalHyl-COL27A1(42-1860)
+3x4Hyp-3Hyp-GalHyl-COL2A1(26-1487)
+3x4Hyp-3Hyp-GalHyl-COL3A1(24-1466)
+3x4Hyp-3Hyp-GalHyl-COL4A1(1445-1669)
+3x4Hyp-3Hyp-GalHyl-COL4A1(24-1669)
+3x4Hyp-3Hyp-GalHyl-COL4A2(1486-1712)
+3x4Hyp-3Hyp-GalHyl-COL4A2(26-1712)
+3x4Hyp-3Hyp-GalHyl-COL4A3(1426-1670)
+3x4Hyp-3Hyp-GalHyl-COL4A3(29-1670)
+3x4Hyp-3Hyp-GalHyl-COL4A4
+3x4Hyp-3Hyp-GalHyl-COL4A4 NC1 domain
+3x4Hyp-3Hyp-GalHyl-COL4A5
+3x4Hyp-3Hyp-GalHyl-COL4A6
+3x4Hyp-3Hyp-GalHyl-COL5A1(38-1838)
+3x4Hyp-3Hyp-GalHyl-COL5A2(27-1499)
+3x4Hyp-3Hyp-GalHyl-COL5A3
+3x4Hyp-3Hyp-GalHyl-COL6A1
+3x4Hyp-3Hyp-GalHyl-COL6A2(257-1019)
+3x4Hyp-3Hyp-GalHyl-COL7A1
+3x4Hyp-3Hyp-GalHyl-COL7A1(2822-2944)
+3x4Hyp-3Hyp-GalHyl-COL8A1(28-744)
+3x4Hyp-3Hyp-GalHyl-COL8A2
+3x4Hyp-3Hyp-GalHyl-COL9A1
+3x4Hyp-3Hyp-GalHyl-COL9A2
+3x4Hyp-3Hyp-GalHyl-COL9A3
+3x4Hyp-3Hyp-GlcGalHyl-COL10A1
+3x4Hyp-3Hyp-GlcGalHyl-COL11A1(36-1806)
+3x4Hyp-3Hyp-GlcGalHyl-COL11A2
+3x4Hyp-3Hyp-GlcGalHyl-COL12A1
+3x4Hyp-3Hyp-GlcGalHyl-COL13A1
+3x4Hyp-3Hyp-GlcGalHyl-COL13A1(?-717)
+3x4Hyp-3Hyp-GlcGalHyl-COL14A1
+3x4Hyp-3Hyp-GlcGalHyl-COL15A1(1212-1388)
+3x4Hyp-3Hyp-GlcGalHyl-COL15A1(28-1388)
+3x4Hyp-3Hyp-GlcGalHyl-COL16A1
+3x4Hyp-3Hyp-GlcGalHyl-COL17A1(1-1497)
+3x4Hyp-3Hyp-GlcGalHyl-COL17A1(?-1497)
+3x4Hyp-3Hyp-GlcGalHyl-COL18A1(24-1754)
+3x4Hyp-3Hyp-GlcGalHyl-COL18A1(?-1754)
+3x4Hyp-3Hyp-GlcGalHyl-COL19A1
+3x4Hyp-3Hyp-GlcGalHyl-COL1A1(23-1464)
+3x4Hyp-3Hyp-GlcGalHyl-COL1A2(25-1366)
+3x4Hyp-3Hyp-GlcGalHyl-COL20A1
+3x4Hyp-3Hyp-GlcGalHyl-COL21A1
+3x4Hyp-3Hyp-GlcGalHyl-COL22A1
+3x4Hyp-3Hyp-GlcGalHyl-COL23A1
+3x4Hyp-3Hyp-GlcGalHyl-COL23A1(?-540)
+3x4Hyp-3Hyp-GlcGalHyl-COL24A1
+3x4Hyp-3Hyp-GlcGalHyl-COL25A1(1-654)
+3x4Hyp-3Hyp-GlcGalHyl-COL25A1(?-654)
+3x4Hyp-3Hyp-GlcGalHyl-COL26A1
+3x4Hyp-3Hyp-GlcGalHyl-COL27A1(42-1860)
+3x4Hyp-3Hyp-GlcGalHyl-COL2A1(26-1487)
+3x4Hyp-3Hyp-GlcGalHyl-COL3A1(24-1466)
+3x4Hyp-3Hyp-GlcGalHyl-COL4A1(1445-1669)
+3x4Hyp-3Hyp-GlcGalHyl-COL4A1(24-1669)
+3x4Hyp-3Hyp-GlcGalHyl-COL4A2(1486-1712)
+3x4Hyp-3Hyp-GlcGalHyl-COL4A2(26-1712)
+3x4Hyp-3Hyp-GlcGalHyl-COL4A3(1426-1670)
+3x4Hyp-3Hyp-GlcGalHyl-COL4A3(29-1670)
+3x4Hyp-3Hyp-GlcGalHyl-COL4A4
+3x4Hyp-3Hyp-GlcGalHyl-COL4A5
+3x4Hyp-3Hyp-GlcGalHyl-COL4A6
+3x4Hyp-3Hyp-GlcGalHyl-COL5A1(38-1838)
+3x4Hyp-3Hyp-GlcGalHyl-COL5A2(27-1499)
+3x4Hyp-3Hyp-GlcGalHyl-COL5A3
+3x4Hyp-3Hyp-GlcGalHyl-COL6A1
+3x4Hyp-3Hyp-GlcGalHyl-COL6A2
+3x4Hyp-3Hyp-GlcGalHyl-COL7A1
+3x4Hyp-3Hyp-GlcGalHyl-COL7A1(2822-2944)
+3x4Hyp-3Hyp-GlcGalHyl-COL8A1(28-744)
+3x4Hyp-3Hyp-GlcGalHyl-COL8A2
+3x4Hyp-3Hyp-GlcGalHyl-COL9A1
+3x4Hyp-3Hyp-GlcGalHyl-COL9A2
+3x4Hyp-3Hyp-GlcGalHyl-COL9A3
+3x4Hyp-5Hyl-COL10A1
+3x4Hyp-5Hyl-COL11A1(36-1806)
+3x4Hyp-5Hyl-COL11A2
+3x4Hyp-5Hyl-COL12A1
+3x4Hyp-5Hyl-COL13A1
+3x4Hyp-5Hyl-COL13A1(?-717)
+3x4Hyp-5Hyl-COL14A1
+3x4Hyp-5Hyl-COL15A1(1212-1388)
+3x4Hyp-5Hyl-COL15A1(28-1388)
+3x4Hyp-5Hyl-COL16A1
+3x4Hyp-5Hyl-COL17A1(1-1497)
+3x4Hyp-5Hyl-COL17A1(?-1497)
+3x4Hyp-5Hyl-COL18A1(24-1754)
+3x4Hyp-5Hyl-COL18A1(?-1754)
+3x4Hyp-5Hyl-COL19A1
+3x4Hyp-5Hyl-COL1A1(23-1464)
+3x4Hyp-5Hyl-COL1A2(25-1366)
+3x4Hyp-5Hyl-COL20A1
+3x4Hyp-5Hyl-COL21A1
+3x4Hyp-5Hyl-COL22A1
+3x4Hyp-5Hyl-COL23A1
+3x4Hyp-5Hyl-COL23A1(?-540)
+3x4Hyp-5Hyl-COL24A1
+3x4Hyp-5Hyl-COL25A1(1-654)
+3x4Hyp-5Hyl-COL25A1(?-654)
+3x4Hyp-5Hyl-COL26A1
+3x4Hyp-5Hyl-COL27A1(42-1860)
+3x4Hyp-5Hyl-COL2A1(26-1487)
+3x4Hyp-5Hyl-COL3A1(24-1466)
+3x4Hyp-5Hyl-COL4A1(1445-1669)
+3x4Hyp-5Hyl-COL4A1(24-1669)
+3x4Hyp-5Hyl-COL4A2(1486-1712)
+3x4Hyp-5Hyl-COL4A2(26-1712)
+3x4Hyp-5Hyl-COL4A3(1426-1670)
+3x4Hyp-5Hyl-COL4A3(29-1670)
+3x4Hyp-5Hyl-COL4A4
+3x4Hyp-5Hyl-COL4A5
+3x4Hyp-5Hyl-COL4A6
+3x4Hyp-5Hyl-COL5A1(38-1838)
+3x4Hyp-5Hyl-COL5A2(27-1499)
+3x4Hyp-5Hyl-COL5A3
+3x4Hyp-5Hyl-COL6A1
+3x4Hyp-5Hyl-COL6A2
+3x4Hyp-5Hyl-COL7A1
+3x4Hyp-5Hyl-COL7A1(2822-2944)
+3x4Hyp-5Hyl-COL8A1(28-744)
+3x4Hyp-5Hyl-COL8A2
+3x4Hyp-5Hyl-COL9A1
+3x4Hyp-5Hyl-COL9A2
+3x4Hyp-5Hyl-COL9A3
+3x4Hyp-COL10A1
+3x4Hyp-COL11A1(36-1806)
+3x4Hyp-COL11A2
+3x4Hyp-COL12A1
+3x4Hyp-COL13A1
+3x4Hyp-COL13A1(?-717)
+3x4Hyp-COL14A1
+3x4Hyp-COL15A1(1212-1388)
+3x4Hyp-COL15A1(28-1388)
+3x4Hyp-COL16A1
+3x4Hyp-COL17A1(1-1497)
+3x4Hyp-COL17A1(?-1497)
+3x4Hyp-COL18A1(24-1754)
+3x4Hyp-COL18A1(?-1754)
+3x4Hyp-COL19A1
+3x4Hyp-COL1A1(23-1464)
+3x4Hyp-COL1A2(25-1366)
+3x4Hyp-COL20A1
+3x4Hyp-COL21A1
+3x4Hyp-COL22A1
+3x4Hyp-COL23A1
+3x4Hyp-COL23A1(?-540)
+3x4Hyp-COL24A1
+3x4Hyp-COL25A1(1-654)
+3x4Hyp-COL25A1(?-654)
+3x4Hyp-COL26A1
+3x4Hyp-COL27A1(42-1860)
+3x4Hyp-COL2A1(26-1487)
+3x4Hyp-COL3A1(24-1466)
+3x4Hyp-COL4A1(1445-1669)
+3x4Hyp-COL4A1(24-1669)
+3x4Hyp-COL4A2(1486-1712)
+3x4Hyp-COL4A2(26-1712)
+3x4Hyp-COL4A3(1426-1670)
+3x4Hyp-COL4A3(29-1670)
+3x4Hyp-COL4A4
+3x4Hyp-COL4A5
+3x4Hyp-COL4A6
+3x4Hyp-COL5A1(38-1838)
+3x4Hyp-COL5A2(27-1499)
+3x4Hyp-COL5A3
+3x4Hyp-COL6A1
+3x4Hyp-COL6A2
+3x4Hyp-COL7A1
+3x4Hyp-COL7A1(2822-2944)
+3x4Hyp-COL8A1(28-744)
+3x4Hyp-COL8A2
+3x4Hyp-COL9A1
+3x4Hyp-COL9A2
+3x4Hyp-COL9A3
+3x4Hyp-GalHyl-COL10A1
+3x4Hyp-GalHyl-COL11A1(36-1806)
+3x4Hyp-GalHyl-COL11A2
+3x4Hyp-GalHyl-COL12A1
+3x4Hyp-GalHyl-COL13A1
+3x4Hyp-GalHyl-COL13A1(?-717)
+3x4Hyp-GalHyl-COL14A1
+3x4Hyp-GalHyl-COL15A1(1212-1388)
+3x4Hyp-GalHyl-COL15A1(28-1388)
+3x4Hyp-GalHyl-COL16A1
+3x4Hyp-GalHyl-COL17A1(1-1497)
+3x4Hyp-GalHyl-COL17A1(?-1497)
+3x4Hyp-GalHyl-COL18A1(24-1754)
+3x4Hyp-GalHyl-COL18A1(?-1754)
+3x4Hyp-GalHyl-COL19A1
+3x4Hyp-GalHyl-COL1A1(23-1464)
+3x4Hyp-GalHyl-COL1A2(25-1366)
+3x4Hyp-GalHyl-COL20A1
+3x4Hyp-GalHyl-COL21A1
+3x4Hyp-GalHyl-COL22A1
+3x4Hyp-GalHyl-COL23A1
+3x4Hyp-GalHyl-COL23A1(?-540)
+3x4Hyp-GalHyl-COL24A1
+3x4Hyp-GalHyl-COL25A1(1-654)
+3x4Hyp-GalHyl-COL25A1(?-654)
+3x4Hyp-GalHyl-COL26A1
+3x4Hyp-GalHyl-COL27A1(42-1860)
+3x4Hyp-GalHyl-COL2A1(26-1487)
+3x4Hyp-GalHyl-COL3A1(24-1466)
+3x4Hyp-GalHyl-COL4A1(1445-1669)
+3x4Hyp-GalHyl-COL4A1(24-1669)
+3x4Hyp-GalHyl-COL4A2(1486-1712)
+3x4Hyp-GalHyl-COL4A2(26-1712)
+3x4Hyp-GalHyl-COL4A3(1426-1670)
+3x4Hyp-GalHyl-COL4A3(29-1670)
+3x4Hyp-GalHyl-COL4A4
+3x4Hyp-GalHyl-COL4A5
+3x4Hyp-GalHyl-COL4A6
+3x4Hyp-GalHyl-COL5A1(38-1838)
+3x4Hyp-GalHyl-COL5A2(27-1499)
+3x4Hyp-GalHyl-COL5A3
+3x4Hyp-GalHyl-COL6A1
+3x4Hyp-GalHyl-COL6A2
+3x4Hyp-GalHyl-COL7A1
+3x4Hyp-GalHyl-COL7A1(2822-2944)
+3x4Hyp-GalHyl-COL8A1(28-744)
+3x4Hyp-GalHyl-COL8A2
+3x4Hyp-GalHyl-COL9A1
+3x4Hyp-GalHyl-COL9A2
+3x4Hyp-GalHyl-COL9A3
+3x4Hyp-GlcGalHyl-COL10A1
+3x4Hyp-GlcGalHyl-COL11A1(36-1806)
+3x4Hyp-GlcGalHyl-COL11A2
+3x4Hyp-GlcGalHyl-COL12A1
+3x4Hyp-GlcGalHyl-COL13A1
+3x4Hyp-GlcGalHyl-COL13A1(?-717)
+3x4Hyp-GlcGalHyl-COL14A1
+3x4Hyp-GlcGalHyl-COL15A1(1212-1388)
+3x4Hyp-GlcGalHyl-COL15A1(28-1388)
+3x4Hyp-GlcGalHyl-COL16A1
+3x4Hyp-GlcGalHyl-COL17A1(1-1497)
+3x4Hyp-GlcGalHyl-COL17A1(?-1497)
+3x4Hyp-GlcGalHyl-COL18A1(24-1754)
+3x4Hyp-GlcGalHyl-COL18A1(?-1754)
+3x4Hyp-GlcGalHyl-COL19A1
+3x4Hyp-GlcGalHyl-COL1A1(23-1464)
+3x4Hyp-GlcGalHyl-COL1A2(25-1366)
+3x4Hyp-GlcGalHyl-COL20A1
+3x4Hyp-GlcGalHyl-COL21A1
+3x4Hyp-GlcGalHyl-COL22A1
+3x4Hyp-GlcGalHyl-COL23A1
+3x4Hyp-GlcGalHyl-COL23A1(?-540)
+3x4Hyp-GlcGalHyl-COL24A1
+3x4Hyp-GlcGalHyl-COL25A1(1-654)
+3x4Hyp-GlcGalHyl-COL25A1(?-654)
+3x4Hyp-GlcGalHyl-COL26A1
+3x4Hyp-GlcGalHyl-COL27A1(42-1860)
+3x4Hyp-GlcGalHyl-COL2A1(26-1487)
+3x4Hyp-GlcGalHyl-COL3A1(24-1466)
+3x4Hyp-GlcGalHyl-COL4A1((1445-1669))
+3x4Hyp-GlcGalHyl-COL4A1(24-1669)
+3x4Hyp-GlcGalHyl-COL4A2(1486-1712)
+3x4Hyp-GlcGalHyl-COL4A2(26-1712)
+3x4Hyp-GlcGalHyl-COL4A3(1426-1670)
+3x4Hyp-GlcGalHyl-COL4A3(29-1670)
+3x4Hyp-GlcGalHyl-COL4A4
+3x4Hyp-GlcGalHyl-COL4A5
+3x4Hyp-GlcGalHyl-COL4A6
+3x4Hyp-GlcGalHyl-COL5A1(38-1838)
+3x4Hyp-GlcGalHyl-COL5A2(27-1499)
+3x4Hyp-GlcGalHyl-COL5A3
+3x4Hyp-GlcGalHyl-COL6A1
+3x4Hyp-GlcGalHyl-COL6A2
+3x4Hyp-GlcGalHyl-COL7A1
+3x4Hyp-GlcGalHyl-COL7A1(2822-2944)
+3x4Hyp-GlcGalHyl-COL8A1(28-744)
+3x4Hyp-GlcGalHyl-COL8A2
+3x4Hyp-GlcGalHyl-COL9A1
+3x4Hyp-GlcGalHyl-COL9A2
+3x4Hyp-GlcGalHyl-COL9A3
+4-Hyp 5-Gal-Hyl collagen alpha-4(IV) NC1 domain
+4-Hyp 5-Gal-Hyl collagen propeptides
+4-Hyp 5-Hyl collagen alpha-4(IV) NC1 domain
+4-Hyp Glu-Gal-Hyl collagen propeptides
+4-Hyp collagen propeptides
+4-Hyp, 5-Hyl collagen propeptides
+4-hydroxyprolyl collagen alpha-4(IV) NC1 domain
+5-Gal-Hyl collagen alpha-4(IV) NC1 domain
+5-Gal-Hyl collagen propeptides
+5-Hyl collagen propeptides
+5-hydroxylysyl collagen alpha-4(IV) NC1 domain
+5Hyl-COL10A1
+5Hyl-COL11A1(36-1806)
+5Hyl-COL11A2
+5Hyl-COL12A1
+5Hyl-COL13A1
+5Hyl-COL13A1(?-717)
+5Hyl-COL14A1
+5Hyl-COL15A1(1212-1388)
+5Hyl-COL15A1(28-1388)
+5Hyl-COL16A1
+5Hyl-COL17A1(1-1497)
+5Hyl-COL17A1(?-1497)
+5Hyl-COL18A1(24-1754)
+5Hyl-COL18A1(?-1754)
+5Hyl-COL19A1
+5Hyl-COL1A1(23-1464)
+5Hyl-COL1A2(25-1366)
+5Hyl-COL20A1
+5Hyl-COL21A1
+5Hyl-COL22A1
+5Hyl-COL23A1
+5Hyl-COL23A1(?-540)
+5Hyl-COL24A1
+5Hyl-COL25A1(1-654)
+5Hyl-COL25A1(?-654)
+5Hyl-COL26A1
+5Hyl-COL27A1(42-1860)
+5Hyl-COL2A1(26-1487)
+5Hyl-COL3A1(24-1466)
+5Hyl-COL4A1(1445-1669)
+5Hyl-COL4A1(24-1669)
+5Hyl-COL4A2(1486-1712)
+5Hyl-COL4A2(26-1712)
+5Hyl-COL4A3(1426-1670)
+5Hyl-COL4A3(29-1670)
+5Hyl-COL4A4
+5Hyl-COL4A5
+5Hyl-COL4A6
+5Hyl-COL5A1(38-1838)
+5Hyl-COL5A2(27-1499)
+5Hyl-COL5A3
+5Hyl-COL6A1
+5Hyl-COL6A2
+5Hyl-COL7A1
+5Hyl-COL7A1(2822-2944)
+5Hyl-COL8A1(28-744)
+5Hyl-COL8A2
+5Hyl-COL9A1
+5Hyl-COL9A2
+5PHL
+A2M
+A2M tetramer
+ACTN1
+ADAM12
+ADAM12,ADAM15,ADAM19
+ADAM15
+ADAM19
+AGRN(30-2045)
+AGRN, HSPG2
+APP(672-713), APP(672-711)
+Aggrecan
+Alpha-1(I) propeptides
+Alpha-1(II) propeptides
+Alpha-1(III) propeptides
+Alpha-1(IX) chains
+Alpha-1(VI) chains
+Alpha-1(VII) chains
+Alpha-1(VIII) chains
+Alpha-1(X) chains
+Alpha-1(XI) propeptides
+Alpha-1(XII) chains
+Alpha-1(XIII) chains
+Alpha-1(XIV) chains
+Alpha-1(XIX) chains
+Alpha-1(XV) chains
+Alpha-1(XVI) chains
+Alpha-1(XVII) chains
+Alpha-1(XX) chains
+Alpha-1(XXI) chains
+Alpha-1(XXII) chains
+Alpha-1(XXIII) chains
+Alpha-1(XXIV) propeptides
+Alpha-1(XXV) chains
+Alpha-1(XXVI) chains
+Alpha-1(XXVII) propeptides
+Alpha-2(I) propeptides
+Alpha-2(IX) chains
+Alpha-2(VI) chains
+Alpha-2(VIII) chains
+Alpha-2(XI) propeptides
+Alpha-3(IX) chains
+Alpha-3(VI) propeptides
+Alpha-3-6(VI) propeptides
+Arresten
+BGN
+BMP10(22-424)
+BMP2(24-396)
+BMP2,4,7,10,GF5
+BMP4(20-408)
+BMP7(30-292)
+BPAG1e:Plectin
+BSG
+Beta amyloid fibril
+Brevican
+C-linked procollagen alpha-1(IV)X2 alpha-2(IV) trimer
+C-linked procollagen alpha-1(V)X2 alpha-2(V) trimer
+C-linked procollagen alpha-1-3(V) propeptide trimer
+C-linked procollagen alpha-3(IV), alpha-4(IV) alpha-5(IV) trimer
+C-linked procollagen alpha-3(V) trimer
+C-linked procollagen alpha-5(IV)X2 alpha-6(IV) trimer
+C-linked procollagen type I trimer
+C-linked procollagen type II trimer
+C-linked procollagen type III trimer
+C-linked procollagen type IV trimers
+C-linked procollagen type IX trimer
+C-linked procollagen type V trimers
+C-linked procollagen type VI trimer
+C-linked procollagen type VII trimer
+C-linked procollagen type VIII trimer
+C-linked procollagen type X trimer
+C-linked procollagen type XI trimer
+C-linked procollagen type XII trimer
+C-linked procollagen type XIII trimer
+C-linked procollagen type XIV trimer
+C-linked procollagen type XIX trimer
+C-linked procollagen type XV trimer
+C-linked procollagen type XVI trimer
+C-linked procollagen type XVII trimer
+C-linked procollagen type XVIII trimer
+C-linked procollagen type XX trimer
+C-linked procollagen type XXI trimer
+C-linked procollagen type XXII trimer
+C-linked procollagen type XXIII trimer
+C-linked procollagen type XXIV trimer
+C-linked procollagen type XXV trimer
+C-linked procollagen type XXVI trimer
+C-linked procollagen type XXVII trimer
+C-linked procollagen type XXVIII trimer
+C4S-BCAN
+C4S-BCAN(23-360)
+C4S-BCAN(23-395)
+C4S-BCAN(361-911)
+C4S-BCAN(396-911)
+C4S-BGN
+C6S-BCAN
+C6S-BCAN(23-360)
+C6S-BCAN(23-395)
+C6S-BCAN(361-911)
+C6S-BCAN(396-911)
+C6S-BGN
+CASK
+CAST
+CD151
+CD44
+CD47
+CDH1(155-700)
+CDH1(155-750)
+CDH1(155-882)
+CDH1(701-882)
+CDH1(732-882)
+CDH1(751-882)
+CHS
+CO2
+COL10A1
+COL11A1(36-1806)
+COL11A2
+COL12A1
+COL13A1
+COL13A1(?-717)
+COL14A1
+COL15A1(1212-1388)
+COL15A1(28-1388)
+COL15A1(?-1211)
+COL16A1
+COL17A1(1-1497)
+COL17A1(?-1497)
+COL18A1(1572-11754)
+COL18A1(24-1754)
+COL18A1(?-1571)
+COL18A1(?-1754)
+COL19A1
+COL1A1(23-1464)
+COL1A2(25-1366)
+COL20A1
+COL21A1
+COL22A1
+COL23A1
+COL23A1(?-540)
+COL24A1
+COL25A1(?-654)
+COL26A1
+COL27A1(42-1860)
+COL2A1(26-1487)
+COL3A1(24-1466)
+COL4A1(1445-1669)
+COL4A1(24-1669)
+COL4A2(1486-1712)
+COL4A2(26-1712)
+COL4A3(1426-1670)
+COL4A3(29-1670)
+COL4A4
+COL4A5
+COL4A6
+COL5A1(38-1838)
+COL5A2(27-1499)
+COL5A3
+COL6A1
+COL6A2
+COL7A1
+COL7A1(2822-2944)
+COL8A1(28-744)
+COL8A2
+COL9A1
+COL9A2
+COL9A3
+COLGALT1
+COLGALT1,COLGALT2
+COLGALT2
+COMP
+COMP interactors
+COMP pentamer
+CSE-BCAN
+CSE-BCAN(23-360)
+CSE-BCAN(23-395)
+CSE-BCAN(361-911)
+CSE-BCAN(396-911)
+CSE-BGN
+Ca2+
+Canstatin
+Cleaved collagen alpha-1(IX) chains
+Cleaved collagen alpha-1(XII) chains
+Cleaved collagen alpha-1(XIV) chains
+Cleaved collagen alpha-1(XVI) chains
+Cleaved collagen alpha-1(XXV) chains
+Cleaved collagen alpha-2(IX) chains
+Cleaved collagen alpha-3(IX) chains
+Cleaved collagen type I fibril
+Cleaved collagen type II fibril
+Cleaved collagen type III fibril
+Cleaved collagen type IV alpha1.alpha1.alpha2 network
+Cleaved collagen type IV alpha1.alpha2.alpha5.alpha6 network
+Cleaved collagen type IV alpha3.alpha4.alpha5 network
+Cleaved collagen type IV networks
+Cleaved collagen type VII fibril
+Cleaved collagen type VII hexamer
+Cleaved collagen type VIII fibril
+Cleaved collagen type X fibril
+Cleaved collagen type XI fibril
+Cleaved collagen type XV
+Cleaved collagen type XVIII alpha chain trimer
+Cleaved fibrillin-1
+Cleaved fibrillin-2
+Cleaved fibronectin dimer
+Cleaved fibronectin dimer Ala(271)/Val(272)
+Cleaved tropocollagen type I
+Cleaved tropocollagen type II
+Cleaved tropocollagen type III
+Cleaved tropocollagen type V
+Cleaved tropocollagen type VI tetramer
+Cleaved tropocollagen type VIII
+Cleaved tropocollagen type X
+Cleaved tropocollagen type XI
+Cleaved tropoelastin
+Collagen IV
+Collagen V
+Collagen alpha-1(IX) chains
+Collagen alpha-1(VII) chains
+Collagen alpha-1(VII) trimer
+Collagen alpha-1(XII) chains
+Collagen alpha-1(XIII) chain N-term transmembrane regions
+Collagen alpha-1(XIII) chains
+Collagen alpha-1(XIV) chains
+Collagen alpha-1(XIX) chains
+Collagen alpha-1(XV) chains
+Collagen alpha-1(XVI) chains
+Collagen alpha-1(XVII) chains
+Collagen alpha-1(XVII) transmembrane regions
+Collagen alpha-1(XVIII) chains
+Collagen alpha-1(XXIII) chains
+Collagen alpha-1(XXIII) transmembrane regions
+Collagen alpha-1(XXV) chains
+Collagen alpha-2(IX) chains
+Collagen alpha-3(IX) chains
+Collagen alpha-4(IV) NC1 domain
+Collagen alpha-4(IV) NC1 domains
+Collagen and procollagen triple helices
+Collagen propeptides
+Collagen type I fibre
+Collagen type I fibril
+Collagen type I fibril with deH-HLNL
+Collagen type I fibril with dehydro-lysinonorleucine
+Collagen type I fibril with hydroxylysino-5-ketonorleucine crosslinks
+Collagen type I fibril with hydroxylysyl-pyridinoline cross-links
+Collagen type I fibril with hydroxylysyl-pyrrole cross-links
+Collagen type I fibril with lysino-5-ketonorleucine cross-links
+Collagen type I fibril with lysyl-pyridinoline cross-links
+Collagen type I fibril with lysyl-pyrrole cross-links
+Collagen type I fibrils with deH-HLNL cross-links
+Collagen type I, II fibrils
+Collagen type I, II, III, IV, V, XI fibrils
+Collagen type I, II, III, V, X fibrils
+Collagen type I, II, III, VI fibrils
+Collagen type I,IV,VI
+Collagen type II fibril
+Collagen type III fibril
+Collagen type IV alpha1.alpha1.alpha2 network
+Collagen type IV alpha1.alpha2.alpha5.alpha6 network
+Collagen type IV alpha3.alpha4.alpha5 network
+Collagen type IX
+Collagen type VI
+Collagen type VI dimer
+Collagen type VI fibril
+Collagen type VI network
+Collagen type VI network, Collagen type IX
+Collagen type VI tetramer
+Collagen type VII -NC2 hexamer
+Collagen type VII -NC2 trimer
+Collagen type VII fibril
+Collagen type VII fibril:Laminin-332
+Collagen type VIII fibril
+Collagen type VIII network
+Collagen type X fibril
+Collagen type X network
+Collagen type XI fibril
+Collagen type XII fibril
+Collagen type XII, XIV fibrils
+Collagen type XIII
+Collagen type XIV
+Collagen type XV
+Collagen type XVI
+Collagen type XVII
+Collagen type XVII fibril
+Collagen type XVII fibril:Integrin alpha6beta4
+Collagen type XVIII
+Collagen type XXIII
+Collagen type XXV
+Collagen types I, III, V
+Collagen types I, VI, (IX)
+Collagen types I-V, VII
+Collagen types II, III
+Collagen types II, III, V
+Collagen types III, IV, V, VI, VIII, IX, XVI
+Collagens and tropocollagens
+D2,4(S)2-BCAN
+D2,4(S)2-BCAN(23-360)
+D2,4(S)2-BCAN(23-395)
+D2,4(S)2-BCAN(361-911)
+D2,4(S)2-BCAN(396-911)
+D2,4,4(S)3-BCAN
+D2,4,4(S)3-BCAN(23-360)
+D2,4,4(S)3-BCAN(23-395)
+D2,4,4(S)3-BCAN(361-911)
+D2,4,4(S)3-BCAN(396-911)
+D4S-BCAN
+D4S-BCAN(23-360)
+D4S-BCAN(23-395)
+D4S-BCAN(361-911)
+D4S-BCAN(396-911)
+DAG
+DAG1(30-653)
+DAG1(654-895)
+DCN
+DCN(31-?)
+DCN(?-359)
+DDR1
+DDR1 dimer
+DDR2
+DDR2 dimer
+DMD
+DMP1
+DSPP(463-1301)
+DST-3
+Dimeric TGFB1
+Dystroglycan
+EFEMP1
+EFEMP2
+ELN
+Elastic fibre
+Elastic fibre-asociated proteins
+Elastic fibre:Fibulins
+Elastic fibre:Fibulins:Emilins
+Elastin
+Emilin-1 polymer
+Emilins
+Endostatin
+Endostatin dimer
+F11R
+FBLN1
+FBLN1, FBLN2
+FBLN2
+FBLN5
+FBN1
+FBN1(1-2731)
+FBN1(2732-2871)
+FBN1(28-2731)
+FBN1(28-?)
+FBN2
+FBN2(2780-2912)
+FBN2(29-2779)
+FGF2(10-155)
+FGF2(10-155), Fibronectn matrix, Transthyretin tetramer, PDGFA homodimer, PDGFB homodimer
+FN1 dimer
+FN1(32-2386)
+Fe2+
+Fibrilin-binding integrins
+Fibrilins:MFAP2,MFAP5
+Fibrillar procollagens
+Fibrillin 1,2,(3)
+Fibrillin-1
+Fibrillin-2
+Fibronectin matrix
+Fibulins
+GDF5(28-501)
+GalHyl-COL10A1
+GalHyl-COL11A1(36-1806)
+GalHyl-COL11A2
+GalHyl-COL12A1
+GalHyl-COL13A1
+GalHyl-COL13A1(?-717)
+GalHyl-COL14A1
+GalHyl-COL15A1(1212-1388)
+GalHyl-COL15A1(28-1388)
+GalHyl-COL16A1
+GalHyl-COL17A1(1-1497)
+GalHyl-COL17A1(?-1497)
+GalHyl-COL18A1(24-1754)
+GalHyl-COL18A1(?-1754)
+GalHyl-COL19A1
+GalHyl-COL1A1(23-1464)
+GalHyl-COL1A2(25-1366)
+GalHyl-COL20A1
+GalHyl-COL22A1
+GalHyl-COL23A1
+GalHyl-COL23A1(?-540)
+GalHyl-COL24A1
+GalHyl-COL25A1(1-654)
+GalHyl-COL25A1(?-654)
+GalHyl-COL26A1
+GalHyl-COL27A1(42-1860)
+GalHyl-COL2A1(26-1487)
+GalHyl-COL3A1(24-1466)
+GalHyl-COL4A1(1445-1669)
+GalHyl-COL4A1(24-1669)
+GalHyl-COL4A2(1486-1712)
+GalHyl-COL4A2(26-1712)
+GalHyl-COL4A3(1426-1670)
+GalHyl-COL4A3(29-1670)
+GalHyl-COL4A4
+GalHyl-COL4A5
+GalHyl-COL4A6
+GalHyl-COL5A1(38-1838)
+GalHyl-COL5A2(27-1499)
+GalHyl-COL5A3
+GalHyl-COL6A1
+GalHyl-COL6A2
+GalHyl-COL7A1
+GalHyl-COL7A1(2822-2944)
+GalHyl-COL8A1(28-744)
+GalHyl-COL8A2
+GalHyl-COL9A1
+GalHyl-COL9A2
+GalHyl-COL9A3
+Galactosyl-hydroxylysyl collagen propeptides
+GlcA-b1,3-GlcNAc
+GlcGalHyl-COL10A1
+GlcGalHyl-COL11A1(36-1806)
+GlcGalHyl-COL11A2
+GlcGalHyl-COL12A1
+GlcGalHyl-COL13A1
+GlcGalHyl-COL13A1(?-717)
+GlcGalHyl-COL14A1
+GlcGalHyl-COL15A1(1212-1388)
+GlcGalHyl-COL15A1(28-1388)
+GlcGalHyl-COL16A1
+GlcGalHyl-COL17A1(1-1497)
+GlcGalHyl-COL17A1(?-1497)
+GlcGalHyl-COL18A1(24-1754)
+GlcGalHyl-COL18A1(?-1754)
+GlcGalHyl-COL19A1
+GlcGalHyl-COL1A1(23-1464)
+GlcGalHyl-COL1A2(25-1366)
+GlcGalHyl-COL20A1
+GlcGalHyl-COL21A1
+GlcGalHyl-COL22A1
+GlcGalHyl-COL23A1
+GlcGalHyl-COL23A1(?-540)
+GlcGalHyl-COL24A1
+GlcGalHyl-COL25A1(1-654)
+GlcGalHyl-COL25A1(?-654)
+GlcGalHyl-COL26A1
+GlcGalHyl-COL27A1(42-1860)
+GlcGalHyl-COL2A1(26-1487)
+GlcGalHyl-COL3A1(24-1466)
+GlcGalHyl-COL4A1(1445-1669)
+GlcGalHyl-COL4A1(24-1669)
+GlcGalHyl-COL4A2(1486-1712)
+GlcGalHyl-COL4A2(26-1712)
+GlcGalHyl-COL4A3(1426-1670)
+GlcGalHyl-COL4A3(29-1670)
+GlcGalHyl-COL4A4
+GlcGalHyl-COL4A5
+GlcGalHyl-COL4A6
+GlcGalHyl-COL5A1(38-1838)
+GlcGalHyl-COL5A2(27-1499)
+GlcGalHyl-COL5A3
+GlcGalHyl-COL6A1
+GlcGalHyl-COL6A2
+GlcGalHyl-COL7A1
+GlcGalHyl-COL7A1(2822-2944)
+GlcGalHyl-COL8A1(28-744)
+GlcGalHyl-COL8A2
+GlcGalHyl-COL9A1
+GlcGalHyl-COL9A2
+GlcGalHyl-COL9A3
+Glu-Gal-Hyl-collagen alpha-4(IV) NC1 domain
+Glu-Gal-Hyl-collagen propeptides
+Glucosyl-galactosyl-hydroxylysyl collagen propeptides
+H2O
+H2O2
+HA
+HAPLN1
+HS(1)-SDC1
+HS(1)-SDC2
+HS(1)-SDC3
+HS(1)-SDC4
+HS(2)-SDC1
+HS(2)-SDC2
+HS(2)-SDC3
+HS(2)-SDC4
+HS(3)-SDC1
+HS(3)-SDC2
+HS(3)-SDC3
+HS(3)-SDC4
+HS(4)-SDC1
+HS(4)-SDC2
+HS(4)-SDC3
+HS(4)-SDC4
+HS(5)-SDC1
+HS(5)-SDC2
+HS(5)-SDC3
+HS(5)-SDC4
+HS(6)-SDC1
+HS(6)-SDC2
+HS(6)-SDC3
+HS(6)-SDC4
+HSPG2(22-4196)
+HSPG2(22-4391)
+HSPG2(22-?)
+HSPG2(3687-4391)
+HSPG2(4197-4391)
+HSPG2(?-4391)
+Heparins
+Hydroxylapatite
+IBSP
+ICAM 1-5
+ICAM1
+ICAM2
+ICAM3
+ICAM4
+ICAM5
+ITGA1
+ITGA10
+ITGA11
+ITGA1:ITGB1
+ITGA2
+ITGA2B(32-1039)
+ITGA4
+ITGA4:ITGB1
+ITGA5(42-894)
+ITGA6(24-1130)
+ITGA7(34-1181)
+ITGA8(39-1063)
+ITGA9
+ITGAD
+ITGAE(19-1179)
+ITGAL
+ITGAM
+ITGAV(31-1048)
+ITGAX
+ITGB1
+ITGB2
+ITGB3
+ITGB5
+ITGB7
+Integrin alpha10beta1
+Integrin alpha11beta1
+Integrin alpha1beta1, alpha2beta1, alpha10beta1
+Integrin alpha2bbeta3
+Integrin alpha2beta1
+Integrin alpha2beta1, (alpha6beta4)
+Integrin alpha3beta1
+Integrin alpha3beta1, alpha4beta1
+Integrin alpha3beta1, alpha6beta1
+Integrin alpha3beta1, alpha6beta4
+Integrin alpha4beta1, alpha8beta1, alphaVbeta1, alphaVbeta3, alphaVbeta6
+Integrin alpha4beta7
+Integrin alpha5beta1
+Integrin alpha5beta1, Integrin alphaVbeta3, CD47
+Integrin alpha5beta1, alpha9beta1
+Integrin alpha6beta1
+Integrin alpha6beta1, alpha7beta1, alpha1beta1, alpha2beta1, alphaVbeta1
+Integrin alpha6beta4
+Integrin alpha7beta1
+Integrin alpha8beta1
+Integrin alpha9beta1
+Integrin alphaDbeta2
+Integrin alphaEbeta7
+Integrin alphaLbeta2
+Integrin alphaMbeta2
+Integrin alphaVBeta1,3,5
+Integrin alphaVbeta1
+Integrin alphaVbeta3
+Integrin alphaVbeta3, 5, 8
+Integrin alphaVbeta3, alphaVbeta6, alpha2beta1, alpha7beta1, alpha8beta1, alpha9beta1, alphaXbeta1
+Integrin alphaVbeta5
+Integrin alphaVbeta6
+Integrin alphaVbeta8
+Integrin alphaXbeta1
+Integrin alphaXbeta2
+Integrins alpha1beta1, alpha2beta1, alpha11beta1
+Integrins alphaVbeta1 (other beta 1)
+Integrins alphaVbeta1, alphaVbeta3, alphaVbeta5, alpha2bbeta3
+Integrins alphaVbeta3, alpha3beta1
+Integrins alphaVbeta3, alphaVbeta5
+Integrins alphaVbeta3, alphaVbeta5, alpha3beta1, alpha5beta1
+JAM2
+JAM2:JAM3
+JAM3
+KS(2),C4S-ACAN
+KS(2),C4S-ACAN(17-360)
+KS(2),C4S-ACAN(17-375)
+KS(2),C4S-ACAN(17-392)
+KS(2),C4S-ACAN(361-2415)
+KS(2),C4S-ACAN(376-2415)
+KS(2),C4S-ACAN(393-2415)
+KS(2),C6S-ACAN
+KS(2),C6S-ACAN(17-360)
+KS(2),C6S-ACAN(17-375)
+KS(2),C6S-ACAN(17-392)
+KS(2),C6S-ACAN(361-2415)
+KS(2),C6S-ACAN(376-2415)
+KS(2),C6S-ACAN(393-2415)
+KS(2),CSE-ACAN
+KS(2),CSE-ACAN(17-360)
+KS(2),CSE-ACAN(17-375)
+KS(2),CSE-ACAN(17-392)
+KS(2),CSE-ACAN(361-2415)
+KS(2),CSE-ACAN(376-2415)
+KS(2),CSE-ACAN(393-2415)
+KS(2)-FMOD
+LAMA1
+LAMA3
+LAMA3(36-?)
+LAMA3(?-3333)
+LAMA5
+LAMA5(36-?)
+LAMA5(?-3695)
+LAMB1
+LAMB3
+LAMB3(18-?)
+LAMB3(?-1172)
+LAMC1
+LAMC2
+LAMC2(22-?)
+LAMC2(?-1193)
+LAP1 binding-integrins
+LAP3-binding integrins
+LOX
+LOX(22-168)
+LOX(22-417)
+LOXL1
+LOXL1(26-574)
+LOXL1(26-94)
+LRP4
+LRP4:MUSK
+LTBP1
+LTBP1,LTBP3:TGFB1:LAP1
+LTBP1,LTBP3:TGFB2:LAP2
+LTBP1,LTBP3:TGFB3:LAP3
+LTBP3
+LTBP4
+LTBPs
+LUM
+Laminin-111
+Laminin-121
+Laminin-211
+Laminin-211, 221, 332, 411, 512, 521
+Laminin-211, 221, 411, 512, 521
+Laminin-213
+Laminin-221
+Laminin-311
+Laminin-321
+Laminin-332
+Laminin-411
+Laminin-421
+Laminin-423
+Laminin-511
+Laminin-521
+Laminin-522
+Laminins
+Laminins with alpha-1, -2 or -5
+Laminins with gamma-1
+Laminins with gamma-1, gamma-3
+Laminins with gamma-1, gamma-3:Nidogens 1,2
+Laminins-332, 511, 521, (211, 221)
+Lecticans
+Lysyl hydroxylase procollagen substrates
+Lysyl hydroxylases
+Lysyl hydroxylated collagen propeptides
+MADCAM1-1
+MATN1
+MATN3
+MATN4
+MFAP2
+MFAP2, MFAP5
+MFAP3
+MFAP4
+MFAP5
+MMP1(100-469)
+MMP1(20-469)
+MMP1(20-53)
+MMP1(54-469)
+MMP1(54-83)
+MMP1(84-469)
+MMP1, 3, 13, (2, 7-12, 19)
+MMP10
+MMP10(18-476)
+MMP11
+MMP11(32-488)
+MMP13
+MMP13(20-471)
+MMP13(20-54)
+MMP13(20-57)
+MMP13(20-76)
+MMP13(55-103)
+MMP13(55-471)
+MMP13(58-103)
+MMP13(58-471)
+MMP13(77-103)
+MMP13(77-471)
+MMP14
+MMP14(21-582)
+MMP14:TIMP2
+MMP16
+MMP16(32-607)
+MMP2(110-660)
+MMP2(30-66)
+MMP2(30-660)
+MMP2(67-109)
+MMP2(67-660)
+MMP2, MMP7, MMP9
+MMP3(100-477)
+MMP3(18-477)
+MMP3(18-54)
+MMP3(55-477)
+MMP3(55-99)
+MMP7(18-267)
+MMP7(18-50)
+MMP7(18-94)
+MMP7(51-267)
+MMP7(51-94)
+MMP7(95-267)
+MMP8
+MMP8(21-467)
+MMP9(107-707)
+MMP9(20-106)
+MMP9(20-59)
+MMP9(20-707)
+MMP9(60-106)
+MMP9(60-707)
+MUSK
+Mg2+
+Mn2+
+NCAM1
+NCAM1, PTPRS
+NH3
+NID1
+NID1(29-?)
+NID1(?-1247)
+NID2
+NRXN1
+NTN4
+Neurocan
+Neutrophil CEACAMs affecting integrin binding to fibronectin
+Nidogens 1, 2
+Non-fibrillar collagens
+O2
+OPTC
+OPTC(115-332)
+OPTC(20-114)
+OPTC(20-32)
+OPTC(20-87)
+OPTC(33-87)
+OPTC(88-114)
+P4HB
+PCOLCE
+PCOLCE2
+PDGFA homodimer
+PDGFB homodimer
+PECAM1
+PI(3,4)P2
+PI(4,5)P2
+PLEC
+PLOD1:Fe2+ dimer
+PLOD2:Fe2+ dimer
+PLOD3
+PLOD3:Fe2+ dimer
+PRKCA
+PTPRS
+Pi
+Procollagen type I
+Procollagen type I -N
+Procollagen type II
+Procollagen type II -N
+Procollagen type III
+Procollagen type III -N
+Procollagen type V
+Procollagen type V -N
+Procollagen type XI
+Procollagen type XI -N
+Procollagen type XXIV
+Procollagen type XXIV -N
+Procollagen type XXVII
+Procollagen type XXVII -N
+Prolyl 3-hydroxylases
+Prolyl 3-hydroxylases:Fe2+
+Protein Kinase C, alpha type: DAG
+SCUBE3
+SCUBE3(21-?)
+SCUBE3(?-993)
+SDC1, 2, 4, (3)
+SERPINE1
+SERPINH1
+SH3PXD2A
+SH3PXD2A:PI(3,4)P2
+SLRPs
+SPARC
+SPOCK3
+SPP1
+SPP1(17-?)
+SPP1(?-314)
+SUCCA
+Sulfatide
+Sulfilimine-containing collagen type IV alpha1.alpha1.alpha2 network
+Sulfilimine-containing collagen type IV alpha1.alpha2.alpha5.alpha6 network
+Sulfilimine-containing collagen type IV alpha3.alpha4.alpha5 network
+Syndecan-1
+Syndecan-2
+Syndecan-3
+Syndecan-4
+Syndecan-4:PI(4,5)P2
+Syndecans 1, 2 & 4
+Syndecans 2, (4)
+TGF beta
+TGFB1
+TGFB1(30-278)
+TGFB1:LAP1
+TGFB2
+TGFB2:LAP2
+TGFB3
+TGFB3(21-300)
+TGFB3:LAP3
+THBS1
+THBS1 trimer
+TIMP1
+TIMP2
+TNC
+TRAPPC4
+Tenascin-C hexamer
+Tenascin-R trimer
+Tenascins C, R, (X, N)
+Transthyretin tetramer
+Tropocollagen type I
+Tropocollagen type I with free hydroxylysines
+Tropocollagen type I with or without allysines
+Tropocollagen type I with or without hydroxyallysines
+Tropocollagen type II
+Tropocollagen type III
+Tropocollagen type IV
+Tropocollagen type V
+Tropocollagen type VIII
+Tropocollagen type X
+Tropocollagen type XI
+Tropocollagen type XXIV
+Tropocollagen type XXVII
+Tropoelastin aggregate
+Tumstatin
+UDP
+UDP-D-glucose(2-)
+UDP-Gal
+VCAM1
+VEGFR2
+VTN
+VWF multimer
+VWF(764-2813)
+Versican
+VitC
+calpain-cleaved protein
+fibrin monomer
+fibrin multimer
+natalizumab
+substrate protein for calpains

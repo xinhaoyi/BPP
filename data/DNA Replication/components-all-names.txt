@@ -1,0 +1,136 @@
+ADP
+AMP
+ATP
+CDC45
+CDC6
+CDC7
+CDK
+CDK2
+CDK:DDK:MCM10:active pre-replicative complex
+CDK:DDK:MCM10:active pre-replicative complex:CDC45
+CDT1
+CDT1:CDC6:ORC:origin complex
+CDT1:MCM2-7
+CMP
+DBF4
+DDK
+DNA Polymerase delta tetramer
+DNA polymerase alpha:primase
+DNA polymerase epsilon
+DNA polymerase epsilon:origin complex
+DNA primer
+DNA2
+Flap
+GINS complex
+GINS1
+GINS2
+GINS3
+GINS4
+GMNN
+GMP
+H4K20Me2-nucleosome
+Histone H2A
+Histone H2B
+Histone H3
+KPNA1,KPNA6
+KPNA1,KPNA6:KPNB1
+KPNB1
+MCM10
+MCM10:active pre-replicative complex
+MCM2
+MCM2-7
+MCM2-7 double hexamer
+MCM2:MCM4:MCM6:MCM7
+MCM3
+MCM3:MCM5
+MCM4
+MCM4:MCM6:MCM7
+MCM5
+MCM6
+MCM7
+MCM8
+Me2K21-HIST1H4
+NTP
+ORC(1-5)
+ORC(1-5):origin of replication
+ORC(1-6):CDC6:origin of replication
+ORC(1-6):origin of replication
+ORC1
+ORC2
+ORC2:ORC3
+ORC2:ORC3:ORC5
+ORC3
+ORC4
+ORC5
+ORC6
+Okazaki fragment
+Okazaki fragment minus Flap
+Orc2 associated with MCM8
+PCNA
+PCNA homotrimer
+POLA1
+POLA2
+POLD1
+POLD2
+POLD3
+POLD4
+POLE
+POLE2
+POLE3
+POLE4
+PRIM1:PRIM2
+Pi
+PolyUb,p-S,T-ORC1
+PolyUb-GMNN
+Processive complex
+Processive complex:Okazaki fragment complex
+Processive complex:Okazaki fragment:Flap
+Processive complex:Okazaki fragment:Flap:RPA heterotrimer
+RFC Heteropentamer
+RFC Heteropentamer:RNA primer-DNA primer:origin duplex
+RFC1
+RFC2
+RFC3
+RFC4
+RFC5
+RNA primer
+RNA primer-DNA primer:origin duplex
+RNA primer-DNA primer:origin duplex:PCNA
+RNA primer:origin duplex:DNA polymerase alpha:primase complex
+RPA heterotrimer
+RPA1
+RPA1-4
+RPA2
+RPA3
+RPA4
+RPS27A(1-76)
+Remaining Flap
+Replication Fork
+UBA52(1-76)
+UBB(1-76)
+UBB(153-228)
+UBB(77-152)
+UBC(1-76)
+UBC(153-228)
+UBC(229-304)
+UBC(305-380)
+UBC(381-456)
+UBC(457-532)
+UBC(533-608)
+UBC(609-684)
+UBC(77-152)
+UMP
+Ub
+Unwound fork
+active pre-replicative complex
+cyclin
+dATP
+dCTP
+dGTP
+dTTP
+ligated okazaki fragment
+origin of replication
+p-CDC6
+p-S,T-ORC1
+p-T195-ORC6
+pre-replicative complex

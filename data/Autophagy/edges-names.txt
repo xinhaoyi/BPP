@@ -1,0 +1,104 @@
+AMBRA1 binds DYNLL1,DYNLL2
+AMBRA1:DYNLL1,DYNLL2 binds BECN1 complex
+AMPK (complex) phosphorylates ULK1 (complex)
+ATG10 dissociates from ATG12:ATG5
+ATG10 transfers ATG12 from ATG10 to ATG5
+ATG10 transfers ATG12 from ATG7 to ATG10
+ATG10:ATG12 binds ATG5
+ATG10:ATG12:ATG7 dimer dissociates
+ATG12 binds ATG7 dimer
+ATG12 forms a thioester bond with ATG7 dimer
+ATG12:ATG7:CysO572-ATG7 binds ATG10
+ATG16L1 complex transfers LC3 from ATG3 to PE
+ATG3 transfers LC3 from ATG7 to ATG3
+ATG5:ATG12 binds ATG16L1
+ATG7:ATG3:LC3 dissociates
+ATM binds PEX5
+ATM dimer:PEX5 phosphorylates PEX5
+ATM dimer:p-PEX5 ubiquitinates to form ATM dimer:Ub-p-PEX5
+ATM:PEX5 binds ATM
+ATM:PEX5 translocates from cytosol to peroxisomal membrane
+Active MTORC1 binds the ULK1 complex
+Active MTORC1 phosphorylates ULK1
+Aggresome dissociates from dynein and microtubule
+Autophagosome maturation
+BECN1 complex, p-AMBRA1 dissociate from DYNLL1,DYNLL2
+Beclin-1 complex phosphorylates PtdIns
+Beclin-1 complex translocates to the ER
+Dynein motors transport misfolded proteins
+E2 enzyme UBE2N:UBE2V1 binds ubiquitin
+EEF1A1 binds GTP
+EEF1A1 dissociates from p-GFAP
+EEF1A1:GTP translocates from lysosomal membrane to cytosol
+FUNDC1 is phosphorylated by CK2
+FUNDC1 is phosphorylated by ULK1 at Ser17
+GFAP binds LAMP2a multimer
+HSP90 dissociates from LAMP2a
+HSPA8 binds LAMP2a multimers
+HSPA8 binds substrate
+HSPA8 dissociates from LAMP2A-bound substrate
+HSPA8 dissociates from LAMP2a
+HSPA8 transports unfolded substrate to lysosomal lumen for degradation
+HSPA8:Substrate binds LAMP2a
+HSPA8:Substrate dissociates from LAMP2a multimer
+HSPA8:substrate binds late endosomal phospholipids
+LC3 binds ATG7 dimer
+LC3 binds the autophagosome membrane Atg5-Atg12 complex
+LC3 de-lipidation by ATG4
+LC3 is cleaved by ATG4
+LC3:ATG7 dimer binds ATG3
+MAP1LC3B binds ATM dimer:Ub-p-PEX5:SQSTM1
+MAP1LC3B binds ATM dimer:Ub-p-PEX5:SQSTM1:NBR1
+MTMR14, MTMR3 dephosphorylate PI3P
+MTORC1 dissociates from ULK complex
+Misfolded proteins bind PRKN:UBE2N:UBE2V1:Ub
+Misfolded proteins translocate from cilium to cytosol
+Misfolded proteins:HDAC6:Dynein motor binds microtubule
+NBR1 binds ATM:Ub-p-PEX5:SQSTM1
+NBR1 binds MAP1LC3B
+NBR1 translocates from cytosol to perixosomal membrane
+PLINs bind HSPA8
+PLINs:HSPA8 binds PRKAA2
+PRKAA2 dissociate from p-PLINs:HSPA8
+PRKAA2 phosphorylates PLINs
+Parkin binds Ub:UBE2N:UBE2V1
+Parkin promotes the ubiquitination of mitochondrial substrates
+Parkin transfers Ub to misfolded proteins
+Phosphorylated FUNDC1 links damaged mitochondria to LC3
+Pink1 is cleaved on healthy mitochondria
+Pink1 is recruited from the cytoplasm to the mitochondria
+Pink1 recruits Parkin to the outer mitochondrial membrane.
+PolyUb-Misfolded Proteins:HDAC6 bind dynein motor
+PolyUb-Misfolded Proteins:HDAC6 dissociate from complex
+PolyUb-Misfolded proteins bind vimentin to form aggresome
+PolyUb-misfolded proteins bind VCP:HDAC6:HSP90:HSF1
+PolyUb:misfolded proteins dissociate from PRKN:UBE2N:UBE2V1
+ROS positively regulates misfolding of cilia proteins
+Rheb in the MTORC1 complex hydrolyses GTP
+SQSTM1 binds ATM dimer:Ub-p-PEX5
+Substrate translocates into late endosomal lumen
+Substrate:LAMP2a binds HSP90
+The phagophore extends from the PIP3-enriched structure
+Thr-180 of ULK1 is phosphorylated
+ULK complex translocates to the ER
+ULK1 Translocates to the mitochondria
+ULK1 is dephosphorylated
+ULK1 phosphorylates AMBRA1:BECN1 complex
+ULK1 phosphorylates ATG13 and RB1CC1
+ULK1 phosphorylates Beclin-1
+USP30 binds ATM dimer:Ub-p-PEX5
+USP30 deubiquitinates ATM dimer:Ub-p-PEX5
+Uncleaved Pink1 accumulates in damaged mitochondria
+Unfolded substrate in LAMP2a multimeric complex binds HSPA8
+WIPI2 binds ATG12:ATG5:ATG16L
+WIPIs bind PI3P
+p-AMPK:AMP binds the ULK complex
+p-AMPK:AMP phosphorylates Raptor in the MTORC1 complex
+p-GFAP binds EEF1A1
+p-GFAP:GFAP dissociates from LAMP2a multimer
+p-PLINs translocate from lipid droplet surface to cytosol
+p-S13, FUNDC1 is phosphorylated by CK2 at Tyr18
+p-S13-FUNDC1 is dephosphorylated by PGAM5
+p62 binds ubiquitinated mitochondrial substrates
+p62 links damaged mitochondria to LC3
+pGFAP binds GFAP in LAMP2a multimer

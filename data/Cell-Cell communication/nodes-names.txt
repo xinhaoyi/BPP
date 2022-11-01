@@ -1,0 +1,136 @@
+ACTN1
+ADP
+ANG
+ARHGEF6
+ATP
+Afadin:F-actin
+BP230
+BP230:BP180:Plectin:integrin alpha 6 beta 4:Laminin 332
+Beta-catenin/gamma catenin
+CADM1
+CADM3
+CASK
+CD151
+CD151:BP230:BP180:Plectin:Integrin alpha 6 beta 4: Laminin
+CD2AP
+CD2AP:p-Nephrin:Fyn:NEPH1
+CD47
+COL17A1(1-1497)
+CRB3
+CRB3:PALS1:PATJ complex
+CTNNA1
+CTNND1
+Ca2+
+Cadherin trans-homodimer
+Cadherin:Catenin complex
+Classic Cadherin
+Claudin
+F-actin
+F-actin:ANG
+F11R
+FBLIM1
+FERMT2
+FYB
+FYN
+Filamin
+GRB2-1
+ILK
+ILK:Integrin beta-1
+IQGAP1
+ITGB1
+Integrin alpha 6:beta 4:Plectin complex
+Integrin alpha 6:beta 4:Plectin:BP180:Laminin-322 complex
+Integrin alpha6:beta4:Plectin:BP180 complex
+Integrin alpha6beta4
+JAM-A:PAR-aPKC complex
+KIRREL
+KIRREL2, KIRREL3
+Keratin 5/14
+LIMS1
+Laminin-332
+MIG-2:MIGFILIN
+MIGFILIN:VASP
+MLLT4-2
+MMP5:E pentamer
+MPP5
+Migfilin:Filamin A:F-actin
+N-WASP
+NCK1,NCK2
+NEPH1:p-Nephrin:Fyn:NCK
+NEPH1:p-Nephrin:Fyn:NCK:N-WASP
+NPHS1
+NPHS1 dimer
+NPHS1 dimer:KIRREL
+NPHS1 dimer:KIRREL2,KIRREL3
+NPHS1 dimer:KIRREL:FYN
+Necl-1/Necl-2/Necl-3 homodimer
+Necl-1/Necl-2/Necl-3 trans homodimer
+Necl-1:Necl-2 trans heterodimer
+Necl-1:Nectin-1 trans heterodimer
+Necl-1:Nectin-3 trans heterodimer
+Nectin
+Nectin cis-homodimer
+Nectin trans homodimer
+Nectin-1 cis homodimer
+Nectin-1:Nectin-4 trans heterodimer
+Nectin-1:PVRL3 trans heterodimer
+Nectin-2 cis homodimer
+Nectin-2:PVRL3 transheterodimer
+Nectin-3:Necl-2 trans heterodimer
+Nectin-4 cis homodimer
+Nectin:afadin
+Nephrin dimer:CASK
+Nephrin dimer:IQGAP1
+Nephrin dimer:adherins junction-associated proteins
+PARVA
+PARVA:Paxillin
+PARVA:TESK1
+PARVB
+PARVB:alpha actinin
+PATJ
+PI3K
+PI3K:CD2AP:p-Nephrin:Fyn:NEPH1
+PINCH
+PINCH-ILK-parvin complex
+PLEC
+PRV:PVRL3 trans heterodimer
+PTK2B
+PTPN6,PTPN11
+PVR
+PVRL1
+PVRL3
+PVRL3 dimer
+PXN
+Par3:Par6:aPKC complex
+ParvB/Affixin:Alpha-Pix
+Podocin oligomer
+Podocin:p-Nephrin:Fyn:NEPH1
+RSU1
+Rsu-1:Pinch1 complex
+SDK1(?-2213)
+SDK2
+SFTPA oligomer, SFTPD oligomer
+SIRP gamma:CD47
+SIRPA
+SIRPA:CD47
+SIRPA:SFTPA oligomer, SFTPD oligomer
+SIRPB1
+SIRPB1:TYROBP
+SIRPG
+SKAP2
+TESK1
+TYROBP
+Trans-homophilic SDK1 dimer
+Trans-homophilic SDK2 dimer
+Type II hemidesmosome
+VASP
+adherens junction-associated proteins
+alpha/beta parvin
+claudin trans-homodimer
+p-Y1158,Y1176,Y1193,Y1217-NPHS1:KIRREL:FYN
+p-Y428,Y452,Y469,Y495-SIRPA:CD47
+p-Y428,Y452,Y469,Y495-SIRPA:CD47:GRB2-1
+p-Y428,Y452,Y469,Y495-SIRPA:CD47:PTK2B
+p-Y428,Y452,Y469,Y495-SIRPA:CD47:SKAP2
+p-Y428,Y452,Y469,Y495-SIRPA:CD47:SKAP2:FYB
+p-Y428,Y452,Y469,Y495-SIRPA:PTPN6,PTPN11

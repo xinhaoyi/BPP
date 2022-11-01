@@ -1,0 +1,85 @@
+ATF2 acetylates histone H2B, H4
+ATF7IP binds SETDB1
+BRWD1 binds AcK(9,14,18,79)-p(S10,T11)-histone H3
+BRWD1 binds SMARCA4
+CARM1 methylates arginine-18 (H3R17) of histone H3
+CARM1 methylates arginine-27 of histone H3 (H3R26)
+CARM1, PRMT6 methylate arginine-3 of histone H3 (H3R2)
+CCND1:CDK4:PRMT5:pT5-WDR77 methylates arginine-9 of histone H3 (H3R8)
+CCND1:CDK4:PRMT5:pT5-WDR77 methylates methyl-arginine-9 of histone H3
+CDK4 in CCND1:CDK4:PRMT5:WDR77 phosphorylates WDR77
+CLOCK acetylates lysine-10 of histone H3, H4
+CLOCK acetylates lysine-15 of histone H3, H4
+COPRS binds CCND1:CDK4:PRMT5:pT5-WDR77
+COPRS:CCND1:CDK4:PRMT5:pT5-WDR77 methylates arginine-4 of histone H4 (H4R3)
+CREBBP acetylates histone H2B, H3, H4
+Core MLL complex, SMYD3, PRDM9 methylate dimethyl-lysine-5 of histone H3 (H3K4)
+DNMT3A binds Me2sR4-HIST1H4
+DOT1L (KMT4) methylates dimethyl-lysine-80 of histone H3 (H3K79)
+DOT1L (KMT4) methylates lysine-80 of histone H3 (H3K79)
+DOT1L (KMT4) methylates methyl-lysine-80 of histone H3 (H3K79)
+EHMT1:EHMT2 (KMT1D:KMT1C) methylates lysine-10 of histone H3 (H3K9)
+EHMT1:EHMT2 (KMT1D:KMT1C) methylates methyl-lysine-10 of histone H3 (H3K9)
+EP300 acetylates histone H2A, H2B, H3, H4
+Elongator complex acetylates replicative histone H3, H4
+HDAC10 deacetylates histone
+HDAC1:2-containing complex binds HDAC2 Inhibitors
+HDAC1:2-containing complex deacetylate histones
+HDAC3 containing complexes deacetylate histone
+HDAC8 deacetylates histones
+JMJD6 demethylates Me2R3-histone H3
+JMJD6 demethylates Me2sR4-HIST1H4
+JMJD6 demethylates MeR3-histone H3
+JMJD6 demethylates MeR4-HIST1H4
+KAT2 complexes acetylate histone H3
+KAT6A, KAT6B-containing ING5 complexes acetylate replicative histone H3
+KAT7-containing ING4/5 complexes acetylate Me3K-histone H3
+KDM1A, KDM1B demethylate Me2K5-histone H3
+KDM1A, KDM1B demethylate MeK5-histone H3
+KDM2A, KDM2B, KDM4A demethylate Me2K37-histone H3
+KDM2A, KDM2B, KDM4A demethylate MeK37-histone H3
+KDM3A, KDM3B, KDM7A, PHF2:ARID5B, PHF8 demethylate Me2K10-histone H3
+KDM3A, KDM3B, KDM7A, PHF2:ARID5B, PHF8 demethylate MeK10-histone H3
+KDM4A, KDM4B, KDM4C, KDM4D demethylate Me2K10-histone H3
+KDM4A, KDM4B, KDM4C, KDM4D, MINA demethylate Me3K10-histone H3
+KDM5A-D demethylate Me2K5-histone H3
+KDM5A-D demethylate Me3K5-histone H3
+KDM6A, KDM6B, KDM7A demethylate Me2K28-histone H3
+KDM6A, KDM6B, KDM7A demethylate Me3K28-histone H3
+MECOM (KMT8E), PRDM16 (KMT8F) methylate lysine-10 of replicative histone H3 (H3K9)
+MSL acetylates histone H4
+NCOA1(868-1441) binds PAX3(1-319)
+NCOA2(869-1464) binds KAT6A(1-1118)
+NSL acetylates histone H4
+NuA4 complex acetylates histone H2A, HIST1H4
+PADI4 deiminates Histones
+PADIs:Ca2+ deiminate L-Arg to L-Cit in proteins
+PHF8 demethylates MeK21-histone H4
+PRC2 (EZH2) Core:AEBP2 methylates lysine-28 of histone H3 (H3K27)
+PRMT1 methylates arginine-12 of histone H2A (H2AR11)
+PRMT1,PRMT6 methylate arginine-4 of histone H4
+PRMT1,PRMT6 methylate methyl-lysine-4 of histone H4
+PRMT3 transfers 3xCH3 from 3xAdoMet to RPS2
+PRMT5 binds WDR77
+PRMT5 is tyrosine phosphorylated by JAK2 V617F
+PRMT5:WDR77, PRMT7 methylate arginine-3 of histone H3 (H3R2)
+PRMT5:pT5-WDR77 methylates arginine-4 of histone H2A (H2AR3)
+PRMT6 methylates arginine-4 of histone H2A (H2AR3)
+PRMT6 methylates histone H2A arginine-30 (H2AR29)
+RBBP7 binds histone H3
+SETD2 (KMT3A) methylates dimethyl-lysine-37 of histone H3 (H3K36)
+SETD3, SETD7 (KMT7), WHSC1L1 (KMT3F), Core MLL complex methylate lysine-5 of histone H3 (H3K4)
+SETD6 methylates RELA in the NFkB complex
+SETD8 (KMT5A) methylates lysine-21 of histone H4 (H4K20)
+SUV39H1 (KMT1A), SUV39H2 (KTM1B), SETDB1 (KMT1E), SETDB2 (KMT1F) methylate dimethyl-lysine-10 of histone H3 (H3K9)
+SUV420H1 (KMT5B), SUV420H2 (KMT5C), (possibly SMYD3 (KMT3E)) methylate methyl-lysine-21 of histone H4 (H4K20)
+SUV420H1, SUV420H2, (possibly SMYD3 (KMT3E)) methylate dimethyl-lysine-21 of histone H4 (H4K20)
+SWI/SNF chromatin remodelling complex enhances MEP50:PRMT5 methyltransferase activity
+Type B histone acetlytransferase complex acetylates histone H4
+WDR5 binds Me2sR3-replicative histone H3
+WHSC1 (KMT3G) methylates lysine-28 of histone H3 (H3K27)
+WHSC1 (KMT3G), NSD1 (KMT3B), SMYD2 (KMT3C) methylate lysine-37 of histone H3 (H3K36)
+WHSC1 (KMT3G), NSD1 (KMT3B), SMYD2 (KMT3C), ASH1L  methylate methyl-lysine-37 of histone H3 (H3K36)
+WHSC1L1 (KMT3F) methylates dimethyl-lysine-28 of histone H3 (H3K27)
+WHSC1L1 (KMT3F) methylates methyl-lysine-28 of histone H3 (H3K27)
+WHSC1L1 (KMT3F), Core MLL complex, SMYD3 (KMT3E) methylate methyl-lysine-5 of histone H3 (H3K4)

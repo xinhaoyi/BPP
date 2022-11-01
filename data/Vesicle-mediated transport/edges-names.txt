@@ -1,0 +1,252 @@
+14-3-3 Binds p-S237-TBC1D1
+14-3-3 binds p-5S,T642-AS160 (TBC1D4)
+AAK1 phosphorylates AP-2 mu subunit at T156
+ACBD3 binds GOLGB1
+ADBRK1,2 phosphorylate AVPR2
+AGFG1 binds VAMP7
+AMPK-alpha2 phosphorylates TBC1D1
+AP-2 directly binds some endocytic cargo
+AP1G2 binds HGS and CHMP2A
+AP2 binds chlorpromazine
+AP4 binds APP
+AP4 transports APP from trans-Golgi network to endosome lumen
+ARBB recruits GPCRs into clathrin-coated pits
+ARF1:GTP binds Golgin TRIP11
+ARFGAP, cargo, v-SNAREs and p24 proteins bind nascent COPI complex
+ARFGAP, cargo, vSNARES and p24 proteins bind COPI vesicles at Golgi
+ARFGAPs stimulate ARF GTPase activity
+ARFGAPs stimulate ARF GTPase activity at the Golgi membrane
+ARFRP1 recruits ARL1 to the TGN
+ARL1 recruits TGN Golgin homodimers
+ARL1:GTP binds ARFIP2
+ARL1:GTP binds SCOC
+ARRB bind GPCRs
+ATP hydrolysis by NSF disassembles the cis-SNARE at the Golgi membrane
+ATP hydrolysis by NSF disassembles the cis-SNARE at the TGN
+ATP hydrolysis by RHOBTB3 promotes PLIN3 dissociation
+Active AKT phosphorylates DENND1A and DENND1B in response to insulin signaling
+Active ARF recruits coatomer
+Active ARF recruits coatomer to the Golgi
+Alpha-1-Microglobulin is cleaved
+Alpha1-Microglobulin binds heme
+Assembly of gap junction plaques
+Association of Cx43 with TJP1
+Association of Golgi  transport vesicles with microtubules
+Auxilin recruits HSPA8:ATP to the clathrin-coated vesicle
+BAR domain proteins recruit dynamin
+BET1:GOSR2:STX5 bind v-SNARES on tethered vesicle
+Budding of connexon-containing transport vesicles from the Golgi
+CLASP proteins and cargo are recruited to the nascent clathrin-coated pit
+CLAT:AP1:CLVS bind PI(3,5)P2
+CNIH1 binds TFGA and AREG precursors
+CNIH2,3 bind GRIA1
+COLEC11 binds ligands
+COLEC12 (SCARA4) binds ligands
+COLEC12:ligand is endocytosed
+COP9 and TOR1 deneddylate STON2
+COPI vesicle uncoating
+COPI vesicle uncoating at the ER
+COPII coat binds TRAPPCII and RAB1:GDP
+CSNK1D phosphorylates SEC23
+CYTH proteins bind ARF1:GTP
+CYTH proteins stimulate ARF1 GTPase activity
+Cargo Recognition And Sorting
+Cargo Sequestration
+Clathrin recruits PIK3C2A
+Clathrin recruits auxilins to the clathrin-coated vesicle
+Clathrin-associated PIK3C2A phosphorylates PI(4)P to PI(3,4)P2
+Closure of gap junction
+Connexin oligomerization in  ER-Golgi-Intermediate Compartment
+Connexin oligomerization in Trans-Golgi Network (TGN)
+Connexin oligomerization in endoplasmic reticulum membrane
+Connexin synthesis (generic)
+DAB2 binds LRP2
+DENND1s exchange GTP for GDP on RAB35
+DENND3 exchanges GTP for GDP on RAB12
+DENND4s exchange GTP for GDP on RAB10
+DENND5A,B exchange GTP for GDP on RAB39
+DENND6A,B exchange GTP for GDP on RAB14
+Dab2 is recruited to the junctional plaques
+Dissociation of AAK1 and dephosphorylation of AP-2 mu2
+Dissociation of clathrin-associated proteins
+Docking of connexons into junctional, double-membrane spanning channels
+Dynamin is recruited to the gap junction plaque
+Dynamin-mediated GTP hydrolysis promotes vesicle scission
+Dynein drives COPI-independent retrograde traffic from the Golgi to the ER
+ERGIC-to-Golgi vesicles bind dynein:dynactin 
+ESCRT Disassembly
+Endophilins recruit synaptojanins to the clathrin-coated pit
+Epsin family proteins bind ubiquitinated cargo
+F- and N- BAR domain proteins bind the clathrin-coated pit
+FCHo proteins bind nascent clathrin-coated pit
+Ferriheme is transferred from Albumin to Hemopexin
+Ferriheme is transferred from Methemoglobin to Hemopexin
+Formation Of Bloc-1 Complex
+Formation of cis-SNARE complex and membrane fusion in intra-Golgi retrograde traffic
+Formation of junctional channels
+Fusion of early-endosome derived vesicles at the TGN
+Fusion of late-endosome derived vesicles at the TGN
+GBF1 recruits ARF:GDP to the ERGIC
+GBF1 recruits ARF:GDP to the Golgi
+GBF1 stimulates ARF nucleotide exchange
+GBF1 stimulates nucleotide exchange on ARF
+HPS1:HPS4 exchange GTP for GDP on RAB32 and RAB38
+HSPA8-mediated ATP hydrolysis promotes vesicle uncoating
+Haptoglobin binds Hemoglobin
+Haptoglobin-related Protein binds Hemoglobin
+Haptoglobin:Hemoglobin binds CD163
+Hemoglobin:Haptoglobin:CD163 is endocytosed
+Hemopexin binds Hemes
+Hexameric LMAN1:MCFD2 bind glycosylated Factor V and VIII precursors
+Initial binding of AP-2 and clathrin to PI(4,5)P2
+Inner coat assembly and cargo binding
+Insertion of connexons into the plasma membrane resulting in the formation of hemi-channels
+Internalization of gap junction plaques
+LDLR is bound by DAB2 and ARH
+LMAN family proteins bind glycosylated cargo
+LPAAT3 acylates lysophosphatidylcholine to yield phosphatidylcholine
+LRP1 (CD91) binds Hemopexin:heme
+LRP1:Hemopexin:heme is endocytosed
+Loss of SAR1B GTPase
+Lysosomal degradation of gap junction plaques
+MADD exchanges GTP for GDP on RAB27
+MARCO (SCARA2) binds ligands
+MARCO:ligand is endocytosed
+MIA2 and MIA3 dissociate from procollagen VII vesicle
+MIA2 and MIA3 load procollagen VII into COPII vesicles
+MIA2 binds PREB
+MIA3 binds procollagen VII
+MON1:CCZ1 exchanges GTP for GDP on RAB7
+MSR1 (SCARA1) binds collagen
+MSR1 (SCARA1, SR-A) binds ligands
+MSR1:ligand (SCARA1:ligand, SR-A:ligand) is endocytosed
+MVB Vesicle Formation
+Microtubule-independent trafficking of connexons to the plasma membrane
+NEDD8-STON binds TOR1 hexamer and COP9 complex
+NSF ATPase activity dissociates cis-SNARE
+NSF ATPase activity dissociates cis-SNARE at cis-Golgi
+NSF ATPase activity dissociates cis-SNARE at the ER
+NSF and SNAPs bind cis-SNARE at the ER membrane
+NSF and SNAPs bind cis-SNARE complex
+NSF and SNAPs bind the cis-SNARE at the Golgi
+NSF-dependent ATP hydrolysis disassembles the cis-SNARE at the TGN
+NatC acetylates ARFFRP1
+Nucleotide exchange on RAB1
+PICALM binds R-SNAREs
+PIP5K1C phosphorylates PI(4)P to PI(4,5)P2
+PLA2s hydrolyze phospholipids at the Golgi membrane
+PP6 dephosphorylates SEC24
+Phosphorylation of Cx43 by c-src
+Platelet glycoprotein IV (CD36) binds ligands
+Platelet glycoprotein IV:ligand (CD36:ligand) is endocytosed
+RAB13 GEFs exchange GTP for GDP on RAB13
+RAB1:GTP binds USO1 and GORASP1:GOLGA2
+RAB1:GTP recruits GBF1 to the ERGIC
+RAB21 GEFs exchange GTP for GDP on RAB21
+RAB3 GEFs exchange GTP for GDP on RAB3A
+RAB31 GEFs exchange GTP for GDP on RAB31
+RAB33B:GTP binds RIC1:RGP1
+RAB3GAP1:RAB3GAP2 exchanges GTP for GDP on RAB18
+RAB3GAP1:RAB3GAP2 promotes nucleotide exchange on RAB18
+RAB3GAP1:RAB3GAP2 recruits RAB18:GCDP to ER
+RAB43 hydrolyses GTP
+RAB43:GTP binds USP8NL
+RAB4A:GTP binds KIF3 and activates KIF3
+RAB5 GEFs exchange GTP for GDP on RAB5
+RAB5 and GAPVD1 bind AP-2
+RAB6:GTP and BICD homodimers bind COPI-independent Golgi-to-ER retrograde cargo
+RAB6:GTP binds the GARP and COG complexes, t-SNAREs and endosome-derived vesicles
+RAB6:GTP displaces PAFAH1B1 from dynein:dynactin complex
+RAB8 GEFs exchange GTP for GDP on RAB8
+RAB8A,10,13,14 exchange GDP for GTP
+RAB8A,10,13,14 hydrolyze GTP
+RAB9 GEFs exchange GTP for GDP on RAB9
+RAB9 binds RHOBTB3, bringing late endosome-derived vesicles to the TGN
+RAB:GTP recruits GBF1 to the Golgi membrane
+RALA exchanges GDP for GTP
+RALA hydrolyzes GTP
+RALA:GTP binds MYO1C:CALM1 and activates MYO1C
+RIC1-RGP1 exchanges GTP for GDP on RAB6
+RIC1:RGP1 recruits RAB6:GDP to the TGN
+RIC1:RGP1 stimulates nucleotide RAB6 nucleotide exchange
+Recruitment Of Cytoplasmic Proteins To Vesicles
+Recruitment of AP-2 complex and clathrin
+Retrograde COPI vesicles bind kinesin and microtubules
+Retrograde vesicle is tethered at the ER by the NRZ complex and t-SNAREs
+SAR1 Activation And Membrane Binding
+SCARA5 binds ligands
+SCARA5:ligand is endocytosed
+SCARB1 (SR-BI, CLA-1) binds ligands
+SCARB1:ligand is endocytosed
+SCARF1 (SREC-I) binds ligands
+SCARF1:ligand is endocytosed
+SEC16 complex binds SAR1B:GTP:SEC23:SEC24
+SEC24A,B:SEC23A bind SEC22B
+SEC31:SEC13 and v-SNARE recruitment
+SEC4C,D bind GOSR2 and STX5
+SLC2A4 (GLUT4) vesicle fuses with the plasma membrane
+SLC2A4 (GLUT4) vesicle translocates and docks at the plasma membrane
+SNAPs and NSF hexamer bind cis-SNARE at the TGN
+SNX9 recruits components of the actin polymerizing machinery
+SSC5D binds ligands
+STAB1 (FEEL-1) binds ligands
+STAB1:ligand is endocytosed
+STAB2 (FEEL-2) binds ligands
+STAB2:ligand is endocytosed
+STON2 binds SYT proteins
+STON2 is neddylated
+SYNJ hydrolyze PI(4,5)P2 to PI(4)P
+SYS1 binds AcM-ARFRP1
+Synthesis of Cx26
+Synthesis of Cx43
+Synthesis of GJB1 (Cx32)
+TBC RabGAPs accelerate GTP hydrolysis by RAB35
+TBC1D10A (EPI64) binds ARF6:GTP
+TBC1D10A binds JFC1
+TBC1D11 binds RAB6
+TBC1D14 binds RAB11 and ULK1
+TBC1D15 accelerates GTP hydrolysis by RAB7
+TBC1D16 accelerates GTP hydrolysis by RAB4A
+TBC1D17 binds OPTN:RAB8A
+TBC1D20 binds NS5A
+TBC1D20 binds RAB1:GTP
+TBC1D20 stimulates GTPase activity of RAB1, resulting in hydrolysis of GTP
+TBC1D25 (OATL1) binds ATG8 homologues
+TBC1D25 accelerates GTP hydrolysis by RAB33B
+TBC1D2A accelerates GTP hydrolysis by RAB7
+TBC1D3 associates with RAB5
+TBC1D7 binds the TSC1-TSC2 complex
+TMED2:TMED10 tetramer binds GPI anchored proteins
+TRAPPC complexes exchange GTP for GDP on RAB1
+Tethering of late endosome-derived vesicles by GARP, STX10:ST16:VTI1A and Golgins
+The COG complex and CUX1 and GOLGA5 dimers contribute to intra-Golgi vesicle tethering
+The COG complex binds RABs at the Golgi membrane
+The COG tethering complex interacts with numerous SNAREs at the Golgi membrane
+Transport of connexins to the ER-Golgi intermediate compartment
+Transport of connexins to the Trans-Golgi Network (TGN)
+Truncated Alpha-1-Microglobulin binds heme
+UBQLNs bind UIM-containing adaptor proteins
+Vamp And trans-Golgi Network AP-1 Binding Coupled With Cargo Capture
+Vamp And trans-Golgi Network AP-1 Binding Coupled With Cargo Capture On Lysosome Vesicle Destined Golgi Membrane
+Vamp2 associated secretory vesicle to plasma membrane transport
+Vamp7 associated Lysosome to Plasma membrane transport
+Vamp8 associated secretory vesicle to plasma membrane transport
+Vesicle budding
+Vesicle is tethered through binding GOLGA2:GORASP1, GOLGB1 and the COG complex
+YWHAE dimer binds phosphorylated DENND1 proteins
+c-src associates with Cx43 in gap junctions
+cis-Golgi cis-SNARE binds NSF and SNAPs
+cis-Golgi t-SNAREs bind YKT6 on tethered vesicle
+cis-SNARE binds SNAPs and NSF hexamer at the TGN
+p-AKT1,p-AKT2 phosphorylates AS160 (TBC1D4)
+p-AKT2 phosphorylates C2CD5
+p-AKT2 phosphorylates Myosin 5A
+p-AKT2 phosphorylates RGC2
+p-ULK1 phosphorylates DENND3
+trans-Golgi Network Coat Activation
+trans-Golgi Network Coat Assembly
+trans-Golgi Network Derived Lysosomal Vesicle Uncoating
+trans-Golgi Network Derived Vesicle Uncoating
+trans-Golgi Network Lysosomal Vesicle Scission
+trans-Golgi Network Lysosome Vesicle Destined Membrane Coat Assembly
+trans-Golgi Network Vesicle Scission

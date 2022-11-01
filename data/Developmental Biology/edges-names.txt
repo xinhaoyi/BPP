@@ -1,0 +1,562 @@
+2x p-5Y-RET:GDNF:GFRA complexes bind FRS2
+2x p-5Y-RET:GDNF:GFRA complexes bind GRB2-1:SOS1
+2x p-5Y-RET:GDNF:GFRA complexes bind GRB7,10
+2x p-5Y-RET:GDNF:GFRA complexes bind PLCgamma1
+2x p-5Y-RET:GDNF:GFRA complexes bind RET interactors
+2x p-5Y-RET:GDNF:GFRA complexes bind SHC1
+2x p-5Y-RET:GDNF:GFRA complexes bind SRC1, RAP1GAP
+2x p-5Y-RET:GDNF:GFRA complexes binds DOK1,DOK2,DOK4,DOK5,DOK6
+2x p-5Y-RET:GDNF:GFRA complexes:p-Y349,Y350,Y427-SHC1 binds GRB2-1:SOS1
+ADAM10 cleaves EFNAs
+ADGRG heterodimer translocates to plasma membrane
+AKAP5 recruits PKA to ROBO2
+AKAP5 recruits PKC to ROBO2
+AKAP5 recruits PKC to ROBO3.1
+AKAP5 recruits PPP3CB (PP2BB) to ROBO2
+AKT phosphorylates FOXO1A
+ARHGAP39 (Vilse) binds ROBO1:SLIT2
+ARTN binds RET:GFRA1,GFRA3
+Activated ROCK phosphorylates MRLCs
+Activation of CLASP
+Activation of Cdc42
+Activation of Fyn
+Activation of JNK by DSCAM
+Activation of PAK by Rac1
+Activation of RAC1 by SOS
+Activation of Rac1
+Activation of Rac1 by FARP2
+Activation of Rac1 by VAV2
+Activation of Rho by LARG and PDZ-RhoGEF
+Activation of TRPC channels by Netrin-1
+Activation of p38 alpha/beta MAPK
+Activation of p38MAPK by DSCAM
+Active Rac1 interacts with Plexin-B1:Sema4D
+All-trans retinoic acid binds RARA:RXRA at the promoter of the CEBPE gene
+Ankyrins link voltage-gated sodium and potassium channels to spectrin and L1
+Autocleavage of ADGRG6
+Autophosphorylation of NCAM1 bound Fyn
+Autophosphorylation of PAK
+Bnip2 interacts with CDO complex
+CASP14 cleaves filaggrin
+CDC42 and PIP2 bind WASL, activating it
+CDO binds BOC
+CDO binds promyogenic cadherins
+CDSN binds the cornified envelope
+CEBPA binds CDK2
+CEBPA binds CDK4
+CEBPA binds CDKN1A (p21)
+CEBPA binds MYC gene:E2F1
+CEBPA binds the promoter of the CEBPE gene
+CEBPA binds the promoter of the GFI1 gene
+CEBPA binds the promoter of the KLF5 gene
+CEBPA gene transcription is enhanced by RUNX1, SPI1 (PU.1), GATA2, TAL1 (SCL), FLI1, MYB, LEF1, and CEBPA
+CEBPA mRNA is translated to yield CEBPA protein
+CEBPB and phospho-STAT3 bind the promoter of the MYC gene
+CEBPB gene transcription is enhanced by phospho-CREB1 and phospho-STAT3
+CEBPB mRNA is translated to yield CEBPB protein
+CEBPE gene expression is enhanced by CEBPA, SPI1 (PU.1), and retinoic acid
+CERBERUS binds NODAL
+CHL1 interacts with Ankyrin-G
+CHL1 interacts with HSP7C
+CHL1 interacts with NRP1
+CHL1 interacts with beta1 integrins
+CHL1 interacts with contactin-6
+CSF3R gene expression is enhanced by SPI1 (PU.1), CEBPA, and DEK
+CYP51A1 gene expression
+Cis-heterodimerization of L1 and Axonin-1
+Cis-heterodimerization of L1 and Contactin-1/F3/F11
+Cis-heterodimerization of L1 and DM-GRASP/ALCAM/BEN
+Clathrin internalises EPH:EFN complexes
+Cleavage of NODAL proprotein
+Cytoplasmic proteases cleave Profilaggrin producing Filaggrin
+DCC heterodimerizes with UNC-5:Netrin-1
+DCC interacting NCK-1
+DCC interaction with Ezrin
+DCC interaction with Netrin-1
+DCC interaction with ROBO1
+DCC interaction with SIAH1
+DCC interaction with SIAH2
+DMRT1 binds the FOXL2 gene
+DMRT1 binds the SOX9 gene
+DMRT1 binds the WNT4 gene
+DSCAM associates with Rac1-GTP:pPAK1
+DSCAM binds DCC
+DSCAM binds Netrin-1
+DSCAM/DSCAML1 homodimerization
+Dephosphorylation of NCAM1 bound pFyn
+Dephosphorylation of pL1 (Y1176)
+Dimerization of LIMK1 by Hsp90
+Dissociation of the SPINK5:KLK5 complex at low pH
+Doublecortin binds phosphorylated neurofascin
+E2F1 binds the promoter of the MYC gene
+EFNB:GRB4 binds GIT1
+EFNBs bind SDCBP
+EFNBs bind SFKs
+EGR2 (KROX20) activates HOXA2 expression
+EGR2 (KROX20) activates HOXB2 expression
+EGR2 and SOX10 bind the MAG gene
+EGR2 and SOX10 bind the MBP gene
+EGR2 and SOX10 bind the PRX gene
+EGR2 and SREBF2 dimer bind CYP51A1 gene
+EGR2 and SREBF2 dimer bind SCD5 gene
+EGR2 and SREBF2(1-484) dimer bind HMGCR gene
+EGR2 gene expression
+EGR2, SOX10 and SMARCA4 bind the MPZ gene
+EGR2, SOX10 and TEAD1 bind enhancers in the PMP22 gene
+EOMES and TBXT bind the NANOG gene
+EOMES and TBXT bind the POU5F1 (OCT4) gene
+EOMES and TBXT bind the SOX2 gene
+EPH receptors autophosphorylate
+EPH:EFN dimers tetramerise
+EPHA binds TIAM1
+EPHAs bind EFNAs
+EPHB binds ITSN1
+EPHB binds p120-RasGAP
+EPHB phosphorylates TIAM1
+EPHB2 binds KALRN
+EPHB:NMDAR binds TIAM1
+EPHBs bind EFNBs
+EPHBs bind NMDARs
+EPHBs binds PTK2
+ERK1/2 phosphorylates MSK1
+EVL:PPL heterodimer binds the inner surface of the plasma membrane
+Ena/VASP proteins bind ROBO1:SLIT2 complex
+Envoplakin binds periplakin
+Envoplakin, periplakin, involucrin, SPR binding mediated by TGM1 crosslinking
+Expression of AMH in testis differentiation
+Expression of ANGPTL4
+Expression of Adiponectin
+Expression of CD36 (platelet glycoprotein IV, FAT)
+Expression of CEBPA
+Expression of CEBPB in adipogenesis
+Expression of CEBPD
+Expression of DHH in testis differentiation
+Expression of DMRT1 in testis differentiation
+Expression of DPPA4
+Expression of EBF1
+Expression of EOMES in the primitive streak
+Expression of EPAS1 (HIF2A)
+Expression of EPHA1
+Expression of FABP4 (aP2)
+Expression of FGF2
+Expression of FGF9 in testis differentiation
+Expression of FOXD3
+Expression of GLUT4
+Expression of Goosecoid (GSC) in the primitive streak
+Expression of KLF5
+Expression of Leptin
+Expression of Lipoprotein lipase (LPL)
+Expression of MIXL1 in the primitive streak
+Expression of NANOG
+Expression of PPARG
+Expression of PTGDS in testis differentiation
+Expression of Perilipin (PLIN)
+Expression of Phosphoenolpyruvate carboxykinase 1 (PEPCK-C)
+Expression of SALL1
+Expression of SALL4
+Expression of SOX2
+Expression of SOX9 in testis differentiation
+Expression of SRY in testis differentiation
+Expression of STAT3
+Expression of TBXT (T, Brachyury) in the primitive streak
+Expression of TDGF1 (CRIPTO)
+Expression of ZIC3
+FADK1 interaction with DCC
+FOXOA2-, MAFA-, and PAX6-dependent synthesis of PDX1 protein
+FYN phosphorylates DAB1 in RELN:VLDLR:DAB1:SH3KBP1
+FYN phosphorylates NMDAR2B
+Filaggrin binds Keratin tonofilament:Desmosome
+Formation of PPARG:RXRA heterodimer (ARF6 complex)
+Formation of clathrin coated vesicle
+Fyn binds NCAM1
+GAB in p-5Y-RET:GDNF:GFRA complexes is phosphorylated
+GDNF,NRTN bind RET:GFRA1,GFRA2
+GFI1 gene expression is enhanced by CEBPA
+GIT1 binds bPIX
+Glypican-1 (GPC1) binds SLIT2
+HMGCR gene expression
+HNF1A-dependent synthesis of FOXA3
+HNF1A-dependent synthesis of GLUT2 protein
+HNF1A-dependent synthesis of HNF4A
+HNF1A-dependent synthesis of HNF4G protein
+HNF1A-dependent synthesis of the L isoform of PKLR protein
+HNF1B- and FGF10-dependent synthesis of PTF1A protein
+HNF1B-dependent synthesis of HNF6 protein
+HNF6- and FGF10-dependent synthesis of PDX1 protein
+HNF6-dependent synthesis of HNF1B protein
+HNF6-dependent synthesis of NEUROG3 protein during morphogenesis
+HNF6-dependent synthesis of ONECUT3 protein during early pancreas specification
+HNF6-dependent synthesis of ONECUT3 protein during morphogenesis
+HOXA1 gene is transcribed
+HOXA1 mRNA is translated
+HOXA2 binds ROBO2 gene promoter
+HOXA2 chromatin is activated
+HOXA2 gene is transcribed
+HOXA2 mRNA is translated
+HOXA3 chromatin is activated
+HOXA3 gene is transcribed
+HOXA3 mRNA is translated
+HOXA4 gene is transcribed
+HOXA4 mRNA is translated
+HOXB1 activates HOXA2 expression
+HOXB1 activates HOXB2 expression
+HOXB1 gene is transcribed
+HOXB1 mRNA is translated
+HOXB1 maintains activation of HOXB1 chromatin
+HOXB2 chromatin is activated
+HOXB2 gene is transcribed
+HOXB2 mRNA is translated
+HOXB3 chromatin is activated
+HOXB3 gene is transcribed
+HOXB3 mRNA is translated
+HOXB4 gene is transcribed
+HOXB4 mRNA is translated
+HOXC4 chromatin is activated
+HOXC4 gene is transcribed
+HOXC4 mRNA is translated
+HOXD1 chromatin is activated
+HOXD1 gene is transcribed
+HOXD1 mRNA is translated
+HOXD3 chromatin is activated
+HOXD3 gene is transcribed
+HOXD3 mRNA is translated
+HOXD4 gene is transcribed
+HOXD4 mRNA is translated
+Heat-Stable Antigen binds L1
+Heterodimerization of E proteins with Myod
+IL6R gene expression is enhanced by CEBPA
+ISL1 binds the SLIT2 gene enhancer
+ITSN1 exchanges GTP for GDP on CDC42, activating it
+Inactivation of CDC42
+Inactivation of R-Ras by Sema3A-Plexin-A GAP activity
+Inactivation of R-Ras by Sema4D-Plexin-B1 GAP activity
+Inactivation of RAC1
+Inactivation of Rho-GTP by p190RhoGAP
+Inhibition of integrin activation by sequestering PIP5KIgamma
+Interaction of ABL with ROBO1:SLIT2
+Interaction of ABL1 with CDO complex
+Interaction of Bnip-2 with Cdc42
+Interaction of L1 with Laminin-1
+Interaction of L1 with Neurocan
+Interaction of MyoD:E protein with MEF2
+Interaction of NCAM1 with GFRalpha-1
+Interaction of NCAM1 with Major prion protein (PrP)
+Interaction of NCAM1 with Neurocan
+Interaction of NCAM1 with agrin
+Interaction of NCAM1 with collagens
+Interaction of NCAM1 with contactin-2
+Interaction of NCAM1:GFRalpha-1 with GDNF
+Interaction of NUMB with L1
+Interaction of PAK1 with Rac1-GTP
+Interaction of p38 MAPK with JLP
+JLP interacts with CDO complex
+KALRN exchanges GTP for GDP on RAC1, activating it
+KLF5 gene expression is enhanced by CEBPA
+KLK5 cleaves and activates CELA2
+KLK5 cleaves and activates KLK8
+Kazrin binds periplakin
+Keratin filaments bind cell-cell adhesion complexes
+Keratin tetramers bind to form unit length filaments
+Keratin type I binds keratin type II
+Keratin type I/type II heterodimers form tetramers
+L-PRX dimer binds DRP2
+L-PRX:DRP2 binds dystroglycan and laminin-211
+L-PRX:DRP:DGC:laminin-211 interacts with UTRN
+L1 and NCAM1 engaged in cis-interaction
+L1 binds ERM family members
+L1 binds NRP1
+L1 binds RanBPM
+L1 binds to AP-2 Clathrin complex
+L1 dimer binds Ankyrin
+L1 interaction with Integrins
+L1 linked to actin cytoskeleton by ankyrin
+L1 trans-homophilic interaction
+L1-EGFR trans-heterodimerization
+L1-FGFR cis-heterodimerization
+LARG and PDZ-RhoGEF binds to Plexin-B1
+LEF1 binds the promoter of the CEBPA gene
+LEF1 or TCF7 (TCF1), CTNNB1, TP63 Delta-N, and TBPL2 (TRF3) bind the TBXT (T, Brachyury) gene
+LEFTY binds NODAL
+LEFTY binds the EGF-CFC coreceptor in the NODAL receptor
+LGI1 binds ADAM11
+LGI1 binds ADAM22 and ADAM23
+LGI2 binds ADAM22,23
+LGI3 binds ADAM22,23,synatxin1
+LGI4 binds ADAM22,23,11
+LHX2 binds to ROBO1 gene locus
+LHX2 binds to ROBO2 gene locus
+LHX2,(LHX9) binds the ROBO3 gene promoter
+LIM kinase phosphorylation by ROCK
+LIMK phosphorylates CFL1, inactivating it
+LIN28 binds POU5F1 (OCT4) mRNA
+LIPs hydrolyse TG to DAG and RCOOH
+LYPLA2 hydrolyses PALM-C3,4-GAP43
+Lamellar bodies bind the early cornified envelope
+Late envelope proteins bind cornified envelope:CDSN
+Linkage of L1 with treadmilling F-actin
+MAFA-, NKX2-2-, PAX6-, and PDX1-dependent synthesis of insulin precursor protein
+MAFB (KREISLER) and HOXB1:PBX1:PKNOX1 (HOXB1:PBX1:PREP1) activate HOXA3 expression
+MAFB:JUN and EGR2 activate HOXB3 expression
+MAG gene expression
+MAP2K1 phosphorylates MAPK3
+MAP2K2 phosphorylates MAPK1
+MBP gene expression
+MMP2,9 cleave EPHB
+MPZ gene expression
+MSI1 binds ROBO3.1 mRNA
+MSK1 activates CREB
+MYC gene expression is enhanced by E2F1, STAT3, and CEBPB and repressed by CEBPA
+MYO9B inactivates RHOA
+Membrane proteases cleave Profilaggrin producing Filaggrin
+Myosin regulatory light chain phosphorylation by ROCK
+Myosin-X binds DCC/Neogenin
+N-WASP binds ARP2/3 and G-actin
+N-WASP binds ITSN1
+NCAM1 binds FGFR-1
+NCAM1 binds to ATP
+NCAM1 cis-homophilic interaction
+NCAM1 interacts with T- and L-type VDCC
+NCAM1 trans-homophilic interaction
+NCAM1:pFAK:Grb2:Sos-mediated nucleotide exchange of Ras
+NCK binds ROBO1:SLIT2
+NCK2 binds to ROBO1,(ROBO2)
+NEUROD1- and PDX1-dependent synthesis of glucokinase (GCK) protein
+NEUROG3-dependent synthesis of INSM1
+NEUROG3-dependent synthesis of NEUROD1
+NEUROG3-dependent synthesis of NKX2-2
+NEUROG3-dependent synthesis of PAX4 protein
+NGEF binds EPHA
+NGEF exchanges GTP for GDP on RHOA
+NOTCH1 stimulates HES1 transcription
+Neogenin binds Netrin-1
+Neogenin binds repulsive guidance molecules (RGDs)
+Neogenin:Netrin-3 binds CDO complex
+Netrin-1 induced DCC clustering
+Netrin-4 binds DCC/UNC5A
+Neurofascin and NrCAM heterodimerization
+Neurofascin binds Ankyrin-G
+Neurofascin binds contactin-1:CASPR complex
+Neurofascin interacts with syntenin-1
+NrCAM binds Ankyrin-G
+NrCAM binds Neuropilin-2
+NrCAM binds axonin-1
+NrCAM binds synapse-associated proteins
+Nuclear translocation of p38 MAPK
+PAK binds RAC and bPIX
+PAK1 autophosphorylates
+PAK1 binds RAC1:GTP
+PAKs autophosphorylate
+PAKs phosphorylate MLC
+PDX1-dependent synthesis of IAPP protein
+PDX1-dependent synthesis of NKX6-1 protein
+PDX1-dependent synthesis of NR5A2 protein
+PERP binds desmosomes
+PIKE-L interaction with UNC5B
+PIP2 hydrolysis
+PITPalpha binds DCC
+PKA phosphorylates RET:GDNF:GFRA dimer
+PKC phosphorylates ROBO3.1
+PMP22 gene expression
+POU5F1 (OCT4), NANOG bind the CDX2 promoter
+POU5F1 (OCT4), NANOG bind the GATA6 promoter
+POU5F1 (OCT4), SOX2, NANOG Bind the SALL1 Promoter
+POU5F1 (OCT4), SOX2, NANOG bind DPPA4 gene
+POU5F1 (OCT4), SOX2, NANOG bind the DKK1 promoter
+POU5F1 (OCT4), SOX2, NANOG bind the EOMES promoter
+POU5F1 (OCT4), SOX2, NANOG bind the EPHA1 promoter
+POU5F1 (OCT4), SOX2, NANOG bind the FGF2 promoter
+POU5F1 (OCT4), SOX2, NANOG bind the FOXD3 promoter
+POU5F1 (OCT4), SOX2, NANOG bind the GSC promoter
+POU5F1 (OCT4), SOX2, NANOG bind the HHEX promoter
+POU5F1 (OCT4), SOX2, NANOG bind the SOX2 promoter
+POU5F1 (OCT4), SOX2, NANOG bind the STAT3 promoter
+POU5F1 (OCT4), SOX2, NANOG bind the TDGF1 promoter
+POU5F1 (OCT4), SOX2, NANOG bind the TSC22D1 promoter
+POU5F1 (OCT4), SOX2, NANOG bind the ZIC3 promoter
+POU5F1 (OCT4), SOX2, NANOG, KLF4, PBX1, SMAD2 bind the NANOG promoter
+POU5F1 (OCT4), SOX2, NANOG, ZSCAN10, PRDM14, SMAD2, FOXP1-ES bind the POU5F1 (OCT4) promoter
+POU5F1 (OCT4), STAT3 bind the SALL4 promoter
+PPARG binds PPARG agonists
+PPARG:RXRA heterodimer binds to PPARG corepressors
+PPARG:RXRA heterodimer binds to fatty acid-like ligands
+PRX gene expression
+PSPN binds RET:GFRA4
+PTK2 autophosphorylates at Y397
+Phospho R-SMAD(SMAD2,3):CO-SMAD(SMAD4):FOXH1 binds Activin Response Element
+Phospho R-SMAD(SMAD2/3):CO-SMAD(SMAD4):FOXO3 binds FoxO3a-binding elements
+Phospho-CREB1 binds the promoter of the CEBPB gene
+Phospho-STAT3 binds the promoter of the CEBPB gene
+Phosphorylated FOXO1A is excluded from the nucleus
+Phosphorylated SMAD2 and SMAD3 form a complex with SMAD4
+Phosphorylation and activation of Ezrin
+Phosphorylation of CRMPs by Cdk5
+Phosphorylation of CRMPs by GSK3beta
+Phosphorylation of DCC by Fyn
+Phosphorylation of E proteins by p38 MAPK
+Phosphorylation of FADK1
+Phosphorylation of FAK by Src kinase
+Phosphorylation of L1 by CK-II
+Phosphorylation of L1 by EPHB2
+Phosphorylation of L1 by ERK
+Phosphorylation of L1 by SRC
+Phosphorylation of L1 by p90rsk
+Phosphorylation of LIMK-1 by PAK
+Phosphorylation of MEF2 proteins by p38
+Phosphorylation of Neurofascin
+Phosphorylation of PLCgamma by Netrin-1
+Phosphorylation of Plexin-A
+Phosphorylation of R-SMAD2/3 by NODAL receptor
+Phosphorylation of ROBO1 by ABL kinase
+Phosphorylation of Unc5C
+Phosphorylation of VAV2
+Phosphorylation of Y1229 in L1
+Phosphorylation of cofilin by LIMK-1
+Plasma membrane resorption
+Plexin-A1-4 binds NRP1
+Polysialylation of NCAM1
+Proteasome degrades ubiquitinated ROBO3.1
+Proteolytic processing of SLIT
+RELN:VLDLR binds DAB1
+RELN:VLDLR:DAB1 binds SH3KBP1
+RET binds GFRA1,GFRA2
+RET binds GFRA1,GFRA3
+RET binds GFRA4
+RET dimerizes
+RET tyrosine phosphorylation
+RHOA:GTP binds ROCK, activating it
+ROBO1 binds FLRT3
+ROBO1 binds NRP1
+ROBO1 binds SLIT2
+ROBO1 gene expression is inhibited by LHX2
+ROBO1,ROBO2 bind SLIT3
+ROBO2 binds AKAP5
+ROBO2 binds SLIT2
+ROBO2 gene transcription is stimulated by HOXA2 and inhibited by LHX2
+ROBO3 binds NELL2
+ROBO3.1 antagonizes ROBO1/ROBO2 to allow floor plate crossing
+ROBO3.1 binds AKAP5
+ROBO3.1 binds DCC
+ROBO3.1 expression is stimulated by LHX2,(LHX9)
+ROBO3.1 mRNA translation is positively regulated by MSI1
+ROBOs bind keratan sulfate
+ROCK activation by RHO
+ROCK phosphorylates LIMK1,2
+ROCK1,2 bind ROCKi
+RUNX1, SPI1 (PU.1), GATA2, TAL1 (SCL), FLI1, and MYB bind the CEBPA promoter
+Rac1 binds PlexinA
+Ras:GTP binds p120-RasGAP
+Recruitment and activation of Cdk5
+Recruitment and activation of N-WASP by Cdc42
+Recruitment of ABLIM to the plasma membrane
+Recruitment of CAP to ABL
+Recruitment of FAK to NCAM1:Fyn in lipid rafts
+Recruitment of Grb2 to pFAK:NCAM1
+Recruitment of PAK to NCK
+Recruitment of Profilin by Ena/VASP proteins
+Recruitment of Rnd1 to Plexin A
+Recruitment of SOS to plasma membrane
+Recruitment of Src and Fyn to DCC:FADK1
+Recruitment of p190RhoGEF to p-FAK
+Reinforcement of the Cornified Envelope
+Reinsertion of L1 into the plasma membrane
+Retinoic acid activates HOXA1 chromatin
+Retinoic acid activates HOXA4 chromatin
+Retinoic acid activates HOXB1 chromatin
+Retinoic acid activates HOXB4 chromatin
+Retinoic acid activates HOXD4 chromatin
+RhoGTPase GEF's recruited to DCC
+Rnd1 interacts with Plexin-B1:Sema4D
+SALL4 binds the SALL4 promoter
+SCD5 gene expression
+SDC2 multimerises
+SEMA3E binds to PLXND1
+SEMA4A binds to PLXND1
+SEMA4D interacts with CD45
+SEMA4D interacts with CD72
+SEMA4D interacts with Plexin-B1:ErbB2
+SEMA4D interacts with Plexin-B1:Met
+SEMA5A binds to PLXNB3
+SEMA6A binds to PLXNA2 and PLXNA4
+SEMA6D binds to PLXNA1:TREM2:DAP12
+SEMA7A binds to PLXNC1
+SEMA7A binds to integrin alpha1beta1
+SFKs phosphorylate EFNBs
+SFKs phosphorylate GIT1
+SFKs phosphorylate NGEF
+SFKs phosphorylate VAV2,3
+SHC1 in the RET complex is phosphorylated
+SLIT1 binds COL4A5
+SLIT1 binds ROBO1,(ROBO2)
+SLIT2 binds Dystroglycan
+SLIT2 gene expression is stimulated by ISL1
+SLIT2-bound ROBO1 binds MYO9B
+SLIT2:ROBO1 binds CXCR4
+SLITs bind keratan sulfate
+SOS binds Grb2 bound to pFAK:NCAM1
+SOX10 dimer binds the POU3F1 promoter
+SOX10, EGR2 and NAB proteins bind the GJB1 promoter
+SOX10, POU3F1 and POU3F2 bind EGR2 gene
+SOX10-dependent POU3F1 gene expression
+SOX9 and GATA4 bind the DMRT1 gene
+SOX9 binds the DHH gene
+SOX9 binds the FGF9 gene
+SOX9 binds the PTGDS gene
+SOX9 binds the SOX9 gene
+SOX9, NR5A1 (SF1), and GATA4 bind the AMH gene
+SPI1 (PU.1) gene transcription is stimulated by RUNX1:CBFB:KMT2A
+SPI1 (PU.1), CEBPA and DEK bind the promoter of the CSF3R (G-CSFR) gene
+SPI1 (PU.1), PML isoform 4, and EP300 bind the promoter of the CEBPE gene
+SPINK5(490-624) binds KLK5
+SPINK6 binds KLK12
+SPINK6 binds KLK13
+SPINK6 binds KLK14
+SPINK6 binds KLK5
+SPINK9 binds KLK5
+SRC phosphorylates ROBO3.1 in response to NTN1
+SRGAP binds ROBO1:SLIT2
+SRY and NR5A1 (SF1) bind SOX9 gene
+ST14 hydrolyzes and activates KLK5
+Sema3A binds Nrp-1 bound to PlexinA
+Shootin-1 links L1 and retrograde actin flow
+Shp2 binds pUnc5C
+TGM1 and involucrin bind the plasma membrane
+TIAM1 exchanges GTP for GDP on RAC1, activating it
+The NODAL Receptor binds NODAL ligands
+The SMAD2/3:SMAD4 complex transfers to the nucleus
+Trans-homodimerization of Neurofascin
+Transcription of POU5F1 (OCT4)
+Transcription of ROBO3.2 mRNA
+Translation of OCT4 mRNA
+Translation of ROBO3.2 mRNA initiates NMD
+Translation of ROBO3.2 mRNA is negatively regulated by NMD
+Translocation of Ezrin to plasma membrane
+Transphosphorylation of pLIMK1
+Transport of L1 from C-domain to P-domain
+Transport of L1 into endosomes
+Type II Activin Receptor (ActRII/ACVR2) phosphorylates Type I Activin Receptor (ActRIB/ACVR1B) in response to NODAL
+Type II Activin Receptor (ActRIIB/ACVR2B) phosphorylates Type I Activin Receptor (ActRIC/ACVR1C) in response to NODAL
+Tyrosine phosphorylation of CRMPs by Fes
+UNC-5 binds Netrin-1
+USP33 deubiquitinates ROBO1
+VAV exchanges GTP for GDP on RAC1, activating it
+VLDLR binds RELN
+WT1, NR5A1 (SF1), GATA4, ZFPM2 bind the SRY gene
+ZSWIM8 binds ROBO3.1
+ZSWIM8 ubiquitinates ROBO3.1
+bPIX exchanges GTP for GDP on RAC, activating it
+gamma-secretase cleaves EPHB2
+p-2S-SMAD2,3:SMAD4, CTNNB1, and TBPL2 bind FOXH1:SMAD3:EOMES gene
+p-2S-SMAD2,3:SMAD4, p-2S-SMAD2,3:TRIM33, CTNNB1, and TBPL2 bind FOXH1:SMAD3:GSC gene
+p-2S-SMAD2,3:TRIM33, p-2S-SMAD2,3:SMAD4, CTNNB1, TBPL2 bind FOXH1:MIXL1 gene
+p-5Y-GAB in RET-GRB2-GAB complexes binds PTPN11
+p-5Y-GAB in the RET-GRB2-GAB complexes binds p85-PI3K
+p-5Y-RET complexes bind GRB2
+p-5Y-RET-GRB2-containing complexes bind GAB1,GAB2
+p-EFNB binds GRB4
+p-EPHB phosphorylates SDC2
+p-EPHs bind SRC,FYN,YES,LYN
+p-EPHs bind VAV2,3
+p-TIAM1 exchanges GTP for GDP on RAC1, activating it
+p120-RasGAP activates GTP hydrolysis on RAS, inactivating it
+p190RhoGAP binds Plexin-B1
+p190RhoGEF exchanges GTP for GDP on RHOA, activating it

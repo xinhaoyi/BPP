@@ -1,0 +1,120 @@
+2OG
+ADP
+ATF7IP
+ATF7IP:SETDB1
+ATP
+Ac-CoA
+AcK(9,14,18,79)-p(S10,T11)-histone H3
+AcK-HIST1H4
+AcK-histone H2A, AcK-HIST1H4
+AcK-histone H2A, H2B, H3, H4
+AcK-histone H2B, H3, H4
+AcK-histone H3, H4
+AcK-replicative histone H2B, H4
+AcK10-histone H3, AcK-HIST1H4
+AcK15-histone H3
+AcK15-histone H3, AcK-HIST1H4
+AcK17-HIST1H4
+AcK5,12-HIST1H4A
+Acetylated core histone octamer
+Ack-Me3K-histone H3
+AdoHcy
+AdoMet
+BRWD1
+BRWD1:AcK(9,14,18,79)-p(S10,T11)-histone H3
+BRWD1:SMARCA4
+CCND1:CDK4:PRMT5:WDR77
+CCND1:CDK4:PRMT5:pT5-WDR77
+CCND1:CDK4:PRMT5:pT5-WDR77:COPRS
+CH2O
+CO2
+COPRS
+Cit3-replicative histone H3, Cit9-replicative histone H3, Cit18-replicative histone H3, Cit27-replicative histone H3
+CoA-SH
+Core histone octamer
+DNMT3A
+H2O
+HDAC1:2-containing complex
+HDAC1:2-containing complex:HDAC2 inhibitors
+HDAC2 inhibitors
+HIST1H4
+Histone H2A
+Histone H2A, H2B, H3, H4
+Histone H2A, HIST1H4
+Histone H2B, H3, H4
+Histone H2B, H4
+Histone H3
+Histone H3, H4
+KAT6A (1-1118)
+Me2K10-histone H3
+Me2K21-HIST1H4
+Me2K28-histone H3
+Me2K37-histone H3
+Me2K5-histone H3
+Me2K80-histone H3
+Me2R3-histone H3
+Me2R4-HIST1H4:DNMT3A
+Me2aR-RPS2
+Me2aR12-histone H2A, MeR12-histone H2A
+Me2aR18-histone H3, MeR18-histone H3
+Me2aR27-histone H3, MeR27-histone H3
+Me2aR3-histone H3, MeR3-histone H3
+Me2aR30-histone H2A, MeR30-histone H2A
+Me2aR4-HIST1H4
+Me2aR4-histone H2A, MeR4-histone H2A
+Me2sR3-histone H3
+Me2sR4-HIST1H4
+Me2sR4-HIST1H4, MeR4-HIST1H4
+Me2sR4-histone H2A
+Me2sR9-histone H3
+Me3K-histone H3
+Me3K10-histone H3
+Me3K21-HIST1H4
+Me3K28-histone H3
+Me3K37-histone H3
+Me3K5-histone H3
+Me3K80-histone H3
+MeK10-histone H3
+MeK21-HIST1H4
+MeK28-histone H3
+MeK37-histone H3
+MeK5-histone H3
+MeK80-histone H3
+MeR12-histone H2A, Histone H2A
+MeR18-histone H3, Histone H3
+MeR27-histone H3, Histone H3
+MeR3-histone H3
+MeR3-histone H3, Histone H3
+MeR3-replicative histone H3, MeR9-replicative histone H3, MeR18-replicative histone H3, Me27-replicatve histone H3
+MeR30-histone H2A, Histone H2A
+MeR4-HIST1H4
+MeR4-HIST1H4, HIST1H4
+MeR4-histone H2A, Histone H2A
+MeR9-histone H3
+NCOA1 (868-1441)
+NCOA1(868-1441):PAX3(1-319)
+NCOA2 (869-1464)
+NCOA2(869-1464):KAT6A(1-1118)
+NFkB Complex
+NFkB Complex with MeK310-RELA
+NH3
+O2
+PAX3 (1-319)
+PRMT5
+PRMT5:WDR77
+PRMT5:pT5-WDR77
+Protein-L-arginine
+Protein-L-citrulline
+RBBP7
+RBBP7:Replicative histone H3
+RPS2
+SETDB1
+SMARCA4
+SUCCA
+SWI/SNF chromatin remodelling complex
+SWI/SNF chromatin remodelling complex:PRMT5:pT5-WDR77
+WDR5
+WDR5:Me2sR3-histone H3
+WDR77
+acetate
+p-Y297,304,307-PRMT5

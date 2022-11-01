@@ -1,0 +1,2400 @@
+(Glc)1 (GlcNAc)2 (Man)8b
+(Glc)1 (GlcNAc)2 (Man)9
+(Glc)1 (GlcNAc)2 (Man)9 (PP-Dol)1
+(Glc)2 (GlcNAc)2 (Man)9 (Asn)1
+(Glc)2 (GlcNAc)2 (Man)9 (PP-Dol)1
+(Glc)3 (GlcNAc)2 (Man)9 (Asn)1
+(Glc)3 (GlcNAc)2 (Man)9 (PP-Dol)1
+(Glc)3(GlcNAc)2(Man)9-CTSC
+(Glc)3(GlcNAc)2(Man)9-CTSZ
+(Glc)3(GlcNAc)2(Man)9-SERPINA1
+(GlcNAc)2 (Man)2 (PP-Dol)1
+(GlcNAc)2 (Man)3 (PP-Dol)1
+(GlcNAc)2 (Man)5
+(GlcNAc)2 (Man)5 (Asn)1
+(GlcNAc)2 (Man)5 (PP-Dol)1
+(GlcNAc)2 (Man)6 (PP-Dol)1
+(GlcNAc)2 (Man)7 (PP-Dol)1
+(GlcNAc)2 (Man)7aa
+(GlcNAc)2 (Man)7bc
+(GlcNAc)2 (Man)8 (Asn)1
+(GlcNAc)2 (Man)8 (PP-Dol)1
+(GlcNAc)2 (Man)8a
+(GlcNAc)2 (Man)8b
+(GlcNAc)2 (Man)8c
+(GlcNAc)2 (Man)9
+(GlcNAc)2 (Man)9 (PP-Dol)1
+(GlcNAc)3 (Man)3 (Asn)1
+(GlcNAc)3 (Man)5 (Asn)1
+(GlcNAc)4 (Man)3 (Asn)1
+(ethanolamineP) mannose (a1-2) (ethanolamineP) mannose (a1-6) (ethanolamineP) mannose (a1-4) glucosaminyl-acyl-PI
+(ethanolamineP) mannose (a1-4) glucosaminyl-acyl-PI
+(un)folded protein:(GlcNAc)2 (Man)9
+1,3-diaminopropane
+10-formyl-THF
+10xCbxE-F2(25-622)
+10xCbxE-F2(44-622)
+10xCbxE-F7(21-466)
+11xCbxE-3D-F10(32-179)
+11xCbxE-3D-F10(41-179)
+11xCbxE-GAS6(31-691)
+11xCbxE-GAS6(39-691)
+11xCbxE-PROS1
+11xCbxE-PROS1(25-676)
+12xCbxE-3D-F9(29-461)
+12xCbxE-3D-F9(47-461)
+13xCbxE-PROZ
+13xCbxE-PROZ(24-400)
+18S rRNA
+22beta-HC, 24-HC
+26S proteasome
+28S rRNA
+28S ribosomal subunit
+2SUMO1:NR3C1:Glucocorticoid ligand
+2xHC-INS(25-54)
+2xHC-INS(25-54):4xHC-INS(57-110)
+2xHC-INS(25-56):4xHC-INS(57-110)
+2xHC-TXN
+2xHP-EPAS1
+2xHP-HIF1A
+3D-F10(32-179)
+3D-PROC(33-197)
+3OHD110-F9(29-461)
+3xCbxE-BGLAP(24-100)
+3xCbxE-BGLAP(52-100)
+40S ribosomal complex
+43S complex
+43S: Ceruloplasmin mRNA:eIF4F:eIF4B:eIF4H:PABP
+4SUMO2,3-BLM
+4xHC-INS(90-110)
+5.8S rRNA
+55S ribosome
+55S ribosome:mRNA:fMet-tRNA
+5S rRNA
+60S ribosomal complex
+6xHC-INS(25-110)
+7K-BACE1
+7K-BACE1(46-501)
+7SL RNA
+80S Ribosome:mRNA:peptidyl-tRNA with elongating peptide
+80S ribosome
+80S:Met-tRNAi:mRNA
+8xCbxE-3D-PROC(33-197)
+8xCbxE-3D-PROC(43-197)
+ACE(30-1232)
+ACEIs
+ACTB(1-375)
+ACTL6A
+ACTR5
+ACTR8
+ADAM10
+ADAM10:Zn2+
+ADAMTS13
+ADAMTS5
+ADAMTS7
+ADAMTSL1
+ADAMTSL4
+ADORA2A
+ADORA2A,B
+ADORA2B
+ADP
+ADR, NAd
+ADRA2A,C
+ADRB2
+ADRM1
+ADRM1:26S proteasome
+AGT
+AGT(34-40)
+AGT(34-41)
+AGT(34-42)
+AGT(34-43)
+AGT(35-41)
+AGT(36-41)
+AMP
+ANK1
+ANK2
+ANK3
+APCS(20-223)
+APOE-4
+APP(18-671)
+APP(18-687)
+APP(18-770)
+APP(672-711)
+APP(672-713)
+APP(672-770)
+APP(688-770)
+APP(712-770)
+APP(714-770)
+AR
+AREG precursor
+ARF:GDP
+ARF:GTP
+ARFGAP1
+ARFGAP1,2,3
+ARFGAP2
+ARFGAP3
+ARFs
+ARL2
+ARSA dimer
+ARSB
+ARSD
+ARSE
+ARSF
+ARSG
+ARSH
+ARSI
+ARSJ
+ARSK
+ATP
+ATP,UTP
+ATP6AP2
+ATXN3
+AURKA
+AURKAIP1
+AURKB
+Ac-CoA
+AcCho
+AcGlcN1P
+AcGlcN6P
+AcM-UBE2F
+AcM-UBE2M
+Ade-Rib
+AdoHcy
+AdoMet
+Ala-tRNA(Ala)
+Alcohol
+Alpha-1(VII) chains
+Aminoacyl-tRNA
+Amyloid fibril main peptide chains
+Ankyrin
+Arg-tRNA(Arg)
+ArgN-GCG(100-127)
+ArgN-GCG(98-127)
+Asn-tRNA(Asn)
+Asp-tRNA(Asp)
+BACE1
+BACE1(22-45)
+BACE1(46-501)
+BAP1
+BAP1-interacting complex
+BAP1-interacting core complex
+BARD1
+BCL10
+BECN1,USP10
+BET1
+BET1:GOSR2:STX5:SCFD1
+BET1L
+BGLAP(24-100)
+BGLAP(24-51)
+BIRC2
+BIRC3
+BIRC5
+BLM
+BMI1
+BMI1,PCGF2
+BRCA1
+BRCA1-A Complex
+BRISC complex
+Beta-catenin
+C111-AcM-UBE2M-G76-NEDD8
+C116-AcM-UBE2F-G76-NEDD8
+CALB1
+CALM1
+CALR
+CALR,CANX
+CAND1
+CANX
+CASP8AP2
+CBX2
+CBX2,CBX4,CBX8
+CBX4
+CBX5
+CBX8
+CCA
+CCDC22
+CCDC59
+CCDC59:TTF1
+CCDC8
+CCNA1,CCNA2
+CCP110,ARRB2,(ARRB1)
+CCT/TRiC:ADP
+CCT/TriC:ATP
+CCT2
+CCT3
+CCT4
+CCT5
+CCT6
+CCT7
+CCT8
+CDC20
+CDC34
+CDC73
+CDCA
+CDCA8
+CDP
+CDX2
+CETN2
+CFP
+CGA
+CGB3
+CH3COO-
+CHCHD1
+CHD3
+CHM
+CHML
+CHMs
+CKAP4
+CLSPN, MYC
+CMP
+CMP-Neu5Ac
+CNIH1
+CNIH1:TFGA,AREG precursors
+CNIH2
+CNIH2,3
+CNIH2,3:GRIA1
+CNIH3
+CO2
+COG complex
+COG1
+COG2
+COG3
+COG4
+COG5
+COG6
+COG7
+COG8
+COMMDs
+COMMDs:CCDC22
+COPII cargo receptors:SAR1B:GTP:SEC23:SEC24
+COPII cargo:receptors
+COPII cargo:receptors:SAR1B:GTP:SEC23:SEC24:SEC16A:SEC16B:TFG hexamer
+COPII cargo:receptors:SEC23:SEC24:SEC13:SEC31:SEC23IP:v-SNAREs
+COPII cargo:receptors:SEC23:SEC24:SEC13:SEC31:SEC23IP:v-SNAREs:TRAPPCII:RAB1:GTP
+CREBBP
+CRHR2
+CRL E3 ubiquitin ligases
+CRL1 E3 ubiquitin ligase:COMMDs:CCDC22
+CRL1 E3 ubiquitin ligase:COMMDs:CCDC22:DCUN1Ds
+CRL2 E3 ubiquitin ligase
+CRL2 E3 ubiquitin ligase:COMMDs:CCDC22
+CRL2 E3 ubiquitin ligase:COMMDs:CCDC22:DCUN1D1,2,4,5
+CRL3 E3 ubiquitin ligase:COMMDs:CCDC22
+CRL3 E3 ubiquitin ligase:COMMDs:CCDC22:DCUN1D1,2,4,5
+CRL4 E3 ubiquitin ligase:COMMDs:CCDC22
+CRL5 E3 ubiquitin ligase
+CRL5 E3 ubiquitin ligase:COMMDs:CCDC22
+CRL5 E3 ubiquitin ligase:COMMDs:CCDC22:DCUN1Ds
+CSF2RA
+CSF2RA:CSF2RB
+CSF2RB
+CTBP1
+CTP
+CTR9
+CUL4
+CUL7
+CUL7:CCDC8:OBSL1
+CUL9
+CUL9:RBX1
+CYLD
+Ca2+
+Ceruloplasmin mRNA
+Chromatin
+Cl-
+CoA-SH
+Cofactor D:GTP:beta tubulin
+Cofactor E:GTP-alpha tubulin folding
+Core 2 (MUC1)
+Core 2 (MUC12)
+Core 2 (MUC13)
+Core 2 (MUC15)
+Core 2 (MUC16)
+Core 2 (MUC17)
+Core 2 (MUC19)
+Core 2 (MUC2)
+Core 2 (MUC20)
+Core 2 (MUC21)
+Core 2 (MUC3A)
+Core 2 (MUC3B)
+Core 2 (MUC4)
+Core 2 (MUC5AC)
+Core 2 (MUC5B)
+Core 2 (MUC6)
+Core 2 (MUC7)
+Core 2 (MUCL1)
+Core 2S (MUC1)
+Core 2S (MUC12)
+Core 2S (MUC13)
+Core 2S (MUC15)
+Core 2S (MUC16)
+Core 2S (MUC17)
+Core 2S (MUC19)
+Core 2S (MUC2)
+Core 2S (MUC20)
+Core 2S (MUC21)
+Core 2S (MUC3A)
+Core 2S (MUC3B)
+Core 2S (MUC4)
+Core 2S (MUC5AC)
+Core 2S (MUC5B)
+Core 2S (MUC6)
+Core 2S (MUC7)
+Core 2S (MUCL1)
+Core 2a (MUC1)
+Core 2a (MUC12)
+Core 2a (MUC13)
+Core 2a (MUC15)
+Core 2a (MUC16)
+Core 2a (MUC17)
+Core 2a (MUC19)
+Core 2a (MUC2)
+Core 2a (MUC20)
+Core 2a (MUC21)
+Core 2a (MUC3A)
+Core 2a (MUC3B)
+Core 2a (MUC4)
+Core 2a (MUC5AC)
+Core 2a (MUC5B)
+Core 2a (MUC6)
+Core 2a (MUC7)
+Core 2a (MUCL1)
+Core 3 (MUC1)
+Core 3 (MUC12)
+Core 3 (MUC13)
+Core 3 (MUC15)
+Core 3 (MUC16)
+Core 3 (MUC17)
+Core 3 (MUC19)
+Core 3 (MUC2)
+Core 3 (MUC20)
+Core 3 (MUC21)
+Core 3 (MUC3A)
+Core 3 (MUC3B)
+Core 3 (MUC4)
+Core 3 (MUC5AC)
+Core 3 (MUC5B)
+Core 3 (MUC6)
+Core 3 (MUC7)
+Core 3 (MUCL1)
+Core 4 (MUC1)
+Core 4 (MUC12)
+Core 4 (MUC13)
+Core 4 (MUC15)
+Core 4 (MUC16)
+Core 4 (MUC17)
+Core 4 (MUC19)
+Core 4 (MUC2)
+Core 4 (MUC20)
+Core 4 (MUC21)
+Core 4 (MUC3A)
+Core 4 (MUC3B)
+Core 4 (MUC4)
+Core 4 (MUC5AC)
+Core 4 (MUC5B)
+Core 4 (MUC6)
+Core 4 (MUC7)
+Core 4 (MUCL1)
+Core 5 (MUC1)
+Core 5 (MUC12)
+Core 5 (MUC13)
+Core 5 (MUC15)
+Core 5 (MUC16)
+Core 5 (MUC17)
+Core 5 (MUC19)
+Core 5 (MUC2)
+Core 5 (MUC20)
+Core 5 (MUC21)
+Core 5 (MUC3A)
+Core 5 (MUC3B)
+Core 5 (MUC4)
+Core 5 (MUC5AC)
+Core 5 (MUC5B)
+Core 5 (MUC6)
+Core 5 (MUC7)
+Core 5 (MUCL1)
+Core 6 (MUC1)
+Core 6 (MUC12)
+Core 6 (MUC13)
+Core 6 (MUC15)
+Core 6 (MUC16)
+Core 6 (MUC17)
+Core 6 (MUC19)
+Core 6 (MUC2)
+Core 6 (MUC20)
+Core 6 (MUC21)
+Core 6 (MUC3A)
+Core 6 (MUC3B)
+Core 6 (MUC4)
+Core 6 (MUC5AC)
+Core 6 (MUC5B)
+Core 6 (MUC6)
+Core 6 (MUC7)
+Core 6 (MUCL1)
+Core 7 (MUC1)
+Core 7 (MUC12)
+Core 7 (MUC13)
+Core 7 (MUC15)
+Core 7 (MUC16)
+Core 7 (MUC17)
+Core 7 (MUC19)
+Core 7 (MUC2)
+Core 7 (MUC20)
+Core 7 (MUC21)
+Core 7 (MUC3A)
+Core 7 (MUC3B)
+Core 7 (MUC4)
+Core 7 (MUC5AC)
+Core 7 (MUC5B)
+Core 7 (MUC6)
+Core 7 (MUC7)
+Core 7 (MUCL1)
+Core 8 (MUC1)
+Core 8 (MUC12)
+Core 8 (MUC13)
+Core 8 (MUC15)
+Core 8 (MUC16)
+Core 8 (MUC17)
+Core 8 (MUC19)
+Core 8 (MUC2)
+Core 8 (MUC20)
+Core 8 (MUC21)
+Core 8 (MUC3A)
+Core 8 (MUC3B)
+Core 8 (MUC4)
+Core 8 (MUC5AC)
+Core 8 (MUC5B)
+Core 8 (MUC6)
+Core 8 (MUC7)
+Core 8 (MUCL1)
+Cys-tRNA(Cys)
+DAG
+DAG1(30-653)
+DAP3
+DAXX
+DCAF protein
+DCHOL
+DCUN1D1
+DCUN1D1,2,4,5
+DCUN1D3 mRNA
+DCUN1Ds
+DDB1
+DDB2
+DDOST
+DDX17
+DDX5
+DDX58
+DECA
+DERL1
+DMBT1
+DNA
+DNAJC24
+DNMT1
+DNMT3A
+DNMT3B
+DOLDP
+DOLP
+DOLP-Man
+DPP4 inhibitors
+DPP4(39-766)
+DbGP
+DecS-GHRL-1(24-117)
+DecS-GHRL-1(24-50)
+DecS-GHRL-1(24-51)
+Dhp-K50-EIF5A
+Dhp-K50-EIF5A2
+Disialyl T-antigen (MUC1)
+Disialyl T-antigen (MUC12)
+Disialyl T-antigen (MUC13)
+Disialyl T-antigen (MUC15)
+Disialyl T-antigen (MUC16)
+Disialyl T-antigen (MUC17)
+Disialyl T-antigen (MUC19)
+Disialyl T-antigen (MUC2)
+Disialyl T-antigen (MUC20)
+Disialyl T-antigen (MUC21)
+Disialyl T-antigen (MUC3A)
+Disialyl T-antigen (MUC3B)
+Disialyl T-antigen (MUC4)
+Disialyl T-antigen (MUC5AC)
+Disialyl T-antigen (MUC5B)
+Disialyl T-antigen (MUC6)
+Disialyl T-antigen (MUC7)
+Disialyl T-antigen (MUCL1)
+Double-stranded DNA
+Double-stranded DNA and chromatin
+Dynactin
+Dynein complex
+Dynein:Dynactin:microtubule
+E,E-FPP
+EEF1A1
+EEF1B2
+EEF1D
+EEF1G
+EEF2
+EIF1AX
+EIF2B1
+EIF2B2
+EIF2B3
+EIF2B4
+EIF2B5
+EIF2S1
+EIF2S1:EIF2S2:EIF2S3
+EIF2S2
+EIF2S3
+EIF3A
+EIF3B
+EIF3C
+EIF3D
+EIF3E
+EIF3F
+EIF3G
+EIF3H
+EIF3I
+EIF3J
+EIF3K
+EIF3L
+EIF3M
+EIF4A1
+EIF4A2
+EIF4B
+EIF4E
+EIF4EBP1
+EIF4G1
+EIF4H
+EIF5
+EIF5A
+EIF5A2
+EIF5B
+EP300
+ER-to-ERGIC v-SNARES
+ERAL1
+ERGIC-to-cis-Golgi cargo
+ESR1
+ETF1 dimer
+ETFB
+EXOC1
+EXOC2
+EXOC3
+EXOC4
+EXOC5
+EXOC6
+EXOC7
+EXOC8
+F2(25-622)
+F7(21-466)
+FACoA
+FAM20A
+FAM20C
+FAM20C products
+FAM20C substrates
+FAU
+FAs
+FFAR1
+FFAR1 ligands
+FFAR4
+FFAR4 ligands
+FOXL2
+FSHB
+Factor V precursor
+Factor VIII precursor
+FarC-PTP4A2
+Fru(6)P
+FruAm
+FruAm3P
+Fuc1P
+G-protein alpha (q/11/14/15)
+G-protein beta 1-4 subunit
+G-protein beta 1-4:gamma complex
+G-protein gamma subunit
+G1P
+G76-NEDD8-C111-AcM-UBE2M
+G76-NEDD8-C116-AcM-UBE2F
+G76-NEDD8-K1881-CUL9
+G76-NEDD8-K689-CUL2
+G76-NEDD8-K712-CUL3
+GADD45GIP1
+GAG
+GAS6(31-38)
+GAS6(31-691)
+GATA3,IL33
+GATA4
+GATA6
+GBF1
+GCG gene
+GCG(1-180)
+GCG(100-128)
+GCG(21-180)
+GCG(53-81)
+GDP
+GDP-DHDMan
+GDP-Fuc
+GDP-KDGal
+GDP-Man
+GFM1
+GFM1:GTP
+GFM2
+GFM2:GTP
+GGA1
+GGA1,2,3
+GGA2
+GGA3
+GGC-RABs:GDP
+GH1
+GHRL gene
+GHRL-1
+GHRL-1(24-117)
+GHRL-1(24-50)
+GHRL-1(24-51)
+GHRL-1(52-117)
+GIP gene
+GIP(1-153)
+GIP(22-153)
+GIP(52-93)
+GIP(54-93)
+GLP-1 (7-37)
+GNA11
+GNA14
+GNA15
+GNAQ
+GNAT3
+GNB1,3
+GNB5
+GNB5:CCT/TRiC:ADP
+GNG13
+GNG2
+GOLGA2
+GOLGA2:GORASP1
+GOLGB1
+GOLGB1 homodimer
+GORASP1
+GOSR1
+GOSR1:BET1:STX5
+GOSR1:BET1L:STX5
+GOSR1:GOSR2:STX5
+GOSR2
+GOSR2,STX5
+GPI-ALPI dimer
+GPI-ALPL dimer
+GPI-ALPPL2 dimer
+GPI-ART3
+GPI-ART4
+GPI-BST1 dimer
+GPI-CD109
+GPI-CD52
+GPI-CD55
+GPI-CD59
+GPI-CD59, GPI-FOLR1
+GPI-CEACAM5 dimer
+GPI-CEACAM7
+GPI-CNTN3
+GPI-CNTN4
+GPI-CNTN5
+GPI-CPM
+GPI-FCGR3B
+GPI-FOLR1
+GPI-FOLR2
+GPI-GP2
+GPI-GPIHBP1
+GPI-IZUMO1R
+GPI-LSAMP
+GPI-LY6D
+GPI-LY6E
+GPI-LY6G6C
+GPI-LY6G6D dimer
+GPI-LY6H
+GPI-LY6K
+GPI-LYPD1
+GPI-LYPD2
+GPI-LYPD3
+GPI-LYPD4
+GPI-LYPD5
+GPI-LYPD6B
+GPI-LYPD8
+GPI-MDGA1
+GPI-MDGA2(26-931)
+GPI-MELTF
+GPI-MSLN
+GPI-NEGR1
+GPI-NRN1
+GPI-NRN1L
+GPI-NTM
+GPI-NTNG1
+GPI-NTNG2
+GPI-OPCML
+GPI-OTOA
+GPI-PLAUR
+GPI-PLET1
+GPI-PRND
+GPI-PRSS21
+GPI-PRSS41
+GPI-PSCA
+GPI-RAET1G
+GPI-RAET1L
+GPI-RECK
+GPI-RTN4RL1
+GPI-RTN4RL2
+GPI-SPACA4
+GPI-SPRN
+GPI-TECTA
+GPI-TECTB
+GPI-TEX101
+GPI-THY1
+GPI-ULBP2
+GPI-VNN1
+GPI-VNN2
+GPI-XPNPEP2 trimer
+GPR116
+GPR119
+GRIA1
+GRP(24-50)
+GTP
+GTP-alpha-tubulin folding intermediate
+GTP:beta-tubulin folding intermediate
+Gal-R
+Gal1,3Fuc1,4GlcNAc group
+Gal1,3GlcNAc group
+GalNAc-GlcNAc-Man-DAG1
+GalNAc-GlcNAc-Man6P-DAG1
+GalNAc-MUC1(24-1255)
+GalNAc-MUC12
+GalNAc-MUC13
+GalNAc-MUC15
+GalNAc-MUC16
+GalNAc-MUC17
+GalNAc-MUC19(?-6254)
+GalNAc-MUC2
+GalNAc-MUC20
+GalNAc-MUC21
+GalNAc-MUC3A
+GalNAc-MUC3B(?-901)
+GalNAc-MUC4(29-2169)
+GalNAc-MUC5AC
+GalNAc-MUC5B(26-5703)
+GalNAc-MUC6(23-2392)
+GalNAc-MUC7
+GalNAc-MUCL1
+GalNAc-R
+Glc
+GlcA-Xyl-GlcA
+GlcN6P
+GlcNAc
+GlcNAc,1,2-Man-DAG1
+GlcNAc-Man-DAG1
+GlcNAcDOLDP
+GlcNGc
+GlcNGc-6-P
+Gln-tRNA(Gln)
+Glu-tRNA(Glu)
+Gly
+Gly-tRNA(Gly)
+Glycans (no glucose) bound to unfolded protein
+Glycoprotein with GlcNAc in position 4
+Glycoprotein with GlcNAc in position 5
+Glycoprotein with bifurcating GlcNAc in position 3
+Glycoprotein with galactose
+Glycoprotein-Neu5Ac
+H+
+H2O
+H2O2
+H2S
+HCFC1
+HDAC1
+HDAC2
+HDAC4
+HERC2
+HGS
+HIC1
+HIF1A
+HIF1A,BIRC2,BIRC3
+HIPK2
+HIST1H2BA
+HIST1H2BB
+HIST1H2BC
+HIST1H2BD
+HIST1H2BH
+HIST1H2BJ
+HIST1H2BK
+HIST1H2BL
+HIST1H2BM
+HIST1H2BN
+HIST1H2BO
+HIST1H4
+HLA A-2,A-3,B-60
+HLTF
+HNK1 carbohydrate
+HNRNPC
+HNRNPK
+HP-HIF3A
+HSPA8
+HSPG2(22-4391)
+His-tRNA(His)
+Histone H2A
+Histone H2A,Histone H2B
+Histone H2B
+Histone HIST1H2B
+Hyp-K50-EIF5A
+Hyp-K50-EIF5A2
+ICT1
+IGF1
+IGF1,2
+IGF2(25-91)
+IGFALS
+IGFBP1
+IGFBP2
+IGFBP3
+IGFBP3(125-187)
+IGFBP3(125-233)
+IGFBP3(127-291)
+IGFBP3(169-226)
+IGFBP3(188-291)
+IGFBP3(227-291)
+IGFBP3(234-291)
+IGFBP3(28-124)
+IGFBP3(28-126)
+IGFBP3(28-168)
+IGFBP3(28-186)
+IGFBP3(291-187)
+IGFBP4
+IGFBP4(157-237)
+IGFBP4(22-156)
+IGFBP5
+IGFBP5(164-272)
+IGFBP5(21-163)
+IGFBP6
+IKBKG
+INCENP
+ING2
+INHA
+INHBs
+INO80
+INO80 complex
+INO80B
+INO80C
+INO80D
+INO80E
+INS(25-110)
+INS(57-87)
+INS(57-89)
+IPPP
+ISL1
+Ile-tRNA(Ile)
+Ino
+Insulin
+K11polyUb
+K27polyUb
+K29polyUb
+K33polyUb
+K48-Ub
+K48polyUb
+K48polyUb,K63polyUb-HCFC1
+K48polyUb-BCL10
+K48polyUb-HLA-A A-2
+K48polyUb-HLA-A A-3
+K48polyUb-HLA-B B-60
+K48polyUb-PRKDC
+K48polyUb-PTEN
+K48polyUb-RIPK1
+K48polyUb-RNF128:OTUB1
+K48polyUb-TRAF6
+K63-Ub
+K63Ub-SNCAIP
+K63polyUb
+K63polyUb-APC
+K63polyUb-BECN1,K63polyUb-USP10
+K63polyUb-DDX58
+K63polyUb-K142,K220,K230,K244-RRAGA
+K63polyUb-K164-PCNA
+K63polyUb-NLRP3
+K63polyUb-RIPK1
+K63polyUb-RNF123
+K63polyUb-SUDS3
+K63polyUb-TRAF2
+K63polyUb-TRAF2,K63polyUb-TRAF6,K63polyUb-RIPK1,K63polyUb-IKBKG
+K63polyUb-TRAF3
+K63polyUb-TRAF6
+K63polyUb-histone H2A
+K6polyUb
+KDELR1
+KEAP1
+KEAP1:NEDD8-CUL3:RBX1
+KEAP1:NEDD8-CUL3:RBX1:NFE2L2
+KIN
+KLF4
+L-Ala
+L-Arg
+L-Asn
+L-Asp
+L-Cys
+L-Gln
+L-Glu
+L-His
+L-Ile
+L-Leu
+L-Lys
+L-Met
+L-Phe
+L-Pro
+L-Ser
+L-Thr
+L-Trp
+L-Tyr
+L-Val
+L-fucose
+L-lysine
+L-methionine (R)-S-oxide
+L-methionine (S)-S-oxide
+L3MBTL2
+LCFA(-)
+LEO1
+LEP
+LHB
+LMAN family receptors
+LMAN receptor:glycosylated cargo
+LMAN1
+LMAN1 hexamer
+LMAN1:MCFD2:glycosylated FV, FVIII precursor
+LMCD1
+Leu-tRNA(Leu)
+Ligands of GPR119
+Localized amyloid fibril main peptide chains
+Lys-tRNA(Lys)
+MAP3K7
+MAP3K7:TAB1
+MBD1
+MCFD2
+MCRS1
+MDC1
+MDCDD
+MDM2
+MIA2
+MIA2:PREB
+MIA3
+MITF
+MK4
+MK4 epoxide
+MKL1
+MLEC
+MOM proteins
+MPDU1
+MRPL1
+MRPL10
+MRPL11
+MRPL12
+MRPL13
+MRPL14
+MRPL15
+MRPL16
+MRPL17
+MRPL18
+MRPL19
+MRPL2
+MRPL20
+MRPL21
+MRPL22
+MRPL23
+MRPL24
+MRPL27
+MRPL28
+MRPL3
+MRPL30
+MRPL32
+MRPL33
+MRPL34
+MRPL35
+MRPL36
+MRPL37
+MRPL38
+MRPL39
+MRPL4
+MRPL40
+MRPL41
+MRPL42
+MRPL43
+MRPL44
+MRPL45
+MRPL46
+MRPL47
+MRPL48
+MRPL49
+MRPL50
+MRPL51
+MRPL52
+MRPL53
+MRPL54
+MRPL55
+MRPL57
+MRPL9
+MRPS10
+MRPS11
+MRPS12
+MRPS14
+MRPS15
+MRPS16
+MRPS17
+MRPS18A,B,C
+MRPS2
+MRPS21
+MRPS22
+MRPS23
+MRPS24
+MRPS25
+MRPS26
+MRPS27
+MRPS28
+MRPS30
+MRPS31
+MRPS33
+MRPS34
+MRPS35
+MRPS36
+MRPS5
+MRPS6
+MRPS7
+MRPS9
+MRRF
+MT-TV
+MTA1
+MTAD
+MTIF2
+MTIF2:GTP
+MTIF3
+MTRF1L
+MTRF1L, ICT1
+MUC1(24-1255)
+MUC12
+MUC13
+MUC15
+MUC16
+MUC17
+MUC19(?-6254)
+MUC2
+MUC20
+MUC21
+MUC3A
+MUC3B(?-901)
+MUC4(29-2169)
+MUC5AC
+MUC5B(26-5703)
+MUC6(23-2392)
+MUC7
+MUCL1
+MUL1
+MVA5PP
+MYSM1:EP300:KAT2B
+Man
+Man-DAG1
+Man1P
+Man6P
+ManNAc
+ManNAc-6-P
+ManNGc
+Me-Q185-ETF1 dimer
+Me-Q185-ETF1 dimer:eRF3:GDP
+Me-Q185-ETF1 dimer:eRF3:GTP
+Me-diphthine EEF2
+Me2aR-RPS2
+Me3K115-CALM1
+Me3K135-KIN
+Me3K200,Me3K203-ETFB
+Me3K315-VCP
+Me3K318-EEF1A1
+Me3K525-EEF2
+Me3K561-HSPA8
+Me3K79-EEF1A1
+Met-tRNA(Met)
+Met-tRNAi
+MetAsp
+MetOO
+Mg2+
+Microtubule
+Microtubule protofilament
+Mitochondrial 12S rRNA
+Mitochondrial 16S rRNA
+MonoUb:K164-PCNA
+MonoUb:K164-PCNA homotrimer
+MyrG-DCUN1D3
+N,N'-DCDOLDP
+N-acetylglucosaminyl-PI
+NAD+
+NADH
+NADP+
+NADPH
+NAE1
+NAPA
+NAc-Ser residue
+NCOA1
+NCOA2
+NCOR2
+NEDD8
+NEDD8(1-88)
+NEDD8(77-88)
+NEDD8,UBD
+NEDD8-AcM-UBE2F
+NEDD8-AcM-UBE2M
+NEDD8-CRL1 E3 ligase complex
+NEDD8-CRL1 E3 ubiquitin ligase:COMMDs:CCDC22:DCUN1Ds
+NEDD8-CRL2 E3 ligase complex
+NEDD8-CRL2 E3 ubiquitin ligase:COMMDs:CCDC22:DCUN1D1,2,4,5
+NEDD8-CRL3 E3 ubiquitin ligase:COMMDs:CCDC22:DCUN1D1,2,4,5
+NEDD8-CRL4 E3 ligase complex
+NEDD8-CRL5 E3 ligase
+NEDD8-CRL5 E3 ubiquitin ligase:COMMDs:CCDC22:DCUN1Ds
+NEDD8-CUL3:RBX1:BTB
+NEDD8-CUL9:RBX1
+NEDD8-UBA3
+NEDD8-UBA3:NAE1
+NEDD8-UBA3:NAE1:NEDD8
+NF-kB p65:p65
+NFE2L2
+NFE2L2 inducers
+NFKB2(1-900)
+NFKBIA
+NFRKB
+NGP
+NGP:1,6-GlcNAc
+NH3
+NH4+
+NLRP3
+NOP58
+NPLOC4:UFD1
+NPM1
+NR1H2
+NR1H3-1
+NR1H4-2
+NR1I2-1
+NR2C1
+NR3C1:(ALDO,11DCORST,CORST,CORT)
+NR3C2
+NR4A2
+NR5A1
+NR5A2-2
+NRIP1
+NSF
+NSF hexamer
+NUB1
+NUB1-1
+NUB1-2
+Na+
+Neu5Ac
+Neu5Ac-2,3-Gal-R
+Neu5Ac-2,6-Gal-R
+Neu5Ac-2,6-GalNAc-R
+Neu5Ac-2,8-Neu5Ac-R
+Neu5Ac-9-P
+Neu5Ac-R
+Neu5Gc
+O-fuc-ADAMTS13
+O-fuc-ADAMTS5
+O-fuc-ADAMTS7
+O-fuc-ADAMTSL1
+O-fuc-ADAMTSL4
+O-fuc-CFP
+O-fuc-SPON1
+O-fuc-THBS1
+O-octanoyl-L-serine-GHRL-1(24-117)
+O-octanoyl-L-serine-GHRL-1(24-50)
+O-octanoyl-L-serine-GHRL-1(24-51)
+O2
+OBSL1
+OSulf-6Y-FVIII precursor
+OTUB1
+OTUB1,(OTUB2)
+OTUD7B,TNFAIP3,ZRANB1
+OXA1L
+OxA-ARSB
+OxA-ARSD
+OxA-ARSE
+OxA-ARSF
+OxA-ARSG
+OxA-ARSH
+OxA-ARSI
+OxA-ARSJ
+OxA-ARSK
+OxA-STS
+P2RY2
+PABPC1
+PAF1
+PAF1C
+PALM-C100-CKAP4
+PALM-C36-ASGR1
+PALM-C36-ASGR1:PALM-C54,58-ASGR2
+PALM-C54,58-ASGR2
+PALM-CoA
+PAMP:NOD oligomer:K63-Ub-RIP2
+PAMP:NOD oligomer:RIP2
+PAP
+PAPS
+PARK2
+PARK7
+PARP1
+PAX6
+PC
+PCGF2
+PCNA
+PDCL
+PDIA3
+PE
+PEP
+PEX13:PEX14
+PEX2:PEX10:PEX12
+PEX5S,L
+PEX5S,L:PEX13:PEX14:PEX2:PEX10:PEX12
+PFDN1
+PFDN2
+PFDN4
+PFDN5
+PFDN6
+PG
+PGR
+PHC1
+PHC1,PHC2,PHC3
+PHC2
+PHC3
+PI
+PIAS4
+PLAUR
+PLAUR(23-335)
+PLAUR(306-335)
+PML
+POLB
+POMC(1-241)
+POMC(138-176)
+PPARA
+PPARG
+PPARGC1A
+PPi
+PREB
+PRKDC
+PROC(200-461)
+PROC(33-42)
+PROS1(25-41)
+PROS1(25-676)
+PROZ(24-40)
+PROZ(24-400)
+PSMA1
+PSMA2
+PSMA3
+PSMA4
+PSMA5
+PSMA6
+PSMA7
+PSMA8
+PSMB1
+PSMB10
+PSMB11
+PSMB2
+PSMB3
+PSMB4
+PSMB5
+PSMB6
+PSMB7
+PSMB8
+PSMB9
+PSMC1
+PSMC2
+PSMC3
+PSMC4
+PSMC5
+PSMC6
+PSMD1
+PSMD10
+PSMD11
+PSMD12
+PSMD13
+PSMD14
+PSMD2
+PSMD3
+PSMD4
+PSMD5
+PSMD6
+PSMD7
+PSMD8
+PSMD9
+PSME1
+PSME2
+PSME3
+PSME4
+PSMF1
+PTCD3
+PTEN
+PUM2
+PYR
+PalmC-YKT6
+Partially folded G-protein beta 1-4:CCT/TRiC:ADP
+Partially folded G-protein beta subunit
+Partially folded G-protein beta subunit:CCT/TRiC:ADP
+Partially folded GNB5:CCT/TRiC:ADP
+Phe-tRNA(Phe)
+Pi
+PolyUb
+PolyUb,p-S166,S188-MDM2:PolyUb,p-S342,S367,S403-MDM4
+PolyUb-ADRB2
+PolyUb-AR
+PolyUb-CCNA
+PolyUb-CCP110, PolyUb-ARRB2,(PolyUb-ARRB1)
+PolyUb-CDC20
+PolyUb-CLSPN, PolyUb-MYC
+PolyUb-DDB2
+PolyUb-DDX58
+PolyUb-GATA3,PolyUb-IL33
+PolyUb-MAP3K7:TAB1
+PolyUb-MOM proteins
+PolyUb-NFKBIA
+PolyUb-POLB
+PolyUb-RCE1, PolyUb-CDC25A, PolyUb-DDX58, PolyUb-IFIH1
+PolyUb-RIPK1, PolyUb-DDX58
+PolyUb-SNCAIP
+PolyUb-SNX3,PolyUb-CTFR
+PolyUb-TP53
+PolyUb-TP53,PolyUb-MDM2,PolyUb-MDM4,PolyUb-FOXO4,PolyUb-PTEN
+PolyUb-TRAF2,PolyUb-TRAF6
+Polyglutamyl microtubule protofilament
+Polyglycylated microtubule protofilament
+Prefoldin
+Prepro-des-Gln14-ghrelin
+Pro-des-Gln14-ghrelin
+Pro-tRNA(Pro)
+Procollagen type VII
+Procollagen type VII:MIA3
+PsiAm
+PsiAm3P
+RAB1
+RAB1:GDP
+RAB1:GTP
+RAB1:GTP:GBF1:USO1
+RAB1:GTP:GBF1:USO1:ARF:GTP
+RAB1:GTP:GBF1:USO1:ARF:GTP:coatomer
+RAB1:GTP:USO1:coatomer
+RAB1:GTP:USO1:coatomer:PalmC-YKT6:p24 dimers:cargo:spectrin:anykrin
+RAB1:GTP:USO1:coatomer:PalmC-YKT6:p24 dimers:cargo:spectrin:anykrin:COG complex:GOLGA2:GORASP1:GOLGB1:TMEM115
+RABGGTA
+RABGGTA:RABGGTB
+RABGGTA:RABGGTB:CHMs:GGPP
+RABGGTB
+RABs
+RABs:GDP
+RAD18 homodimer
+RAD18:UBE2B
+RAD21
+RAD23
+RAD23A
+RAD23B
+RAD52
+RANBP2
+RANGAP1
+RARA
+RBX1
+RBX1:CUL3:BTB
+RBX1:CUL4:DDB1:DCAFs
+RBX1:NEDD8-CUL2:EloB,C:VHL:COMMDs:CCDC22:DCUN1D1,2,4,5
+RCE1, CDC25A, DDX58, IFIH1
+RGS7
+RGS7,RGS9,(RGS6,RGS11)
+RGS9
+RHOA
+RING1
+RING1,RNF2
+RIPK1
+RIPK1, DDX58
+RNA-binding protein in RNP (ribonucleoprotein) complexes
+RNF123
+RNF128
+RNF128,TRAF3,TRAF6,RHOA,TP53
+RNF128:OTUB
+RNF144A
+RNF146
+RNF152
+RNF168
+RNF181
+RNF2
+RNF20
+RNF20:RNF40
+RNF40
+RORA
+ROS
+RPA1
+RPL10,RPL10L
+RPL10A
+RPL11
+RPL12
+RPL13
+RPL13A
+RPL14
+RPL15
+RPL17
+RPL18
+RPL18A
+RPL19
+RPL21
+RPL22,RPL22L1
+RPL23
+RPL23A
+RPL24
+RPL26,RPL26L1
+RPL27
+RPL27A
+RPL28
+RPL29
+RPL3,RPL3L
+RPL30
+RPL31
+RPL32
+RPL34
+RPL35
+RPL35A
+RPL36
+RPL36A,RPL36AL
+RPL37
+RPL37A
+RPL38
+RPL39,RPL39L
+RPL4
+RPL40
+RPL41
+RPL5
+RPL6
+RPL7
+RPL7A
+RPL8
+RPL9
+RPLP0
+RPLP1
+RPLP2
+RPN1
+RPN2
+RPS10
+RPS11
+RPS12
+RPS13
+RPS14
+RPS15
+RPS15A
+RPS16
+RPS17
+RPS18
+RPS19
+RPS2
+RPS20
+RPS21
+RPS23
+RPS24
+RPS25
+RPS26
+RPS27,RPS27L
+RPS27A
+RPS27A(1-76)
+RPS27A(77-156)
+RPS28
+RPS29
+RPS3
+RPS3A
+RPS4X,RPS4Y1,RPS4Y2
+RPS5
+RPS6
+RPS7
+RPS8
+RPS9
+RPSA
+RRAGA
+RRAGA:GDP
+RTF1
+RUVBL1
+RWDD3
+RXRA
+Renin
+RibAm
+RibAm3P
+RibC-AXIN:TNKS
+Rifampicin
+S-FARN-CME
+S-FARN-Cys
+S-HNK1 carbohydrate
+S-glyco-CGA
+S-glyco-LHB
+SAE1
+SAFB
+SAR1B
+SAR1B:GTP
+SATB1
+SATB2
+SCF E3 ubiquitin ligase
+SCFD1
+SCMH1-2
+SEC13
+SEC13:SEC31A:SEC23IP
+SEC16A
+SEC16A:SEC16B
+SEC16B
+SEC22B
+SEC23:SEC24
+SEC23A
+SEC23A:SEC24C,D:GOSR2,STX5
+SEC23IP
+SEC24
+SEC24A
+SEC24A,SEC24B
+SEC24B
+SEC24C
+SEC24C,D
+SEC24D
+SEC31A
+SEC31A:SEC13:SEC23IP
+SEC61 translocon
+SEM1
+SENP8
+SFTA3
+SFTA3 gene
+SFTPA genes
+SFTPA1 18mer
+SFTPA1 gene
+SFTPA2 18mer
+SFTPA2 gene
+SFTPAs
+SFTPB dimer
+SFTPB gene
+SFTPB(201-279)
+SFTPB(25-200)
+SFTPB(280-381)
+SFTPC
+SFTPC gene
+SFTPC(24-58)
+SFTPC(59-197)
+SFTPD
+SFTPD 12mer
+SFTPD 12mer, SFTPAs
+SFTPD gene
+SFTPD trimer
+SHPRH
+SIAH1
+SIAH1, SIAH2
+SIAH1,SIAH2:UBE2L6:Ubiquitin
+SIAH2
+SIN3A
+SKP2
+SMAD1,SMAD2,SMAD3,KEAP1,SMAD7:SMURF2:TGFBR1
+SMAD4
+SMC1A
+SMC3
+SNAPs
+SNCA
+SNCA A30P
+SNCAIP
+SNCAIP-1A
+SNCAs
+SNX3,CTFR
+SORL1
+SP100
+SP3
+SPHK1
+SPM
+SPON1
+SPTA:SPTB
+SQSTM1 oligomer
+SRP receptor
+SRP14
+SRP19
+SRP54
+SRP68
+SRP72
+SRP9
+SRP:polypeptide+signal:ribosome
+SRPR
+SRPRB
+STAG1
+STAG2
+STAM
+STAM2
+STAMBP
+STS
+STX5
+STX5,17
+SUDS3
+SUMF1
+SUMF2
+SUMO1
+SUMO1(2-101)
+SUMO1-C93-UBE2I
+SUMO1-K-DNMT3B
+SUMO1-K10-TFAP2A-1
+SUMO1-K132,K289-NR1H4
+SUMO1-K250-HNRNPC
+SUMO1-K258-AURKA
+SUMO1-K554,575,676,750,779,804-TRIM28
+SUMO1:UBA2
+SUMO2
+SUMO2(1-95)
+SUMO2-C93-UBE2I
+SUMO2:UBA2
+SUMO2:UBE2I
+SUMO3
+SUMO3(1-103)
+SUMO3-C93-UBE2I
+SUMO3-RELA:SUMO3-RELA
+SUMO3:UBA2
+SUMO3:UBE2I
+SUZ12
+Sda-UMOD
+Ser-tRNA(Ser)
+Serum amyloid P-component homopentamer
+Sialyl  Tn antigen (MUCL1)
+Sialyl T-antigen (MUC1)
+Sialyl T-antigen (MUC12)
+Sialyl T-antigen (MUC13)
+Sialyl T-antigen (MUC15)
+Sialyl T-antigen (MUC16)
+Sialyl T-antigen (MUC17)
+Sialyl T-antigen (MUC19)
+Sialyl T-antigen (MUC2)
+Sialyl T-antigen (MUC20)
+Sialyl T-antigen (MUC21)
+Sialyl T-antigen (MUC3A)
+Sialyl T-antigen (MUC3B)
+Sialyl T-antigen (MUC4)
+Sialyl T-antigen (MUC5AC)
+Sialyl T-antigen (MUC5B)
+Sialyl T-antigen (MUC6)
+Sialyl T-antigen (MUC7)
+Sialyl T-antigen (MUCL1)
+Sialyl Tn antigen (MUC1)
+Sialyl Tn antigen (MUC12)
+Sialyl Tn antigen (MUC13)
+Sialyl Tn antigen (MUC15)
+Sialyl Tn antigen (MUC16)
+Sialyl Tn antigen (MUC17)
+Sialyl Tn antigen (MUC19)
+Sialyl Tn antigen (MUC2)
+Sialyl Tn antigen (MUC20)
+Sialyl Tn antigen (MUC21)
+Sialyl Tn antigen (MUC3A)
+Sialyl Tn antigen (MUC3B)
+Sialyl Tn antigen (MUC4)
+Sialyl Tn antigen (MUC5AC)
+Sialyl Tn antigen (MUC5B)
+Sialyl Tn antigen (MUC6)
+Sialyl Tn antigen (MUC7)
+Sialyl-2,3 T-antigen (MUC1)
+Sialyl-2,3 T-antigen (MUC12)
+Sialyl-2,3 T-antigen (MUC13)
+Sialyl-2,3 T-antigen (MUC15)
+Sialyl-2,3 T-antigen (MUC16)
+Sialyl-2,3 T-antigen (MUC17)
+Sialyl-2,3 T-antigen (MUC19)
+Sialyl-2,3 T-antigen (MUC2)
+Sialyl-2,3 T-antigen (MUC20)
+Sialyl-2,3 T-antigen (MUC21)
+Sialyl-2,3 T-antigen (MUC3A)
+Sialyl-2,3 T-antigen (MUC3B)
+Sialyl-2,3 T-antigen (MUC4)
+Sialyl-2,3 T-antigen (MUC5AC)
+Sialyl-2,3 T-antigen (MUC5B)
+Sialyl-2,3 T-antigen (MUC6)
+Sialyl-2,3 T-antigen (MUC7)
+Sialyl-2,3 T-antigen (MUCL1)
+Signal Recognition Particle
+Spectrin tetramer
+Systemic amyloid fibril main peptide chains
+T-antigen (MUC1)
+T-antigen (MUC12)
+T-antigen (MUC13)
+T-antigen (MUC15)
+T-antigen (MUC16)
+T-antigen (MUC17)
+T-antigen (MUC19)
+T-antigen (MUC2)
+T-antigen (MUC20)
+T-antigen (MUC21)
+T-antigen (MUC3A)
+T-antigen (MUC3B)
+T-antigen (MUC4)
+T-antigen (MUC5AC)
+T-antigen (MUC5B)
+T-antigen (MUC6)
+T-antigen (MUC7)
+T-antigen (MUCL1)
+TAB1
+TBC1D20
+TBCA
+TBCB
+TBCC
+TBCD
+TBCE
+TCP1
+TDG
+TFAP2A-1
+TFAP2B
+TFAP2C
+TFG
+TFG hexamer
+TFGA, AREG precursors
+TFPT
+TGFA precursor
+TGFB1: p-TGFBR: I-SMAD7
+TGFB1:TGFBR2:Ub-p-TGFBR1:Ub-SMAD7
+THBS1
+THF
+THRA-2
+THRB
+TMED10
+TMED10 dimer
+TMED2
+TMED2 dimer
+TMED2:TMED10 tetramer
+TMED2:TMED10 tetramer:GPI-CD59, GPI-FOLR1
+TMED3 dimer
+TMED7 dimer
+TMED9 dimer
+TMEM115
+TMEM129
+TMEM129:DERL1:VIMP:VCP:Ub:UBE2J2
+TMEM27
+TNFAIP3
+TNIP1
+TNIP2
+TNIP3
+TNIPs
+TNKS1/2
+TOP1
+TOP2A
+TOP2B
+TOPORS
+TP53
+TP53,MDM2,MDM4,FOXO4,PTEN
+TP53BP1
+TRAF2
+TRAF3
+TRAF6
+TRAM1
+TRAP Complex
+TRAPPC1
+TRAPPC10
+TRAPPC2
+TRAPPC2L
+TRAPPC3
+TRAPPC4
+TRAPPC5
+TRAPPC6A
+TRAPPC6B
+TRAPPC9
+TRAPPCII
+TRIM28
+TSFM
+TSHB
+TSPAN14
+TSPAN15
+TSPAN33
+TSPAN5
+TSPANs
+TTF1
+TUBA1A unfolded
+TUBA1C unfolded
+TUBA3C/3D unfolded
+TUBA4A unfolded
+TUBB1 unfolded
+TUBB2A unfolded
+TUBB2B unfolded
+TUBB3 unfolded
+TUBB4A unfolded
+TUBB4B unfolded
+TUBB6 unfolded
+TUFM
+TUFM:GTP
+TUFM:GTP:aminoacyl-tRNA
+TXN
+Thr-tRNA(Thr)
+Translocon:TRAP
+Trp-tRNA(Trp)
+Tyr-tRNA(Tyr)
+UBA1
+UBA2
+UBA3
+UBA52(1-128)
+UBA52(1-76)
+UBA6
+UBB
+UBB(1-76)
+UBB(153-228)
+UBB(77-152)
+UBC
+UBC(1-76)
+UBC(153-228)
+UBC(229-304)
+UBC(305-380)
+UBC(381-456)
+UBC(457-532)
+UBC(533-608)
+UBC(609-684)
+UBC(77-152)
+UBD
+UBE2A
+UBE2B
+UBE2C
+UBE2D1
+UBE2D1,2,3
+UBE2D1,ESR1
+UBE2D2
+UBE2D3
+UBE2E1
+UBE2E3
+UBE2G1
+UBE2G2
+UBE2H
+UBE2I
+UBE2I-G92-SUMO3
+UBE2I-G93-SUMO2
+UBE2I-G97-SUMO1
+UBE2J2-1
+UBE2K
+UBE2L3
+UBE2L6
+UBE2L6:Ubiquitin
+UBE2N
+UBE2Q2
+UBE2R2
+UBE2S
+UBE2V2
+UBE2Z
+UBXN7
+UBXN7:NPLOC4:UBF1:VCP hexamer
+UCHL1,UCHL3
+UCHL3
+UCHL3,SENP8
+UCHL5
+UCHL5/USP15
+UCN(83-122)
+UDP
+UDP-D-glucose(2-)
+UDP-Gal
+UDP-GalNAc
+UDP-GlcA
+UDP-GlcNAc
+UDP-Xyl
+UFD1L
+UFD1L:SKP2
+UMOD
+UMP
+US11
+US11:HLA
+USO1
+USO1 homodimer
+USP10
+USP10,USP24,USP42
+USP11
+USP12:WDR48:WDR20,USP26
+USP13
+USP14
+USP15
+USP16,USP21
+USP17
+USP18
+USP19
+USP2
+USP20,USP33
+USP21
+USP24
+USP25
+USP28
+USP3, SAGA complex
+USP30
+USP33
+USP37:RUVLB1:PSMC5
+USP4
+USP44
+USP47
+USP48
+USP49
+USP5
+USP7
+USP8
+USP9X
+UTP
+Ub
+Ub-11-RPS27A(1-76)
+Ub-11-UBA52(1-76)
+Ub-11-UBB(1-76)
+Ub-11-UBC(1-76)
+Ub-139-UBB(77-152)
+Ub-139-UBC(77-152)
+Ub-163-UBB(153-228)
+Ub-163-UBC(153-228)
+Ub-215-UBB(153-228)
+Ub-215-UBC(153-228)
+Ub-239-UBC(229-304)
+Ub-291-UBC(229-304)
+Ub-315-UBC(305-380)
+Ub-367-UBC(305-380)
+Ub-391-UBC(381-456)
+Ub-443-UBC(381-456)
+Ub-467-UBC(457-532)
+Ub-519-UBC(457-532)
+Ub-543-UBC(533-608)
+Ub-595-UBC(533-608)
+Ub-619-UBC(609-684)
+Ub-63-RPS27A(1-76)
+Ub-63-UBA52(1-76)
+Ub-63-UBB(1-76)
+Ub-63-UBC(1-76)
+Ub-671-UBC(609-684)
+Ub-87-UBB(77-152)
+Ub-87-UBC(77-152)
+Ub-C-UBE2J2
+Ub-C85-UBE2D1,2,3
+Ub-C86-UBE2L3
+Ub-C87-UBE2N
+Ub-C88-UBE2A,B
+Ub-Cys625-UBA6
+Ub-Cys632-UBA1
+Ub-HIST1H2BA
+Ub-HIST1H2BB
+Ub-HIST1H2BC
+Ub-HIST1H2BD
+Ub-HIST1H2BH
+Ub-HIST1H2BJ
+Ub-HIST1H2BK
+Ub-HIST1H2BL
+Ub-HIST1H2BM
+Ub-HIST1H2BN
+Ub-HIST1H2BO
+Ub-Lys
+Ub-RibC-AXIN
+Ub-SMAD1,Ub-SMAD2,Ub-SMAD3,,Ub-KEAP1,SMAD7:SMURF2:Ub-TGFBR1
+Ub-SMAD4
+Ub-SNCA
+Ub-STAM2
+Ub-UBE2D1,2,3,UBE2E1,UBE2N
+Ub-conjugated E2 enzyme (UBA1 substrate)
+Ub-conjugated E2 enzyme (UBA6 substrate)
+Ub-histone H2A
+Ub-histone H2A, Ub-histone H2B
+Ub-histone H2B
+Ub:PEX5S,L
+Ub:UBE2A,B
+Ub:UBE2D1,2,3
+Ub:UBE2D1,UBE2D2,UBE2D3, UBE2E1,UBE2N
+Ub:UBE2J2
+Ub:UBE2L3
+Ub:UBE2N
+Ub:UBE2N:UBE2V2
+Unfolded ACTB
+Unfolded CCNE
+Unfolded DCAF7
+Unfolded G-protein beta subunit
+Unfolded GNB1
+Unfolded GNB2
+Unfolded GNB3
+Unfolded GNB4
+Unfolded GNB5
+Unfolded HDAC3
+Unfolded STAT3
+Unfolded TP53
+Unfolded WRAP53
+Unfolded alpha/beta tubulin
+VBC complex
+VBP1
+VCP
+VCP hexamer
+VCPIP1
+VDR
+VHL
+VIMP
+Val-tRNA(Val)
+WAC
+WDR61
+WRN
+X
+XPC
+XRCC4
+Xyl-GlcA
+Xyl-GlcA-Xyl-GlcA
+YOD1
+YY1
+ZNF131
+ZNF350
+ZRANB1
+Zn2+
+active ARSA:Ca2+
+aliskiren
+alogliptin
+alpha-D-Man-(1->2)-alpha-D-Man-(1->2)-alpha-D-Man-(1->3)--alpha-D-Man-(1->6)]-beta-D-Man-(1->4)-beta-D-GlcNAc
+alpha-D-Man-(1->2)-alpha-D-Man-(1->3)--alpha-D-Man-(1->6)]-beta-D-Man-(1->4)-beta-D-GlcNAc
+alpha-D-Man-(1->3)--alpha-D-Man-(1->6)]-beta-D-Man-(1->4)-beta-D-GlcNAc
+alpha-Fuc
+alpha-tubulin folding intermediate
+alpha-tubulinY:GTP
+alpha/beta tubulin folding intermediate
+aminoacyl-tRNA
+aminocarboxypropyl EEF2
+anagliptin
+benazepril
+benazeprilat
+beta tubulin:GTP: Cofactor D:alpha tubulin:GTP:Cofactor E
+beta-Fuc
+beta-tubulin folding intermediate
+beta-tubulin:GDP
+captopril
+cilazapril
+cilazaprilat
+cis-Golgi cis SNARE bundle
+cis-Golgi t-SNARES
+cis-SNARE
+cis-bicyclo(3.3.0)oct-2-ene
+cleaved GPI-ALPI dimer
+cleaved GPI-ALPL dimer
+cleaved GPI-ALPPL2 dimer
+cleaved GPI-ART3
+cleaved GPI-ART4
+cleaved GPI-BST1 dimer
+cleaved GPI-CD109
+cleaved GPI-CD52
+cleaved GPI-CEACAM5 dimer
+cleaved GPI-CEACAM7
+cleaved GPI-CNTN3
+cleaved GPI-CNTN4
+cleaved GPI-CNTN5
+cleaved GPI-CPM
+cleaved GPI-FCGR3B
+cleaved GPI-FOLR2
+cleaved GPI-GP2
+cleaved GPI-GPIHBP1
+cleaved GPI-IZUMO1R
+cleaved GPI-LSAMP
+cleaved GPI-LY6D
+cleaved GPI-LY6E
+cleaved GPI-LY6G6C
+cleaved GPI-LY6G6D dimer
+cleaved GPI-LY6H
+cleaved GPI-LY6K
+cleaved GPI-LYPD1
+cleaved GPI-LYPD2
+cleaved GPI-LYPD3
+cleaved GPI-LYPD4
+cleaved GPI-LYPD5
+cleaved GPI-LYPD6B
+cleaved GPI-LYPD8
+cleaved GPI-MDGA1
+cleaved GPI-MDGA2(21-956)
+cleaved GPI-MELTF
+cleaved GPI-MSLN
+cleaved GPI-NEGR1
+cleaved GPI-NRN1
+cleaved GPI-NRN1L
+cleaved GPI-NTM
+cleaved GPI-NTNG1
+cleaved GPI-NTNG2
+cleaved GPI-OPCML
+cleaved GPI-OTOA
+cleaved GPI-PLET1
+cleaved GPI-PRND
+cleaved GPI-PRSS21
+cleaved GPI-PRSS41
+cleaved GPI-PSCA
+cleaved GPI-RAET1G
+cleaved GPI-RAET1L
+cleaved GPI-RECK
+cleaved GPI-RTN4RL1
+cleaved GPI-RTN4RL2
+cleaved GPI-SPACA4
+cleaved GPI-SPRN
+cleaved GPI-TECTA
+cleaved GPI-TECTB
+cleaved GPI-TEX101
+cleaved GPI-THY1
+cleaved GPI-ULBP2
+cleaved GPI-VNN1
+cleaved GPI-VNN2
+cleaved GPI-XPNPEP2 trimer
+coatomer
+delapril diacid
+detyr-alpha-tubulin:GTP
+diphthine EEF2
+dolichyl phosphate
+eEF1A:GTP
+eEF1A:GTP:aminoacyl-tRNA complex
+eEF1B complex
+eIF1
+eIF2:GTP
+eIF2B subunits complex
+eIF3 subunits complex
+eIF4A subunits complex
+eIF4F
+eIF5B:GTP
+eRF3:GTP
+enalapril
+enalaprilat
+entended Core 6 (MUC13)
+evogliptin
+extended Core 6 (MUC1)
+extended Core 6 (MUC12)
+extended Core 6 (MUC15)
+extended Core 6 (MUC16)
+extended Core 6 (MUC17)
+extended Core 6 (MUC19)
+extended Core 6 (MUC2)
+extended Core 6 (MUC20)
+extended Core 6 (MUC21)
+extended Core 6 (MUC3A)
+extended Core 6 (MUC3B)
+extended Core 6 (MUC4)
+extended Core 6 (MUC5AC)
+extended Core 6 (MUC5B)
+extended Core 6 (MUC6)
+extended Core 6 (MUC7)
+extended Core 6 (MUCL1)
+fMet-tRNA(fMet)
+factor IX propeptide
+factor VII
+factor VII propeptide
+factor X heavy chain
+factor X light chain propeptide
+fosinopril
+fosinoprilat
+gemigliptin
+geranylgeranyl diphosphate
+glc-fuc-ADAMTS13
+glc-fuc-ADAMTS5
+glc-fuc-ADAMTS7
+glc-fuc-ADAMTSL1
+glc-fuc-ADAMTSL4
+glc-fuc-CFP
+glc-fuc-SPON1
+glc-fuc-THBS1
+glucosaminyl-PI
+glucosaminyl-acyl-PI
+glycosylated FV, FVIII precursor
+glycosylated LMAN cargo
+gosogliptin
+hTCF-4
+heteroINHB
+hexameric LMAN1:MCFD2
+homoINHB
+hydroxyPro-HIF-alpha
+imidapril
+imidaprilat
+isoAsp
+linagliptin
+lisinopril
+mRNA
+mRNP
+mannose (a1) mannose (a1-2) mannose (a1-6) (ethanolamineP) mannose (a1-4) glucosaminyl-acyl-PI
+mannose (a1-2) mannose (a1-6) (ethanolamineP) mannose (a1-4) glucosaminyl-acyl-PI
+mannose (a1-4) glucosaminyl-acyl-PI
+mannose (a1-6) (ethanolamineP) mannose (a1-4) glucosaminyl-acyl-PI
+membrane-bound ribosome:mRNA:cleaved polypeptide
+membrane-bound ribosome:mRNA:polypeptide+signal
+moexipril
+moexiprilat
+monoSUMO1-5K-ESR1
+monoSUMO1-HERC2
+monoSUMO1-HIST1H4
+monoSUMO1-K-DNMT1
+monoSUMO1-K-DNMT3A
+monoSUMO1-K-RAD21
+monoSUMO1-K-STAG2
+monoSUMO1-K-TOP2A
+monoSUMO1-K-TOP2B
+monoSUMO1-K-TP53BP1
+monoSUMO1-K10-TFAP2C
+monoSUMO1-K1020,1024-EP300
+monoSUMO1-K107,K395-PPARG
+monoSUMO1-K108-RXRA
+monoSUMO1-K109-BRCA1
+monoSUMO1-K117-TOP1
+monoSUMO1-K119,K194-NR5A1
+monoSUMO1-K130-PARK7
+monoSUMO1-K14-UBE2I
+monoSUMO1-K159,171,196-VHL
+monoSUMO1-K164,K254,K-PCNA
+monoSUMO1-K1813-CASP8AP2
+monoSUMO1-K182-MDM2
+monoSUMO1-K184-PPARGC1A
+monoSUMO1-K1840-MDC1
+monoSUMO1-K185-PPARA
+monoSUMO1-K195-ING2
+monoSUMO1-K1971-CHD3
+monoSUMO1-K203,K486-PARP1
+monoSUMO1-K21-NFKBIA
+monoSUMO1-K21-TFAP2B
+monoSUMO1-K210-XRCC4
+monoSUMO1-K231,K294-SAFB
+monoSUMO1-K231-p-S172-IKBKE
+monoSUMO1-K239,K731,K788-NCOA2
+monoSUMO1-K240-RORA
+monoSUMO1-K25,K114,K150-FOXL2
+monoSUMO1-K250-NR2C1
+monoSUMO1-K2592,K2650,K2723-RANBP2
+monoSUMO1-K263-NPM1
+monoSUMO1-K270-NR5A2-2
+monoSUMO1-K277,K309-IKBKG
+monoSUMO1-K283,K389-THRA-2
+monoSUMO1-K289,423-MITF
+monoSUMO1-K297-SP100
+monoSUMO1-K32-HIPK2
+monoSUMO1-K330-TDG
+monoSUMO1-K333-HIC1
+monoSUMO1-K35-PIAS4
+monoSUMO1-K356,K496,K898-WRN
+monoSUMO1-K386,520-AR
+monoSUMO1-K411,K412,K414-RAD52
+monoSUMO1-K428-CTBP1
+monoSUMO1-K444,K476-HDAC1
+monoSUMO1-K462-HDAC2
+monoSUMO1-K467,K497-NOP58
+monoSUMO1-K494-CBX4
+monoSUMO1-K499,K538-MBD1
+monoSUMO1-K499,K576,K624-MKL1
+monoSUMO1-K50,K146,K443-THRB
+monoSUMO1-K50-DDX17
+monoSUMO1-K524-RANGAP1
+monoSUMO1-K53-DDX5
+monoSUMO1-K551-SP3
+monoSUMO1-K559-HDAC4
+monoSUMO1-K560-TOPORS
+monoSUMO1-K601-ZNF131
+monoSUMO1-K630,K631-DAXX
+monoSUMO1-K65,160,490-PML
+monoSUMO1-K655-XPC
+monoSUMO1-K672-NCOR2
+monoSUMO1-K7,K388,K531-PGR
+monoSUMO1-K732,K774-NCOA1
+monoSUMO1-K744-SATB1
+monoSUMO1-K75-SUZ12
+monoSUMO1-K756,K1154-NRIP1
+monoSUMO1-K84,K-CBX5
+monoSUMO1-K88-BMI1
+monoSUMO1-K89,K399,K428.K494-NR3C2
+monoSUMO1-K90,K298,K689,K863-NFKB2(1-900)
+monoSUMO1-K998,K1033,K1056-CREBBP
+monoSUMO1-RNF168
+monoSUMO1-SIN3A
+nascent EEF2
+nascent polypeptide with signal sequence
+nascent procollagen VII vesicle
+native alpha tubulin-GTP
+native beta-tubulin:GTP
+octanoic acid
+omarigliptin
+p-RPL13A
+p-S131-VCPIP1
+p-S166,S188-MDM2
+p-S172-IKBKE
+p-S18,S19,S20,S25-PDCL
+p-S346,S367,S403-MDM4
+p-S742,T747 SEC23A
+p-SEC24A
+p-SEC24B
+p-SEC24C
+p-SEC24D
+p24 dimers
+pPNOL
+pPPP
+peptidyl-tRNA with elongated peptide
+perindopril
+perindoprilat
+polySUMO2,3-BRCA1
+polySUMO2,3-CDCA8
+polySUMO2,3-CETN2
+polySUMO2,3-K1840-MDC1
+polySUMO2,3-K202-AURKB
+polySUMO2,3-K203,K486-PARP1
+polySUMO2,3-K231,K294-SAFB
+polySUMO2,3-K263-NPM1
+polySUMO2,3-K330-TDG
+polySUMO2,3-K386-TP53
+polySUMO2,3-K409,K447-NR1H2
+polySUMO2,3-K428-CTBP1
+polySUMO2,3-K449,K577-RPA1
+polySUMO2,3-K509-MTA1
+polySUMO2,3-K558,K577-NR4A2
+polySUMO2,3-K559-HDAC4
+polySUMO2,3-K744-SATB1
+polySUMO2,3-NR1H3
+polySUMO2,3-TOP2A
+polySUMO2-K119,K194-NR5A1
+polySUMO2-K166,K171,K399-RARA
+polySUMO2-K240-RORA
+polySUMO2-K2652,K2725-RANBP2
+polySUMO2-K297-SP100
+polySUMO2-K422-HNRNPK
+polySUMO2-K467,K497-NOP58
+polySUMO2-K53-DDX5
+polySUMO2-K551-SP3
+polySUMO2-K65,K160,K490-PML
+polySUMO2-K675,K700-L3MBTL2
+polySUMO2-VDR
+polySUMO3-HIST1H4
+polySUMO3-K233,K350-SATB2
+polySUMO3-K283,K389-THRA-2
+polySUMO3-K50,K146,K443-THRB
+polySUMO3-K65,K160,K490-PML
+polySUMO3-NR1I2
+polyUb-PARK2
+polypeptide
+pro-SFTPB
+pro-SFTPC
+pro-factor VII
+procollagen VII:SEC24C:SEC23A
+protein
+proteoglycan
+prothrombin (factor II) propeptide
+quinapril
+quinaprilat
+ramipril
+ramiprilat
+ribosome:mRNA:polypeptide+signal
+saxagliptin
+signal peptide
+sitagliptin
+spirapril
+spiraprilat
+tRNA
+tRNA(Ala)
+tRNA(Arg)
+tRNA(Asn)
+tRNA(Asp)
+tRNA(Cys)
+tRNA(Gln)
+tRNA(Glu)
+tRNA(Gly)
+tRNA(His)
+tRNA(Ile)
+tRNA(Leu)
+tRNA(Lys)
+tRNA(Met)
+tRNA(Phe)
+tRNA(Pro)
+tRNA(Ser)
+tRNA(Thr)
+tRNA(Trp)
+tRNA(Tyr)
+tRNA(Val)
+temocapril
+temocaprilat
+teneligliptin
+ternary complex
+tetrameric coatomer complex
+trandolapril
+trandolaprilat
+trelagliptin
+trimeric coatomer complex
+ub-BIRC5
+ub-K420  p-S349 SQSTM1 oligomer
+ub-NFE2L2
+ub-NFE2L2:KEAP1:NEDD8-CUL3:RBX1
+ub-UBXN7
+ub-hydroxyPro-HIF-alpha
+ubiquitin adenylate
+unfolded CCT/TRiC substrate candidates
+unfolded actin/tubulin
+unfolded protein
+unfolded protein:(Glc)1 (GlcNAc)2 (Man)9 (Asn)1
+unfolded protein:(Glc)1 (GlcNAc)2 (Man)9 (Asn)1:chaperone
+unfolded protein:(Glc)2 (GlcNAc)2 (Man)9 (Asn)1
+unfolded protein:(GlcNAc)2 (Man)5
+unfolded protein:(GlcNAc)2 (Man)8a
+unfolded protein:(GlcNAc)2 (Man)8b
+unfolded protein:(GlcNAc)2 (Man)8c
+unfolded protein:(GlcNAc)2 (Man)9-5
+unfolded protein:GlcNAc
+unfolded protein:glycan
+vildagliptin
+viral dsRNA:IFIH1, viral dsRNA:K63polyUb-DDX58:MAVS
+zofenopril
+zofenoprilat

@@ -1,0 +1,311 @@
+AGRN binds Alpha-dystroglycan
+AGRN binds Beta amyloid fibril via GAG chains
+AGRN binds Integrins alphaVbeta1 (Other beta1-containing integrins)
+AGRN binds LRP4:MUSK
+AGRN binds Laminins with gamma-1 subunit
+AGRN binds NCAM1, PTPRS
+Activation of MMP9 intermediate form by MMPs
+Activation of MT-MMPs by FURIN
+Activation of proMMP10
+Activation of proMMP11 by FURIN
+Activation of proMMP7 by MMP3
+Activation of proMMP8
+Activation of proMMP9 by proteases
+Adhesion of integrin alphaIIbbeta3 to fibrin network
+Aggrecan binds Hyaluronan and HAPLN1
+Aggrecan degradation by ADAMTSs
+Aggrecan degradation by MMP1,2,3,7,9,12,13
+Arresten binds integrin alpha1beta1
+Association of procollagen type I
+Association of procollagen type II
+Association of procollagen type III
+Association of procollagen type IV
+Association of procollagen type IX
+Association of procollagen type V
+Association of procollagen type VI
+Association of procollagen type VII
+Association of procollagen type VIII
+Association of procollagen type X
+Association of procollagen type XI
+Association of procollagen type XII
+Association of procollagen type XIII
+Association of procollagen type XIV
+Association of procollagen type XIX
+Association of procollagen type XV
+Association of procollagen type XVI
+Association of procollagen type XVII
+Association of procollagen type XVIII
+Association of procollagen type XX
+Association of procollagen type XXI
+Association of procollagen type XXII
+Association of procollagen type XXIII
+Association of procollagen type XXIV
+Association of procollagen type XXV
+Association of procollagen type XXVI
+Association of procollagen type XXVII
+Autocatalytic activation of MMP1
+Autocatalytic activation of MMP3
+Autocatalytic activation of MMP7
+Autocatalytic activation of bound proMMP2
+Autocatalytic activation of proMMP13
+Autocatalytic activation of proMMP2
+BGN binds Collagen types I, VI, (IX)
+BGN binds Collagen types II, III
+BSG (basigin) binds Integrin alpha3beta1, alpha6beta1
+Basigin binds Matrix metalloproteinase-1
+Brevican degradation by ADAMTS4, ADAMTS5
+Brevican degradation by MMP1, 2, 3, 7,8,10,13,19
+CAPN:4xCa2+:CAPNS cleave cytoskeletal proteins
+COLGALT1,COLGALT2 bind Lysyl hydroxylated collagen propeptides
+COLGALT1,COLGALT2:Galactosyl-hydroxylysyl collagen propeptides dissociates
+COMP binds Integrin alpha5beta1, Integrin alphaVbeta3, CD47
+COMP binds collagen, fibronectin, aggrecan and matrilins
+Canstatin binds integrins alphaVbeta3, alphaVbeta5
+Cleavage of collagen VII NC2 region by BMP1
+Collagen IX is cross-linked to the surface of collagen type II fibrils
+Collagen XI cross-links with collagen II
+Collagen prolyl 3-hydroxylase converts 4-Hyp collagen to 3,4-Hyp collagen
+Collagen type I binds integrin alpha11beta1
+Collagen type I binds integrin alpha1beta1, alpha2beta1, alpha10beta1
+Collagen type I degradation by MMP1,2,8,13, PRSS2
+Collagen type I degradation by MMP14
+Collagen type I degradation by MMP15
+Collagen type II binds integrin alpha10beta1
+Collagen type II binds integrin alpha2beta1, alpha1beta1, alpha11beta1
+Collagen type II degradation by MMP1,3,8,13,PRSS2
+Collagen type II degradation by MMP14
+Collagen type II degradation by MMP15
+Collagen type III degradation by MMP1,8,9,13
+Collagen type III degradation by MMP10
+Collagen type III degradation by MMP14
+Collagen type III degradation by MMP15
+Collagen type IV binds integrin alpha10beta1
+Collagen type IV degradation by MMP2,3,4,9,10,12
+Collagen type IV networks bind integrins alpha1beta1, alpha2beta1
+Collagen type IV sulfilimine cross-linking by peroxidasin
+Collagen type IX binds integrin alpha11beta1
+Collagen type IX degradation by MMP3,13
+Collagen type V degradation by MMP2,9,10
+Collagen type VI degradation by MMP2,9,11
+Collagen type VII binds collagen type IV
+Collagen type VII binds integrin alpha2beta1
+Collagen type VII binds laminin-322 and collagen IV
+Collagen type VII degradation by MMP1,2,3
+Collagen type VII dimerization
+Collagen type VIII degradation by ELANE
+Collagen type VIII degradation by MMP1
+Collagen type X binds Integrin alpha2beta1
+Collagen type X degradation by MMP1,2
+Collagen type X degradation by MMP3, 13
+Collagen type XI degradation by MMP1,2,3,9
+Collagen type XII degradation by MMP12
+Collagen type XIII binds Integrin alpha1beta1
+Collagen type XIII ectodomain shedding
+Collagen type XIV degradation by MMP9,13
+Collagen type XIX degradation
+Collagen type XV restin release
+Collagen type XVI degradation by MMP9
+Collagen type XVII ectodomain shedding
+Collagen type XVIII endostatin release
+Collagen type XXIII binds Integrin alpha2beta1
+Collagen type XXIII ectodomain shedding
+Collagen type XXV ectomain shedding
+Collagen types III, IV, V, VI, VIII, IX, XVI bind integrins alpha1beta1 and alpha2beta1
+Collagen types VI, IX bind integrin alpha10beta1
+DCN (decorin) degradation by MMP14
+DCN (decorin) degradation by MMP2, MMP3, MMP7
+DCN binds collagen I, II, III, VI fibrils
+DDR1 binds collagen type I, II, III, IV, V, XI fibrils
+DDR2 binds collagen type I, II, III, V, X fibrils
+Dentin matrix protein 1 binds integrin alphaVbeta3
+Dentin phosphoprotein binds integrin alphaVbeta1
+Dimerization of procollagen type VI
+Dystroglycan binds AGRN and HSPG2
+Dystroglycan binds Laminins and Dystrophin
+Dystroglycan binds NRXN1
+E-cadherin degradation by ADAM10, ADAM15
+E-cadherin degradation by MMP3, MMP7 and plasmin.
+E-cadherin degradation by MMP9, KLK7
+E-cadherin degradation by PS1:NCSTN (Gamma-secretase)
+E-cadherin degradation by caspase-3 and calpain-1
+Elastic fibres bind associated proteins
+Elastin degradation by MMP14
+Elastin degradation by elastin-degrading extracellular proteinases
+Emilin is found in elastic fibres
+Endorepellin binds KDR (VEGFR2)
+Endorepellin binds alpha2beta1 integrin
+Endostatin binds integrin alphaVbeta3, alphaVbeta5, alpha3beta1, alpha5beta1
+Endostatin degradation by cathepsins
+FN1 aggregation
+FN1 binds Collagen types I-V, VII
+FN1 dimerizes
+Fibrillin 1, 2,(3) degradation by MMP2, 9, 12 and 13
+Fibrillin C-terminal processing
+Fibrillin-1 binds integrins
+Fibrillin-1 binds latent TGF-beta
+Fibrillin-1 degradation by ELANE
+Fibrillin-1 degradation by MMP14
+Fibrillin-1 degradation by MMP3, CTSK, CTSL2
+Fibrillins bind BMPs
+Fibronectin degradation by ADAM8
+Fibronectin degradation by CTSG
+Fibronectin degradation by MMP1, 3, 7, 12, 13, 19, CTSS
+Fibronectin degradation by MMP10
+Fibronectin degradation by MMP14, TMPRSS6
+Fibulin binds elastic fibres
+Fibulin-1 and -2 bind fibronectin
+Formation of allysine by LOX
+Formation of collagen networks
+Formation of dehydro-hydroxylysino-norleucine cross-links
+Formation of dehydro-lysinonorleucine cross-links
+Formation of histidino-hydroxylysinonorleucine cross-links
+Formation of hydroxyallysine by LOX
+Formation of hydroxylysino-5-ketonorleucine cross-links
+Formation of hydroxylysyl-pyridinoline cross-links
+Formation of hydroxylysyl-pyrrole cross-links
+Formation of lysino-5-ketonorleucine cross-links
+Formation of lysyl-pyridinoline cross-links
+Formation of lysyl-pyrrole cross-links
+Full activation of MMP1
+Galactosylation of collagen propeptide hydroxylysines by PLOD3
+Galactosylation of collagen propeptide hydroxylysines by procollagen galactosyltransferases 1, 2.
+Gelatin degradation by MMP1, 2, 3, 7, 8, 9, 12, 13
+Gelatin degradation by MMP19
+Glucosylation of collagen propeptide hydroxylysines
+HSPG2 (perlecan) binds alpha-dystroglycan
+HSPG2 (perlecan) degradation by MMP13, CTSS
+HSPG2 (perlecan) degradation by MMP14, MMP15
+HSPG2 (perlecan) degradation by MMP3, plasmin, (MMP12)
+HSPG2 (perlecan) is cleaved by BMP1, TLL1, TLL2, Cathepsin L1
+HSPG2 binds FGF2(10-155), Fibronectn matrix, Transthyretin tetramer, PDGFA homodimer, PDGFB homodimer
+HTRA1 hydrolyzes ACAN (Aggrecan)
+Hemidesmosome formation
+IBSP binds collagen type I
+ICAM1-5 bind Integrin alphaLbeta2 (LFA-1)
+ITGA4:ITGB1 binds natalizumab
+Initial activation of proMMP1
+Initial activation of proMMP13 by MMP14 (MT1-MMP)
+Initial activation of proMMP13 by MMP3
+Initial activation of proMMP13 by plasmin and trypsin
+Initial activation of proMMP2 by MMP1, 7
+Initial activation of proMMP2 by MMP14
+Initial activation of proMMP3
+Initial activation of proMMP7 by trypsin
+Initial activation of proMMP9 by MMPs
+Integrin alpha2beta1 binds laminin-332
+Integrin alpha4beta1 binds JAM2:JAM3
+Integrin alpha5beta1 binds FN1 dimer
+Integrin alpha6beta1 binds laminin-322, 512, 521, 211, 221, 411
+Integrin alpha6beta1, alpha7beta1, alpha1beta1, alpha2beta1 bind laminin-111
+Integrin alpha7beta1 binds Laminin-211, 221, 411, 512, 521
+Integrin alphaLbeta2 (LFA-1) binds F11R (JAM-A)
+Integrin alphaMbeta2 (MAC1) binds JAM3
+Integrin alphaXbeta2 binds JAM3
+Integrins alpha3beta1, alpha6beta4 bind laminin-332, 511, 521, (211, 221)
+Integrins alpha4beta1, alpha8beta1, alphaVbeta1, alphaVbeta3, alphaVbeta6 bind Fibronectin matrix
+Interaction of integrin alpha8beta1 with Tenascin-C
+Interaction of integrin alpha9beta1 with Tenascin-C
+Interaction of integrin alpha9beta1 with VCAM1
+Interaction of integrin alphaDbeta2 with fibrin
+Interaction of integrin alphaEbeta7 with Cadherin-1
+Interaction of integrin alphaIIb beta 3 with THBS1 (Thrombospondin-1)
+Interaction of integrin alphaIIbbeta3 with Fibronectin
+Interaction of integrin alphaIIbbeta3 with von Willebrand factor
+Interaction of integrin alphaVbeta3 with Fibrillin
+Interaction of integrin alphaVbeta3 with IPSP (Bone sialoprotein 2)
+Interaction of integrin alphaVbeta3 with PECAM1
+Interaction of integrin alphaVbeta3 with Tenascin
+Interaction of integrin alphaVbeta3 with von Willbrand Factor
+Interaction of integrin alphaXbeta2 with fibrin
+LTBP1, LTBP3 bind TGF-Beta
+LTBP4 binds TGF-Beta-1
+LUM (lumican) binds integrin alpha2beta1
+Laminin-111 binds collagen type IV
+Laminin-111 binds endostatin dimer
+Laminin-322 degradation by MMP14
+Laminin-332 binds collagen type VII
+Laminin-332 degradation by laminin-322 degrading extracellular proteinases
+Laminin-511 degradation by MMP14
+Laminins bind HSPG2
+Laminins bind Nidogens 1, 2
+Laminins bind galactosyl sulfatide and related sulfated glycolipids
+Laminins:Nidogens binds HSPG2
+Laminins:Nidogens binds collagen type IV networks
+Latent TGF-beta-1 binds integrins
+Latent TGF-beta-3 binds integrins
+Lysyl hydroxylated collagen propeptides dissociate from Lysyl hydroxylases
+MADCAM1-1 binds Integrin alpha4beta7
+MFAP2, MFAP5 bind microfibrils
+MMP1,3,13 (2, 7-12, 19) binding by Alpha-2 macroglubulin
+MMP13 cleaves OPTC
+MMP14 (MT1-MMP) binds TIMP2
+MMP14:TIMP2 binds proMMP2
+MMP2 cleaves OPTC
+MMP2, MMP7, MMP9 bind CD44
+MMP2, MMP9 cleave SCUBE3
+MMP7 cleaves OPTC
+MT-MMPs are sorted to the plasma membrane
+NID1 degradation by MMP1, 9, 12, ELANE
+NID1 degradation by MMP14, MMP15
+NID1 degradation by MMP19
+NID1 degradation by MMP3, 7
+NTN4 binds laminins with gamma-1, gamma-3
+OPN (osteopontin) degradation by MMP3, MMP7
+P3HB binds 4-Hyp-collagen propeptides
+P4HB binds Collagen chains
+P4HB:4-Hyp collagen propeptides dissociates
+PLOD3 binds Lysyl hydroxylated collagen propeptides
+PLOD3:Fe2+ dimer:Galactosyl-hydroxylysyl collagen propeptides dissociates
+PLOD3:Fe2+ dimer:Glucosyl-galactosyl-hydroxylysyl collagen propeptides dissociates
+PXLP-K278-PHYKPL tetramer hydrolyses 5PHL
+Procollagen lysyl hydroxylases convert collagen lysines to 5-hydroxylysines
+Procollagen triple helix formation
+Prolyl 3-hydroxylases:Fe2+:3,4-Hyp collagen propeptides dissociates
+Prolyl 4-hydroxylase converts collagen prolines to 4-hydroxyprolines
+Prolysyl oxidase activation
+Release of endostatin-like peptides
+Removal of fibrillar collagen C-propeptides
+Removal of fibrillar collagen N-propeptides
+SH3PXD2A binds ADAM12,ADAM15,ADAM19
+SLRPs bind TGF Beta
+SPARC binds Collagen type I fibril, hydroxylapatite and Ca2+
+SPP1 (osteopontin) binds CD44
+SPP1 (osteopontin) binds Integrin alpha4beta1
+SPP1 (osteopontin) binds integrin alpha5beta1, alpha9beta1
+SPP1 (osteopontin) binds integrin alpha8beta1
+SPP1 (osteopontin) binds integrins alphaVbeta1, alphaVbeta3, alphaVbeta5
+Secretion of collagens
+Secretion of transmembrane collagens
+Syndecan-1 binds Integrin alphaVBeta5
+Syndecan-1 binds Integrin alphaVbeta3
+Syndecan-1 binds Integrins alpha2beta1, (alpha6beta4)
+Syndecan-1 binds THBS1
+Syndecan-1 binds collagen types I, III, V
+Syndecan-1 binds fibronectin
+Syndecan-2 binds CASK
+Syndecan-2 binds TRAPPC4
+Syndecan-4 binds ACTN1
+Syndecan-4 binds PI(4,5)P2
+Syndecan-4:PI(4,5)P2 binds PKC alpha:DAG
+Syndecans 1, 2 & 4 bind VTN
+Syndecans 1, 2, 4, (3) bind FGF2
+Syndecans 2, (4) bind TGFB1
+THBS1 (Thrombospondin-1) binds Integrin alpha3beta1, alpha4beta1
+TNC binds Integrin alphaVbeta3, alphaVbeta6, alpha2beta1, alpha7beta1, alpha8beta1, alpha9beta1, alphaXbeta1
+TNC binds Syndecan-3
+Tenascins C, R, (X, N) bind fibronectin matrix
+Tenascins C, R, (X, N) bind lecticans
+Tetramerization of procollagen VI
+Tetrastatin binds integrin alphaVbeta3
+Tropoelastin associates with microfibrils
+Tropoelastin forms aggregate globules
+Tumstatin binds integrin alphaVbeta 3, alpha3beta1
+Type X collagen associates with collagen type II fibrils
+Type XII and XIV collagens associate with type I and type II fibrils.
+VCAM1 binds Integrin alpha4beta1
+VTN (vitronectin) binds Integrin alphaVbeta3, alphaVbeta5, alphaVbeta8
+VTN binds Plasminogen activator inhibitor- 1
+VTN binds collagens I, IV and VI
+VTN binds collagens II, III and V
+VTN binds integrins alphaVbeta1, alphaVbeta3, alpha3beta5, alphaIIBbeta3
+proMMP9 binds TIMP1

@@ -1,0 +1,755 @@
+(APC/C:Cdh1)-targeted cell cycle proteins
+(BTRC:CUL1:SKP1),(FBXW11:CUL1:SKP1)
+1,2-diacyl-glycerol 3-phosphate
+14-3-3 dimer
+2'-O-acetyl-ADP-ribose
+2OG
+3' overhanging DNA at resected DSB ends
+ADP
+AHCTF1
+AJUBA
+AMP
+ANKLE2
+ANKLE2:PP2A
+ANKLE2:VRK1/VRK2
+ARPP19
+ATM
+ATP
+ATR
+ATR:ATRIP
+ATR:ATRIP:RPA:ssDNA signaling complex
+ATRX
+ATRX:DAXX
+AURKA
+AURKA:PHLDA1
+Aborted replication complex
+Ac-CoA
+Ac-Cohesin:PDS5:CDCA5:WAPAL:Sister Centromeres:Kinetochores:Microtubules
+Ac-Cohesin:PDS5:WAPAL:Centromere
+Ac-Cohesin:PDS5:WAPAL:Chromosomal Arm
+Ac-Cohesin:PDS5:p-CDCA5:WAPAL:Sister Centromeres:Kinetochores:Microtubules
+Ac-K302-ANKLE2
+Activated MAD2L1
+AdoHcy
+AdoMet
+Axial-Lateral Element of Synaptonemal Complex
+BANF1
+BLM
+BORA
+BRCA1
+BRCA2
+BTRC:CUL1:SKP1
+BUB1B
+BUB3
+CABLES1
+CC2D1B
+CCAN:DNA:CASC5
+CCAN:DNA:CASC5:Centromeric nucleosome:RSF complex
+CCAN:DNA:CASC5:Mis18 complex
+CCAN:DNA:CASC5:Mis18 complex:HJURP complex:CENPA nucleosome
+CCAN:DNA:CASC5:Mis18 complex:HJURP complex:CENPA:H4
+CCNA
+CCNA1
+CCNA1 gene
+CCNA2
+CCNA2 gene
+CCNA:CDK1
+CCNA:CDK2
+CCNA:p-T14,T161-CDK1
+CCNA:p-T14,Y15,T161-CDK1
+CCNA:p-T14-CDK1
+CCNA:p-T160-CDK2
+CCNA:p-T160-CDK2,CCNE:p-T160-CDK2
+CCNA:p-T160-CDK2:E2F1/E2F3
+CCNA:p-T160-CDK2:p-E2F1/p-E2F3
+CCNA:p-T161-CDK1
+CCNA:p-Y15-CDK2
+CCNB
+CCNB1
+CCNB1 Gene
+CCNB1,CCNB2:p-T14,Y15,T161-CDK1
+CCNB1,CCNB2:p-T161-CDK1
+CCNB1:p-T14,T161-CDK1
+CCNB1:p-T14,Y15,T161-CDK1
+CCNB1:p-T14-CDK1
+CCNB1:p-T161-CDK1
+CCNB2
+CCNB2 Gene
+CCNB:CDK1
+CCNB:p-T14-CDK1
+CCNE
+CCNE1
+CCNE1 gene
+CCNE:CDK2
+CCNE:p-T160-CDK2:hypophosphorylated RB1
+CDC20
+CDC20:p-APC/C
+CDC20:p-APC/C:PTTG1
+CDC20:pAPC/C:K11polyUb-PTTG1
+CDC25
+CDC25A
+CDC25A gene
+CDC25B
+CDC25C
+CDC45
+CDC45 gene
+CDC6
+CDC6 gene
+CDCA5
+CDK
+CDK1
+CDK1 Phosphorylated Condensin I
+CDK1 gene
+CDK11p58
+CDK2
+CDK4
+CDK4 inhibitors
+CDK4,CDK6
+CDK4,CDK6:CCND
+CDK4,CDK6:CCND:CDKN1A,CDKN1B,(CDKN1C)
+CDK4,CDK6:CCND:CDKN1A,CDKN1B,(CDKN1C); CDK4,CDK6:CCND; (CDK4,CDK6:CCND:p-Y88-CDKN1B)
+CDK4,CDK6:INK4
+CDK4/6:CCND:p-Y77-CDKN1A,p-Y88-CDKN1B,(p-Y91-CDKN1C)
+CDK4:CCND1
+CDK6 inhibitors
+CDK:DDK:MCM10:active pre-replicative complex
+CDK:DDK:MCM10:active pre-replicative complex:CDC45
+CDK:DDK:MCM10:active pre-replicative complex:CDC45:RPA1-4
+CDKN1A
+CDKN1A gene
+CDKN1A mRNA
+CDKN1A,CDKN1B
+CDKN1A,CDKN1B,(CDKN1C)
+CDKN1B
+CDKN1B:(CDK4:CCND1,(CDK2:CCNE1))
+CDT1
+CDT1 gene
+CDT1:GMNN
+CENPF
+CENPF Gene
+CEP250
+CH2O
+CHEK1
+CHEK2
+CHMP2A
+CHMP2B
+CHMP3
+CHMP4A
+CHMP4B
+CHMP4C
+CHMP6
+CHMP7
+CHTF18
+CHTF8
+CK2 Phosphorylated Condensin I
+CKS1B
+CLSPN
+CMP
+CO2
+CST complex
+CTC1
+CTF18 complex
+CTF18-RFC(7s) complex
+CUL1
+CUL1:SKP1:SKP2
+CUL1:SKP1:SKP2:CKS1B
+Ca2+
+Cdc20/Cdh1
+Cdc20:phospho-APC/C:Cyclin B:Cdc2 complex
+Cdc2:Cyclin A:MCC:APC/C complex
+Cdc45:CDK:DDK:Mcm10:Activated claspin:pre-replicative complex
+Cdc45:CDK:DDK:Mcm10:claspin:pre-replicative complex
+Cdh1
+Cdh1:phospho-APC/C complex
+Centrosome associated  Plk1
+Centrosome:AURKA
+Centrosome:AURKA:AJUBA
+Centrosome:AURKA:TPX2:HMMR
+Centrosome:p-T288-AURKA
+Centrosome:p-T288-AURKA:TPX2:HMMR
+Centrosome:p-T288-AURKA:p-S252-BORA:PLK1
+Centrosomes containing recruited CDK11p58
+Chromatin
+Cleaved Cohesin:PDS5:WAPAL
+Cleaved Cohesin:PDS5:p-CDCA5:WAPAL:Sister Centromeres:Kinetochores:Microtubules
+Cleaved Meiotic Holliday Junction
+CoA-SH
+Cohesin Complex
+Cohesin:PDS5:WAPAL
+Cohesin:PDS5:WAPAL:Centromere
+Cohesin:PDS5:WAPAL:Chromosomal Arm
+Cohesin:PDS5:WAPAL:NIPBL:MAU2:Chromatin
+Condensed prometaphase chromosomes
+Condensed prophase chromosomes
+Condensin I
+Condensin II
+Condensin II:MCPH1:SET
+Condensin II:Nucleosome with H4K20me1
+Condensin II:RB1
+Cyclin A1:Cdk2 phosphorylated G2/M transition protein
+Cyclin A2:Cdk2 phosphorylated G2/M transition protein
+Cyclin A:Cdk2:p21/p27 complex
+Cyclin A:Cdk2:phospho-p27/p21 complex
+Cyclin A:phospho-Cdc2(Thr 161) complex
+Cyclin A:phospho-Cdk(Thr 160):Cdh1:phosho-APC/C complex
+Cyclin A:phospho-Cdk2(Thr 160):phospho-Cdh1:phospho-APC/C complex
+Cyclin B:CDK1
+Cyclin B:CDK1:ORC:origin of replication
+Cyclin D
+Cyclin E/A:CDK2
+Cyclin E/A:CDK2:p-S130-CDKN1A,p-T187-CDKN1B:CUL1:SKP1:SKP2:CKS1B
+Cyclin E/A:CDK2:p-S130-CDKN1A,p-T187-CDKN1B:CUL1:SKP1:SKP2:CKS1B:3xubiquitin
+Cyclin E/A:p-T160-CDK2:CDKN1A,CDKN1B
+Cyclin E/A:p-T160-CDK2:p-S130-CDKN1A,p-T187-CDKN1B
+Cyclin E:CDK2:CDKN1A,CDKN1B
+Cyclin E:p-CDK2
+Cyclin E:p-T160-CDK2
+DAG
+DAG:active PKC:Ca+2
+DAXX
+DDK
+DHFR
+DHFR gene
+DIDO1-1
+DKC1
+DKC1:SHQ1
+DMC1
+DNA
+DNA DNA DSBs:p-MRN:p-S1981,Ac-K3016-ATM:KAT5:K63PolyUb-K14,K16,p-S139-H2AFX,Me2K21-HIST1H4A-Nucleosome:p-5T-MDC1:p-S102-WHSC1:RNF8:Zn2+:SUMO1:p-T4827-HERC2:UBE2N:UBE2V2:RNF168:PIAS4:p-S25,S1778-TP53BP1:p-4S,2T-BRCA1-A complex
+DNA DNA DSBs:p-MRN:p-S1981,Ac-K3016-ATM:KAT5:K63PolyUb-K14,K16,p-S139-H2AFX,Me2K21-HIST1H4A-Nucleosome:p-5T-MDC1:p-S102-WHSC1:RNF8:Zn2+:SUMO1:p-T4827-HERC2:UBE2N:UBE2V2:RNF168:PIAS4:p-S25,S1778-TP53BP1:p-4S,2T-BRCA1-A complex:CHEK2
+DNA Polymerase delta tetramer
+DNA polymerase alpha:primase
+DNA polymerase alpha:primase:DNA polymerase alpha:origin complex
+DNA polymerase epsilon
+DNA polymerase epsilon:origin complex
+DNA2
+DREAM complex
+DREAM complex:CDC25A gene
+DREAM complex:CDC6 gene
+DREAM complex:E2F1 gene
+DREAM complex:PCNA gene
+DREAM complex:RBL1 gene
+DREAM complex:TOP2A gene
+DSCC1
+E2F1
+E2F1 gene
+E2F1,E2F2,E2F3:TFDP1,TFDP2
+E2F1/E2F3
+E2F1:TFDP1,TFDP2
+E2F1:TFDP1,TFDP2:CCNA1 gene
+E2F1:TFDP1,TFDP2:CCNE1 gene
+E2F1:TFDP1,TFDP2:CDC25A gene
+E2F1:TFDP1,TFDP2:CDC45 gene
+E2F1:TFDP1,TFDP2:CDC6 gene
+E2F1:TFDP1,TFDP2:CDK1 gene
+E2F1:TFDP1,TFDP2:CDT1 gene
+E2F1:TFDP1,TFDP2:DHFR gene
+E2F1:TFDP1,TFDP2:FBXO5 gene
+E2F1:TFDP1,TFDP2:ORC1 gene
+E2F1:TFDP1,TFDP2:PCNA gene
+E2F1:TFDP1,TFDP2:POLA1 gene
+E2F1:TFDP1,TFDP2:RRM2 gene
+E2F1:TFDP1,TFDP2:TK1 gene
+E2F4,E2F5:TFDP1,TFDP2
+E2F4:TFDP1,TFDP2
+E2F6:(TFDP1,TFDP2):RRM2 gene
+EMD/ TMPO/ LEMD3/ LEMD2
+EMD/TMPO/LEMD3/LEMD2:Lamin filaments
+EMD/TMPO/LEMD3/LEMD2:Lamin filaments:BANF1:Chromatin
+EML4
+EML4 homotrimer
+EML4 homotrimer:Microtubule
+ENSA
+EP300
+ER to Golgi transport vesicle
+ER to Golgi transport vesicle fused with cis-Golgi
+ESPL1
+ESPL1 Autocleaved
+Emi1:Cdc20 complex
+Emi1:Cdc20/Cdh1 complex
+Emi1:Cdh1 complex
+Extended And Processed Telomere End
+Extended And Processed Telomere End and Associated DNA Binding and Packaging Protein Complex
+Extended And Processed Telomere End and Associated DNA Binding and Packaging Protein Complex Folded Into Higher Order Structure
+FBXL7
+FBXO5
+FBXO5 gene
+FKBP6
+FKBPL
+FOXM1
+FZR1
+FZR1,p-S795-RB1
+Fused nuclear envelope vesicles
+G2/M transition proteins
+GAR1
+GDP
+GINS complex
+GINS1
+GINS2
+GINS3
+GINS4
+GMNN
+GMP
+GORASP1:GOLGA2:USO1:RAB1:GTP
+GORASP2:BLZF1:RAB2A:GTP
+GTP
+GTSE1
+GTSE1:CDKN1A:FKBPL:HSP90
+GTSE1:MAPRE1:microtubule plus end
+GTSE1:microtubule
+GTSE1:p-T210-PLK1
+Golgi cisternae
+H+
+H2AFX-Nucleosome
+H2O
+H3F3A
+HDAC1
+HDAC1:RBL1:E2F4:TFDP1,TFDP2
+HDAC1:RBL2:E2F4,E2F5:TFDP1,TFDP2
+HDAC1:RBL2:E2F4,E2F5:TFDP1,TFDP2; HDAC1:RBL1:E2F4:TFDP1,TFDP2
+HDAC1:RBL2:E2F4,E2F5:TFDP1,TFDP2; HDAC1:RBL1:E2F4:TFDP1,TFDP2:CCNA2 gene
+HDAC1:RBL2:E2F4,E2F5:TFDP1,TFDP2; HDAC1:RBL1:E2F4:TFDP1,TFDP2:CDK1 gene
+HDAC1:RBL2:E2F4,E2F5:TFDP1,TFDP2; HDAC1:RBL1:E2F4:TFDP1,TFDP2:E2F1 gene
+HDAC1:RBL2:E2F4,E2F5:TFDP1,TFDP2; HDAC1:RBL1:E2F4:TFDP1,TFDP2:MYBL2 gene
+HIST3H3
+HJURP:NPM1:RBBP4:RBBP7:RUVBL1
+HJURP:NPM1:RBBP4:RBBP7:RUVBL1:CENPA:H4
+HMMR
+HOP2(TBPIP):MND1
+HSP90:HSP90
+HSPA2
+Histone H2A
+Histone H2B
+Hyperphosphorylated Condensin II:Nucleosome
+INK4
+IST1
+Interphase chromosomes
+KIF20A
+KIF23
+KPNB1
+KPNB1,TNPO1
+KPNB1,TNPO1:Nup107-160 complex
+Kinetochore
+Kinetochore:Mad1:MAD2 Complex
+Kinetochore:Mad1:MAD2* Complex
+LBR
+LEM2D:ESCRT-III:IST1:CC2D1B
+LEM2D:ESCRT-III:IST1:CC2D1B:SPAST
+LEM2D:ESCRT-III:IST1:CC2D1B:SPAST:VPS4A
+LEMD2
+LEMD2:CHMP7
+LEMD2:ESCRT-III:IST1
+LMNA-2
+LMNB1(2-586)
+LPIN
+Lamin dimers
+MAD1L1
+MAD2*CDC20 complex
+MAD2L1
+MAPRE1:microtubule plus end
+MASTL
+MCC:APC/C complex
+MCM10
+MCM10:active pre-replicative complex
+MCM10:pre-replicative complex
+MCM2
+MCM2-7
+MCM3
+MCM4:MCM6:MCM7
+MCM5
+MCPH1
+MLH1
+MLH3
+MSH4
+MSH5
+MYBL2
+MYBL2 gene
+MYC:MAX
+MYC:MAX:CDC25A gene
+Mad1:kinetochore complex
+Mature centrosome enriched in gamma-TURC:p-T2055-NUMA1 homodimer
+Mature centrosomes enriched in gamma-TURC complexes
+MeL-PP2A
+Meiotic Cohesin complex
+Meiotic D-loop complex
+Meiotic Holliday Junction
+Meiotic single-stranded DNA complex
+Microtubule
+Microtubule-bound kinetochore
+Mis18 Complex
+Multiubiquitinated Nek2A
+MuvB complex
+NAD+
+NAM
+NDC1
+NEK2
+NEK6/NEK7
+NHP2
+NIPBL:MAU2
+NOP10
+NTP
+NUDC
+NUMA1 homodimer
+NUP188
+Nek2A:MCC:APC/C complex
+Nlp-depleted centrosome
+Nuclear Pore Complex (NPC)
+Nuclear Pore Complex (p-2S,3T-NUP98)
+Nuclear envelope vesicle
+Nucleosome
+Nucleosome with H3K4me2
+Nucleosome with H3K4me2/3:H4K20me1
+Nucleosome with H3K4me3
+Nup107-160 complex
+Nup107-160 complex:AHCTF1:Chromatin
+Nup62 Complex
+Nup62 complex:Nup93 complex:NUP188:NDC1:POM121:AHCTF1:Chromatin
+Nup93 complex
+Nup93 complex:NUP188:NDC1:POM121:AHCTF1:Chromatin
+O2
+OPTN:RAB8A:GTP
+ORC1
+ORC1 gene
+ORC:origin of replication
+Okazaki fragment
+PCBP4
+PCBP4:CDKN1A mRNA
+PCNA
+PCNA gene
+PCNA homotrimer
+PDS5
+PHF20
+PHF8:Nucleosome with H3K4me2/3
+PHF8:Nucleosome with H3K4me2/3:H4K20me1
+PHLDA1
+PKMYT1
+PLK1
+PLK1 Gene
+POLA1
+POLA1 gene
+POLA:primase:G-strand extended telomere end
+POM121
+POM121:Nup107-160 complex:AHCTF1:Chromatin
+POT1
+PP2A
+PP2A (Aalpha:B55alpha:Calpha)
+PP2A-PPP2R2D
+PP6-PPP6R3
+PPi
+PRDM9
+PRDM9:DNA
+PTTG1
+PTTG1:ESPL1
+Partially Disassembled NPC
+Persistent single-stranded DNA
+Phospho-Cyclin B1 (CRS):phospho-Cdc2(Thr 161)
+Phospho-Emi1(Ser 182):Cdc20/Cdh1 complexes
+Phosphorylated Condensin II:Nucleosome
+Pi
+PolyUb,p-S,T-ORC1
+PolyUb,p-S166,S188-MDM2:PolyUb,p-S342,S367,S403-MDM4
+PolyUb-K109-FBXL7
+PolyUb-SKP2:RB1:phospho-APC/C:Cdh1 complex
+PolyUb-TP53 Tetramer
+Processive complex
+Processive complex loaded on telomere
+Processive complex loaded on telomere:Okazaki fragment complex
+Processive complex loaded on telomere:Okazaki fragment:Flap
+Processive complex loaded on telomere:Okazaki fragment:Flap:RPA heterotrimer
+Processive complex loaded on telomere:Okazaki fragment:Flap:RPA heterotrimer:DNA2
+Processive complex loaded on telomere:Okazaki fragments:Remaining Flap
+Processive complex loaded on telomere:ligated C-strand Okazaki fragments
+Processive complex loaded on telomere:nicked DNA from adjacent Okazaki fragments
+Processive complex:Okazaki fragment complex
+Processive complex:Okazaki fragment:Flap
+Processive complex:Okazaki fragment:Flap:RPA heterotrimer
+Processive complex:Okazaki fragment:Flap:RPA heterotrimer:dna2
+Processive complex:Okazaki fragments:Remaining Flap
+Processive complex:nicked DNA from adjacent Okazaki fragments
+RAB8A:GTP
+RAD17:RFC
+RAD21
+RAD21(1-172)
+RAD21(173-450)
+RAD51
+RAD51C
+RAD9:HUS1:RAD1
+RAN:GDP
+RAN:GTP
+RAN:GTP:KPNB1,TNPO1
+RAN:GTP:Nuclear envelope vesicles
+RANGAP1 homodimer
+RB1
+RB1:E2F1,E2F2,E2F3:TFDP1,TFDP2:
+RB1:RNA primer-DNA primer:origin duplex with DNA damage
+RB1:SKP2:APC/C:Cdh1
+RBL1
+RBL1 gene
+RBL1:Cyclin E/A:CDK2
+RBL1:E2F4:DP1/2:Cyclin E/A:CDK2
+RBL1:E2F4:TFDP1,TFDP2
+RBL2
+RBL2:Cyclin E/A:CDK2
+RBL2:E2F4,E2F5:TFDP1,TFDP2
+RBL2:E2F4/5:DP1/2:Cyclin E/A:CDK2
+RBX1
+RFC Heteropentamer
+RFC Heteropentamer:RNA primer-DNA primer:G-strand extended telomere end
+RFC Heteropentamer:RNA primer-DNA primer:G-strand extended telomere end duplex:PCNA homotrimer
+RFC Heteropentamer:RNA primer-DNA primer:origin duplex
+RFC Heteropentamer:RNA primer-DNA primer:origin duplex:PCNA homotrimer
+RFC,(CFT18-RFC)
+RFC2
+RFC3
+RFC4
+RFC5
+RFWD2
+RNA primer-DNA primer:G-strand extended telomere:PCNA
+RNA primer-DNA primer:origin duplex
+RNA primer-DNA primer:origin duplex with DNA damage
+RNA primer-DNA primer:origin duplex:PCNA
+RNA primer:DNA primer:G-strand extended telomere:POLA:primase
+RNA primer:G-strand extended telomere end:POLA:primase
+RNA primer:origin duplex:DNA polymerase alpha:primase complex
+RPA complexed to ssDNA
+RPA heterotrimer
+RPA1-4
+RRM2
+RRM2 gene
+RSF Complex
+RTEL1
+RUVBL1
+RUVBL2
+Rad17-RFC complex bound to DNA
+Rad9-Hus1-Rad1 bound to DNA
+Replication Fork
+SCF-FBXL7:AURKA
+SCF-FBXL7:PolyUb-AURKA
+SCF-associated multiubiquitinated Emi1complexes
+SCF-beta-TrCP:phospho-Emi1 complexes
+SET
+SHQ1
+SKP1
+SKP1:CUL1:RBX1:FBXL7
+SKP2
+SPAST
+SPO11 Dimer
+SPO11:double stand break
+SPO11:double strand break with 3' single strand breaks
+SPO11:oligonucleotide
+STN1
+SUCCA
+SUMO1:C93-UBE2I
+SUMO1:RANGAP1 homodimer
+SUN1
+SUN2
+SYCE1
+SYCE2
+SYCE3
+SYCP1
+SYCP2
+SYCP3
+SYNE1
+SYNE2
+Shelterin complex
+Sister Centromere
+Sister Centromere:Kinetochore:Microtubules
+Sister Centromeres:Ac-Cohesin:PDS5:CDCA5:WAPAL
+Sister Chromatid
+Sister Chromosomal Arms:Ac-Cohesin:PDS5:CDCA5:WAPAL
+Sister Chromosomal Arms:Ac-Cohesin:PDS5:p-CDCA5:WAPAL
+Sister Chromosomal Arms:p-STAG2,RAD21-Ac-Cohesin:PDS5:p-CDCA5:WAPAL
+Stacked Golgi cisternae
+Synaptonemal Complex
+Synaptonemal Complex:BRCA1
+Synaptonemal Complex:BRCA1:ATR
+TEN1
+TERRA
+TERT
+TEX12
+TEX15
+TK1
+TK1 gene
+TOP2A
+TOP2A gene
+TOP3A
+TP53 Tetramer
+TPX2
+TYMS
+TYMS gene
+Telomerase Holoenzyme Base-paired to the Telomeric Chromosome End with an Additional single Stranded Telomere repeat
+Telomerase Holoenzyme:Telomeric RNP End with Two Additional Single Stranded Telomere Repeats
+Telomerase RNA Component (TERC)
+Telomerase RNP
+Telomerase RNP Bound and base-paired to the Telomeric Chromosome End
+Telomerase RNP:G-strand telomeric chromosome end
+Telomerase RNP:Telomeric Chromosome End with an Additional single Stranded Telomere repeat
+Telomere Attachment Plate
+Telomere:Shelterin:Nucleosome (H3F3A):ATRX:DAXX
+Telomere:Shelterin:Nucleosome:ATRX:DAXX
+Telomeric DNA
+Telomeric G-strand chromosome end with two additional single strand repeats
+Telomeric G-strand chromosome end:Shelterin
+Telomeric G-strand chromosome end:Shelterin (p-S365-TERF2)
+UBE2I
+UMP
+USO1 homodimer
+Ub
+Ub-p-S123-CDC25A
+Ub-p-S252,S497,T501-BORA
+Ub-p-T401,S672,1035-RBL2
+Unsynapsed chromatin
+Unsynapsed chromatin with gamma-H2A.x
+Unwinding complex at replication fork
+Unwound fork
+VPS4A
+VRK1,(VRK2)
+WAPAL
+WEE1
+WRAP53
+WRN
+XPO1
+ZNF385A
+alpha-beta tubulin dimer
+anaphase promoting complex (APC/C)
+cNAP-1 depleted centrosome
+cell cycle proteins:phospho-APC/C:Cdh1 complex
+centrosome
+centrosome containing phosphorylated Nlp
+cytoplasmic Cyclin B1:Cdc2 complexes
+dATP
+dCTP
+dGTP
+dTTP
+gamma-tubulin complex
+hBUBR1:hBUB3:MAD2* complex
+hBUBR1:hBUB3:MAD2*:CDC20 complex
+hyperphosphorylated RB1
+ligated okazaki fragment
+methanol
+monophosphorylated RB1
+multi-ubiquitinated phospho-(T286) Cyclin D1
+multiubiquitinated Cdh1 associated with APC/C
+multiubiquitinated Cyclin A associated with MCC:APC/C complex
+multiubiquitinated Cyclin B:Cdc2:Cdc20:phospho-APC/C complex
+multiubiquitinated cell cycle protein:APC/C:Cdh1 complex
+nuclear Cyclin B1:Cdc2 complexes
+origin of replication
+p-2S-PHF8:Fe2+
+p-3S,2T-NEK9
+p-3S,2T-NEK9: p-S206-NEK6/ p-S195-NEK7
+p-3S,2T-NEK9:NEK6/NEK7
+p-3S,T-NEK9
+p-4S,3T-NUP98
+p-5S,T-MDM2
+p-Ac-Cohesin:PDS5:WAPAL
+p-CDC6
+p-Cohesin:PDS5:WAPAL
+p-FBXO5
+p-FZR1
+p-FZR1,p-RB1
+p-MCM2-7
+p-MuvB complex
+p-NINL
+p-PKCA, p-PKCB
+p-PKMYT1
+p-RAD21-Ac-Cohesin:PDS5:p-CDCA5:WAPAL:Sister Centromeres:Kinetochores:Microtubules
+p-S,3T-CHEK2
+p-S,T-EML4 homotrimer
+p-S,T-ORC1
+p-S-AJUBA
+p-S106-LPIN
+p-S123-CDC25A
+p-S15,S20-TP53 Tetramer
+p-S15,S20-TP53 Tetramer:ZNF385A
+p-S15,S20-TP53 Tetramer:ZNF385A:CDKN1A Gene
+p-S15-TP53 Tetramer
+p-S166,S188-MDM2
+p-S166,S188-MDM2 dimer, p-S166,S188-MDM2,MDM4:TP53
+p-S166,S188-MDM2 dimer, p-S166,S188-MDM2:MDM4
+p-S166,S188-MDM2,MDM4
+p-S166,S188-MDM2:MDM4
+p-S166,S188-MDM2:p-S346,S367,S403-MDM4
+p-S166,S188-MDM2:p-S403-MDM4
+p-S177-OPTN
+p-S198-CDC25C
+p-S1981,Ac-K3016-ATM
+p-S21,S75,T159-CDCA5
+p-S216-CDC25C
+p-S216-CDC25C:14-3-3 protein complex
+p-S22/23, S395-Lamin dimers
+p-S252,S497,T501-BORA
+p-S252,S497,T501-BORA:SCF-beta-TrCp1/2
+p-S252-BORA
+p-S252-BORA:p-T210-PLK1
+p-S274,S326-NUDC
+p-S274,S326-NUDC:EML4 homotrimer:Microtubule-bound kinetochore
+p-S317,S345-CHEK1
+p-S387-RFWD2
+p-S387-RFWD2:p-S15-TP53
+p-S395-Lamin dimers
+p-S435-GTSE1
+p-S435-GTSE1:PolyUb-TP53 Tetramer
+p-S454-RAD21(451-631)
+p-S528-KIF20A
+p-S53-WEE1
+p-S62-ARPP19
+p-S62-ARPP19/p-S67-ENSA
+p-S62-ARPP19/p-S67-ENSA:PP2A-PPP2R2D
+p-S67-ENSA
+p-S71,S86-LBR
+p-S71,S86-LBR:KPNB1
+p-S904,S905-KIF23
+p-S95-PHLDA1
+p-STAG2,RAD21-Ac-Cohesin:PDS5:p-CDCA5:WAPAL:Sister Centromeres:Kinetochores:Microtubules
+p-T-CDKN1A/B
+p-T161-CDK1
+p-T172-CDK4,p-T177-CDK6:CCND:CDKN1A,CDKN1B,(CDKN1C); p-T172-CDK4,p-T177-CDK6:CCND; (p-T172-CDK4,p-T177-CDK6:CCND:p-Y88-CDKN1B)
+p-T172-CDK4:CCND
+p-T172-CDK4:CCND:CDK4 inhibitors
+p-T177-CDK6:CCND
+p-T177-CDK6:CCND:CDK6 inhibitors
+p-T194,T207,T741-MASTL
+p-T2,T3,S4-BANF1
+p-T2055-NUMA1 homodimer
+p-T2055-NUMA1 homodimer:Mature centrosome:nucleated microtubules
+p-T210-PLK1
+p-T210-PLK1:Phosphorylated Condensin II:Nucleosome
+p-T216,S189,S274,S373-GORASP1:p-S37-GOLGA2:p-RAB1:GTP:p-T210-PLK1
+p-T216,S274,S373-GORASP1:p-S37-GOLGA2:p-RAB1:GTP
+p-T216,S274,S373-GORASP1:p-S37-GOLGA2:p-RAB1:GTP:p-T210-PLK1
+p-T222,225-GORASP2:BLZF1:RAB2A:GTP
+p-T286-CCND1
+p-T333-NEK9
+p-T369,S640,S964,S975-RBL1
+p-T401,S672,1035-RBL2:SCF(Skp2):Cks1
+p-T401,S672,S1035-RBL2
+p-T513,T526-GTSE1
+p-T611,S730,S739-FOXM1
+p-T611,S730,S739-FOXM1:CENPF Gene
+p-T611,S730,S739-FOXM1:EP300:CDC25A Gene
+p-T611,S730,S739-FOXM1:MuvB:MYBL2:CCNB1 Gene
+p-T611,S730,S739-FOXM1:MuvB:MYBL2:CCNB2 Gene
+p-T611,S730,S739-FOXM1:MuvB:MYBL2:PLK1 Gene
+p-T611-FOXM1
+p-T611-FOXM1:p-T210-PLK1
+p-T68-CHEK2
+p-T68-CHEK2 dimer
+p-WEE1
+p-Y342-PTK6
+p-Y342-PTK6:CDKN1B:(CDK4:CCND1,(CDK2:CCNE1))
+p-Y88-CDKN1B:(CDK4:CCND1,(CDK2:CCNE1))
+p14ARF:p-S166,S188-MDM2 dimer,p-S166,S188-MDM2:MDM4
+phospho(T286)-Cyclin D1:Cdk4
+phospho-APC/C:Cdh1 complex
+phospho-Cdh1:phospho-APC/C complex
+phospho-Cyclin B1(CRS):phospho-Cdc2 (Thr 161)
+phospho-Emi1(Ser 145, Ser 149):Cdc20/Cdh1 complexes
+phospho-Emi1:Cdc20/Cdh1 complexes
+phospho-G2/M transition protein
+phospho-cyclin B1(CRS):phosph-Cdc2(Thr 161)
+phosphorylated anaphase promoting complex (APC/C)
+pre-replicative complex
+pre-replicative complex (Orc1-minus)
+ubiquitinated Cdc6
+ubiquitinated phospho-COP1(ser-387)

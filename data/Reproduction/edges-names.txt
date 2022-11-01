@@ -1,0 +1,24 @@
+ATR Kinase is recruited to unsynapsed regions
+ATR phosphorylates Histone H2A.X at unsynapsed regions
+Acrosin Cleavage
+Association of ADAM and B4GALT1 With ZP3
+Association of Acrosin Heavy and Light Chain
+BRCA1 is recruited to unsynapsed regions
+CD9:Izumo Binding
+CatSper Channel Mediated Calcium Transport
+Formation of axial/lateral elements of Synaptonemal Complex
+Formation of meiotic heteroduplex
+Formation of meiotic holliday junction
+Formation of meiotic single-stranded DNA invasion complex
+Hv1 Mediated H+ Permeability
+MRN:CtIP endonucleolytically cleaves single-strand DNA 3' to SPO11
+MRN:CtIP exonucleolytically hydrolyzes DNA 3' to SPO11 and SPO11:double-strand break dissociates to SPO11:oligonucleotide and resected 5' end
+PRDM9 binds recombination hotspot motifs in DNA
+PRDM9 trimethylates histone H3
+Progesterone Activation Of CatSper
+Resolution of meiotic holliday junction
+SPAM1 Binds Hyaluronic Acid
+SPO11 hydrolyzes DNA forming double-strand breaks
+Slo3 Potassium Transport
+Synapsis
+Telomeres cluster at the nuclear membrane

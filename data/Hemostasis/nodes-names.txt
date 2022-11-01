@@ -1,0 +1,641 @@
+1,2-daG3P
+10xCbxE-F2(44-327)
+10xCbxE-F2(44-622)
+10xCbxE-F7(61-466):Ca2+
+11xCbxE-PROS1
+12xCbxE-3D-F9(47-461)
+14-3-3-zeta:Raf1
+2AG
+2xANGPT1:TEK
+2xIgA:JCHAIN
+2xSELE ligands:SELE
+3AG
+A2M tetramer
+AA
+AAMP
+ABL1
+ADP
+ADP:P2RY12:G-protein Gi (active)
+ADP:P2RY12:G-protein Gi (inactive)
+ADP:P2RY1:G-protein Gq (active)
+ADP:P2RY1:G-protein Gq/11 (inactive)
+ADR, NAd
+ADRA2A,B,C
+ADRA2A,B,C:ADR,NAd
+AMICA1
+AMP
+ANGPT1
+ANGPT1:TEK
+ANGPT1:p-5Y,S119-TEK
+ANGPT1:p-5Y,S119-TEK:SHC1
+ANGPT2
+ANGPT2:TEK
+ANGPT4
+ANGPT4:TEK
+ANXA2:S100A10 tetramer
+APBB1IP
+ARRB1
+ARRB2
+ATP
+Activated F2R
+Activated cGMP-dependent protein kinase (PKGs)
+Activated conventional protein kinase C
+Activated protein C
+Activated protein C:Protein S
+Active c-Src:Raf1
+BCAR1
+BCAR1:Talin:RIAM:ECM ligands:alphaIIb beta3:p-Y419 SRC:p-6Y-PTK2
+BHC complex
+BHC complex:REST:REST DNA binding sites
+BK channel
+BK channel, phosphorylated
+BSG
+BSG dimer
+BSG:Integrin alpha3beta1, alpha6beta1
+BSG:MCTs
+BSG:MMP1(100-469)
+BSG:PPIA
+BSG:SPN
+Basigin:CD98hc complex
+Basigin:Mannose-carrying cell recognition molecules
+Bradykinin
+C-terminal EH domain containing proteins
+C-terminal EH domain containing proteins:Rabenosyn-5
+C1q binding protein tetramer
+CABLES
+CABLES1
+CALM1
+CALU
+CAPZB
+CAV1
+CBX5
+CD177
+CD2
+CD244
+CD47
+CD47-binding SIRPs
+CD47-binding SIRPs:CD47
+CD48
+CD48:CD244
+CD58
+CD58:CD2
+CD74 trimer
+CD84
+CD84 dimer
+CD98hc complex
+CD99
+CD99:CD99L2
+CD99L2
+CDK2
+CDK2:CABLES1:WEE1
+CDK5
+CDK5:CABLES:ABL
+CEACAM heterodimer
+CEACAM1,3,5,6
+CEACAM1,3,5,6:opa proteins
+CENP-E dimer
+CENPE
+CH3COO-
+CLEC1B dimer
+CLEC1B dimer:PDPN
+CRAC channel
+CRK
+CRK:p-BCAR1:Talin:RIAM:ECM ligands:alphaIIb beta3:p-Y419 SRC:p-6Y-PTK2
+CSK
+CXADR
+CXADR bound to JAML
+Ca2+
+CalDAG-GEFs
+CalDAG-GEFs:DAG:Ca2+
+Cations
+Caveolin-1 bound to Basigin
+Centralspindlin
+Chromokinesin dimers
+Chromokinesin monomers
+Collagen type I fibril
+Collagen type I fibril:vWF
+CyP60 complexed with Basigin
+Cyclic GMP-dependent protein kinases (PKGs)
+DAG
+DAG-activated TRPC3/6/7
+DOCK-GEFs
+DOCK-GEFs:RAC1, CDC42
+DOK2
+Dual-specific AKAPs
+Dual-specific AKAPs:PKA tetramer
+EPCAM
+EPCAM dimer
+Extracellular thrombin inactivating complexes
+F-actin capping protein
+F-actin capping protein alpha subunit
+F-actin capping protein:f-actin
+F11R
+F11R dimer
+F13B
+F2R(27-41)
+F2R:ARRB1
+F2R:ARRB1:MAPKs:SRC-1
+F2R:ARRB1:MAPKs:active SRC-1
+F2R:ARRB1:active MAPKs:active SRC-1
+F2R:ARRB2
+F2R:ARRB2:MAPKs:SRC-1
+F5(335-534)
+F5(535-737)
+F8(356-372)
+F8(582-640)
+F9(29-461)
+FCAMR
+FCAMR:2xIgA:JCHAIN
+FCERIG dimer
+FGA(20-35)
+FGB(31-44)
+FGR
+FLNA
+FN1 dimer
+FVIIIa:FIXa:PROS1
+FYN
+Factor IIa inhibitors (compounds)
+Factor IIa inhibitors (compounds):IIa
+Factor IIa inhibitors (peptide)
+Factor IIa inhibitors (peptide):IIa
+Factor IIa inhibitors:IIa
+Factor VIII precursor
+Factor Xa inhibitors
+Fatty Acid
+Fibrinogen
+Focal complex
+G alpha (i): GTP
+G alpha (s):GTP
+G-protein G12/G13 (inactive)
+G-protein alpha (12/13):GTP
+G-protein alpha (13):GTP
+G-protein alpha (q/11): GTP
+G-protein beta-gamma complex
+G6B
+G6B:PTPN6,PTPN11
+GAG
+GATA proteins
+GDP
+GMP
+GP VI : FceRI gamma dimer
+GP1b-IX-V complex:activated thrombin (factor IIa)
+GP6
+GPI-PLAUR
+GPIb-IX-V
+GPIb-IX-V:Collagen type I fibril:vWF:14-3-3-zeta
+GPIb-IX-V:vWF:14-3-3-zeta:p85
+GPIb-IX-V:vWF:filamin-A
+GPVI:FceRI gamma:FYN:LYN
+GPVI:FceRI gamma:FYN:LYN:Collagen type I
+GPVI:phosphorylated Fc Epsilon R1 gamma:FYN:LYN:Collagen type I
+GPVI:phosphorylated Fc Epsilon R1 gamma:FYN:LYN:Collagen type I:SYK
+GPVI:phosphorylated Fc Epsilon R1 gamma:FYN:LYN:Collagen type I:p-Y348-SYK
+GRB14
+GRB2 bound to pPTK2 in Focal adhesion
+GRB2-1
+GRB2:SOS:p-PTK2:Focal adhesion
+GRB7
+GTP
+GYPA,GYPB,GYPC
+GYPA,GYPB,GYPC:eba-175,ebl1,eba-140
+Globin genes
+Glycerol
+GpIb-IX-V:Collagen type I fibril:vWF
+Grb2 bound to Tie2
+Guanylate cyclase, soluble
+Guanylate cyclase:CO
+Guanylate cyclase:NO
+H+
+H2O
+H2O2
+HBB
+HBD
+HBE1
+HBG1
+HBG2
+HP1alpha:Histone H3 methylated at K9
+HRG
+HS
+HSPA5
+Heterotrimeric G-protein G13 (inactive)
+Heterotrimeric G-protein Gi (inactive)
+Heterotrimeric G-protein Gq/11 (inactive)
+Heterotrimeric G-protein Gs (inactive)
+Histone H3 methylated at lysine-9
+Histone H3 mono or di-methylated at K9
+Histone H3 mono- or unmethylated at K9
+I(1,3,4)P3
+I(1,3,4,5)P4
+I(1,3,4,5,6)P5
+I(1,3,4,6)P4
+I(1,4,5)P3
+I(3,4,5,6)P4
+IFN alpha/beta (IFNA/B)
+IFNA genes
+IFNB1 gene
+INPP5D
+IP3R tetramer
+IP3R tetramer:I(1,4,5)P3:4xCa2+
+IRAG:ITPR1
+IRF1
+IRF1:Promotors of IFN alpha, IFN beta
+IRF2
+IRF2:promoters of INF alpha, INF beta
+ITGA4:ITGB1
+ITGA4:ITGB1:natalizumab
+IgM Heavy Chain
+Immunoglobulin Mu with Surrogate Light Chain
+Inactivated factor VIII
+Integrin alpha IIb beta 3:p-Y530-SRC:CSK:Talin:RIAM complex:p-Y427-SHC
+Integrin alpha IIb p(T779)-beta 3
+Integrin alpha1beta1, alpha2beta1, alpha10beta1
+Integrin alpha2bbeta3
+Integrin alpha3beta1, alpha6beta1
+Integrin alpha5beta1
+Integrin alpha5beta1:FN1 dimer
+Integrin alphaIIb beta 3:p(Y530)-SRC:CSK:Talin:RIAM complex:SHC
+Integrin alphaIIb beta3 ECM ligands
+Integrin alphaIIb beta3:p-Y530-SRC:CSK
+Integrin alphaIIb beta3:p-Y530-SRC:CSK:Talin:RIAM complex
+Integrin alphaLbeta2
+Integrin alphaLbeta2:F11R
+Integrin alphaMbeta2
+Integrin alphaMbeta2:JAM3
+Integrin alphaVbeta3
+Integrin alphaVbeta3:PECAM1
+Integrin alphaXbeta2
+Integrin alphaXbeta2:JAM3
+Integrin binding divalent cations
+Integrins alpha1beta1, alpha2beta1:Collagen type I fibril:Mg2+
+JAM2
+JAM2 dimer
+JAM2:JAM3
+JAM3
+JAM3 dimer
+KIF11
+KIF15
+KIF15 dimer
+KIF18A
+KIF18A dimer
+KIF3A
+KIF3A partners
+KIF9
+KIF9 dimer
+KIFAP3
+KIFC1
+KLC1,KLC2,KLC3,KLC4
+KLKB1(20-638)
+KNG1(19-644)
+KNG:C1q binding protein tetramer
+Kinesin-1
+Kinesin-1 heavy chain
+Kinesin-13 dimers
+Kinesin-13 monomers
+Kinesin-14
+Kinesin-2
+Kinesin-3 dimers
+Kinesin-3 monomers
+Kinesin-5 homotetramer
+Kinesin-6
+Kinesins
+Kinesins:microtubule
+L-Arg
+L-Cit
+LAT
+LCP2
+LDL
+LDL:LRP8
+LDL:LRP8:FGR
+LDL:p-LRP8:FGR
+LRP8
+LRRC16A
+LRRC16A:F-actin capping protein
+LYN
+Ligand to TREM-1 on the platelet membrane
+MAPK14
+MAPKs
+MERTK
+MERTK ligands
+MERTK:MERKT ligands
+MIF trimer
+MIF trimer:CD74 trimer
+MMP1(100-469)
+MPL
+MYB
+Mannose-carrying cell recognition molecules
+Mg2+
+Microtubule
+Mitofusin complex
+Mitofusins
+Mn2+
+Monocarboxylate Transporter Set (MCT)
+NADP+
+NADPH
+NF-E2
+NF-E2:Promoter region of beta-globin
+NFE2
+NH4+
+NO
+NO:sGC:cinaciguat
+NO:sGC:sGC stimulators
+Na+
+Neutrophil CEACAMs affecting integrin binding to fibronectin
+O2
+OLR1
+OLR1 bound to oxidized LDL
+ORAI dimer
+P2RX receptors
+P2RY1
+P2RY12
+P2RY12:ADP
+P2RY12:P2RY12 antagonists
+P2RY1:ADP
+P2X purinoreceptors:ATP
+PAF
+PAR N-teminal fragments
+PAR3, 4
+PDPK1
+PDPK1:PIP3
+PDPK1:PIP3:PRKCZ
+PDPK1:PIP3:p-T410-PRKCZ
+PDPN
+PECAM-1:PLC gamma1 complex
+PECAM-1:SHIP1 complex
+PECAM-1:SHP-1 complex
+PECAM-1:SHP-2 complex
+PECAM1
+PECAM1 dimer
+PECAM1:CD177
+PGI2
+PI(3,4,5)P3
+PI(4,5)P2
+PI-PLAUR:PLAU(21-177):PLAU(179-431)
+PI-PLAUR:PLAU(21-177):PLAU(179-431):SERPINE1
+PI-PLAUR:PLAU(21-177):PLAU(179-431):SERPINE1:SERPINB2
+PI3K
+PI3K beta
+PI3K gamma
+PICK1
+PIK3R1
+PIP3:VAV1,2,3
+PKA tetramer
+PLA2G4A
+PLAT(36-562)
+PLAU(21-431)
+PLAU(21-431):PI-PLAUR
+PLCG1
+PLCG2
+PLG(20-810)
+PLG(20-810):HRG
+PLG(20-810):anti-fibrinolytics
+PLG(20-810):aprotinin
+PP2A
+PPIA
+PPIL2
+PPi
+PRKCZ
+PROC(200-211)
+PROCR
+PROCR(18-?)
+PROCR(18-?):Activated protein C
+PROCR(18-?):PRTN3:CD177
+PROCR:Activated protein C
+PROCR:Activated protein C:F2R
+PROCR:Protein C
+PRTN3:CD177
+PS
+PSAP,CHID1
+PSGs
+PSGs:Proteoglycan,TGFB1
+PTGIR
+PTGIR agonists
+PTGIR:PGI2
+PTGIR:PTGIR agonists
+PTK2
+PTPN11
+PTPN6
+PTPN6,PTPN11
+PalmC, 2HC-F3
+Phosphorylated IRAG:IP3 receptor type 1
+Phosphorylated Tie2 in Tie2/Akt dimer
+Pi
+Plasma kallikrein
+Plasmin
+Platelet Factor 4
+Platelet alpha granule contents
+Platelet alpha granule membrane components that are released on degranulation
+Platelet dense granule content
+Platelet dense granule membrane components
+Platelet releasate (inferred) cytosolic proteins
+Platelet releasate cytosolic proteins
+Platelet releasate secretory granule proteins
+Pre-B Cell Surrogate Light Chain
+Promotor region of beta-globin
+Prostacyclin:prostacyclin receptor:G-protein Gs (active)
+Prostacyclin:prostacyclin receptor:Gs (inactive)
+Protein C
+Protein Kinase C, conventional
+Protein kinase C, novel isoforms
+Protein kinase C, novel isoforms:DAG
+Proteoglycans,TGFB1
+RAB5A
+RAC1, CDC42
+RACGAP1
+RAD51B
+RAD51B:RAD51C
+RAD51B:RAD51C:Single-stranded DNA
+RAD51C
+RAF1
+RAP1:GDP
+RAP1:GTP
+REST:REST DNA binding sites
+Rabenosyn-5:VPS-45
+Rap1-GTP:PIP2:RIAM
+SELE
+SELE ligands
+SELPLG
+SERPINA5
+SERPINA5:Activated protein C
+SERPINB2
+SERPINC1
+SERPINC1 activators
+SERPINC1:SERPINC1 activators
+SERPIND1
+SERPINE1
+SERPINE2:GAG
+SERPINE2:GAG:activated thrombin (factor IIa)
+SERPINF2
+SERPING1
+SH2B family
+SH2B family:p-Y813-JAK2
+SHC1
+SIN3A
+SOS-1 bound to Tie2:Grb2
+SOS1
+SPN
+SRC-1
+SRI
+STIM1 Dimer
+STX4
+STXBP3
+SYK
+Selectins
+Selectins:2xSELPG
+Single-stranded DNA
+Small Maf family members
+TBXA2R
+TBXA2R-alpha,TBXA2R-beta
+TBXA2R-alpha,TBXA2R-beta:AAMP
+TBXA2R:TXA2
+TEK
+TF:F7
+TF:F7a
+TFPI
+TFPI:TF:F7a:factor Xa
+THBD
+THPO
+TLN1
+TNFRSF10A,B:TNFRSF10D
+TNFRSF10A,TNFRSF10B
+TNFRSF10D
+TP receptor:Thromboxane A2:G-protein G13 (active)
+TP receptor:Thromboxane A2:G-protein G13 (inactive)
+TP receptor:Thromboxane A2:G-protein Gq (active)
+TP receptor:Thromboxane A2:G-protein Gq (inactive)
+TP53 Tetramer
+TPO:Thrombopoietin receptor
+TREM-1 bound to its ligand
+TREM1
+TRPC3/6/7
+TSPAN7
+TSPAN7:PICK1
+TXA2
+Talin:RIAM complex
+Talin:RIAM complex: ECM ligands:Integrin alphaIIb beta3:Active (p-Y419)- SRC:PTK2
+Talin:RIAM complex:ECM ligands: 2X(Integrin alphaIIb beta3:Inactive (p-Y530)-SRC)
+Talin:RIAM complex:ECM ligands: 2X(Integrin alphaIIb beta3:SRC)
+Talin:RIAM complex:ECM ligands: 2X(Integrin alphaIIb beta3:p(Y530)-SRC:CSK)
+Talin:RIAM complex:ECM ligands: Integrin alphaIIb beta3:Active (p-Y419)-SRC:p-6Y-PTK2
+Talin:RIAM complex:ECM ligands: alphaIIb beta3:Active p-Y419-SRC:pY397-PTK2
+Talin:RIAM complex:ECM ligands:2X(Integrin alphaIIb beta3:Active p-Y419-SRC)
+Talin:RIAM:ECM ligands:2X (Integrin alphaIIb beta3:Active (p-Y419)-SRC):SYK
+Talin:RIAM:ECM ligands:2X(Integrin alphaIIb beta3:Active (p-Y419)-SRC):p(Y)-SYK
+Thrombin activated PAR:G12/13 (active)
+Thrombin activated PAR:G12/13 (inactive)
+Thrombin-activated PAR:Gq (active)
+Thrombin-activated PARs
+Thrombin-activated PARs:Gq (inactive)
+Tie2 and Dok-2 complex
+Tie2 and Grb14 complex
+Tie2:Grb7 complex
+Type-I IFN genes
+VAV family
+VAV family:PIP2
+VAV1 Rho/Rac effectors:GDP
+VAV1 Rho/Rac effectors:GTP
+VAV1,2,3
+VAV2 Rho/Rac effectors:GDP
+VAV2 Rho/Rac effectors:GTP
+VAV3 Rho/Rac effectors:GDP
+VAV3 Rho/Rac effectors:GTP
+VPS45
+VWF(23-763)
+Va:Xa
+Va:Xa:Factor Xa inhibitors
+WEE1
+YWHAZ dimer
+ZFPM proteins:GATA proteins
+ZFPM1, ZFPM2
+ZFYVE20
+Zn2+
+activated kininogen:C1q binding protein tetramer
+activated thrombin (factor IIa)
+activated thrombin (factor IIa):SERPIND1
+activated thrombin:thrombomodulin
+alpha-2-antiplasmin:plasmin
+anti-fibrinolytics
+aprotinin
+cGMP
+eba-175,ebl1,eba-140
+f-actin
+factor IX activation peptide
+factor IXa
+factor V
+factor V activation peptide
+factor VIII
+factor VIII:von Willebrand factor multimer
+factor VIIIa
+factor VIIIa A1:A3-C1-C2
+factor VIIIa A2 polypeptide
+factor VIIIa B A3 acidic polypeptide
+factor VIIIa:factor IXa
+factor VIIa
+factor Va
+factor Vi
+factor Vi intermediate form
+factor X
+factor X activation peptide
+factor XI
+factor XI:GPIb-IX-V complex
+factor XII
+factor XIII
+factor XIII A chain activation peptide
+factor XIII cleaved tetramer
+factor XIIIa
+factor XIIa
+factor XIIa:C1Inh
+factor XIa:GPIb:GPIX:GPV complex
+factor Xa
+factor Xa:Factor Xa inhibitors
+fibrin digestion products (plasmin)
+fibrin monomer
+fibrin multimer
+fibrin multimer, crosslinked
+fibrin multimer, crosslinked:tissue plasminogen activator (one-chain)
+fibrin multimer, crosslinked:tissue plasminogen activator (one-chain):plasminogen
+fibrin multimer, crosslinked:tissue plasminogen activator (one-chain):plasminogen activator inhibitor 1
+fibrin multimer, crosslinked:tissue plasminogen activator (two-chain)
+fibrin multimer, crosslinked:tissue plasminogen activator (two-chain):plasminogen
+fibrin multimer, crosslinked:tissue plasminogen activator (two-chain):plasminogen activator inhibitor 1
+histidine-rich glycoprotein:plasminogen
+integrin alpha4beta1:JAM2:JAM3
+kallikrein:C1Inh
+kallikrein:alpha2-macroglobulin
+kallikrein:kininogen:C1q binding protein tetramer
+lyso-PAF
+natalizumab
+opa proteins
+p-BCAR1:Talin:RIAM:ECM ligands:alphaIIb beta3:p-Y419 SRC:p-6Y-PTK2
+p-PECAM:PP2A
+p-PLCG2
+p-S505,S727-PLA2G4A
+p-SLP-76:VAV
+p-STX4
+p-STXBP3
+p-T180,Y182-MAPK14
+p-Y113,128,145-LCP2
+p-Y200,Y220-LAT
+p-Y348-SYK
+p-Y348-SYK:VAV family
+p-Y348-SYK:p-VAV family
+p-Y419-SRC
+p-Y427-SHC1
+p-Y663,Y686-PECAM1 dimer
+p-Y663,Y686-PECAM1(27-?)
+p-Y7-CLEC1B dimer:PDPN
+p-Y7-CLEC1B dimer:PDPN:SYK
+p-Y813-JAK2
+p21 RAS:GDP
+p21 RAS:GTP
+p53:MYB:SIN3A
+p85 bound to Tie2
+pTie2 and SHP2 complex
+prekallikrein:kininogen:C1q binding protein tetramer
+pro-F2R
+pro-F2R:vorapaxar
+sequestered tissue factor
+thrombin:SERPINC1:SERPINC1 activators
+thrombin:cleaved SERPINC1
+thrombin:cleaved SERPINC1:SERPINC1 activators
+von Willibrand factor multimer
+vorapaxar

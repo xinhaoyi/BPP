@@ -1,0 +1,110 @@
+3' overhanging DNA at resected DSB ends
+ACR(20-42)
+ACR(20-421)
+ACR(43-343)
+ADAM2
+ADAM20
+ADAM21
+ADAM30
+ADP
+ATM
+ATP
+ATR
+Adam Complex
+AdoHcy
+AdoMet
+Axial-Lateral Element of Synaptonemal Complex
+B4GALT1
+BLM
+BRCA1
+BRCA2
+CD9
+CDK2
+CDK4
+Ca2+
+CatSper Channel Associated Protein
+CatSper Channel Protein
+Central Element of Synaptonemal Complex
+DIDO1-1
+DMC1
+DNA
+DNA double-strand break ends
+DNA double-strand break ends with 3' single-strand breaks
+Extended And Processed Telomere End Folded Into Higher Order Structure
+Extended And Processed Telomere End and Associated DNA Binding and Packaging Protein Complex Folded Into Higher Order Structure
+FKBP6
+H+
+H2AFX
+H2AFX-Nucleosome
+HIST1H4
+HIST3H3
+HSPA2
+HUA
+Heteroduplex DNA containing D-loop structure
+Histone H2A
+Histone H2B
+Histone H3 (H3K4me2)
+Histone H3 (H3K4me3)
+Holliday structure
+IZUMO1
+Izumo
+K+
+LMNA-2
+LMNB1(2-586)
+MLH1
+MLH1:MLH3
+MLH3
+MND1
+MSH4
+MSH4:MSH5
+MSH5
+Meiotic Cohesin complex
+Nucleosome
+OVGP1
+P4
+POT1
+PRDM9
+PSMC3IP
+RAD21
+RAD51
+RAD51C
+REC8
+RPA heterotrimer
+RPA1
+RPA2
+RPA3
+SMC1A
+SMC1B
+SMC3
+SPAM1
+SPO11
+SPO11 Dimer
+STAG1
+STAG2
+STAG3
+SUN1
+SUN2
+SYCE1
+SYCE2
+SYCE3
+SYCP1
+SYCP2
+SYCP3
+SYNE1
+SYNE2
+Shelterin complex
+Single-Stranded Oligodeoxyribonucleotide (12 to 34 nucleotides)
+Synaptonemal Complex:BRCA1
+TEX12
+TEX15
+TOP3A
+Transverse Filament of Synaptonemal Complex
+UBE2I
+Unsynapsed chromatin
+ZP1
+ZP2
+ZP3
+ZP4
+Zona pellucida
+cleaved Holliday structure
+p-S139-H2AFX-Nucleosome

@@ -1,0 +1,60 @@
+ANG binds F-actin
+Association of  PARVA with TESK1
+BP180 interacts extracellularly with Laminin 332
+BP180 interacts intracellularly with plectin and integrin beta4
+BP230 interacts with keretin K5/K14
+BP230 is recruited to the hemidesmosome
+CD151 interacts with BP180 and the integrin alpha 6 subunit
+Cis-Heterodimerization of nephrin and KIRREL
+Cis-homodimerization of nectins
+Claudins create paired strands through homophilic and heterophilic cis and trans interactions
+Connection of adjacent cells through calcium-dependent trans-dimerization of cadherin
+Crumbs forms a ternary complex with Pals1 and PATJ at tight junctions
+Formation of the PINCH-ILK-parvin complex
+Heterodimerization of nephrin and KIRREL2, KIRREL3
+ILK interacts with beta-1 integrin
+Interaction of Afadin with F-actin
+Interaction of IQGAP1 with nephrin
+Interaction of Nectins with Afadin
+Interaction of Plectin with Integrin beta 4
+Interaction of cadherin with Beta/gamma catenin, alpha catenin and p120 catenin
+Interaction of nephrin with adherens junction-associated proteins
+Mig-2 recruits Migfilin to the cell-ECM adhesions
+MigFilin associates with Filamin and F-actin
+Migfilin interacts with VASP
+Necl-1:Necl-2 trans heterodimer interaction
+Necl-1:Nectin 3 trans heterodimer interaction
+Necl-1:Nectin-1 trans heterodimer interaction
+Necl-2:Nectin 3 trans heterodimer interaction
+Nectin-1:Nectin-4 trans heterodimer formation
+Nectin-1:PVRL3 trans heterodimer formation
+Nectin-2:Nectin 3 trans heterodimer interaction
+Nephrin binds CASK
+Nephrin binds CD2AP
+Nephrin binds NCK
+Nephrin dimer:KIRREL binds FYN
+Nephrin interacts with Podocin
+Nephrin mediated activation of N-WASP
+Nephrin trans-homophilic interaction
+PARVA associates with Paxillin
+PARVB interacts with Alpha-actinin
+PARVB/Affixin interacts with alpha PIX
+PVR:PVRL3 trans heterodimer interaction
+Phosphorylation of ITIM motif in SIRP alpha
+Phosphorylation of nephrin by FYN
+Recruitment of PAR-3:PAR-6:aPKC complex to tight junctions
+Rsu-1 interacts with Pinch1
+SDK1 homophillic interaction
+SDK2 homophillic interaction
+SIRP alpha binds CD47
+SIRP beta binds TYROBP
+SIRP gamma binds CD47
+SIRPA binds SFTPA oligomer, SFTPD oligomer
+Transhomodimerization of Nectin-like (Necl) proteins
+Transhomodimerization of Nectins
+p-4Y-SIRPA:CD47 binds GRB2-1
+p-4Y-SIRPA:CD47 binds PTK2B
+p-4Y-SIRPA:CD47 binds PTPN6,PTPN11
+p-4Y-SIRPA:CD47 binds SKAP2
+p-4Y-SIRPA:CD47:SKAP2 binds FYB
+p85 associates with both p-Nephrin and CD2AP

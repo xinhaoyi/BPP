@@ -1,0 +1,1196 @@
+(+)-carvone
+(-)-menthol
+1,10-phenanthroline
+11c-retinyl-RHO
+11cRAL
+11cRAL-OPN1LW
+11cRAL-OPN1MW
+11cRAL-OPN1SW
+11cROL
+11cRPALM
+2-ethylfenchol
+2-propenyl phenylacetate
+9cRA
+A2E
+A2PE
+ADCY3
+ADCY3:Mg2+
+ADP
+ANO2
+ANO2 dimer
+APO10al
+APOA1(25-266)
+APOA1(25-267)
+APOA2(24-100)
+APOA4
+APOC2
+APOC3
+APOE
+APOM
+ASP
+ATP
+AcCho
+AdoHcy
+AdoMet
+ApoB-48:TG:PL complex
+BSN
+BSN:RIBEYE:PICCOLINO
+BUT
+C14:1-CoA
+C14:2-CoA
+C2H5COO-
+CABP1
+CABP2
+CALM1
+CALM1:4xCa2+
+CH3COOH
+CHEST
+CHOL
+CHRNA10
+CHRNA9
+CHRNA9:CHRNA10
+CIT
+CNG channel
+CNGA1
+CNGA2
+CNGA4
+CNGB1
+CNGB1b
+CQ
+CR
+CR:atREs
+Ca2+
+Chloramphenicol
+Cl-
+Cl-,HCO3-
+CoA-SH
+D-Trp
+DAG
+DAGs
+DHA
+EBF1
+FPP
+Fru
+G alpha-olf:GDP complex
+G alpha-olf:GTP
+GDP
+GMP
+GMP,IMP
+GNAL
+GNAL:GDP:GNB1:GNG13
+GNAL:GTP:GNB1:GNG13
+GNAT1
+GNAT1 (Met removed)
+GNAT1-GDP
+GNAT1-GTP
+GNAT3
+GNAT3:GDP:GNB1,3:GNG13
+GNAT3:GTP:GNB1,3:GNG13
+GNB1
+GNB1,3
+GNB1,3:GNG13
+GNB1:GNGT1
+GNB5-1
+GNG13
+GNGT1
+GRM1(410-1194)
+GRM4(309-912)
+GTP
+GUCA1A
+GUCA1A:Ca2+
+GUCA1B
+GUCA1B:Ca2+
+GUCA1C
+GUCA1C:Ca2+
+Glc
+Glutamate depleted synaptic vesicle (cochlear inner hair cell)
+Glutamate loaded synaptic vesicle (cochlear inner hair cell)
+H+
+H2O
+HCO3-
+HS(1)-PGs
+HS(2)-PGs
+HS(3)-PGs
+HS(4)-PGs
+HS(5)-PGs
+HS/HPIN-PGs
+HSPGs
+I(1,4,5)P3
+IMP
+ITPR3
+Intergenic Olfactory Enhancer
+K+
+L-Asp
+L-Glu
+L-Glu,L-Asp
+L-Met
+LCFAs
+LDB1
+LDB1 homodimer
+LHX2
+LINA
+LINL
+Ligand of OR10A6
+Ligand of OR10G3
+Ligand of OR10G4
+Ligand of OR10G7
+Ligand of OR10H2
+Ligand of OR10J5
+Ligand of OR10S1
+Ligand of OR1C1
+Ligand of OR2A1 (OR2A42)
+Ligand of OR2A25
+Ligand of OR2A7
+Ligand of OR2B11
+Ligand of OR2C1
+Ligand of OR2J2
+Ligand of OR2J3
+Ligand of OR2L13
+Ligand of OR2T4
+Ligand of OR2W3
+Ligand of OR3A1
+Ligand of OR4Q3
+Ligand of OR51B5
+Ligand of OR51E2
+Ligand of OR6P1
+Ligand of OR7C1
+Ligand of OR8B3
+Ligand of OR8K3
+Ligand of OR9G1
+Ligand of TAS2R1
+Ligand of TAS2R10
+Ligand of TAS2R13
+Ligand of TAS2R14
+Ligand of TAS2R16
+Ligand of TAS2R20
+Ligand of TAS2R30
+Ligand of TAS2R31
+Ligand of TAS2R38
+Ligand of TAS2R39
+Ligand of TAS2R4
+Ligand of TAS2R40
+Ligand of TAS2R43
+Ligand of TAS2R46
+Ligand of TAS2R50
+Ligand of TAS2R7
+Ligand of TAS2R8
+MYO7A
+MYS-CoA
+Mal
+Me3K115-CALM1
+Mg2+
+N-(C12:0)-GNAT1
+N-(C14:0)-GNAT1
+N-(C14:1)-GNAT1
+N-(C14:2)-GNAT1
+N-ACYL-GNAT1
+NAD+
+NADH
+NADP+
+NADPH
+NRPE
+Na+
+O-methyleugenol
+O2
+OLEA
+OLEL
+OPN1LW
+OPN1MW
+OPN1SW
+OR10A2
+OR10A2 gene
+OR10A3
+OR10A3 gene
+OR10A4
+OR10A4 gene
+OR10A5
+OR10A5 gene
+OR10A6
+OR10A6 gene
+OR10A6:ligand
+OR10A7
+OR10A7 gene
+OR10AC1
+OR10AC1 gene
+OR10AD1
+OR10AD1 gene
+OR10AG1
+OR10AG1 gene
+OR10C1
+OR10C1 gene
+OR10D3
+OR10D3 gene
+OR10G2
+OR10G2 gene
+OR10G3
+OR10G3 gene
+OR10G3:ligand
+OR10G4
+OR10G4 gene
+OR10G4:ligand
+OR10G6
+OR10G6 gene
+OR10G7
+OR10G7 gene
+OR10G7:ligand
+OR10G8
+OR10G8 gene
+OR10G9
+OR10G9 gene
+OR10H1
+OR10H1 gene
+OR10H2
+OR10H2 gene
+OR10H2:ligand
+OR10H3
+OR10H3 gene
+OR10H4
+OR10H4 gene
+OR10H5
+OR10H5 gene
+OR10H5:eugenol
+OR10J1
+OR10J1 gene
+OR10J3
+OR10J3 gene
+OR10J4
+OR10J4 gene
+OR10J5
+OR10J5 gene
+OR10J5:ligand
+OR10K1
+OR10K1 gene
+OR10K2
+OR10K2 gene
+OR10P1
+OR10P1 gene
+OR10Q1
+OR10Q1 gene
+OR10R2
+OR10R2 gene
+OR10S1
+OR10S1 gene
+OR10S1:ligand
+OR10T2
+OR10T2 gene
+OR10V1
+OR10V1 gene
+OR10W1
+OR10W1 gene
+OR10X1
+OR10X1 gene
+OR10X1:menthol
+OR10Z1
+OR10Z1 gene
+OR11A1
+OR11A1 gene
+OR11A1:2-ethylfenchol
+OR11G2
+OR11G2 gene
+OR11H1
+OR11H1 gene
+OR11H2
+OR11H2 gene
+OR11H4
+OR11H4 gene
+OR11H4:isovaleric acid
+OR11H6
+OR11H6 gene
+OR11H6:isovaleric acid
+OR11H7
+OR11H7 gene
+OR11L1
+OR11L1 gene
+OR12D2
+OR12D2 gene
+OR12D3
+OR12D3 gene
+OR13A1
+OR13A1 gene
+OR13C2
+OR13C2 gene
+OR13C3
+OR13C3 gene
+OR13C3:acetyleugenol
+OR13C4
+OR13C4 gene
+OR13C5
+OR13C5 gene
+OR13C8
+OR13C8 gene
+OR13C9
+OR13C9 gene
+OR13D1
+OR13D1 gene
+OR13F1
+OR13F1 gene
+OR13G1
+OR13G1 gene
+OR13H1
+OR13H1 gene
+OR13J1
+OR13J1 gene
+OR14A16
+OR14A16 gene
+OR14A2
+OR14A2 gene
+OR14A2:dec-2-enal
+OR14C36
+OR14C36 gene
+OR14I1
+OR14I1 gene
+OR14J1
+OR14J1 gene
+OR14J1:cis-3-hexenol
+OR14K1
+OR14K1 gene
+OR1A1
+OR1A1 gene
+OR1A1:(+)-carvone
+OR1A2
+OR1A2 gene
+OR1B1
+OR1B1 gene
+OR1C1
+OR1C1 gene
+OR1C1:ligand
+OR1D2
+OR1D2 gene
+OR1D2:geranyl acetate
+OR1D4
+OR1D4 gene
+OR1D5
+OR1D5 gene
+OR1D5:eugenol
+OR1E1
+OR1E1 gene
+OR1E1:isovaleric acid
+OR1E2
+OR1E2 gene
+OR1E3
+OR1E3 gene
+OR1F1
+OR1F1 gene
+OR1F12
+OR1F12 gene
+OR1G1
+OR1G1 gene
+OR1I1
+OR1I1 gene
+OR1J1
+OR1J1 gene
+OR1J2
+OR1J2 gene
+OR1J4
+OR1J4 gene
+OR1K1
+OR1K1 gene
+OR1L1
+OR1L1 gene
+OR1L3
+OR1L3 gene
+OR1L4
+OR1L4 gene
+OR1L6
+OR1L6 gene
+OR1L8
+OR1L8 gene
+OR1M1
+OR1M1 gene
+OR1N1
+OR1N1 gene
+OR1N2
+OR1N2 gene
+OR1N2:linalool
+OR1P1
+OR1P1 gene
+OR1Q1
+OR1Q1 gene
+OR1S1
+OR1S1 gene
+OR1S2
+OR1S2 gene
+OR2A1
+OR2A1 gene
+OR2A12
+OR2A12 gene
+OR2A14
+OR2A14 gene
+OR2A1:ligand
+OR2A2
+OR2A2 gene
+OR2A25
+OR2A25 gene
+OR2A25:ligand
+OR2A4
+OR2A4 gene
+OR2A42 gene
+OR2A5
+OR2A5 gene
+OR2A7
+OR2A7 gene
+OR2A7:ligand
+OR2AE1
+OR2AE1 gene
+OR2AG1
+OR2AG1 gene
+OR2AG2
+OR2AG2 gene
+OR2AJ1
+OR2AJ1 gene
+OR2AK2
+OR2AK2 gene
+OR2AP1
+OR2AP1 gene
+OR2AT4
+OR2AT4 gene
+OR2AT4:isoeugenol
+OR2B11
+OR2B11 gene
+OR2B11:ligand
+OR2B2
+OR2B2 gene
+OR2B3
+OR2B3 gene
+OR2B6
+OR2B6 gene
+OR2C1
+OR2C1 gene
+OR2C1:ligand
+OR2C3
+OR2C3 gene
+OR2D2
+OR2D2 gene
+OR2D3
+OR2D3 gene
+OR2F1
+OR2F1 gene
+OR2F1:acetyleugenol
+OR2F2
+OR2F2 gene
+OR2G2
+OR2G2 gene
+OR2G3
+OR2G3 gene
+OR2G6
+OR2G6 gene
+OR2H1
+OR2H1 gene
+OR2H2
+OR2H2 gene
+OR2I1P
+OR2J1
+OR2J1 gene
+OR2J1:cis-3-hexenol
+OR2J2
+OR2J2 gene
+OR2J2:ligand
+OR2J3
+OR2J3 gene
+OR2J3:ligand
+OR2K2
+OR2L13
+OR2L13 gene
+OR2L13:ligand
+OR2L2
+OR2L2 gene
+OR2L3
+OR2L3 gene
+OR2L5
+OR2L5 gene
+OR2L8
+OR2L8 gene
+OR2M2
+OR2M2 gene
+OR2M2:geranyl acetate
+OR2M3
+OR2M3 gene
+OR2M4
+OR2M4 gene
+OR2M5
+OR2M5 gene
+OR2M7
+OR2M7 gene
+OR2M7:geraniol
+OR2S2
+OR2S2 gene
+OR2S2:isoeugenol
+OR2T1
+OR2T1 gene
+OR2T10
+OR2T10 gene
+OR2T11
+OR2T11 gene
+OR2T12
+OR2T12 gene
+OR2T1:butyric acid
+OR2T2
+OR2T2 gene
+OR2T27
+OR2T27 gene
+OR2T29
+OR2T29 gene
+OR2T3
+OR2T3 gene
+OR2T33
+OR2T33 gene
+OR2T34
+OR2T34 gene
+OR2T35
+OR2T35 gene
+OR2T4
+OR2T4 gene
+OR2T4:ligand
+OR2T5
+OR2T5 gene
+OR2T6
+OR2T6 gene
+OR2T7
+OR2T7 gene
+OR2T8
+OR2T8 gene
+OR2V1
+OR2V1 gene
+OR2V2
+OR2V2 gene
+OR2W1
+OR2W1 gene
+OR2W1:cis-3-hexenol
+OR2W3
+OR2W3 gene
+OR2W3:ligand
+OR2W5
+OR2Y1
+OR2Y1 gene
+OR2Z1
+OR2Z1 gene
+OR3A1
+OR3A1 gene
+OR3A1:ligand
+OR3A2
+OR3A2 gene
+OR3A3
+OR3A3 gene
+OR4A15
+OR4A15 gene
+OR4A16
+OR4A16 gene
+OR4A47
+OR4A47 gene
+OR4A4P
+OR4A5
+OR4A5 gene
+OR4A8
+OR4A8 gene
+OR4B1
+OR4B1 gene
+OR4C11
+OR4C11 gene
+OR4C12
+OR4C12 gene
+OR4C12:isovaleric acid
+OR4C13
+OR4C13 gene
+OR4C15
+OR4C15 gene
+OR4C16
+OR4C16 gene
+OR4C3
+OR4C3 gene
+OR4C45
+OR4C45 gene
+OR4C46
+OR4C46 gene
+OR4C5
+OR4C5 gene
+OR4C6
+OR4C6 gene
+OR4D1
+OR4D1 gene
+OR4D10
+OR4D10 gene
+OR4D11
+OR4D11 gene
+OR4D2
+OR4D2 gene
+OR4D2:acetyleugenol
+OR4D5
+OR4D5 gene
+OR4D6
+OR4D6 gene
+OR4D9
+OR4D9 gene
+OR4E1
+OR4E1 gene
+OR4E2
+OR4F15
+OR4F15 gene
+OR4F17
+OR4F17 gene
+OR4F17:androstenone
+OR4F21
+OR4F21 gene
+OR4F3
+OR4F3 gene
+OR4F4
+OR4F4 gene
+OR4F5
+OR4F5 gene
+OR4F6
+OR4F6 gene
+OR4K1
+OR4K1 gene
+OR4K13
+OR4K13 gene
+OR4K14
+OR4K14 gene
+OR4K15
+OR4K15 gene
+OR4K17
+OR4K17 gene
+OR4K2
+OR4K2 gene
+OR4K3
+OR4K3 gene
+OR4K5
+OR4K5 gene
+OR4L1
+OR4L1 gene
+OR4L1:geranyl acetate
+OR4M1
+OR4M1 gene
+OR4M2
+OR4M2 gene
+OR4N2
+OR4N2 gene
+OR4N4
+OR4N4 gene
+OR4N5
+OR4N5 gene
+OR4P4
+OR4P4 gene
+OR4Q2
+OR4Q2 gene
+OR4Q3
+OR4Q3 gene
+OR4Q3:ligand
+OR4S1
+OR4S1 gene
+OR4S2
+OR4S2 gene
+OR4X1
+OR4X1 gene
+OR4X2
+OR4X2 gene
+OR51A2
+OR51A2 gene
+OR51A4
+OR51A4 gene
+OR51A7
+OR51A7 gene
+OR51B2
+OR51B2 gene
+OR51B4
+OR51B4 gene
+OR51B5
+OR51B5 gene
+OR51B5:ligand
+OR51B6
+OR51B6 gene
+OR51D1
+OR51D1 gene
+OR51D1:butyric acid
+OR51E1
+OR51E1 gene
+OR51E1:isovaleric acid
+OR51E2
+OR51E2 gene
+OR51E2:ligand
+OR51F1
+OR51F1 gene
+OR51F2
+OR51F2 gene
+OR51G1
+OR51G1 gene
+OR51G2
+OR51G2 gene
+OR51H1
+OR51H1 gene
+OR51I1
+OR51I1 gene
+OR51I2
+OR51I2 gene
+OR51J1
+OR51J1 gene
+OR51L1
+OR51L1 gene
+OR51L1:2-propenyl phenylacetate
+OR51M1
+OR51M1 gene
+OR51Q1
+OR51Q1 gene
+OR51S1
+OR51S1 gene
+OR51T1
+OR51T1 gene
+OR51V1
+OR51V1 gene
+OR52A1
+OR52A1 gene
+OR52A4P
+OR52A5
+OR52A5 gene
+OR52B2
+OR52B2 gene
+OR52B6
+OR52B6 gene
+OR52B6:eugenol
+OR52D1
+OR52D1 gene
+OR52E1
+OR52E1 gene
+OR52E2
+OR52E2 gene
+OR52E4
+OR52E4 gene
+OR52E5
+OR52E5 gene
+OR52E6
+OR52E6 gene
+OR52E8
+OR52E8 gene
+OR52H1
+OR52H1 gene
+OR52I1
+OR52I1 gene
+OR52I2
+OR52I2 gene
+OR52J3
+OR52J3 gene
+OR52K1
+OR52K1 gene
+OR52K2
+OR52L1
+OR52L1 gene
+OR52L2P
+OR52M1
+OR52M1 gene
+OR52N1
+OR52N1 gene
+OR52N2
+OR52N2 gene
+OR52N4
+OR52N4 gene
+OR52N5
+OR52N5 gene
+OR52R1
+OR52R1 gene
+OR52W1
+OR52W1 gene
+OR52Z1
+OR52Z1 gene
+OR56A1
+OR56A1 gene
+OR56A3
+OR56A3 gene
+OR56A4
+OR56A4 gene
+OR56A4:undecanal
+OR56A5
+OR56A5 gene
+OR56B1
+OR56B1 gene
+OR56B4
+OR56B4 gene
+OR5A1
+OR5A1 gene
+OR5A2
+OR5A2 gene
+OR5AC1
+OR5AC1 gene
+OR5AC2
+OR5AC2 gene
+OR5AK2
+OR5AK2 gene
+OR5AL1
+OR5AL1 gene
+OR5AL1:butyric acid
+OR5AN1
+OR5AN1 gene
+OR5AP2
+OR5AP2 gene
+OR5AR1
+OR5AR1 gene
+OR5AS1
+OR5AS1 gene
+OR5AU1
+OR5AU1 gene
+OR5B12
+OR5B12 gene
+OR5B17
+OR5B17 gene
+OR5B2
+OR5B2 gene
+OR5B21
+OR5B21 gene
+OR5B3
+OR5B3 gene
+OR5C1
+OR5C1 gene
+OR5D13
+OR5D13 gene
+OR5D14
+OR5D14 gene
+OR5D14:butyric acid
+OR5D16
+OR5D16 gene
+OR5D18
+OR5D18 gene
+OR5F1
+OR5F1 gene
+OR5G3
+OR5G3 gene
+OR5H1
+OR5H1 gene
+OR5H14
+OR5H14 gene
+OR5H15
+OR5H15 gene
+OR5H2
+OR5H2 gene
+OR5H6
+OR5H6 gene
+OR5I1
+OR5I1 gene
+OR5J2
+OR5J2 gene
+OR5K1
+OR5K1 gene
+OR5K1:TMT
+OR5K2
+OR5K2 gene
+OR5K3
+OR5K3 gene
+OR5K4
+OR5K4 gene
+OR5L1
+OR5L1 gene
+OR5L2
+OR5L2 gene
+OR5M1
+OR5M1 gene
+OR5M10
+OR5M10 gene
+OR5M11
+OR5M11 gene
+OR5M3
+OR5M3 gene
+OR5M8
+OR5M8 gene
+OR5M9
+OR5M9 gene
+OR5P2
+OR5P2 gene
+OR5P3
+OR5P3 gene
+OR5P3:coumarin
+OR5R1 gene
+OR5T1
+OR5T1 gene
+OR5T2
+OR5T2 gene
+OR5T3
+OR5T3 gene
+OR5V1
+OR5V1 gene
+OR5W2
+OR5W2 gene
+OR6A2
+OR6A2 gene
+OR6B1
+OR6B1 gene
+OR6B2
+OR6B2 gene
+OR6B3
+OR6B3 gene
+OR6C1
+OR6C1 gene
+OR6C2
+OR6C2 gene
+OR6C3
+OR6C3 gene
+OR6C4
+OR6C4 gene
+OR6C6
+OR6C6 gene
+OR6C65
+OR6C65 gene
+OR6C68
+OR6C68 gene
+OR6C70
+OR6C70 gene
+OR6C74
+OR6C74 gene
+OR6C75
+OR6C75 gene
+OR6C76
+OR6C76 gene
+OR6F1
+OR6F1 gene
+OR6F1:O-methyleugenol
+OR6J1
+OR6J1 gene
+OR6K2
+OR6K2 gene
+OR6K3
+OR6K3 gene
+OR6K6
+OR6K6 gene
+OR6M1
+OR6M1 gene
+OR6N1
+OR6N1 gene
+OR6N2
+OR6N2 gene
+OR6P1
+OR6P1 gene
+OR6P1:ligand
+OR6Q1
+OR6Q1 gene
+OR6S1
+OR6S1 gene
+OR6T1
+OR6T1 gene
+OR6V1
+OR6V1 gene
+OR6X1
+OR6X1 gene
+OR6Y1
+OR6Y1 gene
+OR7A10
+OR7A10 gene
+OR7A17
+OR7A17 gene
+OR7A2P
+OR7A5
+OR7A5 gene
+OR7C1
+OR7C1 gene
+OR7C1:ligand
+OR7C2
+OR7C2 gene
+OR7D2
+OR7D2 gene
+OR7D4
+OR7D4 gene
+OR7D4:androstenone
+OR7E24
+OR7E24 gene
+OR7G1
+OR7G1 gene
+OR7G2
+OR7G2 gene
+OR7G2:butyric acid
+OR7G3
+OR7G3 gene
+OR8A1
+OR8A1 gene
+OR8B12
+OR8B12 gene
+OR8B2
+OR8B2 gene
+OR8B3
+OR8B3 gene
+OR8B3:ligand
+OR8B4
+OR8B4 gene
+OR8B8
+OR8B8 gene
+OR8D1
+OR8D1 gene
+OR8D1:sotolone
+OR8D2
+OR8D2 gene
+OR8D4
+OR8D4 gene
+OR8G1
+OR8G1 gene
+OR8G2
+OR8G5
+OR8G5 gene
+OR8H1
+OR8H1 gene
+OR8H2
+OR8H2 gene
+OR8H3
+OR8H3 gene
+OR8I2
+OR8I2 gene
+OR8J1
+OR8J1 gene
+OR8J2
+OR8J2 gene
+OR8J3
+OR8J3 gene
+OR8K1
+OR8K1 gene
+OR8K3
+OR8K3 gene
+OR8K3:ligand
+OR8K5
+OR8K5 gene
+OR8S1
+OR8S1 gene
+OR8U1
+OR8U1 gene
+OR8U3
+OR8U8
+OR8U8 gene
+OR8U8:isovaleric acid
+OR8U9
+OR8U9 gene
+OR9A2
+OR9A2 gene
+OR9A4
+OR9A4 gene
+OR9G1
+OR9G1 gene
+OR9G1:ligand
+OR9G4
+OR9G4 gene
+OR9G9
+OR9G9 gene
+OR9I1
+OR9I1 gene
+OR9K2
+OR9K2 gene
+OR9Q1
+OR9Q1 gene
+OR9Q2
+OR9Q2 gene
+OTOG
+OTOGL
+Olfactory CNG channel
+Olfactory Receptor Gene
+PA
+PALM
+PALM-CoA
+PALML
+PDE6
+PDE6A(2-860)
+PDE6B(1-851)
+PDE6G
+PE
+PI(4,5)P2
+PICCOLINO
+PL
+PLCB2
+PLCB2:Ca2+
+PPi
+Photon
+Pi
+RBP1
+RBP2
+RBP4(19-201)
+RBP4:atROL
+RCVRN
+REEP1
+RGS9 isoform 3
+RGS9BP
+RHO
+RIBEYE
+RLBP1
+RPALM
+RTP1S
+RTP1S dimer
+RTP2
+S-farn-GNGT1
+S-farn-GRK1
+SACC
+SAG
+SLC26A5
+SLC26A5 tetramer (expanded)
+SNAP25
+SNAP25:STX1A
+STEA
+STEAL
+STRA6
+STRC
+STX1A
+Suc
+Sweet taste compounds
+TAG
+TAGs
+TAS1R1:TAS1R3
+TAS1R1:TAS1R3:L-Glu,L-Asp:GMP,IMP
+TAS1R2:TAS1R3
+TAS1R2:TAS1R3:Sweet taste compounds
+TAS2R (non-orphan)
+TAS2R (non-orphan):ligand
+TAS2R10:ligand
+TAS2R13:ligand
+TAS2R14:ligand
+TAS2R16:ligand
+TAS2R1:ligand
+TAS2R20:ligand
+TAS2R30:ligand
+TAS2R31:ligand
+TAS2R38:ligand
+TAS2R39:ligand
+TAS2R3:ligand
+TAS2R40:ligand
+TAS2R41:ligand
+TAS2R43:ligand
+TAS2R46:ligand
+TAS2R4:ligand
+TAS2R50:ligand
+TAS2R5:ligand
+TAS2R7:ligand
+TAS2R8:ligand
+TMT
+TTR
+TTR tetramer
+TTR:RBP4:atROL
+acetyleugenol
+amiloride
+androstenone
+at-13,14-dhROL
+at-retinyl-OPN1LW
+at-retinyl-OPN1MW
+at-retinyl-OPN1SW
+at-retinyl-RHO
+atR-LINA
+atR-OLEA
+atR-PALM
+atR-STEA
+atRA
+atRAL
+atREs
+atROL
+bION
+betaC
+cAMP
+cGMP
+cis-3-hexenol
+coumarin
+dec-2-enal
+eugenol
+geraniol
+geranyl acetate
+hydroxydocosahexaenoic acid
+isoeugenol
+isovaleric acid
+lauroyl-CoA
+linalool
+lyral
+nascent CM
+odorant:Olfactory receptor
+p-S334,338,343-RHO
+p-S334,338,343-at-retinyl-RHO
+p-S478-RGS9 isoform 3
+retinoids
+sodium cyclamate
+sotolone
+spherical HDL
+undecanal
+underrepresented Olfactory Receptor

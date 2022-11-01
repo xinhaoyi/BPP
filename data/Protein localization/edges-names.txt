@@ -1,0 +1,53 @@
+BAG6:GET4:UBL4A binds mislocalized membrane protein:SGTA and ASNA1:ATP
+Cargo of PEX5L:PEX7 translocates from the cytosol to the peroxisomal matrix
+Cargo of PEX5S,L translocates from the cytosol to the peroxisomal matrix
+MIA40:ERV1 (CHCHD4:GFER) oxidizes cysteine residues to cystine disulfide bonds
+MPP cleaves targeting peptide (presequence) of inner membrane precursors
+MPP cleaves targeting peptide (presequence) of matrix precursors
+PEX16:PEX19:PEX3 dissociates
+PEX19 binds PEX3
+PEX19 binds class I peroxisomal membrane proteins
+PEX19:PEX3 binds PEX16
+PEX19:class I PMP binds PEX3
+PEX1:PEX6:PEX26:ZFAND6 dissociates Ub:PEX5L and PEX7 from PEX14:PEX13:PEX2:PEX10:PEX12 and translocates PEX5L and PEX7 from the peroxisomal membrane to the cytosol
+PEX1:PEX6:PEX26:ZFAND6:Ub:PEX5S,L:PEX14:PEX13:PEX2:PEX10:PEX12 dissociates yielding cytosolic Ub:PEX5S,L and membrane PEX14:PEX13:PEX2:PEX10:PEX12
+PEX2:PEX10:PEX12 binds PEX5L (in PEX5L:PEX7:PEX13:PEX14:PEX2:PEX10:PEX12) and Ub:UBE2D1,2,3
+PEX2:PEX10:PEX12 binds PEX5S,L (in PEX5S:PEX13:PEX14) and Ub:UBE2D1,2,3
+PEX2:PEX10:PEX12 monoubiquitinates PEX5L at cysteine-11
+PEX2:PEX10:PEX12 monoubiquitinates PEX5S,L at cysteine-11
+PEX2:PEX10:PEX12:Ub:PEX5L:PEX7:PEX13:PEX14 binds PEX1:PEX6:PEX26 and ZFAND6
+PEX2:PEX10:PEX12:Ub:PEX5S,L:PEX13:PEX14 binds PEX1:PEX6:PEX26 and ZFAND6
+PEX3:PEX19:class I PMP dissociates
+PEX5L binds PEX7:Cargo protein
+PEX5L:PEX7:Cargo binds PEX13:PEX14:PEX2:PEX10:PEX12 (Docking and Translocation Module)
+PEX5S,L binds cargo proteins containing PTS1
+PEX5S,L:Cargo binds PEX13:PEX14:PEX2:PEX10:PEX12 (Docking and Translocation Module)
+PEX7 binds cargo proteins containing PTS2
+PITRM1 proteolyzes mitochondrial targeting peptides (presequences)
+Precursor proteins enter TIMM23 PAM
+Precursor proteins enter TIMM23 SORT
+SAM50 complex inserts proteins into mitochondrial outer membrane
+SGTA binds Tail-anchored protein
+SGTA binds mislocalized membrane protein
+TIMM22 inserts proteins into inner membrane
+TIMM23 PAM translocates proteins from the mitochondrial intermembrane space to the mitochondrial matrix
+TIMM23 SORT inserts proteins into inner membrane
+TIMM8:TIMM13 chaperones hydrophobic proteins
+TIMM9:TIMM10 binds hydrophobic proteins
+TIMM9:TIMM10 transfers proteins to TIMM22
+TOMM40 complex translocates proteins from the cytosol to the mitochondrial intermembrane space
+TYSND1 cleaves ACAA1
+TYSND1 cleaves ACOX1
+TYSND1 cleaves AGPS
+TYSND1 cleaves HSD17B4
+TYSND1 cleaves PHYH
+TYSND1 cleaves SCP2
+TYSND1 cleaves TYSND1
+Tail-anchored protein:ASNA1:ADP binds WRB:CAMLG at the endoplasmic reticulum membrane
+Tail-anchored protein:ASNA1:ADP:WRB:CAMLG dissociates yielding Tail-anchored protein in the endoplasmic reticulum membrane
+Tail-anchored protein:SGTA dimer binds BAG6:GET4:UBL4A and ASNA1:ATP
+Tail-anchored protein:SGTA:BAG6:GET4:UBL4A:ASNA1:ATP dissociates and ASNA1 hydrolyzes ATP yielding Tail-anchored protein:ASNA1:ADP
+USP9X binds Ub:PEX5L
+USP9X binds Ub:PEX5S
+USP9X hydrolyzes Ub:PEX5L yielding PEX5L and Ubiquitin
+USP9X hydrolyzes Ub:PEX5S yielding PEX5S and Ubiquitin

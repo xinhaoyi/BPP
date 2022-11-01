@@ -1,0 +1,453 @@
+4xPALM-C-ABCA1 tetramer translocates from ER membrane to plasma membrane
+4xPALM-C-p-2S-ABCA1 tetramer binds APOA1
+4xPALM-C-p-2S-ABCA1 tetramer transports CHOL from transport vesicle membrane to plasma membrane
+4xPALM-C-p-2S-ABCA1 tetramer transports PL from transport vesicle membrane to plasma membrane
+ABC7, mABC1 and mABC2 mediate heme transport
+ABCA12 transports lipids from cytosol to extracellular region
+ABCA3 transports PC, PG from ER membrane to lamellar body
+ABCA4 mediates atRAL transport
+ABCA5 transports CHOL from lysosomal lumen to cytosol
+ABCA7:Apo1A-mediated phospholipid efflux
+ABCA8,B1,B5 transport xenobiotics from cytosol to extracellular region
+ABCAs mediate lipid efflux
+ABCAs mediate lipid influx
+ABCB4 transports PC from plasma membrane to extracellular region
+ABCB6 transports porphyrin from cytosol to mitchondrial matrix
+ABCB9 transports peptides from cytosol to lysosomal lumen
+ABCD1-3 dimers transfer LCFAs from cytosol to peroxisomal matrix
+ABCF1 binds EIF2
+ABCG1-mediated transport of intracellular cholesterol to the cell surface
+ABCG2 tetramer transports heme from cytosol to extracellular region
+ABCG4 may mediate cholesterol efflux
+ABCG5:ABCG8 transports sterols from cytosol to extracellular region
+ACO1 binds 4Fe-4S
+ACO1, IREB2 bind IREs in TFRC, ALAD, FTL, FTH1 mRNAs
+ACO1:4Fe-4S isomerises CIT to ISCIT
+ADD1:ADD2 binds DMTN
+ADD1:ADD3 binds DMTN
+AFG3L2 (m-AAA protease) degrades SMDT1 that is not assembled in MCU
+ANGPTL8 binds ANGPTL3
+ANKH transports PPi from cytosol to extracellular region
+ANO1 inhibitors bind ANO1
+ANO1 transports cytosolic Cl- to extracellular region
+ANOs transport cytosolic Cl- to extracellular region
+APOA4,APOA5,APOC2,CIDEC,FGF21 genes express APOA4,APOA5,APOC2,CIDEC,FGF21 proteins
+APOBR dimer binds VLDLs
+AQP1 tetramer transports CO2 from cytosol to extracellular region
+AQP1 tetramer transports CO2 from extracellular region to cytosol
+ARL2:GTP binds ARL2BP
+ARL2:GTP:ARL2BP binds SLC25A4
+ARL2:GTP:ARL2BP translocates from cytosol to the mitochondrial matrix
+ARL2:GTP:ARL2BP:SLC25A4 dimer exchanges ATP for ADP across the mitochondrial inner membrane
+ASIC trimers bind H+
+ASIC trimers:H+ transport extracellular Na+ to cytosol
+ASIC3 channel blockers bind ASIC3 trimer
+ASICs bind STOML3, (STOM)
+ATP12A:ATP4B exchanges K+ for H+
+ATP13A1 transports Mn2+ from cytosol to ER lumen
+ATP13A2 transports cations from cytosol to lysosomal lumen
+ATP13A4,5 transport divalent ions from extracellular region to cytosol
+ATP1A:ATP1B:FXYD binds cardiac glycosides
+ATP1A:ATP1B:FXYD exchanges 3Na+ for 2K+
+ATP2A1-3 transport Ca2+ from cytosol to ER lumen
+ATP2A1-3 transport cytosolic Ca2+ to dense tubular network lumen
+ATP2B1-4 transport cytosolic Ca2+ to extracellular region
+ATP2C1/2:Mg2+ transport cytosolic Ca2+ to Golgi lumen
+ATP4A:ATP4B binds PPIs
+ATP4A:ATP4B exchanges K+ for H+
+ATP6AP1 binds V-ATPase
+ATP7A transports cytosolic Cu2+ to extracellular region
+ATP7B transports cytosolic Cu2+ to Golgi lumen
+AVP(20-28) binds AVPR2
+AVP:AVPR2 Complex binds inactive heterotrimeric G(s) complex
+AVP:AVPR2:heterotrimeric G(s) complex exchanges GDP for GTP
+AZGP1 binds PIP
+Acidification of Tf:TfR1 containing endosome
+Activated Adenylate cyclase catalyses cAMP synthesis
+ApoB-48 + 40 triacylglycerol + 60 phospholipid => ApoB-48:TG:PL complex
+ApoB-48:TG:PL complex + 100 triacylglycerols + ApoA-I + ApoA-IV => nascent chylomicron
+Apolipoprotein A-I binds membrane-associated cholesterol and phospholipid to form a discoidal HDL particle
+Aquaporin-1 passively transports water into cell
+Aquaporin-1 passively transports water out of cell
+Aquaporin-3 passively transports water out of cell
+Aquaporin-4 passively transports water out of cell
+Aquaporin-6 passively transports anions into vesicles
+Aquaporin-6 passively transports anions out of vesicles
+Aquaporin-7 passively transports glycerol out of cell
+Aquaporin-9 passively transports glycerol into cell
+Aquaporins passively transport glycerol into cells
+Aquaporins passively transport glycerol out of cells
+Aquaporins passively transport urea into cells
+Aquaporins passively transport urea out of cells
+Aquaporins passively transport water into cells
+Aquaporins passively transport water out of cells
+BESTs transport cytosolic Cl- to extracellular region
+BESTs transport cytosolic HCO3- to extracellular region
+BMP1-3:Zn2+ cleaves pro-APOA1 to APOA1
+C2orf47:AFG3L2 binds the transit peptide of SMDT1
+CA1:Zn2+,CA2:Zn2+ bind CA inhibitors
+CA1:Zn2+,CA2:Zn2+ dehydrate HCO3- to CO2
+CA1:Zn2+,CA2:Zn2+ hydrate CO2 to HCO3-
+CA4:Zn2+ dehydrates HCO3- to CO2
+CA4:Zn2+ hydrates CO2 to HCO3-
+CANDI binds CUL1
+CES3 hydrolyses CHEST to CHOL and LCFA(-)
+CETP + spherical HDL + torcetrapib => CETP:spherical HDL:torcetrapib complex
+CETP-mediated lipid exchange: LDL gains cholesterol ester
+CETP-mediated lipid exchange: spherical HDL gains triacylglycerol
+CFTR binds components of the ERAD machinery for ubiquitination and degradation
+CFTR transits to the plasma membrane
+CFTR transports Cl- from cytosol to extracellular region
+CHEST translocates from ER membrane to lipid particle
+CHOL translocates from lysosome membrane to ER membrane
+CLCAs self cleave
+CLCN1/2/KA/KB transport cytosolic Cl- to extracellular region
+CLCN3 exchanges Cl- for H+
+CLCN4/5/6 exchange Cl- for H+
+CLCN7:OSTM1 exchanges Cl- for H+
+CREB3L3 (1-?) translocates from cytosol to nucleoplasm
+CSN polymer binds CaPO4
+CTNS cotransports CySS-, H+ from lysosomal lumen to cytosol
+CUL1, SKP1, FBXL5 bind
+CUTC binds Cu+
+CYB5Rs reduce MetHb to HbA
+CYBRD1:Heme reduces Fe3+ to Fe2+
+CYGB binds O2
+CYGB:O2 dissociates
+Cho transports from the extracellular space to the cytosol
+Co-transport (influx) of glucose/mannose and Na+ ions by SGLT4
+Co-transport (influx) of myo-inositol/D-chiro-inositol and two Na+ ions by SGLT6
+Concentrative transport (import) of a nucleoside and a sodium ions by solute carrier family 28 (sodium-coupled nucleoside transporter), member 1
+Concentrative transport (import) of a nucleoside and two sodium ions by solute carrier family 28 (sodium-coupled nucleoside transporter), member 3
+Concentrative transport (import) of nucleosides plus sodium ions by solute carrier family 28 (sodium-coupled nucleoside transporter), member 2
+Degradation of PCSK9:LDLR:Clathrin-coated vesicle
+Degradation of newly synthesized ApoB-48
+Disassembly of SR-BI-bound spherical HDL
+Discoidal HDL binds membrane-associated free cholesterol
+Endocytosis and degradation of apoA-I
+Equilibrative transport (export) of adenosine and biogenic amines by solute carrier family 29 (nucleoside transporters), member 4
+Equilibrative transport (export) of nucleosides and free bases by solute carrier family 29 (nucleoside transporters), member 1
+Equilibrative transport (export) of nucleosides and free bases by solute carrier family 29 (nucleoside transporters), member 2
+Equilibrative transport (import) of adenosine and biogenic amines by solute carrier family 29 (nucleoside transporters), member 4
+Equilibrative transport (import) of nucleosides and free bases by solute carrier family 29 (nucleoside transporters), member 1
+Equilibrative transport (import) of nucleosides and free bases by solute carrier family 29 (nucleoside transporters), member 2
+FLVCR1-1 transports heme from cytosol to extracellular region
+FTMT 24mer oxidises 4Fe2+ to 4Fe(3+)O(OH)
+Fe3+ dissociates from SLC22A17:LCN2:2,5DHBA
+Fe3+ dissociates from holoTF:TFRC dimer
+Ferritin Complex oxidises 4Fe2+ to Fe(3+)O(OH)
+G alpha (s) activates adenylate cyclase
+GAT1-3 mediate Na+/Cl- dependent GABA transport
+GLUT1 (SLC2A1) tetramer transports Glc from extracellular region to cytosol
+GLUT1 tetramer binds 4xATP
+GLUT14 (SLC2A14) tetramer transports Glc from extracellular region to cytosol
+GLUT1:ATP tetramer dissociates to GLUT1 tetramer and 4xATP
+GLUT2 (SLC2A2) tetramer transports Glc from extracellular region to cytosol
+GLUT2 (SLC2A2) transports Glc from cytosol to extracellular region
+GLUT3 (SLC2A3) tetramer transports Glc from extracellular region to cytosol
+GLUT4 (SLC2A4) tetramer transports Glc from extracellular region to cytosol
+GLUT7 and GLUT11 transport glucose and fructose
+GPIHBP1 binds HSPG:LPL dimer
+Group 3 - Selective Cl- transport
+HCO3- transport through ion channel
+HDLBP binds HDL
+HFE binds TFRC dimer
+HMIT co-transports myo-inositol with a proton
+HMOX1 dimer, HMOX2 cleave heme
+HSPG binds LPL dimer
+HUT2 and HUT11 mediate urea transport in kidney and erythrocytes respectively
+Hemoglobin A binds O2, releasing H+ and CO2
+Hemoglobin A is protonated and carbamated causing release of oxygen
+Heterotrimeric G(s) complex dissociates
+K+-independent Li+/Ca2+ exchanger transport
+KCNJ11:ABCC9 transports K+ from extracellular region to cytosol
+LCAT + discoidal HDL <=> LCAT:discoidal HDL complex
+LCAT + spherical HDL <=> LCAT:spherical HDL complex
+LCAT:discoidal HDL complex <=> LCAT + discoidal HDL
+LCAT:spherical HDL complex <=> LCAT + spherical HDL
+LCN2:2,5DHBA binds Fe3+
+LCNs bind lipids
+LDL + LDLR => LDL:LDLR complex
+LDL translocates from endosome lumen to lysosome lumen
+LDL:LDLR complex [plasma membrane] => LDL:LDLR complex [clathrin-coated vesicle] (LDLRAP1-independent)
+LDLR [endosome membrane] => LDLR [plasma membrane]
+LDLR:LDL complex => LDLR + LDL
+LDLR:LDL complex [coated vesicle membrane] => LDLR:LDL complex [endosome membrane]
+LETM1 exchanges protons (mitochondrial intermembrane space) for calcium (mitochondrial matrix)
+LIPA hydrolyses sterol esters to sterols and fatty acids
+LIPC dimer binds heparin
+LIPC dimer hydrolyses TAG to DAG and FA
+LIPG dimer hydrolyzes HDL-associated TAG to DAG and LCFA
+LMF1,2 bind LIPC dimer
+LMF1,2 transport LIPC dimer from ER lumen to extracellular region
+LSR trimer binds LDL
+LSR trimer binds VLDL
+MAGT1 transports Mg2+ from extracellular region to cytosol
+MATEs mediate extrusion of xenobiotics
+MBTPS1,2 cleaves CREB3L3 to CREB3L3(1-?) and CREB3L3(?-461)
+MCOLN1 transports Fe2+ from endosome lumen to cytosol
+MCU translocates calcium from the mitochondrial intermembrane space to the mitochondrial matrix
+MMGT1 transports Mg2+ from cytosol to Golgi lumen
+MRS2 transports Mg2+ from cytosol to mitochondrial matrix
+MTTP binds lomitapide
+MTTP lipidates APOB-100, forming a pre-VLDL
+MYLIP dimer ubiquitinates VLDLR on Lys-839
+Myoglobin binds oxygen
+Myoglobin:oxygen dissociates
+NACT co-transports trivalent citrate and a sodium ion
+NCEH1 hydrolyzes cholesterol esters
+NEDD8 binds CUL1 (in SKP1:CUL1:FXBL5)
+NIPAs transport Mg2+ from extracellular region to cytosol
+NPC2 binds CHOL
+NPC2 transfers CHOL to NPC1
+NRAMP1 transports divalent metal ions across phagosomal membranes of macrophages
+Na+-driven Cl-/HCO3- exchanger transport
+Na+/H+ exchanger transport (at cell membrane)
+Na+/H+ exchanger transport (at trans-golgi membrane)
+NaDC1 co-transports dicarboxylic acids and a sodium ion
+NaDC3 co-transports the dicarboxylic acid succinate and three sodium ion
+NaS1 co-transports sulphate and a sodium ion
+NaS2 co-transports sulphate and two sodium ions
+Neuroglobin binds oxygen
+Neuroglobin:oxygen dissociates
+OAT1-3 transport organic anions with antiport of dicarboxylic acids
+OAT2 and OAT4 mediate transport of sulphate conjugates
+OCT1 transports organic cations into hepatic cells
+OCT1 transports organic cations out of hepatic cells
+OCT2 mediates tubular secretion of organic cations in the kidney
+OCT2 mediates tubular uptake of organic cations in the kidney
+OCT3 mediates renal clearance of organic cations
+OCT3 mediates renal uptake of organic cations
+P-type ATPases type IV transport external-facing APLs to internal side of the plasma membrane
+P-type ATPases type IV transport internal-facing APLs to external side of the plasma membrane
+PCSK5 mediates dissociation of 2 x LPL from GPIHBP1:HSPG:LPL dimer
+PCSK6,FURIN mediate dissociation of 2 x LPL from GPIHBP1:HSPG:LPL dimer
+PCSK9 binds LDLR
+PCSK9 binds PCSK9 inhibitors
+PCSK9:LDLR bind to Clathrin
+PCSK9:LDLR:Clathrin-coated vesicle transport from plasma membrane to endolysosome
+PEX-19 docks ABCD1/D2/D3 to peroximal membrane
+PKA phosphorylates 4xPALM-C-p-2S-ABCA1 tetramer
+PMPCA:PMPCB cleaves the transit peptide of proSMDT1 (proEMRE)
+PQLC2 transports L-Arg,L-His,L-Lys from lysosomal lumen to cytosol
+PROT mediates L-proline uptake
+Passive I- efflux mediated by SMCT1
+Phosphorylation of Aquaporin-2 by Protein Kinase A (PKA)
+Proton-coupled di- and tri-peptide cotransport
+Proton-coupled histidine and di-peptide cotransport
+RAF1:SGK:TSC22D3:WPP ubiquitinates SCNN channels
+RHAG transports CO2 from cytosol to extracellular region
+RHAG transports CO2 from extracellular region to cytosol
+RHAG transports NH4+ from cytosol to extracellular region (red blood cells)
+RNF5 and RNF185 ubiquitinate misfolded CFTR
+RYR tetramers transport Ca2+ from sarcoplasmic reticulum lumen to cytosol
+Reuptake of serotonin from the synapse
+RhBG mediates ammonium effflux out of kidney collecting duct cells
+RhBG mediates ammonium influx into kidney collecting duct cells
+RhCG mediates ammonium efflux out of kidney collecting duct cells
+RhCG mediates ammonium influx into kidney collecting duct cells
+SCNN channels transport extracellular Na+ to cytosol
+SKP1:FBXL5:CUL1:NEDD8 ubiquitinylates IREB2
+SLC11A2 cotransports Fe2+, H+ from extracellular region to cytosol
+SLC12A1,2 cotransports Na+, K+, 2Cl- from extracellular region to cytosol
+SLC12A3 binds SLC12A3 inhibitors
+SLC12A3 cotransports Cl-, Na+ from extracellular region to cytosol
+SLC12A4,5,6,7 cotransport K+, Cl- from cytosol to extracellular region
+SLC16A10-mediated uptake of aromatic amino acids
+SLC16A1:BSG cotransports monocarboxylates, H+ from extracellular region to cytosol
+SLC16A3,7,8 cotransport monocarboxylates, H+ from extracellular region to cytosol
+SLC17A3-1 cotransports extracellular Na+ and Pi to cytosol
+SLC17A3-2 transports cytosolic urate to extracellular region
+SLC17A5 cotransports Neu5Ac, H+ from lysosomal lumen to cytosol
+SLC17A6,7,8 exchange cytosolic L-Glu for synaptic vesicle H+
+SLC1A1,2,3,6,7 cotransport L-Glu,L-Asp,D-Asp,H+,3Na+ from extracellular region to cytosol
+SLC1A4-mediated exchange of extracellular alanine for cytosolic serine, threonine, or cysteine
+SLC1A4-mediated exchange of extracellular cysteine for cytosolic alanine, serine, or threonine
+SLC1A4-mediated exchange of extracellular serine for cytosolic alanine, threonine, or cysteine
+SLC1A4-mediated exchange of extracellular threonine for cytosolic alanine, serine, or cysteine
+SLC1A5-mediated exchange of alanine and glutamine across the plasma membrane
+SLC1A5-mediated exchange of glutamine and alanine across the plasma membrane
+SLC20A1,2 cotransport Pi, Na+ from extracellular region to cytosol
+SLC22A12 exchanges extracellular urate for cytosolic LACT
+SLC22A17 binds LCN2:2,5DHBA:Fe3+
+SLC22A18 exchanges extracellular organic cations for cytosolic H+
+SLC22A4 cotransports ERGT, Na+ from extracellular region to cytosol
+SLC22A4, 5,15,16 cotransport CAR, Na+ from extracellular region to cytosol
+SLC24A1-4 exchange extracellular 4Na+ for cytosolic Ca2+, K+
+SLC24A5 exchanges cytosolic 4Na+ for Golgi luminal Ca2+, K+
+SLC25A18,A22 cotransport Glu, H+ from cytosol to mitochondrial matrix
+SLC25A26 exchanges cytosolic AdoMet for mitochondrial AdoHcy
+SLC25A29 transports basic amino acids from cytosol to mitochondrial matrix
+SLC25A5,6 dimers exchange ATP for ADP across the mitochondrial inner membrane
+SLC26A1,2 cotransport SO4(2-), H+ from extracellular region to cytosol
+SLC26A11 transports SO4(2-) from extracellular region to cytosol
+SLC26A3,6 exchange Cl- for HCO3-
+SLC26A4 transports I- from cytosol to extracellular region
+SLC27A1,4,6 transport LCFAs from extracellular region to cytosol
+SLC29A3 transports nucleosides from cytosol to lysosomal lumen
+SLC29A3 transports nucleosides from lysosomal lumen to cytosol
+SLC2A6,8,10,12 transport Glc from extracellular region to cytosol
+SLC2A9 transports Fru, Glc, urate
+SLC30A10 transports Mn2+ from cytosol to extracellular region
+SLC30A8 transports Zn2+ from cytosol to secretory granule
+SLC31A1 transports Cu2+ from extracellular region to cytosol
+SLC33A1 transports Ac-CoA from cytosol to Golgi lumen
+SLC34A1,2 cotransports Pi, 3Na+ from extracellular region to cytosol
+SLC34A3 cotransports Pi, 2Na+
+SLC35A1 exchanges CMP-Neu5Ac for CMP
+SLC35A2 exchanges UDP-Gal, UDP-GalNAc for UMP
+SLC35A3 exchanges UDP-GlcNAc for UMP
+SLC35B2,3 transport cytosolic PAPS to Golgi lumen
+SLC35B4 mediates the transport of UDP-N-acetylglucosamine into the Golgi lumen
+SLC35B4 mediates the transport of UDP-xylose into the Golgi lumen
+SLC35C1 transport UDP-Fuc from cytosol to Golgi lumen
+SLC35D1 hexamer transports UDP-GlcA, UDP-GlcNAc from cytosol to endoplasmic reticulum lumen
+SLC35D2 exchanges UDP-sugars for UMP
+SLC35D2 mediates the antiport of GDP-mannose in exchange for GMP
+SLC36A1-mediated uptake of glycine, proline, and alanine
+SLC36A2 cotransports Gly, L-Pro with H+ from extracellular region to cytosol
+SLC36A4 transports extracellular L-Pro to the cytosol
+SLC38A1 (ATA1)-mediated uptake of neutral amino acids
+SLC38A2 (ATA2)-mediated uptake of neutral amino acids
+SLC38A3-mediated uptake of glutamine, histidine, asparagine, and alanine
+SLC38A4 (ATA3)-mediated uptake of arginine and lysine
+SLC38A5-mediated uptake of glutamine, histidine, asparagine, and serine
+SLC39A1-4 transports Zn2+ from extracellular region to cytosol
+SLC40A1:CP:6Cu2+ oxidises Fe2+ to Fe3+
+SLC40A1:CP:6Cu2+ transports Fe2+ from cytosol to extracellular region
+SLC40A1:HEPH:6Cu2+ oxidises 4Fe2+ to 4Fe3+
+SLC40A1:HEPH:6Cu2+ transports Fe2+ from cytosol to extracellular region
+SLC41A1,2 transport Mg2+ from extracellular region to cytosol
+SLC43A1 (LAT3)-mediated uptake of large neutral amino acids
+SLC43A2 (LAT4)-mediated uptake of large neutral amino acids
+SLC45A3 transports Glc from extracellular region to cytosol
+SLC46A1 transports hemes from extracellular region to cytosol
+SLC4A1 exchanges cytosolic Cl- for extracellular HCO3-
+SLC4A1 exchanges cytosolic HCO3- for extracellular Cl-
+SLC4A1,2,3 exchanges HCO3- for Cl-
+SLC4A4 cotransports Na+ with 3HCO3-
+SLC4A5,7,9 cotransport Na+ with 3HCO3-
+SLC50A1 transports Glc from cytosol to extracellular region
+SLC5A10 cotransports Na+ with Man, Fru from extracellular region to cytosol
+SLC5A12 cotransports Na+ with LACT, PYR, NCA from extracellular region to cytosol
+SLC5A2 binds gliflozins
+SLC5A2 cotransports Na+ and glucose from extracellular region to cytosol
+SLC5A3 (SMIT1) transports myo-inositol (Ins) with Na+ from extracellular region to cytosol
+SLC5A5 cotransports Na+ with I- from extracellular region to cytosol
+SLC5A6 transports vitamins from extracellular region to cytosol
+SLC5A7 cotransports Cho, Cl-, Na+ from extracellular region to cytosol
+SLC5A8 transports monocarboxylates from extracellular region to cytosol
+SLC5As, NAGLT1 cotransport Glc and Na+ from extracellular region to cytosol
+SLC6A12 (BGT-1)-mediated uptake of GABA and betaine
+SLC6A14 cotransports SLC6A14 ligands, Cl-, 2Na+ from extracellular region to cytosol
+SLC6A15-mediated amino acid uptake
+SLC6A18 transports Gly from extracellular region to cytosol
+SLC6A19 cotransports neutral amino acids, Na+ from extracellular region to cytosol
+SLC6A2 cotransports NAd, Na+ from extracellular region to cytosol
+SLC6A20 cotransports L-Pro, Na+ from the extracellular region to cytosol
+SLC6A3 cotransports DA, Na+ from extracellular region to cytosol
+SLC6A5,9 cotransport Gly, Cl-, Na+ from extracellular region to cytosol
+SLC6A6-mediated uptake of taurine and beta-alanine
+SLC7A1 (CAT-1)-mediated uptake of cationic amino acids
+SLC7A10-mediated uptake of small neutral amino acids
+SLC7A11-mediated exchange of extracellular cysteine and cytosolic glutamate
+SLC7A2, isoform A (CAT-2A)-mediated uptake of cationic amino acids
+SLC7A2, isoform B (CAT-2B)-mediated uptake of cationic amino acids
+SLC7A3 (CAT-3)-mediated uptake of cationic amino acids
+SLC7A5:SLC3A2 transports neutral amino acids from extracellular region to cytosol
+SLC7A6 (y+LAT2)-mediated exchange of extracellular leucine for cytosolic arginine
+SLC7A7:SLC3A2 exchanges L-Arg for L-Leu, Na+ across the plasma membrane
+SLC7A8-mediated uptake of neutral amino acids
+SLC7A9:SLC3A1 exchanges L-Arg, CySS-, L-Lys for L-Leu
+SLC8A1,2,3 exchange 3Na+ for Ca2+
+SLC8A3 (NCX3) exchanges sodium (cytosol) for calcium (mitochondrial intermembrane space)
+SLC8B1 (NCLX) exchanges sodium (mitochondrial intermembrane space) for calcium (mitochondrial matrix)
+SLC9A6,7 exchange Na+ for H+ across the early endosome membrane
+SLC9A9 exchanges Na+ for H+ across the late endosome membrane
+SLC9B1/C2 exchange Na+ for H+
+SLC9B2 exchanges Na+, Li+ for H+
+SLC9C1 exchanges Na+ for H+
+SLCO1B1 transports ALB:(GCCA,TCCA) from extracellular region to cytosol
+SLCO1B1 transports T3,T4 from extracellular region to cytosol
+SLCO1B3 transports ALB:(GCCA, TCCA) from extracellular region to cytosol
+SLCO2A1 transports PGT substrates from extracellular region to cytosol
+SLCO2B1 has a narrow substrate specificity
+SLCO3A1 isoform 1 has abroad substrate specificity
+SLCO4C1 mediates the transport of digoxin
+SLCOs, SLC16A2 transport T3,T4 from extracellular region to cytosol
+SMDT1 assists in assembling MCU, MCUB, MICU1, MICU2 (or MICU3) yielding the MCU complex
+SOAT can transport taurolithocholate-3-sulphate
+SOAT1,2 transfer acyl group to CHOL forming CHEST
+STEAP3-like proteins reduce Fe3+ to Fe2+
+Serum albumin binds 2-lysophosphatidylcholine
+Spherical HDL binds C and E apolipoproteins
+Spherical HDL binds membrane-associated free cholesterol and phospholipids
+Sulfate is exported to the cytosol in exchange for dicarboxylate
+TFR2 dimer binds 2xholoTF
+TFRC dimer binds 2xholoTF
+TG-depleted chylomicron + spherical HDL => chylomicron remnant + spherical HDL:apoA-I:apoA-II:apoA-IV:apoC-II:apoC-III
+TPCN1/2 transport lysosomal Ca2+ to cytosol 
+TRPA1 tetramer binds TRPA1 antagonists
+TRPA1 tetramer transports Ca2+ from extracellular region to cytosol
+TRPM4,5 transport extracellular Na+ to cytosol
+TRPV1 binds TRPV1 agonists
+TRPV1 binds TRPV1 blockers
+TRPV1 transports Ca2+ from extracellular region to cytosol
+TRPs transport extracellular Ca2+ to cytosol
+TTYH1 transports cytosolic Cl- to extracellular region
+TTYH2/3 transport cytosolic Cl- to extracellular region
+TUSC3 transports Mg2+ from extracellular region to cytosol
+The ABCC family mediates organic anion transport
+Translocation of Aquaporin-2 from intracellular vesicles to the apical plasma membrane
+Transport (influx) of bile salts and acids by OATP-A
+Type I Na+-coupled phosphate co-transport
+UNC79:UNC80:NALCN transports Na+ extracellular region to cytosol
+Uptake of Noradrenaline
+VCP-catalyzed ATP hydrolysis promotes the translocation of misfolded CFTR into the cytosol
+VDAC1,2,3 translocate calcium from the cytosol to the mitochondrial intermembrane space
+VLDL binds APOC1 and APOC4
+VLDL translocates from SER lumen to extracellular region
+VLDLR binds PCSK9
+VLDLR binds VLDL
+VLDLR:PCSK9 binds Clathrin-coated vesicles
+VLDLR:PCSK9:Clathrin-coated vesicle translocates from the plasma membrane to lysosomal membrane
+VMAT1/2 can mediate the transport of biogenic amines
+VRAC heteromer transports I-, Cl- from cytosol to extracellular region
+Vesicular inhibitory amino acid transport
+YME1L1 proteolyzes unassembled proSMDT1
+ZDHCC8 transfers PALM from PALM-CoA to ABCA1 tetramer
+ZIP6 and ZIP14 mediate zinc influx into cells
+ZIP7 mediates zinc efflux from the endoplasmic reticulum
+ZIP8 mediates zinc influx into cells
+ZnT1 mediates the efflux of zinc from the cell
+ZnT2 facilitates zinc vesicular sequestration
+ZnT3 transports zinc into synaptic vesicles
+ZnT5 transports zinc into secretory granules in pancreatic beta cells
+ZnT6 transports zinc into the golgi apparatus
+ZnT7 transports zinc into the golgi apparatus
+apo-Transferrin dissociates from the receptor complex
+apoA-I binds to CUBN:AMN
+apoTF binds 2Fe3+ to form holoTF
+apoTF:TFRC dimer translocates from endosome membrane to plasma membrane
+apolipoprotein(a) + LDL => Lp(a)
+cAMP binds PKA tetramer
+cAMP induces dissociation of inactive PKA tetramers
+cholesterol + phosphatidylcholine (lecithin) => cholesterol ester + 2-lysophosphatidylcholine (lysolecithin)
+chylomicron => TG-depleted chylomicron + 50 long-chain fatty acids + 50 diacylglycerols
+chylomicron remnant + apoE => chylomicron remnant:apoE complex
+chylomicron remnant:apoE complex + LDLR => chylomicron remnant:apoE:LDLR complex
+chylomicron remnant:apoE:LDLR complex => chylomicron remnant:apoE + LDLR
+chylomicron remnant:apoE:LDLR complex [coated vesicle membrane] => chylomicron remnant:apoE:LDLR complex [endosome membrane]
+chylomicron remnant:apoE:LDLR complex [plasma membrane] => chylomicron remnant:apoE:LDLR complex [clathrin-coated vesicle] (LDLRAP1-dependent)
+hZIP10 mediates zinc influx into cells
+hZIP5 mediates zinc uptake by cells
+holoTF:TFRC dimer translocates from plasma membrane to endosome membrane
+malate [mitochondrial matrix] + orthophosphate [cytosol] <=> malate [cytosol] + orthophosphate [mitochondrial matrix]
+misfolded CFTR is degraded by the 26S proteasome
+nascent chylomicron + spherical HDL:apoC-II:apoC-III:apoE =>spherical  HDL + chylomicron
+nascent chylomicron [endoplasmic reticulum lumen] => nascent chylomicron [extracellular]
+p-S256-Aquaporin-2 passively transports water into cell
+pre-VLDL binds lipids to form VLDL
+pre-VLDL translocates from RER membrane to SER lumen
+pre-beta HDL binds membrane-associated cholesterol and phospholipid to form a discoidal HDL particle
+spherical HDL and SR-BI receptor form a complex at the cell surface

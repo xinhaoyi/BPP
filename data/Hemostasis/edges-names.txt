@@ -1,0 +1,338 @@
+14-3-3-zeta binds Raf1
+2-AG hydrolysis to arachidonate by MAGL
+AAMP binds to TBXA2R
+ABCC4 accumulation of dense granule contents
+ABHD6,12 hydrolyse 3AG
+ADRA2A,B,C bind ADR,NAd
+ATP2A1-3 transport cytosolic Ca2+ to dense tubular network lumen
+ATP2B1-4 transport cytosolic Ca2+ to extracellular region
+Activated P2Y purinoceptor 1 binds G-protein Gq
+Activated P2Y purinoceptor 12 binds G-protein Gi
+Activated SRC-1 activates MAPKs (in F2R:ARRB1:MAPKs:active SRC-1)
+Activated TP receptor binds G-protein  G13
+Activated TP receptor binds G-proten Gq
+Activated integrin alphaIIb beta3 binds SHC1
+Activated prostacyclin receptor binds G-protein Gs
+Activated protein C binds Protein S
+Activated protein C cleaves Factor Va intermediate form for Factor Va
+Activated protein C cleaves factor VIIIa
+Activated protein C cleaves factor Va to factor Vi intermediate form
+Activated protein C is released from PROCR
+Activated protein C:PROCR binds F2R
+Activated thrombin (factor IIa) cleaves F2R (PAR1), activating it
+Activated thrombin (factor IIa) cleaves PAR3,4, activating them
+Activated thrombin:thrombomodulin cleaves PROCR:Protein C to PROCR:Activated protein C
+Activation of Protein Kinase C novel isoforms
+Activation of Rap1 by cytosolic GEFs
+Activation of Rap1 by membrane-associated GEFs
+Activation of Talin
+Activation of conventional Protein Kinase C
+Adenylate Kinase 3 is a GTP-AMP phosphotransferase
+Autophosphorylation of PTK2 at Y397
+Autophosphorylation of SRC
+BSG (basigin) binds Integrin alpha3beta1, alpha6beta1
+Basigin binds CD98 complex
+Basigin binds CyPA
+Basigin binds MCT1, MCT3 and MCT4
+Basigin binds Mannose-carrying cell recognition molecules
+Basigin binds Matrix metalloproteinase-1
+Basigin homodimerises
+Basigin interacts with CD43
+Binding of ATP to P2X receptors
+Binding of GPVI:Fc Epsilon R1 gamma receptor complex with collagen
+Binding of IP3 to IP3 receptor
+Binding of Syk tyrosine kinase
+CD177 binds PECAM-1
+CD47 binds SIRP
+CD48 binds CD244
+CD58 binds CD2
+CD74 binds MIF
+CD84 homodimerises
+CD99 binds CD99L2
+CEACAM1,3,5,6 bind opa proteins
+CLEC1B dimer binds PDPN
+CRAC translocates calcium from the extracellular region to the cytosol
+CXADR binds to AMICA1
+Cables link CDK5 and ABL1
+Cables1 links CDK2 and WEE1
+Calcium and Diacylglycerol activate CalDAG-GEFs (RasGRPs)
+Cation influx mediated by TRPC3/6/7
+Caveolin-1 binds Basigin
+Chromokinesins form dimers
+Clustering of Integrin alphaIIb beta3 complexes
+Collagen type I binds integrin alpha1beta1, alpha2beta1, alpha10beta1
+Crk binding to p130cas
+CyP60 chaperones Basigin
+DAG activation of TRPC channels
+DAG is metabolized by DAGL to 2-AG
+DAG kinase produces phosphatidic acid from DAG
+DOCKs bind to RhoGEFs
+Dephosphorylation of inactive SRC by PTPB1
+Dimerization of Tie2/Ang1 complex
+Dissociation of the P2Y purinoceptor 12:Gi complex
+Dissociation of the P2Y purinoceptor 1:Gq complex
+Dissociation of the Prostacyclin receptor:Gs complex
+Dissociation of the TP:G13 complex
+Dissociation of the TP:Gq complex
+Dual-specific AKAPs bind type I and II PKA regulatory subunits
+E-selectin binds E-selectin ligand
+EHD proteins interact with Rabenosyn-5
+EPCAM binds itself to form homotypic cell adhesion
+Exocytosis of Proactivator polypeptide
+Exocytosis of platelet alpha granule contents
+Exocytosis of platelet dense granule content
+Expression of Interferon-alpha and beta
+Expression of globin genes under control of the beta globin control region
+F-actin capping protein binds to the barbed end of elongating F-actin
+F-actin capping protein is a heterodimer
+F11R dimerises
+F2R binds ARRB1
+F2R binds ARRB2
+F2R:ARRB1 binds MAPKs, SRC-1
+F2R:ARRB2 binds MAPKs, SRC-1
+FCAMR binds IgA
+FGR binds LDL:LRP8
+FGR binds and phosphorylates LRP8
+FIX is secreted
+FVIII is secreted
+Factor IIa inhibitors (compounds) binds IIa
+Factor IIa inhibitors (peptide) binds IIa
+Factor VIIIa dissociates 
+Factor Xa inhibitors bind Va:Xa
+Factor Xa inhibitors binds Xa
+Fgr may phosphorylate p38 MAPK
+Fyn/Lyn-mediated phosphorylation of FcR1 gamma
+G13 activation by TP receptor
+G6B binds PTPN6,PTPN11
+GP1b signaling involves c-Src
+GP1b-IX-V binds 14-3-3-zeta
+GP1b-IX-V binds filamin
+GP1b-IX-V:13-3-3-zeta complexes with p85 PI3K
+GPIb-IX-V binding to 14-3-3 zeta is reduced by shear stress
+GPIb-IX-V binds to vWF:Collagen complex
+GPVI binds Fyn and Lyn
+GPVI stimulates PI3K beta, gamma
+Gi activation by P2Y purinoceptor 12
+Glycophorins bind plasmodium falciparum Ags
+Gq activation by P2Y purinoceptor 1
+Gq activation by TP receptor
+Gs activation by prostacyclin receptor
+HP1 alpha binds Histone H3K9(me)3
+Heparin cofactor 2 (SERPIND1) binds activated thrombin (factor IIa)
+Heterodimerization of CEACAMs
+IP receptor can bind prostacyclin
+IP3R tetramer:I(1,4,5)P3:4xCa2+ transports Ca2+ from platelet dense tubular system to cytosol
+IRF1 binds the promoters of Interferon alpha and beta
+IRF2 binds the promoters of Interferon alpha and beta
+ITGA4:ITGB1 binds natalizumab
+ITPK1 converts Ins-1,3,4-P3 to Ins-1,3,4,5-P4
+ITPK1 converts Ins-1,3,4-P3 to Ins-1,3,4,6-P4
+ITPK1 converts Ins-3,4,5,6-P4 to Ins-1,3,4,5,6-P5
+Integrin alpha IIb beta3 T779 phosphorylation blocks SHC binding
+Integrin alpha4beta1 binds JAM2:JAM3
+Integrin alpha5beta1 binds FN1 dimer
+Integrin alphaIIb beta3 activation
+Integrin alphaLbeta2 (LFA-1) binds F11R (JAM-A)
+Integrin alphaMbeta2 (MAC1) binds JAM3
+Integrin alphaXbeta2 binds JAM3
+Interaction of GPVI and FceRI gamma
+Interaction of PECAM-1 and PLC gamma1
+Interaction of PECAM-1 and SHIP
+Interaction of PECAM-1 and SHP-1
+Interaction of PECAM-1 and SHP-2
+Interaction of SOS with GRB2 bound to FADK1
+Interaction of SOS-1 to Tie2 bound  Grb2
+Interaction of Tie2 and Ang4
+Interaction of Tie2 and Dok-2
+Interaction of Tie2 and Grb14
+Interaction of Tie2 and Grb2
+Interaction of Tie2 and Grb7
+Interaction of Tie2 and Shc1
+Interaction of Tie2 and Shp2
+Interaction of Tie2 and p85 of PI3K
+Interaction of Tie2 with Ang1
+Interaction of Tie2 with Ang2
+Interaction of integrin alphaIIb beta3 with Fibrinogen
+Interaction of integrin alphaVbeta3 with PECAM1
+JAM2 binds JAM3
+JAM2 dimerises
+JAM3 dimerises
+JMJD1C demethylates H3K9 mono- and di-methylation
+Kinesin-1 is a heterotetramer
+Kinesin-12 is a dimer
+Kinesin-13 is a dimer
+Kinesin-14 is a dimer
+Kinesin-2 is a heterotrimer
+Kinesin-3 is a dimer
+Kinesin-5 is a homotetramer
+Kinesin-6 and RACGAP1 form the heterotetrameric complex centralspindlin
+Kinesin-7 is a dimer
+Kinesin-8 is a dimer
+Kinesin-9 is a dimer
+Kinesins bind microtubules
+Kinesins move along microtubules consuming ATP
+LDL binds to LRP8
+LRRC16A binds F-actin capping protein
+MERTK receptor binds ligands (Gas6 or Protein S)
+MICAL1 produces NADP+, H2O2
+Mitofusins trans-interact linking mitochondria prior to fusion
+NFE2 binds the beta globin locus control region
+NFE2 is a heterodimer
+NO binds to Guanylate Cyclase
+Nitric Oxide Synthase (NOS) produces Nitric Oxide (NO)
+OLR1 binds to oxidized LDL
+P-selectin binds P-selectin ligand
+P2RY1 binds ADP
+P2RY12 binds ADP
+P2X1-mediated entry of Ca++ from plasma
+P2Y purinoceptor 1 activates MAP kinase p38 alpha
+PAFAH2 hydrolyses PAF to lyso-PAF and acetate
+PDPK1 activates PRKCZ
+PDPK1 binds PRKCZ
+PECAM-1 binds PP2A
+PECAM1 is phosphorylated
+PI(3,4,5)P3 binds VAV1,2,3
+PI3K alpha, beta, gamma convert PIP2 to PIP3
+PIP2 binds inhibiting VAV
+PIP3 recruits PDPK1 to the membrane
+PKG1 phosphorylates BK channels
+PKG1 phosphorylates IRAG:IP3R1 inhibiting IP3-stimulated Ca2+ release
+PLC gamma 2-mediated PIP2 hydrolysis
+PLG(20-810) binds anti-fibrinolytics
+PLG(20-810) binds aprotinin
+PROCR binds Protein C
+PSGs bind proteoglycans and TGF-beta1
+PTGIR binds PTGIR agonists
+Phosphorylation of BCAR1 by SRC-PTK2 complex
+Phosphorylation of PECAM-1 by Fyn or Lyn or c-Src
+Phosphorylation of Platelet Sec-1
+Phosphorylation of Syntaxin-4
+Phosphorylation of cPLA2 by MAPK p38 alpha
+Phosphorylation of pPTK2 by SRC
+Platelet-derived TREM-1 ligand binds to TREM-1
+Protease nexin-1 (PN1) is a specific and extremely efficient inhibitor of thrombin.
+RAD51B binds RAD51C
+RAD51B:RAD51C binds single-stranded DNA
+REST recruits the BHC complex
+Rabenosyn-5 connects  Rab5 to VPS-45
+Recruitment of BCAR1 to PTK2 complex
+Recruitment of GRB2 to p-PTK2
+Release of (inferred) platelet cytosolic components
+Release of 78 kDa glucose-regulated protein
+Release of CSK from SRC
+Release of Calumenin 
+Release of platelet cytosolic components
+Release of platelet secretory granule components
+SERPINA5 binds activated protein C
+SERPINC1 binds SERPINC1 activators
+SERPING1 is secreted
+SH2B proteins bind JAK2
+SHC1 bound to integrin alphaIIb beta3 is phosphorylated somehow
+SHC1 dissociates from integrin alphaIIb beta3
+SL (surrogate light chain) binds IgH to form pre-BCR
+SLC8A1,2,3 exchange 3Na+ for Ca2+
+SLP-76 stimulates PLC gamma 2
+SRC-1 bound to ARRB2 is not activated
+SRC-1 is activated (in F2R:ARRB1:MAPKs:SRC-1)
+STIM1 activation of CRAC
+SYK activation by SRC
+SYK autophosphorylates
+SYK binds to integrin alphaIIb beta3
+Soluble PROCR binds PRTN3:CD177
+Soluble PROCR binds activated protein C
+Soluble guanylate cyclase converts GTP to cGMP
+Sos-mediated nucleotide exchange of Ras (Tie2 receptor:Grb2:Sos)
+Src activation following P2Y purinoceptor activation
+Surface deployment of platelet alpha granule membrane components
+Surface deployment of platelet dense granule membrane components
+Syk activation leads to SLP-76 activation
+Syk/Lck phosphorylate LAT
+TFPI + TF:F7a + factor Xa -> TFPI:TF:F7a:factor Xa
+TP receptor can bind thromboxane
+TRAIL receptor-4 binds TRAIL receptor-1 or TRAIL receptor-2
+TSPAN7 binds PICK1
+Thrombin binding to GP1b:IX:V
+Thrombin-activated PARs activate G12/13
+Thrombin-activated PARs activate Gq
+Thrombin-activated PARs binds G-protein G12/13
+Thrombin-activated PARs binds G-protein Gq
+Thrombin-activated PARs:G12/13 (active) dissociate
+Thrombin-activated PARs:Gq (active) dissociate
+Thrombopoietin binds the thrombopoietin receptor
+Trans-homophilic interaction of PECAM-1
+Trans-phosphorylation of Tie2
+Translocation of PTK2 to Focal complexes
+Translocation of RIAM to plasma membrane
+Unknown kinase phosphorylates CLEC1B dimer:PDPN
+VAV1 is a GEF for Rho/Rac family GTPases
+VAV2 is a GEF for Rho/Rac family kinases
+VAV3 is a GEF for Rho/Rac family kinases
+ZFPM proteins bind GATA proteins
+activated thrombin (factor IIa) + antithrombin III:heparin -> thrombin:antithrombin III:heparin
+activated thrombin (factor IIa) + thrombomodulin -> activated thrombin:thrombomodulin
+alpha-2-antiplasmin + plasmin -> alpha-2-antiplasmin:plasmin
+c-Src binds Raf1
+cGMP is degraded by PDEs
+cGMP stimulates Protein Kinase G
+crosslinked fibrin multimer + tissue plasminogen activator (one-chain) -> crosslinked fibrin multimer:tissue plasminogen activator (one-chain)
+crosslinked fibrin multimer:tissue plasminogen activator (one-chain) + plasminogen -> crosslinked fibrin multimer:tissue plasminogen activator (one-chain):plasminogen
+crosslinked fibrin multimer:tissue plasminogen activator (one-chain) -> crosslinked fibrin multimer:tissue plasminogen activator (two-chain)
+crosslinked fibrin multimer:tissue plasminogen activator (one-chain):plasminogen -> crosslinked fibrin multimer:tissue plasminogen activator (one-chain) + plasmin
+crosslinked fibrin multimer:tissue plasminogen activator (two-chain) + plasminogen -> crosslinked fibrin multimer:tissue plasminogen activator (two-chain):plasminogen
+crosslinked fibrin multimer:tissue plasminogen activator (two-chain):plasminogen -> crosslinked fibrin multimer:tissue plasminogen activator (two-chain) + plasmin
+factor IX -> factor IXa + factor IX activation peptide (TF:F7a catalyst)
+factor IX -> factor IXa + factor IX activation peptide (factor XIa catalyst)
+factor IXa associates with cell membrane
+factor V -> factor Va + factor V activation peptide
+factor VII -> factor VIIa
+factor VIII + von Willebrand factor multimer -> factor VIII:von Willibrand factor multimer
+factor VIII:von Willibrand factor multimer -> factor VIIIa + factor VIIIa B A3 acidic polypeptide + von Willibrand factor multimer
+factor VIIIa + factor IXa -> factor VIIIa:factor IXa
+factor VIIIa associates with cell membrane
+factor Va + factor Xa -> Va:Xa complex (prothrombinase)
+factor X -> factor Xa + factor X activation peptide (TF:F7 catalyst)
+factor X -> factor Xa + factor X activation peptide (TF:F7a catalyst)
+factor X -> factor Xa + factor X activation peptide (VIIIa:IXa catalyst)
+factor XI + platelet glycoprotein (GP) Ib:IX:V complex -> factor XI:platelet glycoprotein (GP) Ib:IX:V complex
+factor XI:platelet glycoprotein (GP) Ib:IX:V complex -> factor XIa:platelet glycoprotein (GP) Ib:IX:V complex (XIIa catalyst)
+factor XI:platelet glycoprotein (GP) Ib:IX:V complex -> factor XIa:platelet glycoprotein (GP) Ib:IX:V complex (thrombin catalyst)
+factor XII -> factor XIIa
+factor XIII -> factor XIII cleaved tetramer + 2 factor XIII A activation peptides
+factor XIII cleaved tetramer + 2 Ca++ -> factor XIIIa + 2 factor XIII B chain
+factor XIIa binds SERPING1
+fibrin multimer -> fibrin multimer, crosslinked + NH4+
+fibrin multimer, crosslinked -> fibrin digestion products (plasmin)
+fibrin multimer, crosslinked:tissue plasminogen activator (one-chain) + plasminogen activator inhibitor 1 -> fibrin multimer, crosslinked:tissue plasminogen activator (one-chain):plasminogen activator inhibitor 1
+fibrin multimer, crosslinked:tissue plasminogen activator (two-chain) + plasminogen activator inhibitor 1 -> fibrin multimer, crosslinked:tissue plasminogen activator (two-chain):plasminogen activator inhibitor 1
+fibrinogen -> fibrin monomer + 2 fibrinopeptide A + 2 fibrinopeptide B
+histidine-rich glycoprotein + plasminogen <-> histidine-rich glycoprotein:plasminogen
+histidine-rich glycoprotein:plasminogen <-> histidine-rich glycoprotein + plasminogen
+kallikrein + alpha2-macroglobulin -> kallikrein:alpha2-macrogloulin
+kallikrein binds SERPING1
+kallikrein:kininogen:C1q binding protein tetramer -> kallikrein + activated kininogen:C1q binding protein tetramer + bradykinin
+kininogen + C1q binding protein tetramer -> kininogen:C1q binding protein tetramer
+n fibrin monomers -> fibrin multimer
+p-SLP-76 binds VAV
+p-Y348-SYK binds VAV family
+p-Y348-SYK dissociates
+p-Y348-SYK phosphorylates VAV family
+p-Y7-CLEC1B dimer:PDPN binds SYK
+p53, SIN3A and MYB form a complex
+plasminogen + histidine-rich glycoprotein -> plasminogen:histidine-rich glycoprotein
+plasminogen:histidine-rich glycoprotein -> plasmin + histidine-rich glycoprotein (uPA [one-chain] catalyst)
+plasminogen:histidine-rich glycoprotein -> plasmin + histidine-rich glycoprotein (uPA [two-chain] catalyst)
+prekallikrein + kininogen:C1q binding protein tetramer -> prekallikrein:kininogen:C1q binding protein tetramer
+prekallikrein:kininogen:C1q binding protein tetramer -> kallikrein:kininogen:C1q binding protein tetramer
+pro-F2R binds vorapaxar
+prothrombin -> activated thrombin (factor IIa) + thrombin activation peptide (Xa catalyst)
+prothrombin -> activated thrombin (factor IIa) + thrombin activation peptide (prothrombinase catalyst)
+sequestered tissue factor -> tissue factor
+thrombin:antithrombin III:heparin -> thrombin:cleaved antithrombin III:heparin
+thrombin:cleaved SERPINC1:SERPINC1 activators -> thrombin:cleaved SERPINC1 + SERPINC1 activators
+tissue factor (TF) + activated factor VII (F7a) -> TF:F7a complex
+tissue factor (TF) + factor VII (F7) -> TF:F7 complex
+urokinase plasminogen activator (one-chain):uPAR -> urokinase plasminogen activator (two-chain):uPAR
+urokinase plasminogen activator (two-chain):uPAR + plasminogen activator inhibitor 1 (PAI-1) -> PAI-1:urokinase plasminogen activator (two-chain):uPAR
+urokinase plasminogen activator (two-chain):uPAR + plasminogen activator inhibitor 2 (PAI-2) -> PAI-2:urokinase plasminogen activator (two-chain):uPAR
+urokinase plasminogen activator + urokinase plasminogen activator receptor (uPAR) -> urokinase plasminogen activator:uPAR
+vWF binds to collagen
