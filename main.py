@@ -7,6 +7,8 @@ import time
 import torch
 from extract_pathway import PathWayProcessor, ReactionProcessor, PhysicalEntityProcessor, ReactomeProcessor
 from py2neo import Graph, Node, Relationship
+from property import Properties
+
 def print_hi(name):
     # Use a breakpoint in the code line below to debug your script.
     print(f'Hi, {name}')  # Press Ctrl+F8 to toggle the breakpoint.
@@ -28,18 +30,10 @@ if __name__ == '__main__':
 
     time_start = time.time()  # record the start time
 
-    reactome_processor = ReactomeProcessor('neo4j', '123456')
+    properties = Properties("file_name.properties")
 
-    # reactome_processor.execution_on_single_pathways("R-HSA-1430728")
-
-    # R-HSA-1640170
-    # reactome_processor.execution_on_single_pathways("R-HSA-1640170")
-
-
-    # reactome_processor.execution_on_reactome()
-
-    reactome_processor.execution_on_all_pathways()
-
+    reactions_names_file_name: str = properties.get("reactions_names_file_name")
+    print(reactions_names_file_name)
 
     time_end = time.time()  # record the ending time
 

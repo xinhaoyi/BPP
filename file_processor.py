@@ -79,18 +79,21 @@ class FileProcessor:
 
     def read_file_via_lines(self, path, file_name):
         url = path + '/' + file_name
-        file_handler = open(url, "r")
-
         res_list = []
 
-        while (True):
-            # Get next line from file
-            line = file_handler.readline()
-            line = line.replace('\r', '').replace('\n', '').replace('\t', '')
+        try:
+            file_handler = open(url, "r")
+            while True:
+                # Get next line from file
+                line = file_handler.readline()
+                line = line.replace('\r', '').replace('\n', '').replace('\t', '')
 
-            # If the line is empty then the end of file reached
-            if not line:
-                break
-            res_list.append(line)
-
-        return res_list
+                # If the line is empty then the end of file reached
+                if not line:
+                    break
+                res_list.append(line)
+        except Exception as e:
+            print(e)
+            print("we can't find the " + url + ", please make sure that the file exists")
+        finally:
+            return res_list
