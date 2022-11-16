@@ -1,50 +1,57 @@
 import pandas as pd
-import numpy as np
 import os
 import sys
-import time
-from scipy.sparse import csc_array
+from scipy.sparse import csr_matrix
 sys.path.append("../")
 
 
-
 name = 'Disease'
-task = 'attribute prediction dataset'
+task = 'input link prediction dataset'
 
-def load_data_to_graph(name, task):
-    data_path = os.path.join("data", name)
-    train_relation_path = os.path.join(data_path, task, 'train', 'relationship.txt')
-    train_node_path = os.path.join(data_path, task, 'train', 'nodes.txt')
-    train_mapping_path = os.path.join(data_path, task, 'train', 'components-mapping.txt')
-    train_mat = pd.read_csv(train_relation_path, names=['entity', 'reaction', 'type'], header=None)
-    # node = pd.read_csv(train_node_path)
-    my_file = open(train_mapping_path, "r")
-    mapping = my_file.read()
-    mapping_list = mapping.split("\n")
-    new_list = [i.split(',') for i in mapping_list]
-    final_list = []
-    for i in new_list:
-        if len(i[0]) == 0:
-            final_list.append([])
-        else:
+class Database():
+    def __init__(self, name, task):
+        self.dataset = name
+        self.task = task
+        self.load_dataset()
+
+    def load_dataset(self):
+        self.train = self.load_data_to_graph(self.dataset, self.task, 'train')
+        self.test = self.load_data_to_graph(self.dataset, self.task, 'test')
+        self.valid = self.load_data_to_graph(self.dataset, self.task, 'validation')
+
+
+    def load_data_to_graph(self, name, task, subset):
+        data_path = os.path.join("data", name)
+        relation_path = os.path.join(data_path, task, subset, 'relationship.txt')
+        mapping_path = os.path.join(data_path, task, subset, 'components-mapping.txt')
+        mat = pd.read_csv(relation_path, names=['entity', 'reaction', 'type'], header=None)
+        my_file = open(mapping_path, "r")
+        mapping = my_file.read()
+        mapping_list = mapping.split("\n")
+        new_list = [i.split(',') for i in mapping_list]
+        final_list = []
+        for i in new_list:
             final_list.append([int(j) for j in i])
-    # mapping = pd.read_csv(train_mapping_path)
-    feature_dimension = max(final_list)
-    feature_dimension = max(feature_dimension)
-    num_nodes = max(train_mat['entity'])
+        # mapping = pd.read_csv(train_mapping_path)
+        feature_dimension = max(sum(final_list, []))+1
+        num_nodes = max(mat['entity'])
 
-    row = []
-    column = []
-    val = []
-    for i in range(num_nodes):
-        feature = final_list[i]
-        if len(feature) > 0:
+        row = []
+        column = []
+        val = []
+        for i in range(num_nodes):
+            feature = final_list[i]
             for j in feature:
                 row.append(i)
                 column.append(j)
                 val.append(1)
-    csc_mat = csc_array((val, (row, column)), shape=(num_nodes, feature_dimension))
-    return train_mat, csc_mat
 
-# To recover the numpy matrix of feature matrix, use feature_mat.toarray()
-interaction_mat, feature_mat = load_data_to_graph(name=name, task=task)
+        component_csc_mat = csr_matrix((val, (row, column)), shape=(num_nodes, feature_dimension))
+        print(subset, "Num of interactions: %2d.\n Number of nodes: %2d.\n Number of features: %2d"
+              %(len(mat), num_nodes, feature_dimension))
+        return mat, component_csc_mat
+
+data = Database(name,task)
+train, train_fea = data.train
+test, test_fea = data.test
+valid, valid_fea = data.valid
