@@ -406,7 +406,6 @@ CCR6
 CCT2
 CCT8
 CD101
-CD14
 CD14(20-345)
 CD160
 CD177
@@ -442,7 +441,6 @@ CD300E
 CD300LB
 CD33
 CD34-1
-CD36
 CD36 gene
 CD3G homodimer
 CD3G/CD3Z dimers
@@ -485,7 +483,7 @@ CD93
 CD94:NKG2C
 CD94:NKG2C:HLA-E
 CD96
-CD97(21-835)
+CD97
 CD99
 CDA
 CDC42
@@ -697,7 +695,7 @@ Class I MHC heavy chain genes
 Clathrin
 Clathrin Triskelion
 Clathrin light chain
-Clathrin:AP2 complex
+Clathrin:AP-2 complex
 Clostridial peptidoglycan
 CoA-SH
 Collagen type I fibril
@@ -863,13 +861,13 @@ FCER2(1-321)
 FCERI
 FCERI:IgE aggregate
 FCERIG dimer
+FCGR
 FCGR1A
 FCGR1B
 FCGR2A
 FCGR2B
 FCGR3A
 FCGR3B
-FCGRA
 FCGRA genes
 FCGRIA:CD3G homodimer
 FCGRIIIA:CD3G/CD3Z dimers
@@ -979,7 +977,6 @@ GNS
 GOLGA7
 GPI
 GPI-CEACAM6
-GPI-PLAUR
 GPIN-CD14(20-345)
 GPR84
 GPR97
@@ -1127,8 +1124,6 @@ HLA class II histocompatibility antigen, DRB1-8 beta chain
 HLA class II histocompatibility antigen, DRB1-9 beta chain precursor
 HLA class II histocompatibility antigen, DRB3-1 beta chain precursor
 HLA-A3
-HLA-A34
-HLA-A74
 HLA-B
 HLA-Bw4
 HLA-C
@@ -1641,6 +1636,7 @@ Influenza A dsRNA intermediate form
 Integrin alpha4beta7
 Integrin alphaLbeta2
 Integrin alphaMbeta2
+Integrin alphaVbeta5
 Interleukin receptor complexes with activated SHC1
 Interleukin receptor complexes with activated SHC1:SHIP1
 Invariant chain trimer
@@ -1668,6 +1664,7 @@ K48polyUb-NIK
 K48polyUb-TRAF3
 K48polyUb-TRAF3:NIK
 K48polyUb-antigenic substrate
+K48polyUb-partially digested Ag
 K63-Ub
 K63-linked polyUb p-IRAK1:TRAF6
 K63-pUb-TRAF6:TICAM1:TRAM:TLR4:LY96:LPS:CD14
@@ -1891,7 +1888,6 @@ MMP25
 MMP3 gene
 MMP3(100-477)
 MMP8
-MMP9
 MMP9 gene
 MMP9(107-707)
 MMTAG2
@@ -2175,6 +2171,7 @@ PLA2G2A
 PLA2G2A:Ca2+
 PLAC8
 PLAU(21-431)
+PLAUR
 PLC gamma1,2
 PLCG1
 PLCG1:p-3Y-SLP-76:Gads:LAT
@@ -2226,7 +2223,7 @@ PRLR ligands:p-S349-PRLR:JAK2 dimer
 PRLR ligands:p-Y611-PRLR:p-Y1007-JAK2 dimer
 PRLR:JAK2
 PRLR:JAK2 dimer
-PRSS2(24-247)
+PRSS2
 PRSS3
 PRTN3
 PS
@@ -2941,7 +2938,6 @@ active p-T507,S645,S664-PRKCD
 alpha beta dimer:Ii trimer
 alpha beta dimer:Ii trimer:calnexin
 alpha-mannan
-alphaVbeta5
 amlexanox
 anakinra
 antigenic substrate
@@ -3087,6 +3083,7 @@ p-13S-NFATC3
 p-14S-NFATC2
 p-2S,S376,T,T209,T387-IRAK1
 p-2S,S376,T,T209,T387-IRAK1:TRAF6
+p-2S-IRF7:p-2S-IRF7
 p-2Y-TEC kinases
 p-3S,3T-IRAK1:p-S,2T-IRAK4:oligo-MyD88:TIRAP:activated TLR
 p-3S,3T-IRAK1:p-S,2T-IRAK4:oligo-MyD88:activated TLR7/8 or 9

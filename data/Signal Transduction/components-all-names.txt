@@ -21,12 +21,12 @@
 12xFucT-11xGlcS-6xFucS-NOTCH4(24-1336)
 14-3-3 dimer
 14xGlcS-10xFucT-4xFucS-NOTCH3(40-1571)
-17xFucT-14xGlcS-2xFucS-NOTCH1(19-2555)
 17xFucT-2xFucS-NOTCH1(19-2555)
 18(R)-RvE1
 18(S)-RvE1
 18(S)-RvE1, 18(R)-RvE1
 18xFucT-16xGlcS-FucS-NOTCH2(26-1581)
+19xFucT-14xGlcS-2xFucS-NOTCH1(19-2555)
 19xFucT-16xGlcS-2xFucS-NOTCH1(19-1664)
 2'-O-acetyl-ADP-ribose
 22R-hydroxycholesterol
@@ -3011,7 +3011,7 @@ SHARPIN
 SHB
 SHC
 SHC1
-SHC1-1(156-583)
+SHC1-1
 SHC1-2
 SHC1-2,SHC1-3
 SHC1-3
@@ -3122,6 +3122,7 @@ STAT family members
 STAT1
 STAT3
 STAT5A
+STAT5A homodimer
 STAT5A,STAT5B
 STAT5B
 STAT6
@@ -3982,6 +3983,7 @@ p-CRKL:RAPGEF1
 p-CaMKK
 p-DVL
 p-DVL2
+p-DVL3
 p-ERBB2 heterodimers
 p-ERBB2 heterodimers:MEMO1
 p-ERBB4 homodimers
@@ -4010,6 +4012,7 @@ p-S,T-IRAK1-1
 p-S,T-MAP2K2
 p-S-AKT
 p-S-AKT:PIP3
+p-S-DVL1
 p-S10 CDKN1B
 p-S102,S137-PPP1R1B
 p-S102-PPP1R1B
@@ -4295,7 +4298,6 @@ p-Y55-SPRY2
 p-Y565,S797-HIF1A
 p-Y565-HIF1A
 p-Y694-STAT5A
-p-Y694-STAT5A homodimer
 p-Y699-STAT5B
 p-Y700,Y731,Y774-CBL
 p-Y701-STAT1
@@ -4369,9 +4371,7 @@ pitolisant
 pizotifen
 ponatinib
 pp-DVL
-pp-DVL1
 pp-DVL2
-pp-DVL3
 ppDVL:DAAM1
 practolol
 pramlintide
