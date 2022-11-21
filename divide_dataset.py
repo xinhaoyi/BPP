@@ -2,14 +2,16 @@ from __future__ import annotations
 
 import copy
 import random
+import re
 import time
+from enum import Enum
 
 import numpy as np
-from file_processor import FileProcessor
-from extract_pathway import ReactomeProcessor
+from extract_data_form_reactome import FileProcessor
+from property import Properties
 
 
-class ReactomeDataBean:
+class ReactomeDataDivider:
     def __init__(self, pathway_name):
         self.__file_processor = FileProcessor()
         self.__edges_file_name = "edges.txt"
@@ -48,7 +50,6 @@ class ReactomeDataBean:
 
         self.__regulation_link_prediction_initialise_reactions_and_entities_components_and_relationships_and_list_of_pair_of_entity_and_component()
 
-
     # todo
     def __ultimate_initialisation(self):
         self.__reactions_ids = self.__read_reactions_of_one_pathway_from_file()
@@ -73,6 +74,18 @@ class ReactomeDataBean:
 
         # initialise all the above dictionaries
         self.__initialisation_all_reactions_entities_and_components_dict()
+
+    def get_raw_reaction_ids(self) -> list[str]:
+        return self.__reactions_ids
+
+    def get_raw_entities_ids(self) -> list[str]:
+        return self.__entities_ids
+
+    def get_raw_component_ids(self) -> list[str]:
+        return self.__components_ids
+
+    def get_entity_to_list_of_components_dict(self) -> dict[str, list[str]]:
+        return self.__entity_to_list_of_components_dict
 
     def __read_reactions_of_one_pathway_from_file(self) -> list[str]:
         reactions_ids = self.__file_processor.read_file_via_lines("data/" + self.__pathway_name + "/",
@@ -384,7 +397,6 @@ class ReactomeDataBean:
                     reactions_list.append(reaction_id)
                     entity_to_list_of_regulation_reactions_dict[entity_id] = reactions_list
 
-
         return reaction_to_list_of_entities_dict, entity_to_list_of_reactions_dict, \
                reaction_to_list_of_input_entities_dict, entity_to_list_of_input_reactions_dict, \
                reaction_to_list_of_output_entities_dict, entity_to_list_of_output_reactions_dict, \
@@ -517,12 +529,10 @@ class ReactomeDataBean:
             self.__reaction_to_list_of_regulation_entities_dict[reaction_id].remove(entity_id)
             self.__entity_to_list_of_regulation_reactions_dict[entity_id].remove(reaction_id)
 
-
     def __input_link_prediction_delete_relationship(self, relationship: list[str]):
         entity_id = relationship[self.__entity_id_index_of_relationship]
         reaction_id = relationship[self.__reaction_id_index_of_relationship]
         direction = relationship[self.__direction_index_of_relationship]
-
 
         # print("The relationship to be deleted " + str(relationship))
 
@@ -561,7 +571,6 @@ class ReactomeDataBean:
             self.__output_link_prediction_reaction_to_list_of_regulation_entities_dict[reaction_id].remove(entity_id)
             self.__output_link_prediction_entity_to_list_of_regulation_reactions_dict[entity_id].remove(reaction_id)
 
-
     def __regulation_link_prediction_delete_relationship(self, relationship: list[str]):
         entity_id = relationship[self.__entity_id_index_of_relationship]
         reaction_id = relationship[self.__reaction_id_index_of_relationship]
@@ -579,9 +588,9 @@ class ReactomeDataBean:
             self.__regulation_link_prediction_reaction_to_list_of_output_entities_dict[reaction_id].remove(entity_id)
             self.__regulation_link_prediction_entity_to_list_of_output_reactions_dict[entity_id].remove(reaction_id)
         else:
-            self.__regulation_link_prediction_reaction_to_list_of_regulation_entities_dict[reaction_id].remove(entity_id)
+            self.__regulation_link_prediction_reaction_to_list_of_regulation_entities_dict[reaction_id].remove(
+                entity_id)
             self.__regulation_link_prediction_entity_to_list_of_regulation_reactions_dict[entity_id].remove(reaction_id)
-
 
     def __get_list_of_relationships_based_on_entity_id(self, entity_id: str):
         list_of_relationships: list[list[str]] = list()
@@ -669,12 +678,12 @@ class ReactomeDataBean:
     # 没装满的话，我们选择mask掉它，将这个attribute和其对应entity拿出来，做成entity-component list
     # 将entity对应的所有reactions找出来，做成多个relationships，这个在原数据集中不删除
     def divide_data_for_attribute_prediction_task(self):
-        train_data_bean = DataBean(self.__pathway_name, self.__attribute_prediction_task,
-                                   self.__train_type_divided_dataset)
-        validation_data_bean = DataBean(self.__pathway_name, self.__attribute_prediction_task,
-                                        self.__validation_type_divided_dataset)
-        test_data_bean = DataBean(self.__pathway_name, self.__attribute_prediction_task,
-                                  self.__test_type_divided_dataset)
+        train_data_bean = DataBeanForReactome(self.__pathway_name, self.__attribute_prediction_task,
+                                              self.__train_type_divided_dataset, self)
+        validation_data_bean = DataBeanForReactome(self.__pathway_name, self.__attribute_prediction_task,
+                                                   self.__validation_type_divided_dataset, self)
+        test_data_bean = DataBeanForReactome(self.__pathway_name, self.__attribute_prediction_task,
+                                             self.__test_type_divided_dataset, self)
 
         total_of_attributes: int = 0
         for component_id, list_of_entity_ids in self.__component_to_list_of_entities_dict.items():
@@ -730,6 +739,9 @@ class ReactomeDataBean:
         validation_data_bean.print_sub_data_bean_to_files()
         test_data_bean.print_sub_data_bean_to_files()
 
+        validation_data_bean.generate_and_print_components_mapping_mix_negative_to_file(10)
+        test_data_bean.generate_and_print_components_mapping_mix_negative_to_file(10)
+
         train_data_bean.information()
         validation_data_bean.information()
         test_data_bean.information()
@@ -769,7 +781,6 @@ class ReactomeDataBean:
 
         output_link_prediction_reaction_ids_start_index = input_link_prediction_reaction_ids_end_index = num_of_input_link_prediction_reaction_ids
 
-
         input_link_prediction_reaction_ids = reactions_ids[0:input_link_prediction_reaction_ids_end_index]
         output_link_prediction_reactions_ids = reactions_ids[
                                                output_link_prediction_reaction_ids_start_index:]
@@ -793,9 +804,11 @@ class ReactomeDataBean:
         self.__input_link_prediction_reaction_to_list_of_entities_dict, self.__input_link_prediction_entity_to_list_of_reactions_dict, \
         self.__input_link_prediction_reaction_to_list_of_input_entities_dict, self.__input_link_prediction_entity_to_list_of_input_reactions_dict, \
         self.__input_link_prediction_reaction_to_list_of_output_entities_dict, self.__input_link_prediction_entity_to_list_of_output_reactions_dict, \
-        self.__input_link_prediction_reaction_to_list_of_regulation_entities_dict, self.__input_link_prediction_entity_to_list_of_regulation_reactions_dict = self.__get_inner_reaction_to_list_of_entities_and_entity_to_list_of_reactions_dict(self.__input_link_prediction_relationships)
+        self.__input_link_prediction_reaction_to_list_of_regulation_entities_dict, self.__input_link_prediction_entity_to_list_of_regulation_reactions_dict = self.__get_inner_reaction_to_list_of_entities_and_entity_to_list_of_reactions_dict(
+            self.__input_link_prediction_relationships)
 
-        self.__input_link_prediction_entity_to_list_of_components_dict, self.__input_link_prediction_component_to_list_of_entities_dict = self.__get_inner_entity_and_component_dict(self.__input_link_prediction_list_of_pair_of_entity_and_component)
+        self.__input_link_prediction_entity_to_list_of_components_dict, self.__input_link_prediction_component_to_list_of_entities_dict = self.__get_inner_entity_and_component_dict(
+            self.__input_link_prediction_list_of_pair_of_entity_and_component)
 
     def __output_link_prediction_initialise_reactions_and_entities_components_and_relationships_and_list_of_pair_of_entity_and_component(
             self):
@@ -820,8 +833,6 @@ class ReactomeDataBean:
         self.__output_link_prediction_entity_to_list_of_components_dict, self.__output_link_prediction_component_to_list_of_entities_dict = self.__get_inner_entity_and_component_dict(
             self.__output_link_prediction_list_of_pair_of_entity_and_component)
 
-
-
     def __regulation_link_prediction_initialise_reactions_and_entities_components_and_relationships_and_list_of_pair_of_entity_and_component(
             self):
         reaction_ids = self.__regulation_link_prediction_reactions_ids
@@ -845,15 +856,13 @@ class ReactomeDataBean:
         self.__output_link_prediction_entity_to_list_of_components_dict, self.__regulation_link_prediction_component_to_list_of_entities_dict = self.__get_inner_entity_and_component_dict(
             self.__regulation_link_prediction_list_of_pair_of_entity_and_component)
 
-
-
     def divide_data_for_input_link_prediction_task(self):
-        train_data_bean = DataBean(self.__pathway_name, self.__input_link_prediction_task,
-                                   self.__train_type_divided_dataset)
-        validation_data_bean = DataBean(self.__pathway_name, self.__input_link_prediction_task,
-                                        self.__validation_type_divided_dataset)
-        test_data_bean = DataBean(self.__pathway_name, self.__input_link_prediction_task,
-                                  self.__test_type_divided_dataset)
+        train_data_bean = DataBeanForReactome(self.__pathway_name, self.__input_link_prediction_task,
+                                              self.__train_type_divided_dataset, self)
+        validation_data_bean = DataBeanForReactome(self.__pathway_name, self.__input_link_prediction_task,
+                                                   self.__validation_type_divided_dataset, self)
+        test_data_bean = DataBeanForReactome(self.__pathway_name, self.__input_link_prediction_task,
+                                             self.__test_type_divided_dataset, self)
         total_num: int = 0
         for entity_id in self.__input_link_prediction_entity_ids:
             list_of_reactions = self.__input_link_prediction_entity_to_list_of_input_reactions_dict.get(entity_id)
@@ -876,18 +885,21 @@ class ReactomeDataBean:
         while validation_counter < validation_size or test_counter < test_size:
             random_reaction_index = random.randint(0, end_index_of_reactions)
             random_reaction_id = self.__input_link_prediction_reaction_ids[random_reaction_index]
-            list_of_input_entities = self.__input_link_prediction_reaction_to_list_of_input_entities_dict.get(random_reaction_id)
+            list_of_input_entities = self.__input_link_prediction_reaction_to_list_of_input_entities_dict.get(
+                random_reaction_id)
             if list_of_input_entities is None:
                 list_of_input_entities = list()
 
             if len(list_of_input_entities) >= 2 and random_reaction_id not in reaction_id_memory:
+                # reaction_id_memory.add(random_reaction_id)
                 random_entity_index = random.randint(0, len(list_of_input_entities) - 1)
                 random_entity_id = list_of_input_entities[random_entity_index]
                 list_of_reactions = self.__input_link_prediction_entity_to_list_of_reactions_dict.get(random_entity_id)
                 if list_of_reactions is None:
                     list_of_reactions = list()
 
-                if len(list_of_reactions) >= 2 and (random_entity_id not in entity_id_memory_dict or entity_id_memory_dict[random_entity_id] < 5):
+                if len(list_of_reactions) >= 2 and (
+                        random_entity_id not in entity_id_memory_dict or entity_id_memory_dict[random_entity_id] < 5):
                     if random_entity_id not in entity_id_memory_dict.keys():
                         entity_id_memory_dict[random_entity_id] = 1
                     else:
@@ -896,8 +908,9 @@ class ReactomeDataBean:
                     relationship: list[str] = list()
                     relationship.append(random_entity_id)
                     relationship.append(random_reaction_id)
-                    relationship.append(str(-1.0))
-                    list_of_pair_of_entity_and_component = self.__get_list_of_pair_of_entity_and_component_based_on_entity_id(random_entity_id)
+                    relationship.append(str(-1))
+                    list_of_pair_of_entity_and_component = self.__get_list_of_pair_of_entity_and_component_based_on_entity_id(
+                        random_entity_id)
 
                     if validation_counter >= validation_size:
                         test_data_bean.add_relationship(relationship)
@@ -905,22 +918,26 @@ class ReactomeDataBean:
                         test_counter = test_counter + 1
                     elif test_counter >= test_size:
                         validation_data_bean.add_relationship(relationship)
-                        validation_data_bean.add_list_of_pair_of_entity_and_component(list_of_pair_of_entity_and_component)
+                        validation_data_bean.add_list_of_pair_of_entity_and_component(
+                            list_of_pair_of_entity_and_component)
                         validation_counter = validation_counter + 1
                     else:
                         flag = random.randint(0, 1)
                         if flag == 0:
                             test_data_bean.add_relationship(relationship)
-                            test_data_bean.add_list_of_pair_of_entity_and_component(list_of_pair_of_entity_and_component)
+                            test_data_bean.add_list_of_pair_of_entity_and_component(
+                                list_of_pair_of_entity_and_component)
                             test_counter = test_counter + 1
                         elif flag == 1:
                             validation_data_bean.add_relationship(relationship)
-                            validation_data_bean.add_list_of_pair_of_entity_and_component(list_of_pair_of_entity_and_component)
+                            validation_data_bean.add_list_of_pair_of_entity_and_component(
+                                list_of_pair_of_entity_and_component)
                             validation_counter = validation_counter + 1
                     self.__input_link_prediction_delete_relationship(relationship)
 
         train_data_bean.add_list_of_relationships(self.__input_link_prediction_relationships)
-        train_data_bean.add_list_of_pair_of_entity_and_component(self.__input_link_prediction_list_of_pair_of_entity_and_component)
+        train_data_bean.add_list_of_pair_of_entity_and_component(
+            self.__input_link_prediction_list_of_pair_of_entity_and_component)
 
         train_data_bean.print_sub_data_bean_to_files()
         validation_data_bean.print_sub_data_bean_to_files()
@@ -932,15 +949,13 @@ class ReactomeDataBean:
 
         self.__ultimate_initialisation()
 
-
-
     def divide_data_for_output_link_prediction_task(self):
-        train_data_bean = DataBean(self.__pathway_name, self.__output_link_prediction_task,
-                                   self.__train_type_divided_dataset)
-        validation_data_bean = DataBean(self.__pathway_name, self.__output_link_prediction_task,
-                                        self.__validation_type_divided_dataset)
-        test_data_bean = DataBean(self.__pathway_name, self.__output_link_prediction_task,
-                                  self.__test_type_divided_dataset)
+        train_data_bean = DataBeanForReactome(self.__pathway_name, self.__output_link_prediction_task,
+                                              self.__train_type_divided_dataset, self)
+        validation_data_bean = DataBeanForReactome(self.__pathway_name, self.__output_link_prediction_task,
+                                                   self.__validation_type_divided_dataset, self)
+        test_data_bean = DataBeanForReactome(self.__pathway_name, self.__output_link_prediction_task,
+                                             self.__test_type_divided_dataset, self)
         total_num: int = 0
 
         for entity_id in self.__output_link_prediction_entity_ids:
@@ -964,12 +979,13 @@ class ReactomeDataBean:
         while validation_counter < validation_size or test_counter < test_size:
             random_reaction_index = random.randint(0, end_index_of_reactions)
             random_reaction_id = self.__output_link_prediction_reactions_ids[random_reaction_index]
-            list_of_output_entities = self.__output_link_prediction_reaction_to_list_of_output_entities_dict.get(random_reaction_id)
+            list_of_output_entities = self.__output_link_prediction_reaction_to_list_of_output_entities_dict.get(
+                random_reaction_id)
             if list_of_output_entities is None:
                 list_of_output_entities = list()
 
-
             if len(list_of_output_entities) >= 2 and random_reaction_id not in reaction_id_memory:
+                # reaction_id_memory.add(random_reaction_id)
                 random_entity_index = random.randint(0, len(list_of_output_entities) - 1)
                 random_entity_id = list_of_output_entities[random_entity_index]
                 list_of_reactions = self.__output_link_prediction_entity_to_list_of_reactions_dict.get(random_entity_id)
@@ -986,8 +1002,9 @@ class ReactomeDataBean:
                     relationship: list[str] = list()
                     relationship.append(random_entity_id)
                     relationship.append(random_reaction_id)
-                    relationship.append(str(1.0))
-                    list_of_pair_of_entity_and_component = self.__get_list_of_pair_of_entity_and_component_based_on_entity_id(random_entity_id)
+                    relationship.append(str(1))
+                    list_of_pair_of_entity_and_component = self.__get_list_of_pair_of_entity_and_component_based_on_entity_id(
+                        random_entity_id)
 
                     if validation_counter >= validation_size:
                         test_data_bean.add_relationship(relationship)
@@ -995,22 +1012,26 @@ class ReactomeDataBean:
                         test_counter = test_counter + 1
                     elif test_counter >= test_size:
                         validation_data_bean.add_relationship(relationship)
-                        validation_data_bean.add_list_of_pair_of_entity_and_component(list_of_pair_of_entity_and_component)
+                        validation_data_bean.add_list_of_pair_of_entity_and_component(
+                            list_of_pair_of_entity_and_component)
                         validation_counter = validation_counter + 1
                     else:
                         flag = random.randint(0, 1)
                         if flag == 0:
                             test_data_bean.add_relationship(relationship)
-                            test_data_bean.add_list_of_pair_of_entity_and_component(list_of_pair_of_entity_and_component)
+                            test_data_bean.add_list_of_pair_of_entity_and_component(
+                                list_of_pair_of_entity_and_component)
                             test_counter = test_counter + 1
                         elif flag == 1:
                             validation_data_bean.add_relationship(relationship)
-                            validation_data_bean.add_list_of_pair_of_entity_and_component(list_of_pair_of_entity_and_component)
+                            validation_data_bean.add_list_of_pair_of_entity_and_component(
+                                list_of_pair_of_entity_and_component)
                             validation_counter = validation_counter + 1
                     self.__output_link_prediction_delete_relationship(relationship)
 
         train_data_bean.add_list_of_relationships(self.__output_link_prediction_relationships)
-        train_data_bean.add_list_of_pair_of_entity_and_component(self.__output_link_prediction_list_of_pair_of_entity_and_component)
+        train_data_bean.add_list_of_pair_of_entity_and_component(
+            self.__output_link_prediction_list_of_pair_of_entity_and_component)
 
         train_data_bean.print_sub_data_bean_to_files()
         validation_data_bean.print_sub_data_bean_to_files()
@@ -1022,18 +1043,18 @@ class ReactomeDataBean:
 
         self.__ultimate_initialisation()
 
-
     def divide_data_for_regulation_link_prediction_task(self):
-        train_data_bean = DataBean(self.__pathway_name, self.__regulation_link_prediction_task,
-                                   self.__train_type_divided_dataset)
-        validation_data_bean = DataBean(self.__pathway_name, self.__regulation_link_prediction_task,
-                                        self.__validation_type_divided_dataset)
-        test_data_bean = DataBean(self.__pathway_name, self.__regulation_link_prediction_task,
-                                  self.__test_type_divided_dataset)
+        train_data_bean = DataBeanForReactome(self.__pathway_name, self.__regulation_link_prediction_task,
+                                              self.__train_type_divided_dataset, self)
+        validation_data_bean = DataBeanForReactome(self.__pathway_name, self.__regulation_link_prediction_task,
+                                                   self.__validation_type_divided_dataset, self)
+        test_data_bean = DataBeanForReactome(self.__pathway_name, self.__regulation_link_prediction_task,
+                                             self.__test_type_divided_dataset, self)
         total_num: int = 0
 
         for entity_id in self.__regulation_link_prediction_entity_ids:
-            list_of_reactions = self.__regulation_link_prediction_entity_to_list_of_regulation_reactions_dict.get(entity_id)
+            list_of_reactions = self.__regulation_link_prediction_entity_to_list_of_regulation_reactions_dict.get(
+                entity_id)
             if list_of_reactions is None:
                 list_of_reactions = list()
             total_num = total_num + len(list_of_reactions)
@@ -1062,7 +1083,8 @@ class ReactomeDataBean:
             if len(list_of_regulation_entities) >= 2:
                 random_entity_index = random.randint(0, len(list_of_regulation_entities) - 1)
                 random_entity_id = list_of_regulation_entities[random_entity_index]
-                list_of_reactions = self.__regulation_link_prediction_entity_to_list_of_reactions_dict.get(random_entity_id)
+                list_of_reactions = self.__regulation_link_prediction_entity_to_list_of_reactions_dict.get(
+                    random_entity_id)
                 if list_of_reactions is None:
                     list_of_reactions = list()
 
@@ -1076,7 +1098,7 @@ class ReactomeDataBean:
                     relationship: list[str] = list()
                     relationship.append(random_entity_id)
                     relationship.append(random_reaction_id)
-                    relationship.append(str(0.0))
+                    relationship.append(str(0))
                     list_of_pair_of_entity_and_component = self.__get_list_of_pair_of_entity_and_component_based_on_entity_id(
                         random_entity_id)
 
@@ -1118,9 +1140,11 @@ class ReactomeDataBean:
         self.__ultimate_initialisation()
 
 
+class DataBeanForReactome:
+    def __init__(self, pathway_name: str, task_of_sub_data_set: str, type_of_sub_data_set,
+                 raw_data: ReactomeDataDivider):
 
-class DataBean:
-    def __init__(self, pathway_name: str, task_of_sub_data_set: str, type_of_sub_data_set):
+        self.raw_data = raw_data
 
         self.__initialise()
 
@@ -1136,6 +1160,7 @@ class DataBean:
         self.__relationship_file_name = "relationship.txt"
         self.__all_components_file_name = "components-all.txt"
         self.__entities_components_mapping_file_name = "components-mapping.txt"
+        self.__entities_components_mapping_mix_negative_file_name = "components-mapping-mix-negative.txt"
 
         self.__pathway_name = pathway_name
         self.__task_of_sub_data_set = task_of_sub_data_set
@@ -1259,38 +1284,79 @@ class DataBean:
     def print_sub_data_bean_to_files(self):
         self.__complete_the_data_bean()
 
-        reaction_id_to_reaction_index_dict = {reaction_id: index for index, reaction_id in
-                                              enumerate(self.__reactions_ids)}
-        entity_id_to_entity_index_dict = {entity_id: index for index, entity_id in enumerate(self.__entities_ids)}
-        component_id_to_component_index_dict = {component_id: index for index, component_id in
-                                                enumerate(self.__components_ids)}
+        # reaction_id_to_reaction_index_dict = {reaction_id: index for index, reaction_id in
+        #                                       enumerate(self.__reactions_ids)}
+
+        # entity_id_to_entity_index_dict = {entity_id: index for index, entity_id in enumerate(self.__entities_ids)}
+
+        # component_id_to_component_index_dict = {component_id: index for index, component_id in
+        #                                         enumerate(self.__components_ids)}
+
+        raw_reaction_id_to_reaction_index_dict = {reaction_id: index for index, reaction_id in
+                                                  enumerate(self.raw_data.get_raw_reaction_ids())}
+
+        raw_entity_id_to_entity_index_dict = {entity_id: index for index, entity_id in
+                                              enumerate(self.raw_data.get_raw_entities_ids())}
+
+        raw_component_id_to_component_index_dict = {component_id: index for index, component_id in
+                                                    enumerate(self.raw_data.get_raw_component_ids())}
 
         entities_component_indexes_mapping_list_for_print: list[str] = list()
 
         for component_ids in self.__entities_component_ids_mapping_list:
             line_component_index_list = ""
             for component_id in component_ids:
-                component_index = component_id_to_component_index_dict[component_id]
+                component_index = raw_component_id_to_component_index_dict[component_id]
                 component_index = str(component_index)
                 line_component_index_list = line_component_index_list + component_index + ","
             # remove the comma in the end
             line_component_index_list = line_component_index_list[:-1]
             entities_component_indexes_mapping_list_for_print.append(line_component_index_list)
 
-        relationships_index_style_for_print: list[list[str]] = list()
+        relationships_index_style_for_print: list[str] = list()
         for relationship in self.__relationships:
-            line_relationship_index_list: list[str] = list()
+            # node_index,reaction_index,direction(-1 or 1)
+            line_message = ""
             entity_id = relationship[self.__entity_id_index_of_relationship]
             reaction_id = relationship[self.__reaction_id_index_of_relationship]
             direction = relationship[self.__direction_index_of_relationship]
 
-            entity_index = entity_id_to_entity_index_dict[entity_id]
-            reaction_index = reaction_id_to_reaction_index_dict[reaction_id]
+            entity_index = raw_entity_id_to_entity_index_dict[entity_id]
+            reaction_index = raw_reaction_id_to_reaction_index_dict[reaction_id]
 
-            line_relationship_index_list.append(str(entity_index))
-            line_relationship_index_list.append(str(reaction_index))
-            line_relationship_index_list.append(direction)
-            relationships_index_style_for_print.append(line_relationship_index_list)
+            line_message = line_message + str(entity_index) + "," + str(reaction_index) + "," + str(direction)
+
+            relationships_index_style_for_print.append(line_message)
+
+        relationships_index_style_for_print.sort(key=lambda l: int(re.findall('\d+', l)[1]))
+
+        index_and_component_id_for_print: list[str] = list()
+        index_and_reaction_id_for_print: list[str] = list()
+        index_and_entity_id_for_print: list[str] = list()
+
+        for component_id in self.__components_ids:
+            index = self.raw_data.get_raw_component_ids().index(component_id)
+            index_and_component_id_line: str = str(index) + "," + component_id
+            index_and_component_id_for_print.append(index_and_component_id_line)
+
+        # sort the index_and_component_id_for_print via index sequence
+        index_and_component_id_for_print.sort(key=lambda l: int(re.findall('\d+', l)[0]))
+
+        for reaction_id in self.__reactions_ids:
+            index = self.raw_data.get_raw_reaction_ids().index(reaction_id)
+            index_and_reaction_line: str = str(index) + "," + reaction_id
+            index_and_reaction_id_for_print.append(index_and_reaction_line)
+
+        # sort the index_and_reaction_id_for_print via index sequence
+        index_and_reaction_id_for_print.sort(key=lambda l: int(re.findall('\d+', l)[0]))
+
+        for entity_id in self.__entities_ids:
+            index = self.raw_data.get_raw_entities_ids().index(entity_id)
+            index_and_entity_line: str = str(index) + "," + entity_id
+            index_and_entity_id_for_print.append(index_and_entity_line)
+
+        # sort the index_and_entity_id_for_print via index sequence
+        index_and_entity_id_for_print.sort(key=lambda l: int(re.findall('\d+', l)[0]))
 
         pre_path = "data/" + self.__pathway_name + "/" + self.__task_of_sub_data_set + "/"
         self.__file_processor.createFile(pre_path + self.__type_of_sub_data_set, self.__all_components_file_name)
@@ -1302,16 +1368,59 @@ class DataBean:
 
         self.__file_processor.writeMessageToFile(pre_path + self.__type_of_sub_data_set,
                                                  self.__all_components_file_name,
-                                                 self.__components_ids)
+                                                 index_and_component_id_for_print)
         self.__file_processor.writeMessageToFile(pre_path + self.__type_of_sub_data_set,
                                                  self.__entities_components_mapping_file_name,
                                                  entities_component_indexes_mapping_list_for_print)
         self.__file_processor.writeMessageToFile(pre_path + self.__type_of_sub_data_set, self.__edges_file_name,
-                                                 self.__reactions_ids)
+                                                 index_and_reaction_id_for_print)
         self.__file_processor.writeMessageToFile(pre_path + self.__type_of_sub_data_set, self.__nodes_file_name,
-                                                 self.__entities_ids)
+                                                 index_and_entity_id_for_print)
         self.__file_processor.writeMessageToFile(pre_path + self.__type_of_sub_data_set, self.__relationship_file_name,
                                                  relationships_index_style_for_print)
+
+    def generate_and_print_components_mapping_mix_negative_to_file(self, num_of_negative_elements: int):
+
+        entity_to_list_of_components_dict = copy.deepcopy(self.raw_data.get_entity_to_list_of_components_dict())
+        raw_component_ids = copy.deepcopy(self.raw_data.get_raw_component_ids())
+        raw_component_id_to_component_index_dict = {component_id: index for index, component_id in
+                                                    enumerate(raw_component_ids)}
+
+        entities_component_indexes_mapping_list_for_print: list[str] = list()
+
+        for component_ids in self.__entities_component_ids_mapping_list:
+            line_component_index_list = ""
+            for component_id in component_ids:
+                component_index = raw_component_id_to_component_index_dict[component_id]
+                component_index = str(component_index)
+                line_component_index_list = line_component_index_list + component_index + ","
+            # remove the comma in the end
+            line_component_index_list = line_component_index_list[:-1]
+            entities_component_indexes_mapping_list_for_print.append(line_component_index_list)
+
+        for index, entity_id in enumerate(self.__entities_ids):
+            list_of_components = entity_to_list_of_components_dict[entity_id]
+            # Find the difference set
+            ret = list(set(raw_component_ids) - set(list_of_components))
+            # shuffle the ret list, then select n elements
+            random.shuffle(ret)
+            negative_components_ids = ret[0: num_of_negative_elements]
+
+            negative_components_indexes: list[str] = [raw_component_id_to_component_index_dict[negative_components_id]
+                                                      for negative_components_id in negative_components_ids]
+
+            for negative_component_index in negative_components_indexes:
+                entities_component_indexes_mapping_list_for_print[index] = entities_component_indexes_mapping_list_for_print[index] + "||" + str(negative_component_index)
+
+            pre_path = "data/" + self.__pathway_name + "/" + self.__task_of_sub_data_set + "/"
+            self.__file_processor.createFile(pre_path + self.__type_of_sub_data_set, self.__entities_components_mapping_mix_negative_file_name)
+
+            self.__file_processor.writeMessageToFile(pre_path + self.__type_of_sub_data_set,
+                                                     self.__entities_components_mapping_mix_negative_file_name,
+                                                     entities_component_indexes_mapping_list_for_print)
+
+
+
 
     def __initialisation_inner_reaction_to_list_of_entities_and_entity_to_list_of_reactions_dict(self):
         """ initialise the inner dictionary of reaction to entities and entity to reactions based on different direction
@@ -1411,6 +1520,510 @@ class DataBean:
                     reactions_list.append(reaction_id)
                     self.__entity_to_list_of_regulation_reactions_dict[entity_id] = reactions_list
 
+    def __initialisation_inner_entity_and_component_dict(self):
+        """
+        self.__all_entity_to_list_of_components_dict: dict[str, list[str]] = {}
+        self.__all_component_to_list_of_entities_dict: dict[str, list[str]] = {}
+        :return:
+        """
+
+        for pair_of_entity_and_component in self.__list_of_pair_of_entity_and_component:
+            entity_id = pair_of_entity_and_component[self.__entity_index_of_pair_of_entity_and_component]
+            component_id = pair_of_entity_and_component[self.__component_index_of_pair_of_entity_and_component]
+
+            # initialise self.__all_entity_to_list_of_components_dict
+            if entity_id in self.__entity_to_list_of_components_dict.keys():
+                components_list = self.__entity_to_list_of_components_dict[entity_id]
+                components_list.append(component_id)
+            else:
+                components_list = list()
+                components_list.append(component_id)
+                self.__entity_to_list_of_components_dict[entity_id] = components_list
+
+            # initialise self.__all_component_to_list_of_entities_dict
+            if component_id in self.__component_to_list_of_entities_dict.keys():
+                entities_list = self.__component_to_list_of_entities_dict[component_id]
+                entities_list.append(entity_id)
+            else:
+                entities_list = list()
+                entities_list.append(entity_id)
+                self.__component_to_list_of_entities_dict[component_id] = entities_list
+
+    def information(self):
+        self.__initialisation_inner_reaction_to_list_of_entities_and_entity_to_list_of_reactions_dict()
+        self.__initialisation_inner_entity_and_component_dict()
+        print(self.__pathway_name)
+        print(self.__task_of_sub_data_set)
+        print(self.__type_of_sub_data_set)
+        print("num of nodes: " + str(len(self.__entities_ids)))
+        print("num of edges: " + str(len(self.__reactions_ids)))
+        print("num of components: " + str(len(self.__components_ids)))
+        print("num of relationships: " + str(len(self.__relationships)))
+
+        reaction_with_relationship_information = [0, 0, 0, 0, 0, 0]
+        reaction_with_input_relationship_information = [0, 0, 0, 0, 0, 0]
+        reaction_with_output_relationship_information = [0, 0, 0, 0, 0, 0]
+        total_num_of_reactions = len(self.__reactions_ids)
+
+        for list_of_entities in self.__reaction_to_list_of_entities_dict.values():
+            length = len(list_of_entities)
+            if length > 4:
+                reaction_with_relationship_information[5] = reaction_with_relationship_information[5] + 1
+            else:
+                reaction_with_relationship_information[length] = reaction_with_relationship_information[length] + 1
+
+        print(
+            "reaction with one relationship: " + str(reaction_with_relationship_information[1]) + " " + "{:.2%}".format(
+                reaction_with_relationship_information[1] / total_num_of_reactions))
+        print("reaction with two relationships: " + str(
+            reaction_with_relationship_information[2]) + " " + "{:.2%}".format(
+            reaction_with_relationship_information[2] / total_num_of_reactions))
+        print("reaction with three relationships: " + str(
+            reaction_with_relationship_information[3]) + " " + "{:.2%}".format(
+            reaction_with_relationship_information[3] / total_num_of_reactions))
+        print("reaction with four relationships: " + str(
+            reaction_with_relationship_information[4]) + " " + "{:.2%}".format(
+            reaction_with_relationship_information[4] / total_num_of_reactions))
+        print("reaction with more than four relationships: " + str(
+            reaction_with_relationship_information[5]) + " " + "{:.2%}".format(
+            reaction_with_relationship_information[5] / total_num_of_reactions))
+
+        for list_of_entities in self.__reaction_to_list_of_input_entities_dict.values():
+            length = len(list_of_entities)
+            if length > 4:
+                reaction_with_input_relationship_information[5] = reaction_with_input_relationship_information[5] + 1
+            else:
+                reaction_with_input_relationship_information[length] = reaction_with_input_relationship_information[
+                                                                           length] + 1
+
+        print("reaction with one input relationship: " + str(
+            reaction_with_input_relationship_information[1]) + " " + "{:.2%}".format(
+            reaction_with_input_relationship_information[1] / total_num_of_reactions))
+        print("reaction with two input relationships: " + str(
+            reaction_with_input_relationship_information[2]) + " " + "{:.2%}".format(
+            reaction_with_input_relationship_information[2] / total_num_of_reactions))
+        print("reaction with three input relationships: " + str(
+            reaction_with_input_relationship_information[3]) + " " + "{:.2%}".format(
+            reaction_with_input_relationship_information[3] / total_num_of_reactions))
+        print("reaction with four input relationships: " + str(
+            reaction_with_input_relationship_information[4]) + " " + "{:.2%}".format(
+            reaction_with_input_relationship_information[4] / total_num_of_reactions))
+        print("reaction with more than four input relationships: " + str(
+            reaction_with_input_relationship_information[5]) + " " + "{:.2%}".format(
+            reaction_with_input_relationship_information[5] / total_num_of_reactions))
+
+        for list_of_entities in self.__reaction_to_list_of_output_entities_dict.values():
+            length = len(list_of_entities)
+            if length > 4:
+                reaction_with_output_relationship_information[5] = reaction_with_output_relationship_information[5] + 1
+            else:
+                reaction_with_output_relationship_information[length] = reaction_with_output_relationship_information[
+                                                                            length] + 1
+
+        # "  " + "{:.2%}".format(float(num_9 / totol_num)))
+        print("reaction with one output relationship: " + str(
+            reaction_with_output_relationship_information[1]) + " " + "{:.2%}".format(
+            reaction_with_output_relationship_information[1] / total_num_of_reactions))
+        print("reaction with two output relationships: " + str(
+            reaction_with_output_relationship_information[2]) + " " + "{:.2%}".format(
+            reaction_with_output_relationship_information[2] / total_num_of_reactions))
+        print("reaction with three output relationships: " + str(
+            reaction_with_output_relationship_information[3]) + " " + "{:.2%}".format(
+            reaction_with_output_relationship_information[3] / total_num_of_reactions))
+        print("reaction with four output relationships: " + str(
+            reaction_with_output_relationship_information[4]) + " " + "{:.2%}".format(
+            reaction_with_output_relationship_information[4] / total_num_of_reactions))
+        print("reaction with more output four output relationships: " + str(
+            reaction_with_output_relationship_information[5]) + " " + "{:.2%}".format(
+            reaction_with_output_relationship_information[5] / total_num_of_reactions))
+
+        total_num_of_entities = len(self.__entities_ids)
+        entity_with_relationships_information = [0, 0, 0, 0, 0, 0]
+
+        for list_of_reactions in self.__entity_to_list_of_reactions_dict.values():
+            length = len(list_of_reactions)
+            if length > 4:
+                entity_with_relationships_information[5] = entity_with_relationships_information[5] + 1
+            else:
+                entity_with_relationships_information[length] = entity_with_relationships_information[
+                                                                    length] + 1
+
+        print("entity with one relationship: " + str(entity_with_relationships_information[1]) + " " + "{:.2%}".format(
+            entity_with_relationships_information[1] / total_num_of_entities))
+        print("entity with two relationships: " + str(entity_with_relationships_information[2]) + " " + "{:.2%}".format(
+            entity_with_relationships_information[2] / total_num_of_entities))
+        print(
+            "entity with three relationships: " + str(entity_with_relationships_information[3]) + " " + "{:.2%}".format(
+                entity_with_relationships_information[3] / total_num_of_entities))
+        print(
+            "entity with four relationships: " + str(entity_with_relationships_information[4]) + " " + "{:.2%}".format(
+                entity_with_relationships_information[4] / total_num_of_entities))
+        print("entity with more four relationships: " + str(
+            entity_with_relationships_information[5]) + " " + "{:.2%}".format(
+            entity_with_relationships_information[5] / total_num_of_entities))
+
+        total_num_of_components = len(self.__components_ids)
+        entity_with_components_information = [0, 0, 0, 0, 0, 0]
+
+        for list_of_components in self.__entity_to_list_of_components_dict.values():
+            length = len(list_of_components)
+            if length > 4:
+                entity_with_components_information[5] = entity_with_components_information[5] + 1
+            else:
+                entity_with_components_information[length] = entity_with_components_information[
+                                                                 length] + 1
+        print("entity with one component: " + str(entity_with_components_information[1]) + " " + "{:.2%}".format(
+            entity_with_components_information[1] / total_num_of_components))
+        print("entity with two components: " + str(entity_with_components_information[2]) + " " + "{:.2%}".format(
+            entity_with_components_information[2] / total_num_of_components))
+        print("entity with three components: " + str(entity_with_components_information[3]) + " " + "{:.2%}".format(
+            entity_with_components_information[3] / total_num_of_components))
+        print("entity with four components: " + str(entity_with_components_information[4]) + " " + "{:.2%}".format(
+            entity_with_components_information[4] / total_num_of_components))
+        print("entity with more four components: " + str(entity_with_components_information[5]) + " " + "{:.2%}".format(
+            entity_with_components_information[5] / total_num_of_components))
+
+        compoent_with_entity_information = [0, 0, 0, 0, 0, 0]
+
+        for list_of_entities in self.__component_to_list_of_entities_dict.values():
+            length = len(list_of_entities)
+            if length > 4:
+                compoent_with_entity_information[5] = compoent_with_entity_information[5] + 1
+            else:
+                compoent_with_entity_information[length] = compoent_with_entity_information[
+                                                               length] + 1
+
+        print("component with one entity: " + str(compoent_with_entity_information[1]) + " " + "{:.2%}".format(
+            compoent_with_entity_information[1] / total_num_of_components))
+        print("component with two entities: " + str(compoent_with_entity_information[2]) + " " + "{:.2%}".format(
+            compoent_with_entity_information[2] / total_num_of_components))
+        print("component with three entities: " + str(compoent_with_entity_information[3]) + " " + "{:.2%}".format(
+            compoent_with_entity_information[3] / total_num_of_components))
+        print("component with four entities: " + str(compoent_with_entity_information[4]) + " " + "{:.2%}".format(
+            compoent_with_entity_information[4] / total_num_of_components))
+        print("component with more than four entities: " + str(
+            compoent_with_entity_information[5]) + " " + "{:.2%}".format(
+            compoent_with_entity_information[5] / total_num_of_components))
+
+
+class PathwayName(Enum):
+    all_data = "All_data_in_Reactome"
+    autophagy = "Autophagy"
+    cell_cell_communication = "Cell-Cell communication"
+    cell_cycle = "Cell Cycle"
+    cellular_responses_to_stimuli = "Cellular responses to stimuli"
+    chromatin_organization = "Chromatin organization"
+    circadian_clock = "Circadian Clock"
+    developmental_biology = "Developmental Biology"
+    digestion_and_absorption = "Digestion and absorption"
+    disease = "Disease"
+    DNA_repair = "DNA Repair"
+    DNA_replication = "DNA Replication"
+    drug_ADME = "Drug ADME"
+    extracellular_matrix_organization = "Extracellular matrix organization"
+    gene_expression_transcription = "Gene expression (Transcription)"
+    hemostasis = "Hemostasis"
+    immune_system = "Immune System"
+    metabolism = "Metabolism"
+    metabolism_of_proteins = "Metabolism of proteins"
+    metabolism_of_RNA = "Metabolism of RNA"
+    muscle_contraction = "Muscle contraction"
+    neuronal_system = "Neuronal System"
+    organelle_biogenesis_and_maintenance = "Organelle biogenesis and maintenance"
+    programmed_cell_death = "Programmed Cell Death"
+    Protein_localization = "Protein localization"
+    reproduction = "Reproduction"
+    sensory_perception = "Sensory Perception"
+    signal_transduction = "Signal Transduction"
+    transport_of_small_molecules = "Transport of small molecules"
+    vesicle_mediated_transport = "Vesicle-mediated transport"
+
+
+class DataBean:
+    def __init__(self, pathway: str, is_raw_dataset: bool = True, is_divided_dataset: bool = False,
+                 is_combination_dataset: bool = True, divided_dataset_task: str = None,
+                 divided_dataset_type: str = None):
+
+        self.__entity_id_index_of_relationship = 0
+        self.__reaction_id_index_of_relationship = 1
+        self.__direction_index_of_relationship = 2
+
+        self.__entity_index_of_pair_of_entity_and_component = 0
+        self.__component_index_of_pair_of_entity_and_component = 1
+
+        self.__file_processor = FileProcessor()
+        self.__file_name_properties = Properties("file_name.properties")
+        self.__pathway_name_path_properties = Properties("pathway_name_path.properties")
+
+        self.__reactions: list[str] = list()
+        self.__entities: list[str] = list()
+        self.__components: list[str] = list()
+        self.__relationships: list[list[str]] = list()
+        self.__list_of_pair_of_entity_and_component: list[list[str]] = list()
+
+        self.is_raw_dataset = is_raw_dataset
+        self.is_divided_dataset = is_divided_dataset
+        self.is_combination_dataset = is_combination_dataset
+
+        self.__divided_dataset_task = divided_dataset_task
+        self.__divided_dataset_type = divided_dataset_type
+
+        self.__pathway = pathway
+        self.__path = ""
+
+        self.__check_data_bean_status()
+
+        self.__init_path()
+
+        self.__init_inner_elements_from_file()
+
+        # Dictionary of statistical information
+        self.__input_relationships: list[list[str]] = list()
+        self.__output_relationships: list[list[str]] = list()
+        self.__regulation_relationships: list[list[str]] = list()
+
+        self.__reaction_to_list_of_entities_dict: dict[str, list[str]] = {}
+        self.__reaction_to_list_of_input_entities_dict: dict[str, list[str]] = {}
+        self.__reaction_to_list_of_output_entities_dict: dict[str, list[str]] = {}
+        self.__reaction_to_list_of_regulation_entities_dict: dict[str, list[str]] = {}
+
+        self.__entity_to_list_of_reactions_dict: dict[str, list[str]] = {}
+        self.__entity_to_list_of_input_reactions_dict: dict[str, list[str]] = {}
+        self.__entity_to_list_of_output_reactions_dict: dict[str, list[str]] = {}
+        self.__entity_to_list_of_regulation_reactions_dict: dict[str, list[str]] = {}
+
+        self.__entity_to_list_of_components_dict: dict[str, list[str]] = {}
+        self.__component_to_list_of_entities_dict: dict[str, list[str]] = {}
+
+        self.__initialisation_inner_reaction_to_list_of_entities_and_entity_to_list_of_reactions_dict()
+        self.__initialisation_inner_entity_and_component_dict()
+
+    def __check_data_bean_status(self):
+        pathway_name_allowance_list: list[str] = []
+        for pathway_name_item in PathwayName:
+            pathway_name_allowance_list.append(pathway_name_item)
+
+        if self.is_raw_dataset and self.is_divided_dataset:
+            raise Exception(
+                "Status Conflict! This Data Bean can't be a raw dataset and a divided dataset at the same time")
+
+        if self.is_raw_dataset and self.is_combination_dataset:
+            raise Exception(
+                "Status Conflict! This Data Bean can't be a raw dataset and a combination dataset at the same time")
+
+        divided_dataset_task_allowance_list = ["attribute prediction dataset", "input link prediction dataset",
+                                               "output link prediction dataset"]
+        divided_dataset_type_allowance_list = ["test", "train", "validation"]
+
+        if None is not self.__divided_dataset_task and self.__divided_dataset_task not in divided_dataset_task_allowance_list:
+            raise Exception(
+                "Your divided dataset task is illegal, the allowed input is one of \"attribute prediction dataset\", \"input link prediction dataset\", \"output link prediction dataset\"")
+
+        if None is not self.__divided_dataset_type and self.__divided_dataset_type not in divided_dataset_type_allowance_list:
+            raise Exception(
+                "Your divided dataset task is illegal, the allowed input is one of \"test\", \"train\", \"validation\"")
+
+    def __init_path(self):
+        import re
+        pathway_with_no_space = re.sub(r"\s+", '_', self.__pathway)
+        self.__path = self.__pathway_name_path_properties.get(pathway_with_no_space)
+
+        # not found the pathway and its corresponding path, it's defined as a combination one
+        if "" == self.__path and True is self.is_combination_dataset:
+            self.__path = "data/" + self.__pathway + "/"
+
+        if None is not self.__divided_dataset_task and None is not self.__divided_dataset_type:
+            self.__path = self.__path + self.__divided_dataset_task + "/" + self.__divided_dataset_type + "/"
+
+    def __init_inner_elements_from_file(self):
+        self.__generate_inner_reactions_from_file()
+        self.__generate_inner_entities_from_file()
+        self.__generate_inner_components_from_file()
+        self.__generate_inner_relationships_from_file()
+        self.__generate_inner_pair_of_entity_and_component_from_file()
+
+    def __generate_inner_reactions_from_file(self) -> None:
+        reactions_ids_file_name = self.__file_name_properties.get("reactions_ids_file_name")
+        self.__reactions = self.__file_processor.read_file_via_lines(self.__path, reactions_ids_file_name)
+
+    # data/Neuronal System/divided_dataset_methodA/test/components-mapping.txt
+    def __generate_inner_entities_from_file(self) -> None:
+        entities_ids_file_name = self.__file_name_properties.get("entities_ids_file_name")
+        self.__entities = self.__file_processor.read_file_via_lines(self.__path, entities_ids_file_name)
+
+    #
+    def __generate_inner_components_from_file(self) -> None:
+        components_ids_file_name = self.__file_name_properties.get("components_ids_file_name")
+        self.__components = self.__file_processor.read_file_via_lines(self.__path, components_ids_file_name)
+
+    def __generate_inner_relationships_from_file(self) -> None:
+        relationships_ids_file_name = self.__file_name_properties.get("relationships_ids_file_name")
+
+        relationships_string_style = self.__file_processor.read_file_via_lines(self.__path,
+                                                                               relationships_ids_file_name)
+
+        for relationship in relationships_string_style:
+            # 13,192,-1.0
+            # entity_id_index, reaction_id_index, direction
+            # line_of_reaction_id_and_entity_id_and_direction
+            elements = relationship.split(",")
+
+            entity_index = elements[self.__entity_id_index_of_relationship]
+            entity_id = self.__entities[int(entity_index)]
+
+            reaction_index = elements[self.__reaction_id_index_of_relationship]
+            reaction_id = self.__reactions[int(reaction_index)]
+
+            direction = elements[self.__direction_index_of_relationship]
+
+            line_of_reaction_id_and_entity_id_and_direction: list[str] = list()
+
+            line_of_reaction_id_and_entity_id_and_direction.append(entity_id)
+            line_of_reaction_id_and_entity_id_and_direction.append(reaction_id)
+            line_of_reaction_id_and_entity_id_and_direction.append(direction)
+
+            # entity_id_index, reaction_id_index, direction
+            self.__relationships.append(line_of_reaction_id_and_entity_id_and_direction)
+
+        # list of [entity_id, component_id]
+
+    def __generate_inner_pair_of_entity_and_component_from_file(self) -> None:
+
+        entities_components_association_file_name = self.__file_name_properties.get(
+            "entities_components_association_file_name")
+
+        # 355,1190,1209
+        list_of_entity_components_mappings_with_index_style = self.__file_processor.read_file_via_lines(
+            self.__path, entities_components_association_file_name)
+
+        for i in range(len(list_of_entity_components_mappings_with_index_style)):
+            entity_id = self.__entities[i]
+            components_str = list_of_entity_components_mappings_with_index_style[i]
+            list_of_component_index_str_style = components_str.split(",")
+
+            for component_str in list_of_component_index_str_style:
+                line_list_of_entity_id_and_component_id: list[str] = list()
+                component_index = int(component_str)
+
+                # todo
+                if component_index == 0:
+                    print("component index = 0 mapping " + str(i))
+                if component_index == 1:
+                    print("component index = 1 mapping " + str(i))
+                if component_index == 2:
+                    print("component index = 2 mapping " + str(i))
+
+                component_id = self.__components[component_index]
+                line_list_of_entity_id_and_component_id.append(entity_id)
+                line_list_of_entity_id_and_component_id.append(component_id)
+                self.__list_of_pair_of_entity_and_component.append(line_list_of_entity_id_and_component_id)
+
+    def __initialisation_inner_reaction_to_list_of_entities_and_entity_to_list_of_reactions_dict(self):
+        """ initialise the inner dictionary of reaction to entities and entity to reactions based on different direction
+        This method initialise the following inner dictionaries, and will be called by self.__initialisation_set_reactions_entities_and_components_dict(self)
+        self.__all_reaction_to_list_of_entities_dict: dict[str, list[str]] = {}
+        self.__all_reaction_to_list_of_input_entities_dict: dict[str, list[str]] = {}
+        self.__all_reaction_to_list_of_output_entities_dict: dict[str, list[str]] = {}
+        self.__all_reaction_to_list_of_regulation_entities_dict: dict[str, list[str]] = {}
+
+        self.__all_entity_to_list_of_reactions_dict: dict[str, list[str]] = {}
+        self.__all_entity_to_list_of_input_reactions_dict: dict[str, list[str]] = {}
+        self.__all_entity_to_list_of_output_reactions_dict: dict[str, list[str]] = {}
+        self.__all_entity_to_list_of_regulation_reactions_dict: dict[str, list[str]] = {}
+        :return:
+        """
+
+        for relationship in self.__relationships:
+            entity_id = relationship[self.__entity_id_index_of_relationship]
+            reaction_id = relationship[self.__reaction_id_index_of_relationship]
+            direction = relationship[self.__direction_index_of_relationship]
+
+            # general reaction to list of entities
+            if reaction_id in self.__reaction_to_list_of_entities_dict.keys():
+                entities_list = self.__reaction_to_list_of_entities_dict[reaction_id]
+                entities_list.append(entity_id)
+            else:
+                entities_list = list()
+                entities_list.append(entity_id)
+                self.__reaction_to_list_of_entities_dict[reaction_id] = entities_list
+
+            # general entity to list of reactions dict
+            if entity_id in self.__entity_to_list_of_reactions_dict.keys():
+                reactions_list = self.__entity_to_list_of_reactions_dict[entity_id]
+                reactions_list.append(reaction_id)
+            else:
+                reactions_list = list()
+                reactions_list.append(reaction_id)
+                self.__entity_to_list_of_reactions_dict[entity_id] = reactions_list
+
+            # direction = -1, input
+            if int(eval(direction)) < 0:
+                # add element to input relationships list
+                self.__input_relationships.append(relationship)
+
+                # reaction to list of input entities dict
+                if reaction_id in self.__reaction_to_list_of_input_entities_dict.keys():
+                    entities_list = self.__reaction_to_list_of_input_entities_dict[reaction_id]
+                    entities_list.append(entity_id)
+                else:
+                    entities_list = list()
+                    entities_list.append(entity_id)
+                    self.__reaction_to_list_of_input_entities_dict[reaction_id] = entities_list
+
+                # entity to list of input reactions dict
+                if entity_id in self.__entity_to_list_of_input_reactions_dict.keys():
+                    reactions_list = self.__entity_to_list_of_input_reactions_dict[entity_id]
+                    reactions_list.append(reaction_id)
+                else:
+                    reactions_list = list()
+                    reactions_list.append(reaction_id)
+                    self.__entity_to_list_of_input_reactions_dict[entity_id] = reactions_list
+
+            # direction = 1, output
+            elif int(eval(direction)) > 0:
+                # add element to output relationships list
+                self.__output_relationships.append(relationship)
+
+                # reaction to list of output entities dict
+                if reaction_id in self.__reaction_to_list_of_output_entities_dict.keys():
+                    entities_list = self.__reaction_to_list_of_output_entities_dict[reaction_id]
+                    entities_list.append(entity_id)
+                else:
+                    entities_list = list()
+                    entities_list.append(entity_id)
+                    self.__reaction_to_list_of_output_entities_dict[reaction_id] = entities_list
+
+                # entity to list of output reactions dict
+                if entity_id in self.__entity_to_list_of_output_reactions_dict.keys():
+                    reactions_list = self.__entity_to_list_of_output_reactions_dict[entity_id]
+                    reactions_list.append(reaction_id)
+                else:
+                    reactions_list = list()
+                    reactions_list.append(reaction_id)
+                    self.__entity_to_list_of_output_reactions_dict[entity_id] = reactions_list
+
+            # direction = 0, regulation
+            else:
+                # add element to output relationships list
+                self.__regulation_relationships.append(relationship)
+
+                # reaction to list of regulation entities dict
+                if reaction_id in self.__reaction_to_list_of_regulation_entities_dict.keys():
+                    entities_list = self.__reaction_to_list_of_regulation_entities_dict[reaction_id]
+                    entities_list.append(entity_id)
+                else:
+                    entities_list = list()
+                    entities_list.append(entity_id)
+                    self.__reaction_to_list_of_regulation_entities_dict[reaction_id] = entities_list
+
+                # entity to list of regulation reactions dict
+                if entity_id in self.__entity_to_list_of_regulation_reactions_dict.keys():
+                    reactions_list = self.__entity_to_list_of_regulation_reactions_dict[entity_id]
+                    reactions_list.append(reaction_id)
+                else:
+                    reactions_list = list()
+                    reactions_list.append(reaction_id)
+                    self.__entity_to_list_of_regulation_reactions_dict[entity_id] = reactions_list
 
     def __initialisation_inner_entity_and_component_dict(self):
         """
@@ -1441,113 +2054,205 @@ class DataBean:
                 entities_list.append(entity_id)
                 self.__component_to_list_of_entities_dict[component_id] = entities_list
 
-
     def information(self):
+
         self.__initialisation_inner_reaction_to_list_of_entities_and_entity_to_list_of_reactions_dict()
         self.__initialisation_inner_entity_and_component_dict()
-        print(self.__pathway_name)
-        print(self.__task_of_sub_data_set)
-        print(self.__type_of_sub_data_set)
-        print("num of nodes: " + str(len(self.__entities_ids)))
-        print("num of edges: " + str(len(self.__reactions_ids)))
-        print("num of components: " + str(len(self.__components_ids)))
-        print("num of relationships: " + str(len(self.__relationships)))
 
-        reaction_with_relationship_information = [0, 0, 0, 0, 0, 0]
-        reaction_with_input_relationship_information = [0, 0, 0, 0, 0, 0]
-        reaction_with_output_relationship_information = [0, 0, 0, 0, 0, 0]
-        total_num_of_reactions = len(self.__reactions_ids)
+        print(self.__pathway)
+        if None is not self.__divided_dataset_task:
+            print(self.__divided_dataset_task + "\n")
+        if None is not self.__divided_dataset_type:
+            print(self.__divided_dataset_type + "\n")
+        else:
+            print("raw dataset")
+        print("num of nodes: " + str(len(self.__entities)) + "\n")
+        print("num of edges: " + str(len(self.__reactions)) + "\n")
+        print("num of components: " + str(len(self.__components)) + "\n")
+        print("num of relationships: " + str(len(self.__relationships)) + "\n")
+        print("num of input relationships: " + str(len(self.__input_relationships)) + "\n")
+        print("num of output relationships: " + str(len(self.__output_relationships)) + "\n")
+        print("num of regulation relationships: " + str(len(self.__regulation_relationships)) + "\n")
 
+        temp_num_dict: dict[int, str] = {0: "zero", 1: "one", 2: "two", 3: "three", 4: "four", 5: "five", 6: "six",
+                                         7: "seven", 8: "eight", 9: "more than eight"}
+
+        reaction_with_relationship_information = [0 for x in range(0, 10)]
+        reaction_with_input_relationship_information = [0 for x in range(0, 10)]
+        reaction_with_output_relationship_information = [0 for x in range(0, 10)]
+        reaction_with_regulation_relationship_information = [0 for x in range(0, 10)]
+        total_num_of_reactions = len(self.__reactions)
+
+        # all the reactions and their entities
         for list_of_entities in self.__reaction_to_list_of_entities_dict.values():
             length = len(list_of_entities)
-            if length > 4:
-                reaction_with_relationship_information[5] = reaction_with_relationship_information[5] + 1
+            if length > 8:
+                reaction_with_relationship_information[9] = reaction_with_relationship_information[9] + 1
             else:
                 reaction_with_relationship_information[length] = reaction_with_relationship_information[length] + 1
 
-        print("reaction with one relationship: " + str(reaction_with_relationship_information[1]) + " " + "{:.2%}".format(reaction_with_relationship_information[1]/total_num_of_reactions))
-        print("reaction with two relationships: " + str(reaction_with_relationship_information[2]) + " " + "{:.2%}".format(reaction_with_relationship_information[2]/total_num_of_reactions))
-        print("reaction with three relationships: " + str(reaction_with_relationship_information[3]) + " " + "{:.2%}".format(reaction_with_relationship_information[3]/total_num_of_reactions))
-        print("reaction with four relationships: " + str(reaction_with_relationship_information[4]) + " " + "{:.2%}".format(reaction_with_relationship_information[4]/total_num_of_reactions))
-        print("reaction with more than four relationships: " + str(reaction_with_relationship_information[5]) + " " + "{:.2%}".format(reaction_with_relationship_information[5]/total_num_of_reactions))
+        # i = 0 -> 9
+        for i in range(0, 10):
+            print(
+                "reaction with " + temp_num_dict[i] + " entities: " + str(
+                    reaction_with_relationship_information[i]) + " (" + "{:.2%}".format(
+                    reaction_with_relationship_information[i] / total_num_of_reactions) + ")")
+        print("\n")
 
+        # reactions and their input entities
         for list_of_entities in self.__reaction_to_list_of_input_entities_dict.values():
             length = len(list_of_entities)
-            if length > 4:
-                reaction_with_input_relationship_information[5] = reaction_with_input_relationship_information[5] + 1
+            if length > 8:
+                reaction_with_input_relationship_information[9] = reaction_with_input_relationship_information[9] + 1
             else:
-                reaction_with_input_relationship_information[length] = reaction_with_input_relationship_information[length] + 1
+                reaction_with_input_relationship_information[length] = reaction_with_input_relationship_information[
+                                                                           length] + 1
 
-        print("reaction with one input relationship: " + str(reaction_with_input_relationship_information[1]) + " " + "{:.2%}".format(reaction_with_input_relationship_information[1]/total_num_of_reactions))
-        print("reaction with two input relationships: " + str(reaction_with_input_relationship_information[2]) + " " + "{:.2%}".format(reaction_with_input_relationship_information[2]/total_num_of_reactions))
-        print("reaction with three input relationships: " + str(reaction_with_input_relationship_information[3]) + " " + "{:.2%}".format(reaction_with_input_relationship_information[3]/total_num_of_reactions))
-        print("reaction with four input relationships: " + str(reaction_with_input_relationship_information[4]) + " " + "{:.2%}".format(reaction_with_input_relationship_information[4]/total_num_of_reactions))
-        print("reaction with more than four input relationships: " + str(reaction_with_input_relationship_information[5]) + " " + "{:.2%}".format(reaction_with_input_relationship_information[5]/total_num_of_reactions))
+        # i = 0 -> 9
+        for i in range(0, 10):
+            print("reaction with " + temp_num_dict[i] + " input entities: " + str(
+                reaction_with_input_relationship_information[i]) + " (" + "{:.2%}".format(
+                reaction_with_input_relationship_information[i] / total_num_of_reactions) + ")")
+        print("\n")
 
+        # reactions and their output entities
         for list_of_entities in self.__reaction_to_list_of_output_entities_dict.values():
             length = len(list_of_entities)
-            if length > 4:
-                reaction_with_output_relationship_information[5] = reaction_with_output_relationship_information[5] + 1
+            if length > 8:
+                reaction_with_output_relationship_information[9] = reaction_with_output_relationship_information[9] + 1
             else:
-                reaction_with_output_relationship_information[length] = reaction_with_output_relationship_information[length] + 1
+                reaction_with_output_relationship_information[length] = reaction_with_output_relationship_information[
+                                                                            length] + 1
 
-        # "  " + "{:.2%}".format(float(num_9 / totol_num)))
-        print("reaction with one output relationship: " + str(reaction_with_output_relationship_information[1]) + " " + "{:.2%}".format(reaction_with_output_relationship_information[1]/total_num_of_reactions))
-        print("reaction with two output relationships: " + str(reaction_with_output_relationship_information[2]) + " " + "{:.2%}".format(reaction_with_output_relationship_information[2]/total_num_of_reactions))
-        print("reaction with three output relationships: " + str(reaction_with_output_relationship_information[3]) + " " + "{:.2%}".format(reaction_with_output_relationship_information[3]/total_num_of_reactions))
-        print("reaction with four output relationships: " + str(reaction_with_output_relationship_information[4]) + " " + "{:.2%}".format(reaction_with_output_relationship_information[4]/total_num_of_reactions))
-        print("reaction with more output four output relationships: " + str(reaction_with_output_relationship_information[5]) + " " + "{:.2%}".format(reaction_with_output_relationship_information[5]/total_num_of_reactions))
+        # i = 0 -> 9
+        for i in range(0, 10):
+            print("reaction with " + temp_num_dict[i] + " output entities: " + str(
+                reaction_with_output_relationship_information[i]) + " (" + "{:.2%}".format(
+                reaction_with_output_relationship_information[i] / total_num_of_reactions) + ")")
+        print("\n")
 
+        # reactions and their output entities
+        for list_of_entities in self.__reaction_to_list_of_regulation_entities_dict.values():
+            length = len(list_of_entities)
+            if length > 8:
+                reaction_with_regulation_relationship_information[9] = \
+                    reaction_with_regulation_relationship_information[9] + 1
+            else:
+                reaction_with_regulation_relationship_information[length] = \
+                    reaction_with_regulation_relationship_information[
+                        length] + 1
 
-        total_num_of_entities = len(self.__entities_ids)
-        entity_with_relationships_information = [0, 0, 0, 0, 0, 0]
+        # i = 0 -> 9
+        for i in range(0, 10):
+            print("reaction with " + temp_num_dict[i] + " output entities: " + str(
+                reaction_with_regulation_relationship_information[i]) + " (" + "{:.2%}".format(
+                reaction_with_regulation_relationship_information[i] / total_num_of_reactions) + ")")
+        print("\n")
 
+        total_num_of_entities = len(self.__entities)
+        entity_with_relationships_information = [0 for x in range(0, 10)]
+        entity_with_input_relationships_information = [0 for x in range(0, 10)]
+        entity_with_output_relationships_information = [0 for x in range(0, 10)]
+        entity_with_regulation_relationships_information = [0 for x in range(0, 10)]
+
+        # entity to list of reactions
         for list_of_reactions in self.__entity_to_list_of_reactions_dict.values():
             length = len(list_of_reactions)
-            if length > 4:
-                entity_with_relationships_information[5] = entity_with_relationships_information[5] + 1
+            if length > 8:
+                entity_with_relationships_information[9] = entity_with_relationships_information[9] + 1
             else:
                 entity_with_relationships_information[length] = entity_with_relationships_information[
-                                                                            length] + 1
+                                                                    length] + 1
 
-        print("entity with one relationship: " + str(entity_with_relationships_information[1]) + " " + "{:.2%}".format(entity_with_relationships_information[1]/total_num_of_entities))
-        print("entity with two relationships: " + str(entity_with_relationships_information[2]) + " " + "{:.2%}".format(entity_with_relationships_information[2]/total_num_of_entities))
-        print("entity with three relationships: " + str(entity_with_relationships_information[3]) + " " + "{:.2%}".format(entity_with_relationships_information[3]/total_num_of_entities))
-        print("entity with four relationships: " + str(entity_with_relationships_information[4]) + " " + "{:.2%}".format(entity_with_relationships_information[4]/total_num_of_entities))
-        print("entity with more four relationships: " + str(entity_with_relationships_information[5]) + " " + "{:.2%}".format(entity_with_relationships_information[5]/total_num_of_entities))
+        for i in range(0, 10):
+            print("entity with  " + temp_num_dict[i] + " reactions: " + str(
+                entity_with_relationships_information[i]) + " (" + "{:.2%}".format(
+                entity_with_relationships_information[i] / total_num_of_entities) + ")")
+        print("\n")
 
-        total_num_of_components = len(self.__components_ids)
-        entity_with_components_information = [0, 0, 0, 0, 0, 0]
+        # entity to list of input reactions
+        for list_of_reactions in self.__entity_to_list_of_input_reactions_dict.values():
+            length = len(list_of_reactions)
+            if length > 8:
+                entity_with_input_relationships_information[9] = entity_with_input_relationships_information[9] + 1
+            else:
+                entity_with_input_relationships_information[length] = entity_with_input_relationships_information[
+                                                                          length] + 1
 
+        for i in range(0, 10):
+            print("entity with  " + temp_num_dict[i] + " input reactions: " + str(
+                entity_with_input_relationships_information[i]) + " (" + "{:.2%}".format(
+                entity_with_input_relationships_information[i] / total_num_of_entities) + ")")
+        print("\n")
+
+        # entity to list of output reactions
+        for list_of_reactions in self.__entity_to_list_of_output_reactions_dict.values():
+            length = len(list_of_reactions)
+            if length > 8:
+                entity_with_output_relationships_information[9] = entity_with_output_relationships_information[9] + 1
+            else:
+                entity_with_output_relationships_information[length] = entity_with_output_relationships_information[
+                                                                           length] + 1
+
+        for i in range(0, 10):
+            print("entity with  " + temp_num_dict[i] + " output reactions: " + str(
+                entity_with_output_relationships_information[i]) + " (" + "{:.2%}".format(
+                entity_with_output_relationships_information[i] / total_num_of_entities) + ")")
+        print("\n")
+
+        # entity to list of regulation reactions
+        for list_of_reactions in self.__entity_to_list_of_regulation_reactions_dict.values():
+            length = len(list_of_reactions)
+            if length > 8:
+                entity_with_regulation_relationships_information[9] = entity_with_regulation_relationships_information[
+                                                                          9] + 1
+            else:
+                entity_with_regulation_relationships_information[length] = \
+                entity_with_regulation_relationships_information[length] + 1
+
+        for i in range(0, 10):
+            print("entity with  " + temp_num_dict[i] + " output reactions: " + str(
+                entity_with_regulation_relationships_information[i]) + " (" + "{:.2%}".format(
+                entity_with_regulation_relationships_information[i] / total_num_of_entities) + ")")
+        print("\n")
+
+        entity_with_components_information = [0 for x in range(0, 10)]
+        component_with_entities_information = [0 for x in range(0, 10)]
+
+        # entity to list of components
         for list_of_components in self.__entity_to_list_of_components_dict.values():
             length = len(list_of_components)
-            if length > 4:
-                entity_with_components_information[5] = entity_with_components_information[5] + 1
+            if length > 8:
+                entity_with_components_information[9] = entity_with_components_information[9] + 1
             else:
                 entity_with_components_information[length] = entity_with_components_information[
-                                                                            length] + 1
-        print("entity with one component: " + str(entity_with_components_information[1]) + " " + "{:.2%}".format(entity_with_components_information[1]/total_num_of_components))
-        print("entity with two components: " + str(entity_with_components_information[2]) + " " + "{:.2%}".format(entity_with_components_information[2]/total_num_of_components))
-        print("entity with three components: " + str(entity_with_components_information[3]) + " " + "{:.2%}".format(entity_with_components_information[3]/total_num_of_components))
-        print("entity with four components: " + str(entity_with_components_information[4]) + " " + "{:.2%}".format(entity_with_components_information[4]/total_num_of_components))
-        print("entity with more four components: " + str(entity_with_components_information[5]) + " " + "{:.2%}".format(entity_with_components_information[5]/total_num_of_components))
+                                                                 length] + 1
 
-        compoent_with_entity_information = [0, 0, 0, 0, 0, 0]
+        for i in range(0, 10):
+            print("entity with  " + temp_num_dict[i] + " components: " + str(
+                entity_with_components_information[i]) + " (" + "{:.2%}".format(
+                entity_with_components_information[i] / total_num_of_entities) + ")")
+        print("\n")
 
+        total_num_of_components = len(self.__components)
+        # component to list of entities
         for list_of_entities in self.__component_to_list_of_entities_dict.values():
             length = len(list_of_entities)
-            if length > 4:
-                compoent_with_entity_information[5] = compoent_with_entity_information[5] + 1
+            if length > 8:
+                component_with_entities_information[9] = component_with_entities_information[9] + 1
             else:
-                compoent_with_entity_information[length] = compoent_with_entity_information[
-                                                                            length] + 1
+                component_with_entities_information[length] = component_with_entities_information[
+                                                                  length] + 1
 
-        print("component with one entity: " + str(compoent_with_entity_information[1]) + " " + "{:.2%}".format(compoent_with_entity_information[1]/total_num_of_components))
-        print("component with two entities: " + str(compoent_with_entity_information[2]) + " " + "{:.2%}".format(compoent_with_entity_information[2]/total_num_of_components))
-        print("component with three entities: " + str(compoent_with_entity_information[3]) + " " + "{:.2%}".format(compoent_with_entity_information[3]/total_num_of_components))
-        print("component with four entities: " + str(compoent_with_entity_information[4]) + " " + "{:.2%}".format(compoent_with_entity_information[4]/total_num_of_components))
-        print("component with more than four entities: " + str(compoent_with_entity_information[5]) + " " + "{:.2%}".format(compoent_with_entity_information[5]/total_num_of_components))
+        for i in range(0, 10):
+            print("component with  " + temp_num_dict[i] + " entities: " + str(
+                component_with_entities_information[i]) + " (" + "{:.2%}".format(
+                component_with_entities_information[i] / total_num_of_components) + ")")
+        print("\n")
 
+    def test(self):
+        print("self.component_to_list_of_entities_dict: " + str(len(self.__component_to_list_of_entities_dict)))
+        print("self.__components " + str(len(self.__components)))
 
 
 if __name__ == '__main__':
@@ -1558,62 +2263,36 @@ if __name__ == '__main__':
     # Immune System
     # Signal Transduction
 
-    print("Disease\n")
-    disease = ReactomeDataBean("Disease")
+    # set the random seed
+    random.seed(1121)
+
+    print("\033[1;36m" + "Disease" + "\033[0m" + "\n")
+    disease = ReactomeDataDivider("Disease")
 
     disease.divide_data_for_attribute_prediction_task()
     disease.divide_data_for_input_link_prediction_task()
     disease.divide_data_for_output_link_prediction_task()
 
-    # link_prediction_databean.divide_data_for_regulation_link_prediction_task()
-
-    print("Metabolism\n")
-    disease = ReactomeDataBean("Metabolism")
+    print("\033[1;36m" + "Metabolism" + "\033[0m" + "\n")
+    disease = ReactomeDataDivider("Metabolism")
 
     disease.divide_data_for_attribute_prediction_task()
     disease.divide_data_for_input_link_prediction_task()
     disease.divide_data_for_output_link_prediction_task()
 
-    print("Immune System\n")
-    disease = ReactomeDataBean("Immune System")
+    print("\033[1;36m" + "Immune System" + "\033[0m" + "\n")
+    disease = ReactomeDataDivider("Immune System")
 
     disease.divide_data_for_attribute_prediction_task()
     disease.divide_data_for_input_link_prediction_task()
     disease.divide_data_for_output_link_prediction_task()
 
-    print("Signal Transduction\n")
-    disease = ReactomeDataBean("Signal Transduction")
+    print("\033[1;36m" + "Signal Transduction" + "\033[0m" + "\n")
+    disease = ReactomeDataDivider("Signal Transduction")
 
     disease.divide_data_for_attribute_prediction_task()
     disease.divide_data_for_input_link_prediction_task()
     disease.divide_data_for_output_link_prediction_task()
-
-
-
-
-    # data_divider_disease = DataDivider("Disease")
-    #
-    # data_divider_disease.test_attributes()
-    #
-    # print("Signal Transduction")
-    #
-    # data_divider_Signal = DataDivider("Signal Transduction")
-    # data_divider_Signal.test_attributes()
-    #
-    # # Metabolism
-    # print("Metabolism")
-    # data_divider_Metabolism = DataDivider("Metabolism")
-    # data_divider_Metabolism.test_attributes()
-    #
-    # # Immune System
-    # print("Immune System")
-    # data_divider_Immune = DataDivider("Immune System")
-    # data_divider_Immune.test_attributes()
-    #
-    # # Immune System
-    # print("All_data_in_Reactome")
-    # data_divider_all = DataDivider("All_data_in_Reactome")
-    # data_divider_all.test_attributes()
 
     time_end = time.time()  # record the ending time
 
