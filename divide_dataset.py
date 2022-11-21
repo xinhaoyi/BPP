@@ -87,6 +87,9 @@ class ReactomeDataDivider:
     def get_entity_to_list_of_components_dict(self) -> dict[str, list[str]]:
         return self.__entity_to_list_of_components_dict
 
+    def get_reaction_to_list_of_entities_dict(self) -> dict[str, list[str]]:
+        return self.__reaction_to_list_of_entities_dict
+
     def __read_reactions_of_one_pathway_from_file(self) -> list[str]:
         reactions_ids = self.__file_processor.read_file_via_lines("data/" + self.__pathway_name + "/",
                                                                   self.__edges_file_name)
@@ -943,6 +946,9 @@ class ReactomeDataDivider:
         validation_data_bean.print_sub_data_bean_to_files()
         test_data_bean.print_sub_data_bean_to_files()
 
+        validation_data_bean.generate_and_print_relationships_mix_negative_to_file(10)
+        test_data_bean.generate_and_print_relationships_mix_negative_to_file(10)
+
         train_data_bean.information()
         validation_data_bean.information()
         test_data_bean.information()
@@ -1036,6 +1042,9 @@ class ReactomeDataDivider:
         train_data_bean.print_sub_data_bean_to_files()
         validation_data_bean.print_sub_data_bean_to_files()
         test_data_bean.print_sub_data_bean_to_files()
+
+        validation_data_bean.generate_and_print_relationships_mix_negative_to_file(10)
+        test_data_bean.generate_and_print_relationships_mix_negative_to_file(10)
 
         train_data_bean.information()
         validation_data_bean.information()
@@ -1161,6 +1170,7 @@ class DataBeanForReactome:
         self.__all_components_file_name = "components-all.txt"
         self.__entities_components_mapping_file_name = "components-mapping.txt"
         self.__entities_components_mapping_mix_negative_file_name = "components-mapping-mix-negative.txt"
+        self.__relationship_mix_negative_file_name = "relationship-mix-negative.txt"
 
         self.__pathway_name = pathway_name
         self.__task_of_sub_data_set = task_of_sub_data_set
@@ -1412,12 +1422,95 @@ class DataBeanForReactome:
             for negative_component_index in negative_components_indexes:
                 entities_component_indexes_mapping_list_for_print[index] = entities_component_indexes_mapping_list_for_print[index] + "||" + str(negative_component_index)
 
-            pre_path = "data/" + self.__pathway_name + "/" + self.__task_of_sub_data_set + "/"
-            self.__file_processor.createFile(pre_path + self.__type_of_sub_data_set, self.__entities_components_mapping_mix_negative_file_name)
+        pre_path = "data/" + self.__pathway_name + "/" + self.__task_of_sub_data_set + "/"
 
-            self.__file_processor.writeMessageToFile(pre_path + self.__type_of_sub_data_set,
-                                                     self.__entities_components_mapping_mix_negative_file_name,
-                                                     entities_component_indexes_mapping_list_for_print)
+        self.__file_processor.createFile(pre_path + self.__type_of_sub_data_set, self.__entities_components_mapping_mix_negative_file_name)
+
+        self.__file_processor.writeMessageToFile(pre_path + self.__type_of_sub_data_set,
+                                                 self.__entities_components_mapping_mix_negative_file_name,
+                                                 entities_component_indexes_mapping_list_for_print)
+
+
+    def generate_and_print_relationships_mix_negative_to_file(self, num_of_negative_elements: int):
+        raw_reaction_to_list_of_entities_dict: dict[str, list[str]] = copy.deepcopy(self.raw_data.get_reaction_to_list_of_entities_dict())
+
+        raw_entities_ids: list[str] = copy.deepcopy(self.raw_data.get_raw_entities_ids())
+
+        raw_reactions_ids: list[str] = copy.deepcopy(self.raw_data.get_raw_reaction_ids())
+
+        raw_entity_id_to_entity_index_dict = {entity_id: index for index, entity_id in enumerate(raw_entities_ids)}
+
+        raw_reaction_id_to_reaction_index_dict = {reaction_id: index for index, reaction_id in enumerate(raw_reactions_ids)}
+
+        relationships_index_style_for_print: list[str] = list()
+
+        # generate the relationships_index_style, the index is the index position of entities and reactions in raw graph data
+        for relationship in self.__relationships:
+            # node_index,reaction_index,direction(-1 or 1)
+            line_message = ""
+            entity_id = relationship[self.__entity_id_index_of_relationship]
+            reaction_id = relationship[self.__reaction_id_index_of_relationship]
+            direction = relationship[self.__direction_index_of_relationship]
+
+            entity_index = raw_entity_id_to_entity_index_dict[entity_id]
+            reaction_index = raw_reaction_id_to_reaction_index_dict[reaction_id]
+
+            line_message = line_message + str(entity_index) + "," + str(reaction_index) + "," + str(direction)
+
+            relationships_index_style_for_print.append(line_message)
+
+        relationships_index_style_for_print.sort(key=lambda l: int(re.findall('\d+', l)[1]))
+
+        # generate the relationship list mixed negative
+        relationship_index_style_list_mix_negative: list[str] = list()
+
+        for relationship_index_style in relationships_index_style_for_print:
+            elements = relationship_index_style.split(",")
+            entity_index = int(elements[self.__entity_id_index_of_relationship])
+            reaction_index = int(elements[self.__reaction_id_index_of_relationship])
+
+            entity_id = self.raw_data.get_raw_entities_ids()[entity_index]
+            reaction_id = self.raw_data.get_raw_reaction_ids()[reaction_index]
+            direction = int(elements[self.__direction_index_of_relationship])
+
+            list_of_entities = raw_reaction_to_list_of_entities_dict[reaction_id]
+
+            # Find the difference set
+            ret = list(set(raw_entities_ids) - set(list_of_entities))
+
+            random.shuffle(ret)
+
+            negative_entities_list: list[str] = ret[0: num_of_negative_elements]
+
+            # generate the negative relationship list
+            negative_relationship_list_index_style: list[str] = list()
+            for negative_entity_id in negative_entities_list:
+                negative_entity_index = raw_entity_id_to_entity_index_dict[negative_entity_id]
+
+                negative_relationship_direction: int = 1 if random.random() < 0.5 else -1
+
+                negative_relationship: str = str(negative_entity_index) + "," + str(reaction_index) + "," + str(negative_relationship_direction)
+                negative_relationship_list_index_style.append(negative_relationship)
+
+
+            relationship_index_style_mix_negative = relationship_index_style
+
+            for negative_relationship_index_style in negative_relationship_list_index_style:
+                relationship_index_style_mix_negative = relationship_index_style_mix_negative + "||" + negative_relationship_index_style
+
+            relationship_index_style_list_mix_negative.append(relationship_index_style_mix_negative)
+
+
+        pre_path = "data/" + self.__pathway_name + "/" + self.__task_of_sub_data_set + "/"
+
+        self.__file_processor.createFile(pre_path + self.__type_of_sub_data_set,
+                                         self.__relationship_mix_negative_file_name)
+
+        self.__file_processor.writeMessageToFile(pre_path + self.__type_of_sub_data_set,
+                                                 self.__relationship_mix_negative_file_name,
+                                                 relationship_index_style_list_mix_negative)
+
+
 
 
 
