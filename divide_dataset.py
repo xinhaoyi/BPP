@@ -260,7 +260,7 @@ class ReactomeDataDivider:
                     reactions_list.append(reaction_id)
                     self.__entity_to_list_of_regulation_reactions_dict[entity_id] = reactions_list
 
-    # todo
+
     def __initialisation_inner_entity_and_component_dict(self):
         """
         self.__all_entity_to_list_of_components_dict: dict[str, list[str]] = {}
@@ -1233,6 +1233,8 @@ class DataBeanForReactome:
 
     def __remove_duplicate_list_of_pair_of_entity_and_component(self):
         # PhysicalEntity_id, Reaction_id, 0/1    -a list
+        # 这里不允许去重，因为你把一个list变成set，再变成list，它的顺序肯定是变了的，你这一去重，比如原来第一个节点对应的attributes可能就跑到别的地方去了
+        # 这是不允许的
         self.__list_of_pair_of_entity_and_component = list(set(
             tuple(pair_of_entity_and_component) for pair_of_entity_and_component in
             self.__list_of_pair_of_entity_and_component))
@@ -1251,7 +1253,10 @@ class DataBeanForReactome:
             entities_ids_set.add(entity_id)
             reactions_ids_set.add(reaction_id)
         self.__entities_ids = list(entities_ids_set)
+        # sort the entities with the sequence of index in raw dataset
+        self.sort_entities()
         self.__reactions_ids = list(reactions_ids_set)
+        self.sort_reactions()
 
     def __build_components_ids_based_on_list_of_pair_of_entity_and_component(self):
         components_ids_set = set()
@@ -1259,6 +1264,7 @@ class DataBeanForReactome:
             component_id = pair_of_entity_and_component[self.__component_index_of_pair_of_entity_and_component]
             components_ids_set.add(component_id)
         self.__components_ids = list(components_ids_set)
+        self.sort_components()
 
     def __build_entities_component_ids_mapping_list_for_print(self):
         # entities_components_mapping_list: list[list[str]] = list()
@@ -1281,9 +1287,45 @@ class DataBeanForReactome:
             components = entity_to_list_of_components_dict[entity_id]
             self.__entities_component_ids_mapping_list.append(components)
 
+
+    # We want to take the entities we have and sort them from smallest to largest according to their index size in the original dataset
+    def sort_entities(self):
+        raw_entities_ids = copy.deepcopy(self.raw_data.get_raw_entities_ids())
+        raw_entity_id_to_entity_index_dict = {entity_id: index for index, entity_id in enumerate(raw_entities_ids)}
+        entities_to_be_sorted = copy.deepcopy(self.__entities_ids)
+        entity_index_list = [raw_entity_id_to_entity_index_dict.get(entity_id) for entity_id in entities_to_be_sorted]
+        entity_index_list.sort()
+
+        self.__entities_ids = [raw_entities_ids[entity_index] for entity_index in entity_index_list]
+
+
+    def sort_reactions(self):
+        raw_reaction_ids = copy.deepcopy(self.raw_data.get_raw_reaction_ids())
+        raw_reaction_id_to_reaction_index_dict = {reaction_id: index for index, reaction_id in enumerate(raw_reaction_ids)}
+        reactions_to_be_sorted = copy.deepcopy(self.__reactions_ids)
+        reaction_index_list = [raw_reaction_id_to_reaction_index_dict[reaction_id] for reaction_id in reactions_to_be_sorted]
+
+        reaction_index_list.sort()
+
+        self.__reactions_ids = [raw_reaction_ids[reaction_index] for reaction_index in reaction_index_list]
+
+
+    def sort_components(self):
+        raw_components_ids = copy.deepcopy(self.raw_data.get_raw_component_ids())
+        raw_component_id_to_component_index_dict = {component_id: index for index, component_id in enumerate(raw_components_ids)}
+        components_to_be_sorted = copy.deepcopy(self.__components_ids)
+
+        component_index_list = [raw_component_id_to_component_index_dict[component_id] for component_id in components_to_be_sorted]
+
+        component_index_list.sort()
+
+        self.__components_ids = [raw_components_ids[component_index] for component_index in component_index_list]
+
+
+
     def __complete_the_data_bean(self):
-        self.__remove_duplicate_relationships()
-        self.__remove_duplicate_list_of_pair_of_entity_and_component()
+        # self.__remove_duplicate_relationships()
+        # self.__remove_duplicate_list_of_pair_of_entity_and_component()
         self.__build_reactions_ids_and_entities_ids_based_on_relationships()
         self.__build_components_ids_based_on_list_of_pair_of_entity_and_component()
         self.__build_entities_component_ids_mapping_list_for_print()
@@ -1312,6 +1354,7 @@ class DataBeanForReactome:
                                                     enumerate(self.raw_data.get_raw_component_ids())}
 
         entities_component_indexes_mapping_list_for_print: list[str] = list()
+
 
         for component_ids in self.__entities_component_ids_mapping_list:
             line_component_index_list = ""
@@ -2297,8 +2340,7 @@ class DataBean:
         for list_of_reactions in self.__entity_to_list_of_regulation_reactions_dict.values():
             length = len(list_of_reactions)
             if length > 8:
-                entity_with_regulation_relationships_information[9] = entity_with_regulation_relationships_information[
-                                                                          9] + 1
+                entity_with_regulation_relationships_information[9] = entity_with_regulation_relationships_information[9] + 1
             else:
                 entity_with_regulation_relationships_information[length] = \
                 entity_with_regulation_relationships_information[length] + 1
@@ -2342,53 +2384,3 @@ class DataBean:
                 component_with_entities_information[i]) + " (" + "{:.2%}".format(
                 component_with_entities_information[i] / total_num_of_components) + ")")
         print("\n")
-
-    def test(self):
-        print("self.component_to_list_of_entities_dict: " + str(len(self.__component_to_list_of_entities_dict)))
-        print("self.__components " + str(len(self.__components)))
-
-
-if __name__ == '__main__':
-    time_start = time.time()  # record the start time
-
-    # Disease
-    # Metabolism
-    # Immune System
-    # Signal Transduction
-
-    # set the random seed
-    random.seed(1121)
-
-    print("\033[1;36m" + "Disease" + "\033[0m" + "\n")
-    disease = ReactomeDataDivider("Disease")
-
-    disease.divide_data_for_attribute_prediction_task()
-    disease.divide_data_for_input_link_prediction_task()
-    disease.divide_data_for_output_link_prediction_task()
-
-    print("\033[1;36m" + "Metabolism" + "\033[0m" + "\n")
-    disease = ReactomeDataDivider("Metabolism")
-
-    disease.divide_data_for_attribute_prediction_task()
-    disease.divide_data_for_input_link_prediction_task()
-    disease.divide_data_for_output_link_prediction_task()
-
-    print("\033[1;36m" + "Immune System" + "\033[0m" + "\n")
-    disease = ReactomeDataDivider("Immune System")
-
-    disease.divide_data_for_attribute_prediction_task()
-    disease.divide_data_for_input_link_prediction_task()
-    disease.divide_data_for_output_link_prediction_task()
-
-    print("\033[1;36m" + "Signal Transduction" + "\033[0m" + "\n")
-    disease = ReactomeDataDivider("Signal Transduction")
-
-    disease.divide_data_for_attribute_prediction_task()
-    disease.divide_data_for_input_link_prediction_task()
-    disease.divide_data_for_output_link_prediction_task()
-
-    time_end = time.time()  # record the ending time
-
-    time_sum = time_end - time_start  # The difference is the execution time of the program in seconds
-
-    print("success! it takes " + str(time_sum) + " seconds to divide the dataset")

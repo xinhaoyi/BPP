@@ -2,6 +2,7 @@
 'activator' RAF:YWHAB dimer
 'receiver' RAF
 (4Fe-4S)(2+)
+(Glc)3 (GlcNAc)2 (Man)9 (PP-Dol)1
 1-deoxynojirimycin
 1-deoxynojirimycin-1-sulfonic acid
 11xCbxE-3D-F10(41-179)
@@ -13,7 +14,6 @@
 2HG
 2OG
 2xHC-TXN
-2xp-S477,S479-IRF7
 3'-UMP
 3CLp dimer
 3CLp inhibitors
@@ -52,7 +52,6 @@ ADP-D-ribose
 ADP-ribo-EEF2
 ADP/ATP translocase monomer (generic)
 ADPr-p-11S,2T-metR95,177-N
-ADPr-p-S177-N
 AEE788
 AEE788,CP-724714,Canertinib
 AGK-BRAF fusion dimer
@@ -443,6 +442,7 @@ DNA polymerase alpha:primase
 DNAJC3
 DOCK1
 DOCK2
+DOLP
 DSIF complex
 DT A:B
 DT(226-567)
@@ -462,7 +462,6 @@ Dynein complex
 E3810
 EED
 EEF2
-EF
 EGF
 EGF-like ligands:EGFR dimer
 EGF:EGFR
@@ -836,10 +835,8 @@ H+
 H2O
 H2O2
 HA
-HA folded and glycosylated
 HA folded, glycosylated, and palmitylated
 HA mRNA
-HA1
 HAVCR1
 HBEGF(20-208)
 HCK
@@ -946,9 +943,9 @@ IL17RC
 IL18
 IL18(1-193)
 IL18(1-36)
+IL1B
 IL1B(1-116)
 IL1B(1-269)
-IL1B(117-269)
 IL1R1
 IL1R1 inhibitors
 IL6
@@ -1105,7 +1102,6 @@ LB42908
 LCB1
 LCB3
 LCK
-LF
 LGK974
 LIG1
 LIG4
@@ -1225,8 +1221,10 @@ Mce3E
 MeR25,27-CNBP
 Met-tRNA(Met)
 Mg2+
+Mg2+/Mn2+
 Microtubule
 Microtubule protofilament
+Mn2+
 Mother filament:branching complex:daughter filament
 Multimeric capsid coat
 Multimeric matrix layer
@@ -1648,7 +1646,6 @@ SA
 SAR1B:GTP
 SARS coronavirus 2 gRNA with secondary structure:RTC
 SARS coronavirus gRNA:RTC:RNA primer
-SARS coronavirus nascent genomic RNA complement (minus strand) with mismatched 3' nucleotide
 SARS-CoV-1 gRNA complement (minus strand):RTC
 SARS-CoV-1 gRNA:RTC
 SARS-CoV-1 gRNA:RTC:nascent RNA minus strand
@@ -1670,6 +1667,7 @@ SARS-CoV-2 genomic RNA (plus strand)
 SARS-CoV-2 genomic RNA complement (minus strand)
 SARS-CoV-2 minus strand subgenomic mRNAs
 SARS-CoV-2 nascent genomic RNA complement (minus strand)
+SARS-CoV-2 nascent genomic RNA complement (minus strand) with mismatched 3' nucleotide
 SARS-CoV-2 plus strand subgenomic mRNAs
 SCP
 SEC23:SEC24
@@ -2190,7 +2188,6 @@ ciclesonide
 class I MHC complex
 clobetasol propionate
 colchicine
-complex N-glycan-PALM-Spike
 complex N-glycan-PALM-Spike S1 fragment trimer
 compound 11r
 compound 13b
@@ -2233,7 +2230,6 @@ dsDNA:ZBP1:pS-172-TBK1
 ebselen
 elexacaftor
 emtricitabine
-encapsidated SARS coronavirus genomic RNA
 encapsidated SARS coronavirus genomic RNA (plus strand)
 encapsidated SARS-CoV-2 genomic RNA
 encorafenib
@@ -2297,7 +2293,7 @@ ibrutinib
 imatinib
 imatinib sensitive KIT mutants
 imatinib-sensitive PDGFR mutants
-importin-alpha:importin-beta
+importin-alpha:importin-beta complex
 inactive RAF1,BRAF
 inactive RAFs
 isunakinra
@@ -2453,6 +2449,7 @@ p-12Y KANK1(1-899)-PDGFRB(415-1106) fusion dimer
 p-12Y WDR48(1-323)-PDGFRB(559-1106) fusion dimer
 p-2S MAP2K homo/heterodimers
 p-2S MAP2K1:p-2S MAPK2K2 heterodimer
+p-2S-IRF7:p-2S-IRF7
 p-3Y SHC1-2, p-3Y SHC1-3
 p-4Y FGFR3(23-758)-TACC3(549-838) dimer
 p-4Y FGFR3(23-758)-TACC3(649-838) dimer
@@ -2484,8 +2481,8 @@ p-6Y-ERBB2 ECD mutants
 p-6Y-ERBB2 ECD mutants:EGF:p-6Y-EGFR
 p-6Y-ERBB2 ECD mutants:EGF:p-6Y-EGFR:GRB2:GAB1
 p-6Y-ERBB2 ECD mutants:EGF:p-6Y-EGFR:p-Y349,Y350-SHC1
+p-6Y-ERBB2 KD mutants (EGFR,PI3K)
 p-6Y-ERBB2 KD mutants (EGFR,PLCG1)
-p-6Y-ERBB2 KD mutants (EGFR,RAS)
 p-6Y-ERBB2 KD mutants (PLCG1):EGF:p-6Y-EGFR
 p-6Y-ERBB2 KD mutants:EGF:p-6Y-EGFR
 p-6Y-ERBB2 KD mutants:EGF:p-6Y-EGFR:GRB2:GAB1
@@ -2718,7 +2715,6 @@ pp1a-nsp2
 pp1a-nsp3
 pp1a-nsp3-4
 pp1a-nsp4
-pp1a-nsp5
 pp1a-nsp6
 pp1a-nsp6-11
 pp1a-nsp7
@@ -2815,7 +2811,6 @@ trastuzumab
 tri-antennary N-glycan-PALM-Spike
 triamcinolone
 triamcinolone acetonide
-trimmed N-glycan Spike
 trimmed N-glycan-PALM-Spike
 trimmed unfolded N-glycan Spike
 type 1 interferon analogs

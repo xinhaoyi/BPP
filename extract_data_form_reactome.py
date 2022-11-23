@@ -222,13 +222,28 @@ class ReactionProcessor:
 
     def get_reaction_display_name_by_reaction_id(self, reaction_id: str) -> str:
         """
+        This method is to get the display name of a reaction based on its id
+        :param reaction_id: the stId of a reaction
+        :return: reaction_name: the display name of a reaction
+        """
+
+        __instruction = "MATCH (n:ReactionLikeEvent) WHERE n.stId = '" + str(
+            reaction_id) + "' AND n.speciesName='Homo sapiens' RETURN n.displayName"
+        reaction_name = self.__graph.run(__instruction).to_ndarray().flatten(order='C').tolist()
+        if reaction_name is not None and len(reaction_name) > 0:
+            return reaction_name[0]
+        else:
+            return "Not_Found_This_Name"
+
+    def get_reaction_name_by_reaction_id(self, reaction_id: str) -> str:
+        """
         This method is to get the name of a reaction based on its id
         :param reaction_id: the stId of a reaction
         :return: reaction_name: the name of a reaction
         """
 
         __instruction = "MATCH (n:ReactionLikeEvent) WHERE n.stId = '" + str(
-            reaction_id) + "' AND n.speciesName='Homo sapiens' RETURN n.displayName"
+            reaction_id) + "' AND n.speciesName='Homo sapiens' RETURN n.name"
         reaction_name = self.__graph.run(__instruction).to_ndarray().flatten(order='C').tolist()
         if reaction_name is not None and len(reaction_name) > 0:
             return reaction_name[0]
@@ -242,21 +257,34 @@ class ReactionProcessor:
         :return:
         """
         reaction_names_list = list()
-        reaction_id_to_reaction_name_dic = dict()
-        reaction_name_to_reaction_id_dic = dict()
-        reaction_ids_list = list()
+        reaction_ids_list_without_duplicate_names: list[str] = list()
+
+        reaction_name_to_list_of_reaction_ids_dict: dict[str, list[str]] = dict()
         for reaction_id in reaction_ids:
-            reaction_name = self.get_reaction_display_name_by_reaction_id(reaction_id)
+            # reaction_name = self.get_reaction_display_name_by_reaction_id(reaction_id)
+            reaction_name = self.get_reaction_name_by_reaction_id(reaction_id)
+
+            if reaction_name not in reaction_name_to_list_of_reaction_ids_dict.keys():
+                reaction_name_to_list_of_reaction_ids_dict[reaction_name] = list()
+                reaction_name_to_list_of_reaction_ids_dict[reaction_name].append(reaction_id)
+            else:
+                reaction_name_to_list_of_reaction_ids_dict[reaction_name].append(reaction_id)
+
             reaction_names_list.append(reaction_name)
-            reaction_id_to_reaction_name_dic[reaction_id] = reaction_name
-            reaction_name_to_reaction_id_dic[reaction_name] = reaction_id
+
         reaction_names_list = list(set(reaction_names_list))
         # sort the reaction_names_list
         reaction_names_list = sorted(reaction_names_list)
-        for reaction_name in reaction_names_list:
-            reaction_ids_list.append(reaction_name_to_reaction_id_dic.get(reaction_name))
 
-        return reaction_ids_list, reaction_names_list
+        for reaction_name, list_of_reaction_ids in reaction_name_to_list_of_reaction_ids_dict.items():
+            list_of_reaction_ids.sort()
+
+        # 'R-HSA-9687435'
+        # 'R-HSA-9698265'
+        for reaction_name in reaction_names_list:
+            reaction_ids_list_without_duplicate_names.append(reaction_name_to_list_of_reaction_ids_dict.get(reaction_name)[0])
+
+        return reaction_ids_list_without_duplicate_names, reaction_names_list
 
     def get_all_reactions_of_homo_sapiens_in_Reactome(self) -> list:
         reactions_ids = self.__graph.run(
@@ -455,7 +483,8 @@ class ReactionProcessor:
 
     def get_original_physical_entity_list_and_list_of_unique_physical_entities_id_without_duplicate_name_and_list_of_mapping_names_and_original_physical_entity_id_to_no_duplicate_name_physical_entity_id_dic_from_list_of_reactions_ids(
             self, reaction_ids):
-        original_physical_entity_id_to_physical_entity_name_dic = dict()
+        original_physical_entity_id_to_physical_entity_name_dict = dict()
+        physical_entity_name_to_list_of_entity_id: dict[str, list[str]] = dict( )
         physical_entity_name_to_physical_entity_id_dic_without_duplicate_name = dict()
 
         physical_entity_id_list = list()
@@ -466,12 +495,23 @@ class ReactionProcessor:
 
         for physical_entity_id in original_physical_entity_list:
             physical_entity_name = self.get_physical_entity_name_by_physical_entity_id(physical_entity_id)
+
             # There will be more than on id mapping to the same name
-            original_physical_entity_id_to_physical_entity_name_dic[physical_entity_id] = physical_entity_name
-            # some physical_entity_id will be over-written
-            physical_entity_name_to_physical_entity_id_dic_without_duplicate_name[
-                physical_entity_name] = physical_entity_id
+            original_physical_entity_id_to_physical_entity_name_dict[physical_entity_id] = physical_entity_name
+
             physical_entity_name_list.append(physical_entity_name)
+
+            if physical_entity_name not in physical_entity_name_to_list_of_entity_id.keys():
+                physical_entity_name_to_list_of_entity_id[physical_entity_name] = list()
+                physical_entity_name_to_list_of_entity_id[physical_entity_name].append(physical_entity_id)
+            else:
+                physical_entity_name_to_list_of_entity_id[physical_entity_name].append(physical_entity_id)
+
+        # sort the list of entity ids for every single entity name
+        for entity_name, list_of_entity_ids in physical_entity_name_to_list_of_entity_id.items():
+            list_of_entity_ids.sort()
+            physical_entity_name_to_physical_entity_id_dic_without_duplicate_name[entity_name] = list_of_entity_ids[0]
+
         physical_entity_name_list = list(set(physical_entity_name_list))
 
         # sort the physical_entity_name_list
@@ -481,7 +521,7 @@ class ReactionProcessor:
             physical_entity_id_list.append(
                 physical_entity_name_to_physical_entity_id_dic_without_duplicate_name[physical_entity_name])
 
-        for original_physical_entity_id, physical_entity_name in original_physical_entity_id_to_physical_entity_name_dic.items():
+        for original_physical_entity_id, physical_entity_name in original_physical_entity_id_to_physical_entity_name_dict.items():
             original_physical_entity_id_to_no_duplicate_name_physical_entity_id_dic[original_physical_entity_id] = \
                 physical_entity_name_to_physical_entity_id_dic_without_duplicate_name[physical_entity_name]
 
@@ -951,6 +991,8 @@ class ReactomeProcessor:
 
             relationships_between_nodes_and_edges_with_index_style.append(line_message)
 
+        relationships_between_nodes_and_edges_with_index_style.sort(key=lambda l: int(re.findall('\d+', l)[1]))
+
         unique_components_without_duplicate_names, component_names_list, physical_entity_id_to_list_of_component_ids_dict = self.__physical_entity_processor.get_unique_components_without_duplicate_names_and_mapping_components_names_list_and_physical_entity_id_to_list_of_component_ids_dict_from_list_of_physical_entities(
             physical_entity_ids)
 
@@ -1068,8 +1110,7 @@ class ReactomeProcessor:
 
             relationships_between_nodes_and_edges_with_index_style.append(line_message)
 
-        # todo
-        # remove duplicate
+        relationships_between_nodes_and_edges_with_index_style.sort(key=lambda l: int(re.findall('\d+', l)[1]))
 
         # remove the duplicate components
         component_ids_unique_for_one_pathway, components_dic = self.__physical_entity_processor.get_unique_components_and_components_dict_from_list_of_physical_entities(

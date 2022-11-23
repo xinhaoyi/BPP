@@ -17,11 +17,11 @@ def extract_data_from_reactome():
 
     reactome_processor.execution_on_single_pathway_via_name_enhanced("Disease")
 
-    reactome_processor.execution_on_single_pathway_via_name_enhanced("Immune System")
-
-    reactome_processor.execution_on_single_pathway_via_name_enhanced("Metabolism")
-
-    reactome_processor.execution_on_single_pathway_via_name_enhanced("Signal Transduction")
+    # reactome_processor.execution_on_single_pathway_via_name_enhanced("Immune System")
+    #
+    # reactome_processor.execution_on_single_pathway_via_name_enhanced("Metabolism")
+    #
+    # reactome_processor.execution_on_single_pathway_via_name_enhanced("Signal Transduction")
 
 def divide_data_set():
     # set the random seed
@@ -64,7 +64,7 @@ if __name__ == '__main__':
     extract_data_from_reactome()
 
     # divide the dataset
-    divide_data_set()
+    # divide_data_set()
 
     time_end = time.time()  # record the ending time
 

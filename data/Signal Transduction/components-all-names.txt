@@ -21,12 +21,12 @@
 12xFucT-11xGlcS-6xFucS-NOTCH4(24-1336)
 14-3-3 dimer
 14xGlcS-10xFucT-4xFucS-NOTCH3(40-1571)
+17xFucT-14xGlcS-2xFucS-NOTCH1(19-2555)
 17xFucT-2xFucS-NOTCH1(19-2555)
 18(R)-RvE1
 18(S)-RvE1
 18(S)-RvE1, 18(R)-RvE1
 18xFucT-16xGlcS-FucS-NOTCH2(26-1581)
-19xFucT-14xGlcS-2xFucS-NOTCH1(19-2555)
 19xFucT-16xGlcS-2xFucS-NOTCH1(19-1664)
 2'-O-acetyl-ADP-ribose
 22R-hydroxycholesterol
@@ -200,6 +200,7 @@ APOE gene
 APP(672-713)
 APS dimer
 AR
+AR:Androgens
 AR:androgens
 ARAP1
 ARBs
@@ -755,10 +756,10 @@ CYSLTR2:LTC4,LTD4,LTE4
 Ca2+
 CaMKII dodecamer
 CaMKK
+CaN:CaM:Ca2+
 Caffeine
 CalDAG-GEFs
 Calcineurin alpha regulatory subunit:Calcium
-Calcineurin:Calmodulin (CaN:CaM)
 Cam-PDE 1A homodimer
 Cam-PDE 1B homodimer
 Cam-PDE 1C homodimer
@@ -786,6 +787,7 @@ Crispolide
 Cucurbitacin B
 Cucurbitacin E
 Cysmethynil
+Cytochrome b-245
 D-Trp
 DA
 DAAM1
@@ -2693,7 +2695,6 @@ RANBP10
 RANBP2
 RANBP9
 RANGAP1
-RAP1
 RAP1:GTP
 RAP1:GTP:activated BRAF dimer
 RAP1A
@@ -2760,7 +2761,6 @@ RHO
 RHOA
 RHOA endoplasmic reticulum effectors
 RHOA plasma membrane effectors
-RHOA,RHOB,RHOC,RAC1
 RHOA,RHOB,RHOC,RAC1:GTP
 RHOA,RHOB,RHOC,RAC1:GTP:CIT
 RHOA,RHOB,RHOC,RAC1:GTP:CIT-3
@@ -3011,7 +3011,7 @@ SHARPIN
 SHB
 SHC
 SHC1
-SHC1-1
+SHC1-1(156-583)
 SHC1-2
 SHC1-2,SHC1-3
 SHC1-3
@@ -3588,6 +3588,7 @@ YWHAH dimer
 YWHAQ dimer
 YWHAZ
 YWHAZ dimer
+YWHAZ:p-S20-CBY:CTNNB1
 YY1
 Yohimbine
 ZAP70
@@ -3745,7 +3746,6 @@ famotidine
 fexofenadine
 fibrin monomer
 fingolimod
-flavocytochrome b558 catalytic core
 flesinoxan
 flibanserin
 flupentixol
@@ -3931,7 +3931,6 @@ p-3S,T MAPK6
 p-3Y-PAK2 dimer:CDC42:GTP
 p-3Y-SHC1
 p-4S, T336 ELK1:SRF
-p-4S,3T,T1479,S1490,T1493-LRP6
 p-4S,T188,T206-ACVR1B
 p-4S,T231,T365-RPS6KA3
 p-4S,T336-ELK1
@@ -3949,7 +3948,6 @@ p-5Y-FGFR4
 p-5Y-FRS3
 p-5Y-NTRK1
 p-5Y-NTRK1, p-5Y-NTRK2
-p-5Y-NTRK1-1
 p-5Y-NTRK2
 p-5Y-NTRK3
 p-6S-NCF1
@@ -3999,6 +3997,7 @@ p-IRS1,2,4
 p-KALRN
 p-LATS
 p-LEPR:p-JAK2
+p-LRP6
 p-MOB1
 p-NICD1
 p-NICD4
@@ -4148,7 +4147,6 @@ p-T12,T35-MOB1A
 p-T12,T35-MOB1B
 p-T1218, Y220 MAPK7 dimer
 p-T145-CDKN1A
-p-T154,S315-NCF4
 p-T157-CDKN1B
 p-T175,S177,S179,S181,T194-ACVR1C
 p-T182 MAPKAPK5
@@ -4162,7 +4160,6 @@ p-T202, Y204 MAPK3 dimer
 p-T202,Y204-MAPK3
 p-T218,Y220-MAPK7
 p-T23-CHUK
-p-T233-NCF2
 p-T24,S256,S319-FOXO1
 p-T246-AKT1S1
 p-T286 CAMK2A

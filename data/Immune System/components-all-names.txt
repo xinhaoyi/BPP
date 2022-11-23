@@ -13,7 +13,6 @@
 2xN4GlycoAsn-TLR4
 2xp-S349-PRLR:2xJAK2
 2xp-S477,S479-IRF7
-2xp-Y-STAT1
 2xviral dsRNA:2xK63polyUb-DDX58:2xRNF135,TRIM25:2xATP
 3xBAFFR:BAFF trimer
 3xBAFFR:BAFF trimer:TRAF3:NIK
@@ -406,6 +405,7 @@ CCR6
 CCT2
 CCT8
 CD101
+CD14
 CD14(20-345)
 CD160
 CD177
@@ -468,7 +468,6 @@ CD68
 CD70
 CD70 homotrimer
 CD74
-CD74 trimer
 CD74(81-104)
 CD79A
 CD79B
@@ -483,7 +482,7 @@ CD93
 CD94:NKG2C
 CD94:NKG2C:HLA-E
 CD96
-CD97
+CD97(21-835)
 CD99
 CDA
 CDC42
@@ -692,10 +691,11 @@ Cl-
 Class I MHC HC:B2M
 Class I MHC heavy chain (MHC HC)
 Class I MHC heavy chain genes
+Class I MHC:B2M
 Clathrin
 Clathrin Triskelion
 Clathrin light chain
-Clathrin:AP-2 complex
+Clathrin:AP2 complex
 Clostridial peptidoglycan
 CoA-SH
 Collagen type I fibril
@@ -861,13 +861,13 @@ FCER2(1-321)
 FCERI
 FCERI:IgE aggregate
 FCERIG dimer
-FCGR
 FCGR1A
 FCGR1B
 FCGR2A
 FCGR2B
 FCGR3A
 FCGR3B
+FCGRA
 FCGRA genes
 FCGRIA:CD3G homodimer
 FCGRIIIA:CD3G/CD3Z dimers
@@ -1124,6 +1124,8 @@ HLA class II histocompatibility antigen, DRB1-8 beta chain
 HLA class II histocompatibility antigen, DRB1-9 beta chain precursor
 HLA class II histocompatibility antigen, DRB3-1 beta chain precursor
 HLA-A3
+HLA-A34
+HLA-A74
 HLA-B
 HLA-Bw4
 HLA-C
@@ -1664,9 +1666,8 @@ K48polyUb-NIK
 K48polyUb-TRAF3
 K48polyUb-TRAF3:NIK
 K48polyUb-antigenic substrate
-K48polyUb-partially digested Ag
 K63-Ub
-K63-linked polyUb p-IRAK1:TRAF6
+K63-linked poly-Ub-p-3S,3T-IRAK1:TRAF6
 K63-pUb-TRAF6:TICAM1:TRAM:TLR4:LY96:LPS:CD14
 K63pUb-RIP1:TICAM1:TRAM:TLR4:LY96:LPS:CD14
 K63pUb-TANK:K63pUb-TRAF3:TICAM1:TLR3:viral dsRNA
@@ -1888,6 +1889,7 @@ MMP25
 MMP3 gene
 MMP3(100-477)
 MMP8
+MMP9
 MMP9 gene
 MMP9(107-707)
 MMTAG2
@@ -1973,7 +1975,6 @@ NEU1
 NF-KappaB p50:p50:IKBA
 NF-KappaB p50:p50:p-IKBA
 NF-KappaB p50:p50:ub-p-IKBA
-NF-kB p65:p65
 NF-kappa-B p50,p65,c-Rel:p-IKB
 NF-kappaB p50:c-Rel
 NF-kappaB p50:c-Rel:IkB
@@ -1983,6 +1984,7 @@ NF-kappaB p50:p50
 NF-kappaB p50:p65:IKB
 NF-kappaB p50:p65:p-IKB
 NF-kappaB p50:p65:ub-p-IKB
+NF-kappaB p65:p65
 NF-kappaB p65:p65:IKB
 NF-kappaB p65:p65:p-IKB
 NF-kappaB p65:p65:ub-p-IkB
@@ -2223,7 +2225,7 @@ PRLR ligands:p-S349-PRLR:JAK2 dimer
 PRLR ligands:p-Y611-PRLR:p-Y1007-JAK2 dimer
 PRLR:JAK2
 PRLR:JAK2 dimer
-PRSS2
+PRSS2(24-247)
 PRSS3
 PRTN3
 PS
@@ -2610,7 +2612,7 @@ SURF4
 SVIP
 SYK
 SYNGR1
-Sar1p-GTP
+Sar1p:GTP:Sec23p:Sec24p:Ag bound MHC class I
 Sec13p:Sec31p Complex
 SiO2
 Sialic acid
@@ -3202,7 +3204,6 @@ p-STAT2:p-STAT1
 p-STAT2:p-STAT1:p-IFNAR1:p-TYK2
 p-STAT3
 p-STAT4
-p-STAT5
 p-STAT5 dimer
 p-STAT5A, p-STAT5B
 p-T,4S-IRF3:p-T,4S-IRF3
@@ -3254,6 +3255,7 @@ p-Y-JAK1
 p-Y-JAK3
 p-Y-PTK2B
 p-Y-SHC1
+p-Y-STAT1 dimer
 p-Y-STAT1,3,5 dimer
 p-Y-STAT2
 p-Y-STAT3,p-STAT5,(p-Y-STAT3:p-STAT5)

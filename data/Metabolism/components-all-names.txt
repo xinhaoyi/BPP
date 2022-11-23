@@ -37,7 +37,6 @@
 1-acyl LPI
 1-acyl LPS
 1-pyrroline-3-hydroxy-5-carboxylate
-10(S),17(S)-diHDPAn-6
 10(S),17(S)-dihydroxy-omega 6-docosapentaenoic acid
 10-formyl-THF
 10-formyl-THFPG
@@ -95,7 +94,6 @@
 17(R)-HDHA
 17(R)-Hp-DHA
 17(S)-HDHA
-17(S)-HDPAn-6
 17(S)-Hp-DHA
 17(S)-Hp-DPAn-3
 17(S)-oxo-RvD1
@@ -635,6 +633,7 @@ Btn-p-S79-ACACB:2Mn2+
 C1P
 C26:0 CoA
 C2H4
+C2H5COO-
 C4S chain
 C4S-BCAN
 C4S-BGN
@@ -929,7 +928,6 @@ EXA4
 EXC4
 EXD4
 EXE4
-EtCOO- or C2H5COO-
 EtO
 EtOH
 F1,6PP
@@ -2699,7 +2697,6 @@ minodronic acid
 mitiglinide
 moclobemide
 mycophenolic acid
-nascent CM
 nateglinide
 nefazodone
 nimesulide
