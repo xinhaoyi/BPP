@@ -29,6 +29,7 @@ def extract_data_from_reactome():
     #
     # reactome_processor.execution_on_single_pathway_via_name_enhanced("Signal Transduction")
 
+
 def divide_data_set():
     # set the random seed
     random.seed(1121)
@@ -61,9 +62,9 @@ def divide_data_set():
     disease.divide_data_for_input_link_prediction_task()
     disease.divide_data_for_output_link_prediction_task()
 
+
 # Press the green button in the gutter to run the script.
 if __name__ == '__main__':
-
     time_start = time.time()  # record the start time
 
     # extract the data from Reactome
@@ -72,13 +73,12 @@ if __name__ == '__main__':
     # divide the dataset
     # divide_data_set()
 
-    time_end = time.time()  # record the ending time
 
+
+    time_end = time.time()  # record the ending time
 
     time_sum = time_end - time_start  # The difference is the execution time of the program in seconds
 
     print("success! it takes " + str(time_sum) + " seconds to extract the data from Reactome")
 
 # See PyCharm help at https://www.jetbrains.com/help/pycharm/
-
-

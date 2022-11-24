@@ -763,6 +763,7 @@ class PhysicalEntityProcessor:
         # This dictionary will drop some ids, ensuring id and name is a one-to-one correspondence
         component_name_to_component_id_dict_one_to_one = dict()
 
+        original_component_ids_unique.sort()
         for component_id in original_component_ids_unique:
             component_name = self.get_component_name_by_component_id(component_id)
             components_names_set.add(component_name)
@@ -991,7 +992,7 @@ class ReactomeProcessor:
 
             relationships_between_nodes_and_edges_with_index_style.append(line_message)
 
-        relationships_between_nodes_and_edges_with_index_style.sort(key=lambda l: (int(re.findall('\d+', l)[1]), int(re.findall('\d+', l)[0]), int(re.findall('\d+', l)[2])))
+        relationships_between_nodes_and_edges_with_index_style.sort(key=lambda l: (int(re.findall('\d+', l)[1]), int(re.findall('\d+', l)[0]), int(re.findall('-?\d+', l)[2])))
 
         unique_components_without_duplicate_names, component_names_list, physical_entity_id_to_list_of_component_ids_dict = self.__physical_entity_processor.get_unique_components_without_duplicate_names_and_mapping_components_names_list_and_physical_entity_id_to_list_of_component_ids_dict_from_list_of_physical_entities(
             physical_entity_ids)
@@ -1566,8 +1567,8 @@ class ReactomeProcessor:
                                                   entity_component_mapping_list)
 
         # draw the histogram
-        drawer = Drawer(len(reactions), len(physical_entity_ids), len(component_ids), pathway_name)
-        drawer.generate_histogram()
+        # drawer = Drawer(len(reactions), len(physical_entity_ids), len(component_ids), pathway_name)
+        # drawer.generate_histogram()
 
     def execution_on_single_pathways_enhanced(self, pathway_stId):
         pathway_name = self.get_pathway_name_by_id(pathway_stId)
@@ -1629,8 +1630,8 @@ class ReactomeProcessor:
                                                                   entity_component_mapping_list)
 
         # draw the histogram
-        drawer = Drawer(len(reaction_names), len(physical_entity_names), len(component_names), pathway_name)
-        drawer.generate_histogram()
+        # drawer = Drawer(len(reaction_names), len(physical_entity_names), len(component_names), pathway_name)
+        # drawer.generate_histogram()
 
 
     def execution_on_single_pathway_via_name_enhanced(self, pathway_name: str):
@@ -1718,8 +1719,8 @@ class ReactomeProcessor:
                                                   entity_index_to_components_indices_mapping_list)
 
         # draw the histogram
-        drawer = Drawer(num_of_edges, num_of_nodes, dimensionality, "All_data_in_Reactome")
-        drawer.generate_histogram()
+        # drawer = Drawer(num_of_edges, num_of_nodes, dimensionality, "All_data_in_Reactome")
+        # drawer.generate_histogram()
 
     def execution_on_reactome_enhanced(self):
 
@@ -1783,8 +1784,8 @@ class ReactomeProcessor:
                                                                   entity_component_mapping_list)
 
         # draw the histogram
-        drawer = Drawer(len(reaction_names), len(physical_entity_names), len(component_names), "All_data_in_Reactome")
-        drawer.generate_histogram()
+        # drawer = Drawer(len(reaction_names), len(physical_entity_names), len(component_names), "All_data_in_Reactome")
+        # drawer.generate_histogram()
 
 
 # one jump to n jump
