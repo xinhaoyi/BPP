@@ -41,26 +41,26 @@ def divide_data_set():
     disease.divide_data_for_input_link_prediction_task()
     disease.divide_data_for_output_link_prediction_task()
 
-    # print("\033[1;36m" + "Metabolism" + "\033[0m" + "\n")
-    # disease = ReactomeDataDivider("Metabolism")
-    #
-    # disease.divide_data_for_attribute_prediction_task()
-    # disease.divide_data_for_input_link_prediction_task()
-    # disease.divide_data_for_output_link_prediction_task()
-    #
-    # print("\033[1;36m" + "Immune System" + "\033[0m" + "\n")
-    # disease = ReactomeDataDivider("Immune System")
-    #
-    # disease.divide_data_for_attribute_prediction_task()
-    # disease.divide_data_for_input_link_prediction_task()
-    # disease.divide_data_for_output_link_prediction_task()
-    #
-    # print("\033[1;36m" + "Signal Transduction" + "\033[0m" + "\n")
-    # disease = ReactomeDataDivider("Signal Transduction")
-    #
-    # disease.divide_data_for_attribute_prediction_task()
-    # disease.divide_data_for_input_link_prediction_task()
-    # disease.divide_data_for_output_link_prediction_task()
+    print("\033[1;36m" + "Metabolism" + "\033[0m" + "\n")
+    metabolism = ReactomeDataDivider("Metabolism")
+
+    metabolism.divide_data_for_attribute_prediction_task()
+    metabolism.divide_data_for_input_link_prediction_task()
+    metabolism.divide_data_for_output_link_prediction_task()
+
+    print("\033[1;36m" + "Immune System" + "\033[0m" + "\n")
+    immune_system = ReactomeDataDivider("Immune System")
+
+    immune_system.divide_data_for_attribute_prediction_task()
+    immune_system.divide_data_for_input_link_prediction_task()
+    immune_system.divide_data_for_output_link_prediction_task()
+
+    print("\033[1;36m" + "Signal Transduction" + "\033[0m" + "\n")
+    signal_transduction = ReactomeDataDivider("Signal Transduction")
+
+    signal_transduction.divide_data_for_attribute_prediction_task()
+    signal_transduction.divide_data_for_input_link_prediction_task()
+    signal_transduction.divide_data_for_output_link_prediction_task()
 
 
 # Press the green button in the gutter to run the script.
@@ -68,10 +68,10 @@ if __name__ == '__main__':
     time_start = time.time()  # record the start time
 
     # extract the data from Reactome
-    extract_data_from_reactome()
+    # extract_data_from_reactome()
 
     # divide the dataset
-    # divide_data_set()
+    divide_data_set()
 
 
 

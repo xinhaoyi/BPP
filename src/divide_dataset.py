@@ -698,6 +698,7 @@ class ReactomeDataDivider:
         end_index_of_entities = length_of_entities - 1
         validation_counter: int = 0
         test_counter: int = 0
+
         while validation_counter < validation_size or test_counter < test_size:
             random_entity_index = random.randint(0, end_index_of_entities)
             random_entity_id = self.__entities_ids[random_entity_index]
@@ -750,6 +751,19 @@ class ReactomeDataDivider:
         test_data_bean.information()
 
         self.__ultimate_initialisation()
+
+    # todo
+    def test_count_components_based_on_relationships(self):
+        list_of_pair_of_entity_and_component = self.__list_of_pair_of_entity_and_component
+
+        component_ids_set = set()
+
+        for pair_of_entity_and_component in list_of_pair_of_entity_and_component:
+            component_id = pair_of_entity_and_component[self.__component_index_of_pair_of_entity_and_component]
+            component_ids_set.add(component_id)
+
+        component_ids_list = list(component_ids_set)
+        print("The number of components from pair of entity and component are: ", len(component_ids_list))
 
     # 将reactions 均分为3份
     def __get_three_divided_reaction_ids(self):
