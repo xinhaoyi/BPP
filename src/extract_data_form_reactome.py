@@ -1786,52 +1786,6 @@ class ReactomeProcessor:
         drawer = Drawer(len(reaction_names), len(physical_entity_names), len(component_names), "All_data_in_Reactome")
         drawer.generate_histogram()
 
-    def test(self):
-        reactions = self.__reaction_processor.get_reactions_ids_from_single_pathway('R-HSA-1640170')
-        print(reactions)
-        print(len(reactions))
-
-        sum_of_physical_entities = 0
-        for reaction in reactions:
-            physical_entities = self.__reaction_processor.get_physical_entities_ids_from_single_reaction_id(reaction)
-            sum_of_physical_entities = sum_of_physical_entities + len(physical_entities)
-
-        print("sum_of_physical_entities = " + str(sum_of_physical_entities))
-
-        physical_entities_for_single_reaction = self.__reaction_processor.get_physical_entities_ids_from_single_reaction_id(
-            'R-HSA-8964492')
-
-        physical_entities_unique = self.__reaction_processor.get_unique_physical_entities_ids_from_list_of_reactions_ids(
-            reactions)
-
-        print(physical_entities_unique)
-
-        print("sum_of_physical_entities_unique = " + str(len(physical_entities_unique)))
-
-        component_ids_unique = self.__physical_entity_processor.get_unique_components_and_components_dict_from_list_of_physical_entities(
-            physical_entities_unique)
-
-        print("num of component_ids_unique = " + str(len(component_ids_unique)))
-
-    def test_reactions(self):
-        all_reactions = self.__reaction_processor.get_all_reactions_of_homo_sapiens_in_Reactome()
-        top_pathways = self.get_all_top_pathways()
-        number_with_duplicate_elements = 0
-        reactions_set = set()
-        for top_pathway_id in top_pathways:
-            reactions = self.__reaction_processor.get_reactions_ids_from_single_pathway(top_pathway_id)
-            number_with_duplicate_elements = number_with_duplicate_elements + len(reactions)
-            for reaction in reactions:
-                reactions_set.add(reaction)
-
-        reactions_difference = set(all_reactions).difference(reactions_set)
-
-        print("The num of reactions with duplicate elements are: " + str(number_with_duplicate_elements))
-        print("The total num of reactions are: " + str(len(reactions_set)))
-
-        for reaction_id in reactions_difference:
-            print(reaction_id)
-
 
 # one jump to n jump
 # "MATCH (n:Pathway)-[r:hasEvent*1..]->(m:Reaction) WHERE n.stId = 'R-HSA-9612973' AND n.speciesName='Homo sapiens' RETURN m"
@@ -1845,7 +1799,10 @@ class Drawer:
         self.num_of_nodes = num_of_nodes
         self.dimensionality = dimensionality
         self.pathway_name = pathway_name
-        self.path = "./data/" + pathway_name + "/"
+        cur_path = os.path.abspath(os.path.dirname(__file__))
+        self.root_path = cur_path[:cur_path.find("extract_data_from_reactome\\") + len("extract_data_from_reactome\\")]
+
+        self.path = os.path.join(self.root_path, "data", pathway_name)
 
     def generate_histogram(self):
         x1 = [self.pathway_name]
@@ -1853,8 +1810,8 @@ class Drawer:
         y2 = [self.num_of_nodes]
         y3 = [self.dimensionality]
         name_of_file = self.pathway_name + ".html"
-        path = self.path + '/' + name_of_file
-        url = path + '/' + name_of_file
+        path = os.path.join(self.path, name_of_file)
+        url = os.path.join(path, name_of_file)
 
         if os.path.exists(url):
             print("file exists, we'll delete the original file \"" + name_of_file + "\", then create a new one")
@@ -1882,10 +1839,14 @@ class FileProcessor:
         self.filename_components_all = "components-all.txt"
         self.filename_components_all_names = "components-all-names.txt"
 
+        cur_path = os.path.abspath(os.path.dirname(__file__))
+        self.root_path = cur_path[:cur_path.find("extract_data_from_reactome\\") + len("extract_data_from_reactome\\")]
+
+    # data/All_data_in_Reactome/components-all.txt
     # create the txt file to store the data
     def createFile(self, path, file_name):
-        url = path + '/' + file_name
-        if not os.path.exists(path):
+        url = os.path.join(self.root_path, path, file_name)
+        if not os.path.exists(os.path.join(self.root_path, path)):
             os.makedirs(path)
         if os.path.exists(url):
             print("file exists, we'll delete the original file \"" + file_name + "\", then create a new one")
@@ -1893,18 +1854,13 @@ class FileProcessor:
         file = open(url, 'w', encoding='utf-8')
 
     def delete_file(self, path, file_name) -> None:
-        url = path + '/' + file_name
+        url = os.path.join(path, file_name)
         if os.path.exists(url):
             os.remove(url)
 
-    # create the txt file to store the data with default path
-    def createFileWithDefaultPath(self, file_name):
-        path = './data'
-        self.createFile(path, file_name)
-
     # write message to txt file
     def writeMessageToFile(self, path, file_name, message: list[str]):
-        url = path + '/' + file_name
+        url = os.path.join(self.root_path, path, file_name)
         if not os.path.exists(url):
             print("error! the file \"" + file_name + "\" doesn't exist!")
 
@@ -1928,7 +1884,7 @@ class FileProcessor:
     def execute_for_single_pathway(self, pathway_name, reaction_ids, physical_entity_ids,
                                    relationships_between_nodes_edges, component_ids, entity_component_mapping_list):
 
-        path = "./data/" + pathway_name + "/"
+        path = os.path.join("data", pathway_name)
 
         # write message to the file
         file_professor = FileProcessor()
@@ -1951,7 +1907,7 @@ class FileProcessor:
                                                    relationships_between_nodes_edges, component_ids, component_names,
                                                    entity_component_mapping_list):
 
-        path = "./data/" + pathway_name + "/"
+        path = os.path.join("data", pathway_name)
 
         # write message to the file
         file_professor = FileProcessor()

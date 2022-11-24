@@ -2,8 +2,12 @@
 
 # Press Shift+F10 to execute it or replace it with your code.
 # Press Double Shift to search everywhere for classes, files, tool windows, actions, and settings.
+import os
 import random
+import re
+import sys
 import time
+from os.path import dirname, abspath
 
 import torch
 
@@ -11,6 +15,8 @@ from divide_dataset import ReactomeDataDivider
 from extract_data_form_reactome import PathWayProcessor, ReactionProcessor, PhysicalEntityProcessor, ReactomeProcessor
 from py2neo import Graph, Node, Relationship
 from property import Properties
+from extract_data_form_reactome import FileProcessor
+
 
 def extract_data_from_reactome():
     reactome_processor = ReactomeProcessor('neo4j', '123456')
@@ -67,6 +73,7 @@ if __name__ == '__main__':
     # divide_data_set()
 
     time_end = time.time()  # record the ending time
+
 
     time_sum = time_end - time_start  # The difference is the execution time of the program in seconds
 

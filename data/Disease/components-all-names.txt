@@ -2,7 +2,6 @@
 'activator' RAF:YWHAB dimer
 'receiver' RAF
 (4Fe-4S)(2+)
-(Glc)3 (GlcNAc)2 (Man)9 (PP-Dol)1
 1-deoxynojirimycin
 1-deoxynojirimycin-1-sulfonic acid
 11xCbxE-3D-F10(41-179)
@@ -51,7 +50,7 @@ ADP
 ADP-D-ribose
 ADP-ribo-EEF2
 ADP/ATP translocase monomer (generic)
-ADPr-p-11S,2T-metR95,177-N
+ADPr-p-S177-N
 AEE788
 AEE788,CP-724714,Canertinib
 AGK-BRAF fusion dimer
@@ -442,7 +441,6 @@ DNA polymerase alpha:primase
 DNAJC3
 DOCK1
 DOCK2
-DOLP
 DSIF complex
 DT A:B
 DT(226-567)
@@ -871,6 +869,7 @@ HIV-1 Polymerase II (phosphorylated):TFIIF:capped pre-mRNA
 HIV-1 RNA homodimer
 HIV-1 RNA template
 HIV-1 RNA template:tRNA primer
+HIV-1 early elongation complex with hyperphosphorylated Pol II CTD
 HIV-1 mRNA
 HIV-1 promoter:TFIID:TFIIA:TFIIB:Pol II:TFIIF complex*
 HIV-1 template DNA containing promoter with transcript of  2 or 3 nucleotides
@@ -1221,10 +1220,8 @@ Mce3E
 MeR25,27-CNBP
 Met-tRNA(Met)
 Mg2+
-Mg2+/Mn2+
 Microtubule
 Microtubule protofilament
-Mn2+
 Mother filament:branching complex:daughter filament
 Multimeric capsid coat
 Multimeric matrix layer
@@ -1251,7 +1248,6 @@ N-glycan pp1ab-nsp3-4
 N-glycan pp1ab-nsp4
 N-myristoyl GAG (P04591) protein
 N4GlycoAsn-PalmS WNT5A(36-380)
-N6GMPLys-nsp7
 N6GMPLys-pp1a-nsp7
 N6GMPLys-pp1ab-nsp7
 NA
@@ -1646,6 +1642,7 @@ SA
 SAR1B:GTP
 SARS coronavirus 2 gRNA with secondary structure:RTC
 SARS coronavirus gRNA:RTC:RNA primer
+SARS coronavirus nascent genomic RNA complement (minus strand) with mismatched 3' nucleotide
 SARS-CoV-1 gRNA complement (minus strand):RTC
 SARS-CoV-1 gRNA:RTC
 SARS-CoV-1 gRNA:RTC:nascent RNA minus strand
@@ -1667,7 +1664,6 @@ SARS-CoV-2 genomic RNA (plus strand)
 SARS-CoV-2 genomic RNA complement (minus strand)
 SARS-CoV-2 minus strand subgenomic mRNAs
 SARS-CoV-2 nascent genomic RNA complement (minus strand)
-SARS-CoV-2 nascent genomic RNA complement (minus strand) with mismatched 3' nucleotide
 SARS-CoV-2 plus strand subgenomic mRNAs
 SCP
 SEC23:SEC24
@@ -1905,6 +1901,7 @@ UBE2I
 UBE2I-G97-SUMO1
 UDP
 UDP-GalNAc
+UDP-N-acetyl-alpha-D-glucosamine(2−)
 UL102
 UL103
 UL104
@@ -2121,7 +2118,6 @@ aflibercept
 alectinib
 alectinib sensitve ALK mutants
 alunacedase alfa
-amantadine
 amlexanox
 anakinra
 asunaprevir
@@ -2188,6 +2184,7 @@ ciclesonide
 class I MHC complex
 clobetasol propionate
 colchicine
+complex N-glycan-PALM-Spike
 complex N-glycan-PALM-Spike S1 fragment trimer
 compound 11r
 compound 13b
@@ -2230,6 +2227,7 @@ dsDNA:ZBP1:pS-172-TBK1
 ebselen
 elexacaftor
 emtricitabine
+encapsidated SARS coronavirus genomic RNA
 encapsidated SARS coronavirus genomic RNA (plus strand)
 encapsidated SARS-CoV-2 genomic RNA
 encorafenib
@@ -2286,7 +2284,6 @@ heparin
 high kinase activity BRAF mutants
 high-mannose N-glycan folded Spike
 high-mannose N-glycan unfolded Spike
-high-mannose N-glycan-PALM-Spike
 hyper 5-mC GSDME gene promoter
 iberdomide
 ibrutinib
@@ -2402,7 +2399,6 @@ nivolumab
 nsp1
 nsp10
 nsp10:nsp14
-nsp12:2Fe4S4
 nsp15 hexamer
 nsp16:nsp10
 nsp3
@@ -2411,6 +2407,7 @@ nsp3:nsp4:nsp6
 nsp4
 nsp5
 nsp6
+nsp7
 nsp7:nsp8
 nsp7:nsp8:nsp12
 nsp7:nsp8:nsp12:nsp14:nsp10
@@ -2706,7 +2703,6 @@ ponatinib-sensitive FLT3 mutants
 ponatinib-sensitive PDGFR mutants
 pp-DVL
 pp1a
-pp1a-3CL
 pp1a-nsp1
 pp1a-nsp1-4
 pp1a-nsp10
@@ -2715,6 +2711,7 @@ pp1a-nsp2
 pp1a-nsp3
 pp1a-nsp3-4
 pp1a-nsp4
+pp1a-nsp5
 pp1a-nsp6
 pp1a-nsp6-11
 pp1a-nsp7
@@ -2811,6 +2808,7 @@ trastuzumab
 tri-antennary N-glycan-PALM-Spike
 triamcinolone
 triamcinolone acetonide
+trimmed N-glycan Spike
 trimmed N-glycan-PALM-Spike
 trimmed unfolded N-glycan Spike
 type 1 interferon analogs
