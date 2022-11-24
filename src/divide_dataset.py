@@ -1455,6 +1455,7 @@ class DataBeanForReactome:
             list_of_components = entity_to_list_of_components_dict[entity_id]
             # Find the difference set
             ret = list(set(raw_component_ids) - set(list_of_components))
+            ret.sort()
             # shuffle the ret list, then select n elements
             random.shuffle(ret)
             negative_components_ids = ret[0: num_of_negative_elements]
@@ -1520,6 +1521,8 @@ class DataBeanForReactome:
 
             # Find the difference set
             ret = list(set(raw_entities_ids) - set(list_of_entities))
+
+            ret.sort()
 
             random.shuffle(ret)
 

@@ -32,7 +32,7 @@ def extract_data_from_reactome():
 
 def divide_data_set():
     # set the random seed
-    random.seed(1121)
+    # random.seed(1121)
 
     print("\033[1;36m" + "Disease" + "\033[0m" + "\n")
     disease = ReactomeDataDivider("Disease")
@@ -71,6 +71,8 @@ if __name__ == '__main__':
     # extract_data_from_reactome()
 
     # divide the dataset
+    # set the random seed
+    random.seed(1121)
     divide_data_set()
 
 
