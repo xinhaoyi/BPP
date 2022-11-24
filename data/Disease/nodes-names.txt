@@ -33,6 +33,7 @@
 8:class I MHC:BECN1 complex
 8b
 8b:MAP1LC3B
+9b
 9b homodimer
 9b:IKK complex
 A2E
@@ -51,7 +52,6 @@ ADP,GDP,CDP,UDP
 ADP-D-ribose
 ADP-ribo-EEF2
 ADP/ATP translocase monomer (generic)
-ADPr-p-11S,2T-metR95,177-N
 ADPr-p-S177-N
 AHCYL1:NAD+:ITPR1:I(1,4,5)P3 tetramer
 AKT inhibitors
@@ -293,7 +293,6 @@ CTDP1
 CTNND1
 CTSG
 CTSL inhibitors
-CTSL/CTSB expression inhibitors
 CTSL:CTSL inhibitors
 CUL1:RBX1:SKP1:ZC3HC1
 CVC1
@@ -607,12 +606,12 @@ HIV-1 arrested processive elongation complex
 HIV-1 capped pre-mRNA:CBC:RNA Pol II (phosphorylated) complex
 HIV-1 closed pre-initiation complex
 HIV-1 early elongation complex with hyperphosphorylated Pol II CTD
+HIV-1 elongation complex
 HIV-1 elongation complex containing Tat
 HIV-1 initiation complex
 HIV-1 initiation complex with phosphodiester-PPi intermediate
 HIV-1 mRNA
 HIV-1 open pre-initiation complex
-HIV-1 paused processive elongation complex
 HIV-1 processive elongation complex
 HIV-1 template DNA containing promoter with transcript of  2 or 3 nucleotides
 HIV-1 template DNA with first transcript dinucleotide, opened to +8 position
@@ -826,7 +825,6 @@ Lma amastigote surface
 M
 M lattice
 M lattice:E protein:encapsidated SARS coronavirus genomic RNA
-M lattice:E protein:encapsidated SARS-CoV-2 genomic RNA
 M1
 M1 mRNA
 M2
@@ -1256,7 +1254,6 @@ S1PR1
 S1PR1 agonists
 S1PR1:S1PR1 agonists
 S3:M:E:encapsidated  SARS-CoV-2 genomic RNA: 7a:O-glycosyl 3a tetramer:glycosylated-ACE2:HSPGs
-S3:M:E:encapsidated  SARS-CoV-2 genomic RNA:7a:O-glycosyl 3a tetramer
 S3:M:E:encapsidated SARS coronavirus genomic RNA: 7a:O-glycosyl 3a tetramer
 S3:M:E:encapsidated SARS coronavirus genomic RNA: 7a:O-glycosyl 3a tetramer:glycosylated-ACE2
 S3:M:E:encapsidated SARS coronavirus genomic RNA:7a:O-glycosyl 3a tetramer
@@ -1348,9 +1345,7 @@ SUGT1
 SUGT1:HSP90
 SUMO-p-N dimer
 SUMO-p-N dimer:SARS coronavirus genomic RNA
-SUMO-p-N dimer:SARS-CoV-2 genomic RNA
 SUMO1-K62,ADPr-,p-11S,2T,met-2R,Ac-K375-N dimer
-SUMO1-K62-ADPr-p-11S,2T-metR95,177-N
 SUMO1-K62-ADPr-p-S177-N
 SUMO1-K62-p-S177-N dimer
 SUMO1:C93-UBE2I
@@ -1458,6 +1453,7 @@ U2 snRNA:nsp16
 UBE2I
 UDP
 UDP-GalNAc
+UDP-N-acetyl-alpha-D-glucosamine(2−)
 UL102
 UL103
 UL104
@@ -1703,7 +1699,6 @@ dlaT(ox.)
 dsDNA:ZBP1:pS-172-TBK1
 encapsidated SARS coronavirus genomic RNA
 encapsidated SARS coronavirus genomic RNA (plus strand)
-encapsidated SARS-CoV-2 genomic RNA
 encapsidated SARS-CoV-2 genomic RNA (plus strand)
 esxA
 esxA:B2M
@@ -1744,8 +1739,6 @@ high kinase activity BRAF mutants:scaffold:p-2S MAP2K:MAPK complex
 high kinase activity BRAF mutants:scaffold:p-2S MAP2K:p-T,Y MAPK complex
 high-mannose N-glycan folded Spike
 high-mannose N-glycan unfolded Spike
-high-mannose N-glycan-PALM-Spike
-high-mannose N-glycan-PALM-Spike trimer
 hyper 5-mC GSDME gene promoter
 importin-alpha:importin-beta
 importin-alpha:importin-beta complex
@@ -2011,7 +2004,6 @@ plasma membrane FGFR1 fusions
 ponatinib
 pp1a
 pp1a dimer
-pp1a-3CL
 pp1a-nsp1-4
 pp1a-nsp10
 pp1a-nsp11

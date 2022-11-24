@@ -582,6 +582,7 @@ AdoCbl
 AdoHcy
 AdoMet
 AdoSeMet
+Aflatoxin exo-8,9-oxide glutathione conjugate
 Alcohol
 Anserine
 ApoB-48:TG:PL complex
@@ -622,7 +623,6 @@ BaP4,5-DHD
 BaP4,5O
 BaPtDHD
 Benzo(a)pyrene-7,8-diol 9,10-epoxide
-Benzo(a)pyrene-7,8-diol-glutathione conjugate
 Benzothiazine
 Btn
 Btn-ACACA
@@ -635,6 +635,7 @@ Btn-p-S79-ACACB:2Mn2+
 C1P
 C26:0 CoA
 C2H4
+C2H5COO-
 C4S chain
 C4S-BCAN
 C4S-BGN
@@ -929,7 +930,6 @@ EXA4
 EXC4
 EXD4
 EXE4
-EtCOO- or C2H5COO-
 EtO
 EtOH
 F1,6PP
@@ -1026,7 +1026,6 @@ GA
 GA3P
 GAA
 GC
-GC:25(OH)D
 GCCA
 GCDCA
 GCG(53-81)
@@ -2162,6 +2161,7 @@ RvT2
 RvT3
 RvT4
 S
+S-2-(hydroxyethyl)-glutathione
 S-2MDPDA-CoA
 S-2MPDA-CoA
 S-FGSH

@@ -553,7 +553,6 @@ Clathrin coated MHC class II alpha/beta/Ii nonamer
 Clathrin:AP-2 complex
 Clathrin:AP2 complex
 Clustered p:LYN:p-FCERI:IgE:allergen:SYK
-Clustered p:LYN:p-FCERI:IgE:allergen:p-6Y-SYK
 CoA-SH
 Collagen type XVII fibril
 Collagen types I,II,III/SP-D

@@ -21,12 +21,12 @@
 12xFucT-11xGlcS-6xFucS-NOTCH4(24-1336)
 14-3-3 dimer
 14xGlcS-10xFucT-4xFucS-NOTCH3(40-1571)
+17xFucT-14xGlcS-2xFucS-NOTCH1(19-2555)
 17xFucT-2xFucS-NOTCH1(19-2555)
 18(R)-RvE1
 18(S)-RvE1
 18(S)-RvE1, 18(R)-RvE1
 18xFucT-16xGlcS-FucS-NOTCH2(26-1581)
-19xFucT-14xGlcS-2xFucS-NOTCH1(19-2555)
 19xFucT-16xGlcS-2xFucS-NOTCH1(19-1664)
 2'-O-acetyl-ADP-ribose
 22R-hydroxycholesterol
@@ -200,6 +200,7 @@ APOE gene
 APP(672-713)
 APS dimer
 AR
+AR:Androgens
 AR:androgens
 ARAP1
 ARBs
@@ -1973,7 +1974,12 @@ N-methyl scopolamine
 N-ter PDGFA-1 fragment
 N-ter PDGFA-2 fragment
 N4GlycoAsn-PalmS WNT1
+N4GlycoAsn-PalmS WNT10A
+N4GlycoAsn-PalmS WNT10B
 N4GlycoAsn-PalmS WNT11
+N4GlycoAsn-PalmS WNT16
+N4GlycoAsn-PalmS WNT2
+N4GlycoAsn-PalmS WNT2B(1-391)
 N4GlycoAsn-PalmS WNT3
 N4GlycoAsn-PalmS WNT3A
 N4GlycoAsn-PalmS WNT4
@@ -1985,6 +1991,7 @@ N4GlycoAsn-PalmS WNT7B
 N4GlycoAsn-PalmS WNT8A
 N4GlycoAsn-PalmS WNT8B
 N4GlycoAsn-PalmS WNT9A
+N4GlycoAsn-PalmS WNT9B
 N4GlycoAsn-PalmS-WNT3A:FZD:LRP5/6
 N4GlycoAsn-PalmS-WNT5A:FZD4
 N4GlycoAsn-WNT1
@@ -2649,7 +2656,6 @@ RAB6A
 RAB9A
 RAB9B
 RAC
-RAC1
 RAC1 effectors
 RAC1 endoplasmic reticulum effectors
 RAC1,CDC42:GTP:IQGAP1
@@ -2693,7 +2699,6 @@ RANBP10
 RANBP2
 RANBP9
 RANGAP1
-RAP1
 RAP1:GTP
 RAP1:GTP:activated BRAF dimer
 RAP1A
@@ -3011,7 +3016,7 @@ SHARPIN
 SHB
 SHC
 SHC1
-SHC1-1
+SHC1-1(156-583)
 SHC1-2
 SHC1-2,SHC1-3
 SHC1-3
@@ -3122,7 +3127,6 @@ STAT family members
 STAT1
 STAT3
 STAT5A
-STAT5A homodimer
 STAT5A,STAT5B
 STAT5B
 STAT6
@@ -3542,11 +3546,9 @@ WIPF3
 WLS
 WNT/Ca2+ FZDs
 WNT1
-WNT2
 WNT3
 WNT3A
 WNT4
-WNT5A
 WNT5A(36-380)
 WNT5A-binding FZDs
 WNT5A/11:FZD
@@ -3931,7 +3933,6 @@ p-3S,T MAPK6
 p-3Y-PAK2 dimer:CDC42:GTP
 p-3Y-SHC1
 p-4S, T336 ELK1:SRF
-p-4S,3T,T1479,S1490,T1493-LRP6
 p-4S,T188,T206-ACVR1B
 p-4S,T231,T365-RPS6KA3
 p-4S,T336-ELK1
@@ -3949,7 +3950,6 @@ p-5Y-FGFR4
 p-5Y-FRS3
 p-5Y-NTRK1
 p-5Y-NTRK1, p-5Y-NTRK2
-p-5Y-NTRK1-1
 p-5Y-NTRK2
 p-5Y-NTRK3
 p-6S-NCF1
@@ -3999,6 +3999,7 @@ p-IRS1,2,4
 p-KALRN
 p-LATS
 p-LEPR:p-JAK2
+p-LRP6
 p-MOB1
 p-NICD1
 p-NICD4
@@ -4154,6 +4155,7 @@ p-T175,S177,S179,S181,T194-ACVR1C
 p-T182 MAPKAPK5
 p-T182-MAPKAPK5
 p-T183,Y185-MAPK12
+p-T185,Y187 MAPK1 dimer
 p-T185,Y187-MAPK1
 p-T187-MAP3K7
 p-T19-MRLC
@@ -4298,6 +4300,7 @@ p-Y55-SPRY2
 p-Y565,S797-HIF1A
 p-Y565-HIF1A
 p-Y694-STAT5A
+p-Y694-STAT5A homodimer
 p-Y699-STAT5B
 p-Y700,Y731,Y774-CBL
 p-Y701-STAT1
@@ -4349,7 +4352,7 @@ pT497,T638,S657-PRKCA
 pY-PTK2
 pY-SHC1
 palmitoleoyl-CoA
-palmitoleyl-N-glycosylated WNTs
+palmitoleoyl-N-glycosylated WNTs
 palmitoylated, myristoylated eNOS dimer
 pazopanib
 pegaptanib
@@ -4371,7 +4374,9 @@ pitolisant
 pizotifen
 ponatinib
 pp-DVL
+pp-DVL1
 pp-DVL2
+pp-DVL3
 ppDVL:DAAM1
 practolol
 pramlintide

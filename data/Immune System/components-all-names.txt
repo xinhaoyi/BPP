@@ -406,6 +406,7 @@ CCR6
 CCT2
 CCT8
 CD101
+CD14
 CD14(20-345)
 CD160
 CD177
@@ -441,6 +442,7 @@ CD300E
 CD300LB
 CD33
 CD34-1
+CD36
 CD36 gene
 CD3G homodimer
 CD3G/CD3Z dimers
@@ -468,7 +470,6 @@ CD68
 CD70
 CD70 homotrimer
 CD74
-CD74 trimer
 CD74(81-104)
 CD79A
 CD79B
@@ -483,7 +484,7 @@ CD93
 CD94:NKG2C
 CD94:NKG2C:HLA-E
 CD96
-CD97
+CD97(21-835)
 CD99
 CDA
 CDC42
@@ -692,6 +693,7 @@ Cl-
 Class I MHC HC:B2M
 Class I MHC heavy chain (MHC HC)
 Class I MHC heavy chain genes
+Class I MHC:B2M
 Clathrin
 Clathrin Triskelion
 Clathrin light chain
@@ -861,13 +863,13 @@ FCER2(1-321)
 FCERI
 FCERI:IgE aggregate
 FCERIG dimer
-FCGR
 FCGR1A
 FCGR1B
 FCGR2A
 FCGR2B
 FCGR3A
 FCGR3B
+FCGRA
 FCGRA genes
 FCGRIA:CD3G homodimer
 FCGRIIIA:CD3G/CD3Z dimers
@@ -977,6 +979,7 @@ GNS
 GOLGA7
 GPI
 GPI-CEACAM6
+GPI-PLAUR
 GPIN-CD14(20-345)
 GPR84
 GPR97
@@ -1124,6 +1127,8 @@ HLA class II histocompatibility antigen, DRB1-8 beta chain
 HLA class II histocompatibility antigen, DRB1-9 beta chain precursor
 HLA class II histocompatibility antigen, DRB3-1 beta chain precursor
 HLA-A3
+HLA-A34
+HLA-A74
 HLA-B
 HLA-Bw4
 HLA-C
@@ -1636,7 +1641,6 @@ Influenza A dsRNA intermediate form
 Integrin alpha4beta7
 Integrin alphaLbeta2
 Integrin alphaMbeta2
-Integrin alphaVbeta5
 Interleukin receptor complexes with activated SHC1
 Interleukin receptor complexes with activated SHC1:SHIP1
 Invariant chain trimer
@@ -1888,6 +1892,7 @@ MMP25
 MMP3 gene
 MMP3(100-477)
 MMP8
+MMP9
 MMP9 gene
 MMP9(107-707)
 MMTAG2
@@ -1973,7 +1978,6 @@ NEU1
 NF-KappaB p50:p50:IKBA
 NF-KappaB p50:p50:p-IKBA
 NF-KappaB p50:p50:ub-p-IKBA
-NF-kB p65:p65
 NF-kappa-B p50,p65,c-Rel:p-IKB
 NF-kappaB p50:c-Rel
 NF-kappaB p50:c-Rel:IkB
@@ -1983,6 +1987,7 @@ NF-kappaB p50:p50
 NF-kappaB p50:p65:IKB
 NF-kappaB p50:p65:p-IKB
 NF-kappaB p50:p65:ub-p-IKB
+NF-kappaB p65:p65
 NF-kappaB p65:p65:IKB
 NF-kappaB p65:p65:p-IKB
 NF-kappaB p65:p65:ub-p-IkB
@@ -2171,7 +2176,6 @@ PLA2G2A
 PLA2G2A:Ca2+
 PLAC8
 PLAU(21-431)
-PLAUR
 PLC gamma1,2
 PLCG1
 PLCG1:p-3Y-SLP-76:Gads:LAT
@@ -2610,7 +2614,7 @@ SURF4
 SVIP
 SYK
 SYNGR1
-Sar1p-GTP
+Sar1p:GTP:Sec23p:Sec24p:Ag bound MHC class I
 Sec13p:Sec31p Complex
 SiO2
 Sialic acid
@@ -2862,7 +2866,7 @@ Ub-580-UBC(533-608)
 Ub-656-UBC(609-684)
 Ub-C85-UBE2D1,2,3
 Ub-TRAF6 trimer bound to CBM complex
-Ub-pY FLT3
+Ub-pY FLT3 dimer
 Ub:substrate
 Ubiquitin activating E1 enzymes
 Ubiquitin:E2 conjugating enzymes
@@ -2938,6 +2942,7 @@ active p-T507,S645,S664-PRKCD
 alpha beta dimer:Ii trimer
 alpha beta dimer:Ii trimer:calnexin
 alpha-mannan
+alphaVbeta5
 amlexanox
 anakinra
 antigenic substrate
@@ -3202,7 +3207,6 @@ p-STAT2:p-STAT1
 p-STAT2:p-STAT1:p-IFNAR1:p-TYK2
 p-STAT3
 p-STAT4
-p-STAT5
 p-STAT5 dimer
 p-STAT5A, p-STAT5B
 p-T,4S-IRF3:p-T,4S-IRF3
