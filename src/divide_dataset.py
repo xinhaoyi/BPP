@@ -681,6 +681,7 @@ class ReactomeDataDivider:
     # 没装满的话，我们选择mask掉它，将这个attribute和其对应entity拿出来，做成entity-component list
     # 将entity对应的所有reactions找出来，做成多个relationships，这个在原数据集中不删除
     def divide_data_for_attribute_prediction_task(self):
+        random.seed(1121)
         train_data_bean = DataBeanForReactome(self.__pathway_name, self.__attribute_prediction_task,
                                               self.__train_type_divided_dataset, self)
         validation_data_bean = DataBeanForReactome(self.__pathway_name, self.__attribute_prediction_task,
@@ -874,6 +875,7 @@ class ReactomeDataDivider:
             self.__regulation_link_prediction_list_of_pair_of_entity_and_component)
 
     def divide_data_for_input_link_prediction_task(self):
+        random.seed(1121)
         train_data_bean = DataBeanForReactome(self.__pathway_name, self.__input_link_prediction_task,
                                               self.__train_type_divided_dataset, self)
         validation_data_bean = DataBeanForReactome(self.__pathway_name, self.__input_link_prediction_task,
@@ -970,6 +972,7 @@ class ReactomeDataDivider:
         self.__ultimate_initialisation()
 
     def divide_data_for_output_link_prediction_task(self):
+        random.seed(1121)
         train_data_bean = DataBeanForReactome(self.__pathway_name, self.__output_link_prediction_task,
                                               self.__train_type_divided_dataset, self)
         validation_data_bean = DataBeanForReactome(self.__pathway_name, self.__output_link_prediction_task,
@@ -1067,6 +1070,7 @@ class ReactomeDataDivider:
         self.__ultimate_initialisation()
 
     def divide_data_for_regulation_link_prediction_task(self):
+        random.seed(1121)
         train_data_bean = DataBeanForReactome(self.__pathway_name, self.__regulation_link_prediction_task,
                                               self.__train_type_divided_dataset, self)
         validation_data_bean = DataBeanForReactome(self.__pathway_name, self.__regulation_link_prediction_task,

@@ -31,9 +31,6 @@ def extract_data_from_reactome():
 
 
 def divide_data_set():
-    # set the random seed
-    random.seed(1121)
-
     print("\033[1;36m" + "Disease" + "\033[0m" + "\n")
     disease = ReactomeDataDivider("Disease")
 
@@ -79,6 +76,6 @@ if __name__ == '__main__':
 
     time_sum = time_end - time_start  # The difference is the execution time of the program in seconds
 
-    print("success! it takes " + str(time_sum) + " seconds to extract the data from Reactome")
+    print("success! it takes " + str(time_sum) + " seconds to extract and process the data from Reactome")
 
 # See PyCharm help at https://www.jetbrains.com/help/pycharm/
