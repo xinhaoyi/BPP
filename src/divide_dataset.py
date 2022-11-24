@@ -260,7 +260,6 @@ class ReactomeDataDivider:
                     reactions_list.append(reaction_id)
                     self.__entity_to_list_of_regulation_reactions_dict[entity_id] = reactions_list
 
-
     def __initialisation_inner_entity_and_component_dict(self):
         """
         self.__all_entity_to_list_of_components_dict: dict[str, list[str]] = {}
@@ -716,6 +715,8 @@ class ReactomeDataDivider:
 
                     list_of_relationships = self.__get_list_of_relationships_based_on_entity_id(random_entity_id)
 
+                    train_data_bean.add_train_entity_id_mask_to_inner_train_entity_mask_list(random_entity_id)
+
                     if validation_counter >= validation_size:
                         test_data_bean.add_list_of_relationships(list_of_relationships)
                         test_data_bean.add_pair_of_entity_and_component(pair_of_entity_and_component)
@@ -753,7 +754,7 @@ class ReactomeDataDivider:
 
         self.__ultimate_initialisation()
 
-    # todo
+    # todo: test method
     def test_count_components_based_on_relationships(self):
         list_of_pair_of_entity_and_component = self.__list_of_pair_of_entity_and_component
 
@@ -1184,6 +1185,7 @@ class DataBeanForReactome:
 
         self.__edges_file_name = "edges.txt"
         self.__nodes_file_name = "nodes.txt"
+        self.__nodes_mask_file_name = "nodes-mask.txt"
         self.__relationship_file_name = "relationship.txt"
         self.__all_components_file_name = "components-all.txt"
         self.__entities_components_mapping_file_name = "components-mapping.txt"
@@ -1228,6 +1230,9 @@ class DataBeanForReactome:
         # list of (component_id, component_id,.......)
         self.__entities_component_ids_mapping_list: list[list[str]] = list()
 
+        # list of (index_in_raw_data, entity_id)
+        self.__train_entity_mask_list: list[str] = list()
+
     def add_relationship(self, relationship: list[str]):
         self.__relationships.append(relationship)
 
@@ -1241,6 +1246,14 @@ class DataBeanForReactome:
     def add_list_of_pair_of_entity_and_component(self, list_of_pair_of_entity_and_component: list[list[str]]):
         for pair_of_entity_and_component in list_of_pair_of_entity_and_component:
             self.add_pair_of_entity_and_component(pair_of_entity_and_component)
+
+    # add the nodes in train that have been masked
+    def add_train_entity_id_mask_to_inner_train_entity_mask_list(self, entity_id_mask: str):
+        train_entity_mask_list = self.__train_entity_mask_list
+        train_entity_mask_set = set(train_entity_mask_list)
+        train_entity_mask_set.add(entity_id_mask)
+
+        self.__train_entity_mask_list = list(train_entity_mask_set)
 
     def __remove_duplicate_relationships(self):
         # PhysicalEntity_id, Reaction_id, 0/1    -a list
@@ -1305,7 +1318,6 @@ class DataBeanForReactome:
             components = entity_to_list_of_components_dict[entity_id]
             self.__entities_component_ids_mapping_list.append(components)
 
-
     # We want to take the entities we have and sort them from smallest to largest according to their index size in the original dataset
     def sort_entities(self):
         raw_entities_ids = copy.deepcopy(self.raw_data.get_raw_entities_ids())
@@ -1316,30 +1328,30 @@ class DataBeanForReactome:
 
         self.__entities_ids = [raw_entities_ids[entity_index] for entity_index in entity_index_list]
 
-
     def sort_reactions(self):
         raw_reaction_ids = copy.deepcopy(self.raw_data.get_raw_reaction_ids())
-        raw_reaction_id_to_reaction_index_dict = {reaction_id: index for index, reaction_id in enumerate(raw_reaction_ids)}
+        raw_reaction_id_to_reaction_index_dict = {reaction_id: index for index, reaction_id in
+                                                  enumerate(raw_reaction_ids)}
         reactions_to_be_sorted = copy.deepcopy(self.__reactions_ids)
-        reaction_index_list = [raw_reaction_id_to_reaction_index_dict[reaction_id] for reaction_id in reactions_to_be_sorted]
+        reaction_index_list = [raw_reaction_id_to_reaction_index_dict[reaction_id] for reaction_id in
+                               reactions_to_be_sorted]
 
         reaction_index_list.sort()
 
         self.__reactions_ids = [raw_reaction_ids[reaction_index] for reaction_index in reaction_index_list]
 
-
     def sort_components(self):
         raw_components_ids = copy.deepcopy(self.raw_data.get_raw_component_ids())
-        raw_component_id_to_component_index_dict = {component_id: index for index, component_id in enumerate(raw_components_ids)}
+        raw_component_id_to_component_index_dict = {component_id: index for index, component_id in
+                                                    enumerate(raw_components_ids)}
         components_to_be_sorted = copy.deepcopy(self.__components_ids)
 
-        component_index_list = [raw_component_id_to_component_index_dict[component_id] for component_id in components_to_be_sorted]
+        component_index_list = [raw_component_id_to_component_index_dict[component_id] for component_id in
+                                components_to_be_sorted]
 
         component_index_list.sort()
 
         self.__components_ids = [raw_components_ids[component_index] for component_index in component_index_list]
-
-
 
     def __complete_the_data_bean(self):
         # self.__remove_duplicate_relationships()
@@ -1373,7 +1385,6 @@ class DataBeanForReactome:
 
         entities_component_indexes_mapping_list_for_print: list[str] = list()
 
-
         for component_ids in self.__entities_component_ids_mapping_list:
             line_component_index_list = ""
             for component_id in component_ids:
@@ -1399,7 +1410,8 @@ class DataBeanForReactome:
 
             relationships_index_style_for_print.append(line_message)
 
-        relationships_index_style_for_print.sort(key=lambda l: (int(re.findall('\d+', l)[1]), int(re.findall('\d+', l)[0]), int(re.findall('-?\d+', l)[2])))
+        relationships_index_style_for_print.sort(
+            key=lambda l: (int(re.findall('\d+', l)[1]), int(re.findall('\d+', l)[0]), int(re.findall('-?\d+', l)[2])))
 
         index_and_component_id_for_print: list[str] = list()
         index_and_reaction_id_for_print: list[str] = list()
@@ -1429,6 +1441,17 @@ class DataBeanForReactome:
         # sort the index_and_entity_id_for_print via index sequence
         index_and_entity_id_for_print.sort(key=lambda l: int(re.findall('\d+', l)[0]))
 
+        # index and entity_id mask for print
+
+        index_and_entity_id_mask_for_print: list[str] = list()
+        for entity_id in self.__train_entity_mask_list:
+            index = self.raw_data.get_raw_entities_ids().index(entity_id)
+            index_and_entity_mask_line: str = str(index) + "," + entity_id
+            index_and_entity_id_mask_for_print.append(index_and_entity_mask_line)
+
+        # sort the index_and_entity_id_for_print via index sequence
+        index_and_entity_id_mask_for_print.sort(key=lambda l: int(re.findall('\d+', l)[0]))
+
         pre_path = "data/" + self.__pathway_name + "/" + self.__task_of_sub_data_set + "/"
         self.__file_processor.createFile(pre_path + self.__type_of_sub_data_set, self.__all_components_file_name)
         self.__file_processor.createFile(pre_path + self.__type_of_sub_data_set,
@@ -1449,6 +1472,11 @@ class DataBeanForReactome:
                                                  index_and_entity_id_for_print)
         self.__file_processor.writeMessageToFile(pre_path + self.__type_of_sub_data_set, self.__relationship_file_name,
                                                  relationships_index_style_for_print)
+
+        if len(self.__train_entity_mask_list) > 0:
+            self.__file_processor.createFile(pre_path + self.__type_of_sub_data_set, self.__nodes_mask_file_name)
+            self.__file_processor.writeMessageToFile(pre_path + self.__type_of_sub_data_set,
+                                                     self.__nodes_mask_file_name, index_and_entity_id_mask_for_print)
 
     def generate_and_print_components_mapping_mix_negative_to_file(self, num_of_negative_elements: int):
 
@@ -1482,19 +1510,21 @@ class DataBeanForReactome:
                                                       for negative_components_id in negative_components_ids]
 
             for negative_component_index in negative_components_indexes:
-                entities_component_indexes_mapping_list_for_print[index] = entities_component_indexes_mapping_list_for_print[index] + "||" + str(negative_component_index)
+                entities_component_indexes_mapping_list_for_print[index] = \
+                entities_component_indexes_mapping_list_for_print[index] + "||" + str(negative_component_index)
 
         pre_path = "data/" + self.__pathway_name + "/" + self.__task_of_sub_data_set + "/"
 
-        self.__file_processor.createFile(pre_path + self.__type_of_sub_data_set, self.__entities_components_mapping_mix_negative_file_name)
+        self.__file_processor.createFile(pre_path + self.__type_of_sub_data_set,
+                                         self.__entities_components_mapping_mix_negative_file_name)
 
         self.__file_processor.writeMessageToFile(pre_path + self.__type_of_sub_data_set,
                                                  self.__entities_components_mapping_mix_negative_file_name,
                                                  entities_component_indexes_mapping_list_for_print)
 
-
     def generate_and_print_relationships_mix_negative_to_file(self, num_of_negative_elements: int):
-        raw_reaction_to_list_of_entities_dict: dict[str, list[str]] = copy.deepcopy(self.raw_data.get_reaction_to_list_of_entities_dict())
+        raw_reaction_to_list_of_entities_dict: dict[str, list[str]] = copy.deepcopy(
+            self.raw_data.get_reaction_to_list_of_entities_dict())
 
         raw_entities_ids: list[str] = copy.deepcopy(self.raw_data.get_raw_entities_ids())
 
@@ -1502,7 +1532,8 @@ class DataBeanForReactome:
 
         raw_entity_id_to_entity_index_dict = {entity_id: index for index, entity_id in enumerate(raw_entities_ids)}
 
-        raw_reaction_id_to_reaction_index_dict = {reaction_id: index for index, reaction_id in enumerate(raw_reactions_ids)}
+        raw_reaction_id_to_reaction_index_dict = {reaction_id: index for index, reaction_id in
+                                                  enumerate(raw_reactions_ids)}
 
         relationships_index_style_for_print: list[str] = list()
 
@@ -1521,7 +1552,8 @@ class DataBeanForReactome:
 
             relationships_index_style_for_print.append(line_message)
 
-        relationships_index_style_for_print.sort(key=lambda l: (int(re.findall('\d+', l)[1]), int(re.findall('\d+', l)[0]), int(re.findall('-?\d+', l)[2])))
+        relationships_index_style_for_print.sort(
+            key=lambda l: (int(re.findall('\d+', l)[1]), int(re.findall('\d+', l)[0]), int(re.findall('-?\d+', l)[2])))
 
         # generate the relationship list mixed negative
         relationship_index_style_list_mix_negative: list[str] = list()
@@ -1553,9 +1585,9 @@ class DataBeanForReactome:
 
                 negative_relationship_direction: int = 1 if random.random() < 0.5 else -1
 
-                negative_relationship: str = str(negative_entity_index) + "," + str(reaction_index) + "," + str(negative_relationship_direction)
+                negative_relationship: str = str(negative_entity_index) + "," + str(reaction_index) + "," + str(
+                    negative_relationship_direction)
                 negative_relationship_list_index_style.append(negative_relationship)
-
 
             relationship_index_style_mix_negative = relationship_index_style
 
@@ -1563,7 +1595,6 @@ class DataBeanForReactome:
                 relationship_index_style_mix_negative = relationship_index_style_mix_negative + "||" + negative_relationship_index_style
 
             relationship_index_style_list_mix_negative.append(relationship_index_style_mix_negative)
-
 
         pre_path = "data/" + self.__pathway_name + "/" + self.__task_of_sub_data_set + "/"
 
@@ -1573,11 +1604,6 @@ class DataBeanForReactome:
         self.__file_processor.writeMessageToFile(pre_path + self.__type_of_sub_data_set,
                                                  self.__relationship_mix_negative_file_name,
                                                  relationship_index_style_list_mix_negative)
-
-
-
-
-
 
     def __initialisation_inner_reaction_to_list_of_entities_and_entity_to_list_of_reactions_dict(self):
         """ initialise the inner dictionary of reaction to entities and entity to reactions based on different direction
@@ -2361,10 +2387,11 @@ class DataBean:
         for list_of_reactions in self.__entity_to_list_of_regulation_reactions_dict.values():
             length = len(list_of_reactions)
             if length > 8:
-                entity_with_regulation_relationships_information[9] = entity_with_regulation_relationships_information[9] + 1
+                entity_with_regulation_relationships_information[9] = entity_with_regulation_relationships_information[
+                                                                          9] + 1
             else:
                 entity_with_regulation_relationships_information[length] = \
-                entity_with_regulation_relationships_information[length] + 1
+                    entity_with_regulation_relationships_information[length] + 1
 
         for i in range(0, 10):
             print("entity with  " + temp_num_dict[i] + " output reactions: " + str(
