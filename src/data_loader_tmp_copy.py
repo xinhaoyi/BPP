@@ -8,13 +8,11 @@ import torch
 from numpy import ndarray
 from scipy.sparse import csr_matrix, coo_matrix
 
-sys.path.append("../")
+sys.path.append("../../")
 name = 'Disease'
 task = 'input link prediction dataset'
 
 
-# todo 发现一个尚未解决的bug，即对于 attribute prediction，train中的relationships数量和raw data中relationships数量不相等，差2个
-# todo 初步检查是因为raw data 中relationship的去重还存在问题，导致在变成train data去重时，删掉了两个重复的，这个bug还没有修复
 class Database:
     def __init__(self, name, task):
         self.dataset = name
@@ -26,14 +24,15 @@ class Database:
         self.test = self.load_data_to_graph(self.dataset, self.task, 'test')
         self.valid = self.load_data_to_graph(self.dataset, self.task, 'validation')
 
-    def load_data_to_graph(self, name, task, subset):
-        data_path = os.path.join("data", name)
+
+    def load_data_to_graph(self, sub_dataset_name, task_name, subset):
+        data_path = os.path.join("../data", sub_dataset_name)
 
         raw_relation_path = os.path.join(data_path, 'relationship.txt')
 
 
-        relation_path = os.path.join(data_path, task, subset, 'relationship.txt')
-        mapping_path = os.path.join(data_path, task, subset, 'components-mapping.txt')
+        relation_path = os.path.join(data_path, task_name, subset, 'relationship.txt')
+        mapping_path = os.path.join(data_path, task_name, subset, 'components-mapping.txt')
 
         mat = pd.read_csv(relation_path, names=['entity', 'reaction', 'type'], header=None)
         my_file = open(mapping_path, "r")

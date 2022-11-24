@@ -2,7 +2,7 @@ import pandas as pd
 import os
 import sys
 from scipy.sparse import csr_matrix
-sys.path.append("../")
+sys.path.append("../../")
 
 
 name = 'Disease'
@@ -21,7 +21,7 @@ class Database():
 
 
     def load_data_to_graph(self, name, task, subset):
-        data_path = os.path.join("data", name)
+        data_path = os.path.join("../data", name)
         relation_path = os.path.join(data_path, task, subset, 'relationship.txt')
         mapping_path = os.path.join(data_path, task, subset, 'components-mapping.txt')
         mat = pd.read_csv(relation_path, names=['entity', 'reaction', 'type'], header=None)
