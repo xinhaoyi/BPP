@@ -1111,7 +1111,7 @@ class ReactomeProcessor:
 
             relationships_between_nodes_and_edges_with_index_style.append(line_message)
 
-        relationships_between_nodes_and_edges_with_index_style.sort(key=lambda l: int(re.findall('\d+', l)[1]))
+        relationships_between_nodes_and_edges_with_index_style.sort(key=lambda l: (int(re.findall('\d+', l)[1]), int(re.findall('\d+', l)[0]), int(re.findall('-?\d+', l)[2])))
 
         # remove the duplicate components
         component_ids_unique_for_one_pathway, components_dic = self.__physical_entity_processor.get_unique_components_and_components_dict_from_list_of_physical_entities(
@@ -1934,7 +1934,7 @@ class FileProcessor:
         file_professor.writeMessageToFile(path, self.filename_components_mapping, entity_component_mapping_list)
 
     def read_file_via_lines(self, path, file_name):
-        url = path + '/' + file_name
+        url = os.path.join(self.root_path, path, file_name)
         res_list = []
 
         try:

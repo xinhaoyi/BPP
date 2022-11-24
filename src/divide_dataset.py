@@ -1381,7 +1381,7 @@ class DataBeanForReactome:
 
             relationships_index_style_for_print.append(line_message)
 
-        relationships_index_style_for_print.sort(key=lambda l: int(re.findall('\d+', l)[1]))
+        relationships_index_style_for_print.sort(key=lambda l: (int(re.findall('\d+', l)[1]), int(re.findall('\d+', l)[0]), int(re.findall('-?\d+', l)[2])))
 
         index_and_component_id_for_print: list[str] = list()
         index_and_reaction_id_for_print: list[str] = list()
@@ -1502,7 +1502,7 @@ class DataBeanForReactome:
 
             relationships_index_style_for_print.append(line_message)
 
-        relationships_index_style_for_print.sort(key=lambda l: int(re.findall('\d+', l)[1]))
+        relationships_index_style_for_print.sort(key=lambda l: (int(re.findall('\d+', l)[1]), int(re.findall('\d+', l)[0]), int(re.findall('-?\d+', l)[2])))
 
         # generate the relationship list mixed negative
         relationship_index_style_list_mix_negative: list[str] = list()
