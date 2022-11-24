@@ -23,16 +23,16 @@ def extract_data_from_reactome():
 
     reactome_processor.execution_on_single_pathway_via_name_enhanced("Disease")
 
-    # reactome_processor.execution_on_single_pathway_via_name_enhanced("Immune System")
-    #
-    # reactome_processor.execution_on_single_pathway_via_name_enhanced("Metabolism")
-    #
-    # reactome_processor.execution_on_single_pathway_via_name_enhanced("Signal Transduction")
+    reactome_processor.execution_on_single_pathway_via_name_enhanced("Immune System")
+
+    reactome_processor.execution_on_single_pathway_via_name_enhanced("Metabolism")
+
+    reactome_processor.execution_on_single_pathway_via_name_enhanced("Signal Transduction")
 
 
 def divide_data_set():
     # set the random seed
-    # random.seed(1121)
+    random.seed(1121)
 
     print("\033[1;36m" + "Disease" + "\033[0m" + "\n")
     disease = ReactomeDataDivider("Disease")
@@ -68,12 +68,10 @@ if __name__ == '__main__':
     time_start = time.time()  # record the start time
 
     # extract the data from Reactome
-    # extract_data_from_reactome()
+    extract_data_from_reactome()
 
     # divide the dataset
-    # set the random seed
-    random.seed(1121)
-    divide_data_set()
+    # divide_data_set()
 
 
 

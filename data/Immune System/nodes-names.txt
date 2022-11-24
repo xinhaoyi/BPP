@@ -553,7 +553,6 @@ Clathrin coated MHC class II alpha/beta/Ii nonamer
 Clathrin:AP-2 complex
 Clathrin:AP2 complex
 Clustered p:LYN:p-FCERI:IgE:allergen:SYK
-Clustered p:LYN:p-FCERI:IgE:allergen:p-6Y-SYK
 CoA-SH
 Collagen type XVII fibril
 Collagen types I,II,III/SP-D
@@ -1363,6 +1362,7 @@ K48polyUb-DDX58,K48polyUb-IFIH1
 K48polyUb-NIK
 K48polyUb-TRAF3
 K48polyUb-antigenic substrate
+K48polyUb-partially digested Ag
 K63-linked poly-Ub-IRF7:TRAF6:p-3S,3T-IRAK1:p-S,2T-IRAK4:oligo-MyD88:activated TLR7/8 or 9.
 K63-linked poly-Ub-p-3S,3T-IRAK1:TRAF6
 K63-linked polyUb p-IRAK1:TRAF6

@@ -13,6 +13,7 @@
 2xN4GlycoAsn-TLR4
 2xp-S349-PRLR:2xJAK2
 2xp-S477,S479-IRF7
+2xp-Y-STAT1
 2xviral dsRNA:2xK63polyUb-DDX58:2xRNF135,TRIM25:2xATP
 3xBAFFR:BAFF trimer
 3xBAFFR:BAFF trimer:TRAF3:NIK
@@ -441,6 +442,7 @@ CD300E
 CD300LB
 CD33
 CD34-1
+CD36
 CD36 gene
 CD3G homodimer
 CD3G/CD3Z dimers
@@ -695,7 +697,7 @@ Class I MHC:B2M
 Clathrin
 Clathrin Triskelion
 Clathrin light chain
-Clathrin:AP2 complex
+Clathrin:AP-2 complex
 Clostridial peptidoglycan
 CoA-SH
 Collagen type I fibril
@@ -977,6 +979,7 @@ GNS
 GOLGA7
 GPI
 GPI-CEACAM6
+GPI-PLAUR
 GPIN-CD14(20-345)
 GPR84
 GPR97
@@ -1638,7 +1641,6 @@ Influenza A dsRNA intermediate form
 Integrin alpha4beta7
 Integrin alphaLbeta2
 Integrin alphaMbeta2
-Integrin alphaVbeta5
 Interleukin receptor complexes with activated SHC1
 Interleukin receptor complexes with activated SHC1:SHIP1
 Invariant chain trimer
@@ -1666,8 +1668,9 @@ K48polyUb-NIK
 K48polyUb-TRAF3
 K48polyUb-TRAF3:NIK
 K48polyUb-antigenic substrate
+K48polyUb-partially digested Ag
 K63-Ub
-K63-linked poly-Ub-p-3S,3T-IRAK1:TRAF6
+K63-linked polyUb p-IRAK1:TRAF6
 K63-pUb-TRAF6:TICAM1:TRAM:TLR4:LY96:LPS:CD14
 K63pUb-RIP1:TICAM1:TRAM:TLR4:LY96:LPS:CD14
 K63pUb-TANK:K63pUb-TRAF3:TICAM1:TLR3:viral dsRNA
@@ -2173,7 +2176,6 @@ PLA2G2A
 PLA2G2A:Ca2+
 PLAC8
 PLAU(21-431)
-PLAUR
 PLC gamma1,2
 PLCG1
 PLCG1:p-3Y-SLP-76:Gads:LAT
@@ -2225,7 +2227,7 @@ PRLR ligands:p-S349-PRLR:JAK2 dimer
 PRLR ligands:p-Y611-PRLR:p-Y1007-JAK2 dimer
 PRLR:JAK2
 PRLR:JAK2 dimer
-PRSS2(24-247)
+PRSS2
 PRSS3
 PRTN3
 PS
@@ -2864,7 +2866,7 @@ Ub-580-UBC(533-608)
 Ub-656-UBC(609-684)
 Ub-C85-UBE2D1,2,3
 Ub-TRAF6 trimer bound to CBM complex
-Ub-pY FLT3
+Ub-pY FLT3 dimer
 Ub:substrate
 Ubiquitin activating E1 enzymes
 Ubiquitin:E2 conjugating enzymes
@@ -2940,6 +2942,7 @@ active p-T507,S645,S664-PRKCD
 alpha beta dimer:Ii trimer
 alpha beta dimer:Ii trimer:calnexin
 alpha-mannan
+alphaVbeta5
 amlexanox
 anakinra
 antigenic substrate
@@ -3255,7 +3258,6 @@ p-Y-JAK1
 p-Y-JAK3
 p-Y-PTK2B
 p-Y-SHC1
-p-Y-STAT1 dimer
 p-Y-STAT1,3,5 dimer
 p-Y-STAT2
 p-Y-STAT3,p-STAT5,(p-Y-STAT3:p-STAT5)

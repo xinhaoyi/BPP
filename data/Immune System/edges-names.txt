@@ -668,12 +668,10 @@ IL24 binds IL20RA:JAK1:IL20RB
 IL24 binds to IL22RA1:JAK1:IL20RB
 IL24:IL20RA:p-JAK1:IL20RB:STAT1,STAT3 phosphorylates STAT1 or STAT3
 IL24:IL22RA1:JAK1:IL20RB phosphorylates JAK1
-IL24:IL22RA1:p-JAK1:IL20RB binds STAT3
 IL24:IL22RA1:p-JAK1:IL20RB:STAT3 phosphorylates STAT3
 IL24:p-IL20RA:p-JAK1:IL20RB binds STAT1,STAT3
 IL26 binds IL20RA:JAK1
 IL26:IL10RB:p-TYK2:IL20RA:p-JAK1 binds STAT1, STAT3
-IL26:IL10RB:p-TYK2:IL20RA:p-JAK1:STAT1,STAT3  phosphorylates STAT1,STAT3
 IL26:IL20RA:JAK1 binds IL10RB:TYK2
 IL26:IL20RA:JAK1:IL10RB:TYK2 phosphorylates JAK1, TYK2
 IL27 binds CRLF1
@@ -1298,11 +1296,13 @@ STAT1 and STAT4 associate with IL12RB2:IL6ST receptor
 STAT1 associates with IL6ST:IL6ST
 STAT1 stimulates SMAD7 gene transcription
 STAT1, STAT3 bind p-Y611-IL27RA from Interleukin-27:Interleukin-27 receptor complex
+STAT1,STAT3 are phosphorylated by IL26:IL10RB:p-TYK2:IL20RA:p-JAK1:STAT1
 STAT1,STAT3 associate with IL27RA:IL12RB2 receptor
 STAT1,STAT3,STAT6 bind IL13:IL13R type II
 STAT1,STAT3,STAT6 phosphorylation
 STAT3 and STAT1 are phosphorylated by JAKs after IL27:IL27R interaction
 STAT3 binds TSLP:IL7R:CRLF2
+STAT3 binds to IL24:IL22RA1:p-JAK1:IL20RB
 STAT3 binds to p-Y-IL23R in IL23:IL23 receptor
 STAT3 is phosphorylated by TSLP:IL7R:CRLF2:STAT3 complex
 STAT3 is phosphorylated by p-Y-JAK1,P-Y-TYK2
