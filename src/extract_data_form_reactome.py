@@ -991,7 +991,7 @@ class ReactomeProcessor:
 
             relationships_between_nodes_and_edges_with_index_style.append(line_message)
 
-        relationships_between_nodes_and_edges_with_index_style.sort(key=lambda l: int(re.findall('\d+', l)[1]))
+        relationships_between_nodes_and_edges_with_index_style.sort(key=lambda l: (int(re.findall('\d+', l)[1]), int(re.findall('\d+', l)[0])))
 
         unique_components_without_duplicate_names, component_names_list, physical_entity_id_to_list_of_component_ids_dict = self.__physical_entity_processor.get_unique_components_without_duplicate_names_and_mapping_components_names_list_and_physical_entity_id_to_list_of_component_ids_dict_from_list_of_physical_entities(
             physical_entity_ids)
