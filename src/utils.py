@@ -33,12 +33,11 @@ def read_file_via_lines(path: str, file_name: str) -> list[str]:
 
 def get_sys_platform():
     sys_platform = platform.platform()
-    sys_platform_return = ""
-    if sys_platform.find("Windows"):
+    if "Windows" in sys_platform:
         sys_platform_return = "windows"
-    elif sys_platform.find("macos"):
+    elif "macos" in sys_platform:
         sys_platform_return = "macos"
-    elif sys_platform.find("linux"):
+    elif "linux" in sys_platform:
         sys_platform_return = "linux"
     else:
         sys_platform_return = "other"
@@ -52,7 +51,7 @@ def get_root_path_of_project(project_name: str):
     :return:
     """
     cur_path: str = os.path.abspath(os.path.dirname(__file__))
-    if "window" == get_sys_platform():
+    if "windows" == get_sys_platform():
         root_path: str = cur_path[:cur_path.find(project_name + "\\") + len(project_name + "\\")]
     elif "macos" == get_sys_platform() or "linux" == get_sys_platform():
         root_path: str = cur_path[:cur_path.find(project_name + "/") + len(project_name + "/")]
