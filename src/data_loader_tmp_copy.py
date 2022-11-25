@@ -1,138 +1,267 @@
-import numpy as np
+import copy
+
 import pandas as pd
 import os
-import sys
 
-import scipy.sparse as sp
-import torch
-from numpy import ndarray
-from scipy.sparse import csr_matrix, coo_matrix
 
-sys.path.append("../../")
-name = 'Disease'
-task = 'input link prediction dataset'
+import utils
 
 
 class Database:
-    def __init__(self, name, task):
-        self.dataset = name
-        self.task = task
-        self.load_dataset()
+    def __init__(self, sub_dataset_name, task_name):
+        self.sub_dataset_name = sub_dataset_name
+        self.task_name = task_name
 
-    def load_dataset(self):
-        self.train = self.load_data_to_graph(self.dataset, self.task, 'train')
-        self.test = self.load_data_to_graph(self.dataset, self.task, 'test')
-        self.valid = self.load_data_to_graph(self.dataset, self.task, 'validation')
+        # define path of file
+        self.__project_root_path = utils.get_root_path_of_project("PathwayGNN")
+        self.__raw_data_file_path = os.path.join("data", sub_dataset_name)
+        self.__task_file_path = os.path.join(self.__raw_data_file_path, task_name)
+        self.__test_file_path = os.path.join(self.__task_file_path, "test")
+        self.__train_file_path = os.path.join(self.__task_file_path, "train")
+        self.__validation_file_path = os.path.join(self.__task_file_path, "validation")
 
+        # node mask
+        self.__train_nodes_mask, self.__validation_nodes_mask, self.__test_nodes_mask = self.__get_nodes_mask()
 
-    def load_data_to_graph(self, sub_dataset_name, task_name, subset):
-        data_path = os.path.join("../data", sub_dataset_name)
+        # node features
+        self.__raw_nodes_features = self.__get_nodes_features_assist("raw")
+        self.__train_nodes_features = self.__get_nodes_features_assist("train")
+        self.__validation_nodes_features = self.__get_complete_nodes_features_mix_negative_for_attribute_prediction(self.__validation_nodes_mask, "validation")
+        self.__test_nodes_features = self.__get_complete_nodes_features_mix_negative_for_attribute_prediction(self.__test_nodes_mask, "test")
 
-        raw_relation_path = os.path.join(data_path, 'relationship.txt')
+        self.__function_dict = {"num_nodes": self.__get_num_of_nodes_based_on_type_name(),
+                              "num_features": self.__get_num_of_features_based_on_type_name(),
+                              "num_edges": self.__get_num_of_edges_based_on_type_name(),
+                              "edge_list": self.__get_edge_of_nodes_list_regardless_direction(),
+                              "raw_nodes_features": self.__raw_nodes_features,
+                              "train_nodes_features": self.__train_nodes_features,
+                              "validation_nodes_features": self.__validation_nodes_features,
+                              "test_nodes_features": self.__test_nodes_features,
+                              "train_node_mask": self.__train_nodes_mask,
+                              "val_node_mask": self.__validation_nodes_mask,
+                              "test_node_mask": self.__test_nodes_mask}
 
+    def __getitem__(self, key):
+        return self.__function_dict[key]
 
-        relation_path = os.path.join(data_path, task_name, subset, 'relationship.txt')
-        mapping_path = os.path.join(data_path, task_name, subset, 'components-mapping.txt')
+    def __get_num_of_nodes_based_on_type_name(self, type_name: str = "raw") -> int:
+        if "raw" == type_name:
+            path: str = self.__raw_data_file_path
+        else:
+            path: str = os.path.join(self.__task_file_path, type_name)
+        node_line_message_list: list[str] = utils.read_file_via_lines(path, "nodes.txt")
+        num_of_nodes = len(node_line_message_list)
+        return num_of_nodes
 
-        mat = pd.read_csv(relation_path, names=['entity', 'reaction', 'type'], header=None)
-        my_file = open(mapping_path, "r")
-        mapping = my_file.read()
-        mapping_list = mapping.split("\n")
-        new_list = [i.split(',') for i in mapping_list]
-        final_list = []
+    def __get_num_of_features_based_on_type_name(self, type_name: str = "raw") -> int:
+        if "raw" == type_name:
+            path: str = self.__raw_data_file_path
+        else:
+            path: str = os.path.join(self.__task_file_path, type_name)
+        feature_line_message_list: list[str] = utils.read_file_via_lines(path, "components-all.txt")
+        num_of_features = len(feature_line_message_list)
+        return num_of_features
 
-        for i in new_list:
-            final_list.append([int(j) for j in i])
+    def __get_num_of_edges_based_on_type_name(self, type_name: str = "raw") -> int:
+        if "raw" == type_name:
+            path: str = self.__raw_data_file_path
+        else:
+            path: str = os.path.join(self.__task_file_path, type_name)
+        edge_line_message_list: list[str] = utils.read_file_via_lines(path, "edges.txt")
+        num_of_edges = len(edge_line_message_list)
+        return num_of_edges
 
-        # mapping = pd.read_csv(train_mapping_path)
-        feature_dimension = max(sum(final_list, [])) + 1
-        num_nodes = max(mat['entity'])
+    def __get_nodes_features_assist(self, type_name: str):
+        if "raw" == type_name:
+            path: str = self.__raw_data_file_path
+        else:
+            path: str = os.path.join(self.__task_file_path, type_name)
 
-        row = []
-        column = []
-        val = []
-        for i in range(num_nodes):
-            feature = final_list[i]
-            for j in feature:
-                row.append(i)
-                column.append(j)
-                val.append(1)
+        num_of_nodes = self.__get_num_of_nodes_based_on_type_name(type_name)
+        num_of_feature_dimension = self.__get_num_of_features_based_on_type_name()
 
-        component_csc_mat = csr_matrix((val, (row, column)), shape=(num_nodes, feature_dimension))
-        print(subset, "Num of interactions: %2d.\n Number of nodes: %2d.\n Number of features: %2d"
-              % (len(mat), num_nodes, feature_dimension))
-        return mat, component_csc_mat
+        relationship_path = os.path.join(path, "relationship.txt")
+        mat = pd.read_csv(os.path.join(self.__project_root_path, relationship_path),
+                          names=['entity', 'reaction', 'type'], header=None)
 
-    def sparse_mx_to_torch_sparse_tensor(self, sparse_mx):
-        """Convert a scipy sparse matrix to a torch sparse tensor."""
+        components_mapping_line_message_list: list[str] = utils.read_file_via_lines(path, "components-mapping.txt")
+        components_mapping_list_with_str_style = [components_mapping_line_message.split(',') for
+                                                  components_mapping_line_message in
+                                                  components_mapping_line_message_list]
+
+        components_mapping_list = []
+
+        for components_mapping_str in components_mapping_list_with_str_style:
+            components_mapping_line_int_style = [int(component) for component in components_mapping_str]
+            components_mapping_list.append(components_mapping_line_int_style)
+
+        nodes_features = utils.encode_node_features(components_mapping_list, num_of_nodes, num_of_feature_dimension)
+
+        print(type_name + " dataset\n", "Number of interactions: %2d.\n Number of nodes: %2d.\n Number of features: %2d"
+              % (len(mat), num_of_nodes, num_of_feature_dimension))
+
+        return nodes_features
+
+    def __get_complete_nodes_features_mix_negative_for_attribute_prediction(self, node_mask: list[int], type_name: str):
+        nodes_features_mix_negative: list[list[int]] = self.__get_nodes_features_mix_negative_assist(type_name)
+
+        path: str = self.__raw_data_file_path
+        components_mapping_line_message_list: list[str] = utils.read_file_via_lines(path, "components-mapping.txt")
+        components_mapping_list_with_str_style = [components_mapping_line_message.split(',') for
+                                                  components_mapping_line_message in
+                                                  components_mapping_line_message_list]
+
+        raw_nodes_components_mapping_list = []
+
+        for components_mapping_str in components_mapping_list_with_str_style:
+            components_mapping_line_int_style = [int(component) for component in components_mapping_str]
+            raw_nodes_components_mapping_list.append(components_mapping_line_int_style)
+
+        for i, node_mask_index in enumerate(node_mask):
+            raw_nodes_components_mapping_list[node_mask_index] = nodes_features_mix_negative[i]
+
+        num_of_nodes = self.__get_num_of_nodes_based_on_type_name(type_name)
+        num_of_feature_dimension = self.__get_num_of_features_based_on_type_name()
+
+        nodes_features = utils.encode_node_features(raw_nodes_components_mapping_list, num_of_nodes, num_of_feature_dimension)
+
+        return nodes_features
+
+    def __get_nodes_features_mix_negative_assist(self, type_name: str) -> list[list[int]]:
+        if "test" != type_name and "validation" != type_name:
+            raise Exception("The type should be \"test\" or \"validation\"")
+        if "attribute prediction dataset" != self.task_name:
+            raise Exception(
+                "The method \"self.__get_nodes_features_mix_negative_assist\" is only for attribute prediction task")
+        path: str = os.path.join(self.__task_file_path, type_name)
+        components_mapping_line_message_mix_negative_list: list[str] = utils.read_file_via_lines(path,
+                                                                                                 "components-mapping-mix-negative.txt")
+
+        nodes_features_mix_negative: list[list[int]] = list()
+
+        for components_mapping_line_message_mix_negative in components_mapping_line_message_mix_negative_list:
+            elements: list[str] = components_mapping_line_message_mix_negative.split("||")
+            positive_components_list_str_message: str = elements[0]
+            negative_components_list_str_style: list[str] = elements[1:-1]
+
+            components_list: list[int] = list()
+
+            positive_components_list: list[int] = [int(positive_component_str_style) for positive_component_str_style in
+                                                   positive_components_list_str_message.split(",")]
+            negative_components_list: list[int] = [int(negative_components_str_style) for negative_components_str_style
+                                                   in negative_components_list_str_style]
+
+            components_list.extend(positive_components_list)
+
+            components_list.extend(negative_components_list)
+
+            nodes_features_mix_negative.append(copy.deepcopy(components_list))
+
+        return nodes_features_mix_negative
+
+    def __get_edge_of_nodes_list_regardless_direction(self) -> list[list[int]]:
         """
-        numpy中的ndarray转化成pytorch中的tensor : torch.from_numpy()
-        pytorch中的tensor转化成numpy中的ndarray : numpy()
+        :return: [[1,2,3], [3,7,9], [4,6,7,8,10,11]...] while [1,2,3], [3,7,9], .. represent the hyper edges
         """
+        edge_to_list_of_nodes_dict, _, _ = self.__get_edge_to_list_of_nodes_dict("train")
 
-        # tocoo() convert COO形式
-        # 将稀疏矩阵转化为COO格式，矩阵矢量乘积这一数值计算中经常用的操作会变得非常高效。
-        sparse_mx = sparse_mx.tocoo().astype(np.float32)
+        edge_of_nodes_list_without_direction: list[list[int]] = [list_of_nodes for edge_index, list_of_nodes in
+                                                                 edge_to_list_of_nodes_dict.items()]
 
-        # indices are the coordinates of the adjacency matrix
-        indices = torch.from_numpy(np.vstack((sparse_mx.row, sparse_mx.col)).astype(np.int64))
+        return edge_of_nodes_list_without_direction
 
-        #
-        values = torch.from_numpy(sparse_mx.data)
-        shape = torch.Size(sparse_mx.shape)
-        # return torch.sparse.FloatTensor(indices, values, shape)
+    def __get_edge_to_list_of_nodes_dict(self, type_name: str):
+        """
+        :param type_name: "raw" for raw dataset, "test" for test dataset, "train" for train dataset, "validation" for validation dataset
+        :return:
+        """
+        if "raw" == type_name:
+            path: str = self.__raw_data_file_path
+        else:
+            path: str = os.path.join(self.__task_file_path, type_name)
 
-        # https://ptorch.com/docs/1/torch-sparse
-        # Don't worry about the yellow report, it's actually a bug in pycharm
-        return torch.sparse.FloatTensor(indices, values, shape)
+        relationship_line_message_list: list[str] = utils.read_file_via_lines(path, "relationship.txt")
 
-    def get_normalized_features_in_tensor(self, features) -> torch.Tensor:
-        features_mat: csr_matrix = csr_matrix(features, dtype=np.float32)
-        features_mat: csr_matrix = self.normalize_sparse_matrix(features_mat)
-        features: torch.Tensor = torch.FloatTensor(np.array(features_mat.todense()))
-        return features
+        edge_to_list_of_nodes_dict: dict[int, list[int]] = dict()
+        edge_to_list_of_input_nodes_dict: dict[int, list[int]] = dict()
+        edge_to_list_of_output_nodes_dict: dict[int, list[int]] = dict()
 
-    @staticmethod
-    def normalize_sparse_matrix(mat):
-        """Row-normalize sparse matrix"""
-        # sum(1) 是计算每一行的和
-        # 会得到一个（2708,1）的矩阵
-        rowsum: ndarray = np.array(mat.sum(1))
+        for relationship_line_message in relationship_line_message_list:
+            elements: list[str] = relationship_line_message.split(",")
+            node_index: int = int(elements[0])
+            edge_index: int = int(elements[1])
+            direction: int = int(elements[2])
 
-        # 把这玩意儿取倒，然后拍平
-        r_inv = np.power(rowsum, -1).flatten()
+            if edge_index not in edge_to_list_of_nodes_dict.keys():
+                edge_to_list_of_nodes_dict[edge_index] = list()
+            edge_to_list_of_nodes_dict[edge_index].append(node_index)
 
-        # 在计算倒数的时候存在一个问题，如果原来的值为0，则其倒数为无穷大，因此需要对r_inv中无穷大的值进行修正，更改为0
-        r_inv[np.isinf(r_inv)] = 0.
+            if direction < 0:
+                if edge_index not in edge_to_list_of_input_nodes_dict.keys():
+                    edge_to_list_of_input_nodes_dict[edge_index] = list()
+                edge_to_list_of_input_nodes_dict[edge_index].append(node_index)
 
-        # np.diag() 应该也可以
-        # 这里就是生成 对角矩阵
-        r_mat_inv = sp.diags(r_inv)
+            elif direction > 0:
+                if edge_index not in edge_to_list_of_output_nodes_dict.keys():
+                    edge_to_list_of_output_nodes_dict[edge_index] = list()
+                edge_to_list_of_output_nodes_dict[edge_index].append(node_index)
 
-        # 点乘,得到归一化后的结果
-        # 注意是 归一化矩阵 点乘 原矩阵，别搞错了!!
-        mat = r_mat_inv.dot(mat)
-        return mat
+        return edge_to_list_of_nodes_dict, edge_to_list_of_input_nodes_dict, edge_to_list_of_output_nodes_dict
 
-    def get_list_of_edges_represent_via_nodes(self):
-        train, train_fea = self.train
-        test, test_fea = self.test
-        valid, valid_fea = self.valid
+    def __get_nodes_mask(self) -> tuple[list[int], list[int], list[int]]:
+        train_nodes_mask = self.__get_nodes_mask_assist("train")
+        validation_nodes_mask = self.__get_nodes_mask_assist("validation")
+        test_nodes_mask = self.__get_nodes_mask_assist("test")
 
+        return train_nodes_mask, validation_nodes_mask, test_nodes_mask
 
-# data = Database(name,task)
-# train, train_fea = data.train
-# test, test_fea = data.test
-# valid, valid_fea = data.valid
+    def __get_nodes_mask_assist(self, type_name: str) -> list[int]:
+        nodes_mask: list[int] = list()
+
+        path: str = os.path.join(self.__task_file_path, type_name)
+        if "train" != type_name:
+            file_name = "nodes.txt"
+        else:
+            file_name = "nodes-mask.txt"
+
+        node_line_message_list: list[str] = utils.read_file_via_lines(path, file_name)
+
+        for node_line_message in node_line_message_list:
+            elements = node_line_message.split(",")
+            node_index = int(elements[0])
+            nodes_mask.append(node_index)
+
+        return nodes_mask
+
+    def __get_edges_mask_assist(self, type_name: str) -> list[int]:
+        edges_mask: list[int] = list()
+
+        path: str = os.path.join(self.__task_file_path, type_name)
+        edges_line_message_list: list[str] = utils.read_file_via_lines(path, "edges.txt")
+
+        for node_line_message in edges_line_message_list:
+            elements = node_line_message.split(",")
+            edge_index = int(elements[0])
+            edges_mask.append(edge_index)
+
+        return edges_mask
 
 
 if __name__ == '__main__':
-    name = 'Disease'
-    task = 'attribute prediction dataset'
-    data_base = Database(name, task)
-    train, train_fea = data_base.train
-    print(train['entity'].tolist())
+    # name = 'Disease'
+    # task = 'attribute prediction dataset'
+    # data_base = Database(name, task)
+    # train, train_fea = data_base.train
+    # print(train['entity'].tolist())
+    data_loader = Database("Disease", "attribute prediction dataset")
 
-    feature_test = [[1, 0, 1], [1, 1, 1], [1, 0, 0]]
-    feature_test = data_base.get_normalized_features_in_tensor(feature_test)
-    print(feature_test)
+    num = data_loader["num_nodes"]
+    # validation_nodes_features
+
+    validation_nodes_features = data_loader["validation_nodes_features"]
+
+    print("validation_nodes_features: ", len(validation_nodes_features))
+
+    # feature_test = [[1, 0, 1], [1, 1, 1], [1, 0, 0]]
+    # feature_test = utils.get_normalized_features_in_tensor(feature_test)
+    # print(feature_test)
