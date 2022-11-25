@@ -3,14 +3,13 @@ import torch
 import torch.optim as optim
 import torch.nn.functional as F
 from dhg import Graph, Hypergraph
-from dhg.models import GCN
+from dhg.models import HGNN
 from sklearn.metrics import ndcg_score
 
 from data_loader_tmp_copy import Database
 
 learning_rate = 0.01
 weight_decay = 5e-4
-
 
 def train(net_model: torch.nn.Module, nodes_features: torch.Tensor, graph: Graph, labels: torch.Tensor,
           train_idx: list[bool],
@@ -57,7 +56,6 @@ def test(net_model, nodes_features, graph, labels, test_idx):
 
 
 
-
 if __name__ == '__main__':
     # set device
     device = torch.device("cuda") if torch.cuda.is_available() else torch.device("cpu")
@@ -88,11 +86,9 @@ if __name__ == '__main__':
     # the hyper graph
     hyper_graph = Hypergraph(num_of_nodes, hyper_edge_list)
 
-    # generate graph based on hyper graph
-    graph = Graph.from_hypergraph_clique(hyper_graph, weighted=True)
 
     # the GCN model
-    net_model = GCN(data_loader["num_features"], 32, data_loader["num_features"], use_bn=True)
+    net_model = HGNN(data_loader["num_features"], 32, data_loader["num_features"], use_bn=True)
 
     # set the optimizer
     optimizer = optim.Adam(net_model.parameters(), lr=learning_rate, weight_decay=weight_decay)
@@ -100,19 +96,19 @@ if __name__ == '__main__':
     # set the device
     train_nodes_features, validation_nodes_features, test_nodes_features, labels = train_nodes_features.to(
         device), validation_nodes_features.to(device), test_nodes_features.to(device), labels.to(device)
-    graph = graph.to(device)
+    hyper_graph = hyper_graph.to(device)
     net_model = net_model.to(device)
 
-    print("GCN Baseline")
+    print("HGNN Baseline")
 
     # start to train
     for epoch in range(200):
         # train
         # call the train method
-        train(net_model, train_nodes_features, graph, labels, train_mask, optimizer, epoch)
+        train(net_model, train_nodes_features, hyper_graph, labels, train_mask, optimizer, epoch)
 
         if epoch % 1 == 0:
             with torch.no_grad():
-                validation(net_model, validation_nodes_features, graph, labels, val_mask)
+                validation(net_model, validation_nodes_features, hyper_graph, labels, val_mask)
 
-    test(net_model, test_nodes_features, graph, labels, test_mask)
+    test(net_model, test_nodes_features, hyper_graph, labels, test_mask)

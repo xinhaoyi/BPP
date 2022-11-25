@@ -120,7 +120,7 @@ class Database:
         for i, node_mask_index in enumerate(node_mask):
             raw_nodes_components_mapping_list[node_mask_index] = nodes_features_mix_negative[i]
 
-        num_of_nodes = self.__get_num_of_nodes_based_on_type_name(type_name)
+        num_of_nodes = self.__get_num_of_nodes_based_on_type_name()
         num_of_feature_dimension = self.__get_num_of_features_based_on_type_name()
 
         nodes_features = utils.encode_node_features(raw_nodes_components_mapping_list, num_of_nodes, num_of_feature_dimension)

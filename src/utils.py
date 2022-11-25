@@ -11,6 +11,7 @@ def read_file_via_lines(path: str, file_name: str) -> list[str]:
     cur_path: str = os.path.abspath(os.path.dirname(__file__))
     root_path: str = cur_path[:cur_path.find("PathwayGNN\\") + len("PathwayGNN\\")]
     url: str = os.path.join(root_path, path, file_name)
+    # url: str = os.path.join(path, file_name)
     res_list: list[str] = []
 
     try:
