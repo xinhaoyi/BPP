@@ -1,4 +1,5 @@
 import os
+import platform
 
 import numpy as np
 import scipy as sp
@@ -8,8 +9,7 @@ from scipy.sparse import csr_matrix
 
 
 def read_file_via_lines(path: str, file_name: str) -> list[str]:
-    cur_path: str = os.path.abspath(os.path.dirname(__file__))
-    root_path: str = cur_path[:cur_path.find("PathwayGNN\\") + len("PathwayGNN\\")]
+    root_path: str = get_root_path_of_project("PathwayGNN")
     url: str = os.path.join(root_path, path, file_name)
     # url: str = os.path.join(path, file_name)
     res_list: list[str] = []
@@ -31,6 +31,18 @@ def read_file_via_lines(path: str, file_name: str) -> list[str]:
     finally:
         return res_list
 
+def get_sys_platform():
+    sys_platform = platform.platform()
+    sys_platform_return = ""
+    if sys_platform.find("Windows"):
+        sys_platform_return = "windows"
+    elif sys_platform.find("macos"):
+        sys_platform_return = "macos"
+    elif sys_platform.find("linux"):
+        sys_platform_return = "linux"
+    else:
+        sys_platform_return = "other"
+    return sys_platform_return
 
 def get_root_path_of_project(project_name: str):
     """
@@ -40,7 +52,12 @@ def get_root_path_of_project(project_name: str):
     :return:
     """
     cur_path: str = os.path.abspath(os.path.dirname(__file__))
-    root_path: str = cur_path[:cur_path.find(project_name + "\\") + len(project_name + "\\")]
+    if "window" == get_sys_platform():
+        root_path: str = cur_path[:cur_path.find(project_name + "\\") + len(project_name + "\\")]
+    elif "macos" == get_sys_platform() or "linux" == get_sys_platform():
+        root_path: str = cur_path[:cur_path.find(project_name + "/") + len(project_name + "/")]
+    else:
+        raise Exception("We can't support other system platform! Please use windows or macos")
     return root_path
 
 
