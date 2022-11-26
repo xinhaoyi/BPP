@@ -1,11 +1,19 @@
+import random
+import time
+from functools import wraps
 import os
 import platform
 
-import numpy as np
 import scipy as sp
 import torch
 from numpy import ndarray
 from scipy.sparse import csr_matrix
+import numpy as np
+import pandas as pd
+import torch
+import torch.nn.functional as F
+from tensorboardX import SummaryWriter
+from torch.utils.data import DataLoader, Dataset
 
 
 def read_file_via_lines(path: str, file_name: str) -> list[str]:
@@ -104,3 +112,327 @@ def encode_node_features(components_mapping_list: list[list[int]], num_of_nodes:
     nodes_features: list[list[int]] = component_csc_mat.toarray().tolist()
 
     return nodes_features
+
+
+class ModelEngine(object):
+    def __init__(self, config):
+        """Initialize ModelEngine Class."""
+        self.config = config  # model configuration, should be a dic
+        self.set_device()
+        self.set_optimizer()
+        self.model.to(self.device)
+        print(self.model)
+        self.writer = SummaryWriter(log_dir=config["run_dir"])  # tensorboard writer
+
+    def set_optimizer(self):
+        """Set optimizer in the model."""
+        if self.config["optimizer"] == "sgd":
+            self.optimizer = torch.optim.SGD(
+                self.model.parameters(),
+                lr=self.config["lr"],
+            )
+        elif self.config["optimizer"] == "adam":
+            self.optimizer = torch.optim.Adam(
+                self.model.parameters(),
+                lr=self.config["lr"],
+            )
+        elif self.config["optimizer"] == "rmsprop":
+            self.optimizer = torch.optim.RMSprop(
+                self.model.parameters(),
+                lr=self.config["lr"],
+            )
+
+    def set_device(self):
+        """Set device."""
+        self.device = torch.device(self.config["device_str"])
+        self.model.device = self.device
+        print("Setting device for torch_engine", self.device)
+
+    def train_single_batch(self, batch_data, ratings=None):
+        """Train the model in a single batch."""
+        assert hasattr(self, "model"), "Please specify the exact model !"
+        self.model.optimizer.zero_grad()
+        ratings_pred = self.model.forward(batch_data)
+        loss = self.model.loss(ratings_pred.view(-1), ratings)
+        loss.backward()
+        self.model.optimizer.step()
+        loss = loss.item()
+        return loss
+
+    def train_an_epoch(self, train_loader, epoch_id):
+        """Train the model in one epoch."""
+        assert hasattr(self, "model"), "Please specify the exact model !"
+        self.model.train()
+        total_loss = 0
+        for batch_id, batch_data in enumerate(train_loader):
+            assert isinstance(batch_data, torch.LongTensor)
+            loss = self.train_single_batch(batch_data)
+            total_loss += loss
+        print("[Training Epoch {}], Loss {}".format(epoch_id, total_loss))
+        self.writer.add_scalar("model/loss", total_loss, epoch_id)
+
+    def save_checkpoint(self, model_dir):
+        """Save checkpoint."""
+        assert hasattr(self, "model"), "Please specify the exact model !"
+        torch.save(self.model.state_dict(), model_dir)
+
+    # to do
+    def resume_checkpoint(self, model_dir, model=None):
+        """Resume model with checkpoint."""
+        assert hasattr(self, "model"), "Please specify the exact model !"
+        print("loading model from:", model_dir)
+        state_dict = torch.load(
+            model_dir, map_location=self.device
+        )  # ensure all storage are on gpu
+        if model is None:
+            self.model.load_state_dict(state_dict)
+            self.model.to(self.device)
+            return self.model
+        else:
+            model.load_state_dict(state_dict)
+            model.to(self.device)
+            return model
+
+    def bpr_loss(self, pos_scores, neg_scores):
+        """Bayesian Personalised Ranking (BPR) pairwise loss function.
+        Note that the sizes of pos_scores and neg_scores should be equal.
+        Args:
+            pos_scores (tensor): Tensor containing predictions for known positive items.
+            neg_scores (tensor): Tensor containing predictions for sampled negative items.
+        Returns:
+            loss.
+        """
+        maxi = F.logsigmoid(pos_scores - neg_scores)
+        loss = -torch.mean(maxi)
+        return loss
+
+    def bce_loss(self, scores, ratings):
+        """Binary Cross-Entropy (BCE) pointwise loss, also known as log loss or logistic loss.
+        Args:
+            scores (tensor): Tensor containing predictions for both positive and negative items.
+            ratings (tensor): Tensor containing ratings for both positive and negative items.
+        Returns:
+            loss.
+        """
+        # Calculate Binary Cross Entropy loss
+        criterion = torch.nn.BCELoss()
+        loss = criterion(scores, ratings)
+        return loss
+
+
+def timeit(method):
+    """Generate decorator for tracking the execution time for the specific method.
+    Args:
+        method: The method need to timeit.
+    To use:
+        @timeit
+        def method(self):
+            pass
+    Returns:
+        None
+    """
+
+    @wraps(method)
+    def wrapper(*args, **kw):
+        ts = time.time()
+        result = method(*args, **kw)
+        te = time.time()
+        if "log_time" in kw:
+            name = kw.get("log_name", method.__name__.upper())
+            kw["log_time"][name] = int((te - ts) * 1000)
+        else:
+            print(
+                "Execute [{}] method costing {:2.2f} ms".format(
+                    method.__name__, (te - ts) * 1000
+                )
+            )
+        return result
+
+    return wrapper
+
+
+class RatingDataset(Dataset):
+    """Wrapper, convert <user, item, rating> Tensor into Pytorch Dataset."""
+
+    def __init__(self, entity_tensor, reaction_tensor, type_tensor):
+        """Init UserItemRatingDataset Class.
+        Args:
+            target_tensor: torch.Tensor, the corresponding rating for <user, item> pair.
+        """
+        self.entity_tensor = entity_tensor
+        self.reaction_tensor = reaction_tensor
+        self.type_tensor = type_tensor
+
+    def __getitem__(self, index):
+        """Get an item from dataset."""
+        return (
+            self.entity_tensor[index],
+            self.reaction_tensor[index],
+            self.type_tensor[index],
+        )
+
+    def __len__(self):
+        """Get the size of the dataset."""
+        return self.entity_tensor.size(0)
+
+
+def instance_bce_loader(data, batch_size, device, num_negative):
+    """Instance a train DataLoader that have rating."""
+    """entity is user, reaction is item, type is rating, """
+    entity, reaction, type = [], [], []
+    entity_pool = list(data["entity"].unique())
+    reaction_pool = list(data["reaction"].unique())
+    n_entity = len(entity_pool)
+    n_reactio = len(reaction_pool)
+    entity_id_pool = [i for i in range(n_entity)]
+    reaction_id_pool = [i for i in range(n_reactio)]
+    interact_status = (
+        data.groupby("entity")["reaction"]
+        .apply(set)
+        .reset_index()
+        .rename(columns={"reaction": "observed_reaction"})
+    )
+    interact_status["unobserved_reaction"] = interact_status["observed_reaction"].apply(
+        lambda x: set(reaction_id_pool) - x
+    )
+    train_ratings = pd.merge(
+        data,
+        interact_status[["entity", "unobserved_reaction"]],
+        on="entity",
+    )
+    train_ratings["unobserved_reaction"] = train_ratings["unobserved_reaction"].apply(
+        lambda x: random.sample(list(x), num_negative)
+    )
+    for _, row in train_ratings.iterrows():
+        entity.append(int(row["entity"]))
+        reaction.append(int(row["reaction"]))
+        type.append(float(row["type"]))
+        for i in range(num_negative):
+            entity.append(int(row["entity"]))
+            reaction.append(int(row["unobserved_reaction"][i]))
+            type.append(float(0))  # negative samples get 0 rating
+    dataset = RatingDataset(
+        entity_tensor=torch.LongTensor(entity).to(device),
+        reaction_tensor=torch.LongTensor(reaction).to(device),
+        type_tensor=torch.FloatTensor(type).to(device),
+    )
+    print(f"Making RatingDataset of length {len(dataset)}")
+    return DataLoader(dataset, batch_size=batch_size, shuffle=True)
+
+
+class PairwiseNegativeDataset(Dataset):
+    """Wrapper, convert <user, pos_item, neg_item> Tensor into Pytorch Dataset."""
+
+    def __init__(self, user_tensor, pos_item_tensor, neg_item_tensor):
+        """Init PairwiseNegativeDataset Class.
+        Args:
+            target_tensor: torch.Tensor, the corresponding rating for <user, item> pair.
+        """
+        self.user_tensor = user_tensor
+        self.pos_item_tensor = pos_item_tensor
+        self.neg_item_tensor = neg_item_tensor
+
+    def __getitem__(self, index):
+        """Get an item from the dataset."""
+        return (
+            self.user_tensor[index],
+            self.pos_item_tensor[index],
+            self.neg_item_tensor[index],
+        )
+
+    def __len__(self):
+        """Get the size of the dataset."""
+        return self.user_tensor.size(0)
+
+
+def instance_bpr_loader(data, batch_size, device, n_entity, n_reaction):
+    """Instance a pairwise Data_loader for training.
+    Sample ONE negative items for each user-item pare, and shuffle them with positive items.
+    A batch of data in this DataLoader is suitable for a binary cross-entropy loss.
+    # todo implement the item popularity-biased sampling
+    """
+    entity, pos_reaction, neg_reaction = [], [], []
+    entity_id_pool = [i for i in range(n_entity)]
+    reaction_id_pool = [i for i in range(n_reaction)]
+
+    interact_status = (
+        data.groupby("entity")["reaction"]
+        .apply(set)
+        .reset_index()
+        .rename(columns={"reaction": "observed_reaction"})
+    )
+    interact_status["unobserved_reaction"] = interact_status["observed_reaction"].apply(
+        lambda x: set(reaction_id_pool) - x
+    )
+    train_ratings = pd.merge(
+        data,
+        interact_status[["entity", "unobserved_reaction"]],
+        on="entity",
+    )
+    train_ratings["unobserved_reaction"] = train_ratings["unobserved_reaction"].apply(
+        lambda x: random.sample(list(x), 1)[0]
+    )
+    for _, row in train_ratings.iterrows():
+        entity.append(row["entity"])
+        pos_reaction.append(row["reaction"])
+        neg_reaction.append(row["unobserved_reaction"])
+
+    dataset = PairwiseNegativeDataset(
+        user_tensor=torch.LongTensor(entity).to(device),
+        pos_item_tensor=torch.LongTensor(pos_reaction).to(device),
+        neg_item_tensor=torch.LongTensor(neg_reaction).to(device),
+    )
+    print(f"Making PairwiseNegativeDataset of length {len(dataset)}")
+    return DataLoader(dataset, batch_size=batch_size, shuffle=True)
+
+
+def predict_full(data_df, engine, batch_eval=True):
+    """Make prediction for a trained model.
+    Args:
+        data_df (DataFrame): A dataset to be evaluated.
+        model: A trained model.
+        batch_eval (Boolean): A signal to indicate if the model is evaluated in batches.
+    Returns:
+        array: predicted scores.
+    """
+    entity_ids = data_df["entity"].to_numpy()
+    entity_set = set(entity_ids)
+    reaction_ids = data_df["reaction"].to_numpy()
+    reaction_set = set(reaction_ids)
+    full_entity = []
+    full_reac = []
+    for i in range(len(entity_ids)):
+        full_entity.append(entity_ids[i])
+        full_reac.append(reaction_ids[i])
+        full_entity.extend(list(entity_set - set([entity_ids[i]])))
+        full_reac.extend([reaction_ids[i]] * (len(entity_set) - 1))
+
+    entity_ids = np.array(full_entity)
+    reaction_ids = np.array(full_reac)
+    batch_size = 50
+    if batch_eval:
+        n_batch = len(entity_ids) // batch_size + 1
+        predictions = np.array([])
+        for idx in range(n_batch):
+            start_idx = idx * batch_size
+            end_idx = min((idx + 1) * batch_size, len(entity_ids))
+            sub_entity_ids = entity_ids[start_idx:end_idx]
+            sub_reaction_ids = reaction_ids[start_idx:end_idx]
+            sub_predictions = np.array(
+                engine.model.predict(sub_entity_ids, sub_reaction_ids)
+                .flatten()
+                .to(torch.device("cpu"))
+                .detach()
+                .numpy()
+            )
+            predictions = np.append(predictions, sub_predictions)
+    else:
+        predictions = np.array(
+            engine.model.predict(entity_ids, reaction_ids)
+            .flatten()
+            .to(torch.device("cpu"))
+            .detach()
+            .numpy()
+        )
+
+    return predictions
