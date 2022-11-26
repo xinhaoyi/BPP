@@ -2,11 +2,11 @@ import os
 import sys
 
 import numpy as np
-from sklearn import metrics
-
 from data_loader import Database
 from matrix_factorisation import MFEngine
-from utils import instance_bpr_loader, predict_full
+from sklearn import metrics
+
+from utils.utils import instance_bpr_loader, predict_full
 
 sys.path.append("../src/")
 

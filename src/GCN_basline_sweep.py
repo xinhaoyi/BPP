@@ -1,15 +1,16 @@
-import time
 import pprint
+import time
 
 import torch
 import torch.nn.functional as F
 import torch.optim as optim
+from data_loader_tmp_copy import Database
 from dhg import Graph, Hypergraph
 from dhg.models import GCN
 from sklearn.metrics import accuracy_score, ndcg_score
 
 import wandb
-from data_loader_tmp_copy import Database
+
 model_name = "GCN"
 project_name = "pathway_attribute_predict"
 
@@ -81,7 +82,9 @@ def main():
         config = wandb.config
         print(config)
         # set device
-        device = torch.device("cuda") if torch.cuda.is_available() else torch.device("cpu")
+        device = (
+            torch.device("cuda") if torch.cuda.is_available() else torch.device("cpu")
+        )
 
         # initialize the data_loader
         data_loader = Database("Disease", "attribute prediction dataset")
@@ -125,7 +128,9 @@ def main():
 
         # set the optimizer
         optimizer = optim.Adam(
-            net_model.parameters(), lr=config.learning_rate, weight_decay=config.weight_decay
+            net_model.parameters(),
+            lr=config.learning_rate,
+            weight_decay=config.weight_decay,
         )
 
         # set the device
@@ -144,7 +149,15 @@ def main():
         for epoch in range(200):
             # train
             # call the train method
-            loss = train(net_model, train_nodes_features, graph, labels, train_mask, optimizer, epoch)
+            loss = train(
+                net_model,
+                train_nodes_features,
+                graph,
+                labels,
+                train_mask,
+                optimizer,
+                epoch,
+            )
 
             if epoch % 1 == 0:
                 with torch.no_grad():
@@ -164,6 +177,7 @@ def main():
                         "test_acc": test_acc,
                     }
                 )
+
 
 sweep_config = {"method": "grid"}
 metric = {"name": "valid_ndcg", "goal": "maximize"}

@@ -1,16 +1,15 @@
 import pprint
 import time
 
-import numpy as np
 import torch
 import torch.nn.functional as F
 import torch.optim as optim
+from data_loader_tmp_copy import Database
 from dhg import Graph, Hypergraph
 from dhg.models import HGNN
 from sklearn.metrics import accuracy_score, ndcg_score
 
 import wandb
-from data_loader_tmp_copy import Database
 
 model_name = "HGNN"
 project_name = "pathway_attribute_predict"
