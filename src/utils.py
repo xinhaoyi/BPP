@@ -19,7 +19,7 @@ def read_file_via_lines(path: str, file_name: str) -> list[str]:
         while True:
             # Get next line from file
             line = file_handler.readline()
-            line = line.replace('\r', '').replace('\n', '').replace('\t', '')
+            line = line.replace("\r", "").replace("\n", "").replace("\t", "")
 
             # If the line is empty then the end of file reached
             if not line:
@@ -30,6 +30,7 @@ def read_file_via_lines(path: str, file_name: str) -> list[str]:
         print("we can't find the " + url + ", please make sure that the file exists")
     finally:
         return res_list
+
 
 def get_sys_platform():
     sys_platform = platform.platform()
@@ -43,6 +44,7 @@ def get_sys_platform():
         sys_platform_return = "other"
     return sys_platform_return
 
+
 def get_root_path_of_project(project_name: str):
     """
     This method is to get the root path of the project
@@ -52,11 +54,17 @@ def get_root_path_of_project(project_name: str):
     """
     cur_path: str = os.path.abspath(os.path.dirname(__file__))
     if "windows" == get_sys_platform():
-        root_path: str = cur_path[:cur_path.find(project_name + "\\") + len(project_name + "\\")]
+        root_path: str = cur_path[
+            : cur_path.find(project_name + "\\") + len(project_name + "\\")
+        ]
     elif "macos" == get_sys_platform() or "linux" == get_sys_platform():
-        root_path: str = cur_path[:cur_path.find(project_name + "/") + len(project_name + "/")]
+        root_path: str = cur_path[
+            : cur_path.find(project_name + "/") + len(project_name + "/")
+        ]
     else:
-        raise Exception("We can't support other system platform! Please use windows or macos")
+        raise Exception(
+            "We can't support other system platform! Please use windows or macos"
+        )
     return root_path
 
 
@@ -70,7 +78,7 @@ def normalize_sparse_matrix(mat):
     r_inv = np.power(rowsum, -1).flatten()
 
     # 在计算倒数的时候存在一个问题，如果原来的值为0，则其倒数为无穷大，因此需要对r_inv中无穷大的值进行修正，更改为0
-    r_inv[np.isinf(r_inv)] = 0.
+    r_inv[np.isinf(r_inv)] = 0.0
 
     # np.diag() 应该也可以
     # 这里就是生成 对角矩阵
@@ -89,7 +97,11 @@ def get_normalized_features_in_tensor(features) -> torch.Tensor:
     return features
 
 
-def encode_node_features(components_mapping_list: list[list[int]], num_of_nodes: int, num_of_feature_dimension: int) -> list[list[int]]:
+def encode_node_features(
+    components_mapping_list: list[list[int]],
+    num_of_nodes: int,
+    num_of_feature_dimension: int,
+) -> list[list[int]]:
     row = []
     column = []
     val = []
@@ -100,7 +112,9 @@ def encode_node_features(components_mapping_list: list[list[int]], num_of_nodes:
             column.append(feature_index)
             val.append(1)
 
-    component_csc_mat = csr_matrix((val, (row, column)), shape=(num_of_nodes, num_of_feature_dimension))
+    component_csc_mat = csr_matrix(
+        (val, (row, column)), shape=(num_of_nodes, num_of_feature_dimension)
+    )
     nodes_features: list[list[int]] = component_csc_mat.toarray().tolist()
 
     return nodes_features

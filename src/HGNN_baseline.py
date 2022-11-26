@@ -1,19 +1,47 @@
+import pprint
 import time
+
+import numpy as np
 import torch
-import torch.optim as optim
 import torch.nn.functional as F
+import torch.optim as optim
 from dhg import Graph, Hypergraph
 from dhg.models import HGNN
-from sklearn.metrics import ndcg_score
+from sklearn.metrics import accuracy_score, ndcg_score
 
+import wandb
 from data_loader_tmp_copy import Database
 
 learning_rate = 0.01
 weight_decay = 5e-4
+drop_out = 0.0
+emb_dim = 64
+model_name = "HGNN"
+wandb.init(project="pathway_attribute_predict")
 
-def train(net_model: torch.nn.Module, nodes_features: torch.Tensor, graph: Graph, labels: torch.Tensor,
-          train_idx: list[bool],
-          optimizer: optim.Adam, epoch: int):
+sweep_config = {"method": "grid"}
+metric = {"name": "valid_ndcg", "goal": "maximize"}
+sweep_config["metric"] = metric
+parameters_dict = {
+    "learning_rate": {"values": [0.05, 0.01, 0.005, 0.0001]},
+    "emb_dim": {"values": [32, 64, 128, 256]},
+    "dropout": {"values": [0, 0.1, 0.2, 0.3, 0.4, 0.5]},
+    "weight_decay": {"values": [5e-4]},
+}
+
+pprint.pprint(sweep_config)
+sweep_id = wandb.sweep(sweep_config, project="pathway_attribute_predict_sweep")
+
+
+def train(
+    net_model: torch.nn.Module,
+    nodes_features: torch.Tensor,
+    graph: Graph,
+    labels: torch.Tensor,
+    train_idx: list[bool],
+    optimizer: optim.Adam,
+    epoch: int,
+):
     net_model.train()
 
     st = time.time()
@@ -36,10 +64,23 @@ def validation(net_model, nodes_features, graph, labels, validation_idx):
     outs = net_model(nodes_features, graph)
 
     outs, labels = outs[validation_idx], labels[validation_idx]
-
-    val_res = ndcg_score(labels.cpu().numpy(), outs.cpu().numpy())
-
-    print("\033[1;32m" + "The validation score is: " + "{:.5f}".format(val_res) + "\033[0m")
+    cat_labels = labels.cpu().numpy().argmax(axis=1)
+    cat_outs = outs.cpu().numpy().argmax(axis=1)
+    ndcg_res = ndcg_score(labels.cpu().numpy(), outs.cpu().numpy())
+    acc_res = accuracy_score(cat_labels, cat_outs)
+    print(
+        "\033[1;32m"
+        + "The validation ndcg is: "
+        + "{:.5f}".format(ndcg_res)
+        + "\033[0m"
+    )
+    print(
+        "\033[1;32m"
+        + "The validation accuracy is: "
+        + "{:.5f}".format(acc_res)
+        + "\033[0m"
+    )
+    return ndcg_res, acc_res
 
 
 @torch.no_grad()
@@ -49,66 +90,118 @@ def test(net_model, nodes_features, graph, labels, test_idx):
     outs = net_model(nodes_features, graph)
 
     outs, labels = outs[test_idx], labels[test_idx]
+    cat_labels = labels.cpu().numpy().argmax(axis=1)
+    cat_outs = outs.cpu().numpy().argmax(axis=1)
+    ndcg_res = ndcg_score(labels.cpu().numpy(), outs.cpu().numpy())
+    acc_res = accuracy_score(cat_labels, cat_outs)
+    print("\033[1;32m" + "The test ndcg is: " + "{:.5f}".format(ndcg_res) + "\033[0m")
+    print(
+        "\033[1;32m" + "The test accuracy is: " + "{:.5f}".format(acc_res) + "\033[0m"
+    )
+    return ndcg_res, acc_res
 
-    test_res = ndcg_score(labels.cpu().numpy(), outs.cpu().numpy())
 
-    print("\n\033[1;35m" + "The final test score is: " + "{:.5f}".format(test_res) + "\033[0m")
-
-
-
-if __name__ == '__main__':
+# if __name__ == "__main__":
+def train(config=None):
     # set device
-    device = torch.device("cuda") if torch.cuda.is_available() else torch.device("cpu")
+    with wandb.init(config=config):
+        config = wandb.config
+        device = (
+            torch.device("cuda") if torch.cuda.is_available() else torch.device("cpu")
+        )
 
-    # initialize the data_loader
-    data_loader = Database("Disease", "attribute prediction dataset")
+        # initialize the data_loader
+        data_loader = Database("Disease", "attribute prediction dataset")
 
-    # get the labels - the original nodes features
-    labels = torch.FloatTensor(data_loader["raw_nodes_features"])
+        # get the labels - the original nodes features
+        labels = torch.FloatTensor(data_loader["raw_nodes_features"])
 
-    # get the train,val,test nodes features
-    train_nodes_features = torch.FloatTensor(data_loader["train_nodes_features"])
-    validation_nodes_features = torch.FloatTensor(data_loader["validation_nodes_features"])
-    test_nodes_features = torch.FloatTensor(data_loader["test_nodes_features"])
+        # get the train,val,test nodes features
+        train_nodes_features = torch.FloatTensor(data_loader["train_nodes_features"])
+        validation_nodes_features = torch.FloatTensor(
+            data_loader["validation_nodes_features"]
+        )
+        test_nodes_features = torch.FloatTensor(data_loader["test_nodes_features"])
 
-    # get train, validation, test mask to track the nodes
-    train_mask = data_loader["train_node_mask"]
-    val_mask = data_loader["val_node_mask"]
-    test_mask = data_loader["test_node_mask"]
+        # get train, validation, test mask to track the nodes
+        train_mask = data_loader["train_node_mask"]
+        val_mask = data_loader["val_node_mask"]
+        test_mask = data_loader["test_node_mask"]
 
-    # get the total number of nodes of this graph
-    num_of_nodes: int = data_loader["num_nodes"]
+        # get the total number of nodes of this graph
+        num_of_nodes: int = data_loader["num_nodes"]
 
-    # generate the relationship between hyper edge and nodes
-    # ex. [[1,2,3,4], [3,4], [9,7,4]...] where [1,2,3,4] represent a hyper edge
-    hyper_edge_list = data_loader["edge_list"]
+        # generate the relationship between hyper edge and nodes
+        # ex. [[1,2,3,4], [3,4], [9,7,4]...] where [1,2,3,4] represent a hyper edge
+        hyper_edge_list = data_loader["edge_list"]
 
-    # the hyper graph
-    hyper_graph = Hypergraph(num_of_nodes, hyper_edge_list)
+        # the hyper graph
+        hyper_graph = Hypergraph(num_of_nodes, hyper_edge_list)
+
+        # the GCN model
+        net_model = HGNN(
+            data_loader["num_features"],
+            config.emb_dim,
+            data_loader["num_features"],
+            use_bn=True,
+            drop_out=config.drop_out,
+        )
+
+        # set the optimizer
+        optimizer = optim.Adam(
+            net_model.parameters(),
+            lr=config.learning_rate,
+            weight_decay=config.weight_decay,
+        )
+
+        # set the device
+        train_nodes_features, validation_nodes_features, test_nodes_features, labels = (
+            train_nodes_features.to(device),
+            validation_nodes_features.to(device),
+            test_nodes_features.to(device),
+            labels.to(device),
+        )
+        hyper_graph = hyper_graph.to(device)
+        net_model = net_model.to(device)
+
+        print("HGNN Baseline")
+
+        # start to train
+        for epoch in range(200):
+            # train
+            # call the train method
+            loss = train(
+                net_model,
+                train_nodes_features,
+                hyper_graph,
+                labels,
+                train_mask,
+                optimizer,
+                epoch,
+            )
+
+            if epoch % 1 == 0:
+                with torch.no_grad():
+                    valid_ndcg, valid_acc = validation(
+                        net_model,
+                        validation_nodes_features,
+                        hyper_graph,
+                        labels,
+                        val_mask,
+                    )
+                    test_ndcg, test_acc = test(
+                        net_model, test_nodes_features, hyper_graph, labels, test_mask
+                    )
+                wandb.log(
+                    {
+                        "loss": loss,
+                        "epoch": epoch,
+                        "valid_ndcg": valid_ndcg,
+                        "valid_acc": valid_acc,
+                        "test_ndcg": test_ndcg,
+                        "test_acc": test_acc,
+                    }
+                )
 
 
-    # the GCN model
-    net_model = HGNN(data_loader["num_features"], 32, data_loader["num_features"], use_bn=True)
-
-    # set the optimizer
-    optimizer = optim.Adam(net_model.parameters(), lr=learning_rate, weight_decay=weight_decay)
-
-    # set the device
-    train_nodes_features, validation_nodes_features, test_nodes_features, labels = train_nodes_features.to(
-        device), validation_nodes_features.to(device), test_nodes_features.to(device), labels.to(device)
-    hyper_graph = hyper_graph.to(device)
-    net_model = net_model.to(device)
-
-    print("HGNN Baseline")
-
-    # start to train
-    for epoch in range(200):
-        # train
-        # call the train method
-        train(net_model, train_nodes_features, hyper_graph, labels, train_mask, optimizer, epoch)
-
-        if epoch % 1 == 0:
-            with torch.no_grad():
-                validation(net_model, validation_nodes_features, hyper_graph, labels, val_mask)
-
-    test(net_model, test_nodes_features, hyper_graph, labels, test_mask)
+wandb.agent(sweep_id, train, count=25)
