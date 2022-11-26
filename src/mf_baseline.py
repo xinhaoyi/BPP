@@ -8,7 +8,7 @@ from data_loader import Database
 from matrix_factorisation import MFEngine
 from utils import instance_bpr_loader, predict_full
 
-sys.path.append("../")
+sys.path.append("../src/")
 
 
 class MF_train:
