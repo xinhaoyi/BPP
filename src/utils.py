@@ -9,8 +9,8 @@ from scipy.sparse import csr_matrix
 
 
 def read_file_via_lines(path: str, file_name: str) -> list[str]:
-    root_path: str = get_root_path_of_project("PathwayGNN")
-    url: str = os.path.join(root_path, path, file_name)
+    # root_path: str = get_root_path_of_project("PathwayGNN")
+    url: str = os.path.join(path, file_name)
     # url: str = os.path.join(path, file_name)
     res_list: list[str] = []
 

@@ -8,6 +8,18 @@ sys.path.append("../../")
 name = 'Disease'
 task = 'input link prediction dataset'
 
+"""
+        row = []
+        column = []
+        val = []
+        for i in range(num_nodes):
+            feature = final_list[i]
+            for j in feature:
+                row.append(i)
+                column.append(j)
+                val.append(1)
+"""
+
 class Database():
     def __init__(self, name, task):
         self.dataset = name
@@ -36,22 +48,12 @@ class Database():
         feature_dimension = max(sum(final_list, []))+1
         num_nodes = max(mat['entity'])
 
-        row = []
-        column = []
-        val = []
-        for i in range(num_nodes):
-            feature = final_list[i]
-            for j in feature:
-                row.append(i)
-                column.append(j)
-                val.append(1)
-
-        component_csc_mat = csr_matrix((val, (row, column)), shape=(num_nodes, feature_dimension))
+        # component_csc_mat = csr_matrix((val, (row, column)), shape=(num_nodes, feature_dimension))
         print(subset, "Num of interactions: %2d.\n Number of nodes: %2d.\n Number of features: %2d"
               %(len(mat), num_nodes, feature_dimension))
-        return mat, component_csc_mat
+        return mat
 
 data = Database(name,task)
-train, train_fea = data.train
-test, test_fea = data.test
-valid, valid_fea = data.valid
+train = data.train
+test = data.test
+valid = data.valid

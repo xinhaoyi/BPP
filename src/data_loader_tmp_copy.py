@@ -1,10 +1,12 @@
 import copy
+import sys
 
 import pandas as pd
 import os
 
 
 import utils
+sys.path.append("../../")
 
 
 class Database:
@@ -14,11 +16,10 @@ class Database:
 
         # define path of file
         self.__project_root_path = utils.get_root_path_of_project("PathwayGNN")
-        self.__raw_data_file_path = os.path.join("data", sub_dataset_name)
+        # self.__raw_data_file_path = os.path.join("data", sub_dataset_name)
+        self.__raw_data_file_path = os.path.join("../data", sub_dataset_name)
         self.__task_file_path = os.path.join(self.__raw_data_file_path, task_name)
-        self.__test_file_path = os.path.join(self.__task_file_path, "test")
-        self.__train_file_path = os.path.join(self.__task_file_path, "train")
-        self.__validation_file_path = os.path.join(self.__task_file_path, "validation")
+
 
         # node mask
         self.__train_nodes_mask, self.__validation_nodes_mask, self.__test_nodes_mask = self.__get_nodes_mask()
@@ -81,8 +82,8 @@ class Database:
         num_of_feature_dimension = self.__get_num_of_features_based_on_type_name()
 
         relationship_path = os.path.join(path, "relationship.txt")
-        mat = pd.read_csv(os.path.join(self.__project_root_path, relationship_path),
-                          names=['entity', 'reaction', 'type'], header=None)
+        # mat = pd.read_csv(os.path.join(self.__project_root_path, relationship_path), names=['entity', 'reaction', 'type'], header=None)
+        mat = pd.read_csv(relationship_path, names=['entity', 'reaction', 'type'], header=None)
 
         components_mapping_line_message_list: list[str] = utils.read_file_via_lines(path, "components-mapping.txt")
         components_mapping_list_with_str_style = [components_mapping_line_message.split(',') for
