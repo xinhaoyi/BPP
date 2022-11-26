@@ -1,39 +1,31 @@
-import pandas as pd
 import os
+import pandas as pd
 import sys
-from scipy.sparse import csr_matrix
-sys.path.append("../../")
-
-
-name = 'Disease'
-task = 'input link prediction dataset'
-
-"""
-        row = []
-        column = []
-        val = []
-        for i in range(num_nodes):
-            feature = final_list[i]
-            for j in feature:
-                row.append(i)
-                column.append(j)
-                val.append(1)
-"""
+sys.path.append("../src/")
 
 class Database():
+    """
+    This is a dataloader for link prediction dataset
+    Args:
+            name (string): Name of the dataset e.g. Disease.
+            task (string): Name of the task e.g. input link preidction dataset
+    Return:
+            self.train/test/valid (df): Dataframe of train/test/valid sets.
+
+    """
     def __init__(self, name, task):
         self.dataset = name
         self.task = task
         self.load_dataset()
 
     def load_dataset(self):
-        self.train = self.load_data_to_graph(self.dataset, self.task, 'train')
-        self.test = self.load_data_to_graph(self.dataset, self.task, 'test')
-        self.valid = self.load_data_to_graph(self.dataset, self.task, 'validation')
+        self.train = self.load_train_to_graph(self.dataset, self.task, 'train')
+        self.test = self.load_other_to_graph(self.dataset, self.task, 'test')
+        self.valid = self.load_other_to_graph(self.dataset, self.task, 'validation')
 
 
-    def load_data_to_graph(self, name, task, subset):
-        data_path = os.path.join("../data", name)
+    def load_train_to_graph(self, name, task, subset):
+        data_path = os.path.join("data", name)
         relation_path = os.path.join(data_path, task, subset, 'relationship.txt')
         mapping_path = os.path.join(data_path, task, subset, 'components-mapping.txt')
         mat = pd.read_csv(relation_path, names=['entity', 'reaction', 'type'], header=None)
@@ -47,13 +39,13 @@ class Database():
         # mapping = pd.read_csv(train_mapping_path)
         feature_dimension = max(sum(final_list, []))+1
         num_nodes = max(mat['entity'])
-
-        # component_csc_mat = csr_matrix((val, (row, column)), shape=(num_nodes, feature_dimension))
         print(subset, "Num of interactions: %2d.\n Number of nodes: %2d.\n Number of features: %2d"
               %(len(mat), num_nodes, feature_dimension))
         return mat
 
-data = Database(name,task)
-train = data.train
-test = data.test
-valid = data.valid
+    def load_other_to_graph(self, name, task, subset):
+        data_path = os.path.join("data", name)
+        relation_path = os.path.join(data_path, task, subset, 'relationship.txt')
+        mat = pd.read_csv(relation_path, names=['entity', 'reaction', 'type'], header=None)
+        print("Load %s set"%subset)
+        return mat
