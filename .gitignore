@@ -1,6 +1,7 @@
 .idea
 __pycache__
 src/wandb
+src/runs
 wandb
 *.wandb
 *.log

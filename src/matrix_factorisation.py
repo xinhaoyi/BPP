@@ -1,7 +1,9 @@
+import sys
+
 import torch
 import torch.nn as nn
 from torch.nn import Parameter
-import sys
+
 sys.path.append("../src/")
 from utils import ModelEngine, timeit
 
@@ -121,5 +123,6 @@ class MFEngine(ModelEngine):
             total_loss += loss
             regularizer += reg
         print(f"[Training Epoch {epoch_id}], Loss {loss}, Regularizer {regularizer}")
-        self.writer.add_scalar("model/loss", total_loss, epoch_id)
-        self.writer.add_scalar("model/regularizer", regularizer, epoch_id)
+        # self.writer.add_scalar("model/loss", total_loss, epoch_id)
+        # self.writer.add_scalar("model/regularizer", regularizer, epoch_id)
+        return loss

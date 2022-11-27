@@ -11,7 +11,8 @@ import torch
 import torch.nn.functional as F
 from numpy import ndarray
 from scipy.sparse import csr_matrix
-from tensorboardX import SummaryWriter
+
+# from tensorboardX import SummaryWriter
 from torch.utils.data import DataLoader, Dataset
 
 
@@ -135,7 +136,7 @@ class ModelEngine(object):
         self.set_optimizer()
         self.model.to(self.device)
         print(self.model)
-        self.writer = SummaryWriter(log_dir=config["run_dir"])  # tensorboard writer
+        # self.writer = SummaryWriter(log_dir=config["run_dir"])  # tensorboard writer
 
     def set_optimizer(self):
         """Set optimizer in the model."""
@@ -182,7 +183,8 @@ class ModelEngine(object):
             loss = self.train_single_batch(batch_data)
             total_loss += loss
         print("[Training Epoch {}], Loss {}".format(epoch_id, total_loss))
-        self.writer.add_scalar("model/loss", total_loss, epoch_id)
+        # self.writer.add_scalar("model/loss", total_loss, epoch_id)
+        return total_loss
 
     def save_checkpoint(self, model_dir):
         """Save checkpoint."""

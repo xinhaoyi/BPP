@@ -28,7 +28,7 @@ class Database:
         self.valid = self.load_other_to_graph(self.dataset, self.task, "validation")
 
     def load_train_to_graph(self, name, task, subset):
-        data_path = os.path.join("data", name)
+        data_path = os.path.join("../data", name)
         relation_path = os.path.join(data_path, task, subset, "relationship.txt")
         mapping_path = os.path.join(data_path, task, subset, "components-mapping.txt")
         mat = pd.read_csv(
@@ -52,7 +52,7 @@ class Database:
         return mat
 
     def load_other_to_graph(self, name, task, subset):
-        data_path = os.path.join("data", name)
+        data_path = os.path.join("../data", name)
         relation_path = os.path.join(data_path, task, subset, "relationship.txt")
         mat = pd.read_csv(
             relation_path, names=["entity", "reaction", "type"], header=None

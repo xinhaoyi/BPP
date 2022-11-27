@@ -4,12 +4,12 @@ import time
 import torch
 import torch.nn.functional as F
 import torch.optim as optim
-from data_loader_tmp_copy import Database
 from dhg import Graph, Hypergraph
 from dhg.models import GCN
 from sklearn.metrics import accuracy_score, ndcg_score
 
 import wandb
+from data_loader_tmp_copy import Database
 
 model_name = "GCN"
 project_name = "pathway_attribute_predict"
@@ -66,6 +66,7 @@ def validation(net_model, nodes_features, graph, labels, validation_idx):
 def test(net_model, nodes_features, graph, labels, test_idx):
     net_model.eval()
     outs = net_model(nodes_features, graph)
+    outs, labels = outs[test_idx], labels[test_idx]
     cat_labels = labels.cpu().numpy().argmax(axis=1)
     cat_outs = outs.cpu().numpy().argmax(axis=1)
     ndcg_res = ndcg_score(labels.cpu().numpy(), outs.cpu().numpy())
