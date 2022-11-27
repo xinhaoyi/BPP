@@ -1,8 +1,9 @@
 import torch
 import torch.nn as nn
 from torch.nn import Parameter
-
-from utils.utils import ModelEngine, timeit
+import sys
+sys.path.append("../src/")
+from utils import ModelEngine, timeit
 
 
 class MF(torch.nn.Module):
