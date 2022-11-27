@@ -143,9 +143,9 @@ for task in ["output link prediction dataset","input link prediction dataset"]:
         metric = {"name": "valid_ndcg", "goal": "maximize"}
         sweep_config["metric"] = metric
         parameters_dict = {
-            "learning_rate": {"values": [0.05, 0.01, 0.005, 0.0001]},
-            "emb_dim": {"values": [32, 64, 128, 256]},
-            "batch_size": {"values": [64, 128, 256, 512]},
+            "learning_rate": {"values": [0.05, 0.01, 0.005]},
+            "emb_dim": {"values": [64, 128, 256]},
+            "batch_size": {"values": [64, 128, 256]},
             "model_name": {"values": [model_name]},
             "task":{"values":[task]},
             "dataset":{"values":[dataset]}

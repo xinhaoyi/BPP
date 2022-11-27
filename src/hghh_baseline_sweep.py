@@ -192,9 +192,9 @@ for dataset in ["Immune System","Metabolism","Signal Transduction","Disease"]:
     metric = {"name": "valid_ndcg", "goal": "maximize"}
     sweep_config["metric"] = metric
     parameters_dict = {
-        "learning_rate": {"values": [0.05, 0.01, 0.005, 0.0001]},
-        "emb_dim": {"values": [32, 64, 128, 256]},
-        "drop_out": {"values": [0, 0.1, 0.2, 0.3, 0.4, 0.5]},
+        "learning_rate": {"values": [0.05, 0.01, 0.005]},
+        "emb_dim": {"values": [64, 128, 256]},
+        "drop_out": {"values": [0.5,0.6,0.7]},
         "weight_decay": {"values": [5e-4]},
         "model_name": {"values": [model_name]},
         "task":{"values":[task]},
