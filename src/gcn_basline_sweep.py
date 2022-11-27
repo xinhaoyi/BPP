@@ -88,7 +88,8 @@ def main():
         )
 
         # initialize the data_loader
-        data_loader = Database("Disease", "attribute prediction dataset")
+        data_loader = Database(config.dataset, config.task)
+
 
         # get the labels - the original nodes features
         labels = torch.FloatTensor(data_loader["raw_nodes_features"])
@@ -178,20 +179,23 @@ def main():
                         "test_acc": test_acc,
                     }
                 )
+                
+task = "attribute prediction dataset"
+for dataset in ["Immune System","Metabolism","Signal Transduction","Disease"]:
+    sweep_config = {"method": "grid"}
+    metric = {"name": "valid_ndcg", "goal": "maximize"}
+    sweep_config["metric"] = metric
+    parameters_dict = {
+        "learning_rate": {"values": [0.05, 0.01, 0.005, 0.0001]},
+        "emb_dim": {"values": [32, 64, 128, 256]},
+        "drop_out": {"values": [0, 0.1, 0.2, 0.3, 0.4, 0.5]},
+        "weight_decay": {"values": [5e-4]},
+        "model_name": {"values": [model_name]},
+        "dataset":{"values":[dataset]},
+        "task":{"values":[task]}
+    }
+    sweep_config["parameters"] = parameters_dict
+    pprint.pprint(sweep_config)
+    sweep_id = wandb.sweep(sweep_config, project="pathway_attribute_predict_sweep")
 
-
-sweep_config = {"method": "grid"}
-metric = {"name": "valid_ndcg", "goal": "maximize"}
-sweep_config["metric"] = metric
-parameters_dict = {
-    "learning_rate": {"values": [0.05, 0.01, 0.005, 0.0001]},
-    "emb_dim": {"values": [32, 64, 128, 256]},
-    "drop_out": {"values": [0, 0.1, 0.2, 0.3, 0.4, 0.5]},
-    "weight_decay": {"values": [5e-4]},
-    "model_name": {"values": [model_name]},
-}
-sweep_config["parameters"] = parameters_dict
-pprint.pprint(sweep_config)
-sweep_id = wandb.sweep(sweep_config, project="pathway_attribute_predict_sweep")
-
-wandb.agent(sweep_id, main)
+    wandb.agent(sweep_id, main)

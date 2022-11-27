@@ -46,7 +46,7 @@ def get_sys_platform():
         sys_platform_return = "windows"
     elif "macOS" in sys_platform:
         sys_platform_return = "macos"
-    elif "linux" in sys_platform:
+    elif "linux" in sys_platform or "Linux" in sys_platform:
         sys_platform_return = "linux"
     else:
         sys_platform_return = "other"

@@ -11,7 +11,7 @@ class Database:
     This is a dataloader for link prediction dataset
     Args:
             name (string): Name of the dataset e.g. Disease.
-            task (string): Name of the task e.g. input link preidction dataset
+            task (string): Name of the task e.g. input link prediction dataset
     Return:
             self.train/test/valid (df): Dataframe of train/test/valid sets.
 

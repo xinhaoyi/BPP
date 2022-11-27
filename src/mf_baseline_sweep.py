@@ -117,15 +117,14 @@ def main():
     with wandb.init(project=project_name):
         config = wandb.config
         print(config)
-        name = "Disease"
-        task = "input link prediction dataset"
         args = {
             "batch_size": config.batch_size,
             "lr": config.learning_rate,
             "emb_dim": config.emb_dim,
-            "dataset": name,
-            "task": task,
+            "dataset": config.dataset,
+            "task": config.task,
         }
+        wandb.config.update(args)
         args["device_str"] = (
             torch.device("cuda") if torch.cuda.is_available() else torch.device("cpu")
         )
@@ -138,17 +137,21 @@ def main():
         MF_disease.test()
 
 
-sweep_config = {"method": "grid"}
-metric = {"name": "valid_ndcg", "goal": "maximize"}
-sweep_config["metric"] = metric
-parameters_dict = {
-    "learning_rate": {"values": [0.05, 0.01, 0.005, 0.0001]},
-    "emb_dim": {"values": [32, 64, 128, 256]},
-    "batch_size": {"values": [64, 128, 256, 512]},
-    "model_name": {"values": [model_name]},
-}
-sweep_config["parameters"] = parameters_dict
-pprint.pprint(sweep_config)
-sweep_id = wandb.sweep(sweep_config, project=project_name)
+for task in ["output link prediction dataset","input link prediction dataset"]:
+    for dataset in ["Immune System","Metabolism","Signal Transduction","Disease"]:
+        sweep_config = {"method": "grid"}
+        metric = {"name": "valid_ndcg", "goal": "maximize"}
+        sweep_config["metric"] = metric
+        parameters_dict = {
+            "learning_rate": {"values": [0.05, 0.01, 0.005, 0.0001]},
+            "emb_dim": {"values": [32, 64, 128, 256]},
+            "batch_size": {"values": [64, 128, 256, 512]},
+            "model_name": {"values": [model_name]},
+            "task":{"values":[task]},
+            "dataset":{"values":[dataset]}
+        }
+        sweep_config["parameters"] = parameters_dict
+        pprint.pprint(sweep_config)
+        sweep_id = wandb.sweep(sweep_config, project=project_name)
 
-wandb.agent(sweep_id, main)
+        wandb.agent(sweep_id, main)
