@@ -87,9 +87,9 @@ class MF_train:
     def test(self, model=None):
         """Evaluate the performance for the testing sets based on the best performing model."""
         if model is None:
-            best_model = self.best_model
+            model = self.best_model
         test_set = self.test_set
-        predictions = predict_full(test_set, best_model)
+        predictions = predict_full(test_set, model)
         n_samples = len(test_set)
         ndcg, acc = self.evaluate(predictions, n_samples)
         print("Test performance is ", ndcg)
@@ -149,6 +149,6 @@ parameters_dict = {
 }
 sweep_config["parameters"] = parameters_dict
 pprint.pprint(sweep_config)
-sweep_id = wandb.sweep(sweep_config, project="pathway_attribute_predict_sweep")
+sweep_id = wandb.sweep(sweep_config, project=project_name)
 
 wandb.agent(sweep_id, main)
