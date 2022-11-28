@@ -1397,6 +1397,7 @@ class DataBeanForReactome:
         entities_component_indexes_mapping_list_for_print: list[str] = list()
 
         for component_ids in self.__entities_component_ids_mapping_list:
+            component_ids.sort()
             line_component_index_list = ""
             for component_id in component_ids:
                 component_index = raw_component_id_to_component_index_dict[component_id]
