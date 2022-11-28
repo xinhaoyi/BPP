@@ -937,6 +937,9 @@ class ReactomeDataDivider:
                     list_of_pair_of_entity_and_component = self.__get_list_of_pair_of_entity_and_component_based_on_entity_id(
                         random_entity_id)
 
+                    # todo
+                    list_of_pair_of_entity_and_component.sort()
+
                     if validation_counter >= validation_size:
                         test_data_bean.add_relationship(relationship)
                         test_data_bean.add_list_of_pair_of_entity_and_component(list_of_pair_of_entity_and_component)
@@ -1034,6 +1037,9 @@ class ReactomeDataDivider:
                     relationship.append(str(1))
                     list_of_pair_of_entity_and_component = self.__get_list_of_pair_of_entity_and_component_based_on_entity_id(
                         random_entity_id)
+
+                    # todo
+                    list_of_pair_of_entity_and_component.sort()
 
                     if validation_counter >= validation_size:
                         test_data_bean.add_relationship(relationship)
