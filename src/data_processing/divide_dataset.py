@@ -1008,6 +1008,10 @@ class ReactomeDataDivider:
         reaction_id_memory: set[str] = set()
         entity_id_memory_dict: dict[str, int] = dict()
 
+        # sort the dict to make sure we get the same data after division
+        for reaction_id, list_of_output_entities_ids in self.__output_link_prediction_reaction_to_list_of_output_entities_dict.items():
+            list_of_output_entities_ids.sort()
+
         while validation_counter < validation_size or test_counter < test_size:
             random_reaction_index = random.randint(0, end_index_of_reactions)
             random_reaction_id = self.__output_link_prediction_reactions_ids[random_reaction_index]
