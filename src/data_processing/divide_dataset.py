@@ -799,10 +799,8 @@ class ReactomeDataDivider:
         input_link_prediction_reaction_ids.sort()
         output_link_prediction_reactions_ids.sort()
 
-        print(input_link_prediction_reaction_ids[:3])
-        print(output_link_prediction_reactions_ids[:3])
-
-
+        # print(input_link_prediction_reaction_ids[:3])
+        # print(output_link_prediction_reactions_ids[:3])
         return input_link_prediction_reaction_ids, output_link_prediction_reactions_ids, list()
 
     def __input_link_prediction_initialise_reactions_and_entities_components_and_relationships_and_list_of_pair_of_entity_and_component(
@@ -903,6 +901,11 @@ class ReactomeDataDivider:
 
         reaction_id_memory: set[str] = set()
         entity_id_memory_dict: dict[str, int] = dict()
+
+        # sort the dict to make sure we get the same data after division
+        for reaction_id, list_of_input_entities_ids in self.__input_link_prediction_reaction_to_list_of_input_entities_dict.items():
+            list_of_input_entities_ids.sort()
+
 
         while validation_counter < validation_size or test_counter < test_size:
             random_reaction_index = random.randint(0, end_index_of_reactions)
