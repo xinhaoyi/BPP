@@ -1802,6 +1802,7 @@ class Drawer:
         self.pathway_name = pathway_name
         cur_path = os.path.abspath(os.path.dirname(__file__))
         self.root_path = cur_path[:cur_path.find("extract_data_from_reactome\\") + len("extract_data_from_reactome\\")]
+        # self.root_path = cur_path[:cur_path.find("PathwayGNN\\") + len("PathwayGNN\\")]
 
         self.path = os.path.join(self.root_path, "data", pathway_name)
 
@@ -1839,15 +1840,14 @@ class FileProcessor:
         self.filename_components_mapping = "components-mapping.txt"
         self.filename_components_all = "components-all.txt"
         self.filename_components_all_names = "components-all-names.txt"
-
-        cur_path = os.path.abspath(os.path.dirname(__file__))
-        self.root_path = cur_path[:cur_path.find("extract_data_from_reactome\\") + len("extract_data_from_reactome\\")]
+        # PathwayGNN
+        # self.root_path = cur_path[:cur_path.find("PathwayGNN\\") + len("PathwayGNN\\")]
 
     # data/All_data_in_Reactome/components-all.txt
     # create the txt file to store the data
     def createFile(self, path, file_name):
-        url = os.path.join(self.root_path, path, file_name)
-        if not os.path.exists(os.path.join(self.root_path, path)):
+        url = os.path.join("..", "..", path, file_name)
+        if not os.path.exists(os.path.join("..", "..", path)):
             os.makedirs(path)
         if os.path.exists(url):
             print("file exists, we'll delete the original file \"" + file_name + "\", then create a new one")
@@ -1861,7 +1861,7 @@ class FileProcessor:
 
     # write message to txt file
     def writeMessageToFile(self, path, file_name, message: list[str]):
-        url = os.path.join(self.root_path, path, file_name)
+        url = os.path.join("..", "..", path, file_name)
         if not os.path.exists(url):
             print("error! the file \"" + file_name + "\" doesn't exist!")
 
@@ -1879,7 +1879,6 @@ class FileProcessor:
     def create_and_write_message_to_file(self, path, file_name, message: list):
         self.createFile(path, file_name)
         self.writeMessageToFile(path, file_name, message)
-
 
 
     def execute_for_single_pathway(self, pathway_name, reaction_ids, physical_entity_ids,
@@ -1934,7 +1933,7 @@ class FileProcessor:
         file_professor.writeMessageToFile(path, self.filename_components_mapping, entity_component_mapping_list)
 
     def read_file_via_lines(self, path, file_name):
-        url = os.path.join(self.root_path, path, file_name)
+        url = os.path.join("..", "..", path, file_name)
         res_list = []
 
         try:
@@ -1972,7 +1971,9 @@ if __name__ == '__main__':
 
     # reactome_processor.execution_on_single_pathway_via_name_enhanced("Metabolism")
 
-    reactome_processor.execution_on_single_pathway_via_name_enhanced("Signal Transduction")
+    # reactome_processor.execution_on_single_pathway_via_name_enhanced("Signal Transduction")
+
+
 
 
     time_end = time.time()  # record the ending time

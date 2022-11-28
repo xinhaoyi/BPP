@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import copy
+import os
 import random
 import re
 import time
@@ -1452,7 +1453,9 @@ class DataBeanForReactome:
         # sort the index_and_entity_id_for_print via index sequence
         index_and_entity_id_mask_for_print.sort(key=lambda l: int(re.findall('\d+', l)[0]))
 
-        pre_path = "data/" + self.__pathway_name + "/" + self.__task_of_sub_data_set + "/"
+        # pre_path = "data/" + self.__pathway_name + "/" + self.__task_of_sub_data_set + "/"
+        pre_path = os.path.join("data", self.__pathway_name, self.__task_of_sub_data_set)
+
         self.__file_processor.createFile(pre_path + self.__type_of_sub_data_set, self.__all_components_file_name)
         self.__file_processor.createFile(pre_path + self.__type_of_sub_data_set,
                                          self.__entities_components_mapping_file_name)
@@ -1460,9 +1463,7 @@ class DataBeanForReactome:
         self.__file_processor.createFile(pre_path + self.__type_of_sub_data_set, self.__nodes_file_name)
         self.__file_processor.createFile(pre_path + self.__type_of_sub_data_set, self.__relationship_file_name)
 
-        self.__file_processor.writeMessageToFile(pre_path + self.__type_of_sub_data_set,
-                                                 self.__all_components_file_name,
-                                                 index_and_component_id_for_print)
+        self.__file_processor.create_and_write_message_to_file(pre_path + self.__type_of_sub_data_set, self.__all_components_file_name, index_and_component_id_for_print)
         self.__file_processor.writeMessageToFile(pre_path + self.__type_of_sub_data_set,
                                                  self.__entities_components_mapping_file_name,
                                                  entities_component_indexes_mapping_list_for_print)
