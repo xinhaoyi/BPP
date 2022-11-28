@@ -65,10 +65,10 @@ if __name__ == '__main__':
     time_start = time.time()  # record the start time
 
     # extract the data from Reactome
-    extract_data_from_reactome()
+    # extract_data_from_reactome()
 
     # divide the dataset
-    # divide_data_set()
+    divide_data_set()
 
 
 

@@ -51,7 +51,6 @@ class ReactomeDataDivider:
 
         self.__regulation_link_prediction_initialise_reactions_and_entities_components_and_relationships_and_list_of_pair_of_entity_and_component()
 
-    # todo
     def __ultimate_initialisation(self):
         self.__reactions_ids = self.__read_reactions_of_one_pathway_from_file()
         self.__entities_ids = self.__read_entities_of_one_pathway_from_file()
@@ -92,18 +91,19 @@ class ReactomeDataDivider:
         return self.__reaction_to_list_of_entities_dict
 
     def __read_reactions_of_one_pathway_from_file(self) -> list[str]:
-        reactions_ids = self.__file_processor.read_file_via_lines("data/" + self.__pathway_name + "/",
+        reactions_ids = self.__file_processor.read_file_via_lines(os.path.join("data", self.__pathway_name),
                                                                   self.__edges_file_name)
         return reactions_ids
 
     def __read_entities_of_one_pathway_from_file(self) -> list[str]:
-        entities_ids = self.__file_processor.read_file_via_lines("data/" + self.__pathway_name + "/",
+        entities_ids = self.__file_processor.read_file_via_lines(os.path.join("data", self.__pathway_name),
                                                                  self.__nodes_file_name)
         return entities_ids
 
     def __read_all_relationships_of_one_pathway_from_file(self) -> list[list[str]]:
-        relationships_string_style = self.__file_processor.read_file_via_lines("data/" + self.__pathway_name + "/",
-                                                                               self.__relationship_file_name)
+        relationships_string_style = self.__file_processor.read_file_via_lines(
+            os.path.join("data", self.__pathway_name),
+            self.__relationship_file_name)
 
         relationships: list[list[str]] = list()
 
@@ -133,7 +133,7 @@ class ReactomeDataDivider:
         return relationships
 
     def __read_all_components_of_one_pathway_from_file(self) -> list[str]:
-        component_ids = self.__file_processor.read_file_via_lines("data/" + self.__pathway_name + "/",
+        component_ids = self.__file_processor.read_file_via_lines(os.path.join("data", self.__pathway_name),
                                                                   self.__all_components_file_name)
         return component_ids
 
@@ -141,7 +141,7 @@ class ReactomeDataDivider:
     def __read_all_pair_of_entity_and_component_of_one_pathway_from_file(self) -> list[list[str]]:
         # 355,1190,1209
         list_of_entity_components_mappings_with_index_style = self.__file_processor.read_file_via_lines(
-            "data/" + self.__pathway_name + "/",
+            os.path.join("data", self.__pathway_name),
             self.__entities_components_mapping_file_name)
         list_of_pair_of_entity_and_component: list[list[str]] = list()
         for i in range(len(list_of_entity_components_mappings_with_index_style)):
@@ -755,21 +755,9 @@ class ReactomeDataDivider:
 
         self.__ultimate_initialisation()
 
-    # todo: test method
-    def test_count_components_based_on_relationships(self):
-        list_of_pair_of_entity_and_component = self.__list_of_pair_of_entity_and_component
-
-        component_ids_set = set()
-
-        for pair_of_entity_and_component in list_of_pair_of_entity_and_component:
-            component_id = pair_of_entity_and_component[self.__component_index_of_pair_of_entity_and_component]
-            component_ids_set.add(component_id)
-
-        component_ids_list = list(component_ids_set)
-        print("The number of components from pair of entity and component are: ", len(component_ids_list))
-
     # 将reactions 均分为3份
     def __get_three_divided_reaction_ids(self):
+        random.seed(1121)
         reactions_ids = copy.deepcopy(self.__reactions_ids)
         np.random.shuffle(reactions_ids)
         # 1 : 1 : 1
@@ -792,7 +780,9 @@ class ReactomeDataDivider:
 
     # 将reaction均分为2份
     def __get_two_divided_reaction_ids(self):
+        random.seed(1121)
         reactions_ids = copy.deepcopy(self.__reactions_ids)
+        reactions_ids.sort()
         np.random.shuffle(reactions_ids)
         # 1 : 1
         total_num = len(reactions_ids)
@@ -1453,30 +1443,31 @@ class DataBeanForReactome:
         # sort the index_and_entity_id_for_print via index sequence
         index_and_entity_id_mask_for_print.sort(key=lambda l: int(re.findall('\d+', l)[0]))
 
-        # pre_path = "data/" + self.__pathway_name + "/" + self.__task_of_sub_data_set + "/"
-        pre_path = os.path.join("data", self.__pathway_name, self.__task_of_sub_data_set)
+        # path = "data/" + self.__pathway_name + "/" + self.__task_of_sub_data_set + "/"
+        path = os.path.join("data", self.__pathway_name, self.__task_of_sub_data_set, self.__type_of_sub_data_set)
 
-        self.__file_processor.createFile(pre_path + self.__type_of_sub_data_set, self.__all_components_file_name)
-        self.__file_processor.createFile(pre_path + self.__type_of_sub_data_set,
+        self.__file_processor.createFile(path, self.__all_components_file_name)
+        self.__file_processor.createFile(path,
                                          self.__entities_components_mapping_file_name)
-        self.__file_processor.createFile(pre_path + self.__type_of_sub_data_set, self.__edges_file_name)
-        self.__file_processor.createFile(pre_path + self.__type_of_sub_data_set, self.__nodes_file_name)
-        self.__file_processor.createFile(pre_path + self.__type_of_sub_data_set, self.__relationship_file_name)
+        self.__file_processor.createFile(path, self.__edges_file_name)
+        self.__file_processor.createFile(path, self.__nodes_file_name)
+        self.__file_processor.createFile(path, self.__relationship_file_name)
 
-        self.__file_processor.create_and_write_message_to_file(pre_path + self.__type_of_sub_data_set, self.__all_components_file_name, index_and_component_id_for_print)
-        self.__file_processor.writeMessageToFile(pre_path + self.__type_of_sub_data_set,
+        self.__file_processor.create_and_write_message_to_file(path, self.__all_components_file_name,
+                                                               index_and_component_id_for_print)
+        self.__file_processor.writeMessageToFile(path,
                                                  self.__entities_components_mapping_file_name,
                                                  entities_component_indexes_mapping_list_for_print)
-        self.__file_processor.writeMessageToFile(pre_path + self.__type_of_sub_data_set, self.__edges_file_name,
+        self.__file_processor.writeMessageToFile(path, self.__edges_file_name,
                                                  index_and_reaction_id_for_print)
-        self.__file_processor.writeMessageToFile(pre_path + self.__type_of_sub_data_set, self.__nodes_file_name,
+        self.__file_processor.writeMessageToFile(path, self.__nodes_file_name,
                                                  index_and_entity_id_for_print)
-        self.__file_processor.writeMessageToFile(pre_path + self.__type_of_sub_data_set, self.__relationship_file_name,
+        self.__file_processor.writeMessageToFile(path, self.__relationship_file_name,
                                                  relationships_index_style_for_print)
 
         if len(self.__train_entity_mask_list) > 0:
-            self.__file_processor.createFile(pre_path + self.__type_of_sub_data_set, self.__nodes_mask_file_name)
-            self.__file_processor.writeMessageToFile(pre_path + self.__type_of_sub_data_set,
+            self.__file_processor.createFile(path, self.__nodes_mask_file_name)
+            self.__file_processor.writeMessageToFile(path,
                                                      self.__nodes_mask_file_name, index_and_entity_id_mask_for_print)
 
     def generate_and_print_components_mapping_mix_negative_to_file(self, num_of_negative_elements: int):
@@ -1512,14 +1503,14 @@ class DataBeanForReactome:
 
             for negative_component_index in negative_components_indexes:
                 entities_component_indexes_mapping_list_for_print[index] = \
-                entities_component_indexes_mapping_list_for_print[index] + "||" + str(negative_component_index)
+                    entities_component_indexes_mapping_list_for_print[index] + "||" + str(negative_component_index)
 
-        pre_path = "data/" + self.__pathway_name + "/" + self.__task_of_sub_data_set + "/"
+        path = os.path.join("data", self.__pathway_name, self.__task_of_sub_data_set, self.__type_of_sub_data_set)
 
-        self.__file_processor.createFile(pre_path + self.__type_of_sub_data_set,
+        self.__file_processor.createFile(path,
                                          self.__entities_components_mapping_mix_negative_file_name)
 
-        self.__file_processor.writeMessageToFile(pre_path + self.__type_of_sub_data_set,
+        self.__file_processor.writeMessageToFile(path,
                                                  self.__entities_components_mapping_mix_negative_file_name,
                                                  entities_component_indexes_mapping_list_for_print)
 
