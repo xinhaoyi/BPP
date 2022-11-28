@@ -4,7 +4,6 @@ import copy
 import os
 import random
 import re
-import time
 from enum import Enum
 
 import numpy as np
@@ -14,6 +13,7 @@ from property import Properties
 
 class ReactomeDataDivider:
     def __init__(self, pathway_name):
+        random.seed(1121)
         self.__file_processor = FileProcessor()
         self.__edges_file_name = "edges.txt"
         self.__nodes_file_name = "nodes.txt"
@@ -759,6 +759,7 @@ class ReactomeDataDivider:
     def __get_three_divided_reaction_ids(self):
         random.seed(1121)
         reactions_ids = copy.deepcopy(self.__reactions_ids)
+        reactions_ids.sort()
         np.random.shuffle(reactions_ids)
         # 1 : 1 : 1
         total_num = len(reactions_ids)
@@ -783,7 +784,7 @@ class ReactomeDataDivider:
         random.seed(1121)
         reactions_ids = copy.deepcopy(self.__reactions_ids)
         reactions_ids.sort()
-        np.random.shuffle(reactions_ids)
+        random.shuffle(reactions_ids)
         # 1 : 1
         total_num = len(reactions_ids)
         num_of_input_link_prediction_reaction_ids = int(total_num * 0.5)
@@ -794,6 +795,13 @@ class ReactomeDataDivider:
         input_link_prediction_reaction_ids = reactions_ids[0:input_link_prediction_reaction_ids_end_index]
         output_link_prediction_reactions_ids = reactions_ids[
                                                output_link_prediction_reaction_ids_start_index:]
+
+        input_link_prediction_reaction_ids.sort()
+        output_link_prediction_reactions_ids.sort()
+
+        print(input_link_prediction_reaction_ids[:3])
+        print(output_link_prediction_reactions_ids[:3])
+
 
         return input_link_prediction_reaction_ids, output_link_prediction_reactions_ids, list()
 
@@ -880,6 +888,9 @@ class ReactomeDataDivider:
             if list_of_reactions is None:
                 list_of_reactions = list()
             total_num = total_num + len(list_of_reactions)
+
+        print("entity id num = ", len(self.__input_link_prediction_entity_ids))
+        print("total num = ", total_num)
 
         validation_size = test_size = int(total_num / 10)
 
