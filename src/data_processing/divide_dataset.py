@@ -43,7 +43,13 @@ class ReactomeDataDivider:
 
         # self.__input_link_prediction_reaction_ids, self.__output_link_prediction_reactions_ids, self.__regulation_link_prediction_reactions_ids = self.__get_three_divided_reaction_ids()
 
-        self.__input_link_prediction_reaction_ids, self.__output_link_prediction_reactions_ids, self.__regulation_link_prediction_reactions_ids = self.__get_two_divided_reaction_ids()
+        # self.__input_link_prediction_reaction_ids, self.__output_link_prediction_reactions_ids, self.__regulation_link_prediction_reactions_ids = self.__get_two_divided_reaction_ids()
+
+        self.__input_link_prediction_reaction_ids = copy.deepcopy(self.__reactions_ids)
+
+        self.__output_link_prediction_reactions_ids = copy.deepcopy(self.__reactions_ids)
+
+        self.__regulation_link_prediction_reactions_ids = copy.deepcopy(self.__reactions_ids)
 
         self.__input_link_prediction_initialise_reactions_and_entities_components_and_relationships_and_list_of_pair_of_entity_and_component()
 
@@ -905,7 +911,6 @@ class ReactomeDataDivider:
         # sort the dict to make sure we get the same data after division
         for reaction_id, list_of_input_entities_ids in self.__input_link_prediction_reaction_to_list_of_input_entities_dict.items():
             list_of_input_entities_ids.sort()
-
 
         while validation_counter < validation_size or test_counter < test_size:
             random_reaction_index = random.randint(0, end_index_of_reactions)
@@ -2069,7 +2074,13 @@ class DataBean:
             elements = relationship.split(",")
 
             entity_index = elements[self.__entity_id_index_of_relationship]
+
+            if int(entity_index) > len(self.__entities):
+                print(entity_index)
+
             entity_id = self.__entities[int(entity_index)]
+
+
 
             reaction_index = elements[self.__reaction_id_index_of_relationship]
             reaction_id = self.__reactions[int(reaction_index)]
@@ -2105,13 +2116,12 @@ class DataBean:
                 line_list_of_entity_id_and_component_id: list[str] = list()
                 component_index = int(component_str)
 
-                # todo
-                if component_index == 0:
-                    print("component index = 0 mapping " + str(i))
-                if component_index == 1:
-                    print("component index = 1 mapping " + str(i))
-                if component_index == 2:
-                    print("component index = 2 mapping " + str(i))
+                # if component_index == 0:
+                #     print("component index = 0 mapping " + str(i))
+                # if component_index == 1:
+                #     print("component index = 1 mapping " + str(i))
+                # if component_index == 2:
+                #     print("component index = 2 mapping " + str(i))
 
                 component_id = self.__components[component_index]
                 line_list_of_entity_id_and_component_id.append(entity_id)
@@ -2261,11 +2271,11 @@ class DataBean:
 
         print(self.__pathway)
         if None is not self.__divided_dataset_task:
-            print(self.__divided_dataset_task + "\n")
+            print(" | " + self.__divided_dataset_task)
         if None is not self.__divided_dataset_type:
-            print(self.__divided_dataset_type + "\n")
+            print("   | " + self.__divided_dataset_type + "\n")
         else:
-            print("raw dataset")
+            print(" | " + "raw dataset" + "\n")
         print("num of nodes: " + str(len(self.__entities)) + "\n")
         print("num of edges: " + str(len(self.__reactions)) + "\n")
         print("num of components: " + str(len(self.__components)) + "\n")
@@ -2365,7 +2375,7 @@ class DataBean:
                                                                     length] + 1
 
         for i in range(0, 10):
-            print("entity with  " + temp_num_dict[i] + " reactions: " + str(
+            print("entity with " + temp_num_dict[i] + " reactions: " + str(
                 entity_with_relationships_information[i]) + " (" + "{:.2%}".format(
                 entity_with_relationships_information[i] / total_num_of_entities) + ")")
         print("\n")
@@ -2380,7 +2390,7 @@ class DataBean:
                                                                           length] + 1
 
         for i in range(0, 10):
-            print("entity with  " + temp_num_dict[i] + " input reactions: " + str(
+            print("entity with " + temp_num_dict[i] + " input reactions: " + str(
                 entity_with_input_relationships_information[i]) + " (" + "{:.2%}".format(
                 entity_with_input_relationships_information[i] / total_num_of_entities) + ")")
         print("\n")
@@ -2395,7 +2405,7 @@ class DataBean:
                                                                            length] + 1
 
         for i in range(0, 10):
-            print("entity with  " + temp_num_dict[i] + " output reactions: " + str(
+            print("entity with " + temp_num_dict[i] + " output reactions: " + str(
                 entity_with_output_relationships_information[i]) + " (" + "{:.2%}".format(
                 entity_with_output_relationships_information[i] / total_num_of_entities) + ")")
         print("\n")
@@ -2411,7 +2421,7 @@ class DataBean:
                     entity_with_regulation_relationships_information[length] + 1
 
         for i in range(0, 10):
-            print("entity with  " + temp_num_dict[i] + " output reactions: " + str(
+            print("entity with " + temp_num_dict[i] + " output reactions: " + str(
                 entity_with_regulation_relationships_information[i]) + " (" + "{:.2%}".format(
                 entity_with_regulation_relationships_information[i] / total_num_of_entities) + ")")
         print("\n")
@@ -2429,7 +2439,7 @@ class DataBean:
                                                                  length] + 1
 
         for i in range(0, 10):
-            print("entity with  " + temp_num_dict[i] + " components: " + str(
+            print("entity with " + temp_num_dict[i] + " components: " + str(
                 entity_with_components_information[i]) + " (" + "{:.2%}".format(
                 entity_with_components_information[i] / total_num_of_entities) + ")")
         print("\n")
@@ -2445,7 +2455,23 @@ class DataBean:
                                                                   length] + 1
 
         for i in range(0, 10):
-            print("component with  " + temp_num_dict[i] + " entities: " + str(
+            print("component with " + temp_num_dict[i] + " entities: " + str(
                 component_with_entities_information[i]) + " (" + "{:.2%}".format(
                 component_with_entities_information[i] / total_num_of_components) + ")")
         print("\n")
+
+
+if __name__ == '__main__':
+    disease_raw = DataBean("Disease", is_raw_dataset=True, is_divided_dataset=False, is_combination_dataset=False)
+    disease_train = DataBean("Disease", is_raw_dataset=False, is_divided_dataset=True, is_combination_dataset=False,
+                             divided_dataset_task="input link prediction dataset", divided_dataset_type="train")
+    disease_validation = DataBean("Disease", is_raw_dataset=False, is_divided_dataset=True,
+                                  is_combination_dataset=False, divided_dataset_task="input link prediction dataset",
+                                  divided_dataset_type="validation")
+    disease_test = DataBean("Disease", is_raw_dataset=False, is_divided_dataset=True, is_combination_dataset=False,
+                            divided_dataset_task="input link prediction dataset", divided_dataset_type="test")
+
+    disease_raw.information()
+    disease_train.information()
+    disease_validation.information()
+    disease_test.information()
