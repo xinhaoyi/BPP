@@ -4,7 +4,7 @@ import time
 import torch
 import torch.nn.functional as F
 import torch.optim as optim
-from data_loader_tmp_copy import Database
+from data_loader import Database
 from dhg import Graph, Hypergraph
 from dhg.models import HGNN
 from sklearn.metrics import accuracy_score, ndcg_score
@@ -121,7 +121,7 @@ def main():
         # the hyper graph
         hyper_graph = Hypergraph(num_of_nodes, hyper_edge_list)
 
-        # the GCN model
+        # the HGNN model
         net_model = HGNN(
             data_loader["num_features"],
             config.emb_dim,

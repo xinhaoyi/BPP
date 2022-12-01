@@ -9,7 +9,7 @@ from dhg.models import GCN
 from sklearn.metrics import accuracy_score, ndcg_score
 
 import wandb
-from data_loader_tmp_copy import Database
+from data_loader import Database
 
 model_name = "GCN"
 project_name = "pathway_attribute_predict"

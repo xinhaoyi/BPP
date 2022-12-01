@@ -1,14 +1,14 @@
 # from neo4j import GraphDatabase
-import os
 import re
-import time
 
 import numpy as np
-
 # from py2neo import Graph, Node, Relationship
 from py2neo import Graph
+import os
+import time
 from pyecharts import options as opts
 from pyecharts.charts import Bar
+
 
 # match p = (n:PhysicalEntity) - [:input|output] - () where n.speciesName = 'Homo sapiens'  and n.stId = 'R-HSA-9626061' return p limit 100
 # match p = (n:PhysicalEntity) - [:input|output] - () where n.speciesName = 'Homo sapiens'  and n.stId = 'R-HSA-9626045' return p limit 100
@@ -222,13 +222,28 @@ class ReactionProcessor:
 
     def get_reaction_display_name_by_reaction_id(self, reaction_id: str) -> str:
         """
+        This method is to get the display name of a reaction based on its id
+        :param reaction_id: the stId of a reaction
+        :return: reaction_name: the display name of a reaction
+        """
+
+        __instruction = "MATCH (n:ReactionLikeEvent) WHERE n.stId = '" + str(
+            reaction_id) + "' AND n.speciesName='Homo sapiens' RETURN n.displayName"
+        reaction_name = self.__graph.run(__instruction).to_ndarray().flatten(order='C').tolist()
+        if reaction_name is not None and len(reaction_name) > 0:
+            return reaction_name[0]
+        else:
+            return "Not_Found_This_Name"
+
+    def get_reaction_name_by_reaction_id(self, reaction_id: str) -> str:
+        """
         This method is to get the name of a reaction based on its id
         :param reaction_id: the stId of a reaction
         :return: reaction_name: the name of a reaction
         """
 
         __instruction = "MATCH (n:ReactionLikeEvent) WHERE n.stId = '" + str(
-            reaction_id) + "' AND n.speciesName='Homo sapiens' RETURN n.displayName"
+            reaction_id) + "' AND n.speciesName='Homo sapiens' RETURN n.name"
         reaction_name = self.__graph.run(__instruction).to_ndarray().flatten(order='C').tolist()
         if reaction_name is not None and len(reaction_name) > 0:
             return reaction_name[0]
@@ -242,21 +257,34 @@ class ReactionProcessor:
         :return:
         """
         reaction_names_list = list()
-        reaction_id_to_reaction_name_dic = dict()
-        reaction_name_to_reaction_id_dic = dict()
-        reaction_ids_list = list()
+        reaction_ids_list_without_duplicate_names: list[str] = list()
+
+        reaction_name_to_list_of_reaction_ids_dict: dict[str, list[str]] = dict()
         for reaction_id in reaction_ids:
-            reaction_name = self.get_reaction_display_name_by_reaction_id(reaction_id)
+            # reaction_name = self.get_reaction_display_name_by_reaction_id(reaction_id)
+            reaction_name = self.get_reaction_name_by_reaction_id(reaction_id)
+
+            if reaction_name not in reaction_name_to_list_of_reaction_ids_dict.keys():
+                reaction_name_to_list_of_reaction_ids_dict[reaction_name] = list()
+                reaction_name_to_list_of_reaction_ids_dict[reaction_name].append(reaction_id)
+            else:
+                reaction_name_to_list_of_reaction_ids_dict[reaction_name].append(reaction_id)
+
             reaction_names_list.append(reaction_name)
-            reaction_id_to_reaction_name_dic[reaction_id] = reaction_name
-            reaction_name_to_reaction_id_dic[reaction_name] = reaction_id
+
         reaction_names_list = list(set(reaction_names_list))
         # sort the reaction_names_list
         reaction_names_list = sorted(reaction_names_list)
-        for reaction_name in reaction_names_list:
-            reaction_ids_list.append(reaction_name_to_reaction_id_dic.get(reaction_name))
 
-        return reaction_ids_list, reaction_names_list
+        for reaction_name, list_of_reaction_ids in reaction_name_to_list_of_reaction_ids_dict.items():
+            list_of_reaction_ids.sort()
+
+        # 'R-HSA-9687435'
+        # 'R-HSA-9698265'
+        for reaction_name in reaction_names_list:
+            reaction_ids_list_without_duplicate_names.append(reaction_name_to_list_of_reaction_ids_dict.get(reaction_name)[0])
+
+        return reaction_ids_list_without_duplicate_names, reaction_names_list
 
     def get_all_reactions_of_homo_sapiens_in_Reactome(self) -> list:
         reactions_ids = self.__graph.run(
@@ -455,7 +483,8 @@ class ReactionProcessor:
 
     def get_original_physical_entity_list_and_list_of_unique_physical_entities_id_without_duplicate_name_and_list_of_mapping_names_and_original_physical_entity_id_to_no_duplicate_name_physical_entity_id_dic_from_list_of_reactions_ids(
             self, reaction_ids):
-        original_physical_entity_id_to_physical_entity_name_dic = dict()
+        original_physical_entity_id_to_physical_entity_name_dict = dict()
+        physical_entity_name_to_list_of_entity_id: dict[str, list[str]] = dict( )
         physical_entity_name_to_physical_entity_id_dic_without_duplicate_name = dict()
 
         physical_entity_id_list = list()
@@ -466,12 +495,23 @@ class ReactionProcessor:
 
         for physical_entity_id in original_physical_entity_list:
             physical_entity_name = self.get_physical_entity_name_by_physical_entity_id(physical_entity_id)
+
             # There will be more than on id mapping to the same name
-            original_physical_entity_id_to_physical_entity_name_dic[physical_entity_id] = physical_entity_name
-            # some physical_entity_id will be over-written
-            physical_entity_name_to_physical_entity_id_dic_without_duplicate_name[
-                physical_entity_name] = physical_entity_id
+            original_physical_entity_id_to_physical_entity_name_dict[physical_entity_id] = physical_entity_name
+
             physical_entity_name_list.append(physical_entity_name)
+
+            if physical_entity_name not in physical_entity_name_to_list_of_entity_id.keys():
+                physical_entity_name_to_list_of_entity_id[physical_entity_name] = list()
+                physical_entity_name_to_list_of_entity_id[physical_entity_name].append(physical_entity_id)
+            else:
+                physical_entity_name_to_list_of_entity_id[physical_entity_name].append(physical_entity_id)
+
+        # sort the list of entity ids for every single entity name
+        for entity_name, list_of_entity_ids in physical_entity_name_to_list_of_entity_id.items():
+            list_of_entity_ids.sort()
+            physical_entity_name_to_physical_entity_id_dic_without_duplicate_name[entity_name] = list_of_entity_ids[0]
+
         physical_entity_name_list = list(set(physical_entity_name_list))
 
         # sort the physical_entity_name_list
@@ -481,7 +521,7 @@ class ReactionProcessor:
             physical_entity_id_list.append(
                 physical_entity_name_to_physical_entity_id_dic_without_duplicate_name[physical_entity_name])
 
-        for original_physical_entity_id, physical_entity_name in original_physical_entity_id_to_physical_entity_name_dic.items():
+        for original_physical_entity_id, physical_entity_name in original_physical_entity_id_to_physical_entity_name_dict.items():
             original_physical_entity_id_to_no_duplicate_name_physical_entity_id_dic[original_physical_entity_id] = \
                 physical_entity_name_to_physical_entity_id_dic_without_duplicate_name[physical_entity_name]
 
@@ -723,6 +763,7 @@ class PhysicalEntityProcessor:
         # This dictionary will drop some ids, ensuring id and name is a one-to-one correspondence
         component_name_to_component_id_dict_one_to_one = dict()
 
+        original_component_ids_unique.sort()
         for component_id in original_component_ids_unique:
             component_name = self.get_component_name_by_component_id(component_id)
             components_names_set.add(component_name)
@@ -951,6 +992,8 @@ class ReactomeProcessor:
 
             relationships_between_nodes_and_edges_with_index_style.append(line_message)
 
+        relationships_between_nodes_and_edges_with_index_style.sort(key=lambda l: (int(re.findall('\d+', l)[1]), int(re.findall('\d+', l)[0]), int(re.findall('-?\d+', l)[2])))
+
         unique_components_without_duplicate_names, component_names_list, physical_entity_id_to_list_of_component_ids_dict = self.__physical_entity_processor.get_unique_components_without_duplicate_names_and_mapping_components_names_list_and_physical_entity_id_to_list_of_component_ids_dict_from_list_of_physical_entities(
             physical_entity_ids)
 
@@ -1068,8 +1111,7 @@ class ReactomeProcessor:
 
             relationships_between_nodes_and_edges_with_index_style.append(line_message)
 
-        # todo
-        # remove duplicate
+        relationships_between_nodes_and_edges_with_index_style.sort(key=lambda l: (int(re.findall('\d+', l)[1]), int(re.findall('\d+', l)[0]), int(re.findall('-?\d+', l)[2])))
 
         # remove the duplicate components
         component_ids_unique_for_one_pathway, components_dic = self.__physical_entity_processor.get_unique_components_and_components_dict_from_list_of_physical_entities(
@@ -1525,8 +1567,8 @@ class ReactomeProcessor:
                                                   entity_component_mapping_list)
 
         # draw the histogram
-        drawer = Drawer(len(reactions), len(physical_entity_ids), len(component_ids), pathway_name)
-        drawer.generate_histogram()
+        # drawer = Drawer(len(reactions), len(physical_entity_ids), len(component_ids), pathway_name)
+        # drawer.generate_histogram()
 
     def execution_on_single_pathways_enhanced(self, pathway_stId):
         pathway_name = self.get_pathway_name_by_id(pathway_stId)
@@ -1588,8 +1630,8 @@ class ReactomeProcessor:
                                                                   entity_component_mapping_list)
 
         # draw the histogram
-        drawer = Drawer(len(reaction_names), len(physical_entity_names), len(component_names), pathway_name)
-        drawer.generate_histogram()
+        # drawer = Drawer(len(reaction_names), len(physical_entity_names), len(component_names), pathway_name)
+        # drawer.generate_histogram()
 
 
     def execution_on_single_pathway_via_name_enhanced(self, pathway_name: str):
@@ -1677,8 +1719,8 @@ class ReactomeProcessor:
                                                   entity_index_to_components_indices_mapping_list)
 
         # draw the histogram
-        drawer = Drawer(num_of_edges, num_of_nodes, dimensionality, "All_data_in_Reactome")
-        drawer.generate_histogram()
+        # drawer = Drawer(num_of_edges, num_of_nodes, dimensionality, "All_data_in_Reactome")
+        # drawer.generate_histogram()
 
     def execution_on_reactome_enhanced(self):
 
@@ -1742,54 +1784,8 @@ class ReactomeProcessor:
                                                                   entity_component_mapping_list)
 
         # draw the histogram
-        drawer = Drawer(len(reaction_names), len(physical_entity_names), len(component_names), "All_data_in_Reactome")
-        drawer.generate_histogram()
-
-    def test(self):
-        reactions = self.__reaction_processor.get_reactions_ids_from_single_pathway('R-HSA-1640170')
-        print(reactions)
-        print(len(reactions))
-
-        sum_of_physical_entities = 0
-        for reaction in reactions:
-            physical_entities = self.__reaction_processor.get_physical_entities_ids_from_single_reaction_id(reaction)
-            sum_of_physical_entities = sum_of_physical_entities + len(physical_entities)
-
-        print("sum_of_physical_entities = " + str(sum_of_physical_entities))
-
-        physical_entities_for_single_reaction = self.__reaction_processor.get_physical_entities_ids_from_single_reaction_id(
-            'R-HSA-8964492')
-
-        physical_entities_unique = self.__reaction_processor.get_unique_physical_entities_ids_from_list_of_reactions_ids(
-            reactions)
-
-        print(physical_entities_unique)
-
-        print("sum_of_physical_entities_unique = " + str(len(physical_entities_unique)))
-
-        component_ids_unique = self.__physical_entity_processor.get_unique_components_and_components_dict_from_list_of_physical_entities(
-            physical_entities_unique)
-
-        print("num of component_ids_unique = " + str(len(component_ids_unique)))
-
-    def test_reactions(self):
-        all_reactions = self.__reaction_processor.get_all_reactions_of_homo_sapiens_in_Reactome()
-        top_pathways = self.get_all_top_pathways()
-        number_with_duplicate_elements = 0
-        reactions_set = set()
-        for top_pathway_id in top_pathways:
-            reactions = self.__reaction_processor.get_reactions_ids_from_single_pathway(top_pathway_id)
-            number_with_duplicate_elements = number_with_duplicate_elements + len(reactions)
-            for reaction in reactions:
-                reactions_set.add(reaction)
-
-        reactions_difference = set(all_reactions).difference(reactions_set)
-
-        print("The num of reactions with duplicate elements are: " + str(number_with_duplicate_elements))
-        print("The total num of reactions are: " + str(len(reactions_set)))
-
-        for reaction_id in reactions_difference:
-            print(reaction_id)
+        # drawer = Drawer(len(reaction_names), len(physical_entity_names), len(component_names), "All_data_in_Reactome")
+        # drawer.generate_histogram()
 
 
 # one jump to n jump
@@ -1804,7 +1800,11 @@ class Drawer:
         self.num_of_nodes = num_of_nodes
         self.dimensionality = dimensionality
         self.pathway_name = pathway_name
-        self.path = "./data/" + pathway_name + "/"
+        cur_path = os.path.abspath(os.path.dirname(__file__))
+        self.root_path = cur_path[:cur_path.find("extract_data_from_reactome\\") + len("extract_data_from_reactome\\")]
+        # self.root_path = cur_path[:cur_path.find("PathwayGNN\\") + len("PathwayGNN\\")]
+
+        self.path = os.path.join(self.root_path, "data", pathway_name)
 
     def generate_histogram(self):
         x1 = [self.pathway_name]
@@ -1812,8 +1812,8 @@ class Drawer:
         y2 = [self.num_of_nodes]
         y3 = [self.dimensionality]
         name_of_file = self.pathway_name + ".html"
-        path = self.path + '/' + name_of_file
-        url = path + '/' + name_of_file
+        path = os.path.join(self.path, name_of_file)
+        url = os.path.join(path, name_of_file)
 
         if os.path.exists(url):
             print("file exists, we'll delete the original file \"" + name_of_file + "\", then create a new one")
@@ -1840,11 +1840,14 @@ class FileProcessor:
         self.filename_components_mapping = "components-mapping.txt"
         self.filename_components_all = "components-all.txt"
         self.filename_components_all_names = "components-all-names.txt"
+        # PathwayGNN
+        # self.root_path = cur_path[:cur_path.find("PathwayGNN\\") + len("PathwayGNN\\")]
 
+    # data/All_data_in_Reactome/components-all.txt
     # create the txt file to store the data
     def createFile(self, path, file_name):
-        url = path + '/' + file_name
-        if not os.path.exists(path):
+        url = os.path.join("..", "..", path, file_name)
+        if not os.path.exists(os.path.join("..", "..", path)):
             os.makedirs(path)
         if os.path.exists(url):
             print("file exists, we'll delete the original file \"" + file_name + "\", then create a new one")
@@ -1852,18 +1855,13 @@ class FileProcessor:
         file = open(url, 'w', encoding='utf-8')
 
     def delete_file(self, path, file_name) -> None:
-        url = path + '/' + file_name
+        url = os.path.join(path, file_name)
         if os.path.exists(url):
             os.remove(url)
 
-    # create the txt file to store the data with default path
-    def createFileWithDefaultPath(self, file_name):
-        path = './data'
-        self.createFile(path, file_name)
-
     # write message to txt file
     def writeMessageToFile(self, path, file_name, message: list[str]):
-        url = path + '/' + file_name
+        url = os.path.join("..", "..", path, file_name)
         if not os.path.exists(url):
             print("error! the file \"" + file_name + "\" doesn't exist!")
 
@@ -1883,11 +1881,10 @@ class FileProcessor:
         self.writeMessageToFile(path, file_name, message)
 
 
-
     def execute_for_single_pathway(self, pathway_name, reaction_ids, physical_entity_ids,
                                    relationships_between_nodes_edges, component_ids, entity_component_mapping_list):
 
-        path = "./data/" + pathway_name + "/"
+        path = os.path.join("data", pathway_name)
 
         # write message to the file
         file_professor = FileProcessor()
@@ -1910,7 +1907,7 @@ class FileProcessor:
                                                    relationships_between_nodes_edges, component_ids, component_names,
                                                    entity_component_mapping_list):
 
-        path = "./data/" + pathway_name + "/"
+        path = os.path.join("data", pathway_name)
 
         # write message to the file
         file_professor = FileProcessor()
@@ -1936,7 +1933,7 @@ class FileProcessor:
         file_professor.writeMessageToFile(path, self.filename_components_mapping, entity_component_mapping_list)
 
     def read_file_via_lines(self, path, file_name):
-        url = path + '/' + file_name
+        url = os.path.join("..", "..", path, file_name)
         res_list = []
 
         try:
@@ -1974,7 +1971,9 @@ if __name__ == '__main__':
 
     # reactome_processor.execution_on_single_pathway_via_name_enhanced("Metabolism")
 
-    reactome_processor.execution_on_single_pathway_via_name_enhanced("Signal Transduction")
+    # reactome_processor.execution_on_single_pathway_via_name_enhanced("Signal Transduction")
+
+
 
 
     time_end = time.time()  # record the ending time
