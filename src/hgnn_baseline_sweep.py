@@ -4,7 +4,7 @@ import time
 import torch
 import torch.nn.functional as F
 import torch.optim as optim
-from data_loader import Database
+from data_loader import DataLoaderAttribute
 from dhg import Graph, Hypergraph
 from dhg.models import HGNN
 from sklearn.metrics import accuracy_score, ndcg_score
@@ -94,7 +94,7 @@ def main():
         )
 
         # initialize the data_loader
-        data_loader = Database(config.dataset, config.task)
+        data_loader = DataLoaderAttribute(config.dataset, config.task)
 
         # get the labels - the original nodes features
         labels = torch.FloatTensor(data_loader["raw_nodes_features"])

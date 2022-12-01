@@ -4,10 +4,11 @@ import time
 import torch
 import torch.nn.functional as F
 import torch.optim as optim
-from data_loader_tmp_copy import Database
 from dhg import Graph, Hypergraph
 from dhg.models import GCN
 from sklearn.metrics import ndcg_score
+
+from src.data_loader import DataLoaderAttribute
 
 learning_rate = 0.01
 weight_decay = 5e-4
@@ -78,7 +79,7 @@ if __name__ == "__main__":
     device = torch.device("cuda") if torch.cuda.is_available() else torch.device("cpu")
 
     # initialize the data_loader
-    data_loader = Database("Disease", "attribute prediction dataset")
+    data_loader = DataLoaderAttribute("Disease", "attribute prediction dataset")
 
     # get the labels - the original nodes features
     labels = torch.FloatTensor(data_loader["raw_nodes_features"])

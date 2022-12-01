@@ -157,7 +157,7 @@ if __name__ == '__main__':
     net_model = net_model.to(device)
 
 
-    print("GCN Baseline")
+    print("HGNN+ Baseline")
 
     # start to train
     for epoch in range(200):

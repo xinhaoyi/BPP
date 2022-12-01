@@ -99,7 +99,7 @@ if __name__ == '__main__':
     hyper_graph = hyper_graph.to(device)
     net_model = net_model.to(device)
 
-    print("HGNN Baseline")
+    print("HGNN+ Baseline")
 
     # start to train
     for epoch in range(200):

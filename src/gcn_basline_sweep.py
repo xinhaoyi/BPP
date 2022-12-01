@@ -9,7 +9,7 @@ from dhg.models import GCN
 from sklearn.metrics import accuracy_score, ndcg_score
 
 import wandb
-from data_loader import Database
+from data_loader import DataLoaderAttribute
 
 model_name = "GCN"
 project_name = "pathway_attribute_predict"
@@ -29,8 +29,6 @@ def train(
     st = time.time()
     optimizer.zero_grad()
     outs = net_model(nodes_features, graph)
-    # outs: torch.Size([7403, 2000]) 就是7403个点，每个点有 2000个 features
-    # labels: torch.Size([7403, 2000]) 就是7403个点，和每个点的真实的 2000个 features
     outs, labels = outs[train_idx], labels[train_idx]
     loss = F.cross_entropy(outs, labels)
     loss.backward()
@@ -88,7 +86,7 @@ def main():
         )
 
         # initialize the data_loader
-        data_loader = Database(config.dataset, config.task)
+        data_loader = DataLoaderAttribute(config.dataset, config.task)
 
 
         # get the labels - the original nodes features
