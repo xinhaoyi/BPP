@@ -70,22 +70,20 @@ def get_root_path_of_project(project_name: str):
 
 def normalize_sparse_matrix(mat):
     """Row-normalize sparse matrix"""
-    # sum(1) 是计算每一行的和
-    # 会得到一个（2708,1）的矩阵
+    # sum(1) is to calculate the sum of each row
     rowsum: ndarray = np.array(mat.sum(1))
 
-    # 把这玩意儿取倒，然后拍平
+    # Take this thing down and slap it flat
     r_inv = np.power(rowsum, -1).flatten()
 
-    # 在计算倒数的时候存在一个问题，如果原来的值为0，则其倒数为无穷大，因此需要对r_inv中无穷大的值进行修正，更改为0
+    # There is a problem when calculating the reciprocal, if the original value is 0, its reciprocal is infinity,
+    # so the value of infinity in r_inv needs to be corrected by changing it to 0
     r_inv[np.isinf(r_inv)] = 0.
 
-    # np.diag() 应该也可以
-    # 这里就是生成 对角矩阵
+    # Here is the generation of the diagonal matrix
     r_mat_inv = sp.diags(r_inv)
 
-    # 点乘,得到归一化后的结果
-    # 注意是 归一化矩阵 点乘 原矩阵，别搞错了!!
+    # Point multiplication, to obtain the normalised result
     mat = r_mat_inv.dot(mat)
     return mat
 
@@ -112,6 +110,65 @@ def encode_node_features(components_mapping_list: list[list[int]], num_of_nodes:
     nodes_features: list[list[int]] = component_csc_mat.toarray().tolist()
 
     return nodes_features
+
+def encode_edges_features(edge_to_nodes_mapping_list: list[list[int]], num_of_edges: int, num_of_nodes: int):
+    row = []
+    column = []
+    val = []
+    for line_index in range(num_of_edges):
+        nodes_of_one_reaction = edge_to_nodes_mapping_list[line_index]
+        for node in nodes_of_one_reaction:
+            row.append(line_index)
+            column.append(node)
+            val.append(1)
+
+    component_csc_mat = csr_matrix((val, (row, column)), shape=(num_of_edges, num_of_nodes))
+    edges_features: list[list[int]] = component_csc_mat.toarray().tolist()
+
+    return edges_features
+
+def read_out_to_generate_single_hyper_edge_embedding(list_of_nodes_for_single_hyper_edge: list[int], nodes_features: torch.Tensor) -> torch.Tensor:
+    """
+    Generate edge embedding for single edge based on its surrounding nodes
+    :param list_of_nodes_for_single_hyper_edge: the nodes for a single hyper graph to slice the nodes_features tensor. ex. [0,1,4,5...]
+    :param nodes_features: all the nodes features shape n*m, n is the number of nodes, m is the dimension of attributes.
+    :return: after readout(mean method), we get an edge embedding.
+    """
+    nodes_features_for_single_hyper_edge = nodes_features[list_of_nodes_for_single_hyper_edge]
+    edge_embedding: torch.Tensor = torch.mean(nodes_features_for_single_hyper_edge, dim=0)
+    edge_embedding = torch.sigmoid(edge_embedding)
+
+    return edge_embedding
+
+def read_out_to_generate_multi_hyper_edges_embeddings_from_edge_dict(edge_to_nodes_dict: dict[int, list[int]], nodes_features: torch.Tensor):
+    """
+    :param edge_to_nodes_dict: the key is the index of the edge and the value is a list of surrounding nodes. ex. {0:[1,2,3], 1:[2,4,5]}
+    :param nodes_features: all the nodes features shape n*m, n is the number of nodes, m is the dimension of attributes.
+    :return: after readout(mean method), we get multi edges embeddings.
+    """
+    multi_hyper_edges_embeddings_list: list[list[float]] = list()
+    for edge, list_of_nodes in edge_to_nodes_dict.items():
+        edge_embedding = read_out_to_generate_single_hyper_edge_embedding(list_of_nodes, nodes_features)
+        multi_hyper_edges_embeddings_list.append(edge_embedding.tolist())
+
+    multi_hyper_edges_embeddings_tensor = torch.Tensor(multi_hyper_edges_embeddings_list)
+
+    return multi_hyper_edges_embeddings_tensor
+
+def read_out_to_generate_multi_hyper_edges_embeddings_from_edge_list(edge_to_nodes_list: list[list[int]], nodes_features: torch.Tensor):
+    """
+    :param edge_to_nodes_list: a list of surrounding nodes of multi edges. ex. [[1,2,3], [2,4,5].....]
+    :param nodes_features: all the nodes features shape n*m, n is the number of nodes, m is the dimension of attributes.
+    :return: after readout(mean method), we get multi edges embeddings.
+    """
+    multi_hyper_edges_embeddings_list: list[list[float]] = list()
+    for list_of_nodes in edge_to_nodes_list:
+        edge_embedding = read_out_to_generate_single_hyper_edge_embedding(list_of_nodes, nodes_features)
+        multi_hyper_edges_embeddings_list.append(edge_embedding.tolist())
+
+    multi_hyper_edges_embeddings_tensor = torch.Tensor(multi_hyper_edges_embeddings_list)
+
+    return multi_hyper_edges_embeddings_tensor
 
 
 class ModelEngine(object):
