@@ -78,6 +78,8 @@ class MF_train:
             n_samples, int(predictions.shape[0] / n_samples)
         )
         ground_truth = np.zeros(int(predictions.shape[1]))
+        # [1,0,0,0...]
+        # [1,0,0,0...]
         ground_truth[0] = 1
         new = []
         for i in range(n_samples):

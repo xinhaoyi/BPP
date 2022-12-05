@@ -32,7 +32,7 @@ class MF(torch.nn.Module):
         nn.init.normal_(self.reaction_emb.weight, 0, self.stddev)
 
     def forward(self, batch_data):
-        """Trian the model.
+        """Train the model.
         Args:
             batch_data: tuple consists of (users, pos_items, neg_items), which must be LongTensor.
         """
@@ -56,7 +56,7 @@ class MF(torch.nn.Module):
         return scores, regularizer
 
     def predict(self, entity, reaction):
-        """Predcit result with the model.
+        """Predict result with the model.
         Args:
             users (int, or list of int):  user id(s).
             items (int, or list of int):  item id(s).
