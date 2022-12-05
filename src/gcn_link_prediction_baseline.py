@@ -42,6 +42,8 @@ def train(net_model: torch.nn.Module, nodes_features: torch.Tensor, train_hyper_
 
 
 @torch.no_grad()
+# [A:[1,2], [4,5,6]...]   vali:A:[3,12,14,15,16]  LABEL: A:[1,2,3]
+#
 def validation(net_model, nodes_features, validation_hyper_edge_list: list[list[int]], graph, labels, validation_idx):
     net_model.eval()
 
@@ -58,6 +60,7 @@ def validation(net_model, nodes_features, validation_hyper_edge_list: list[list[
     cat_labels = labels.cpu().numpy().argmax(axis=1)
     cat_outs = outs.cpu().numpy().argmax(axis=1)
 
+    # RAW: [A:[1,2,3]]   [1,1,1,0.......]  [0.3,0.2,0.1,...]
     ndcg_res = ndcg_score(labels.cpu().numpy(), outs.cpu().numpy())
     acc_res = accuracy_score(cat_labels, cat_outs)
 
@@ -71,7 +74,7 @@ def validation(net_model, nodes_features, validation_hyper_edge_list: list[list[
 @torch.no_grad()
 def test(net_model, nodes_features, test_hyper_edge_list: list[list[int]],  graph, labels, test_idx):
     net_model.eval()
-
+# [[1,2,3],[2,3,4,5]...]
     edges_embeddings = utils.read_out_to_generate_multi_hyper_edges_embeddings_from_edge_list(
         test_hyper_edge_list,
         nodes_features)
