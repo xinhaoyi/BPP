@@ -4,7 +4,7 @@ import torch
 import torch.optim as optim
 import torch.nn.functional as F
 from dhg import Graph, Hypergraph
-from dhg.models import GCN, HGNN
+from dhg.models import HGNN
 from sklearn.metrics import ndcg_score, accuracy_score
 
 import utils
