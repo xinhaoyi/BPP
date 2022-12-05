@@ -4,11 +4,11 @@ import time
 import torch
 import torch.nn.functional as F
 import torch.optim as optim
+import wandb
 from dhg import Graph, Hypergraph
 from dhg.models import GCN
 from sklearn.metrics import accuracy_score, ndcg_score
 
-import wandb
 from data_loader import DataLoaderAttribute
 
 model_name = "GCN"
@@ -87,7 +87,6 @@ def main():
 
         # initialize the data_loader
         data_loader = DataLoaderAttribute(config.dataset, config.task)
-
 
         # get the labels - the original nodes features
         labels = torch.FloatTensor(data_loader["raw_nodes_features"])
@@ -177,20 +176,21 @@ def main():
                         "test_acc": test_acc,
                     }
                 )
-                
+
+
 task = "attribute prediction dataset"
-for dataset in ["Immune System","Metabolism","Signal Transduction","Disease"]:
+for dataset in ["Immune System", "Metabolism", "Signal Transduction", "Disease"]:
     sweep_config = {"method": "grid"}
     metric = {"name": "valid_ndcg", "goal": "maximize"}
     sweep_config["metric"] = metric
     parameters_dict = {
         "learning_rate": {"values": [0.05, 0.01, 0.005]},
         "emb_dim": {"values": [64, 128, 256]},
-        "drop_out": {"values": [0.5,0.6,0.7]},
+        "drop_out": {"values": [0.5, 0.6, 0.7]},
         "weight_decay": {"values": [5e-4]},
         "model_name": {"values": [model_name]},
-        "dataset":{"values":[dataset]},
-        "task":{"values":[task]}
+        "dataset": {"values": [dataset]},
+        "task": {"values": [task]},
     }
     sweep_config["parameters"] = parameters_dict
     pprint.pprint(sweep_config)

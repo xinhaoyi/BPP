@@ -3,10 +3,11 @@ import time
 import torch
 import torch.nn.functional as F
 import torch.optim as optim
-from data_loader import Database, DataLoaderAttribute
 from dhg import Graph, Hypergraph
 from dhg.models import HGNN
 from sklearn.metrics import ndcg_score
+
+from data_loader import Database, DataLoaderAttribute
 
 learning_rate = 0.01
 weight_decay = 5e-4

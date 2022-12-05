@@ -3,7 +3,6 @@ import pprint
 import sys
 
 import torch
-
 import wandb
 
 sys.path.append("../src/")
@@ -137,8 +136,8 @@ def main():
         MF_disease.test()
 
 
-for task in ["output link prediction dataset","input link prediction dataset"]:
-    for dataset in ["Immune System","Metabolism","Signal Transduction","Disease"]:
+for task in ["output link prediction dataset", "input link prediction dataset"]:
+    for dataset in ["Immune System", "Metabolism", "Signal Transduction", "Disease"]:
         sweep_config = {"method": "grid"}
         metric = {"name": "valid_ndcg", "goal": "maximize"}
         sweep_config["metric"] = metric
@@ -147,8 +146,8 @@ for task in ["output link prediction dataset","input link prediction dataset"]:
             "emb_dim": {"values": [64, 128, 256]},
             "batch_size": {"values": [64, 128, 256]},
             "model_name": {"values": [model_name]},
-            "task":{"values":[task]},
-            "dataset":{"values":[dataset]}
+            "task": {"values": [task]},
+            "dataset": {"values": [dataset]},
         }
         sweep_config["parameters"] = parameters_dict
         pprint.pprint(sweep_config)
