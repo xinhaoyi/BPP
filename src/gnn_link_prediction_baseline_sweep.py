@@ -15,14 +15,13 @@ from data_loader import DataLoaderLink
 
 learning_rate = 0.01
 weight_decay = 5e-4
-task = "link prediction dataset"
-
+project_name = "gnn_link_prediction_sweep"
 
 def train(
     net_model: torch.nn.Module,
     nodes_features: torch.Tensor,
     train_hyper_edge_list: list[list[int]],
-    graph: Graph,
+    graph,
     labels: torch.Tensor,
     train_idx: list[bool],
     optimizer: optim.Adam,
@@ -39,7 +38,7 @@ def train(
         )
     )
 
-    edges_embeddings = edges_embeddings.to(device)
+    edges_embeddings = edges_embeddings.to(net_model.device)
 
     nodes_embeddings = net_model(nodes_features, graph)
 
@@ -73,7 +72,7 @@ def validation(
         )
     )
 
-    edges_embeddings = edges_embeddings.to(device)
+    edges_embeddings = edges_embeddings.to(net_model.device)
 
     nodes_embeddings = net_model(nodes_features, graph)
 
@@ -116,7 +115,7 @@ def test(
         )
     )
 
-    edges_embeddings = edges_embeddings.to(device)
+    edges_embeddings = edges_embeddings.to(net_model.device)
 
     nodes_embeddings = net_model(nodes_features, graph)
 
@@ -232,7 +231,7 @@ def main():
             )
         else:
             raise Exception("Sorry, no model_name has been recognized.")
-
+        net_model.device = device
         # set the optimizer
         optimizer = optim.Adam(
             net_model.parameters(),
@@ -247,12 +246,17 @@ def main():
             test_nodes_features.to(device),
             labels.to(device),
         )
+        if config.model_name!="GCN":
+            graph_train = hyper_graph_train
+            graph_validation = hyper_graph_validation
+            graph_test = hyper_graph_test
+        
         graph_train = graph_train.to(device)
         graph_validation = graph_validation.to(device)
         graph_test = graph_test.to(device)
         net_model = net_model.to(device)
 
-        print("GCN Baseline")
+        print(f"{config.model_name} Baseline")
 
         # start to train
         for epoch in range(200):
