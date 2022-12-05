@@ -545,6 +545,7 @@ class ReactomeDataDivider:
 
         # print("The relationship to be deleted " + str(relationship))
 
+        self.__relationships.remove(relationship)
         self.__input_link_prediction_relationships.remove(relationship)
 
         self.__input_link_prediction_reaction_to_list_of_entities_dict[reaction_id].remove(entity_id)
@@ -565,6 +566,7 @@ class ReactomeDataDivider:
         reaction_id = relationship[self.__reaction_id_index_of_relationship]
         direction = relationship[self.__direction_index_of_relationship]
 
+        self.__relationships.remove(relationship)
         self.__output_link_prediction_relationships.remove(relationship)
 
         self.__output_link_prediction_reaction_to_list_of_entities_dict[reaction_id].remove(entity_id)
@@ -601,18 +603,32 @@ class ReactomeDataDivider:
                 entity_id)
             self.__regulation_link_prediction_entity_to_list_of_regulation_reactions_dict[entity_id].remove(reaction_id)
 
-    def __get_list_of_relationships_based_on_entity_id(self, entity_id: str):
+    def __get_list_of_relationships_based_on_entity_id(self, entity_id: str, original_relationships: list[list[str]]):
         list_of_relationships: list[list[str]] = list()
-        for relationship in self.__relationships:
-            if relationship[self.__entity_id_index_of_relationship] is entity_id:
+        for relationship in original_relationships:
+            if relationship[self.__entity_id_index_of_relationship] == entity_id:
                 list_of_relationships.append(copy.deepcopy(relationship))
+
+        return list_of_relationships
+
+    def __get_list_of_relationships_based_on_list_of_entity_ids(self, list_of_entity_ids: list[str],
+                                                                original_relationships: list[list[str]]):
+        list_of_relationships: list[list[str]] = list()
+        for entity_id in list_of_entity_ids:
+            list_of_relationships_for_single_entity = self.__get_list_of_relationships_based_on_entity_id(entity_id,
+                                                                                                          original_relationships)
+            list_of_relationships.extend(list_of_relationships_for_single_entity)
+
+        list_of_relationships_tmp = list(set(tuple(relationship) for relationship in list_of_relationships))
+
+        list_of_relationships: list[list[str]] = [list(relationships) for relationships in list_of_relationships_tmp]
 
         return list_of_relationships
 
     def __get_list_of_relationships_based_on_reaction_id(self, reaction_id):
         list_of_relationships: list[list[str]] = list()
         for relationship in self.__relationships:
-            if relationship[self.__reaction_id_index_of_relationship] is reaction_id:
+            if relationship[self.__reaction_id_index_of_relationship] == reaction_id:
                 list_of_relationships.append(copy.deepcopy(relationship))
 
         return list_of_relationships
@@ -706,6 +722,9 @@ class ReactomeDataDivider:
         validation_counter: int = 0
         test_counter: int = 0
 
+        list_of_validation_mask_entity_id: list[str] = list()
+        list_of_test_mask_entity_id: list[str] = list()
+
         while validation_counter < validation_size or test_counter < test_size:
             random_entity_index = random.randint(0, end_index_of_entities)
             random_entity_id = self.__entities_ids[random_entity_index]
@@ -720,30 +739,56 @@ class ReactomeDataDivider:
                     pair_of_entity_and_component.append(random_entity_id)
                     pair_of_entity_and_component.append(random_component_id)
 
-                    list_of_relationships = self.__get_list_of_relationships_based_on_entity_id(random_entity_id)
-
                     train_data_bean.add_train_entity_id_mask_to_inner_train_entity_mask_list(random_entity_id)
 
                     if validation_counter >= validation_size:
-                        test_data_bean.add_list_of_relationships(list_of_relationships)
-                        test_data_bean.add_pair_of_entity_and_component(pair_of_entity_and_component)
+                        list_of_test_mask_entity_id.append(random_entity_id)
+                        # test_data_bean.add_list_of_relationships(list_of_relationships)
+                        # test_data_bean.add_pair_of_entity_and_component(pair_of_entity_and_component)
                         test_counter = test_counter + 1
                     elif test_counter >= test_size:
-                        validation_data_bean.add_list_of_relationships(list_of_relationships)
-                        validation_data_bean.add_pair_of_entity_and_component(pair_of_entity_and_component)
+                        list_of_validation_mask_entity_id.append(random_entity_id)
+                        # validation_data_bean.add_list_of_relationships(list_of_relationships)
+                        # validation_data_bean.add_pair_of_entity_and_component(pair_of_entity_and_component)
                         validation_counter = validation_counter + 1
                     else:
                         flag = random.randint(0, 1)
                         if flag == 0:
-                            test_data_bean.add_list_of_relationships(list_of_relationships)
-                            test_data_bean.add_pair_of_entity_and_component(pair_of_entity_and_component)
+                            list_of_test_mask_entity_id.append(random_entity_id)
+                            # test_data_bean.add_list_of_relationships(list_of_relationships)
+                            # test_data_bean.add_pair_of_entity_and_component(pair_of_entity_and_component)
                             test_counter = test_counter + 1
                         elif flag == 1:
-                            validation_data_bean.add_list_of_relationships(list_of_relationships)
-                            validation_data_bean.add_pair_of_entity_and_component(pair_of_entity_and_component)
+                            list_of_validation_mask_entity_id.append(random_entity_id)
+                            # validation_data_bean.add_list_of_relationships(list_of_relationships)
+                            # validation_data_bean.add_pair_of_entity_and_component(pair_of_entity_and_component)
                             validation_counter = validation_counter + 1
 
                     self.__delete_pair_of_entity_and_component(pair_of_entity_and_component)
+
+        list_of_validation_mask_entity_id = list(set(list_of_validation_mask_entity_id))
+        list_of_test_mask_entity_id = list(set(list_of_test_mask_entity_id))
+
+        relationships_for_validation_data_bean = self.__get_list_of_relationships_based_on_list_of_entity_ids(
+            list_of_validation_mask_entity_id, self.__relationships)
+
+        list_of_pair_of_entity_and_component_for_validation_data_bean = self.__get_list_of_pair_of_entity_and_component_based_on_list_of_entity_ids(
+            list_of_validation_mask_entity_id)
+
+        relationships_for_test_data_bean = self.__get_list_of_relationships_based_on_list_of_entity_ids(
+            list_of_test_mask_entity_id, self.__relationships)
+
+        list_of_pair_of_entity_and_component_for_test_data_bean = self.__get_list_of_pair_of_entity_and_component_based_on_list_of_entity_ids(
+            list_of_test_mask_entity_id)
+
+        validation_data_bean.add_list_of_relationships(relationships_for_validation_data_bean)
+
+        validation_data_bean.add_list_of_pair_of_entity_and_component(
+            list_of_pair_of_entity_and_component_for_validation_data_bean)
+
+        test_data_bean.add_list_of_relationships(relationships_for_test_data_bean)
+
+        test_data_bean.add_list_of_pair_of_entity_and_component(list_of_pair_of_entity_and_component_for_test_data_bean)
 
         train_data_bean.add_list_of_relationships(self.__relationships)
         train_data_bean.add_list_of_pair_of_entity_and_component(self.__list_of_pair_of_entity_and_component)
@@ -912,6 +957,12 @@ class ReactomeDataDivider:
         for reaction_id, list_of_input_entities_ids in self.__input_link_prediction_reaction_to_list_of_input_entities_dict.items():
             list_of_input_entities_ids.sort()
 
+        list_of_validation_mask_entity_id: list[str] = list()
+        list_of_test_mask_entity_id: list[str] = list()
+
+        list_of_validation_mask_reaction_id: list[str] = list()
+        list_of_test_mask_reaction_id: list[str] = list()
+
         while validation_counter < validation_size or test_counter < test_size:
             random_reaction_index = random.randint(0, end_index_of_reactions)
             random_reaction_id = self.__input_link_prediction_reaction_ids[random_reaction_index]
@@ -946,27 +997,54 @@ class ReactomeDataDivider:
                     list_of_pair_of_entity_and_component.sort()
 
                     if validation_counter >= validation_size:
-                        test_data_bean.add_relationship(relationship)
-                        test_data_bean.add_list_of_pair_of_entity_and_component(list_of_pair_of_entity_and_component)
+                        list_of_test_mask_entity_id.append(random_entity_id)
+                        list_of_test_mask_reaction_id.append(random_reaction_id)
                         test_counter = test_counter + 1
                     elif test_counter >= test_size:
-                        validation_data_bean.add_relationship(relationship)
-                        validation_data_bean.add_list_of_pair_of_entity_and_component(
-                            list_of_pair_of_entity_and_component)
+                        list_of_validation_mask_entity_id.append(random_entity_id)
+                        list_of_validation_mask_reaction_id.append(random_reaction_id)
                         validation_counter = validation_counter + 1
                     else:
                         flag = random.randint(0, 1)
                         if flag == 0:
-                            test_data_bean.add_relationship(relationship)
-                            test_data_bean.add_list_of_pair_of_entity_and_component(
-                                list_of_pair_of_entity_and_component)
+                            list_of_test_mask_entity_id.append(random_entity_id)
+                            list_of_test_mask_reaction_id.append(random_reaction_id)
                             test_counter = test_counter + 1
                         elif flag == 1:
-                            validation_data_bean.add_relationship(relationship)
-                            validation_data_bean.add_list_of_pair_of_entity_and_component(
-                                list_of_pair_of_entity_and_component)
+                            list_of_validation_mask_entity_id.append(random_entity_id)
+                            list_of_validation_mask_reaction_id.append(random_reaction_id)
                             validation_counter = validation_counter + 1
                     self.__input_link_prediction_delete_relationship(relationship)
+
+        list_of_validation_mask_reaction_id = list(set(list_of_validation_mask_reaction_id))
+        list_of_test_mask_reaction_id = list(set(list_of_test_mask_reaction_id))
+
+        relationships_for_validation_data_bean = self.__get_list_of_relationships_based_on_list_of_reaction_ids(
+            list_of_validation_mask_reaction_id)
+
+        list_of_entities_for_validation_tmp = self.__get_list_of_entities_based_on_list_of_relationships(
+            relationships_for_validation_data_bean)
+
+        list_of_pair_of_entity_and_component_for_validation_data_bean = self.__get_list_of_pair_of_entity_and_component_based_on_list_of_entity_ids(
+            list_of_entities_for_validation_tmp)
+
+        relationships_for_test_data_bean = self.__get_list_of_relationships_based_on_list_of_reaction_ids(
+            list_of_test_mask_reaction_id)
+
+        list_of_entities_for_test_tmp = self.__get_list_of_entities_based_on_list_of_relationships(
+            relationships_for_test_data_bean)
+
+        list_of_pair_of_entity_and_component_for_test_data_bean = self.__get_list_of_pair_of_entity_and_component_based_on_list_of_entity_ids(
+            list_of_entities_for_test_tmp)
+
+        validation_data_bean.add_list_of_relationships(relationships_for_validation_data_bean)
+
+        validation_data_bean.add_list_of_pair_of_entity_and_component(
+            list_of_pair_of_entity_and_component_for_validation_data_bean)
+
+        test_data_bean.add_list_of_relationships(relationships_for_test_data_bean)
+
+        test_data_bean.add_list_of_pair_of_entity_and_component(list_of_pair_of_entity_and_component_for_test_data_bean)
 
         train_data_bean.add_list_of_relationships(self.__input_link_prediction_relationships)
         train_data_bean.add_list_of_pair_of_entity_and_component(
@@ -1017,6 +1095,12 @@ class ReactomeDataDivider:
         for reaction_id, list_of_output_entities_ids in self.__output_link_prediction_reaction_to_list_of_output_entities_dict.items():
             list_of_output_entities_ids.sort()
 
+        list_of_validation_mask_entity_id: list[str] = list()
+        list_of_test_mask_entity_id: list[str] = list()
+
+        list_of_validation_mask_reaction_id: list[str] = list()
+        list_of_test_mask_reaction_id: list[str] = list()
+
         while validation_counter < validation_size or test_counter < test_size:
             random_reaction_index = random.randint(0, end_index_of_reactions)
             random_reaction_id = self.__output_link_prediction_reactions_ids[random_reaction_index]
@@ -1051,27 +1135,54 @@ class ReactomeDataDivider:
                     list_of_pair_of_entity_and_component.sort()
 
                     if validation_counter >= validation_size:
-                        test_data_bean.add_relationship(relationship)
-                        test_data_bean.add_list_of_pair_of_entity_and_component(list_of_pair_of_entity_and_component)
+                        list_of_test_mask_entity_id.append(random_entity_id)
+                        list_of_test_mask_reaction_id.append(random_reaction_id)
                         test_counter = test_counter + 1
                     elif test_counter >= test_size:
-                        validation_data_bean.add_relationship(relationship)
-                        validation_data_bean.add_list_of_pair_of_entity_and_component(
-                            list_of_pair_of_entity_and_component)
+                        list_of_validation_mask_entity_id.append(random_entity_id)
+                        list_of_validation_mask_reaction_id.append(random_reaction_id)
                         validation_counter = validation_counter + 1
                     else:
                         flag = random.randint(0, 1)
                         if flag == 0:
-                            test_data_bean.add_relationship(relationship)
-                            test_data_bean.add_list_of_pair_of_entity_and_component(
-                                list_of_pair_of_entity_and_component)
+                            list_of_test_mask_entity_id.append(random_entity_id)
+                            list_of_test_mask_reaction_id.append(random_reaction_id)
                             test_counter = test_counter + 1
                         elif flag == 1:
-                            validation_data_bean.add_relationship(relationship)
-                            validation_data_bean.add_list_of_pair_of_entity_and_component(
-                                list_of_pair_of_entity_and_component)
+                            list_of_validation_mask_entity_id.append(random_entity_id)
+                            list_of_validation_mask_reaction_id.append(random_reaction_id)
                             validation_counter = validation_counter + 1
                     self.__output_link_prediction_delete_relationship(relationship)
+
+        list_of_validation_mask_reaction_id = list(set(list_of_validation_mask_reaction_id))
+        list_of_test_mask_reaction_id = list(set(list_of_test_mask_reaction_id))
+
+        relationships_for_validation_data_bean = self.__get_list_of_relationships_based_on_list_of_reaction_ids(
+            list_of_validation_mask_reaction_id)
+
+        list_of_entities_for_validation_tmp = self.__get_list_of_entities_based_on_list_of_relationships(
+            relationships_for_validation_data_bean)
+
+        list_of_pair_of_entity_and_component_for_validation_data_bean = self.__get_list_of_pair_of_entity_and_component_based_on_list_of_entity_ids(
+            list_of_entities_for_validation_tmp)
+
+        relationships_for_test_data_bean = self.__get_list_of_relationships_based_on_list_of_reaction_ids(
+            list_of_test_mask_reaction_id)
+
+        list_of_entities_for_test_tmp = self.__get_list_of_entities_based_on_list_of_relationships(
+            relationships_for_test_data_bean)
+
+        list_of_pair_of_entity_and_component_for_test_data_bean = self.__get_list_of_pair_of_entity_and_component_based_on_list_of_entity_ids(
+            list_of_entities_for_test_tmp)
+
+        validation_data_bean.add_list_of_relationships(relationships_for_validation_data_bean)
+
+        validation_data_bean.add_list_of_pair_of_entity_and_component(
+            list_of_pair_of_entity_and_component_for_validation_data_bean)
+
+        test_data_bean.add_list_of_relationships(relationships_for_test_data_bean)
+
+        test_data_bean.add_list_of_pair_of_entity_and_component(list_of_pair_of_entity_and_component_for_test_data_bean)
 
         train_data_bean.add_list_of_relationships(self.__output_link_prediction_relationships)
         train_data_bean.add_list_of_pair_of_entity_and_component(
@@ -2079,8 +2190,6 @@ class DataBean:
                 print(entity_index)
 
             entity_id = self.__entities[int(entity_index)]
-
-
 
             reaction_index = elements[self.__reaction_id_index_of_relationship]
             reaction_id = self.__reactions[int(reaction_index)]
