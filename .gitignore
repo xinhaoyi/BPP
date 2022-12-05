@@ -5,3 +5,5 @@ src/runs
 wandb
 *.wandb
 *.log
+*.ipynb_checkpoints
+*.csv
