@@ -107,6 +107,7 @@ class DataLoaderBase:
             path: str = os.path.join(self.task_file_path, type_name)
 
         num_of_nodes = self.get_num_of_nodes_based_on_type_name(type_name)
+        num_of_edges = self.get_num_of_edges_based_on_type_name(type_name)
         num_of_feature_dimension = self.get_num_of_features_based_on_type_name()
 
         relationship_path = os.path.join(path, "relationship.txt")
@@ -126,8 +127,8 @@ class DataLoaderBase:
 
         nodes_features = utils.encode_node_features(components_mapping_list, num_of_nodes, num_of_feature_dimension)
 
-        print(type_name + " dataset\n", "Number of interactions: %2d.\n Number of nodes: %2d.\n Number of features: %2d"
-              % (len(mat), num_of_nodes, num_of_feature_dimension))
+        print(type_name + " dataset\n", "Number of interactions: %2d.\n Number of nodes: %2d.\n Number of features: %2d.\n Number of edges: %2d."
+              % (len(mat), num_of_nodes, num_of_feature_dimension, num_of_edges))
 
         return nodes_features
 
@@ -324,8 +325,8 @@ class DataLoaderLink(DataLoaderBase):
 
         self.__raw_nodes_features, self.__train_nodes_features, self.__validation_nodes_features, self.__test_nodes_features = (
             super().get_nodes_features_assist(
-                "raw"), super().get_nodes_features_assist("raw"), super().get_nodes_features_assist(
-                "raw"), super().get_nodes_features_assist("raw"))
+                "raw"), super().get_nodes_features_assist("train"), super().get_nodes_features_assist(
+                "validation"), super().get_nodes_features_assist("test"))
 
         self.__function_dict = {"num_nodes": self.get_num_of_nodes_based_on_type_name(),
                                 "num_features": self.get_num_of_features_based_on_type_name(),

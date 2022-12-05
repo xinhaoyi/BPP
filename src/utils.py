@@ -134,9 +134,15 @@ def read_out_to_generate_single_hyper_edge_embedding(list_of_nodes_for_single_hy
     :param nodes_features: all the nodes features shape n*m, n is the number of nodes, m is the dimension of attributes.
     :return: after readout(mean method), we get an edge embedding.
     """
+    # val [1,2]
+    # test [1,2]
+    # n*k edge matrix [[1,2], [3,4,5], [6,7,8]]
+    # m*k node matrix
+    # edge * node.T  out = n*m [0.2, 0.3, 0.4, 0.1, 0.9]
+    # labels: raw data -> edge [0, 0, 0, 0, 1]
     nodes_features_for_single_hyper_edge = nodes_features[list_of_nodes_for_single_hyper_edge]
     edge_embedding: torch.Tensor = torch.mean(nodes_features_for_single_hyper_edge, dim=0)
-    edge_embedding = torch.sigmoid(edge_embedding)
+    # edge_embedding = torch.sigmoid(edge_embedding)
 
     return edge_embedding
 

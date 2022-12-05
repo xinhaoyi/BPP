@@ -45,8 +45,9 @@ def train(net_model: torch.nn.Module, nodes_features: torch.Tensor, train_hyper_
 def validation(net_model, nodes_features, validation_hyper_edge_list: list[list[int]], graph, labels, validation_idx):
     net_model.eval()
 
-    edges_embeddings = utils.read_out_to_generate_multi_hyper_edges_embeddings_from_edge_list(validation_hyper_edge_list,
-                                                                                              nodes_features)
+    edges_embeddings = utils.read_out_to_generate_multi_hyper_edges_embeddings_from_edge_list(
+        validation_hyper_edge_list,
+        nodes_features)
 
     edges_embeddings = edges_embeddings.to(device)
 
@@ -54,6 +55,8 @@ def validation(net_model, nodes_features, validation_hyper_edge_list: list[list[
 
     outs = torch.matmul(edges_embeddings, nodes_embeddings.t())
 
+    # outs = [[0.1, 0.9, 0.3, 0.9],[0.1, 0.2, 0.3, 0.9]]
+    # labels = [[0, 1, 0, 1], [0, 0, 0, 1]]
     outs, labels = outs[validation_idx], labels[validation_idx]
     cat_labels = labels.cpu().numpy().argmax(axis=1)
     cat_outs = outs.cpu().numpy().argmax(axis=1)
@@ -69,7 +72,7 @@ def validation(net_model, nodes_features, validation_hyper_edge_list: list[list[
 
 
 @torch.no_grad()
-def test(net_model, nodes_features, test_hyper_edge_list: list[list[int]],  graph, labels, test_idx):
+def test(net_model, nodes_features, test_hyper_edge_list: list[list[int]], graph, labels, test_idx):
     net_model.eval()
 
     edges_embeddings = utils.read_out_to_generate_multi_hyper_edges_embeddings_from_edge_list(
@@ -129,29 +132,14 @@ if __name__ == '__main__':
     val_edge_mask = data_loader["val_edge_mask"]
     test_edge_mask = data_loader["test_edge_mask"]
 
-
     # get the labels - the original nodes features
     labels = torch.FloatTensor(utils.encode_edges_features(raw_hyper_edge_list, num_of_edges, num_of_nodes))
 
     # the train hyper graph
-    hyper_graph_train = Hypergraph(num_of_nodes, copy.deepcopy(train_hyper_edge_list))
+    hyper_graph = Hypergraph(num_of_nodes, copy.deepcopy(train_hyper_edge_list))
 
     # generate train graph based on hyper graph
-    graph_train = Graph.from_hypergraph_clique(hyper_graph_train, weighted=True)
-
-    # the train hyper graph
-    hyper_graph_validation = Hypergraph(num_of_nodes, copy.deepcopy(train_hyper_edge_list))
-
-    # generate train graph based on hyper graph
-    graph_validation = Graph.from_hypergraph_clique(hyper_graph_validation, weighted=True)
-
-    # the train hyper graph
-    hyper_graph_test = Hypergraph(num_of_nodes, copy.deepcopy(train_hyper_edge_list))
-
-    # generate train graph based on hyper graph
-    graph_test = Graph.from_hypergraph_clique(hyper_graph_test, weighted=True)
-
-
+    graph = Graph.from_hypergraph_clique(hyper_graph, weighted=True)
 
     # the GCN model
     net_model = GCN(data_loader["num_features"], 32, data_loader["num_features"], use_bn=True)
@@ -160,13 +148,12 @@ if __name__ == '__main__':
     optimizer = optim.Adam(net_model.parameters(), lr=learning_rate, weight_decay=weight_decay)
 
     # set the device
-    train_nodes_features, validation_nodes_features, test_nodes_features, labels = train_nodes_features.to(
-        device), validation_nodes_features.to(device), test_nodes_features.to(device), labels.to(device)
-    graph_train = graph_train.to(device)
-    graph_validation = graph_validation.to(device)
-    graph_test = graph_test.to(device)
+    raw_nodes_features = raw_nodes_features.to(device)
+    # train_nodes_features, validation_nodes_features, test_nodes_features, labels = train_nodes_features.to(
+    #     device), validation_nodes_features.to(device), test_nodes_features.to(device), labels.to(device)
+    labels = labels.to(device)
+    graph = graph.to(device)
     net_model = net_model.to(device)
-
 
     print("GCN Baseline")
 
@@ -174,12 +161,12 @@ if __name__ == '__main__':
     for epoch in range(200):
         # train
         # call the train method
-        train(net_model, train_nodes_features, train_hyper_edge_list, graph_train, labels, train_edge_mask, optimizer, epoch)
+        train(net_model, raw_nodes_features, train_hyper_edge_list, graph, labels, train_edge_mask, optimizer, epoch)
 
         if epoch % 1 == 0:
             with torch.no_grad():
                 # validation(net_model, validation_nodes_features, validation_hyper_edge_list, graph_validation, labels, val_edge_mask)
-                validation(net_model, validation_nodes_features, train_hyper_edge_list, graph_validation, labels,
+                validation(net_model, raw_nodes_features, validation_hyper_edge_list, graph, labels,
                            val_edge_mask)
 
-    test(net_model, test_nodes_features, test_hyper_edge_list, graph_test, labels, test_edge_mask)
+    test(net_model, raw_nodes_features, test_hyper_edge_list, graph, labels, test_edge_mask)
