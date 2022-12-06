@@ -149,8 +149,8 @@ def main(dataset: str, task: str):
     # device = torch.device("cuda") if torch.cuda.is_available() else torch.device("cpu")
 
     # initialize the data_loader
-    data_loader = DataLoaderLink("Disease", "input link prediction dataset")
-    # data_loader = DataLoaderLink("Disease", "output link prediction dataset")
+    # data_loader = DataLoaderLink("Disease", "input link prediction dataset")
+    data_loader = DataLoaderLink(dataset, task)
 
     # get the total number of nodes of this graph
     num_of_nodes: int = data_loader["num_nodes"]
@@ -244,4 +244,14 @@ def main(dataset: str, task: str):
 if __name__ == '__main__':
     # set device
     device = torch.device("cuda") if torch.cuda.is_available() else torch.device("cpu")
-    main("Disease", "input link prediction")
+    main("Disease", "input link prediction dataset")
+    # main("Disease", "output link prediction dataset")
+    #
+    # main("Immune System", "input link prediction dataset")
+    # main("Immune System", "output link prediction dataset")
+    #
+    # main("Metabolism", "input link prediction dataset")
+    # main("Metabolism", "output link prediction dataset")
+    #
+    # main("Signal Transduction", "input link prediction dataset")
+    # main("Signal Transduction", "output link prediction dataset")
