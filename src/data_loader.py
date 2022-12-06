@@ -87,7 +87,9 @@ class DataLoaderBase:
             path: str = self.raw_data_file_path
         else:
             path: str = os.path.join(self.task_file_path, type_name)
-        feature_line_message_list: list[str] = utils.read_file_via_lines(path, "components-all.txt")
+        feature_line_message_list: list[str] = utils.read_file_via_lines(
+            path, "components-all.txt"
+        )
         num_of_features = len(feature_line_message_list)
         return num_of_features
 
@@ -112,23 +114,35 @@ class DataLoaderBase:
 
         relationship_path = os.path.join(path, "relationship.txt")
         # mat = pd.read_csv(os.path.join(self.__project_root_path, relationship_path), names=['entity', 'reaction', 'type'], header=None)
-        mat = pd.read_csv(relationship_path, names=['entity', 'reaction', 'type'], header=None)
+        mat = pd.read_csv(
+            relationship_path, names=["entity", "reaction", "type"], header=None
+        )
 
-        components_mapping_line_message_list: list[str] = utils.read_file_via_lines(path, "components-mapping.txt")
-        components_mapping_list_with_str_style = [components_mapping_line_message.split(',') for
-                                                  components_mapping_line_message in
-                                                  components_mapping_line_message_list]
+        components_mapping_line_message_list: list[str] = utils.read_file_via_lines(
+            path, "components-mapping.txt"
+        )
+        components_mapping_list_with_str_style = [
+            components_mapping_line_message.split(",")
+            for components_mapping_line_message in components_mapping_line_message_list
+        ]
 
         components_mapping_list = []
 
         for components_mapping_str in components_mapping_list_with_str_style:
-            components_mapping_line_int_style = [int(component) for component in components_mapping_str]
+            components_mapping_line_int_style = [
+                int(component) for component in components_mapping_str
+            ]
             components_mapping_list.append(components_mapping_line_int_style)
 
-        nodes_features = utils.encode_node_features(components_mapping_list, num_of_nodes, num_of_feature_dimension)
+        nodes_features = utils.encode_node_features(
+            components_mapping_list, num_of_nodes, num_of_feature_dimension
+        )
 
-        print(type_name + " dataset\n", "Number of interactions: %2d.\n Number of nodes: %2d.\n Number of features: %2d.\n Number of edges: %2d."
-              % (len(mat), num_of_nodes, num_of_feature_dimension, num_of_edges))
+        print(
+            type_name + " dataset\n",
+            "Number of interactions: %2d.\n Number of nodes: %2d.\n Number of features: %2d.\n Number of edges: %2d."
+            % (len(mat), num_of_nodes, num_of_feature_dimension, num_of_edges),
+        )
 
         return nodes_features
 
@@ -149,7 +163,9 @@ class DataLoaderBase:
         else:
             path: str = os.path.join(self.task_file_path, type_name)
 
-        relationship_line_message_list: list[str] = utils.read_file_via_lines(path, "relationship.txt")
+        relationship_line_message_list: list[str] = utils.read_file_via_lines(
+            path, "relationship.txt"
+        )
 
         edge_to_list_of_nodes_dict: dict[int, list[int]] = dict()
         edge_to_list_of_input_nodes_dict: dict[int, list[int]] = dict()
@@ -175,7 +191,11 @@ class DataLoaderBase:
                     edge_to_list_of_output_nodes_dict[edge_index] = list()
                 edge_to_list_of_output_nodes_dict[edge_index].append(node_index)
 
-        return edge_to_list_of_nodes_dict, edge_to_list_of_input_nodes_dict, edge_to_list_of_output_nodes_dict
+        return (
+            edge_to_list_of_nodes_dict,
+            edge_to_list_of_input_nodes_dict,
+            edge_to_list_of_output_nodes_dict,
+        )
 
     def get_nodes_mask_assist(self, type_name: str) -> list[int]:
         nodes_mask: list[int] = list()
@@ -199,7 +219,9 @@ class DataLoaderBase:
         edges_mask: list[int] = list()
 
         path: str = os.path.join(self.task_file_path, type_name)
-        edges_line_message_list: list[str] = utils.read_file_via_lines(path, "edges.txt")
+        edges_line_message_list: list[str] = utils.read_file_via_lines(
+            path, "edges.txt"
+        )
 
         for node_line_message in edges_line_message_list:
             elements = node_line_message.split(",")
@@ -214,80 +236,118 @@ class DataLoaderAttribute(DataLoaderBase):
         super().__init__(sub_dataset_name, task_name)
 
         # node mask
-        self.__train_nodes_mask, self.__validation_nodes_mask, self.__test_nodes_mask = self.__get_nodes_mask()
+        (
+            self.__train_nodes_mask,
+            self.__validation_nodes_mask,
+            self.__test_nodes_mask,
+        ) = self.__get_nodes_mask()
 
         # node features
         self.__raw_nodes_features = self.get_nodes_features_assist("raw")
         self.__train_nodes_features = self.get_nodes_features_assist("train")
-        self.__validation_nodes_features = self.__get_complete_nodes_features_mix_negative_for_attribute_prediction(
-            self.__validation_nodes_mask, "validation")
-        self.__test_nodes_features = self.__get_complete_nodes_features_mix_negative_for_attribute_prediction(
-            self.__test_nodes_mask, "test")
+        self.__validation_nodes_features = (
+            self.__get_complete_nodes_features_mix_negative_for_attribute_prediction(
+                self.__validation_nodes_mask, "validation"
+            )
+        )
+        self.__test_nodes_features = (
+            self.__get_complete_nodes_features_mix_negative_for_attribute_prediction(
+                self.__test_nodes_mask, "test"
+            )
+        )
 
-        self.__function_dict = {"num_nodes": self.get_num_of_nodes_based_on_type_name(),
-                                "num_features": self.get_num_of_features_based_on_type_name(),
-                                "num_edges": self.get_num_of_edges_based_on_type_name(),
-                                "edge_list": self.get_edge_of_nodes_list_regardless_direction("train"),
-                                "raw_nodes_features": self.__raw_nodes_features,
-                                "train_nodes_features": self.__train_nodes_features,
-                                "validation_nodes_features": self.__validation_nodes_features,
-                                "test_nodes_features": self.__test_nodes_features,
-                                "train_node_mask": self.__train_nodes_mask,
-                                "val_node_mask": self.__validation_nodes_mask,
-                                "test_node_mask": self.__test_nodes_mask}
+        self.__function_dict = {
+            "num_nodes": self.get_num_of_nodes_based_on_type_name(),
+            "num_features": self.get_num_of_features_based_on_type_name(),
+            "num_edges": self.get_num_of_edges_based_on_type_name(),
+            "edge_list": self.get_edge_of_nodes_list_regardless_direction("train"),
+            "raw_nodes_features": self.__raw_nodes_features,
+            "train_nodes_features": self.__train_nodes_features,
+            "validation_nodes_features": self.__validation_nodes_features,
+            "test_nodes_features": self.__test_nodes_features,
+            "train_node_mask": self.__train_nodes_mask,
+            "val_node_mask": self.__validation_nodes_mask,
+            "test_node_mask": self.__test_nodes_mask,
+        }
 
     def __getitem__(self, key):
         return self.__function_dict[key]
 
-    def __get_complete_nodes_features_mix_negative_for_attribute_prediction(self, node_mask: list[int], type_name: str):
-        nodes_features_mix_negative: list[list[int]] = self.__get_nodes_features_mix_negative_assist(type_name)
+    def __get_complete_nodes_features_mix_negative_for_attribute_prediction(
+        self, node_mask: list[int], type_name: str
+    ):
+        nodes_features_mix_negative: list[
+            list[int]
+        ] = self.__get_nodes_features_mix_negative_assist(type_name)
 
         path: str = self.raw_data_file_path
-        components_mapping_line_message_list: list[str] = utils.read_file_via_lines(path, "components-mapping.txt")
-        components_mapping_list_with_str_style = [components_mapping_line_message.split(',') for
-                                                  components_mapping_line_message in
-                                                  components_mapping_line_message_list]
+        components_mapping_line_message_list: list[str] = utils.read_file_via_lines(
+            path, "components-mapping.txt"
+        )
+        components_mapping_list_with_str_style = [
+            components_mapping_line_message.split(",")
+            for components_mapping_line_message in components_mapping_line_message_list
+        ]
 
         raw_nodes_components_mapping_list = []
 
         for components_mapping_str in components_mapping_list_with_str_style:
-            components_mapping_line_int_style = [int(component) for component in components_mapping_str]
+            components_mapping_line_int_style = [
+                int(component) for component in components_mapping_str
+            ]
             raw_nodes_components_mapping_list.append(components_mapping_line_int_style)
 
         for i, node_mask_index in enumerate(node_mask):
-            raw_nodes_components_mapping_list[node_mask_index] = nodes_features_mix_negative[i]
+            raw_nodes_components_mapping_list[
+                node_mask_index
+            ] = nodes_features_mix_negative[i]
 
         num_of_nodes = self.get_num_of_nodes_based_on_type_name()
         num_of_feature_dimension = self.get_num_of_features_based_on_type_name()
 
-        nodes_features = utils.encode_node_features(raw_nodes_components_mapping_list, num_of_nodes,
-                                                    num_of_feature_dimension)
+        nodes_features = utils.encode_node_features(
+            raw_nodes_components_mapping_list, num_of_nodes, num_of_feature_dimension
+        )
 
         return nodes_features
 
-    def __get_nodes_features_mix_negative_assist(self, type_name: str) -> list[list[int]]:
+    def __get_nodes_features_mix_negative_assist(
+        self, type_name: str
+    ) -> list[list[int]]:
         if "test" != type_name and "validation" != type_name:
-            raise Exception("The type should be \"test\" or \"validation\"")
+            raise Exception('The type should be "test" or "validation"')
         if "attribute prediction dataset" != self.task_name:
             raise Exception(
-                "The method \"self.__get_nodes_features_mix_negative_assist\" is only for attribute prediction task")
+                'The method "self.__get_nodes_features_mix_negative_assist" is only for attribute prediction task'
+            )
         path: str = os.path.join(self.task_file_path, type_name)
-        components_mapping_line_message_mix_negative_list: list[str] = utils.read_file_via_lines(path,
-                                                                                                 "components-mapping-mix-negative.txt")
+        components_mapping_line_message_mix_negative_list: list[
+            str
+        ] = utils.read_file_via_lines(path, "components-mapping-mix-negative.txt")
 
         nodes_features_mix_negative: list[list[int]] = list()
 
-        for components_mapping_line_message_mix_negative in components_mapping_line_message_mix_negative_list:
-            elements: list[str] = components_mapping_line_message_mix_negative.split("||")
+        for (
+            components_mapping_line_message_mix_negative
+        ) in components_mapping_line_message_mix_negative_list:
+            elements: list[str] = components_mapping_line_message_mix_negative.split(
+                "||"
+            )
             positive_components_list_str_message: str = elements[0]
             negative_components_list_str_style: list[str] = elements[1:-1]
 
             components_list: list[int] = list()
 
-            positive_components_list: list[int] = [int(positive_component_str_style) for positive_component_str_style in
-                                                   positive_components_list_str_message.split(",")]
-            negative_components_list: list[int] = [int(negative_components_str_style) for negative_components_str_style
-                                                   in negative_components_list_str_style]
+            positive_components_list: list[int] = [
+                int(positive_component_str_style)
+                for positive_component_str_style in positive_components_list_str_message.split(
+                    ","
+                )
+            ]
+            negative_components_list: list[int] = [
+                int(negative_components_str_style)
+                for negative_components_str_style in negative_components_list_str_style
+            ]
 
             components_list.extend(positive_components_list)
 
@@ -304,14 +364,20 @@ class DataLoaderAttribute(DataLoaderBase):
 
         return train_nodes_mask, validation_nodes_mask, test_nodes_mask
 
-    def get_edge_of_nodes_list_regardless_direction(self, type_name: str) -> list[list[int]]:
+    def get_edge_of_nodes_list_regardless_direction(
+        self, type_name: str
+    ) -> list[list[int]]:
         """
         :return: [[1,2,3], [3,7,9], [4,6,7,8,10,11]...] while [1,2,3], [3,7,9], .. represent the hyper edges
         """
-        edge_to_list_of_nodes_dict, _, _ = self.get_edge_to_list_of_nodes_dict(type_name)
+        edge_to_list_of_nodes_dict, _, _ = self.get_edge_to_list_of_nodes_dict(
+            type_name
+        )
 
-        edge_of_nodes_list_without_direction: list[list[int]] = [list_of_nodes for edge_index, list_of_nodes in
-                                                                 edge_to_list_of_nodes_dict.items()]
+        edge_of_nodes_list_without_direction: list[list[int]] = [
+            list_of_nodes
+            for edge_index, list_of_nodes in edge_to_list_of_nodes_dict.items()
+        ]
 
         return edge_of_nodes_list_without_direction
 
@@ -320,42 +386,94 @@ class DataLoaderLink(DataLoaderBase):
     def __init__(self, sub_dataset_name, task_name):
         super().__init__(sub_dataset_name, task_name)
 
-        self.__raw_edge_to_nodes_dict, self.__train_edge_to_nodes_dict, self.__validation_edge_to_nodes_dict, self.__test_edge_to_nodes_dict = self.__get_edge_to_list_of_nodes_dict()
-        self.__train_edge_mask, self.__validation_edge_mask, self.__test_edge_mask = self.get_edges_mask()
+        (
+            self.__raw_edge_to_nodes_dict,
+            self.__train_edge_to_nodes_dict,
+            self.__validation_edge_to_nodes_dict,
+            self.__test_edge_to_nodes_dict,
+        ) = self.__get_edge_to_list_of_nodes_dict()
+        (
+            self.__train_edge_mask,
+            self.__validation_edge_mask,
+            self.__test_edge_mask,
+        ) = self.get_edges_mask()
 
-        self.__raw_nodes_features, self.__train_nodes_features, self.__validation_nodes_features, self.__test_nodes_features = (
-            super().get_nodes_features_assist(
-                "raw"), super().get_nodes_features_assist("train"), super().get_nodes_features_assist(
-                "validation"), super().get_nodes_features_assist("test"))
+        (
+            self.__raw_nodes_features,
+            self.__train_nodes_features,
+            self.__validation_nodes_features,
+            self.__test_nodes_features,
+        ) = (
+            super().get_nodes_features_assist("raw"),
+            super().get_nodes_features_assist("train"),
+            super().get_nodes_features_assist("validation"),
+            super().get_nodes_features_assist("test"),
+        )
 
-        self.__function_dict = {"num_nodes": self.get_num_of_nodes_based_on_type_name(),
-                                "num_features": self.get_num_of_features_based_on_type_name(),
-                                "num_edges": self.get_num_of_edges_based_on_type_name(),
-                                "raw_edge_list": self.get_edge_of_nodes_list_regardless_direction("raw"),
-                                "train_edge_list": self.get_edge_of_nodes_list_regardless_direction("train"),
-                                "validation_edge_list": self.get_edge_of_nodes_list_regardless_direction("validation"),
-                                "test_edge_list": self.get_edge_of_nodes_list_regardless_direction("test"),
-                                "raw_nodes_features": self.__raw_nodes_features,
-                                "train_nodes_features": self.__train_nodes_features,
-                                "validation_nodes_features": self.__validation_nodes_features,
-                                "test_nodes_features": self.__test_nodes_features,
-                                "train_edge_mask": self.__train_edge_mask,
-                                "val_edge_mask": self.__validation_edge_mask,
-                                "test_edge_mask": self.__test_edge_mask}
+        self.__function_dict = {
+            "num_nodes": self.get_num_of_nodes_based_on_type_name(),
+            "num_features": self.get_num_of_features_based_on_type_name(),
+            "num_edges": self.get_num_of_edges_based_on_type_name(),
+            "raw_edge_list": self.get_edge_of_nodes_list_regardless_direction("raw"),
+            "train_edge_list": self.get_edge_of_nodes_list_regardless_direction(
+                "train"
+            ),
+            "validation_edge_list": self.get_edge_of_nodes_list_regardless_direction(
+                "validation"
+            ),
+            "test_edge_list": self.get_edge_of_nodes_list_regardless_direction("test"),
+            "raw_nodes_features": self.__raw_nodes_features,
+            "train_nodes_features": self.__train_nodes_features,
+            "validation_nodes_features": self.__validation_nodes_features,
+            "test_nodes_features": self.__test_nodes_features,
+            "train_edge_mask": self.__train_edge_mask,
+            "val_edge_mask": self.__validation_edge_mask,
+            "test_edge_mask": self.__test_edge_mask,
+        }
 
     def __getitem__(self, key):
         return self.__function_dict[key]
 
-    def __get_edge_to_list_of_nodes_dict(self) -> tuple[dict[int, list[int]], dict[int, list[int]], dict[int, list[int]], dict[int, list[int]]]:
-        train_edge_to_list_of_nodes_dict, _, _ = super().get_edge_to_list_of_nodes_dict("train")
-        validation_edge_to_list_of_nodes_dict, _, _ = super().get_edge_to_list_of_nodes_dict(
-            "validation")
-        test_edge_to_list_of_nodes_dict, _, _ = super().get_edge_to_list_of_nodes_dict("test")
+    def __get_edge_to_list_of_nodes_dict(
+        self,
+    ) -> tuple[
+        dict[int, list[int]],
+        dict[int, list[int]],
+        dict[int, list[int]],
+        dict[int, list[int]],
+    ]:
+        train_edge_to_list_of_nodes_dict, _, _ = super().get_edge_to_list_of_nodes_dict(
+            "train"
+        )
+        (
+            validation_edge_to_list_of_nodes_dict,
+            _,
+            _,
+        ) = super().get_edge_to_list_of_nodes_dict("validation")
+        test_edge_to_list_of_nodes_dict, _, _ = super().get_edge_to_list_of_nodes_dict(
+            "test"
+        )
 
-        raw_edge_to_list_of_nodes_dict_complete, _, _ = self.get_edge_to_list_of_nodes_dict("raw")
-        train_edge_to_list_of_nodes_dict_complete, _, _ = self.get_edge_to_list_of_nodes_dict("raw")
-        validation_edge_to_list_of_nodes_dict_complete, _, _ = self.get_edge_to_list_of_nodes_dict("raw")
-        test_edge_to_list_of_nodes_dict_complete, _, _ = self.get_edge_to_list_of_nodes_dict("raw")
+        (
+            raw_edge_to_list_of_nodes_dict_complete,
+            _,
+            _,
+        ) = self.get_edge_to_list_of_nodes_dict("raw")
+        (
+            train_edge_to_list_of_nodes_dict_complete,
+            _,
+            _,
+        ) = self.get_edge_to_list_of_nodes_dict("raw")
+        (
+            validation_edge_to_list_of_nodes_dict_complete,
+            _,
+            _,
+        ) = self.get_edge_to_list_of_nodes_dict("raw")
+        (
+            test_edge_to_list_of_nodes_dict_complete,
+            _,
+            _,
+        ) = self.get_edge_to_list_of_nodes_dict("raw")
 
         for edge, list_of_nodes in train_edge_to_list_of_nodes_dict.items():
             train_edge_to_list_of_nodes_dict_complete[edge] = list_of_nodes
@@ -366,23 +484,31 @@ class DataLoaderLink(DataLoaderBase):
         for edge, list_of_nodes in test_edge_to_list_of_nodes_dict.items():
             test_edge_to_list_of_nodes_dict_complete[edge] = list_of_nodes
 
-        return raw_edge_to_list_of_nodes_dict_complete, train_edge_to_list_of_nodes_dict_complete, validation_edge_to_list_of_nodes_dict_complete, test_edge_to_list_of_nodes_dict_complete
+        return (
+            raw_edge_to_list_of_nodes_dict_complete,
+            train_edge_to_list_of_nodes_dict_complete,
+            validation_edge_to_list_of_nodes_dict_complete,
+            test_edge_to_list_of_nodes_dict_complete,
+        )
 
     def get_edge_of_nodes_list_regardless_direction(self, type_name) -> list[list[int]]:
         """
         :return: [[1,2,3], [3,7,9], [4,6,7,8,10,11]...] while [1,2,3], [3,7,9], .. represent the hyper edges
         """
 
-        type_dict = {"raw": self.__raw_edge_to_nodes_dict,
-                     "train": self.__train_edge_to_nodes_dict,
-                     "validation": self.__validation_edge_to_nodes_dict,
-                     "test": self.__test_edge_to_nodes_dict}
+        type_dict = {
+            "raw": self.__raw_edge_to_nodes_dict,
+            "train": self.__train_edge_to_nodes_dict,
+            "validation": self.__validation_edge_to_nodes_dict,
+            "test": self.__test_edge_to_nodes_dict,
+        }
 
         if type_name not in type_dict.keys():
-            raise Exception("Please input \"train\", \"validation\" or \"test\" ")
+            raise Exception('Please input "train", "validation" or "test" ')
 
-        edge_of_nodes_list_without_direction: list[list[int]] = [list_of_nodes for edge_index, list_of_nodes in
-                                                                 type_dict[type_name].items()]
+        edge_of_nodes_list_without_direction: list[list[int]] = [
+            list_of_nodes for edge_index, list_of_nodes in type_dict[type_name].items()
+        ]
 
         return edge_of_nodes_list_without_direction
 
@@ -403,7 +529,7 @@ class DataLoaderLink(DataLoaderBase):
         return train_edges_mask, validation_edges_mask, test_edges_mask
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     # name = 'Disease'
     # task = 'attribute prediction dataset'
     # data_base = Database(name, task)

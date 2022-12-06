@@ -5,7 +5,6 @@ import os
 import platform
 
 import scipy as sp
-import torch
 from numpy import ndarray
 from scipy.sparse import csr_matrix
 import numpy as np
@@ -27,7 +26,7 @@ def read_file_via_lines(path: str, file_name: str) -> list[str]:
         while True:
             # Get next line from file
             line = file_handler.readline()
-            line = line.replace('\r', '').replace('\n', '').replace('\t', '')
+            line = line.replace("\r", "").replace("\n", "").replace("\t", "")
 
             # If the line is empty then the end of file reached
             if not line:
@@ -38,6 +37,7 @@ def read_file_via_lines(path: str, file_name: str) -> list[str]:
         print("we can't find the " + url + ", please make sure that the file exists")
     finally:
         return res_list
+
 
 def get_sys_platform():
     sys_platform = platform.platform()
@@ -51,6 +51,7 @@ def get_sys_platform():
         sys_platform_return = "other"
     return sys_platform_return
 
+
 def get_root_path_of_project(project_name: str):
     """
     This method is to get the root path of the project
@@ -60,11 +61,17 @@ def get_root_path_of_project(project_name: str):
     """
     cur_path: str = os.path.abspath(os.path.dirname(__file__))
     if "windows" == get_sys_platform():
-        root_path: str = cur_path[:cur_path.find(project_name + "\\") + len(project_name + "\\")]
+        root_path: str = cur_path[
+            : cur_path.find(project_name + "\\") + len(project_name + "\\")
+        ]
     elif "macos" == get_sys_platform() or "linux" == get_sys_platform():
-        root_path: str = cur_path[:cur_path.find(project_name + "/") + len(project_name + "/")]
+        root_path: str = cur_path[
+            : cur_path.find(project_name + "/") + len(project_name + "/")
+        ]
     else:
-        raise Exception("We can't support other system platform! Please use windows or macos")
+        raise Exception(
+            "We can't support other system platform! Please use windows or macos"
+        )
     return root_path
 
 
@@ -78,7 +85,7 @@ def normalize_sparse_matrix(mat):
 
     # There is a problem when calculating the reciprocal, if the original value is 0, its reciprocal is infinity,
     # so the value of infinity in r_inv needs to be corrected by changing it to 0
-    r_inv[np.isinf(r_inv)] = 0.
+    r_inv[np.isinf(r_inv)] = 0.0
 
     # Here is the generation of the diagonal matrix
     r_mat_inv = sp.diags(r_inv)
@@ -95,7 +102,11 @@ def get_normalized_features_in_tensor(features) -> torch.Tensor:
     return features
 
 
-def encode_node_features(components_mapping_list: list[list[int]], num_of_nodes: int, num_of_feature_dimension: int) -> list[list[int]]:
+def encode_node_features(
+    components_mapping_list: list[list[int]],
+    num_of_nodes: int,
+    num_of_feature_dimension: int,
+) -> list[list[int]]:
     row = []
     column = []
     val = []
@@ -106,12 +117,17 @@ def encode_node_features(components_mapping_list: list[list[int]], num_of_nodes:
             column.append(feature_index)
             val.append(1)
 
-    component_csc_mat = csr_matrix((val, (row, column)), shape=(num_of_nodes, num_of_feature_dimension))
+    component_csc_mat = csr_matrix(
+        (val, (row, column)), shape=(num_of_nodes, num_of_feature_dimension)
+    )
     nodes_features: list[list[int]] = component_csc_mat.toarray().tolist()
 
     return nodes_features
 
-def encode_edges_features(edge_to_nodes_mapping_list: list[list[int]], num_of_edges: int, num_of_nodes: int):
+
+def encode_edges_features(
+    edge_to_nodes_mapping_list: list[list[int]], num_of_edges: int, num_of_nodes: int
+):
     row = []
     column = []
     val = []
@@ -122,12 +138,17 @@ def encode_edges_features(edge_to_nodes_mapping_list: list[list[int]], num_of_ed
             column.append(node)
             val.append(1)
 
-    component_csc_mat = csr_matrix((val, (row, column)), shape=(num_of_edges, num_of_nodes))
+    component_csc_mat = csr_matrix(
+        (val, (row, column)), shape=(num_of_edges, num_of_nodes)
+    )
     edges_features: list[list[int]] = component_csc_mat.toarray().tolist()
 
     return edges_features
 
-def read_out_to_generate_single_hyper_edge_embedding(list_of_nodes_for_single_hyper_edge: list[int], nodes_features: torch.Tensor) -> torch.Tensor:
+
+def read_out_to_generate_single_hyper_edge_embedding(
+    list_of_nodes_for_single_hyper_edge: list[int], nodes_features: torch.Tensor
+) -> torch.Tensor:
     """
     Generate edge embedding for single edge based on its surrounding nodes
     :param list_of_nodes_for_single_hyper_edge: the nodes for a single hyper graph to slice the nodes_features tensor. ex. [0,1,4,5...]
@@ -140,13 +161,20 @@ def read_out_to_generate_single_hyper_edge_embedding(list_of_nodes_for_single_hy
     # m*k node matrix
     # edge * node.T  out = n*m [0.2, 0.3, 0.4, 0.1, 0.9]
     # labels: raw data -> edge [0, 0, 0, 0, 1]
-    nodes_features_for_single_hyper_edge = nodes_features[list_of_nodes_for_single_hyper_edge]
-    edge_embedding: torch.Tensor = torch.mean(nodes_features_for_single_hyper_edge, dim=0)
+    nodes_features_for_single_hyper_edge = nodes_features[
+        list_of_nodes_for_single_hyper_edge
+    ]
+    edge_embedding: torch.Tensor = torch.mean(
+        nodes_features_for_single_hyper_edge, dim=0
+    )
     # edge_embedding = torch.sigmoid(edge_embedding)
 
     return edge_embedding
 
-def read_out_to_generate_multi_hyper_edges_embeddings_from_edge_dict(edge_to_nodes_dict: dict[int, list[int]], nodes_features: torch.Tensor):
+
+def read_out_to_generate_multi_hyper_edges_embeddings_from_edge_dict(
+    edge_to_nodes_dict: dict[int, list[int]], nodes_features: torch.Tensor
+):
     """
     :param edge_to_nodes_dict: the key is the index of the edge and the value is a list of surrounding nodes. ex. {0:[1,2,3], 1:[2,4,5]}
     :param nodes_features: all the nodes features shape n*m, n is the number of nodes, m is the dimension of attributes.
@@ -154,14 +182,21 @@ def read_out_to_generate_multi_hyper_edges_embeddings_from_edge_dict(edge_to_nod
     """
     multi_hyper_edges_embeddings_list: list[list[float]] = list()
     for edge, list_of_nodes in edge_to_nodes_dict.items():
-        edge_embedding = read_out_to_generate_single_hyper_edge_embedding(list_of_nodes, nodes_features)
+        edge_embedding = read_out_to_generate_single_hyper_edge_embedding(
+            list_of_nodes, nodes_features
+        )
         multi_hyper_edges_embeddings_list.append(edge_embedding.tolist())
 
-    multi_hyper_edges_embeddings_tensor = torch.Tensor(multi_hyper_edges_embeddings_list)
+    multi_hyper_edges_embeddings_tensor = torch.Tensor(
+        multi_hyper_edges_embeddings_list
+    )
 
     return multi_hyper_edges_embeddings_tensor
 
-def read_out_to_generate_multi_hyper_edges_embeddings_from_edge_list(edge_to_nodes_list: list[list[int]], nodes_features: torch.Tensor):
+
+def read_out_to_generate_multi_hyper_edges_embeddings_from_edge_list(
+    edge_to_nodes_list: list[list[int]], nodes_features: torch.Tensor
+):
     """
     :param edge_to_nodes_list: a list of surrounding nodes of multi edges. ex. [[1,2,3], [2,4,5].....]
     :param nodes_features: all the nodes features shape n*m, n is the number of nodes, m is the dimension of attributes.
@@ -169,10 +204,14 @@ def read_out_to_generate_multi_hyper_edges_embeddings_from_edge_list(edge_to_nod
     """
     multi_hyper_edges_embeddings_list: list[list[float]] = list()
     for list_of_nodes in edge_to_nodes_list:
-        edge_embedding = read_out_to_generate_single_hyper_edge_embedding(list_of_nodes, nodes_features)
+        edge_embedding = read_out_to_generate_single_hyper_edge_embedding(
+            list_of_nodes, nodes_features
+        )
         multi_hyper_edges_embeddings_list.append(edge_embedding.tolist())
 
-    multi_hyper_edges_embeddings_tensor = torch.Tensor(multi_hyper_edges_embeddings_list)
+    multi_hyper_edges_embeddings_tensor = torch.Tensor(
+        multi_hyper_edges_embeddings_list
+    )
 
     return multi_hyper_edges_embeddings_tensor
 

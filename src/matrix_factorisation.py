@@ -38,13 +38,17 @@ class MF(torch.nn.Module):
         e_bias = self.entity_bias(entity)
         r_emb = self.reaction_emb(reaction)
         r_bias = self.reaction_bias(reaction)
-        scores = torch.sigmoid(torch.sum(torch.mul(e_emb, r_emb).squeeze(), dim=1) \
-                 + e_bias.squeeze()+ r_bias.squeeze()+ self.global_bias)
+        scores = torch.sigmoid(
+            torch.sum(torch.mul(e_emb, r_emb).squeeze(), dim=1)
+            + e_bias.squeeze()
+            + r_bias.squeeze()
+            + self.global_bias
+        )
         regularizer = (
-            (e_emb ** 2).sum()
-            + (r_emb ** 2).sum()
-            + (e_bias ** 2).sum()
-            + (r_bias ** 2).sum()
+            (e_emb**2).sum()
+            + (r_emb**2).sum()
+            + (e_bias**2).sum()
+            + (r_bias**2).sum()
         ) / e_emb.size()[0]
         return scores, regularizer
 
@@ -94,7 +98,7 @@ class MFEngine(ModelEngine):
         neg_scores, neg_regularizer = self.model.forward((entity, neg_reaction))
         loss = self.bpr_loss(pos_scores, neg_scores)
         regularizer = pos_regularizer + neg_regularizer
-        
+
         batch_loss = loss + self.reg * regularizer
         batch_loss.backward()
         self.optimizer.step()

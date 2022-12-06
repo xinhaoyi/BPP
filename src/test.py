@@ -1,10 +1,13 @@
 import torch
 from sklearn.metrics import ndcg_score
 
-from utils import read_out_to_generate_single_hyper_edge_embedding, \
-    read_out_to_generate_multi_hyper_edges_embeddings_from_edge_list, encode_edges_features
+from utils import (
+    read_out_to_generate_single_hyper_edge_embedding,
+    read_out_to_generate_multi_hyper_edges_embeddings_from_edge_list,
+    encode_edges_features,
+)
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     list_of_nodes_for_single_hyper_edge = [[0, 1]]
 
     # nodes_features = torch.Tensor([[1, 0, 0, 0], [1, 0, 1, 0], [0, 0, 0, 1], [0, 0, 1, 0]])
