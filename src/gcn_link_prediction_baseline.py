@@ -1,12 +1,11 @@
 import copy
 import time
-
 import torch
-import torch.nn.functional as F
 import torch.optim as optim
+import torch.nn.functional as F
 from dhg import Graph, Hypergraph
 from dhg.models import GCN
-from sklearn.metrics import accuracy_score, ndcg_score
+from sklearn.metrics import ndcg_score, accuracy_score
 
 import utils
 from data_loader import DataLoaderLink
@@ -52,8 +51,6 @@ def train(
 
 
 @torch.no_grad()
-# [A:[1,2], [4,5,6]...]   vali:A:[3,12,14,15,16]  LABEL: A:[1,2,3]
-#
 def validation(
     net_model,
     nodes_features,
@@ -76,11 +73,12 @@ def validation(
 
     outs = torch.matmul(edges_embeddings, nodes_embeddings.t())
 
+    # outs = [[0.1, 0.9, 0.3, 0.9],[0.1, 0.2, 0.3, 0.9]]
+    # labels = [[0, 1, 0, 1], [0, 0, 0, 1]]
     outs, labels = outs[validation_idx], labels[validation_idx]
     cat_labels = labels.cpu().numpy().argmax(axis=1)
     cat_outs = outs.cpu().numpy().argmax(axis=1)
 
-    # RAW: [A:[1,2,3]]   [1,1,1,0.......]  [0.3,0.2,0.1,...]
     ndcg_res = ndcg_score(labels.cpu().numpy(), outs.cpu().numpy())
     acc_res = accuracy_score(cat_labels, cat_outs)
 
@@ -106,7 +104,7 @@ def test(
     test_idx,
 ):
     net_model.eval()
-    # [[1,2,3],[2,3,4,5]...]
+
     edges_embeddings = (
         utils.read_out_to_generate_multi_hyper_edges_embeddings_from_edge_list(
             test_hyper_edge_list, nodes_features
@@ -140,13 +138,19 @@ def test(
     return ndcg_res, acc_res
 
 
-if __name__ == "__main__":
+def main(dataset: str, task: str):
+    """
+    This method is for the whole train process
+    :param dataset: The name of dataset, ex. Disease, Immune System, Metabolism, Signal Transduction
+    :param task: The name of task, ex. input link prediction dataset, output link prediction dataset
+    :return:
+    """
     # set device
-    device = torch.device("cuda") if torch.cuda.is_available() else torch.device("cpu")
+    # device = torch.device("cuda") if torch.cuda.is_available() else torch.device("cpu")
 
     # initialize the data_loader
-    data_loader = DataLoaderLink("Disease", "input link prediction dataset")
-    # data_loader = DataLoaderLink("Disease", "output link prediction dataset")
+    # data_loader = DataLoaderLink("Disease", "input link prediction dataset")
+    data_loader = DataLoaderLink(dataset, task)
 
     # get the total number of nodes of this graph
     num_of_nodes: int = data_loader["num_nodes"]
@@ -179,26 +183,10 @@ if __name__ == "__main__":
     )
 
     # the train hyper graph
-    hyper_graph_train = Hypergraph(num_of_nodes, copy.deepcopy(train_hyper_edge_list))
+    hyper_graph = Hypergraph(num_of_nodes, copy.deepcopy(train_hyper_edge_list))
 
     # generate train graph based on hyper graph
-    graph_train = Graph.from_hypergraph_clique(hyper_graph_train, weighted=True)
-
-    # the train hyper graph
-    hyper_graph_validation = Hypergraph(
-        num_of_nodes, copy.deepcopy(train_hyper_edge_list)
-    )
-
-    # generate train graph based on hyper graph
-    graph_validation = Graph.from_hypergraph_clique(
-        hyper_graph_validation, weighted=True
-    )
-
-    # the train hyper graph
-    hyper_graph_test = Hypergraph(num_of_nodes, copy.deepcopy(train_hyper_edge_list))
-
-    # generate train graph based on hyper graph
-    graph_test = Graph.from_hypergraph_clique(hyper_graph_test, weighted=True)
+    graph = Graph.from_hypergraph_clique(hyper_graph, weighted=True)
 
     # the GCN model
     net_model = GCN(
@@ -211,15 +199,11 @@ if __name__ == "__main__":
     )
 
     # set the device
-    train_nodes_features, validation_nodes_features, test_nodes_features, labels = (
-        train_nodes_features.to(device),
-        validation_nodes_features.to(device),
-        test_nodes_features.to(device),
-        labels.to(device),
-    )
-    graph_train = graph_train.to(device)
-    graph_validation = graph_validation.to(device)
-    graph_test = graph_test.to(device)
+    raw_nodes_features = raw_nodes_features.to(device)
+    # train_nodes_features, validation_nodes_features, test_nodes_features, labels = train_nodes_features.to(
+    #     device), validation_nodes_features.to(device), test_nodes_features.to(device), labels.to(device)
+    labels = labels.to(device)
+    graph = graph.to(device)
     net_model = net_model.to(device)
 
     print("GCN Baseline")
@@ -230,9 +214,9 @@ if __name__ == "__main__":
         # call the train method
         train(
             net_model,
-            train_nodes_features,
+            raw_nodes_features,
             train_hyper_edge_list,
-            graph_train,
+            graph,
             labels,
             train_edge_mask,
             optimizer,
@@ -244,18 +228,34 @@ if __name__ == "__main__":
                 # validation(net_model, validation_nodes_features, validation_hyper_edge_list, graph_validation, labels, val_edge_mask)
                 validation(
                     net_model,
-                    validation_nodes_features,
+                    raw_nodes_features,
                     validation_hyper_edge_list,
-                    graph_validation,
+                    graph,
                     labels,
                     val_edge_mask,
                 )
 
     test(
         net_model,
-        test_nodes_features,
+        raw_nodes_features,
         test_hyper_edge_list,
-        graph_test,
+        graph,
         labels,
         test_edge_mask,
     )
+
+
+if __name__ == "__main__":
+    # set device
+    device = torch.device("cuda") if torch.cuda.is_available() else torch.device("cpu")
+    main("Disease", "input link prediction dataset")
+    # main("Disease", "output link prediction dataset")
+    #
+    # main("Immune System", "input link prediction dataset")
+    # main("Immune System", "output link prediction dataset")
+    #
+    # main("Metabolism", "input link prediction dataset")
+    # main("Metabolism", "output link prediction dataset")
+    #
+    # main("Signal Transduction", "input link prediction dataset")
+    # main("Signal Transduction", "output link prediction dataset")
