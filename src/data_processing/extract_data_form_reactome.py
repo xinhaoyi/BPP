@@ -1848,7 +1848,7 @@ class FileProcessor:
     def createFile(self, path, file_name):
         url = os.path.join("..", "..", path, file_name)
         if not os.path.exists(os.path.join("..", "..", path)):
-            os.makedirs(path)
+            os.makedirs(os.path.join("..", "..", path))
         if os.path.exists(url):
             print("file exists, we'll delete the original file \"" + file_name + "\", then create a new one")
             os.remove(url)
