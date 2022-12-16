@@ -244,6 +244,8 @@ def main(dataset: str, task: str):
         test_edge_mask,
     )
 
+    torch.save(net_model.state_dict(), "gcn_link.pkl")
+
 
 if __name__ == "__main__":
     # set device

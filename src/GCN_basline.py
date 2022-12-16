@@ -144,3 +144,5 @@ if __name__ == "__main__":
                 )
 
     test(net_model, test_nodes_features, graph, labels, test_mask)
+    torch.save(net_model.state_dict(), "gcn.pkl")
+

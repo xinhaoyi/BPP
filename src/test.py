@@ -14,6 +14,10 @@ if __name__ == "__main__":
     # test = read_out_to_generate_multi_hyper_edges_embeddings_from_edge_list(list_of_nodes_for_single_hyper_edge, nodes_features)
     # test = encode_edges_features(list_of_nodes_for_single_hyper_edge, 2, 5)
     outs = [[1, 0.9, 0.2, 0.9], [0.1, 0.2, 0.3, 0.9]]
+    # 1-100
+    # [[1,2,3,x4],[2,3,4]...]
+    # test/val: input [[1,2,3]] readout -> edge embedding, -> out edge:[x,x,x,x,.......] range(2000)
+    #
     labels = [[0, 1, 1, 1], [0, 0, 0, 1]]
     ndcg_res = ndcg_score(labels, outs)
 

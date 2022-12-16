@@ -274,7 +274,7 @@ class DataLoaderAttribute(DataLoaderBase):
         return self.__function_dict[key]
 
     def __get_complete_nodes_features_mix_negative_for_attribute_prediction(
-        self, node_mask: list[int], type_name: str
+            self, node_mask: list[int], type_name: str
     ):
         nodes_features_mix_negative: list[
             list[int]
@@ -312,7 +312,7 @@ class DataLoaderAttribute(DataLoaderBase):
         return nodes_features
 
     def __get_nodes_features_mix_negative_assist(
-        self, type_name: str
+            self, type_name: str
     ) -> list[list[int]]:
         if "test" != type_name and "validation" != type_name:
             raise Exception('The type should be "test" or "validation"')
@@ -328,7 +328,7 @@ class DataLoaderAttribute(DataLoaderBase):
         nodes_features_mix_negative: list[list[int]] = list()
 
         for (
-            components_mapping_line_message_mix_negative
+                components_mapping_line_message_mix_negative
         ) in components_mapping_line_message_mix_negative_list:
             elements: list[str] = components_mapping_line_message_mix_negative.split(
                 "||"
@@ -365,7 +365,7 @@ class DataLoaderAttribute(DataLoaderBase):
         return train_nodes_mask, validation_nodes_mask, test_nodes_mask
 
     def get_edge_of_nodes_list_regardless_direction(
-        self, type_name: str
+            self, type_name: str
     ) -> list[list[int]]:
         """
         :return: [[1,2,3], [3,7,9], [4,6,7,8,10,11]...] while [1,2,3], [3,7,9], .. represent the hyper edges
@@ -410,6 +410,8 @@ class DataLoaderLink(DataLoaderBase):
             super().get_nodes_features_assist("test"),
         )
 
+        self.list_of_edge_of_nodes_train, self.list_of_edge_of_input_nodes_train, self.list_of_edge_of_output_nodes_train = self.__get_edge_of_nodes_based_on_train_dataset()
+
         self.__function_dict = {
             "num_nodes": self.get_num_of_nodes_based_on_type_name(),
             "num_features": self.get_num_of_features_based_on_type_name(),
@@ -418,6 +420,8 @@ class DataLoaderLink(DataLoaderBase):
             "train_edge_list": self.get_edge_of_nodes_list_regardless_direction(
                 "train"
             ),
+            "train_edge_list_with_input_nodes": self.list_of_edge_of_input_nodes_train,
+            "train_edge_list_with_output_nodes": self.list_of_edge_of_output_nodes_train,
             "validation_edge_list": self.get_edge_of_nodes_list_regardless_direction(
                 "validation"
             ),
@@ -435,7 +439,7 @@ class DataLoaderLink(DataLoaderBase):
         return self.__function_dict[key]
 
     def __get_edge_to_list_of_nodes_dict(
-        self,
+            self,
     ) -> tuple[
         dict[int, list[int]],
         dict[int, list[int]],
@@ -511,6 +515,19 @@ class DataLoaderLink(DataLoaderBase):
         ]
 
         return edge_of_nodes_list_without_direction
+
+    def __get_edge_of_nodes_based_on_train_dataset(self) -> tuple[list[list[int]], list[list[int]], list[list[int]]]:
+        edge_to_list_of_nodes_dict, edge_to_list_of_input_nodes_dict, edge_to_list_of_output_nodes_dict = super().get_edge_to_list_of_nodes_dict(
+            "train")
+        list_of_edge_of_nodes: list[list[int]] = [list_of_nodes for edge_index, list_of_nodes in edge_to_list_of_nodes_dict.items()]
+        list_of_edge_of_input_nodes: list[list[int]] = [list_of_nodes for edge_index, list_of_nodes in
+                                       edge_to_list_of_input_nodes_dict.items()]
+        list_of_edge_of_output_nodes: list[list[int]] = [list_of_nodes for edge_index, list_of_nodes in
+                                        edge_to_list_of_output_nodes_dict.items()]
+        print("list_of_edge_of_nodes: " + str(len(list_of_edge_of_nodes)))
+        print("list_of_edge_of_input_nodes: " + str(len(list_of_edge_of_input_nodes)))
+        print("list_of_edge_of_output_nodes: " + str(len(list_of_edge_of_output_nodes)))
+        return list_of_edge_of_nodes, list_of_edge_of_input_nodes, list_of_edge_of_output_nodes
 
     def get_edges_mask(self):
         validation_edges_mask = super().get_edges_mask_assist("validation")
