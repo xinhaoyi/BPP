@@ -740,7 +740,8 @@ class ReactomeDataDivider:
                     pair_of_entity_and_component.append(random_component_id)
 
                     train_data_bean.add_train_entity_id_mask_to_inner_train_entity_mask_list(random_entity_id)
-                    train_data_bean.add_pair_of_entity_and_component_masked_to_inner_pair_of_entity_and_component_masked_list(pair_of_entity_and_component)
+                    train_data_bean.add_pair_of_entity_and_component_masked_to_inner_pair_of_entity_and_component_masked_list(
+                        pair_of_entity_and_component)
 
                     if validation_counter >= validation_size:
                         list_of_test_mask_entity_id.append(random_entity_id)
@@ -1020,7 +1021,8 @@ class ReactomeDataDivider:
                             list_of_test_mask_reaction_id.append(random_reaction_id)
                             test_counter = test_counter + 1
                         elif flag == 1:
-                            validation_data_bean.add_relationship_masked_to_inner_relationships_masked_list(relationship)
+                            validation_data_bean.add_relationship_masked_to_inner_relationships_masked_list(
+                                relationship)
                             list_of_validation_mask_entity_id.append(random_entity_id)
                             list_of_validation_mask_reaction_id.append(random_reaction_id)
                             validation_counter = validation_counter + 1
@@ -1633,33 +1635,35 @@ class DataBeanForReactome:
         self.__file_processor.create_and_write_message_to_file(path, self.__all_components_file_name,
                                                                index_and_component_id_for_print)
         self.__file_processor.create_and_write_message_to_file(path,
-                                                 self.__entities_components_mapping_file_name,
-                                                 entities_component_indexes_mapping_list_for_print)
+                                                               self.__entities_components_mapping_file_name,
+                                                               entities_component_indexes_mapping_list_for_print)
         self.__file_processor.create_and_write_message_to_file(path, self.__edges_file_name,
-                                                 index_and_reaction_id_for_print)
+                                                               index_and_reaction_id_for_print)
         self.__file_processor.create_and_write_message_to_file(path, self.__nodes_file_name,
-                                                 index_and_entity_id_for_print)
+                                                               index_and_entity_id_for_print)
         self.__file_processor.create_and_write_message_to_file(path, self.__relationship_file_name,
-                                                 relationships_index_style_for_print)
+                                                               relationships_index_style_for_print)
 
         if len(self.__train_entity_mask_list) > 0:
             self.__file_processor.create_and_write_message_to_file(path,
-                                                     self.__nodes_mask_file_name, index_and_entity_id_mask_for_print)
+                                                                   self.__nodes_mask_file_name,
+                                                                   index_and_entity_id_mask_for_print)
 
         if len(self.__pair_of_entity_and_component_masked_list) > 0:
             entities_component_indexes_mapping_masked_list_for_print = self.generate_pair_of_entity_and_component_masked_to_component_mapping_masked_list(
                 raw_component_id_to_component_index_dict, raw_entity_id_to_entity_index_dict)
             entities_component_indexes_mapping_masked_list_for_print.sort(key=lambda l: int(re.findall('\d+', l)[0]))
 
-            self.__file_processor.create_and_write_message_to_file(path, self.__entities_component_mapping_masked_file_name,
-                                                     entities_component_indexes_mapping_masked_list_for_print)
+            self.__file_processor.create_and_write_message_to_file(path,
+                                                                   self.__entities_component_mapping_masked_file_name,
+                                                                   entities_component_indexes_mapping_masked_list_for_print)
 
         if len(self.__relationships_masked_list) > 0:
             relationships_masked_index_style_for_print = self.generate_relationships_masked_index_style(
                 raw_entity_id_to_entity_index_dict, raw_reaction_id_to_reaction_index_dict)
 
             self.__file_processor.create_and_write_message_to_file(path, self.__relationships_masked_file_name,
-                                                     relationships_masked_index_style_for_print)
+                                                                   relationships_masked_index_style_for_print)
 
     def generate_relationships_masked_index_style(self, raw_entity_id_to_entity_index_dict,
                                                   raw_reaction_id_to_reaction_index_dict):
@@ -1701,6 +1705,8 @@ class DataBeanForReactome:
                 components_list.append(component_id)
                 entity_to_list_of_components_masked_dict[entity_id] = components_list
 
+        self.entity_to_list_of_components_masked_dict = entity_to_list_of_components_masked_dict
+
         entities_component_indexes_mapping_masked_list_for_print: list[str] = list()
         for entity_id, list_of_component_ids_masked in entity_to_list_of_components_masked_dict.items():
             entity_index = raw_entity_id_to_entity_index_dict[entity_id]
@@ -1717,6 +1723,18 @@ class DataBeanForReactome:
         return entities_component_indexes_mapping_masked_list_for_print
 
     def generate_and_print_components_mapping_mix_negative_to_file(self, num_of_negative_elements: int):
+        index_and_entity_id_list: list[str] = list()
+        for entity_id in self.__entities_ids:
+            index = self.raw_data.get_raw_entities_ids().index(entity_id)
+            index_and_entity_line: str = str(index) + "," + entity_id
+            index_and_entity_id_list.append(index_and_entity_line)
+
+        # sort the index_and_entity_id_for_print via index sequence
+        index_and_entity_id_list.sort(key=lambda l: int(re.findall('\d+', l)[0]))
+
+        entity_id_list = [index_and_entity_id.split(',')[1] for index_and_entity_id in index_and_entity_id_list]
+
+        list_of_components_masked = [self.entity_to_list_of_components_masked_dict[entity_id] for entity_id in entity_id_list]
 
         entity_to_list_of_components_dict = copy.deepcopy(self.raw_data.get_entity_to_list_of_components_dict())
         raw_component_ids = copy.deepcopy(self.raw_data.get_raw_component_ids())
@@ -1725,7 +1743,7 @@ class DataBeanForReactome:
 
         entities_component_indexes_mapping_list_for_print: list[str] = list()
 
-        for component_ids in self.__entities_component_ids_mapping_list:
+        for component_ids in list_of_components_masked:
             line_component_index_list = ""
             for component_id in component_ids:
                 component_index = raw_component_id_to_component_index_dict[component_id]
@@ -1776,7 +1794,7 @@ class DataBeanForReactome:
         relationships_index_style_for_print: list[str] = list()
 
         # generate the relationships_index_style, the index is the index position of entities and reactions in raw graph data
-        for relationship in self.__relationships:
+        for relationship in self.__relationships_masked_list:
             # node_index,reaction_index,direction(-1 or 1)
             line_message = ""
             entity_id = relationship[self.__entity_id_index_of_relationship]
