@@ -2,6 +2,7 @@ import copy
 import os
 import pandas as pd
 import sys
+import torch
 
 import utils
 
@@ -134,14 +135,26 @@ class DataLoaderBase:
             ]
             components_mapping_list.append(components_mapping_line_int_style)
 
+        num_of_pair_of_entity_and_component: int = 0
+        for components_of_single_entity in components_mapping_list:
+            num_of_pair_of_entity_and_component = (
+                num_of_pair_of_entity_and_component + len(components_of_single_entity)
+            )
+
         nodes_features = utils.encode_node_features(
             components_mapping_list, num_of_nodes, num_of_feature_dimension
         )
 
         print(
             type_name + " dataset\n",
-            "Number of interactions: %2d.\n Number of nodes: %2d.\n Number of features: %2d.\n Number of edges: %2d."
-            % (len(mat), num_of_nodes, num_of_feature_dimension, num_of_edges),
+            "Number of interactions: %2d.\n Number of nodes: %2d.\n Number of features: %2d.\n Number of pair of node and feature: %2d.\n Number of edges: %2d."
+            % (
+                len(mat),
+                num_of_nodes,
+                num_of_feature_dimension,
+                num_of_pair_of_entity_and_component,
+                num_of_edges,
+            ),
         )
 
         return nodes_features
@@ -153,7 +166,7 @@ class DataLoaderBase:
         """
         pass
 
-    def get_edge_to_list_of_nodes_dict(self, type_name: str):
+    def get_edge_to_list_of_nodes_dict_based_on_relationship(self, type_name: str):
         """
         :param type_name: "raw" for raw dataset, "test" for test dataset, "train" for train dataset, "validation" for validation dataset
         :return:
@@ -167,6 +180,38 @@ class DataLoaderBase:
             path, "relationship.txt"
         )
 
+        (
+            edge_to_list_of_nodes_dict,
+            edge_to_list_of_input_nodes_dict,
+            edge_to_list_of_output_nodes_dict,
+        ) = self.get_edge_to_list_of_nodes_dict_assist(relationship_line_message_list)
+
+        return (
+            edge_to_list_of_nodes_dict,
+            edge_to_list_of_input_nodes_dict,
+            edge_to_list_of_output_nodes_dict,
+        )
+
+    def get_edge_to_list_of_masked_nodes_dict(self, type_name: str):
+        path: str = os.path.join(self.task_file_path, type_name)
+        relationship_line_message_list: list[str] = utils.read_file_via_lines(
+            path, "relationship-mask.txt"
+        )
+        (
+            edge_to_list_of_nodes_dict,
+            edge_to_list_of_input_nodes_dict,
+            edge_to_list_of_output_nodes_dict,
+        ) = self.get_edge_to_list_of_nodes_dict_assist(relationship_line_message_list)
+
+        return (
+            edge_to_list_of_nodes_dict,
+            edge_to_list_of_input_nodes_dict,
+            edge_to_list_of_output_nodes_dict,
+        )
+
+    def get_edge_to_list_of_nodes_dict_assist(
+        self, relationship_line_message_list: list[str]
+    ):
         edge_to_list_of_nodes_dict: dict[int, list[int]] = dict()
         edge_to_list_of_input_nodes_dict: dict[int, list[int]] = dict()
         edge_to_list_of_output_nodes_dict: dict[int, list[int]] = dict()
@@ -196,6 +241,9 @@ class DataLoaderBase:
             edge_to_list_of_input_nodes_dict,
             edge_to_list_of_output_nodes_dict,
         )
+
+    def get_labels(self):
+        pass
 
     def get_nodes_mask_assist(self, type_name: str) -> list[int]:
         nodes_mask: list[int] = list()
@@ -243,18 +291,15 @@ class DataLoaderAttribute(DataLoaderBase):
         ) = self.__get_nodes_mask()
 
         # node features
-        self.__raw_nodes_features = self.get_nodes_features_assist("raw")
-        self.__train_nodes_features = self.get_nodes_features_assist("train")
-        self.__validation_nodes_features = (
-            self.__get_complete_nodes_features_mix_negative_for_attribute_prediction(
-                self.__validation_nodes_mask, "validation"
-            )
-        )
-        self.__test_nodes_features = (
-            self.__get_complete_nodes_features_mix_negative_for_attribute_prediction(
-                self.__test_nodes_mask, "test"
-            )
-        )
+        self.__raw_nodes_features = super().get_nodes_features_assist("raw")
+        self.__train_nodes_features = super().get_nodes_features_assist("train")
+
+        # print the information
+        super().get_nodes_features_assist("validation")
+        super().get_nodes_features_assist("test")
+
+        # get labels
+        self.train_labels, self.validation_labels, self.test_labels = self.get_labels()
 
         self.__function_dict = {
             "num_nodes": self.get_num_of_nodes_based_on_type_name(),
@@ -262,9 +307,13 @@ class DataLoaderAttribute(DataLoaderBase):
             "num_edges": self.get_num_of_edges_based_on_type_name(),
             "edge_list": self.get_edge_of_nodes_list_regardless_direction("train"),
             "raw_nodes_features": self.__raw_nodes_features,
+            # train, validation, and test dataset just use train dataset
             "train_nodes_features": self.__train_nodes_features,
-            "validation_nodes_features": self.__validation_nodes_features,
-            "test_nodes_features": self.__test_nodes_features,
+            "validation_nodes_features": self.__train_nodes_features,
+            "test_nodes_features": self.__train_nodes_features,
+            "train_labels": self.train_labels,
+            "validation_labels": self.validation_labels,
+            "test_labels": self.test_labels,
             "train_node_mask": self.__train_nodes_mask,
             "val_node_mask": self.__validation_nodes_mask,
             "test_node_mask": self.__test_nodes_mask,
@@ -272,6 +321,56 @@ class DataLoaderAttribute(DataLoaderBase):
 
     def __getitem__(self, key):
         return self.__function_dict[key]
+
+    def get_labels(self):
+        train_all_nodes_features = self.__train_nodes_features
+        num_of_nodes_validation: int = self.get_num_of_nodes_based_on_type_name(
+            "validation"
+        )
+        num_of_nodes_test: int = self.get_num_of_nodes_based_on_type_name("test")
+        num_of_features: int = self.get_num_of_features_based_on_type_name("train")
+        train_labels = torch.FloatTensor(train_all_nodes_features)[
+            self.__train_nodes_mask
+        ]
+
+        validation_masked_nodes_features = (
+            self.__get_nodes_to_list_of_masked_components_assist("validation")
+        )
+
+        validation_labels = torch.FloatTensor(
+            utils.encode_node_features(
+                validation_masked_nodes_features,
+                num_of_nodes_validation,
+                num_of_features,
+            )
+        )
+
+        test_masked_nodes_features = (
+            self.__get_nodes_to_list_of_masked_components_assist("test")
+        )
+
+        test_labels = torch.FloatTensor(
+            utils.encode_node_features(
+                test_masked_nodes_features, num_of_nodes_test, num_of_features
+            )
+        )
+
+        return train_labels, validation_labels, test_labels
+
+    def __get_nodes_to_list_of_masked_components_assist(self, type_name: str):
+        path: str = os.path.join(self.task_file_path, type_name)
+        file_name: str = "components-mapping-mask.txt"
+        node_line_message_list: list[str] = utils.read_file_via_lines(path, file_name)
+
+        nodes_to_list_of_masked_components: list[list[int]] = list()
+        for node_line_message in node_line_message_list:
+            masked_components_list = [
+                int(component_str)
+                for component_str in node_line_message.split(":")[1].split(",")
+            ]
+            nodes_to_list_of_masked_components.append(masked_components_list)
+
+        return nodes_to_list_of_masked_components
 
     def __get_complete_nodes_features_mix_negative_for_attribute_prediction(
         self, node_mask: list[int], type_name: str
@@ -370,9 +469,11 @@ class DataLoaderAttribute(DataLoaderBase):
         """
         :return: [[1,2,3], [3,7,9], [4,6,7,8,10,11]...] while [1,2,3], [3,7,9], .. represent the hyper edges
         """
-        edge_to_list_of_nodes_dict, _, _ = self.get_edge_to_list_of_nodes_dict(
-            type_name
-        )
+        (
+            edge_to_list_of_nodes_dict,
+            _,
+            _,
+        ) = self.get_edge_to_list_of_nodes_dict_based_on_relationship(type_name)
 
         edge_of_nodes_list_without_direction: list[list[int]] = [
             list_of_nodes
@@ -410,6 +511,17 @@ class DataLoaderLink(DataLoaderBase):
             super().get_nodes_features_assist("test"),
         )
 
+        (
+            self.__list_of_edge_of_nodes_train,
+            self.__list_of_edge_of_input_nodes_train,
+            self.__list_of_edge_of_output_nodes_train,
+        ) = self.__get_list_of_edges_of_nodes_based_on_train_dataset()
+        (
+            self.__train_labels,
+            self.__test_labels,
+            self.__validation_labels,
+        ) = self.get_labels()
+
         self.__function_dict = {
             "num_nodes": self.get_num_of_nodes_based_on_type_name(),
             "num_features": self.get_num_of_features_based_on_type_name(),
@@ -418,6 +530,8 @@ class DataLoaderLink(DataLoaderBase):
             "train_edge_list": self.get_edge_of_nodes_list_regardless_direction(
                 "train"
             ),
+            "train_edge_list_with_input_nodes": self.__list_of_edge_of_input_nodes_train,
+            "train_edge_list_with_output_nodes": self.__list_of_edge_of_output_nodes_train,
             "validation_edge_list": self.get_edge_of_nodes_list_regardless_direction(
                 "validation"
             ),
@@ -426,6 +540,9 @@ class DataLoaderLink(DataLoaderBase):
             "train_nodes_features": self.__train_nodes_features,
             "validation_nodes_features": self.__validation_nodes_features,
             "test_nodes_features": self.__test_nodes_features,
+            "train_labels": self.__train_labels,
+            "test_labels": self.__test_labels,
+            "validation_labels": self.__validation_labels,
             "train_edge_mask": self.__train_edge_mask,
             "val_edge_mask": self.__validation_edge_mask,
             "test_edge_mask": self.__test_edge_mask,
@@ -442,53 +559,32 @@ class DataLoaderLink(DataLoaderBase):
         dict[int, list[int]],
         dict[int, list[int]],
     ]:
-        train_edge_to_list_of_nodes_dict, _, _ = super().get_edge_to_list_of_nodes_dict(
-            "train"
-        )
+        (
+            raw_edge_to_list_of_nodes_dict,
+            _,
+            _,
+        ) = self.get_edge_to_list_of_nodes_dict_based_on_relationship("raw")
+        (
+            train_edge_to_list_of_nodes_dict,
+            _,
+            _,
+        ) = super().get_edge_to_list_of_nodes_dict_based_on_relationship("train")
         (
             validation_edge_to_list_of_nodes_dict,
             _,
             _,
-        ) = super().get_edge_to_list_of_nodes_dict("validation")
-        test_edge_to_list_of_nodes_dict, _, _ = super().get_edge_to_list_of_nodes_dict(
-            "test"
-        )
-
+        ) = super().get_edge_to_list_of_nodes_dict_based_on_relationship("validation")
         (
-            raw_edge_to_list_of_nodes_dict_complete,
+            test_edge_to_list_of_nodes_dict,
             _,
             _,
-        ) = self.get_edge_to_list_of_nodes_dict("raw")
-        (
-            train_edge_to_list_of_nodes_dict_complete,
-            _,
-            _,
-        ) = self.get_edge_to_list_of_nodes_dict("raw")
-        (
-            validation_edge_to_list_of_nodes_dict_complete,
-            _,
-            _,
-        ) = self.get_edge_to_list_of_nodes_dict("raw")
-        (
-            test_edge_to_list_of_nodes_dict_complete,
-            _,
-            _,
-        ) = self.get_edge_to_list_of_nodes_dict("raw")
-
-        for edge, list_of_nodes in train_edge_to_list_of_nodes_dict.items():
-            train_edge_to_list_of_nodes_dict_complete[edge] = list_of_nodes
-
-        for edge, list_of_nodes in validation_edge_to_list_of_nodes_dict.items():
-            validation_edge_to_list_of_nodes_dict_complete[edge] = list_of_nodes
-
-        for edge, list_of_nodes in test_edge_to_list_of_nodes_dict.items():
-            test_edge_to_list_of_nodes_dict_complete[edge] = list_of_nodes
+        ) = super().get_edge_to_list_of_nodes_dict_based_on_relationship("test")
 
         return (
-            raw_edge_to_list_of_nodes_dict_complete,
-            train_edge_to_list_of_nodes_dict_complete,
-            validation_edge_to_list_of_nodes_dict_complete,
-            test_edge_to_list_of_nodes_dict_complete,
+            raw_edge_to_list_of_nodes_dict,
+            train_edge_to_list_of_nodes_dict,
+            validation_edge_to_list_of_nodes_dict,
+            test_edge_to_list_of_nodes_dict,
         )
 
     def get_edge_of_nodes_list_regardless_direction(self, type_name) -> list[list[int]]:
@@ -511,6 +607,123 @@ class DataLoaderLink(DataLoaderBase):
         ]
 
         return edge_of_nodes_list_without_direction
+
+    def __get_list_of_edges_of_nodes_based_on_train_dataset(
+        self,
+    ) -> tuple[list[list[int]], list[list[int]], list[list[int]]]:
+        num_of_edges = self.get_num_of_edges_based_on_type_name("train")
+        (
+            edge_to_list_of_nodes_dict,
+            edge_to_list_of_input_nodes_dict,
+            edge_to_list_of_output_nodes_dict,
+        ) = super().get_edge_to_list_of_nodes_dict_based_on_relationship("train")
+
+        # edges_all = edge_to_list_of_nodes_dict.keys()
+        # edges_input = edge_to_list_of_input_nodes_dict.keys()
+        #
+        # print(set(edges_all) - set(edges_input))
+
+        list_of_edge_of_nodes: list[list[int]] = list()
+        list_of_edge_of_input_nodes: list[list[int]] = list()
+        list_of_edge_of_output_nodes: list[list[int]] = list()
+        for i in range(num_of_edges):
+            if i in edge_to_list_of_nodes_dict.keys():
+                list_of_edge_of_nodes.append(edge_to_list_of_nodes_dict.get(i))
+            else:
+                list_of_edge_of_nodes.append(list())
+            if i in edge_to_list_of_input_nodes_dict.keys():
+                list_of_edge_of_input_nodes.append(
+                    edge_to_list_of_input_nodes_dict.get(i)
+                )
+            else:
+                list_of_edge_of_input_nodes.append(list())
+            if i in edge_to_list_of_output_nodes_dict.keys():
+                list_of_edge_of_output_nodes.append(
+                    edge_to_list_of_output_nodes_dict.get(i)
+                )
+            else:
+                list_of_edge_of_output_nodes.append(list())
+
+        return (
+            list_of_edge_of_nodes,
+            list_of_edge_of_input_nodes,
+            list_of_edge_of_output_nodes,
+        )
+
+    def __get_list_of_edges_of_masked_nodes(self, type_name: str):
+        type_dict = {
+            "raw": self.__raw_edge_to_nodes_dict,
+            "train": self.__train_edge_to_nodes_dict,
+            "validation": self.__validation_edge_to_nodes_dict,
+            "test": self.__test_edge_to_nodes_dict,
+        }
+        if type_name not in type_dict.keys():
+            raise Exception('Please input "train", "validation" or "test" ')
+        (
+            edge_to_list_of_nodes_dict,
+            _,
+            _,
+        ) = super().get_edge_to_list_of_masked_nodes_dict(type_name)
+        list_of_edges_of_masked_nodes: list[list[int]] = list()
+        for edge, list_of_nodes in edge_to_list_of_nodes_dict.items():
+            list_of_edges_of_masked_nodes.append(list_of_nodes)
+
+        return list_of_edges_of_masked_nodes
+
+    def get_labels(self):
+        if "input link prediction dataset" == self.task_name:
+            list_of_edge_of_nodes_train = self.__list_of_edge_of_input_nodes_train
+
+        elif "output link prediction dataset" == self.task_name:
+            list_of_edge_of_nodes_train = self.__list_of_edge_of_output_nodes_train
+
+        else:
+            raise Exception(
+                'The task name should be "input link prediction dataset" or "output link prediction dataset"'
+            )
+
+        list_of_edge_of_masked_nodes_test = self.__get_list_of_edges_of_masked_nodes(
+            "test"
+        )
+
+        list_of_edge_of_masked_nodes_validation = (
+            self.__get_list_of_edges_of_masked_nodes("validation")
+        )
+
+        num_of_nodes_of_raw_dataset = self.get_num_of_nodes_based_on_type_name("train")
+
+        train_labels_for_link_prediction = torch.FloatTensor(
+            utils.encode_edges_features(
+                list_of_edge_of_nodes_train,
+                len(list_of_edge_of_nodes_train),
+                num_of_nodes_of_raw_dataset,
+            )
+        )
+        train_labels_for_link_prediction = train_labels_for_link_prediction[
+            self.__train_edge_mask
+        ]
+
+        test_labels_for_link_prediction = torch.FloatTensor(
+            utils.encode_edges_features(
+                list_of_edge_of_masked_nodes_test,
+                len(list_of_edge_of_masked_nodes_test),
+                num_of_nodes_of_raw_dataset,
+            )
+        )
+
+        validation_labels_for_link_prediction = torch.FloatTensor(
+            utils.encode_edges_features(
+                list_of_edge_of_masked_nodes_validation,
+                len(list_of_edge_of_masked_nodes_validation),
+                num_of_nodes_of_raw_dataset,
+            )
+        )
+
+        return (
+            train_labels_for_link_prediction,
+            test_labels_for_link_prediction,
+            validation_labels_for_link_prediction,
+        )
 
     def get_edges_mask(self):
         validation_edges_mask = super().get_edges_mask_assist("validation")

@@ -1,13 +1,12 @@
 import time
-
 import torch
-import torch.nn.functional as F
 import torch.optim as optim
+import torch.nn.functional as F
 from dhg import Graph, Hypergraph
 from dhg.models import GCN
 from sklearn.metrics import ndcg_score
 
-from src.data_loader import DataLoaderAttribute
+from data_loader import DataLoaderAttribute
 
 learning_rate = 0.01
 weight_decay = 5e-4
@@ -27,9 +26,8 @@ def train(
     st = time.time()
     optimizer.zero_grad()
     outs = net_model(nodes_features, graph)
-    # outs: torch.Size([7403, 2000]) 就是7403个点，每个点有 2000个 features
-    # labels: torch.Size([7403, 2000]) 就是7403个点，和每个点的真实的 2000个 features
-    outs, labels = outs[train_idx], labels[train_idx]
+
+    outs = outs[train_idx]
     loss = F.cross_entropy(outs, labels)
     loss.backward()
     optimizer.step()
@@ -43,7 +41,7 @@ def validation(net_model, nodes_features, graph, labels, validation_idx):
 
     outs = net_model(nodes_features, graph)
 
-    outs, labels = outs[validation_idx], labels[validation_idx]
+    outs = outs[validation_idx]
 
     val_res = ndcg_score(labels.cpu().numpy(), outs.cpu().numpy())
 
@@ -61,7 +59,7 @@ def test(net_model, nodes_features, graph, labels, test_idx):
 
     outs = net_model(nodes_features, graph)
 
-    outs, labels = outs[test_idx], labels[test_idx]
+    outs = outs[test_idx]
 
     test_res = ndcg_score(labels.cpu().numpy(), outs.cpu().numpy())
 
@@ -81,7 +79,10 @@ if __name__ == "__main__":
     data_loader = DataLoaderAttribute("Disease", "attribute prediction dataset")
 
     # get the labels - the original nodes features
-    labels = torch.FloatTensor(data_loader["raw_nodes_features"])
+    # labels = torch.FloatTensor(data_loader["raw_nodes_features"])
+    train_labels = data_loader["train_labels"]
+    validation_labels = data_loader["validation_labels"]
+    test_labels = data_loader["test_labels"]
 
     # get the train,val,test nodes features
     train_nodes_features = torch.FloatTensor(data_loader["train_nodes_features"])
@@ -119,12 +120,15 @@ if __name__ == "__main__":
     )
 
     # set the device
-    train_nodes_features, validation_nodes_features, test_nodes_features, labels = (
+    train_nodes_features, validation_nodes_features, test_nodes_features = (
         train_nodes_features.to(device),
         validation_nodes_features.to(device),
         test_nodes_features.to(device),
-        labels.to(device),
     )
+    train_labels = train_labels.to(device)
+    validation_labels = validation_labels.to(device)
+    test_labels = test_labels.to(device)
+
     graph = graph.to(device)
     net_model = net_model.to(device)
 
@@ -135,13 +139,24 @@ if __name__ == "__main__":
         # train
         # call the train method
         train(
-            net_model, train_nodes_features, graph, labels, train_mask, optimizer, epoch
+            net_model,
+            train_nodes_features,
+            graph,
+            train_labels,
+            train_mask,
+            optimizer,
+            epoch,
         )
 
         if epoch % 1 == 0:
             with torch.no_grad():
                 validation(
-                    net_model, validation_nodes_features, graph, labels, val_mask
+                    net_model,
+                    validation_nodes_features,
+                    graph,
+                    validation_labels,
+                    val_mask,
                 )
 
-    test(net_model, test_nodes_features, graph, labels, test_mask)
+    test(net_model, test_nodes_features, graph, test_labels, test_mask)
+    # torch.save(net_model.state_dict(), "gcn.pkl")

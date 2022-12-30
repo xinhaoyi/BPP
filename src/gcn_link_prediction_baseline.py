@@ -1,4 +1,5 @@
 import copy
+import os
 import time
 import torch
 import torch.optim as optim
@@ -9,6 +10,8 @@ from sklearn.metrics import ndcg_score, accuracy_score
 
 import utils
 from data_loader import DataLoaderLink
+
+os.environ["CUDA_LAUNCH_BLOCKING"] = "1"
 
 learning_rate = 0.01
 weight_decay = 5e-4
@@ -36,12 +39,11 @@ def train(
     )
 
     edges_embeddings = edges_embeddings.to(device)
+    edges_embeddings = edges_embeddings[train_idx]
 
     nodes_embeddings = net_model(nodes_features, graph)
 
     outs = torch.matmul(edges_embeddings, nodes_embeddings.t())
-
-    outs, labels = outs[train_idx], labels[train_idx]
 
     loss = F.cross_entropy(outs, labels)
     loss.backward()
@@ -68,14 +70,15 @@ def validation(
     )
 
     edges_embeddings = edges_embeddings.to(device)
-
     nodes_embeddings = net_model(nodes_features, graph)
+    # edges_embeddings = edges_embeddings[validation_idx]
 
+    # torch.backends.cudnn.enabled = False
     outs = torch.matmul(edges_embeddings, nodes_embeddings.t())
 
     # outs = [[0.1, 0.9, 0.3, 0.9],[0.1, 0.2, 0.3, 0.9]]
     # labels = [[0, 1, 0, 1], [0, 0, 0, 1]]
-    outs, labels = outs[validation_idx], labels[validation_idx]
+    # outs, labels = outs[validation_idx], labels[validation_idx]
     cat_labels = labels.cpu().numpy().argmax(axis=1)
     cat_outs = outs.cpu().numpy().argmax(axis=1)
 
@@ -112,12 +115,11 @@ def test(
     )
 
     edges_embeddings = edges_embeddings.to(device)
-
     nodes_embeddings = net_model(nodes_features, graph)
-
     outs = torch.matmul(edges_embeddings, nodes_embeddings.t())
+    # edges_embeddings = edges_embeddings[validation_idx]
 
-    outs, labels = outs[test_idx], labels[test_idx]
+    # outs, labels = outs[test_idx], labels[test_idx]
     cat_labels = labels.cpu().numpy().argmax(axis=1)
     cat_outs = outs.cpu().numpy().argmax(axis=1)
 
@@ -155,19 +157,11 @@ def main(dataset: str, task: str):
     # get the total number of nodes of this graph
     num_of_nodes: int = data_loader["num_nodes"]
 
-    num_of_edges: int = data_loader["num_edges"]
-
     # get the raw, train,val,test nodes features
-    raw_nodes_features = torch.FloatTensor(data_loader["raw_nodes_features"])
     train_nodes_features = torch.FloatTensor(data_loader["train_nodes_features"])
-    validation_nodes_features = torch.FloatTensor(
-        data_loader["validation_nodes_features"]
-    )
-    test_nodes_features = torch.FloatTensor(data_loader["test_nodes_features"])
 
     # generate the relationship between hyper edge and nodes
     # ex. [[1,2,3,4], [3,4], [9,7,4]...] where [1,2,3,4] represent a hyper edge
-    raw_hyper_edge_list = data_loader["raw_edge_list"]
     train_hyper_edge_list = data_loader["train_edge_list"]
     validation_hyper_edge_list = data_loader["validation_edge_list"]
     test_hyper_edge_list = data_loader["test_edge_list"]
@@ -177,10 +171,9 @@ def main(dataset: str, task: str):
     val_edge_mask = data_loader["val_edge_mask"]
     test_edge_mask = data_loader["test_edge_mask"]
 
-    # get the labels - the original nodes features
-    labels = torch.FloatTensor(
-        utils.encode_edges_features(raw_hyper_edge_list, num_of_edges, num_of_nodes)
-    )
+    train_labels = data_loader["train_labels"]
+    test_labels = data_loader["test_labels"]
+    validation_labels = data_loader["validation_labels"]
 
     # the train hyper graph
     hyper_graph = Hypergraph(num_of_nodes, copy.deepcopy(train_hyper_edge_list))
@@ -199,10 +192,12 @@ def main(dataset: str, task: str):
     )
 
     # set the device
-    raw_nodes_features = raw_nodes_features.to(device)
+    train_nodes_features = train_nodes_features.to(device)
     # train_nodes_features, validation_nodes_features, test_nodes_features, labels = train_nodes_features.to(
     #     device), validation_nodes_features.to(device), test_nodes_features.to(device), labels.to(device)
-    labels = labels.to(device)
+    train_labels = train_labels.to(device)
+    test_labels = test_labels.to(device)
+    validation_labels = validation_labels.to(device)
     graph = graph.to(device)
     net_model = net_model.to(device)
 
@@ -214,10 +209,10 @@ def main(dataset: str, task: str):
         # call the train method
         train(
             net_model,
-            raw_nodes_features,
+            train_nodes_features,
             train_hyper_edge_list,
             graph,
-            labels,
+            train_labels,
             train_edge_mask,
             optimizer,
             epoch,
@@ -228,21 +223,23 @@ def main(dataset: str, task: str):
                 # validation(net_model, validation_nodes_features, validation_hyper_edge_list, graph_validation, labels, val_edge_mask)
                 validation(
                     net_model,
-                    raw_nodes_features,
+                    train_nodes_features,
                     validation_hyper_edge_list,
                     graph,
-                    labels,
+                    validation_labels,
                     val_edge_mask,
                 )
 
     test(
         net_model,
-        raw_nodes_features,
+        train_nodes_features,
         test_hyper_edge_list,
         graph,
-        labels,
+        test_labels,
         test_edge_mask,
     )
+
+    # torch.save(net_model.state_dict(), "gcn_link.pkl")
 
 
 if __name__ == "__main__":
