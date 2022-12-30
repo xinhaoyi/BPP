@@ -71,7 +71,6 @@ def validation(
 
     edges_embeddings = edges_embeddings.to(device)
     nodes_embeddings = net_model(nodes_features, graph)
-    # edges_embeddings = edges_embeddings[validation_idx]
 
     # torch.backends.cudnn.enabled = False
     outs = torch.matmul(edges_embeddings, nodes_embeddings.t())
@@ -117,7 +116,6 @@ def test(
     edges_embeddings = edges_embeddings.to(device)
     nodes_embeddings = net_model(nodes_features, graph)
     outs = torch.matmul(edges_embeddings, nodes_embeddings.t())
-    # edges_embeddings = edges_embeddings[validation_idx]
 
     # outs, labels = outs[test_idx], labels[test_idx]
     cat_labels = labels.cpu().numpy().argmax(axis=1)

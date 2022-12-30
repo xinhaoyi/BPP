@@ -5,7 +5,7 @@ import torch
 import torch.nn.functional as F
 import torch.optim as optim
 import wandb
-from dhg import Graph, Hypergraph
+from dhg import Hypergraph
 from dhg.models import HGNN
 from sklearn.metrics import accuracy_score, ndcg_score
 
@@ -18,7 +18,7 @@ project_name = "pathway_attribute_predict"
 def train(
     net_model: torch.nn.Module,
     nodes_features: torch.Tensor,
-    graph: Graph,
+    graph: Hypergraph,
     labels: torch.Tensor,
     train_idx: list[bool],
     optimizer: optim.Adam,
@@ -29,9 +29,8 @@ def train(
     st = time.time()
     optimizer.zero_grad()
     outs = net_model(nodes_features, graph)
-    # outs: torch.Size([7403, 2000]) 就是7403个点，每个点有 2000个 features
-    # labels: torch.Size([7403, 2000]) 就是7403个点，和每个点的真实的 2000个 features
-    outs, labels = outs[train_idx], labels[train_idx]
+
+    outs = outs[train_idx]
     loss = F.cross_entropy(outs, labels)
     loss.backward()
     optimizer.step()
@@ -42,23 +41,18 @@ def train(
 @torch.no_grad()
 def validation(net_model, nodes_features, graph, labels, validation_idx):
     net_model.eval()
-
     outs = net_model(nodes_features, graph)
-
-    outs, labels = outs[validation_idx], labels[validation_idx]
+    outs = outs[validation_idx]
     cat_labels = labels.cpu().numpy().argmax(axis=1)
     cat_outs = outs.cpu().numpy().argmax(axis=1)
     ndcg_res = ndcg_score(labels.cpu().numpy(), outs.cpu().numpy())
     acc_res = accuracy_score(cat_labels, cat_outs)
     print(
-        "\033[1;32m"
-        + "The validation ndcg is: "
-        + "{:.5f}".format(ndcg_res)
-        + "\033[0m"
+        "\033[1;32m" + "The validate ndcg is: " + "{:.5f}".format(ndcg_res) + "\033[0m"
     )
     print(
         "\033[1;32m"
-        + "The validation accuracy is: "
+        + "The validate accuracy is: "
         + "{:.5f}".format(acc_res)
         + "\033[0m"
     )
@@ -68,10 +62,8 @@ def validation(net_model, nodes_features, graph, labels, validation_idx):
 @torch.no_grad()
 def test(net_model, nodes_features, graph, labels, test_idx):
     net_model.eval()
-
     outs = net_model(nodes_features, graph)
-
-    outs, labels = outs[test_idx], labels[test_idx]
+    outs = outs[test_idx]
     cat_labels = labels.cpu().numpy().argmax(axis=1)
     cat_outs = outs.cpu().numpy().argmax(axis=1)
     ndcg_res = ndcg_score(labels.cpu().numpy(), outs.cpu().numpy())
@@ -81,7 +73,6 @@ def test(net_model, nodes_features, graph, labels, test_idx):
         "\033[1;32m" + "The test accuracy is: " + "{:.5f}".format(acc_res) + "\033[0m"
     )
     return ndcg_res, acc_res
-
 
 # if __name__ == "__main__":
 def main():
@@ -94,10 +85,13 @@ def main():
         )
 
         # initialize the data_loader
-        data_loader = DataLoaderAttribute(config.dataset, config.task)
+        data_loader = DataLoaderAttribute("Disease", "attribute prediction dataset")
 
         # get the labels - the original nodes features
-        labels = torch.FloatTensor(data_loader["raw_nodes_features"])
+        # labels = torch.FloatTensor(data_loader["raw_nodes_features"])
+        train_labels = data_loader["train_labels"]
+        validation_labels = data_loader["validation_labels"]
+        test_labels = data_loader["test_labels"]
 
         # get the train,val,test nodes features
         train_nodes_features = torch.FloatTensor(data_loader["train_nodes_features"])
@@ -138,14 +132,14 @@ def main():
         )
 
         # set the device
-        train_nodes_features, validation_nodes_features, test_nodes_features, labels = (
+        train_nodes_features, validation_nodes_features, test_nodes_features = (
             train_nodes_features.to(device),
             validation_nodes_features.to(device),
             test_nodes_features.to(device),
-            labels.to(device),
         )
-        hyper_graph = hyper_graph.to(device)
-        net_model = net_model.to(device)
+        train_labels = train_labels.to(device)
+        validation_labels = validation_labels.to(device)
+        test_labels = test_labels.to(device)
 
         print("HGNN Baseline")
 
@@ -157,7 +151,7 @@ def main():
                 net_model,
                 train_nodes_features,
                 hyper_graph,
-                labels,
+                train_labels,
                 train_mask,
                 optimizer,
                 epoch,
@@ -169,11 +163,11 @@ def main():
                         net_model,
                         validation_nodes_features,
                         hyper_graph,
-                        labels,
+                        validation_labels,
                         val_mask,
                     )
                     test_ndcg, test_acc = test(
-                        net_model, test_nodes_features, hyper_graph, labels, test_mask
+                        net_model, test_nodes_features, hyper_graph, test_labels, test_mask
                     )
                 wandb.log(
                     {

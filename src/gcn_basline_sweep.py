@@ -29,7 +29,8 @@ def train(
     st = time.time()
     optimizer.zero_grad()
     outs = net_model(nodes_features, graph)
-    outs, labels = outs[train_idx], labels[train_idx]
+
+    outs = outs[train_idx]
     loss = F.cross_entropy(outs, labels)
     loss.backward()
     optimizer.step()
@@ -40,10 +41,8 @@ def train(
 @torch.no_grad()
 def validation(net_model, nodes_features, graph, labels, validation_idx):
     net_model.eval()
-
     outs = net_model(nodes_features, graph)
-
-    outs, labels = outs[validation_idx], labels[validation_idx]
+    outs = outs[validation_idx]
     cat_labels = labels.cpu().numpy().argmax(axis=1)
     cat_outs = outs.cpu().numpy().argmax(axis=1)
     ndcg_res = ndcg_score(labels.cpu().numpy(), outs.cpu().numpy())
@@ -64,7 +63,7 @@ def validation(net_model, nodes_features, graph, labels, validation_idx):
 def test(net_model, nodes_features, graph, labels, test_idx):
     net_model.eval()
     outs = net_model(nodes_features, graph)
-    outs, labels = outs[test_idx], labels[test_idx]
+    outs = outs[test_idx]
     cat_labels = labels.cpu().numpy().argmax(axis=1)
     cat_outs = outs.cpu().numpy().argmax(axis=1)
     ndcg_res = ndcg_score(labels.cpu().numpy(), outs.cpu().numpy())
@@ -86,10 +85,13 @@ def main():
         )
 
         # initialize the data_loader
-        data_loader = DataLoaderAttribute(config.dataset, config.task)
+        data_loader = DataLoaderAttribute("Disease", "attribute prediction dataset")
 
         # get the labels - the original nodes features
-        labels = torch.FloatTensor(data_loader["raw_nodes_features"])
+        # labels = torch.FloatTensor(data_loader["raw_nodes_features"])
+        train_labels = data_loader["train_labels"]
+        validation_labels = data_loader["validation_labels"]
+        test_labels = data_loader["test_labels"]
 
         # get the train,val,test nodes features
         train_nodes_features = torch.FloatTensor(data_loader["train_nodes_features"])
@@ -118,11 +120,7 @@ def main():
 
         # the GCN model
         net_model = GCN(
-            data_loader["num_features"],
-            config.emb_dim,
-            data_loader["num_features"],
-            use_bn=True,
-            drop_rate=config.drop_out,
+            data_loader["num_features"], 32, data_loader["num_features"], use_bn=True
         )
 
         # set the optimizer
@@ -133,12 +131,15 @@ def main():
         )
 
         # set the device
-        train_nodes_features, validation_nodes_features, test_nodes_features, labels = (
+        train_nodes_features, validation_nodes_features, test_nodes_features = (
             train_nodes_features.to(device),
             validation_nodes_features.to(device),
             test_nodes_features.to(device),
-            labels.to(device),
         )
+        train_labels = train_labels.to(device)
+        validation_labels = validation_labels.to(device)
+        test_labels = test_labels.to(device)
+
         graph = graph.to(device)
         net_model = net_model.to(device)
 
@@ -152,7 +153,7 @@ def main():
                 net_model,
                 train_nodes_features,
                 graph,
-                labels,
+                train_labels,
                 train_mask,
                 optimizer,
                 epoch,
@@ -161,10 +162,10 @@ def main():
             if epoch % 1 == 0:
                 with torch.no_grad():
                     valid_ndcg, valid_acc = validation(
-                        net_model, validation_nodes_features, graph, labels, val_mask
+                        net_model, validation_nodes_features, graph, validation_labels, val_mask
                     )
                     test_ndcg, test_acc = test(
-                        net_model, test_nodes_features, graph, labels, test_mask
+                        net_model, test_nodes_features, graph, test_labels, test_mask
                     )
                 wandb.log(
                     {

@@ -94,10 +94,13 @@ def main():
         )
 
         # initialize the data_loader
-        data_loader = DataLoaderAttribute(config.dataset, config.task)
+        data_loader = DataLoaderAttribute("Disease", "attribute prediction dataset")
 
         # get the labels - the original nodes features
-        labels = torch.FloatTensor(data_loader["raw_nodes_features"])
+        # labels = torch.FloatTensor(data_loader["raw_nodes_features"])
+        train_labels = data_loader["train_labels"]
+        validation_labels = data_loader["validation_labels"]
+        test_labels = data_loader["test_labels"]
 
         # get the train,val,test nodes features
         train_nodes_features = torch.FloatTensor(data_loader["train_nodes_features"])
@@ -138,12 +141,14 @@ def main():
         )
 
         # set the device
-        train_nodes_features, validation_nodes_features, test_nodes_features, labels = (
+        train_nodes_features, validation_nodes_features, test_nodes_features = (
             train_nodes_features.to(device),
             validation_nodes_features.to(device),
             test_nodes_features.to(device),
-            labels.to(device),
         )
+        train_labels = train_labels.to(device)
+        validation_labels = validation_labels.to(device)
+        test_labels = test_labels.to(device)
         hyper_graph = hyper_graph.to(device)
         net_model = net_model.to(device)
 
@@ -157,7 +162,7 @@ def main():
                 net_model,
                 train_nodes_features,
                 hyper_graph,
-                labels,
+                train_labels,
                 train_mask,
                 optimizer,
                 epoch,
@@ -169,11 +174,11 @@ def main():
                         net_model,
                         validation_nodes_features,
                         hyper_graph,
-                        labels,
+                        validation_labels,
                         val_mask,
                     )
                     test_ndcg, test_acc = test(
-                        net_model, test_nodes_features, hyper_graph, labels, test_mask
+                        net_model, test_nodes_features, hyper_graph, test_labels, test_mask
                     )
                 wandb.log(
                     {

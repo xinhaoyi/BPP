@@ -42,9 +42,8 @@ def train(
 
     nodes_embeddings = net_model(nodes_features, graph)
 
+    # torch.backends.cudnn.enabled = False
     outs = torch.matmul(edges_embeddings, nodes_embeddings.t())
-
-    outs, labels = outs[train_idx], labels[train_idx]
 
     loss = F.cross_entropy(outs, labels)
     loss.backward()
@@ -54,8 +53,6 @@ def train(
 
 
 @torch.no_grad()
-# [A:[1,2], [4,5,6]...]   vali:A:[3,12,14,15,16]  LABEL: A:[1,2,3]
-#
 def validation(
     net_model,
     nodes_features,
@@ -73,12 +70,11 @@ def validation(
     )
 
     edges_embeddings = edges_embeddings.to(net_model.device)
-
     nodes_embeddings = net_model(nodes_features, graph)
 
+    # torch.backends.cudnn.enabled = False
     outs = torch.matmul(edges_embeddings, nodes_embeddings.t())
 
-    outs, labels = outs[validation_idx], labels[validation_idx]
     cat_labels = labels.cpu().numpy().argmax(axis=1)
     cat_outs = outs.cpu().numpy().argmax(axis=1)
     ndcg_res = ndcg_score(labels.cpu().numpy(), outs.cpu().numpy())
@@ -121,7 +117,6 @@ def test(
 
     outs = torch.matmul(edges_embeddings, nodes_embeddings.t())
 
-    outs, labels = outs[test_idx], labels[test_idx]
     cat_labels = labels.cpu().numpy().argmax(axis=1)
     cat_outs = outs.cpu().numpy().argmax(axis=1)
     ndcg_res = ndcg_score(labels.cpu().numpy(), outs.cpu().numpy())
@@ -143,25 +138,17 @@ def main():
         )
 
         # initialize the data_loader
-        data_loader = DataLoaderLink(config.dataset, config.task)
-        # data_loader = DataLoaderLink("Disease", "output link prediction dataset")
+        # data_loader = DataLoaderLink("Disease", "input link prediction dataset")
+        data_loader = DataLoaderLink(dataset, task)
 
         # get the total number of nodes of this graph
         num_of_nodes: int = data_loader["num_nodes"]
 
-        num_of_edges: int = data_loader["num_edges"]
-
         # get the raw, train,val,test nodes features
-        raw_nodes_features = torch.FloatTensor(data_loader["raw_nodes_features"])
         train_nodes_features = torch.FloatTensor(data_loader["train_nodes_features"])
-        validation_nodes_features = torch.FloatTensor(
-            data_loader["validation_nodes_features"]
-        )
-        test_nodes_features = torch.FloatTensor(data_loader["test_nodes_features"])
 
         # generate the relationship between hyper edge and nodes
         # ex. [[1,2,3,4], [3,4], [9,7,4]...] where [1,2,3,4] represent a hyper edge
-        raw_hyper_edge_list = data_loader["raw_edge_list"]
         train_hyper_edge_list = data_loader["train_edge_list"]
         validation_hyper_edge_list = data_loader["validation_edge_list"]
         test_hyper_edge_list = data_loader["test_edge_list"]
@@ -171,10 +158,9 @@ def main():
         val_edge_mask = data_loader["val_edge_mask"]
         test_edge_mask = data_loader["test_edge_mask"]
 
-        # get the labels - the original nodes features
-        labels = torch.FloatTensor(
-            utils.encode_edges_features(raw_hyper_edge_list, num_of_edges, num_of_nodes)
-        )
+        train_labels = data_loader["train_labels"]
+        test_labels = data_loader["test_labels"]
+        validation_labels = data_loader["validation_labels"]
 
         # the train hyper graph
         hyper_graph_train = Hypergraph(
@@ -240,13 +226,13 @@ def main():
         )
 
         # set the device
-        train_nodes_features, validation_nodes_features, test_nodes_features, labels = (
+        train_nodes_features, train_labels, test_labels, validation_labels = (
             train_nodes_features.to(device),
-            validation_nodes_features.to(device),
-            test_nodes_features.to(device),
-            labels.to(device),
+            train_labels.to(device),
+            test_labels.to(device),
+            validation_labels.to(device),
         )
-        if config.model_name!="GCN":
+        if config.model_name != "GCN":
             graph_train = hyper_graph_train
             graph_validation = hyper_graph_validation
             graph_test = hyper_graph_test
@@ -267,7 +253,7 @@ def main():
                 train_nodes_features,
                 train_hyper_edge_list,
                 graph_train,
-                labels,
+                train_labels,
                 train_edge_mask,
                 optimizer,
                 epoch,
@@ -278,18 +264,18 @@ def main():
                     # validation(net_model, validation_nodes_features, validation_hyper_edge_list, graph_validation, labels, val_edge_mask)
                     valid_ndcg, valid_acc = validation(
                         net_model,
-                        validation_nodes_features,
+                        train_nodes_features,
                         validation_hyper_edge_list,
                         graph_validation,
-                        labels,
+                        validation_labels,
                         val_edge_mask,
                     )
                     test_ndcg, test_acc = test(
                         net_model,
-                        test_nodes_features,
+                        train_nodes_features,
                         test_hyper_edge_list,
                         graph_test,
-                        labels,
+                        test_labels,
                         test_edge_mask,
                     )
                     wandb.log(
