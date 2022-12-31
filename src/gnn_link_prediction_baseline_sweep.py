@@ -5,23 +5,24 @@ import time
 import torch
 import torch.nn.functional as F
 import torch.optim as optim
-import wandb
 from dhg import Graph, Hypergraph
 from dhg.models import GCN, HGNN, HGNNP
-from sklearn.metrics import accuracy_score, ndcg_score
+from sklearn.metrics import accuracy_score, ndcg_score, top_k_accuracy_score
 
 import utils
+import wandb
 from data_loader import DataLoaderLink
 
 learning_rate = 0.01
 weight_decay = 5e-4
-project_name = "gnn_link_prediction_sweep"
+project_name = "gnn_link_prediction_sweep_2023_Jan"
+
 
 def train(
     net_model: torch.nn.Module,
     nodes_features: torch.Tensor,
     train_hyper_edge_list: list[list[int]],
-    graph,
+    graph: Graph,
     labels: torch.Tensor,
     train_idx: list[bool],
     optimizer: optim.Adam,
@@ -39,10 +40,10 @@ def train(
     )
 
     edges_embeddings = edges_embeddings.to(net_model.device)
+    edges_embeddings = edges_embeddings[train_idx]
 
     nodes_embeddings = net_model(nodes_features, graph)
 
-    # torch.backends.cudnn.enabled = False
     outs = torch.matmul(edges_embeddings, nodes_embeddings.t())
 
     loss = F.cross_entropy(outs, labels)
@@ -73,12 +74,30 @@ def validation(
     nodes_embeddings = net_model(nodes_features, graph)
 
     # torch.backends.cudnn.enabled = False
-    outs = torch.matmul(edges_embeddings, nodes_embeddings.t())
+    outs = torch.matmul(edges_embeddings, nodes_embeddings.t()).cpu().numpy()
+    labels = labels.cpu().numpy()
+    # outs = [[0.1, 0.9, 0.3, 0.9],[0.1, 0.2, 0.3, 0.9]]
+    # labels = [[0, 1, 0, 1], [0, 0, 0, 1]]
+    # outs, labels = outs[validation_idx], labels[validation_idx]
+    cat_labels = labels.argmax(axis=1)
+    cat_outs = outs.argmax(axis=1)
 
-    cat_labels = labels.cpu().numpy().argmax(axis=1)
-    cat_outs = outs.cpu().numpy().argmax(axis=1)
-    ndcg_res = ndcg_score(labels.cpu().numpy(), outs.cpu().numpy())
+    ndcg_res = ndcg_score(labels, outs)
+    ndcg_res_3 = ndcg_score(labels, outs, k=3)
+    ndcg_res_5 = ndcg_score(labels, outs, k=5)
+    ndcg_res_10 = ndcg_score(labels, outs, k=10)
+    ndcg_res_15 = ndcg_score(labels, outs, k=15)
+
     acc_res = accuracy_score(cat_labels, cat_outs)
+    acc_res_3 = top_k_accuracy_score(cat_labels, outs, k=3, labels=range(outs.shape[1]))
+    acc_res_5 = top_k_accuracy_score(cat_labels, outs, k=5, labels=range(outs.shape[1]))
+    acc_res_10 = top_k_accuracy_score(
+        cat_labels, outs, k=10, labels=range(outs.shape[1])
+    )
+    acc_res_15 = top_k_accuracy_score(
+        cat_labels, outs, k=15, labels=range(outs.shape[1])
+    )
+
     print(
         "\033[1;32m"
         + "The validation ndcg is: "
@@ -91,7 +110,18 @@ def validation(
         + "{:.5f}".format(acc_res)
         + "\033[0m"
     )
-    return ndcg_res, acc_res
+    return {
+        "valid_ndcg": ndcg_res,
+        "valid_ndcg_3": ndcg_res_3,
+        "valid_ndcg_5": ndcg_res_5,
+        "valid_ndcg_10": ndcg_res_10,
+        "valid_ndcg_15": ndcg_res_15,
+        "valid_acc": acc_res,
+        "valid_acc_3": acc_res_3,
+        "valid_acc_5": acc_res_5,
+        "valid_acc_10": acc_res_10,
+        "valid_acc_15": acc_res_15,
+    }
 
 
 @torch.no_grad()
@@ -115,23 +145,53 @@ def test(
 
     nodes_embeddings = net_model(nodes_features, graph)
 
-    outs = torch.matmul(edges_embeddings, nodes_embeddings.t())
+    outs = torch.matmul(edges_embeddings, nodes_embeddings.t()).cpu().numpy()
+    labels = labels.cpu().numpy()
+    # outs = [[0.1, 0.9, 0.3, 0.9],[0.1, 0.2, 0.3, 0.9]]
+    # labels = [[0, 1, 0, 1], [0, 0, 0, 1]]
+    # outs, labels = outs[validation_idx], labels[validation_idx]
+    cat_labels = labels.argmax(axis=1)
+    cat_outs = outs.argmax(axis=1)
 
-    cat_labels = labels.cpu().numpy().argmax(axis=1)
-    cat_outs = outs.cpu().numpy().argmax(axis=1)
-    ndcg_res = ndcg_score(labels.cpu().numpy(), outs.cpu().numpy())
+    ndcg_res = ndcg_score(labels, outs)
+    ndcg_res_3 = ndcg_score(labels, outs, k=3)
+    ndcg_res_5 = ndcg_score(labels, outs, k=5)
+    ndcg_res_10 = ndcg_score(labels, outs, k=10)
+    ndcg_res_15 = ndcg_score(labels, outs, k=15)
+
     acc_res = accuracy_score(cat_labels, cat_outs)
+    acc_res_3 = top_k_accuracy_score(cat_labels, outs, k=3, labels=range(outs.shape[1]))
+    acc_res_5 = top_k_accuracy_score(cat_labels, outs, k=5, labels=range(outs.shape[1]))
+    acc_res_10 = top_k_accuracy_score(
+        cat_labels, outs, k=10, labels=range(outs.shape[1])
+    )
+    acc_res_15 = top_k_accuracy_score(
+        cat_labels, outs, k=15, labels=range(outs.shape[1])
+    )
+
     print("\033[1;32m" + "The test ndcg is: " + "{:.5f}".format(ndcg_res) + "\033[0m")
     print(
         "\033[1;32m" + "The test accuracy is: " + "{:.5f}".format(acc_res) + "\033[0m"
     )
-    return ndcg_res, acc_res
+    return {
+        "test_ndcg": ndcg_res,
+        "test_ndcg_3": ndcg_res_3,
+        "test_ndcg_5": ndcg_res_5,
+        "test_ndcg_10": ndcg_res_10,
+        "test_ndcg_15": ndcg_res_15,
+        "test_acc": acc_res,
+        "test_acc_3": acc_res_3,
+        "test_acc_5": acc_res_5,
+        "test_acc_10": acc_res_10,
+        "test_acc_15": acc_res_15,
+    }
 
 
-def main():
+def main(config=None):
     with wandb.init(project=project_name):
+        if config is not None:
+            wandb.config.update(config)
         config = wandb.config
-        print(config)
         # set device
         device = (
             torch.device("cuda") if torch.cuda.is_available() else torch.device("cpu")
@@ -139,7 +199,7 @@ def main():
 
         # initialize the data_loader
         # data_loader = DataLoaderLink("Disease", "input link prediction dataset")
-        data_loader = DataLoaderLink(dataset, task)
+        data_loader = DataLoaderLink(config.dataset, config.task)
 
         # get the total number of nodes of this graph
         num_of_nodes: int = data_loader["num_nodes"]
@@ -236,7 +296,7 @@ def main():
             graph_train = hyper_graph_train
             graph_validation = hyper_graph_validation
             graph_test = hyper_graph_test
-        
+
         graph_train = graph_train.to(device)
         graph_validation = graph_validation.to(device)
         graph_test = graph_test.to(device)
@@ -258,11 +318,14 @@ def main():
                 optimizer,
                 epoch,
             )
-
+            epoch_log = {
+                "loss": loss,
+                "epoch": epoch,
+            }
             if epoch % 1 == 0:
                 with torch.no_grad():
                     # validation(net_model, validation_nodes_features, validation_hyper_edge_list, graph_validation, labels, val_edge_mask)
-                    valid_ndcg, valid_acc = validation(
+                    valid_result = validation(
                         net_model,
                         train_nodes_features,
                         validation_hyper_edge_list,
@@ -270,7 +333,11 @@ def main():
                         validation_labels,
                         val_edge_mask,
                     )
-                    test_ndcg, test_acc = test(
+                    # valid_ndcg, valid_acc = (
+                    #     valid_result["valid_ndcg"],
+                    #     valid_result["valid_acc"],
+                    # )
+                    test_result = test(
                         net_model,
                         train_nodes_features,
                         test_hyper_edge_list,
@@ -278,35 +345,56 @@ def main():
                         test_labels,
                         test_edge_mask,
                     )
-                    wandb.log(
-                        {
-                            "loss": loss,
-                            "epoch": epoch,
-                            "valid_ndcg": valid_ndcg,
-                            "valid_acc": valid_acc,
-                            "test_ndcg": test_ndcg,
-                            "test_acc": test_acc,
-                        }
-                    )
+                    # test_ndcg, test_acc = (
+                    #     test_result["test_ndcg"],
+                    #     test_result["test_acc"],
+                    # )
+                    epoch_log.update(valid_result)
+                    epoch_log.update(test_result)
+                    wandb.log(epoch_log)
 
 
-model_name = input()
-print(f"start tunning {model_name}")
-for task in ["output link prediction dataset", "input link prediction dataset"]:
-    for dataset in ["Immune System", "Metabolism", "Signal Transduction", "Disease"]:
-        sweep_config = {"method": "grid"}
-        metric = {"name": "valid_ndcg", "goal": "maximize"}
-        sweep_config["metric"] = metric
-        parameters_dict = {
-            "learning_rate": {"values": [0.05, 0.01, 0.005]},
-            "emb_dim": {"values": [64, 128, 256]},
-            "drop_out": {"values": [0.5, 0.6, 0.7]},
-            "weight_decay": {"values": [5e-4]},
-            "model_name": {"values": [model_name]},
-            "task": {"values": [task]},
-            "dataset": {"values": [dataset]},
-        }
-        sweep_config["parameters"] = parameters_dict
-        pprint.pprint(sweep_config)
-        sweep_id = wandb.sweep(sweep_config, project=f"{task}_sweep")
-        wandb.agent(sweep_id, main)
+def sweep():
+    print("Please input model name. Options: GCN, HGNN, HGNNP")
+    model_name = input()
+    print(f"start tunning {model_name}")
+    for task in ["output link prediction dataset", "input link prediction dataset"]:
+        for dataset in [
+            "Immune System",
+            "Metabolism",
+            "Signal Transduction",
+            "Disease",
+        ]:
+            sweep_config = {"method": "grid"}
+            metric = {"name": "valid_ndcg", "goal": "maximize"}
+            sweep_config["metric"] = metric
+            parameters_dict = {
+                "learning_rate": {"values": [0.01, 0.05, 0.005]},
+                "emb_dim": {"values": [64, 128, 256]},
+                "drop_out": {"values": [0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7]},
+                "weight_decay": {"values": [5e-4]},
+                "model_name": {"values": [model_name]},
+                "task": {"values": [task]},
+                "dataset": {"values": [dataset]},
+            }
+            sweep_config["parameters"] = parameters_dict
+            pprint.pprint(sweep_config)
+            sweep_id = wandb.sweep(sweep_config, project=f"{task}_sweep_2023_Jan")
+            wandb.agent(sweep_id, main)
+
+
+print("Are you going to run it as a sweep program? Y/N")
+answer = input()
+if answer.lower() == "y":
+    sweep()
+else:
+    config = {
+        "learning_rate": 0.05,
+        "emb_dim": 128,
+        "drop_out": 0.5,
+        "weight_decay": 5e-4,
+        "model_name": "HGNN",
+        "task": "output link prediction dataset",
+        "dataset": "Disease",
+    }
+    main(config)
