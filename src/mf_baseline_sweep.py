@@ -36,6 +36,7 @@ class MF_train:
     def train(self):
         """Train the model."""
 
+        global valid_result
         train_loader = instance_bpr_loader(
             data=self.train_set,
             batch_size=self.config["batch_size"],
@@ -58,28 +59,25 @@ class MF_train:
             validation_set = self.valid_set
             n_samples = len(validation_set)
             predictions = predict_full(validation_set, self.engine)
-            valid_ndcg, valid_acc = self.evaluate(predictions, n_samples)
-            test_ndcg, test_acc = self.test(self.engine)
-            if valid_ndcg > best_valid_performance:
-                best_valid_performance = valid_ndcg
+            valid_result = self.evaluate(predictions, n_samples)
+            test_result = self.test(self.engine)
+            epoch_log = {
+                "loss": loss,
+                "epoch": epoch,
+            }
+            if valid_result["valid_ndcg"] > best_valid_performance:
+                best_valid_performance = valid_result["valid_ndcg"]
                 best_epoch = epoch
                 self.best_model = self.engine
-            print("valid_ndcg", valid_ndcg)
-            print("valid_acc", valid_acc)
+            print("valid_ndcg", valid_result["valid_ndcg"])
+            print("valid_acc", valid_result["valid_acc"])
             print("loss")
-            wandb.log(
-                {
-                    "loss": loss,
-                    "epoch": epoch,
-                    "valid_ndcg": valid_ndcg,
-                    "valid_acc": valid_acc,
-                    "test_ndcg": test_ndcg,
-                    "test_acc": test_acc,
-                }
-            )
+            epoch_log.update(valid_result)
+            epoch_log.update(test_result)
+            wandb.log(epoch_log)
 
-        print("BEST ndcg performenace on validation set is %f" % valid_ndcg)
-        print("BEST acc performenace on validation set is %f" % valid_acc)
+        print("BEST ndcg performenace on validation set is %f" % valid_result["valid_ndcg"])
+        print("BEST acc performenace on validation set is %f" % valid_result["valid_ndcg"])
         print("BEST performance happens at epoch", best_epoch)
         return best_valid_performance
 
@@ -90,9 +88,8 @@ class MF_train:
         test_set = self.test_set
         predictions = predict_full(test_set, model)
         n_samples = len(test_set)
-        ndcg, acc = self.evaluate(predictions, n_samples)
-        print("Test performance is ", ndcg)
-        return ndcg, acc
+        test_result = self.evaluate(predictions, n_samples)
+        return test_result
 
     def evaluate(self, predictions, n_samples):
         predictions = predictions.reshape(
@@ -107,9 +104,46 @@ class MF_train:
         ground_truth = np.array(new)
         cat_labels = ground_truth.argmax(axis=1)
         cat_outs = predictions.argmax(axis=1)
-        ndcg = metrics.ndcg_score(ground_truth, predictions)
+
+        ndcg_res = metrics.ndcg_score(ground_truth, predictions)
+        ndcg_res_3 = metrics.ndcg_score(ground_truth, predictions, k=3)
+        ndcg_res_5 = metrics.ndcg_score(ground_truth, predictions, k=5)
+        ndcg_res_10 = metrics.ndcg_score(ground_truth, predictions, k=10)
+        ndcg_res_15 = metrics.ndcg_score(ground_truth, predictions, k=15)
+
         acc_res = metrics.accuracy_score(cat_labels, cat_outs)
-        return ndcg, acc_res
+        acc_res_3 = metrics.top_k_accuracy_score(cat_labels, cat_outs, k=3, labels=range(cat_outs.shape[1]))
+        acc_res_5 = metrics.top_k_accuracy_score(cat_labels, cat_outs, k=5, labels=range(cat_outs.shape[1]))
+        acc_res_10 = metrics.top_k_accuracy_score(
+            cat_labels, cat_outs, k=10, labels=range(cat_outs.shape[1])
+        )
+        acc_res_15 = metrics.top_k_accuracy_score(
+            cat_labels, cat_outs, k=15, labels=range(cat_outs.shape[1])
+        )
+        print(
+            "\033[1;32m"
+            + "The validation ndcg is: "
+            + "{:.5f}".format(ndcg_res)
+            + "\033[0m"
+        )
+        print(
+            "\033[1;32m"
+            + "The validation accuracy is: "
+            + "{:.5f}".format(acc_res)
+            + "\033[0m"
+        )
+        return {
+            "valid_ndcg": ndcg_res,
+            "valid_ndcg_3": ndcg_res_3,
+            "valid_ndcg_5": ndcg_res_5,
+            "valid_ndcg_10": ndcg_res_10,
+            "valid_ndcg_15": ndcg_res_15,
+            "valid_acc": acc_res,
+            "valid_acc_3": acc_res_3,
+            "valid_acc_5": acc_res_5,
+            "valid_acc_10": acc_res_10,
+            "valid_acc_15": acc_res_15,
+        }
 
 
 def main():

@@ -138,7 +138,7 @@ class DataLoaderBase:
         num_of_pair_of_entity_and_component: int = 0
         for components_of_single_entity in components_mapping_list:
             num_of_pair_of_entity_and_component = (
-                num_of_pair_of_entity_and_component + len(components_of_single_entity)
+                    num_of_pair_of_entity_and_component + len(components_of_single_entity)
             )
 
         nodes_features = utils.encode_node_features(
@@ -210,7 +210,7 @@ class DataLoaderBase:
         )
 
     def get_edge_to_list_of_nodes_dict_assist(
-        self, relationship_line_message_list: list[str]
+            self, relationship_line_message_list: list[str]
     ):
         edge_to_list_of_nodes_dict: dict[int, list[int]] = dict()
         edge_to_list_of_input_nodes_dict: dict[int, list[int]] = dict()
@@ -373,7 +373,7 @@ class DataLoaderAttribute(DataLoaderBase):
         return nodes_to_list_of_masked_components
 
     def __get_complete_nodes_features_mix_negative_for_attribute_prediction(
-        self, node_mask: list[int], type_name: str
+            self, node_mask: list[int], type_name: str
     ):
         nodes_features_mix_negative: list[
             list[int]
@@ -411,7 +411,7 @@ class DataLoaderAttribute(DataLoaderBase):
         return nodes_features
 
     def __get_nodes_features_mix_negative_assist(
-        self, type_name: str
+            self, type_name: str
     ) -> list[list[int]]:
         if "test" != type_name and "validation" != type_name:
             raise Exception('The type should be "test" or "validation"')
@@ -427,7 +427,7 @@ class DataLoaderAttribute(DataLoaderBase):
         nodes_features_mix_negative: list[list[int]] = list()
 
         for (
-            components_mapping_line_message_mix_negative
+                components_mapping_line_message_mix_negative
         ) in components_mapping_line_message_mix_negative_list:
             elements: list[str] = components_mapping_line_message_mix_negative.split(
                 "||"
@@ -464,7 +464,7 @@ class DataLoaderAttribute(DataLoaderBase):
         return train_nodes_mask, validation_nodes_mask, test_nodes_mask
 
     def get_edge_of_nodes_list_regardless_direction(
-        self, type_name: str
+            self, type_name: str
     ) -> list[list[int]]:
         """
         :return: [[1,2,3], [3,7,9], [4,6,7,8,10,11]...] while [1,2,3], [3,7,9], .. represent the hyper edges
@@ -530,6 +530,8 @@ class DataLoaderLink(DataLoaderBase):
             "train_edge_list": self.get_edge_of_nodes_list_regardless_direction(
                 "train"
             ),
+            "train_masked_edge_list": self.get_masked_train_edge_of_nodes_list_regardless_direction(
+                self.__train_edge_mask),
             "train_edge_list_with_input_nodes": self.__list_of_edge_of_input_nodes_train,
             "train_edge_list_with_output_nodes": self.__list_of_edge_of_output_nodes_train,
             "validation_edge_list": self.get_edge_of_nodes_list_regardless_direction(
@@ -552,7 +554,7 @@ class DataLoaderLink(DataLoaderBase):
         return self.__function_dict[key]
 
     def __get_edge_to_list_of_nodes_dict(
-        self,
+            self,
     ) -> tuple[
         dict[int, list[int]],
         dict[int, list[int]],
@@ -609,7 +611,7 @@ class DataLoaderLink(DataLoaderBase):
         return edge_of_nodes_list_without_direction
 
     def __get_list_of_edges_of_nodes_based_on_train_dataset(
-        self,
+            self,
     ) -> tuple[list[list[int]], list[list[int]], list[list[int]]]:
         num_of_edges = self.get_num_of_edges_based_on_type_name("train")
         (
@@ -740,6 +742,16 @@ class DataLoaderLink(DataLoaderBase):
         train_edges_mask.sort()
 
         return train_edges_mask, validation_edges_mask, test_edges_mask
+
+    def get_masked_train_edge_of_nodes_list_regardless_direction(self, train_edge_mask: list[int]):
+        train_edge_of_nodes_list_regardless_direction: list[
+            list[int]] = self.get_edge_of_nodes_list_regardless_direction("train")
+
+        train_edge_of_nodes_list_regardless_direction: list[list[int]] = [
+            train_edge_of_nodes_list_regardless_direction[train_edge_mask_index] for train_edge_mask_index in
+            train_edge_mask]
+
+        return copy.deepcopy(train_edge_of_nodes_list_regardless_direction)
 
 
 if __name__ == "__main__":

@@ -5,23 +5,21 @@ import time
 import torch
 import torch.nn.functional as F
 import torch.optim as optim
+import wandb
 from dhg import Graph, Hypergraph
-from dhg.models import GCN, HGNN, HGNNP
+from dhg.models import GCN, HGNNP, HGNN
 from sklearn.metrics import accuracy_score, ndcg_score, top_k_accuracy_score
 
-import utils
-import wandb
-from data_loader import DataLoaderLink
+from data_loader import DataLoaderAttribute
+
 
 learning_rate = 0.01
 weight_decay = 5e-4
 project_name = "gnn_link_prediction_sweep_2023_Jan"
 
-
 def train(
     net_model: torch.nn.Module,
     nodes_features: torch.Tensor,
-    train_hyper_edge_list: list[list[int]],
     graph: Graph,
     labels: torch.Tensor,
     train_idx: list[bool],
@@ -32,20 +30,9 @@ def train(
 
     st = time.time()
     optimizer.zero_grad()
+    outs = net_model(nodes_features, graph)
 
-    edges_embeddings = (
-        utils.read_out_to_generate_multi_hyper_edges_embeddings_from_edge_list(
-            train_hyper_edge_list, nodes_features
-        )
-    )
-
-    edges_embeddings = edges_embeddings.to(net_model.device)
-    # edges_embeddings = edges_embeddings[train_idx]
-
-    nodes_embeddings = net_model(nodes_features, graph)
-
-    outs = torch.matmul(edges_embeddings, nodes_embeddings.t())
-
+    outs = outs[train_idx]
     loss = F.cross_entropy(outs, labels)
     loss.backward()
     optimizer.step()
@@ -54,33 +41,12 @@ def train(
 
 
 @torch.no_grad()
-def validation(
-    net_model,
-    nodes_features,
-    validation_hyper_edge_list: list[list[int]],
-    graph,
-    labels,
-    validation_idx,
-):
+def validation(net_model, nodes_features, graph, labels, validation_idx):
     net_model.eval()
-
-    edges_embeddings = (
-        utils.read_out_to_generate_multi_hyper_edges_embeddings_from_edge_list(
-            validation_hyper_edge_list, nodes_features
-        )
-    )
-
-    edges_embeddings = edges_embeddings.to(net_model.device)
-    nodes_embeddings = net_model(nodes_features, graph)
-
-    # torch.backends.cudnn.enabled = False
-    outs = torch.matmul(edges_embeddings, nodes_embeddings.t()).cpu().numpy()
-    labels = labels.cpu().numpy()
-    # outs = [[0.1, 0.9, 0.3, 0.9],[0.1, 0.2, 0.3, 0.9]]
-    # labels = [[0, 1, 0, 1], [0, 0, 0, 1]]
-    # outs, labels = outs[validation_idx], labels[validation_idx]
-    cat_labels = labels.argmax(axis=1)
-    cat_outs = outs.argmax(axis=1)
+    outs = net_model(nodes_features, graph)
+    outs = outs[validation_idx]
+    cat_labels = labels.cpu().numpy().argmax(axis=1)
+    cat_outs = outs.cpu().numpy().argmax(axis=1)
 
     ndcg_res = ndcg_score(labels, outs)
     ndcg_res_3 = ndcg_score(labels, outs, k=3)
@@ -125,34 +91,12 @@ def validation(
 
 
 @torch.no_grad()
-def test(
-    net_model,
-    nodes_features,
-    test_hyper_edge_list: list[list[int]],
-    graph,
-    labels,
-    test_idx,
-):
+def test(net_model, nodes_features, graph, labels, test_idx):
     net_model.eval()
-    # [[1,2,3],[2,3,4,5]...]
-    edges_embeddings = (
-        utils.read_out_to_generate_multi_hyper_edges_embeddings_from_edge_list(
-            test_hyper_edge_list, nodes_features
-        )
-    )
-
-    edges_embeddings = edges_embeddings.to(net_model.device)
-
-    nodes_embeddings = net_model(nodes_features, graph)
-
-    outs = torch.matmul(edges_embeddings, nodes_embeddings.t()).cpu().numpy()
-    labels = labels.cpu().numpy()
-    # outs = [[0.1, 0.9, 0.3, 0.9],[0.1, 0.2, 0.3, 0.9]]
-    # labels = [[0, 1, 0, 1], [0, 0, 0, 1]]
-    # outs, labels = outs[validation_idx], labels[validation_idx]
-    cat_labels = labels.argmax(axis=1)
-    cat_outs = outs.argmax(axis=1)
-
+    outs = net_model(nodes_features, graph)
+    outs = outs[test_idx]
+    cat_labels = labels.cpu().numpy().argmax(axis=1)
+    cat_outs = outs.cpu().numpy().argmax(axis=1)
     ndcg_res = ndcg_score(labels, outs)
     ndcg_res_3 = ndcg_score(labels, outs, k=3)
     ndcg_res_5 = ndcg_score(labels, outs, k=5)
@@ -192,62 +136,46 @@ def main(config=None):
         if config is not None:
             wandb.config.update(config)
         config = wandb.config
+        print(config)
         # set device
         device = (
             torch.device("cuda") if torch.cuda.is_available() else torch.device("cpu")
         )
 
         # initialize the data_loader
-        # data_loader = DataLoaderLink("Disease", "input link prediction dataset")
-        data_loader = DataLoaderLink(config.dataset, config.task)
+        # data_loader = DataLoaderAttribute("Disease", "attribute prediction dataset")
+        data_loader = DataLoaderAttribute(config.dataset, config.task)
+
+        # get the labels - the original nodes features
+        # labels = torch.FloatTensor(data_loader["raw_nodes_features"])
+        train_labels = data_loader["train_labels"]
+        validation_labels = data_loader["validation_labels"]
+        test_labels = data_loader["test_labels"]
+
+        # get the train,val,test nodes features
+        train_nodes_features = torch.FloatTensor(data_loader["train_nodes_features"])
+        validation_nodes_features = torch.FloatTensor(
+            data_loader["validation_nodes_features"]
+        )
+        test_nodes_features = torch.FloatTensor(data_loader["test_nodes_features"])
+
+        # get train, validation, test mask to track the nodes
+        train_mask = data_loader["train_node_mask"]
+        val_mask = data_loader["val_node_mask"]
+        test_mask = data_loader["test_node_mask"]
 
         # get the total number of nodes of this graph
         num_of_nodes: int = data_loader["num_nodes"]
 
-        # get the raw, train,val,test nodes features
-        train_nodes_features = torch.FloatTensor(data_loader["train_nodes_features"])
-
         # generate the relationship between hyper edge and nodes
         # ex. [[1,2,3,4], [3,4], [9,7,4]...] where [1,2,3,4] represent a hyper edge
-        train_all_hyper_edge_list = data_loader["train_edge_list"]
-        train_hyper_edge_list = data_loader["train_masked_edge_list"]
-        validation_hyper_edge_list = data_loader["validation_edge_list"]
-        test_hyper_edge_list = data_loader["test_edge_list"]
+        hyper_edge_list = data_loader["edge_list"]
 
-        # get train, validation, test mask to track the nodes
-        train_edge_mask = data_loader["train_edge_mask"]
-        val_edge_mask = data_loader["val_edge_mask"]
-        test_edge_mask = data_loader["test_edge_mask"]
+        # the hyper graph
+        hyper_graph_train = Hypergraph(num_of_nodes, copy.deepcopy(hyper_edge_list))
 
-        train_labels = data_loader["train_labels"]
-        test_labels = data_loader["test_labels"]
-        validation_labels = data_loader["validation_labels"]
-
-        # the train hyper graph
-        hyper_graph_train = Hypergraph(
-            num_of_nodes, copy.deepcopy(train_all_hyper_edge_list)
-        )
-
-        # generate train graph based on hyper graph
+        # generate graph based on hyper graph
         graph_train = Graph.from_hypergraph_clique(hyper_graph_train, weighted=True)
-
-        # the train hyper graph
-        hyper_graph_validation = Hypergraph(
-            num_of_nodes, copy.deepcopy(train_all_hyper_edge_list)
-        )
-
-        # generate train graph based on hyper graph
-        graph_validation = Graph.from_hypergraph_clique(
-            hyper_graph_validation, weighted=True
-        )
-
-        # the train hyper graph
-        hyper_graph_test = Hypergraph(
-            num_of_nodes, copy.deepcopy(train_all_hyper_edge_list)
-        )
-
-        # generate train graph based on hyper graph
-        graph_test = Graph.from_hypergraph_clique(hyper_graph_test, weighted=True)
 
         # the GCN model
         if config.model_name == "GCN":
@@ -278,7 +206,7 @@ def main(config=None):
             )
         else:
             raise Exception("Sorry, no model_name has been recognized.")
-        net_model.device = device
+
         # set the optimizer
         optimizer = optim.Adam(
             net_model.parameters(),
@@ -287,20 +215,21 @@ def main(config=None):
         )
 
         # set the device
-        train_nodes_features, train_labels, test_labels, validation_labels = (
+        train_nodes_features, validation_nodes_features, test_nodes_features = (
             train_nodes_features.to(device),
-            train_labels.to(device),
-            test_labels.to(device),
-            validation_labels.to(device),
+            validation_nodes_features.to(device),
+            test_nodes_features.to(device),
         )
+        train_labels = train_labels.to(device)
+        validation_labels = validation_labels.to(device)
+        test_labels = test_labels.to(device)
+
+        net_model = net_model.to(device)
+
         if config.model_name != "GCN":
             graph_train = hyper_graph_train
-            graph_validation = hyper_graph_validation
-            graph_test = hyper_graph_test
 
         graph_train = graph_train.to(device)
-        graph_validation = graph_validation.to(device)
-        graph_test = graph_test.to(device)
         net_model = net_model.to(device)
 
         print(f"{config.model_name} Baseline")
@@ -312,10 +241,9 @@ def main(config=None):
             loss = train(
                 net_model,
                 train_nodes_features,
-                train_hyper_edge_list,
                 graph_train,
                 train_labels,
-                train_edge_mask,
+                train_mask,
                 optimizer,
                 epoch,
             )
@@ -325,41 +253,21 @@ def main(config=None):
             }
             if epoch % 1 == 0:
                 with torch.no_grad():
-                    # validation(net_model, validation_nodes_features, validation_hyper_edge_list, graph_validation, labels, val_edge_mask)
                     valid_result = validation(
-                        net_model,
-                        train_nodes_features,
-                        validation_hyper_edge_list,
-                        graph_validation,
-                        validation_labels,
-                        val_edge_mask,
+                        net_model, validation_nodes_features, graph_train, validation_labels, val_mask
                     )
-                    # valid_ndcg, valid_acc = (
-                    #     valid_result["valid_ndcg"],
-                    #     valid_result["valid_acc"],
-                    # )
                     test_result = test(
-                        net_model,
-                        train_nodes_features,
-                        test_hyper_edge_list,
-                        graph_test,
-                        test_labels,
-                        test_edge_mask,
+                        net_model, test_nodes_features, graph_train, test_labels, test_mask
                     )
-                    # test_ndcg, test_acc = (
-                    #     test_result["test_ndcg"],
-                    #     test_result["test_acc"],
-                    # )
                     epoch_log.update(valid_result)
                     epoch_log.update(test_result)
                     wandb.log(epoch_log)
-
 
 def sweep():
     print("Please input model name. Options: GCN, HGNN, HGNNP")
     model_name = input()
     print(f"start tunning {model_name}")
-    for task in ["output link prediction dataset", "input link prediction dataset"]:
+    for task in ["attribute prediction dataset"]:
         for dataset in [
             "Immune System",
             "Metabolism",
@@ -383,7 +291,6 @@ def sweep():
             sweep_id = wandb.sweep(sweep_config, project=f"{task}_sweep_2023_Jan")
             wandb.agent(sweep_id, main)
 
-
 print("Are you going to run it as a sweep program? Y/N")
 answer = input()
 if answer.lower() == "y":
@@ -395,7 +302,8 @@ else:
         "drop_out": 0.5,
         "weight_decay": 5e-4,
         "model_name": "HGNN",
-        "task": "output link prediction dataset",
+        "task": "attribute prediction dataset",
         "dataset": "Disease",
     }
     main(config)
+
