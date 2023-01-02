@@ -15,7 +15,8 @@ from data_loader import DataLoaderAttribute
 
 learning_rate = 0.01
 weight_decay = 5e-4
-project_name = "gnn_link_prediction_sweep_2023_Jan"
+project_name = "gnn_attribute_prediction_sweep_2023_Jan"
+
 
 def train(
     net_model: torch.nn.Module,
@@ -44,9 +45,12 @@ def train(
 def validation(net_model, nodes_features, graph, labels, validation_idx):
     net_model.eval()
     outs = net_model(nodes_features, graph)
-    outs = outs[validation_idx]
-    cat_labels = labels.cpu().numpy().argmax(axis=1)
-    cat_outs = outs.cpu().numpy().argmax(axis=1)
+
+    outs = outs[validation_idx].cpu().numpy()
+    labels = labels.cpu().numpy()
+
+    cat_labels = labels.argmax(axis=1)
+    cat_outs = outs.argmax(axis=1)
 
     ndcg_res = ndcg_score(labels, outs)
     ndcg_res_3 = ndcg_score(labels, outs, k=3)
@@ -94,9 +98,12 @@ def validation(net_model, nodes_features, graph, labels, validation_idx):
 def test(net_model, nodes_features, graph, labels, test_idx):
     net_model.eval()
     outs = net_model(nodes_features, graph)
-    outs = outs[test_idx]
-    cat_labels = labels.cpu().numpy().argmax(axis=1)
-    cat_outs = outs.cpu().numpy().argmax(axis=1)
+
+    outs = outs[test_idx].cpu().numpy()
+    labels = labels.cpu().numpy()
+
+    cat_labels = labels.argmax(axis=1)
+    cat_outs = outs.argmax(axis=1)
     ndcg_res = ndcg_score(labels, outs)
     ndcg_res_3 = ndcg_score(labels, outs, k=3)
     ndcg_res_5 = ndcg_score(labels, outs, k=5)
@@ -254,14 +261,23 @@ def main(config=None):
             if epoch % 1 == 0:
                 with torch.no_grad():
                     valid_result = validation(
-                        net_model, validation_nodes_features, graph_train, validation_labels, val_mask
+                        net_model,
+                        validation_nodes_features,
+                        graph_train,
+                        validation_labels,
+                        val_mask,
                     )
                     test_result = test(
-                        net_model, test_nodes_features, graph_train, test_labels, test_mask
+                        net_model,
+                        test_nodes_features,
+                        graph_train,
+                        test_labels,
+                        test_mask,
                     )
                     epoch_log.update(valid_result)
                     epoch_log.update(test_result)
                     wandb.log(epoch_log)
+
 
 def sweep():
     print("Please input model name. Options: GCN, HGNN, HGNNP")
@@ -291,6 +307,7 @@ def sweep():
             sweep_id = wandb.sweep(sweep_config, project=f"{task}_sweep_2023_Jan")
             wandb.agent(sweep_id, main)
 
+
 print("Are you going to run it as a sweep program? Y/N")
 answer = input()
 if answer.lower() == "y":
@@ -306,4 +323,3 @@ else:
         "dataset": "Disease",
     }
     main(config)
-

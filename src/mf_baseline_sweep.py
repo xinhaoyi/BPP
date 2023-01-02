@@ -14,7 +14,7 @@ from matrix_factorisation import MFEngine
 from utils import instance_bpr_loader, predict_full
 
 model_name = "MF"
-project_name = "pathway_link_predict"
+project_name = "pathway_link_predict_MF"
 
 
 class MF_train:
@@ -76,8 +76,13 @@ class MF_train:
             epoch_log.update(test_result)
             wandb.log(epoch_log)
 
-        print("BEST ndcg performenace on validation set is %f" % valid_result["valid_ndcg"])
-        print("BEST acc performenace on validation set is %f" % valid_result["valid_ndcg"])
+        print(
+            "BEST ndcg performenace on validation set is %f"
+            % valid_result["valid_ndcg"]
+        )
+        print(
+            "BEST acc performenace on validation set is %f" % valid_result["valid_ndcg"]
+        )
         print("BEST performance happens at epoch", best_epoch)
         return best_valid_performance
 
@@ -112,13 +117,17 @@ class MF_train:
         ndcg_res_15 = metrics.ndcg_score(ground_truth, predictions, k=15)
 
         acc_res = metrics.accuracy_score(cat_labels, cat_outs)
-        acc_res_3 = metrics.top_k_accuracy_score(cat_labels, cat_outs, k=3, labels=range(cat_outs.shape[1]))
-        acc_res_5 = metrics.top_k_accuracy_score(cat_labels, cat_outs, k=5, labels=range(cat_outs.shape[1]))
+        acc_res_3 = metrics.top_k_accuracy_score(
+            cat_labels, predictions, k=3, labels=range(predictions.shape[1])
+        )
+        acc_res_5 = metrics.top_k_accuracy_score(
+            cat_labels, predictions, k=5, labels=range(predictions.shape[1])
+        )
         acc_res_10 = metrics.top_k_accuracy_score(
-            cat_labels, cat_outs, k=10, labels=range(cat_outs.shape[1])
+            cat_labels, predictions, k=10, labels=range(predictions.shape[1])
         )
         acc_res_15 = metrics.top_k_accuracy_score(
-            cat_labels, cat_outs, k=15, labels=range(cat_outs.shape[1])
+            cat_labels, predictions, k=15, labels=range(predictions.shape[1])
         )
         print(
             "\033[1;32m"
@@ -146,8 +155,10 @@ class MF_train:
         }
 
 
-def main():
+def main(config=None):
     with wandb.init(project=project_name):
+        if config is not None:
+            wandb.config.update(config)
         config = wandb.config
         print(config)
         args = {
@@ -170,21 +181,45 @@ def main():
         MF_disease.test()
 
 
-for task in ["output link prediction dataset", "input link prediction dataset"]:
-    for dataset in ["Immune System", "Metabolism", "Signal Transduction", "Disease"]:
-        sweep_config = {"method": "grid"}
-        metric = {"name": "valid_ndcg", "goal": "maximize"}
-        sweep_config["metric"] = metric
-        parameters_dict = {
-            "learning_rate": {"values": [0.05, 0.01, 0.005]},
-            "emb_dim": {"values": [64, 128, 256]},
-            "batch_size": {"values": [64, 128, 256]},
-            "model_name": {"values": [model_name]},
-            "task": {"values": [task]},
-            "dataset": {"values": [dataset]},
-        }
-        sweep_config["parameters"] = parameters_dict
-        pprint.pprint(sweep_config)
-        sweep_id = wandb.sweep(sweep_config, project=project_name)
+def sweep():
+    # model_name = "MF"
+    print(f"start tunning {model_name}")
+    for task in ["output link prediction dataset", "input link prediction dataset"]:
+        for dataset in [
+            "Immune System",
+            "Metabolism",
+            "Signal Transduction",
+            "Disease",
+        ]:
+            sweep_config = {"method": "grid"}
+            metric = {"name": "valid_ndcg", "goal": "maximize"}
+            sweep_config["metric"] = metric
+            parameters_dict = {
+                "learning_rate": {"values": [0.05, 0.01, 0.005]},
+                "emb_dim": {"values": [64, 128, 256]},
+                "batch_size": {"values": [64, 128, 256]},
+                "model_name": {"values": [model_name]},
+                "task": {"values": [task]},
+                "dataset": {"values": [dataset]},
+            }
+            sweep_config["parameters"] = parameters_dict
+            pprint.pprint(sweep_config)
+            sweep_id = wandb.sweep(sweep_config, project=project_name)
 
-        wandb.agent(sweep_id, main)
+            wandb.agent(sweep_id, main)
+
+
+print("Are you going to run it as a sweep program? Y/N")
+answer = input()
+if answer.lower() == "y":
+    sweep()
+else:
+    config = {
+        "learning_rate": 0.05,
+        "emb_dim": 128,
+        "batch_size": 128,
+        "model_name": "MF",
+        "task": "output link prediction dataset",
+        "dataset": "Disease",
+    }
+    main(config)
