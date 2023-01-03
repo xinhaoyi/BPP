@@ -101,7 +101,7 @@ class MF_train:
 
     def evaluate(self, predictions, n_samples, evaluate_type: str):
         if evaluate_type not in ["test", "validation"]:
-            raise Exception("Please choose \"test\" or \"validation\" type")
+            raise Exception('Please choose "test" or "validation" type')
         predictions = predictions.reshape(
             n_samples, int(predictions.shape[0] / n_samples)
         )
@@ -158,17 +158,21 @@ class MF_train:
             acc_10: str = "valid_acc_res_10"
             acc_15: str = "valid_acc_res_15"
         else:
-            raise Exception("Please choose \"test\" or \"validation\" type")
+            raise Exception('Please choose "test" or "validation" type')
 
         print(
             "\033[1;32m"
-            + "The" + evaluate_type + "ndcg is: "
+            + "The"
+            + evaluate_type
+            + "ndcg is: "
             + "{:.5f}".format(ndcg_res)
             + "\033[0m"
         )
         print(
             "\033[1;32m"
-            + "The" + evaluate_type + "accuracy is: "
+            + "The"
+            + evaluate_type
+            + "accuracy is: "
             + "{:.5f}".format(acc_res)
             + "\033[0m"
         )
@@ -184,6 +188,7 @@ class MF_train:
             acc_10: acc_res_10,
             acc_15: acc_res_15,
         }
+
 
 def main(config=None):
     with wandb.init(project=project_name):
