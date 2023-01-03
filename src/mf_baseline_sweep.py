@@ -59,7 +59,7 @@ class MF_train:
             validation_set = self.valid_set
             n_samples = len(validation_set)
             predictions = predict_full(validation_set, self.engine)
-            valid_result = self.evaluate(predictions, n_samples)
+            valid_result = self.validation(predictions, n_samples)
             test_result = self.test(self.engine)
             epoch_log = {
                 "loss": loss,
@@ -93,10 +93,15 @@ class MF_train:
         test_set = self.test_set
         predictions = predict_full(test_set, model)
         n_samples = len(test_set)
-        test_result = self.evaluate(predictions, n_samples)
+        test_result = self.evaluate(predictions, n_samples, "test")
         return test_result
 
-    def evaluate(self, predictions, n_samples):
+    def validation(self, predictions, n_samples):
+        return self.evaluate(predictions, n_samples, "validation")
+
+    def evaluate(self, predictions, n_samples, evaluate_type: str):
+        if evaluate_type not in ["test", "validation"]:
+            raise Exception("Please choose \"test\" or \"validation\" type")
         predictions = predictions.reshape(
             n_samples, int(predictions.shape[0] / n_samples)
         )
@@ -129,31 +134,56 @@ class MF_train:
         acc_res_15 = metrics.top_k_accuracy_score(
             cat_labels, predictions, k=15, labels=range(predictions.shape[1])
         )
+
+        if "test" == evaluate_type:
+            ndcg: str = "test_ndcg"
+            ndcg_3: str = "test_ndcg_res_3"
+            ndcg_5: str = "test_ndcg_res_5"
+            ndcg_10: str = "test_ndcg_res_10"
+            ndcg_15: str = "test_ndcg_res_15"
+            acc: str = "test_acc"
+            acc_3: str = "test_acc_res_3"
+            acc_5: str = "test_acc_res_5"
+            acc_10: str = "test_acc_res_10"
+            acc_15: str = "test_acc_res_15"
+        elif "validation" == evaluate_type:
+            ndcg: str = "valid_ndcg"
+            ndcg_3: str = "valid_ndcg_res_3"
+            ndcg_5: str = "valid_ndcg_res_5"
+            ndcg_10: str = "valid_ndcg_res_10"
+            ndcg_15: str = "valid_ndcg_res_15"
+            acc: str = "valid_acc"
+            acc_3: str = "valid_acc_res_3"
+            acc_5: str = "valid_acc_res_5"
+            acc_10: str = "valid_acc_res_10"
+            acc_15: str = "valid_acc_res_15"
+        else:
+            raise Exception("Please choose \"test\" or \"validation\" type")
+
         print(
             "\033[1;32m"
-            + "The validation ndcg is: "
+            + "The" + evaluate_type + "ndcg is: "
             + "{:.5f}".format(ndcg_res)
             + "\033[0m"
         )
         print(
             "\033[1;32m"
-            + "The validation accuracy is: "
+            + "The" + evaluate_type + "accuracy is: "
             + "{:.5f}".format(acc_res)
             + "\033[0m"
         )
         return {
-            "valid_ndcg": ndcg_res,
-            "valid_ndcg_3": ndcg_res_3,
-            "valid_ndcg_5": ndcg_res_5,
-            "valid_ndcg_10": ndcg_res_10,
-            "valid_ndcg_15": ndcg_res_15,
-            "valid_acc": acc_res,
-            "valid_acc_3": acc_res_3,
-            "valid_acc_5": acc_res_5,
-            "valid_acc_10": acc_res_10,
-            "valid_acc_15": acc_res_15,
+            ndcg: ndcg_res,
+            ndcg_3: ndcg_res_3,
+            ndcg_5: ndcg_res_5,
+            ndcg_10: ndcg_res_10,
+            ndcg_15: ndcg_res_15,
+            acc: acc_res,
+            acc_3: acc_res_3,
+            acc_5: acc_res_5,
+            acc_10: acc_res_10,
+            acc_15: acc_res_15,
         }
-
 
 def main(config=None):
     with wandb.init(project=project_name):
