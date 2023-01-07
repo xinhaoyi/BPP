@@ -715,7 +715,17 @@ class ReactomeDataDivider:
         for component_id, list_of_entity_ids in self.__component_to_list_of_entities_dict.items():
             occur_times = len(list_of_entity_ids)
             total_of_attributes = total_of_attributes + occur_times
-        validation_size = test_size = int(total_of_attributes / 10)
+
+
+        adjust_rate: float = 1.0
+        if "Disease" == self.__pathway_name:
+            adjust_rate = 0.8
+        if "Metabolism" == self.__pathway_name:
+            adjust_rate = 0.6
+        if "Immune System" == self.__pathway_name or "Signal Transduction" == self.__pathway_name:
+            adjust_rate = 1.0
+
+        validation_size = test_size = int(total_of_attributes * adjust_rate / 10)
 
         length_of_entities = len(self.__entities_ids)
         end_index_of_entities = length_of_entities - 1
@@ -725,8 +735,19 @@ class ReactomeDataDivider:
         list_of_validation_mask_entity_id: list[str] = list()
         list_of_test_mask_entity_id: list[str] = list()
 
+        random_entity_index_memory: dict[int, int] = dict()
+
+        print("validation_size: " + str(validation_size))
+        print("test_size: " + str(test_size))
+
+
         while validation_counter < validation_size or test_counter < test_size:
             random_entity_index = random.randint(0, end_index_of_entities)
+
+
+            if random_entity_index in random_entity_index_memory.keys():
+                continue
+
             random_entity_id = self.__entities_ids[random_entity_index]
             list_of_components = self.__entity_to_list_of_components_dict.get(random_entity_id)
 
@@ -735,6 +756,10 @@ class ReactomeDataDivider:
                 random_component_id = list_of_components[random_component_index]
                 list_of_entities = self.__component_to_list_of_entities_dict[random_component_id]
                 if len(list_of_entities) >= 2:
+
+
+                    random_entity_index_memory[random_entity_index] = 1
+
                     pair_of_entity_and_component: list[str] = list()
                     pair_of_entity_and_component.append(random_entity_id)
                     pair_of_entity_and_component.append(random_component_id)
@@ -947,7 +972,9 @@ class ReactomeDataDivider:
         print("entity id num = ", len(self.__input_link_prediction_entity_ids))
         print("total num = ", total_num)
 
-        validation_size = test_size = int(total_num / 10)
+        adjust_rate: float = 1.0
+
+        validation_size = test_size = int(total_num * adjust_rate / 10)
 
         length_of_reactions = len(self.__input_link_prediction_reaction_ids)
 
@@ -956,7 +983,7 @@ class ReactomeDataDivider:
         validation_counter: int = 0
         test_counter: int = 0
 
-        reaction_id_memory: set[str] = set()
+        reaction_id_memory_dict: dict[str, int] = dict()
         entity_id_memory_dict: dict[str, int] = dict()
 
         # sort the dict to make sure we get the same data after division
@@ -977,16 +1004,19 @@ class ReactomeDataDivider:
             if list_of_input_entities is None:
                 list_of_input_entities = list()
 
-            if len(list_of_input_entities) >= 2 and random_reaction_id not in reaction_id_memory:
-                # reaction_id_memory.add(random_reaction_id)
+            if len(list_of_input_entities) >= 2 and random_reaction_id not in reaction_id_memory_dict.keys():
+
+                reaction_id_memory_dict[random_reaction_id] = 1
+
                 random_entity_index = random.randint(0, len(list_of_input_entities) - 1)
                 random_entity_id = list_of_input_entities[random_entity_index]
                 list_of_reactions = self.__input_link_prediction_entity_to_list_of_reactions_dict.get(random_entity_id)
                 if list_of_reactions is None:
                     list_of_reactions = list()
 
-                if len(list_of_reactions) >= 2 and (
-                        random_entity_id not in entity_id_memory_dict or entity_id_memory_dict[random_entity_id] < 5):
+                # if len(list_of_reactions) >= 2 and (random_entity_id not in entity_id_memory_dict or entity_id_memory_dict[random_entity_id] < 5):
+
+                if len(list_of_reactions) >= 2 and (random_entity_id not in entity_id_memory_dict.keys() or entity_id_memory_dict[random_entity_id] < 6):
                     if random_entity_id not in entity_id_memory_dict.keys():
                         entity_id_memory_dict[random_entity_id] = 1
                     else:
@@ -1091,7 +1121,18 @@ class ReactomeDataDivider:
                 list_of_reactions = list()
             total_num = total_num + len(list_of_reactions)
 
-        validation_size = test_size = int(total_num / 10)
+        adjust_rate: float = 1.0
+
+        if "Disease" == self.__pathway_name:
+            adjust_rate = 0.55
+        if "Metabolism" == self.__pathway_name:
+            adjust_rate = 0.75
+        if "Immune System" == self.__pathway_name:
+            adjust_rate = 0.6
+        if "Signal Transduction" == self.__pathway_name:
+            adjust_rate = 0.51
+
+        validation_size = test_size = int(total_num * adjust_rate / 10)
 
         length_of_reactions = len(self.__output_link_prediction_reactions_ids)
 
@@ -1100,8 +1141,11 @@ class ReactomeDataDivider:
         validation_counter: int = 0
         test_counter: int = 0
 
-        reaction_id_memory: set[str] = set()
+        reaction_id_memory_dict: dict[str, int] = dict()
         entity_id_memory_dict: dict[str, int] = dict()
+
+        print("entity id num = ", len(self.__output_link_prediction_entity_ids))
+        print("total num = ", total_num)
 
         # sort the dict to make sure we get the same data after division
         for reaction_id, list_of_output_entities_ids in self.__output_link_prediction_reaction_to_list_of_output_entities_dict.items():
@@ -1121,8 +1165,10 @@ class ReactomeDataDivider:
             if list_of_output_entities is None:
                 list_of_output_entities = list()
 
-            if len(list_of_output_entities) >= 2 and random_reaction_id not in reaction_id_memory:
-                # reaction_id_memory.add(random_reaction_id)
+            if len(list_of_output_entities) >= 2 and random_reaction_id not in reaction_id_memory_dict.keys():
+
+                reaction_id_memory_dict[random_reaction_id] = 1
+
                 random_entity_index = random.randint(0, len(list_of_output_entities) - 1)
                 random_entity_id = list_of_output_entities[random_entity_index]
                 list_of_reactions = self.__output_link_prediction_entity_to_list_of_reactions_dict.get(random_entity_id)
@@ -1130,7 +1176,7 @@ class ReactomeDataDivider:
                     list_of_reactions = list()
 
                 # if len(list_of_reactions) >= 2 and (random_entity_id not in entity_id_memory_dict or entity_id_memory_dict[random_entity_id] < 8):
-                if len(list_of_reactions) >= 2:
+                if len(list_of_reactions) >= 2 and (random_entity_id not in entity_id_memory_dict.keys() or entity_id_memory_dict[random_entity_id] < 3):
                     if random_entity_id not in entity_id_memory_dict.keys():
                         entity_id_memory_dict[random_entity_id] = 1
                     else:
@@ -2290,7 +2336,6 @@ class DataBean:
         entities_ids_file_name = self.__file_name_properties.get("entities_ids_file_name")
         self.__entities = self.__file_processor.read_file_via_lines(self.__path, entities_ids_file_name)
 
-    #
     def __generate_inner_components_from_file(self) -> None:
         components_ids_file_name = self.__file_name_properties.get("components_ids_file_name")
         self.__components = self.__file_processor.read_file_via_lines(self.__path, components_ids_file_name)
