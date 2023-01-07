@@ -32,31 +32,31 @@ def extract_data_from_reactome():
 
 def divide_data_set():
     print("\033[1;36m" + "Disease" + "\033[0m" + "\n")
-    # disease = ReactomeDataDivider("Disease")
+    disease = ReactomeDataDivider("Disease")
 
-    # disease.divide_data_for_attribute_prediction_task()
-    # disease.divide_data_for_input_link_prediction_task()
-    # disease.divide_data_for_output_link_prediction_task()
+    disease.divide_data_for_attribute_prediction_task()
+    disease.divide_data_for_input_link_prediction_task()
+    disease.divide_data_for_output_link_prediction_task()
 
     print("\033[1;36m" + "Metabolism" + "\033[0m" + "\n")
-    # metabolism = ReactomeDataDivider("Metabolism")
+    metabolism = ReactomeDataDivider("Metabolism")
 
-    # metabolism.divide_data_for_attribute_prediction_task()
-    # metabolism.divide_data_for_input_link_prediction_task()
-    # metabolism.divide_data_for_output_link_prediction_task()
+    metabolism.divide_data_for_attribute_prediction_task()
+    metabolism.divide_data_for_input_link_prediction_task()
+    metabolism.divide_data_for_output_link_prediction_task()
 
     print("\033[1;36m" + "Immune System" + "\033[0m" + "\n")
-    # immune_system = ReactomeDataDivider("Immune System")
+    immune_system = ReactomeDataDivider("Immune System")
 
-    # immune_system.divide_data_for_attribute_prediction_task()
-    # immune_system.divide_data_for_input_link_prediction_task()
-    # immune_system.divide_data_for_output_link_prediction_task()
+    immune_system.divide_data_for_attribute_prediction_task()
+    immune_system.divide_data_for_input_link_prediction_task()
+    immune_system.divide_data_for_output_link_prediction_task()
 
     print("\033[1;36m" + "Signal Transduction" + "\033[0m" + "\n")
     signal_transduction = ReactomeDataDivider("Signal Transduction")
 
-    # signal_transduction.divide_data_for_attribute_prediction_task()
-    # signal_transduction.divide_data_for_input_link_prediction_task()
+    signal_transduction.divide_data_for_attribute_prediction_task()
+    signal_transduction.divide_data_for_input_link_prediction_task()
     signal_transduction.divide_data_for_output_link_prediction_task()
 
 
