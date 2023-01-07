@@ -18,14 +18,14 @@ weight_decay = 5e-4
 
 
 def train(
-    net_model: torch.nn.Module,
-    nodes_features: torch.Tensor,
-    train_hyper_edge_list: list[list[int]],
-    graph: Graph,
-    labels: torch.Tensor,
-    train_idx: list[bool],
-    optimizer: optim.Adam,
-    epoch: int,
+        net_model: torch.nn.Module,
+        nodes_features: torch.Tensor,
+        train_hyper_edge_list: list[list[int]],
+        graph: Graph,
+        labels: torch.Tensor,
+        train_idx: list[bool],
+        optimizer: optim.Adam,
+        epoch: int,
 ):
     net_model.train()
 
@@ -54,12 +54,12 @@ def train(
 
 @torch.no_grad()
 def validation(
-    net_model,
-    nodes_features,
-    validation_hyper_edge_list: list[list[int]],
-    graph,
-    labels,
-    validation_idx,
+        net_model,
+        nodes_features,
+        validation_hyper_edge_list: list[list[int]],
+        graph,
+        labels,
+        validation_idx,
 ):
     net_model.eval()
 
@@ -82,6 +82,9 @@ def validation(
     cat_labels = labels.cpu().numpy().argmax(axis=1)
     cat_outs = outs.cpu().numpy().argmax(axis=1)
 
+    # input 边A [1, 1, 0, 0]
+    # labels = edge[0, 0, 1, 0], prediction(outs) = [0.9, 0.9, 0.7, 0.2]
+    # [1, 0, 0, 0, 0]
     ndcg_res = ndcg_score(labels.cpu().numpy(), outs.cpu().numpy())
     acc_res = accuracy_score(cat_labels, cat_outs)
 
@@ -99,12 +102,12 @@ def validation(
 
 @torch.no_grad()
 def test(
-    net_model,
-    nodes_features,
-    test_hyper_edge_list: list[list[int]],
-    graph,
-    labels,
-    test_idx,
+        net_model,
+        nodes_features,
+        test_hyper_edge_list: list[list[int]],
+        graph,
+        labels,
+        test_idx,
 ):
     net_model.eval()
 
