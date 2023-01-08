@@ -18,14 +18,14 @@ weight_decay = 5e-4
 
 
 def train(
-    net_model: torch.nn.Module,
-    nodes_features: torch.Tensor,
-    train_hyper_edge_list: list[list[int]],
-    graph: Graph,
-    labels: torch.Tensor,
-    train_idx: list[bool],
-    optimizer: optim.Adam,
-    epoch: int,
+        net_model: torch.nn.Module,
+        nodes_features: torch.Tensor,
+        train_hyper_edge_list: list[list[int]],
+        graph: Graph,
+        labels: torch.Tensor,
+        train_idx: list[bool],
+        optimizer: optim.Adam,
+        epoch: int,
 ):
     net_model.train()
 
@@ -39,7 +39,7 @@ def train(
     )
 
     edges_embeddings = edges_embeddings.to(device)
-    edges_embeddings = edges_embeddings[train_idx]
+    # edges_embeddings = edges_embeddings[train_idx]
 
     nodes_embeddings = net_model(nodes_features, graph)
 
@@ -54,12 +54,12 @@ def train(
 
 @torch.no_grad()
 def validation(
-    net_model,
-    nodes_features,
-    validation_hyper_edge_list: list[list[int]],
-    graph,
-    labels,
-    validation_idx,
+        net_model,
+        nodes_features,
+        validation_hyper_edge_list: list[list[int]],
+        graph,
+        labels,
+        validation_idx,
 ):
     net_model.eval()
 
@@ -76,12 +76,18 @@ def validation(
     # torch.backends.cudnn.enabled = False
     outs = torch.matmul(edges_embeddings, nodes_embeddings.t())
 
+    # filter the existing node prediction result
+    utils.filter_prediction_(outs, validation_hyper_edge_list)
+
     # outs = [[0.1, 0.9, 0.3, 0.9],[0.1, 0.2, 0.3, 0.9]]
     # labels = [[0, 1, 0, 1], [0, 0, 0, 1]]
     # outs, labels = outs[validation_idx], labels[validation_idx]
     cat_labels = labels.cpu().numpy().argmax(axis=1)
     cat_outs = outs.cpu().numpy().argmax(axis=1)
 
+    # input 边A [1, 1, 0, 0]
+    # labels = edge[0, 0, 1, 0], prediction(outs) = [0.9, 0.9, 0.7, 0.2]
+    # [1, 0, 0, 0, 0]
     ndcg_res = ndcg_score(labels.cpu().numpy(), outs.cpu().numpy())
     acc_res = accuracy_score(cat_labels, cat_outs)
 
@@ -99,12 +105,12 @@ def validation(
 
 @torch.no_grad()
 def test(
-    net_model,
-    nodes_features,
-    test_hyper_edge_list: list[list[int]],
-    graph,
-    labels,
-    test_idx,
+        net_model,
+        nodes_features,
+        test_hyper_edge_list: list[list[int]],
+        graph,
+        labels,
+        test_idx,
 ):
     net_model.eval()
 
@@ -118,6 +124,9 @@ def test(
     nodes_embeddings = net_model(nodes_features, graph)
     outs = torch.matmul(edges_embeddings, nodes_embeddings.t())
     # edges_embeddings = edges_embeddings[validation_idx]
+
+    # filter the existing node prediction result
+    utils.filter_prediction_(outs, test_hyper_edge_list)
 
     # outs, labels = outs[test_idx], labels[test_idx]
     cat_labels = labels.cpu().numpy().argmax(axis=1)
@@ -162,7 +171,9 @@ def main(dataset: str, task: str):
 
     # generate the relationship between hyper edge and nodes
     # ex. [[1,2,3,4], [3,4], [9,7,4]...] where [1,2,3,4] represent a hyper edge
-    train_hyper_edge_list = data_loader["train_edge_list"]
+    train_all_hyper_edge_list = data_loader["train_edge_list"]
+    train_hyper_edge_list = data_loader["train_masked_edge_list"]
+
     validation_hyper_edge_list = data_loader["validation_edge_list"]
     test_hyper_edge_list = data_loader["test_edge_list"]
 
@@ -176,7 +187,7 @@ def main(dataset: str, task: str):
     validation_labels = data_loader["validation_labels"]
 
     # the train hyper graph
-    hyper_graph = Hypergraph(num_of_nodes, copy.deepcopy(train_hyper_edge_list))
+    hyper_graph = Hypergraph(num_of_nodes, copy.deepcopy(train_all_hyper_edge_list))
 
     # the GCN model
     net_model = HGNNP(
@@ -242,7 +253,7 @@ def main(dataset: str, task: str):
 if __name__ == "__main__":
     # set device
     device = torch.device("cuda") if torch.cuda.is_available() else torch.device("cpu")
-    main("Disease", "input link prediction dataset")
+    # main("Disease", "input link prediction dataset")
     # main("Disease", "output link prediction dataset")
     #
     # main("Immune System", "input link prediction dataset")
@@ -252,4 +263,4 @@ if __name__ == "__main__":
     # main("Metabolism", "output link prediction dataset")
     #
     # main("Signal Transduction", "input link prediction dataset")
-    # main("Signal Transduction", "output link prediction dataset")
+    main("Signal Transduction", "output link prediction dataset")

@@ -1,17 +1,18 @@
+import os
+import platform
 import random
 import time
 from functools import wraps
-import os
-import platform
 
-import scipy as sp
-from numpy import ndarray
-from scipy.sparse import csr_matrix
 import numpy as np
 import pandas as pd
+import scipy as sp
 import torch
 import torch.nn.functional as F
-from tensorboardX import SummaryWriter
+from numpy import ndarray
+from scipy.sparse import csr_matrix
+
+# from tensorboardX import SummaryWriter
 from torch.utils.data import DataLoader, Dataset
 
 
@@ -45,7 +46,7 @@ def get_sys_platform():
         sys_platform_return = "windows"
     elif "macOS" in sys_platform:
         sys_platform_return = "macos"
-    elif "linux" in sys_platform:
+    elif "linux" in sys_platform or "Linux" in sys_platform:
         sys_platform_return = "linux"
     else:
         sys_platform_return = "other"
@@ -77,20 +78,22 @@ def get_root_path_of_project(project_name: str):
 
 def normalize_sparse_matrix(mat):
     """Row-normalize sparse matrix"""
-    # sum(1) is to calculate the sum of each row
+    # sum(1) 是计算每一行的和
+    # 会得到一个（2708,1）的矩阵
     rowsum: ndarray = np.array(mat.sum(1))
 
-    # Take this thing down and slap it flat
+    # 把这玩意儿取倒，然后拍平
     r_inv = np.power(rowsum, -1).flatten()
 
-    # There is a problem when calculating the reciprocal, if the original value is 0, its reciprocal is infinity,
-    # so the value of infinity in r_inv needs to be corrected by changing it to 0
+    # 在计算倒数的时候存在一个问题，如果原来的值为0，则其倒数为无穷大，因此需要对r_inv中无穷大的值进行修正，更改为0
     r_inv[np.isinf(r_inv)] = 0.0
 
-    # Here is the generation of the diagonal matrix
+    # np.diag() 应该也可以
+    # 这里就是生成 对角矩阵
     r_mat_inv = sp.diags(r_inv)
 
-    # Point multiplication, to obtain the normalised result
+    # 点乘,得到归一化后的结果
+    # 注意是 归一化矩阵 点乘 原矩阵，别搞错了!!
     mat = r_mat_inv.dot(mat)
     return mat
 
@@ -125,6 +128,22 @@ def encode_node_features(
     return nodes_features
 
 
+def decode_node_features(node_features: list[int]):
+    attributes_of_single_node: list[int] = list()
+    for index, value in enumerate(node_features):
+        if value > 0:
+            attributes_of_single_node.append(index)
+    return attributes_of_single_node
+
+
+def decode_multi_nodes_features(multi_nodes_features: list[list[int]]):
+    attributes_of_multi_nodes: list[list[int]] = list()
+    for node_features in multi_nodes_features:
+        attributes_of_single_node: list[int] = decode_node_features(node_features)
+        attributes_of_multi_nodes.append(attributes_of_single_node)
+    return attributes_of_multi_nodes
+
+
 def encode_edges_features(
     edge_to_nodes_mapping_list: list[list[int]], num_of_edges: int, num_of_nodes: int
 ):
@@ -155,12 +174,6 @@ def read_out_to_generate_single_hyper_edge_embedding(
     :param nodes_features: all the nodes features shape n*m, n is the number of nodes, m is the dimension of attributes.
     :return: after readout(mean method), we get an edge embedding.
     """
-    # val [1,2]
-    # test [1,2]
-    # n*k edge matrix [[1,2], [3,4,5], [6,7,8]]
-    # m*k node matrix
-    # edge * node.T  out = n*m [0.2, 0.3, 0.4, 0.1, 0.9]
-    # labels: raw data -> edge [0, 0, 0, 0, 1]
     nodes_features_for_single_hyper_edge = nodes_features[
         list_of_nodes_for_single_hyper_edge
     ]
@@ -216,6 +229,17 @@ def read_out_to_generate_multi_hyper_edges_embeddings_from_edge_list(
     return multi_hyper_edges_embeddings_tensor
 
 
+def filter_prediction_(prediction: torch.Tensor, filter_indexes_list: list[list[int]]):
+    if prediction.shape[0] != len(filter_indexes_list):
+        raise Exception(
+            "Error! The prediction and filter_indexes_list not match in dimension"
+        )
+
+    for i in range(prediction.shape[0]):
+        filter_indexes = filter_indexes_list[i]
+        prediction[i][filter_indexes] = 0
+
+
 class ModelEngine(object):
     def __init__(self, config):
         """Initialize ModelEngine Class."""
@@ -224,7 +248,7 @@ class ModelEngine(object):
         self.set_optimizer()
         self.model.to(self.device)
         print(self.model)
-        self.writer = SummaryWriter(log_dir=config["run_dir"])  # tensorboard writer
+        # self.writer = SummaryWriter(log_dir=config["run_dir"])  # tensorboard writer
 
     def set_optimizer(self):
         """Set optimizer in the model."""
@@ -271,7 +295,8 @@ class ModelEngine(object):
             loss = self.train_single_batch(batch_data)
             total_loss += loss
         print("[Training Epoch {}], Loss {}".format(epoch_id, total_loss))
-        self.writer.add_scalar("model/loss", total_loss, epoch_id)
+        # self.writer.add_scalar("model/loss", total_loss, epoch_id)
+        return total_loss
 
     def save_checkpoint(self, model_dir):
         """Save checkpoint."""

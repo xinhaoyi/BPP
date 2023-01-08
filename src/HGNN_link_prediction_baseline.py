@@ -39,7 +39,7 @@ def train(
     )
 
     edges_embeddings = edges_embeddings.to(device)
-    edges_embeddings = edges_embeddings[train_idx]
+    # edges_embeddings = edges_embeddings[train_idx]
 
     nodes_embeddings = net_model(nodes_features, graph)
 
@@ -75,6 +75,9 @@ def validation(
 
     # torch.backends.cudnn.enabled = False
     outs = torch.matmul(edges_embeddings, nodes_embeddings.t())
+
+    # filter the existing node prediction result
+    utils.filter_prediction_(outs, validation_hyper_edge_list)
 
     # outs = [[0.1, 0.9, 0.3, 0.9],[0.1, 0.2, 0.3, 0.9]]
     # labels = [[0, 1, 0, 1], [0, 0, 0, 1]]
@@ -119,6 +122,9 @@ def test(
     outs = torch.matmul(edges_embeddings, nodes_embeddings.t())
     # edges_embeddings = edges_embeddings[validation_idx]
 
+    # filter the existing node prediction result
+    utils.filter_prediction_(outs, test_hyper_edge_list)
+
     # outs, labels = outs[test_idx], labels[test_idx]
     cat_labels = labels.cpu().numpy().argmax(axis=1)
     cat_outs = outs.cpu().numpy().argmax(axis=1)
@@ -162,7 +168,8 @@ def main(dataset: str, task: str):
 
     # generate the relationship between hyper edge and nodes
     # ex. [[1,2,3,4], [3,4], [9,7,4]...] where [1,2,3,4] represent a hyper edge
-    train_hyper_edge_list = data_loader["train_edge_list"]
+    train_all_hyper_edge_list = data_loader["train_edge_list"]
+    train_hyper_edge_list = data_loader["train_masked_edge_list"]
     validation_hyper_edge_list = data_loader["validation_edge_list"]
     test_hyper_edge_list = data_loader["test_edge_list"]
 
@@ -176,7 +183,7 @@ def main(dataset: str, task: str):
     validation_labels = data_loader["validation_labels"]
 
     # the train hyper graph
-    hyper_graph = Hypergraph(num_of_nodes, copy.deepcopy(train_hyper_edge_list))
+    hyper_graph = Hypergraph(num_of_nodes, copy.deepcopy(train_all_hyper_edge_list))
 
     # the GCN model
     net_model = HGNN(
