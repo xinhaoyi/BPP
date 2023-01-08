@@ -39,7 +39,7 @@ def train(
     )
 
     edges_embeddings = edges_embeddings.to(device)
-    edges_embeddings = edges_embeddings[train_idx]
+    # edges_embeddings = edges_embeddings[train_idx]
 
     nodes_embeddings = net_model(nodes_features, graph)
 
@@ -75,6 +75,9 @@ def validation(
 
     # torch.backends.cudnn.enabled = False
     outs = torch.matmul(edges_embeddings, nodes_embeddings.t())
+
+    # filter the existing node prediction result
+    utils.filter_prediction_(outs, validation_hyper_edge_list)
 
     # outs = [[0.1, 0.9, 0.3, 0.9],[0.1, 0.2, 0.3, 0.9]]
     # labels = [[0, 1, 0, 1], [0, 0, 0, 1]]
@@ -121,6 +124,9 @@ def test(
     nodes_embeddings = net_model(nodes_features, graph)
     outs = torch.matmul(edges_embeddings, nodes_embeddings.t())
     # edges_embeddings = edges_embeddings[validation_idx]
+
+    # filter the existing node prediction result
+    utils.filter_prediction_(outs, test_hyper_edge_list)
 
     # outs, labels = outs[test_idx], labels[test_idx]
     cat_labels = labels.cpu().numpy().argmax(axis=1)
@@ -247,7 +253,7 @@ def main(dataset: str, task: str):
 if __name__ == "__main__":
     # set device
     device = torch.device("cuda") if torch.cuda.is_available() else torch.device("cpu")
-    main("Disease", "input link prediction dataset")
+    # main("Disease", "input link prediction dataset")
     # main("Disease", "output link prediction dataset")
     #
     # main("Immune System", "input link prediction dataset")
@@ -257,4 +263,4 @@ if __name__ == "__main__":
     # main("Metabolism", "output link prediction dataset")
     #
     # main("Signal Transduction", "input link prediction dataset")
-    # main("Signal Transduction", "output link prediction dataset")
+    main("Signal Transduction", "output link prediction dataset")

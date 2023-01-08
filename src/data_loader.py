@@ -103,6 +103,31 @@ class DataLoaderBase:
         num_of_edges = len(edge_line_message_list)
         return num_of_edges
 
+    def get_nodes_components_assist(self, type_name):
+        if "raw" == type_name:
+            path: str = self.raw_data_file_path
+        else:
+            path: str = os.path.join(self.task_file_path, type_name)
+
+        components_mapping_line_message_list: list[str] = utils.read_file_via_lines(
+            path, "components-mapping.txt"
+        )
+        components_mapping_list_with_str_style = [
+            components_mapping_line_message.split(",")
+            for components_mapping_line_message in components_mapping_line_message_list
+        ]
+
+        components_mapping_list = []
+
+        for components_mapping_str in components_mapping_list_with_str_style:
+            components_mapping_line_int_style = [
+                int(component) for component in components_mapping_str
+            ]
+            components_mapping_list.append(components_mapping_line_int_style)
+
+        return components_mapping_list
+
+
     def get_nodes_features_assist(self, type_name: str):
         if "raw" == type_name:
             path: str = self.raw_data_file_path
@@ -290,6 +315,11 @@ class DataLoaderAttribute(DataLoaderBase):
             self.__test_nodes_mask,
         ) = self.__get_nodes_mask()
 
+        # node components
+        self.__train_nodes_components = super().get_nodes_components_assist("train")
+        self.__validation_nodes_components = super().get_nodes_components_assist("validation")
+        self.__test_nodes_components = super().get_nodes_components_assist("test")
+
         # node features
         self.__raw_nodes_features = super().get_nodes_features_assist("raw")
         self.__train_nodes_features = super().get_nodes_features_assist("train")
@@ -306,6 +336,9 @@ class DataLoaderAttribute(DataLoaderBase):
             "num_features": self.get_num_of_features_based_on_type_name(),
             "num_edges": self.get_num_of_edges_based_on_type_name(),
             "edge_list": self.get_edge_of_nodes_list_regardless_direction("train"),
+            "train_nodes_components": self.__train_nodes_components,
+            "validation_nodes_components": self.__validation_nodes_components,
+            "test_nodes_components": self.__test_nodes_components,
             "raw_nodes_features": self.__raw_nodes_features,
             # train, validation, and test dataset just use train dataset
             "train_nodes_features": self.__train_nodes_features,

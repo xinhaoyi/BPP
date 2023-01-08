@@ -12,6 +12,8 @@ from sklearn.metrics import accuracy_score, ndcg_score, top_k_accuracy_score
 
 from data_loader import DataLoaderAttribute
 
+import utils
+
 
 learning_rate = 0.01
 weight_decay = 5e-4
@@ -42,11 +44,16 @@ def train(
 
 
 @torch.no_grad()
-def validation(net_model, nodes_features, graph, labels, validation_idx):
+def validation(net_model, nodes_attributes, nodes_features, graph, labels, validation_idx):
     net_model.eval()
     outs = net_model(nodes_features, graph)
 
-    outs = outs[validation_idx].cpu().numpy()
+    outs = outs[validation_idx]
+
+    utils.filter_prediction_(outs, nodes_attributes)
+
+    outs = outs.cpu().numpy()
+
     labels = labels.cpu().numpy()
 
     cat_labels = labels.argmax(axis=1)
@@ -95,11 +102,16 @@ def validation(net_model, nodes_features, graph, labels, validation_idx):
 
 
 @torch.no_grad()
-def test(net_model, nodes_features, graph, labels, test_idx):
+def test(net_model, nodes_attributes, nodes_features, graph, labels, test_idx):
     net_model.eval()
     outs = net_model(nodes_features, graph)
 
-    outs = outs[test_idx].cpu().numpy()
+    outs = outs[test_idx]
+
+    utils.filter_prediction_(outs, nodes_attributes)
+
+    outs = outs.cpu().numpy()
+
     labels = labels.cpu().numpy()
 
     cat_labels = labels.argmax(axis=1)
@@ -158,6 +170,10 @@ def main(config=None):
         train_labels = data_loader["train_labels"]
         validation_labels = data_loader["validation_labels"]
         test_labels = data_loader["test_labels"]
+
+        validation_nodes_attributes = data_loader["validation_nodes_components"]
+        test_nodes_attributes = data_loader["test_nodes_components"]
+
 
         # get the train,val,test nodes features
         train_nodes_features = torch.FloatTensor(data_loader["train_nodes_features"])
@@ -262,6 +278,7 @@ def main(config=None):
                 with torch.no_grad():
                     valid_result = validation(
                         net_model,
+                        validation_nodes_attributes,
                         validation_nodes_features,
                         graph_train,
                         validation_labels,
@@ -269,6 +286,7 @@ def main(config=None):
                     )
                     test_result = test(
                         net_model,
+                        test_nodes_attributes,
                         test_nodes_features,
                         graph_train,
                         test_labels,

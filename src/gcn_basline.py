@@ -7,6 +7,7 @@ from dhg.models import GCN
 from sklearn.metrics import ndcg_score
 
 from data_loader import DataLoaderAttribute
+import utils
 
 learning_rate = 0.01
 weight_decay = 5e-4
@@ -36,12 +37,14 @@ def train(
 
 
 @torch.no_grad()
-def validation(net_model, nodes_features, graph, labels, validation_idx):
+def validation(net_model, nodes_attributes, nodes_features, graph, labels, validation_idx):
     net_model.eval()
 
     outs = net_model(nodes_features, graph)
 
     outs = outs[validation_idx]
+
+    utils.filter_prediction_(outs, nodes_attributes)
 
     val_res = ndcg_score(labels.cpu().numpy(), outs.cpu().numpy())
 
@@ -54,12 +57,14 @@ def validation(net_model, nodes_features, graph, labels, validation_idx):
 
 
 @torch.no_grad()
-def test(net_model, nodes_features, graph, labels, test_idx):
+def test(net_model, nodes_attributes, nodes_features, graph, labels, test_idx):
     net_model.eval()
 
     outs = net_model(nodes_features, graph)
 
     outs = outs[test_idx]
+
+    utils.filter_prediction_(outs, nodes_attributes)
 
     test_res = ndcg_score(labels.cpu().numpy(), outs.cpu().numpy())
 
@@ -83,6 +88,9 @@ if __name__ == "__main__":
     train_labels = data_loader["train_labels"]
     validation_labels = data_loader["validation_labels"]
     test_labels = data_loader["test_labels"]
+
+    validation_nodes_attributes = data_loader["validation_nodes_components"]
+    test_nodes_attributes = data_loader["test_nodes_components"]
 
     # get the train,val,test nodes features
     train_nodes_features = torch.FloatTensor(data_loader["train_nodes_features"])
@@ -152,11 +160,12 @@ if __name__ == "__main__":
             with torch.no_grad():
                 validation(
                     net_model,
+                    validation_nodes_attributes,
                     validation_nodes_features,
                     graph,
                     validation_labels,
                     val_mask,
                 )
 
-    test(net_model, test_nodes_features, graph, test_labels, test_mask)
+    test(net_model, test_nodes_attributes, test_nodes_features, graph, test_labels, test_mask)
     # torch.save(net_model.state_dict(), "gcn.pkl")

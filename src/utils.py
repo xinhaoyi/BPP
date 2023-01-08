@@ -128,6 +128,22 @@ def encode_node_features(
     return nodes_features
 
 
+def decode_node_features(node_features: list[int]):
+    attributes_of_single_node: list[int] = list()
+    for index, value in enumerate(node_features):
+        if value > 0:
+            attributes_of_single_node.append(index)
+    return attributes_of_single_node
+
+
+def decode_multi_nodes_features(multi_nodes_features: list[list[int]]):
+    attributes_of_multi_nodes: list[list[int]] = list()
+    for node_features in multi_nodes_features:
+        attributes_of_single_node: list[int] = decode_node_features(node_features)
+        attributes_of_multi_nodes.append(attributes_of_single_node)
+    return attributes_of_multi_nodes
+
+
 def encode_edges_features(
     edge_to_nodes_mapping_list: list[list[int]], num_of_edges: int, num_of_nodes: int
 ):
@@ -211,6 +227,17 @@ def read_out_to_generate_multi_hyper_edges_embeddings_from_edge_list(
     )
 
     return multi_hyper_edges_embeddings_tensor
+
+
+def filter_prediction_(prediction: torch.Tensor, filter_indexes_list: list[list[int]]):
+    if prediction.shape[0] != len(filter_indexes_list):
+        raise Exception("Error! The prediction and filter_indexes_list not match in dimension")
+
+    for i in range(prediction.shape[0]):
+        filter_indexes = filter_indexes_list[i]
+        prediction[i][filter_indexes] = 0
+
+
 
 
 class ModelEngine(object):

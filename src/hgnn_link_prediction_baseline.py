@@ -76,6 +76,9 @@ def validation(
     # torch.backends.cudnn.enabled = False
     outs = torch.matmul(edges_embeddings, nodes_embeddings.t())
 
+    # filter the existing node prediction result
+    utils.filter_prediction_(outs, validation_hyper_edge_list)
+
     # outs = [[0.1, 0.9, 0.3, 0.9],[0.1, 0.2, 0.3, 0.9]]
     # labels = [[0, 1, 0, 1], [0, 0, 0, 1]]
     # outs, labels = outs[validation_idx], labels[validation_idx]
@@ -118,6 +121,9 @@ def test(
     nodes_embeddings = net_model(nodes_features, graph)
     outs = torch.matmul(edges_embeddings, nodes_embeddings.t())
     # edges_embeddings = edges_embeddings[validation_idx]
+
+    # filter the existing node prediction result
+    utils.filter_prediction_(outs, test_hyper_edge_list)
 
     # outs, labels = outs[test_idx], labels[test_idx]
     cat_labels = labels.cpu().numpy().argmax(axis=1)

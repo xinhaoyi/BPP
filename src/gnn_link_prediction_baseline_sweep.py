@@ -24,7 +24,6 @@ def train(
     train_hyper_edge_list: list[list[int]],
     graph: Graph,
     labels: torch.Tensor,
-    train_idx: list[bool],
     optimizer: optim.Adam,
     epoch: int,
 ):
@@ -60,7 +59,6 @@ def validation(
     validation_hyper_edge_list: list[list[int]],
     graph,
     labels,
-    validation_idx,
 ):
     net_model.eval()
 
@@ -74,7 +72,11 @@ def validation(
     nodes_embeddings = net_model(nodes_features, graph)
 
     # torch.backends.cudnn.enabled = False
-    outs = torch.matmul(edges_embeddings, nodes_embeddings.t()).cpu().numpy()
+    outs = torch.matmul(edges_embeddings, nodes_embeddings.t())
+
+    utils.filter_prediction_(outs, validation_hyper_edge_list)
+    outs = outs.cpu().numpy()
+
     labels = labels.cpu().numpy()
     # outs = [[0.1, 0.9, 0.3, 0.9],[0.1, 0.2, 0.3, 0.9]]
     # labels = [[0, 1, 0, 1], [0, 0, 0, 1]]
@@ -131,7 +133,6 @@ def test(
     test_hyper_edge_list: list[list[int]],
     graph,
     labels,
-    test_idx,
 ):
     net_model.eval()
     # [[1,2,3],[2,3,4,5]...]
@@ -145,7 +146,11 @@ def test(
 
     nodes_embeddings = net_model(nodes_features, graph)
 
-    outs = torch.matmul(edges_embeddings, nodes_embeddings.t()).cpu().numpy()
+    outs = torch.matmul(edges_embeddings, nodes_embeddings.t())
+
+    utils.filter_prediction_(outs, test_hyper_edge_list)
+    outs = outs.cpu().numpy()
+
     labels = labels.cpu().numpy()
     # outs = [[0.1, 0.9, 0.3, 0.9],[0.1, 0.2, 0.3, 0.9]]
     # labels = [[0, 1, 0, 1], [0, 0, 0, 1]]
@@ -315,7 +320,6 @@ def main(config=None):
                 train_hyper_edge_list,
                 graph_train,
                 train_labels,
-                train_edge_mask,
                 optimizer,
                 epoch,
             )
@@ -332,7 +336,6 @@ def main(config=None):
                         validation_hyper_edge_list,
                         graph_validation,
                         validation_labels,
-                        val_edge_mask,
                     )
                     # valid_ndcg, valid_acc = (
                     #     valid_result["valid_ndcg"],
@@ -344,7 +347,6 @@ def main(config=None):
                         test_hyper_edge_list,
                         graph_test,
                         test_labels,
-                        test_edge_mask,
                     )
                     # test_ndcg, test_acc = (
                     #     test_result["test_ndcg"],
