@@ -162,7 +162,11 @@ def main():
             if epoch % 1 == 0:
                 with torch.no_grad():
                     valid_ndcg, valid_acc = validation(
-                        net_model, validation_nodes_features, graph, validation_labels, val_mask
+                        net_model,
+                        validation_nodes_features,
+                        graph,
+                        validation_labels,
+                        val_mask,
                     )
                     test_ndcg, test_acc = test(
                         net_model, test_nodes_features, graph, test_labels, test_mask

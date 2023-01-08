@@ -74,6 +74,7 @@ def test(net_model, nodes_features, graph, labels, test_idx):
     )
     return ndcg_res, acc_res
 
+
 # if __name__ == "__main__":
 def main():
     with wandb.init(project=project_name):
@@ -167,7 +168,11 @@ def main():
                         val_mask,
                     )
                     test_ndcg, test_acc = test(
-                        net_model, test_nodes_features, hyper_graph, test_labels, test_mask
+                        net_model,
+                        test_nodes_features,
+                        hyper_graph,
+                        test_labels,
+                        test_mask,
                     )
                 wandb.log(
                     {

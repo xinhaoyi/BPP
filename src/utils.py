@@ -231,13 +231,13 @@ def read_out_to_generate_multi_hyper_edges_embeddings_from_edge_list(
 
 def filter_prediction_(prediction: torch.Tensor, filter_indexes_list: list[list[int]]):
     if prediction.shape[0] != len(filter_indexes_list):
-        raise Exception("Error! The prediction and filter_indexes_list not match in dimension")
+        raise Exception(
+            "Error! The prediction and filter_indexes_list not match in dimension"
+        )
 
     for i in range(prediction.shape[0]):
         filter_indexes = filter_indexes_list[i]
         prediction[i][filter_indexes] = 0
-
-
 
 
 class ModelEngine(object):

@@ -37,7 +37,9 @@ def train(
 
 
 @torch.no_grad()
-def validation(net_model, nodes_attributes, nodes_features, graph, labels, validation_idx):
+def validation(
+    net_model, nodes_attributes, nodes_features, graph, labels, validation_idx
+):
     net_model.eval()
 
     outs = net_model(nodes_features, graph)
@@ -167,5 +169,12 @@ if __name__ == "__main__":
                     val_mask,
                 )
 
-    test(net_model, test_nodes_attributes, test_nodes_features, graph, test_labels, test_mask)
+    test(
+        net_model,
+        test_nodes_attributes,
+        test_nodes_features,
+        graph,
+        test_labels,
+        test_mask,
+    )
     # torch.save(net_model.state_dict(), "gcn.pkl")

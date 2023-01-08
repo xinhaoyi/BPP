@@ -178,7 +178,11 @@ def main():
                         val_mask,
                     )
                     test_ndcg, test_acc = test(
-                        net_model, test_nodes_features, hyper_graph, test_labels, test_mask
+                        net_model,
+                        test_nodes_features,
+                        hyper_graph,
+                        test_labels,
+                        test_mask,
                     )
                 wandb.log(
                     {

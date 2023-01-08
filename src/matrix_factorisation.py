@@ -48,10 +48,10 @@ class MF(torch.nn.Module):
             + self.global_bias
         )
         regularizer = (
-            (e_emb ** 2).sum()
-            + (r_emb ** 2).sum()
-            + (e_bias ** 2).sum()
-            + (r_bias ** 2).sum()
+            (e_emb**2).sum()
+            + (r_emb**2).sum()
+            + (e_bias**2).sum()
+            + (r_bias**2).sum()
         ) / e_emb.size()[0]
         return scores, regularizer
 

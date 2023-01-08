@@ -44,7 +44,9 @@ def train(
 
 
 @torch.no_grad()
-def validation(net_model, nodes_attributes, nodes_features, graph, labels, validation_idx):
+def validation(
+    net_model, nodes_attributes, nodes_features, graph, labels, validation_idx
+):
     net_model.eval()
     outs = net_model(nodes_features, graph)
 
@@ -173,7 +175,6 @@ def main(config=None):
 
         validation_nodes_attributes = data_loader["validation_nodes_components"]
         test_nodes_attributes = data_loader["test_nodes_components"]
-
 
         # get the train,val,test nodes features
         train_nodes_features = torch.FloatTensor(data_loader["train_nodes_features"])
