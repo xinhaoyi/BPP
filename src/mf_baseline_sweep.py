@@ -137,26 +137,26 @@ class MF_train:
 
         if "test" == evaluate_type:
             ndcg: str = "test_ndcg"
-            ndcg_3: str = "test_ndcg_res_3"
-            ndcg_5: str = "test_ndcg_res_5"
-            ndcg_10: str = "test_ndcg_res_10"
-            ndcg_15: str = "test_ndcg_res_15"
+            ndcg_3: str = "test_ndcg_3"
+            ndcg_5: str = "test_ndcg_5"
+            ndcg_10: str = "test_ndcg_10"
+            ndcg_15: str = "test_ndcg_15"
             acc: str = "test_acc"
-            acc_3: str = "test_acc_res_3"
-            acc_5: str = "test_acc_res_5"
-            acc_10: str = "test_acc_res_10"
-            acc_15: str = "test_acc_res_15"
+            acc_3: str = "test_acc_3"
+            acc_5: str = "test_acc_5"
+            acc_10: str = "test_acc_10"
+            acc_15: str = "test_acc_15"
         elif "validation" == evaluate_type:
             ndcg: str = "valid_ndcg"
-            ndcg_3: str = "valid_ndcg_res_3"
-            ndcg_5: str = "valid_ndcg_res_5"
-            ndcg_10: str = "valid_ndcg_res_10"
-            ndcg_15: str = "valid_ndcg_res_15"
+            ndcg_3: str = "valid_ndcg_3"
+            ndcg_5: str = "valid_ndcg_5"
+            ndcg_10: str = "valid_ndcg_10"
+            ndcg_15: str = "valid_ndcg_15"
             acc: str = "valid_acc"
-            acc_3: str = "valid_acc_res_3"
-            acc_5: str = "valid_acc_res_5"
-            acc_10: str = "valid_acc_res_10"
-            acc_15: str = "valid_acc_res_15"
+            acc_3: str = "valid_acc_3"
+            acc_5: str = "valid_acc_5"
+            acc_10: str = "valid_acc_10"
+            acc_15: str = "valid_acc_15"
         else:
             raise Exception('Please choose "test" or "validation" type')
 
@@ -239,7 +239,7 @@ def sweep():
             }
             sweep_config["parameters"] = parameters_dict
             pprint.pprint(sweep_config)
-            sweep_id = wandb.sweep(sweep_config, project=project_name)
+            sweep_id = wandb.sweep(sweep_config, project=f"{task}_sweep_2023_01")
 
             wandb.agent(sweep_id, main)
 
