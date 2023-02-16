@@ -56,7 +56,8 @@ class Database:
 
     def load_other_to_graph(self, name, task, subset):
         data_path = os.path.join("../data", name)
-        relation_path = os.path.join(data_path, task, subset, "relationship.txt")
+        # relation_path = os.path.join(data_path, task, subset, "relationship.txt")
+        relation_path = os.path.join(data_path, task, subset, "relationship-mask.txt")
         mat = pd.read_csv(
             relation_path, names=["entity", "reaction", "type"], header=None
         )
