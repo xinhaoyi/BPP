@@ -69,6 +69,7 @@ class MF_train:
                 best_valid_performance = valid_result["valid_ndcg"]
                 best_epoch = epoch
                 self.best_model = self.engine
+                self.best_model.save_checkpoint(self.model_save_dir) # one can use resume_checkpoint(model_dir) to resume/load a checkpoint
             print("valid_ndcg", valid_result["valid_ndcg"])
             print("valid_acc", valid_result["valid_acc"])
             print("loss")
@@ -207,9 +208,9 @@ def main(config=None):
         args["device_str"] = (
             torch.device("cuda") if torch.cuda.is_available() else torch.device("cpu")
         )
-        args["model_save_dir"] = "model_checkpoint"
+        args["model_save_dir"] = "../save_model_ckp"
         args["optimizer"] = "adam"
-        args["save_name"] = "mf.model"
+        args["save_name"] = f"mf_{config.dataset}_{config.task}_{config.learning_rate}_{config.batch_size}.bin"
         args["max_epoch"] = 100
         MF_disease = MF_train(args)
         MF_disease.train()
@@ -231,7 +232,7 @@ def sweep():
             sweep_config["metric"] = metric
             parameters_dict = {
                 "learning_rate": {"values": [0.05, 0.01, 0.005]},
-                "emb_dim": {"values": [64, 128, 256]},
+                "emb_dim": {"values": [256]},
                 "batch_size": {"values": [64, 128, 256]},
                 "model_name": {"values": [model_name]},
                 "task": {"values": [task]},

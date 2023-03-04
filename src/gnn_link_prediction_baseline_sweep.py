@@ -1,6 +1,7 @@
 import copy
 import pprint
 import time
+import os
 
 import torch
 import torch.nn.functional as F
@@ -17,6 +18,13 @@ learning_rate = 0.01
 weight_decay = 5e-4
 project_name = "gnn_link_prediction_sweep_2023_Jan"
 
+def ensureDir(dir_path):
+    """Ensure a dir exist, otherwise create the path.
+    Args:
+        dir_path (str): the target dir.
+    """
+    if not os.path.exists(dir_path):
+        os.makedirs(dir_path)
 
 def train(
     net_model: torch.nn.Module,
@@ -201,7 +209,6 @@ def main(config=None):
         device = (
             torch.device("cuda") if torch.cuda.is_available() else torch.device("cpu")
         )
-
         # initialize the data_loader
         # data_loader = DataLoaderLink("Disease", "input link prediction dataset")
         data_loader = DataLoaderLink(config.dataset, config.task)
@@ -283,6 +290,9 @@ def main(config=None):
             )
         else:
             raise Exception("Sorry, no model_name has been recognized.")
+        
+        model_save_dir = f"../save_model_ckp/{config.model_name}_{config.dataset}_{config.task}_{config.learning_rate}.bin"
+        ensureDir("../save_model_ckp")
         net_model.device = device
         # set the optimizer
         optimizer = optim.Adam(
@@ -327,6 +337,7 @@ def main(config=None):
                 "loss": loss,
                 "epoch": epoch,
             }
+            best_valid_ndcg = 0
             if epoch % 1 == 0:
                 with torch.no_grad():
                     # validation(net_model, validation_nodes_features, validation_hyper_edge_list, graph_validation, labels, val_edge_mask)
@@ -337,6 +348,10 @@ def main(config=None):
                         graph_validation,
                         validation_labels,
                     )
+                    if best_valid_ndcg<valid_result['valid_ndcg']:
+                        best_valid_ndcg = valid_result['valid_ndcg']
+                        torch.save(net_model.state_dict(), model_save_dir)
+                    
                     # valid_ndcg, valid_acc = (
                     #     valid_result["valid_ndcg"],
                     #     valid_result["valid_acc"],
@@ -373,8 +388,8 @@ def sweep():
             sweep_config["metric"] = metric
             parameters_dict = {
                 "learning_rate": {"values": [0.01, 0.05, 0.005]},
-                "emb_dim": {"values": [64, 128, 256]},
-                "drop_out": {"values": [0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7]},
+                "emb_dim": {"values": [256]},
+                "drop_out": {"values": [0.5]},
                 "weight_decay": {"values": [5e-4]},
                 "model_name": {"values": [model_name]},
                 "task": {"values": [task]},

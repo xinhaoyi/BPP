@@ -7,3 +7,4 @@ wandb
 *.log
 *.ipynb_checkpoints
 *.csv
+*.bin
