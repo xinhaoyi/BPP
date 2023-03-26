@@ -803,7 +803,10 @@ class PhysicalEntityProcessor:
 
 # The processor which deal with Reactome DataBase
 class ReactomeProcessor:
-    def __init__(self, user_name, password):
+    def __init__(self, user_name, password, version: str = ""):
+
+        self.__version = version
+
         self.__link = "bolt://localhost:7687"
 
         # user_name = 'neo4j'
@@ -1622,7 +1625,8 @@ class ReactomeProcessor:
         print("\n")
 
         # store data into a txt file
-        file_processor = FileProcessor()
+        # file_processor = FileProcessor()
+        file_processor = FileProcessorEnhance(self.__version)
         file_processor.execute_for_single_pathway_with_name_files(pathway_name, reaction_ids, reaction_names,
                                                                   physical_entity_ids, physical_entity_names,
                                                                   relationships_between_nodes_edges, component_ids,
@@ -1829,7 +1833,6 @@ class Drawer:
 
         bar.render(path)
 
-
 class FileProcessor:
     def __init__(self):
         self.filename_reactions = "edges.txt"
@@ -1952,6 +1955,63 @@ class FileProcessor:
             print("we can't find the " + url + ", please make sure that the file exists")
         finally:
             return res_list
+
+
+class FileProcessorEnhance(FileProcessor):
+    def __init__(self, version: str):
+        super(FileProcessorEnhance, self).__init__()
+        self.__version = version
+
+    def execute_for_single_pathway(self, pathway_name, reaction_ids, physical_entity_ids,
+                                   relationships_between_nodes_edges, component_ids, entity_component_mapping_list):
+        path = os.path.join("data" + self.__version, pathway_name)
+
+        # write message to the file
+        file_professor = FileProcessor()
+
+        file_professor.createFile(path, self.filename_reactions)
+        file_professor.createFile(path, self.filename_physical_entities)
+        file_professor.createFile(path, self.filename_relationships)
+        file_professor.createFile(path, self.filename_components_all)
+        file_professor.createFile(path, self.filename_components_mapping)
+
+        file_professor.writeMessageToFile(path, self.filename_reactions, reaction_ids)
+        file_professor.writeMessageToFile(path, self.filename_physical_entities, physical_entity_ids)
+        file_professor.writeMessageToFile(path, self.filename_relationships, relationships_between_nodes_edges)
+        file_professor.writeMessageToFile(path, self.filename_components_all, component_ids)
+        file_professor.writeMessageToFile(path, self.filename_components_mapping, entity_component_mapping_list)
+
+
+    def execute_for_single_pathway_with_name_files(self, pathway_name, reaction_ids, reaction_names,
+                                                   physical_entity_ids,
+                                                   physical_entity_names,
+                                                   relationships_between_nodes_edges, component_ids, component_names,
+                                                   entity_component_mapping_list):
+
+        path = os.path.join("data" + self.__version, pathway_name)
+
+        # write message to the file
+        file_professor = FileProcessor()
+
+        file_professor.createFile(path, self.filename_reactions)
+        file_professor.createFile(path, self.filename_reactions_names)
+        file_professor.createFile(path, self.filename_physical_entities)
+        file_professor.createFile(path, self.filename_physical_entities_names)
+        file_professor.createFile(path, self.filename_relationships)
+        file_professor.createFile(path, self.filename_components_all)
+        file_professor.createFile(path, self.filename_components_all_names)
+        file_professor.createFile(path, self.filename_components_mapping)
+
+        file_professor.writeMessageToFile(path, self.filename_reactions, reaction_ids)
+        file_professor.writeMessageToFile(path, self.filename_reactions_names, reaction_names)
+        file_professor.writeMessageToFile(path, self.filename_physical_entities, physical_entity_ids)
+        file_professor.writeMessageToFile(path, self.filename_physical_entities_names, physical_entity_names)
+
+        file_professor.writeMessageToFile(path, self.filename_relationships, relationships_between_nodes_edges)
+        file_professor.writeMessageToFile(path, self.filename_components_all, component_ids)
+        file_professor.writeMessageToFile(path, self.filename_components_all_names, component_names)
+
+        file_professor.writeMessageToFile(path, self.filename_components_mapping, entity_component_mapping_list)
 
 
 if __name__ == '__main__':

@@ -30,6 +30,18 @@ def extract_data_from_reactome():
     reactome_processor.execution_on_single_pathway_via_name_enhanced("Signal Transduction")
 
 
+def extract_data_from_reactome_with_version(version: str):
+    reactome_processor = ReactomeProcessor('neo4j', '123456', version)
+
+    reactome_processor.execution_on_single_pathway_via_name_enhanced("Disease")
+
+    reactome_processor.execution_on_single_pathway_via_name_enhanced("Immune System")
+
+    reactome_processor.execution_on_single_pathway_via_name_enhanced("Metabolism")
+
+    reactome_processor.execution_on_single_pathway_via_name_enhanced("Signal Transduction")
+
+
 def divide_data_set():
     print("\033[1;36m" + "Disease" + "\033[0m" + "\n")
     disease = ReactomeDataDivider("Disease")
@@ -66,9 +78,11 @@ if __name__ == '__main__':
 
     # extract the data from Reactome
     # extract_data_from_reactome()
+    extract_data_from_reactome_with_version("_version_83")
+
 
     # divide the dataset
-    divide_data_set()
+    # divide_data_set()
 
 
 

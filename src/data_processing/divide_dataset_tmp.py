@@ -156,13 +156,13 @@ class DataSetTextMessage:
         # "attribute prediction dataset", "input link prediction dataset", "output link prediction dataset"
         self.task_name: str = ""
         # "train", "validation", "test"
-        self.type_name: str= ""
+        self.type_name: str = ""
 
     def initialize(self, **args):
         if "pathway_name" in args.keys():
             self.pathway_name = args["pathway_name"]
         else:
-            raise Exception("pathway_name is needed!")
+            raise Exception("pathway name is needed!")
 
         if "task_name" in args.keys():
             self.task_name = args["task_name"]
