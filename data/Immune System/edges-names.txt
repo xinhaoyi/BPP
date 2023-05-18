@@ -27,6 +27,7 @@ ALPK1:ADP-heptose binds TIFA
 ALPK1:ADP-heptose:TIFA oligomer recruits TRAF6
 ALPK1:ADP-heptose:p-T9-TIFA oligomer:K63pUb-TRAF6 oligomer recruits MAP3K7 (TAK1)
 ASC binds Caspase-8 complex
+ASC is recruited via a PYD-PYD interaction
 ATP binds to P2X7
 ATP7A transports cytosolic Cu2+ to phagosomal lumen
 Activated IKK phosphorylates I-kappaB
@@ -36,7 +37,7 @@ Activated NOD1 oligomerizes
 Activated NOD2 oligomerizes
 Activated TAK1 mediates phosphorylation of the IKK Complex
 Activated TAK1 phosphorylates MKK4/MKK7
-Activated TLR2/4 interacts with MAL (TIRAP)
+Activated TLR2/4 interacts with MAL(TIRAP)
 Activated TLR2/4:TIRAP interacts with BTK
 Activated TLR3:TRIF:K63pUb-TRAF6 recruits TAK1complex
 Activated TLR4:TICAM1 recruits TRAF6
@@ -100,8 +101,6 @@ Active FLT3:GRB2:p-Y-GAB2 binds PIK3R1
 Active FLT3:GRB2:p-Y-GAB2 binds PTPN11
 Active FLT3:p-Y GRB10:PIK3R1 binds PIK3CA
 Active FLT3:p-Y-GRB10 binds PIK3R1
-Active IKBKB phosphorylates NF-kappa-B inhibitor 
-Active IKK Complex phosphorylates NF-kappa-B inhibitor 
 Active NIK phosphorylates IKKA dimer
 Active NIK:p-S176,180-IKKA dimer phosphorylates p100:RELB
 Active PLCG1 hydrolyses PIP2
@@ -143,7 +142,6 @@ BRWD1 binds AcK(9,14,18,79)-p(S10,T11)-histone H3
 BRWD1 binds SMARCA4
 BRWD1 gene expression is repressed by STAT5
 BTK autophosphorylates
-BTK binds BTK inhibitors
 BTLA interacts with HVEM
 BTN1A1 binds xanthine oxidoreductase (XDH)
 BTN2A1 binds DC-SIGN
@@ -167,9 +165,8 @@ Binding of defensins to lipid II
 Binding of newly synthesized MHC class I heavy chain (HC) with calnexin
 Branching and elongation of mother and daughter filaments
 Budding of COPII coated vesicle
+C-ter TLR7 dimer bind TLR7, TLR8 ligands
 C-ter TLR7 dimer binds HCQ
-C-ter TLR7 dimer binds TLR7, TLR8 ligands
-C-ter TLR7 dimer binds imiquimod
 C-ter TLR9 dimer binds HCQ
 C1-Inh binds Antigen: antibody: C1 complex activated C1r, C1s
 C1-Inh binds and inactivates C1r, C1s
@@ -183,7 +180,6 @@ C4b binding protein binds Protein S
 C4b binding protein displaces C2a
 C4b binds to cell surface
 C4b-binding protein binds C4b
-C5 binds C5 inhibitors
 C5AR2 binds anaphylatoxins and thier desArginated derivatives
 C5a receptor binds C5a anaphylatoxin
 C5b binds C6
@@ -198,7 +194,6 @@ CANX dissociates from IL27:EBI3
 CARD9 binds RIP2 (and NOD2)
 CARMA1 recruits MALT1 and BCL10 forming CBM Complex
 CARMA1:BCL10:MALT1 complex recruits TAK1 and IKK
-CASP8 cleaves N4BP1 at D424, D490
 CBL binds B-cell linker protein
 CBL binds CRK
 CBL binds VAV
@@ -231,7 +226,6 @@ CD70 binds CD27
 CD96 binds PVR
 CFHR dimers bind C3b
 CHGA-derived peptide binds the bacterial cell surface
-CHUK, IKBKB and IKBKG form IKK complex
 CL-LK binds carbohydrates on target cell surface
 CLEC10A binds Tn-MUC1
 CLEC2B binds KLRF1 dimer
@@ -254,15 +248,7 @@ CRLF1 binds CLCF1
 CRLF1:CLCF1 binds CNTRF
 CRLF1:IL27 translocates to the extracellular region
 CRTAM binds to NECL2
-CSF3 dimer (GCSF dimer) binds CSF3R:JAK1:LYN
-CSF3 dimer:2xCSF3R:LYN:JAK1 induces phosphorylation of JAK1
-CSF3 dimer:2xK48polyUb-K655,p-4Y-CSF3R:LYN:p-Y-JAK1:p-JAK2:p-Y-SYK:p-HCK:p-TYK2 translocates from the endocytic vesicle membrane to the lysosomal membrane
-CSF3 dimer:2xp-4Y-CSF3R:LYN:p-Y-JAK1 binds and activates JAK2, TYK2, SYK, and HCK
-CSF3 dimer:2xp-4Y-CSF3R:LYN:p-Y-JAK1:p-JAK2:p-SYK:p-HCK:p-TYK2 binds STAT1,3,5
-CSF3 dimer:2xp-4Y-CSF3R:LYN:p-Y-JAK1:p-JAK2:p-SYK:p-HCK:p-TYK2:p-Y-STAT1,3,5 dissociates yielding CSF3 dimer:2xp-4Y-CSF3R:LYN:p-Y-JAK1:p-JAK2:p-SYK:p-HCK:p-TYK2 and p-Y-STAT1,3,5
-CSF3 dimer:2xp-4Y-CSF3R:LYN:p-Y-JAK1:p-JAK2:p-TYK2 binds and phosphorylates SHC1, GRB2, GAB2, and PTPN11 (SHP2)
 CSF3 dimer:CSFR binds CSFR
-CSF3 dimer:CSFR:LYN:JAK1 binds CSFR:LYN:JAK1
 CSF3R binds CSF3 dimer
 CTF1 binds LIFR:JAKs
 CTLA-4 binds B7-1/B7-2
@@ -535,7 +521,6 @@ HNP1-3 bind gp120
 HNP1-4 are released into phagocytic vacuoles
 HNP1-4 are stored in primary neutrophil granules
 HOCl-induced glycosaminoglycan fragmentation
-HSP90 binds TBK1 and IRF3
 HTN1,HTN3 or HTN5 binds the bacterial anionic surface 
 HTN5, (HTN1, HTN3) binds fungal SSA1/SSA2
 HV1-mediated H+ transfer
@@ -561,8 +546,6 @@ IFI16 binds cytosolic dsDNA
 IFN alpha/beta binds to IFNAR2
 IFNAR1:TYK2 binds TYK2 inhibitors
 IFNAR2:JAK1:STAT2 binds JAK1,2 inhibitors
-IFNAR2:JAK1:STAT2 binds type 1 interferon analogs
-IFNG dimer binds IFNG inhibitors
 IFNG dimer binds IFNGR
 IFNGR1:JAK1:INFGR2:JAK2 binds JAK1,2 inhibitors
 IFNL1 binds IL10RB:TYK2 and IFNLR1:JAK1
@@ -572,7 +555,7 @@ IFNL1:p-Y343,Y517-IFNLR1:p-JAK1:IL10RB:p-TYK2:STAT1 phosphorylates STAT1, STAT2,
 IFNL1:p-Y434,Y517-IFNLR1:p-JAK1:IL10RB:p-TYK2 binds STAT1, STAT2, STAT3, STAT4, STAT5
 IFNL2,IFNL3 bind IL10RB:TYK2 and IFNLR1:JAK1
 IKBA is phosphorylated by Phospho IKKB kinase
-IKBIP binds IKBKB and CHUK
+IKBKA, IKBKB and IKBKG form IKK complex
 IKBKB phosphorylates NFkB p105 within the NFkB p105:TPL2:ABIN2 complex
 IKBKB phosphorylates TPL2 (MAP3K8) at Ser400
 IKBKG subunit of IKK complex binds K63pUb- RIP1 within the TLR3 complex
@@ -723,7 +706,7 @@ IL6 binds IL6R-2
 IL6:IL6R binds IL6ST:JAK1,JAK2,(TYK2)
 IL6:IL6R-2 binds IL6ST-2
 IL6:IL6R-2 binds IL6ST:JAK1, JAK2, (TYK2)
-IL6R binds IL6R inhibitors
+IL6R binds tocilizumab
 IL6ST is tyrosine phosphorylated
 IL7 binds HGF(495-728) to form PPBSF
 IL7 binds IL7R:JAK1
@@ -776,8 +759,6 @@ ISGylation of protein phosphatase 1 beta (PP2CB)
 ISGylation of protein translation regulator 4EHP
 ISGylation of viral protein NS1
 ITGA4:ITGB1 binds natalizumab
-IgE binds FCERI
-IgE binds omalizumab
 Inactivation of LCK by PTPN22
 Inactivation of Lck by Csk
 Inhibition of DDX58/IFIH1 signaling by ATG5:ATG12:MAVS
@@ -899,7 +880,6 @@ LIFR:JAKs bind gp130:JAKs:CNTFR
 LILRs interact with MHC Class I
 LRR FLII-interacting protein 1 associates with beta-catenin
 LRR FLII-interacting protein 1 binds dsDNA
-LRRC14 binds IKBKB and CHUK
 LTA trimer binds TNFRSF1A,1B,14
 LYN and FYN phosphorylate FCER1G in CLEC6A:FCERG and CLEC4E:FCERG
 LYN phosphorylates CD22
@@ -919,9 +899,7 @@ MALT1 binds BCL10
 MAP3K8 is phosphorylated
 MAPK8 phosphorylation
 MAPKAPK2 phosphorylates CREB at Serine 133
-MAVS binds TOMM70
 MAVS interacts with RIPK1 and FADD
-MAVS:TOMM70 recruits HSP90:TBK1:IRF3
 MBL binds to repetitive carbohydrate structures on the surfaces of viruses, bacteria, fungi, and protozoa
 MDP elicits a NOD2 response
 MDP:NLRP1 binds ATP
@@ -950,30 +928,26 @@ Myeloperoxidase (MPO) catalyzes oxidation of nitrite to nitrogen dioxide
 Myeloperoxidase (MPO) produces hypochlorous acid (HOCl)
 N2O3 diffuses to phagosome
 N2O3 enters bacteria
-N4BP1 binds IKBKG
 NCK binds PAK
 NCK recruits WASP
 NCR3LG1 binds NCR3
 NEMO binds polyubiquitinated IRAK1
 NEMO subunit of IKK complex binds to activated IRAK1
 NEMO subunit of IKK complex binds to activated IRAK1 upon stimulation of TLR7/8 or 9.
-NF-kappa-B complex is transported from cytosol to nucleus
-NF-kappa-B inhibitor binds NF-kappa-B complex
 NF-kappaB translocates from the cytosol to the nucleus
 NFKB p105, TPL2 (COT) and ABIN2 form a stable complex
 NFKB1:RELA translocates from the cytosol to the nucleus
+NFkB complex is transported from cytosol to nucleus
 NFkB complex translocates from the cytosol to the nucleus
+NFkB inhibitor binds NFkB complex
 NIK autophosphorylates on T559
 NKG2D homodimer interacting with ligands
-NLRC5 binds IKBKB and CHUK
 NLRC5 interacts with DDX58/IFIH1
 NLRP1 senses MDP
 NLRP3 activation by elicitor proteins
 NLRP3 activation by small molecules
-NLRP3 recruits PYCARD (ASC) via a PYD-PYD interaction
 NLRP4 and DTX4 associate with p-S172-TBK1 within STING:TBK1:IRF3
 NLRP4 and DTX4 associate with p-S172-TBK1 within dsDNA:ZBP1:TBK1
-NLRX1 binds CHUK:IKBKB:IKBKG
 NLRX1 inhibits MAVS-DDX58 interaction.
 NO and NO2 react to N2O3
 NOD1 induced apoptosis is mediated by RIP2 and CARD8
@@ -1040,7 +1014,7 @@ PLA2G2A binds bacterial phospholipids
 PLC-gamma1 hydrolyses PIP2
 PLCG1 binds p-6Y-SYK:p-Y65,Y76-FCER1G
 PLCG2 translocates from cytosol to plasma membrane
-PP2A binds CTLA4 dimer
+PP2A binds CTLA4 homodimer
 PRKCB (PKC-beta) phosphorylates CARMA1
 PRKCB (Protein kinase C beta, PKC-beta) binds diacylglycerol and phosphatidylserine
 PRLR activation
@@ -1067,7 +1041,6 @@ PTPN22 dissociates from CSK
 PTPNs gene transcription and translation
 PTPRJ dephosphorylates active FLT3
 PVR binds CD226
-PYCARD recruits procaspase-1 via CARD
 Partial proteolysis of antigen in phagolysosomes
 Pellino binds hp-IRAK1:TRAF6
 Pellino binds hp-IRAK1:TRAF6 upon TLR7/8 or 9 activation
@@ -1079,6 +1052,7 @@ Peroxynitrite and carbon dioxide react to nitrosoperoxycarbonate
 Peroxynitrite enters the bacterium
 Peroxynitrite oxidizes Cys residues
 Peroxynitrite oxidizes Peptide-Methionine residues
+Phospho-IKK Complex phosphorylates NFkB inhibitor within the NFkB inhibitor:NFkB complex
 Phosphorylated BLNK (SLP65, in Antigen:p-BCR:p-SYK:p-BLNK:CIN85:GRB2:SOS1) binds BTK, PLCG2, VAV1, NCK1
 Phosphorylated BTK phosphorylates PLCG2
 Phosphorylated MAPKs phosphorylate ATF-2
@@ -1138,7 +1112,6 @@ Phosphorylation of STAT1 by JAK kinases
 Phosphorylation of STAT2
 Phosphorylation of SYK
 Phosphorylation of SYK by Src kinases
-Phosphorylation of TBK1/IKBKE
 Phosphorylation of TBSMs in LAT
 Phosphorylation of TEC kinases by p-SYK
 Phosphorylation of VAV
@@ -1182,7 +1155,7 @@ RNASEL cleaves cellular ssRNA
 RNASEL cleaves viral ssRNA
 RNASEs bind bacterial LPS, PGN
 RNASEs bind bacterial phospholipids
-RNF125 mediated ubiquitination of DDX58, IFIH1 and MAVS
+RNF125 mediated ubiquitination of DDX58, IFIH1 and MADS
 ROS oxidize thioredoxin
 RSK1/2/3 phosphorylates CREB at Serine 133
 Rab5-mediated recruitment of class III PI3K to TLR9
@@ -1192,6 +1165,7 @@ RasGRP interacts with DAG and Ca2+
 RasGRP1 and RasGRP3 binds diacylglycerol and is phosphorylated
 Recruited STAT5 is phosphorylated
 Recruitment TBK1 to dsDNA:ZBP1 followed by its activation
+Recruitment of AIP4 and K48 ubiquitination of MAVS/IPS-1
 Recruitment of CRKII:DOCK180:ELMO complex to FCGR
 Recruitment of GAB2 to PM and FCERI by binding to GRB2
 Recruitment of GADS:SLP-76 to p-5Y-LAT
@@ -1203,7 +1177,6 @@ Recruitment of IKK complex
 Recruitment of IRF3 to activated ZBP1:TBK1
 Recruitment of IRF3,IRF7
 Recruitment of IRF7 to TRAF6
-Recruitment of ITCH and K48 ubiquitination of MAVS
 Recruitment of ITK to SLP-76
 Recruitment of PAK to the membrane by binding active RAC1
 Recruitment of PI3K to plasma membrane
@@ -1282,10 +1255,6 @@ SLAMF7 binds SLAMF7
 SOCS binding to GHR
 SOCS binding to JAK2
 SOCS-1 and SOCS-3 binds to p-JAK2
-SOCS1,3 binds p-4Y-CSF3R:CSF3 dimer:LYN:p-Y-JAK1:p-JAK2:p-SYK:p-HCK:p-TYK2
-SOCS1,3 ubiquitinates CSF3R in SOCS1,3:p-4Y-CSF3R:CSF3 dimer:LYN:p-Y-JAK1:p-JAK2:p-SYK:p-HCK:p-TYK2:CUL5:ELOB:ELOC:RNF7
-SOCS1,3:p-4Y-CSF3R:CSF3 dimer:LYN:p-Y-JAK1:p-JAK2:p-SYK:p-HCK:p-TYK2 binds CUL5, ELOB, ELOC, RNF7
-SOCS1,3:p-4Y-CSF3R:CSF3 dimer:LYN:p-Y-JAK1:p-JAK2:p-SYK:p-HCK:p-TYK2 is endocytosed
 SOCS3 binds IL6ST
 SOCS5,(SOCS1) bind IL4RA
 SOS mediated nucleotide exchange of RAS (SHC)
@@ -1294,7 +1263,6 @@ SRC kinase phosphorylates CLEC7A:1,3-beta-D-glucan
 STAT1 and STAT3 dimers translocate to the nucleus
 STAT1 and STAT4 associate with IL12RB2:IL6ST receptor
 STAT1 associates with IL6ST:IL6ST
-STAT1 stimulates SMAD7 gene transcription
 STAT1, STAT3 bind p-Y611-IL27RA from Interleukin-27:Interleukin-27 receptor complex
 STAT1,STAT3 are phosphorylated by IL26:IL10RB:p-TYK2:IL20RA:p-JAK1:STAT1
 STAT1,STAT3 associate with IL27RA:IL12RB2 receptor
@@ -1360,11 +1328,8 @@ TAX1BP1:A20 inhibit TBK1/IKKi K63-polyubiquitination
 TBK1 binds amlexanox
 TBK1 is phosphorylated within STING:TBK1:IRF3 complex
 TBK1 is phosphorylated within STING:TBK1:STAT6 complex
-TBK1 or IKBKE forms homodimers
 TBK1 phosphorylates STAT6 at Ser407
 TBK1 phosphorylation
-TBK1, IKBKE are autophosphorylated at Ser172
-TBK1, IKBKE form homodimers
 TBK1/IKK epsilon complex interacts with MAVS bound TRAF3
 TCR binds microbial lipid-based antigen via CD1
 TCR binds self-lipid-based antigen via CD1
@@ -1395,11 +1360,8 @@ TNFSF18 binds TNFRSF18
 TNFSF8 binds TNFRSF8
 TNFSF9 binds TNFRSF9
 TORC2 (mTOR) phosphorylates AKT at S473
-TP53 binds the IKBIP gene promoter
-TP53 stimulates IKBIP gene expression
 TPL2 phosphorylates MEK1, SEK1
 TRAF2 ubiquitinates cIAP1,2 in cIAP1,2:TRAF1:TRAF2:TRAF3:NIK
-TRAF2,6 ubiquitinates NLRC5
 TRAF2:TRAF1:cIAP1,2:TRAF3:NIK regulatory complex binds CD40
 TRAF2:TRAF1:cIAP1,2:TRAF3:NIK regulatory complex binds LTBR
 TRAF2:cIAP1/2 complex binds FN14:TWEAK
@@ -1434,6 +1396,7 @@ TXLNA (IL14) binds syntaxin4
 TXNIP binds NLRP3
 TXNIP binds reduced thioredoxin
 TXNIP is released from oxidized thioredoxin
+The CARD domain of ASC recruits Procaspase-1
 The Immunoglobulin of the BCR binds antigen
 The Interleukin 1 receptor complex binds Tollip
 The SHC1:SHIP1 complex is stabilized by GRB2
@@ -1481,12 +1444,9 @@ Tyrosine phosphorylation of STAT1, STAT3 by IL6 receptor
 UBE2N:UBE2V1 dissociates from hp-IRAK1:3xK63-polyUb-TRAF6:3xUBE2N:UBE2V1
 UBP43 binds IFNAR2 and prevents JAK1 interaction
 UNC93B1 delivers endosomal full-length TLRs to endolysosome
-USP14 deubiquitinates NLRC5
-USP18 binds IKBKG within IKK complex
 Ubiquitinated IkB is degraded
 Ubiquitinated and phosphorylated IKBA binds to and is degraded by the proteasome complex
 Ubiquitination of FLT3
-Ubiquitination of IKBKG by TRAF6
 Ubiquitination of NEMO by TRAF6
 Uncoating of clathrin-coated vesicles and fusion with endosomes
 VAF/pIRF7:CBP/p300 binds the promoters of type-I IFN genes
@@ -1542,7 +1502,6 @@ p-SLP-76:ADAP binds Ena/VASP
 p-STAT1 and p-STAT3 dissociates from IL26:IL10RB:p-TYK2:IL20RA:p-JAK1
 p-STAT1 and p-STAT4 dissociate from IL12RB2:IL6ST receptor
 p-STAT1 binds p-STAT3
-p-STAT1 dimer binds KPNA1
 p-STAT1 dimer translocates from the cytosol to the nucleoplasm
 p-STAT1 dimerizes
 p-STAT1 dissociates from IL6ST:IL6ST
@@ -1550,7 +1509,6 @@ p-STAT1, p-STAT3 dissociate from IL27RA:IL12RB2 receptor
 p-STAT1, p-Y-STAT2, p-STAT3, p-STAT4, p-STAT5 dissociates from IFNL1:p-Y343,Y517-IFNLR1:p-JAK1:IL10RB:p-TYK2:p-STAT1,p-STAT2,p-STAT3,p-STAT4,p-STAT5
 p-STAT1,p-STAT3 dissociate from IL24:IL20RA:p-Y1022,Y1023-JAK1:IL20RB:p-STAT1, p-STAT3
 p-STAT1:p-STAT4 translocates to the nucleus
-p-STAT1dimer:KPNA1 binds KPNB1
 p-STAT3 dimer translocates from cytosol to nucleoplasm
 p-STAT3 dimerizes
 p-STAT3 dissociates from IL20:IL20RA:JAK1:IL20RB:p-Y1007,Y1008-JAK2,p-JAK3
@@ -1567,22 +1525,13 @@ p-STAT5A/B dissociates from the Growth Hormone receptor
 p-SYK and LYN phosphorylate BTK
 p-T,4S-IRF3 is dimerized
 p-T,4S-IRF3:p-T,4S-IRF3:CREBBP, EP300 binds promoters of Interferon-beta
-p-Y-JAK1 phosphorylates CSF3R in CSF3 dimer:2xCSF3R:LYN:p-Y-JAK1
-p-Y-JAK1,2 phosphorylates STAT1,3,5 in CSF3 dimer:2xp-4Y-CSF3R:LYN:p-Y-JAK1:p-Y-JAK2:p-TYK2
 p-Y-JAK1,p-Y-TYK2 phosphorylate IL10RA
-p-Y-STAT1,3,5 dimer binds SOCS1 gene
-p-Y-STAT1,3,5 dimer binds SOCS3 gene
-p-Y-STAT1,3,5 dimer enhances expression of SOCS1
-p-Y-STAT1,3,5 dimer enhances expression of SOCS3
-p-Y-STAT1,3,5 dimer translocates from the cytosol to the nucleoplasm
-p-Y-STAT1,3,5 dimerize
 p-Y-STAT3 and p-STAT5 dissociates from IL15:IL15RA:IL2RB:p-JAK1:IL2RG:p-JAK3:p-Y-STAT3:p-STAT5
 p-Y-STAT3 binds p-STAT5
 p-Y-STAT3:p-STAT5 translocates to the nucleus
 p-Y-STATs dimerize
 p-Y-STATs dissociate
 p-Y-STATs translocate to nucleus
-p-Y546,Y584-PTPN11 (in CSF3 dimer:2xp-4Y-CSF3R:LYN:p-Y-JAK1:p-JAK2:p-SYK:p-HCK:p-TYK2:SHC:GRB2:PTPN11) dephosphorylates KRAS
 p-Y649-STAT5A, p-STAT5B dimerizes
 p-Y693-STAT4 dimerizes
 p-Y693-STAT4 dissociates after IL12:IL12R interaction
@@ -1619,5 +1568,5 @@ sBAFF,sAPRIL binds TACI,BCMA
 sIL27RA translocates from the cytoplasm to the extracellular region
 viral HA binds NCRI
 viral dsRNA binds DDX58
-viral dsRNA binds IFIH1:TKFC
+viral dsRNA binds IFIH1:DAK
 viral dsRNA:IFIH1, viral dsRNA:K63polyUb-DDX58 bind MAVS

@@ -6,6 +6,7 @@
 14-3-3 beta, zeta
 2'-5' oligoadenylate
 2'-deoxyadenosine 5'-monophosphate
+2'-deoxyguanosine 5'-monophosphate
 2.5DHBA
 2x Activated C1R:SERPING1:2x Activated C1S:SERPING1
 2xHC-TXN
@@ -13,7 +14,6 @@
 2xN4GlycoAsn-TLR4
 2xp-S349-PRLR:2xJAK2
 2xp-S477,S479-IRF7
-2xp-Y-STAT1
 2xviral dsRNA:2xK63polyUb-DDX58:2xRNF135,TRIM25:2xATP
 3xBAFFR:BAFF trimer
 3xBAFFR:BAFF trimer:TRAF3:NIK
@@ -27,13 +27,9 @@
 4xPalmC-CD36
 5'-ppp poly-U/UC RNA variants
 5'-ppp-AU-rich dsRNA
-8 homodimer
 8,5'-cdA
 8,5'-cdG
-8:antigen peptide bound class I MHC
-9b homodimer
 A1BG
-AA
 AAMP
 ABCA13
 ABCE1
@@ -107,6 +103,7 @@ APEH
 APP(672-711)
 APP(672-713)
 APRT
+ARA
 ARF1
 ARF1 gene
 ARG1
@@ -172,8 +169,8 @@ Active NIK
 Active NIK:p-S176,180-IKKA dimer
 Active NIK:p-S176,180-IKKA dimer:p-7S-p100:RELB
 Adaptor protein 2 complex
-Allergen
-Allergen:p-LYN:p-FCERI:IgE aggregate
+Allergin
+Allergin:p-LYN:p-FCERI:IgE aggregate
 Alpha-defensin dimers
 Alpha-defensin dimers:anionic phospholipids
 Alpha-hemolysin
@@ -189,7 +186,6 @@ Antigen:IgG:C1Q:2x Activated C1R:2x Activated C1S
 Antigen:p-BCR
 Antigen:p-BCR:p-SYK
 Antigen:p-BCR:p-SYK:p-BLNK:CIN85:GRB2:SOS1
-Antigen:p-BCR:p-SYK:p-BLNK:CIN85:GRB2:SOS1:BTK:NCK1:VAV1:PLCG2
 Arf1-GTP
 Asb
 Autophosphorylated FLT3
@@ -217,7 +213,7 @@ BCMA
 BCR
 BIN2
 BIRC5
-BIRC5 Gene
+BIRC5 gene
 BLNK
 BOLA2
 BOLA2 gene
@@ -235,7 +231,6 @@ BST1
 BST2
 BST2 gene
 BTK
-BTK inhibitors
 BTK:PIP3
 BTLA
 BTN1A1
@@ -255,7 +250,6 @@ BTRC:CUL1:SKP1
 Bacterial mannose surface pattern
 Bcl-2/Bcl-X(L)
 Bcl10 trimer bound to CARMA1 trimer
-Beclin-1 complex
 Beta defensins 1,4A,103
 Beta defensins 4A,103
 Beta-defensins
@@ -307,10 +301,8 @@ C4b-binding protein
 C4b:C2a:C3b
 C4c
 C4d
-C5
 C5 alpha chain
 C5 beta chain
-C5 inhibitors
 C5(965-1676)
 C5AR1
 C5AR2
@@ -475,7 +467,7 @@ CD79A
 CD79B
 CD8
 CD80
-CD80 dimer
+CD80 (B7-1) homodimer
 CD80 gene
 CD81
 CD86
@@ -500,6 +492,7 @@ CDKN1B
 CDKN1B gene
 CEACAM1
 CEACAM3
+CEACAM6
 CEACAM8
 CEBPD
 CEBPD gene
@@ -625,26 +618,18 @@ CSF2RA
 CSF2RB
 CSF3
 CSF3 dimer
-CSF3 dimer:2xK48polyUb-K655,p-4Y-CSF3R:LYN:p-Y-JAK1
-CSF3 dimer:2xp-4Y-CSF3R:LYN:p-Y-JAK1
-CSF3 dimer:2xp-4Y-CSF3R:LYN:p-Y-JAK1:p-JAK2:p-Y-SYK:p-HCK:p-TYK2
 CSF3 dimer:CSF3R
-CSF3 dimer:CSF3R:LYN:JAK1
-CSF3 dimer:CSF3R:LYN:p-Y-JAK1
-CSF3 dimer:p-4Y-CSF3R:LYN:p-Y-JAK1
 CSF3 gene
 CSF3R
-CSF3R:LYN:JAK1
-CSF3R:LYN:p-Y-JAK1
 CSK
 CSNK2B
 CST3
 CSTB
 CTF1
 CTF1:LIFR:JAKs
+CTLA-4 homodimer
+CTLA-4:PP2A
 CTLA4
-CTLA4 dimer
-CTLA4 dimer:PP2A
 CTNNB1
 CTSA(29-326)
 CTSA(327-480)
@@ -657,7 +642,6 @@ CTSS
 CTSZ
 CUL1
 CUL1:FBXW11:SKP1
-CUL5
 CXADR
 CXCL1 gene
 CXCL1(35-107)
@@ -833,8 +817,6 @@ ELANE
 ELANE, CTSG, PRTN3
 ELK1
 ELMO1,ELMO2
-ELOB
-ELOC
 EMR3(22-652)
 ENAH
 ENPP4
@@ -856,7 +838,6 @@ FASLG gene
 FASLG(1-281)
 FBXL4
 FCAR
-FCER1A
 FCER1G
 FCER2 gene
 FCER2(1-321)
@@ -978,8 +959,6 @@ GNLY
 GNS
 GOLGA7
 GPI
-GPI-CEACAM6
-GPI-PLAUR
 GPIN-CD14(20-345)
 GPR84
 GPR97
@@ -990,8 +969,6 @@ GRB2-1
 GRB2-1:SOS1
 GRN
 GSDMD
-GSDMD oligomer:PIPs
-GSDME(1-270)
 GSH
 GSN
 GSNO
@@ -1109,6 +1086,7 @@ HLA class II histocompatibility antigen, DP
 HLA class II histocompatibility antigen, DP alpha chain precursor
 HLA class II histocompatibility antigen, DQ
 HLA class II histocompatibility antigen, DQ beta 2 chain
+HLA class II histocompatibility antigen, DQB1*0602 beta chain precursor
 HLA class II histocompatibility antigen, DR alpha chain precursor
 HLA class II histocompatibility antigen, DR beta 4 chain
 HLA class II histocompatibility antigen, DR beta 5 chain
@@ -1161,10 +1139,6 @@ HPSE(158-543)
 HPSE(36-109)
 HRNR
 HSP9 gene
-HSP90
-HSP90-beta dimer
-HSP90:HSP90
-HSP90:TBK1:IRF3
 HSP90AA1
 HSP90AA1 gene
 HSP90AA1,HSP90AB1
@@ -1295,11 +1269,10 @@ IGHG1
 IGHG1 gene
 IGHG4
 IGHG4 gene
-IKBIP
-IKBIP gene
 IKBKB
 IKBKE
 IKBKG
+IKK related kinases TBK1/IKK epsilon
 IL-35:(IL6ST:p-JAK1:p-JAK2) dimer
 IL10
 IL10 dimer
@@ -1351,7 +1324,7 @@ IL16(1-1332)
 IL16(1212-1332)
 IL17A
 IL17A dimer
-IL17A dimer,IL17F dimer,IL17A:IL17F
+IL17A dimer,L17F dimer,IL17A:IL17F
 IL17A gene
 IL17A:IL17F
 IL17C
@@ -1531,7 +1504,6 @@ IL6:IL6RA:Tyrosine phosphorylated IL6RB:Activated JAKs
 IL6:sIL6R:IL6RB:JAKs
 IL6R
 IL6R gene
-IL6R inhibitors
 IL6R-2
 IL6ST
 IL6ST-2
@@ -1603,8 +1575,6 @@ ISG15:UBEIL/UbcH8:CEB1
 ISG20
 ISG20 gene
 ISGF3
-ISGF3:KPNA1
-ISGF3:KPNA1:KPNB1
 ISGylated 4EHP
 IST1
 ITCH
@@ -1617,7 +1587,7 @@ ITGAV(31-1048)
 ITGAX
 ITGAX gene
 ITGB1
-ITGB1 gene
+ITGB1 Gene
 ITGB2
 ITGB2  gene
 ITGB7
@@ -1629,7 +1599,6 @@ ITPR:I(1,4,5)P3 tetramer
 Ig Antibody Light Chain
 Ig Heavy Chain V Region
 IgE
-IgE Heavy Chain
 IgG
 IgM or IgD
 Imidazoquinoline compounds
@@ -1679,8 +1648,6 @@ K63polyUb
 K63polyUb-DDX58
 K63polyUb-IRF7
 K63polyUb-NEMO
-K63polyUb-NLRC5
-K63polyUb-NLRX1
 K63polyUb-RIPK1
 K63polyUb-STING
 K63polyUb-TANK
@@ -1722,7 +1689,6 @@ KLRF1
 KLRF1 dimer
 KLRG1
 KLRK1
-KPNA1
 KPNB1
 KRT1
 KW-2449
@@ -1788,7 +1754,6 @@ LPS:secreted CD14
 LRG1
 LRMP
 LRR FLII-interacting protein 1 dimer
-LRRC14
 LRRC7
 LRRFIP1
 LTA
@@ -1808,7 +1773,6 @@ Lipid-OOH
 Lipoteichoic acid
 Long prodomain caspases
 Lymphoid-expressed Fc-gamma receptors
-M
 M. tuberculosis dsDNA
 MADCAM1-1
 MAGT1
@@ -1847,7 +1811,6 @@ MAPKs
 MASP1 dimer
 MASP2-1 dimer
 MAVS
-MAVS:TOMM70
 MB21D1
 MBL2 dodecamer
 MBL2 dodecamer:MASP1 dimer:MASP2-1 dimer
@@ -1904,7 +1867,6 @@ MPO dimer
 MPO:ferriheme
 MR/other probable receptors
 MRE11A
-MS4A2
 MS4A3
 MSN
 MSN gene
@@ -1940,17 +1902,12 @@ Myosin
 Myosin-X dimer
 Myr82K-Myr83K-IL1A
 MyrG-p-S16-TICAM2
-MyrG2-PalmC3-LYN
-N dimer
 N-WASP
 N-acetyl-D-glucosamine
 N-acetylgalactosamine
 N-myristoyl GAG (P12493) protein
 N-ter TLR9 dimer
 N2O3
-N4BP1
-N4BP1(1-424)
-N4BP1(1-490)
 NADP+
 NADPH
 NANOG
@@ -2003,7 +1960,6 @@ NFKB1(1-968)
 NFKB1:RELA:p-S32,S36-NFKBIA:Ub
 NFKB1:p-S276,5AcK-RELA
 NFKB1:p-S276-RELA
-NFKB2(1-454)
 NFKB2(1-900)
 NFKBIA
 NFKBIB
@@ -2026,6 +1982,7 @@ NLRP3 elicitors:NLRP3
 NLRP3 elicitors:NLRP3 oligomer
 NLRP3 elicitors:NLRP3 oligomer:ASC
 NLRP3 gene
+NLRP3:SUGT1:HSP90
 NLRP4
 NLRX1
 NME2
@@ -2103,6 +2060,7 @@ PAMP:NOD oligomer
 PAMP:NOD oligomer:K63-Ub-RIP2
 PAMP:NOD oligomer:K63-polyUb-RIP2:NEMO
 PAMP:NOD oligomer:RIP2
+PAMP:NOD oligomer:RIP2:K63-Ub-K285-NEMO
 PANX1
 PC
 PCBP2
@@ -2149,7 +2107,6 @@ PI3K regulatory subunits
 PI3K-catalytic subunit
 PI3K-regulatory subunit
 PI3K-regulatory subunits
-PI4P,PI(4,5)P2,PIP3
 PIANP
 PIANP,NPDC1,CLEC4G,COLEC12 trimer
 PIAS1
@@ -2176,6 +2133,7 @@ PLA2G2A
 PLA2G2A:Ca2+
 PLAC8
 PLAU(21-431)
+PLAUR
 PLC gamma1,2
 PLCG1
 PLCG1:p-3Y-SLP-76:Gads:LAT
@@ -2406,13 +2364,12 @@ RNF114
 RNF115
 RNF125
 RNF135
-RNF135,TRIM25,TRIM4
+RNF135,TRIM25
 RNF144B
 RNF19A
 RNF19B
 RNF213
 RNF217
-RNF7 (RBX2)
 ROCK1
 RORA
 RORA gene
@@ -2434,7 +2391,6 @@ Rap1 cAMP-GEFs
 RasGRPs
 Resting T Cell surface
 Rotavirus dsRNA
-S-Farn-Me-PalmS KRAS
 S100A1
 S100A1 dimer:Ca(2+)
 S100A11
@@ -2530,8 +2486,6 @@ SLC44A2
 SLCO4C1
 SLPI
 SMAD3
-SMAD7
-SMAD7 gene
 SMARCA4
 SMURF2
 SNAP23
@@ -2544,7 +2498,6 @@ SOCS
 SOCS-1 and SOCS-3
 SOCS1
 SOCS1 gene
-SOCS1,3:p-4Y-CSF3R:CSF3 dimer:LYN:p-Y-JAK1:p-JAK2:p-SYK:p-HCK:p-TYK2
 SOCS2
 SOCS2 gene
 SOCS3
@@ -2576,8 +2529,6 @@ STAT1
 STAT1 gene
 STAT1, STAT2, STAT3, STAT4, STAT5
 STAT1, STAT3
-STAT1, STAT3, STAT5
-STAT1,STAT2
 STAT1,STAT3,STAT4,STAT5
 STAT1,STAT3,STAT6
 STAT1-1
@@ -2598,7 +2549,6 @@ STATs
 STBD1
 STIM1
 STIM1 Dimer
-STING
 STING:STING
 STING:p-S172-TBK1:IRF3
 STK10
@@ -2649,8 +2599,6 @@ TAX1BP1:TNFAIP3
 TBC1D10C
 TBEV dsRNA intermediate form
 TBK1
-TBK1, IKBKE
-TBK1:TBK1, IKBKE:IKBKE
 TCIRG1
 TCN1
 TCP1
@@ -2685,7 +2633,6 @@ TLR3
 TLR3 ligand
 TLR4:LY96
 TLR4:LY96:LPS:CD14
-TLR4:LY96:endogenous ligand
 TLR4:TLR6
 TLR5
 TLR5 homodimer:bacterial flagellin
@@ -2725,8 +2672,8 @@ TNFRSF12A
 TNFRSF13C
 TNFRSF14
 TNFRSF18
+TNFRSF1A
 TNFRSF1A gene
-TNFRSF1A(30-45)
 TNFRSF1A(41-201)
 TNFRSF1A,1B,14
 TNFRSF1B
@@ -2749,7 +2696,6 @@ TNFSF9 trimer
 TNIP2
 TOLLIP
 TOM1
-TOMM70
 TP53
 TP53 gene
 TRAF1:TRAF2:K63polyUb-cIAP1,2
@@ -2780,7 +2726,6 @@ TRIM32/TRIM56
 TRIM34
 TRIM36
 TRIM38
-TRIM4
 TRIM5
 TRIM56
 TRIM62
@@ -2846,7 +2791,6 @@ ULBP3
 UNC13D
 UNC93B1
 UNKL
-USP14
 USP18
 Ub
 Ub-124-UBB(77-152)
@@ -2854,7 +2798,6 @@ Ub-124-UBC(77-152)
 Ub-200-UBB(153-228)
 Ub-200-UBC(153-228)
 Ub-276-UBC(229-304)
-Ub-285-IKBKG
 Ub-352-UBC(305-380)
 Ub-428-UBC(381-456)
 Ub-48-RPS27A(1-76)
@@ -2864,7 +2807,6 @@ Ub-48-UBC(1-76)
 Ub-504-UBC(457-532)
 Ub-580-UBC(533-608)
 Ub-656-UBC(609-684)
-Ub-C85-UBE2D1,2,3
 Ub-TRAF6 trimer bound to CBM complex
 Ub-pY FLT3 dimer
 Ub:substrate
@@ -3002,11 +2944,9 @@ crenolanib
 cyclosporin A
 dCMP
 dG
-dGMP
 dNQ-C3(672-1663)
 deamidated-Q1013-C4A-derived C4b
 deamidated-Q1013-C4B-derived C4b
-delgocitinib
 deoxyadenosine
 dsDNA:AIM2
 dsDNA:AIM2 oligomer
@@ -3016,15 +2956,12 @@ dsDNA:ZBP1
 dsDNA:ZBP1:pS-172-TBK1
 dsRNA:RIG-I/MDA5:IPS-1:TRAF2/TRAF6
 dsRNA:RIG-I/MDA5:IPS-1:TRAF2/TRAF6:TANK
-dsRNA:RIG-I/MDA5:IPS-1:TRAF2/TRAF6:TANK:2xpS172-TBK1/IKBKE
+dsRNA:RIG-I/MDA5:IPS-1:TRAF2/TRAF6:TANK:TBK1/IKKi
 eIF4A
-eculizumab
-emapalumab
 factor XIII A chain
 ferriheme b(1-)
 fl-TLR9:unmethylated CpG DNA
 folded FL-TLR7/8/9
-fontolizumab
 gilteritinib
 gp120 homotrimer
 hC-EPPIN
@@ -3046,7 +2983,6 @@ hydroxyl
 iC3b
 iE-DAP
 ibrutinib
-imiquimod
 intracellular TLR3/7/8/9
 isunakinra
 lestaurtinib
@@ -3072,7 +3008,6 @@ oligo-MyD88:activated TLR7-9
 oligopeptide fragment
 oligopeptide fragment (3-7aa)
 oligopeptide fragment (8-16aa)
-omalizumab
 omega-N-(ADP-ribosyl)-L-arginine-DEFA1(65-94)
 oxLDL:CD36
 oxidized LDL
@@ -3097,7 +3032,6 @@ p-4S,T336-ELK1
 p-4S,T356,T570-RPS6KA2
 p-4S,T359,T573-RPS6KA1
 p-4S,T404-IRF3
-p-4Y-CSF3R:LYN:p-Y-JAK1
 p-4Y-PIK3AP1
 p-4Y-PLCG1
 p-4Y-PLCG2
@@ -3123,7 +3057,6 @@ p-CARMA1 oligomer
 p-CARMA1 oligomer:BCL10:MALT1 (CBM complex)
 p-CARMA1:MALT1:p-BCL10
 p-FCGRs
-p-HCK
 p-IFNAR1:p-TYK2
 p-IFNAR1:p-TYK2:SOCS-1/SOCS-3
 p-IFNGR1:pJAK1:IFNGR2:p-JAK2
@@ -3148,12 +3081,9 @@ p-S,2T-IRAK4:oligo-MyD88:activated TLR7/8 or 9 receptor
 p-S,T508-LIMK1
 p-S-AKT
 p-S-AKT:PIP3
-p-S-TBK1:p-S-TBK1, p-S-IKBKE:p-S-IKBKE
 p-S133-CREB1
 p-S141,T402-PAK2
 p-S144,T423-PAK1
-p-S15,S20-TP53
-p-S15,S20-TP53 Tetramer
 p-S172-TBK1
 p-S176,S180-CHUK
 p-S176,S180-IKKA dimer
@@ -3198,7 +3128,6 @@ p-SHC1:GRB2:SOS
 p-SLP-76:ADAP
 p-SLP-76:NCK1
 p-STAT1
-p-STAT1 homodimer
 p-STAT1, p-STAT3
 p-STAT1, p-Y-STAT2, p-STAT3, p-STAT4,p-STAT5
 p-STAT2:STAT1:p-IFNAR1:p-TYK2
@@ -3240,7 +3169,6 @@ p-T69,T71-ATF2
 p-T9-TIFA:p-T9-TIFA
 p-TBK1
 p-TEC kinases
-p-TYK2
 p-VAV family
 p-Y GRB10
 p-Y,S,T-WRC
@@ -3258,7 +3186,6 @@ p-Y-JAK1
 p-Y-JAK3
 p-Y-PTK2B
 p-Y-SHC1
-p-Y-STAT1,3,5 dimer
 p-Y-STAT2
 p-Y-STAT3,p-STAT5,(p-Y-STAT3:p-STAT5)
 p-Y-SYK
@@ -3286,7 +3213,6 @@ p-Y239,Y240,Y317-SHC1-2
 p-Y291-WASP/p-Y256-N-WASP
 p-Y315,Y493-ZAP70
 p-Y317-PAG1
-p-Y32-S-Farn-Me-PalmS KRAS
 p-Y343-Y517-IFNLR1:p-JAK1
 p-Y364,Y418,Y536-IL2RB
 p-Y394-LCK
@@ -3301,7 +3227,6 @@ p-Y611-IL27RA:p-JAK1
 p-Y63,Y79,Y110-TRAT1
 p-Y641-STAT6
 p-Y641-STAT6 dimer
-p-Y643-GAB2
 p-Y649-STAT5A, p-STAT5B
 p-Y690-STAT2
 p-Y693-STAT4
@@ -3318,8 +3243,6 @@ p-Y701-STAT1,p-Y705-STAT3,p-Y649-STAT5A,p-STAT5B
 p-Y701-STAT1-1
 p-Y701-STAT1-1 dimer
 p-Y701-STAT1: p-Y-705-STAT3
-p-Y701-STAT1:KPNA1
-p-Y701-STAT1:KPNA1:KPNB1
 p-Y701-STAT1:p-Y705-STAT3
 p-Y705-STAT3
 p-Y705-STAT3 dimer
@@ -3341,14 +3264,12 @@ p-p38 MAPK alpha/beta
 p100:RELB
 p21 RAS:GTP
 p38 MAPK
+p52
 p85-containing Class 1A PI3Ks
 pS-172,K48polyUb-TBK1
 partially digested Ag
 pathogens:CLEC6A,CLEC4E:p-Y65,Y76-FCER1G dimer
 pathogens:CLEC6A,CLEC4E:p-Y65,Y76-FCER1G dimer:p-6Y-SYK
-peginterferon alfa-2a
-peginterferon alfa-2b
-peginterferon beta-1a
 peptidoglycan-NHAc
 pexidartinib
 phospho CD28:B7-1/B7-2
@@ -3358,16 +3279,11 @@ phosphorylated PLC-gamma1 bound to SLP-76
 phosphorylated TAK1 bound to TAB2
 polypeptide
 ponatinib
-pp1ab-nsp13
 precursor peptide fragment (>16 aa)
 prgJ
 procaspase-8/10 dimer
 quizartinib
-ravulizumab
-recombinant IFNA2a
-recombinant IFNA2b
-recombinant IFNB1a
-recombinant IFNB1b
+recombinant IFNB1
 ruxolitinib
 sAPRIL trimer
 sBAFF
@@ -3377,20 +3293,15 @@ sIL27RA
 sRANKL trimer
 sTWEAK trimer
 sTWEAK,TWEAK homotrimers
-sarilumab
-satralizumab
 semaxanib
 sorafenib
-spebrutinib
 ssRNA
 sunitinib
 tacrolimus
 tamatinib
 tandutinib
-tirabrutinib
 tocilizumab
 tofacitinib
-type 1 interferon analogs
 type I FLT3-binding TKIs
 type II FLT3-binding TKIs
 unfolded antigen
@@ -3401,7 +3312,7 @@ viral dsRNA:IFIH1, 2xviral dsRNA:2xK63polyUb-DDX58:2xRNF135,TRIM25:2xATP
 viral dsRNA:IFIH1, 2xviral dsRNA:2xK63polyUb-DDX58:2xRNF135,TRIM25:2xATP:K48polyUb-MAVS
 viral dsRNA:IFIH1, viral dsRNA:K63polyUb-DDX58:MAVS
 viral dsRNA:IFIH1, viral dsRNA:K63polyUb-DDX58:MAVS:K63polyUb-TRAF3
-viral dsRNA:IFIH1, viral dsRNA:K63polyUb-DDX58:MAVS:K63polyUb-TRAF3:2x(TBK1/IKK epsilon)
+viral dsRNA:IFIH1, viral dsRNA:K63polyUb-DDX58:MAVS:K63polyUb-TRAF3:IKK related kinases TBK1/IKK epsilon
 viral dsRNA:IFIH1, viral dsRNA:K63polyUb-DDX58:MAVS:RIPK1:FADD
 viral dsRNA:IFIH1, viral dsRNA:K63polyUb-DDX58:MAVS:RIPK1:FADD:CASP8(1-216), CASP10(1-219)
 viral dsRNA:RIG-I/MDA5:TRAF2/TRAF6:IPS-1:RIP-1/FADD:Casp-8/10 prodomain
@@ -3410,5 +3321,3 @@ viral dsRNA:TLR3:TICAM1:K63pUb-TRAF6
 viral dsRNA:TLR3:TICAM1:RIPK3
 viral minus strand DNA with sticky 3' end
 viral plus strand DNA with sticky 3' end
-zanubrutinib
-zilucoplan

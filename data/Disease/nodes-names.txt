@@ -1,41 +1,21 @@
 'receiver' RAF
 1-LTR form of circular viral DNA
-14-3-3 dimer
-14-3-3 dimer:N
 14-sugar N-glycan unfolded Spike
 2-LTR form of circular viral DNA
 2HG
 2OG
-2x DDX58 ligand:2x DDX58:2xATP
 2xCarboxymycobactin:2xFe3+:LTF:2xCO3(2-)
 2xCarboxymycobactin:LTF:2xFe3+:2xCO3(2-)
 2xHC-TXN
-2xviral dsRNA:2xK63polyUb-DDX58:2xRNF135,TRIM25:2xATP
-3'-UMP
 3CLp dimer
-3CLp dimer:3CLp inhibitors
 3CLp dimer:α-Ketoamides
-3CLp inhibitors
 3a
 3a:membranous structure
 3xPalmC-E
-40S ribosomal complex
-40S ribosomal complex:nsp1
-6
-6:NPC
-7SL RNA
-7SL RNA:nsp8
-7SL RNA:nsp9 tetramer
 7a
-8 homodimer
-8:IL17RA
-8:antigen peptide bound class I MHC
-8:class I MHC:BECN1 complex
 8b
 8b:MAP1LC3B
 9b
-9b homodimer
-9b:IKK complex
 A2E
 A2PE
 ACE2
@@ -52,7 +32,7 @@ ADP,GDP,CDP,UDP
 ADP-D-ribose
 ADP-ribo-EEF2
 ADP/ATP translocase monomer (generic)
-ADPr-p-S177-N
+ADPr-p-S177-Ncap
 AHCYL1:NAD+:ITPR1:I(1,4,5)P3 tetramer
 AKT inhibitors
 AKT inhibitors:AKT
@@ -60,18 +40,6 @@ AKT/AKT1 E17K mutant
 AKT1 E17K
 AKT1 E17K mutant:PIP2
 AKT1S1
-ALK fusion dimers:GRB2
-ALK fusion dimers:p-3Y SHC1
-ALK fusion dimers:p-3Y SHC1:GRB2
-ALK fusion protein dimers
-ALK fusion proteins
-ALK fusions:FRS
-ALK fusions:p-4Y PLCG1
-ALK fusions:p-6Y FRS
-ALK mutant dimers:SHC1
-ALK mutants:PIK3R1
-ALK point mutant dimers
-ALK point mutants
 AMP,GMP,CMP,UMP
 ANT1:Vpr complex
 ANTXR1
@@ -123,15 +91,14 @@ Activated FGFR2 mutants:p-FRS2:GRB2:GAB1:PIK3R1
 Activated FGFR2b mutants with enhanced ligand binding
 Activated FGFR2c mutants with enhanced ligand-binding
 Activated FGFR3 cysteine mutants
+Activated FGFR3 mutants
 Activated FGFR3 mutants with enhanced kinase activity
-Activated FGFR3 point and translocation mutants
-Activated FGFR3 point and translocation mutants: PLCG1
-Activated FGFR3 point and translocation mutants:p-4Y-PLCG1
-Activated FGFR3 point, translocation and fusion mutants
-Activated FGFR3 point, translocation and fusion mutants:FRS2
-Activated FGFR3 point, translocation and fusion mutants:p-FRS2
-Activated FGFR3 point, translocation and fusion mutants:p-FRS2:GRB2:GAB1:PI3K
-Activated FGFR3 point, translocation and fusion mutants:p-FRS2:GRB2:GAB1:PIK3R1
+Activated FGFR3 mutants: PLCG1
+Activated FGFR3 mutants:FRS2
+Activated FGFR3 mutants:p-4Y-PLCG1
+Activated FGFR3 mutants:p-FRS2
+Activated FGFR3 mutants:p-FRS2:GRB2:GAB1:PI3K
+Activated FGFR3 mutants:p-FRS2:GRB2:GAB1:PIK3R1
 Activated FGFR3 t(4;14) translocation mutants
 Activated FGFR3c P250R mutant
 Activated FGFR4 Y367C mutant
@@ -150,8 +117,6 @@ Active dimers of ligand-responsive EGFR mutants
 Ade-Rib
 Ade-Rib:ADORA2B:Heterotrimeric G-protein Gs:GDP
 Adenylate cyclase (Mg2+ cofactor)
-AdoHcy
-AdoMet
 AhpC
 AhpC(ox.)
 AhpD
@@ -160,8 +125,6 @@ AhpE dimer (ox.)
 AhpE dimer (red.)
 Amino Acid
 Aminoacyl-tRNA
-Antigen peptide bound class I MHC
-Antigen:p-BCR:p-SYK:p-BLNK:CIN85:GRB2:SOS1:BTK:NCK1:VAV1:PLCG2
 Arf1:Nef:endosomal CD4
 Assembling HIV virion
 Autointegrated viral DNA as  smaller circles
@@ -170,8 +133,6 @@ B2M(21-119)
 BAD
 BAIAP2
 BANF1
-BCL2A1
-BCL2A1 gene
 BCL2L1
 BCL2L1 gene
 BCL2L1 gene:PTPN11:p-STAT5
@@ -184,10 +145,7 @@ BRAF/RAF fusion dimers
 BRAP:KSR1:MARK3
 BRD4
 BRD4:fedratinib
-BTK inhibitors
-BTK:BTK inhibitors
 BTRC
-Beclin-1 complex
 Benzoquinoid ansamycins
 BoNT/G HC
 C-ter TLR7 dimer
@@ -210,9 +168,6 @@ CASP1(298-316)
 CASP1(317-404)
 CASP9(1-416)
 CAST
-CAV1
-CAV1:3a
-CAV1:O-glycosyl 3a tetramer
 CBL
 CBL:GRB2
 CBLL1 dimer:Zn2+
@@ -257,22 +212,15 @@ CDKN1A
 CDKN1A gene
 CDKN1A,CDKN1B
 CE:Pol II CTD:Spt5 complex
-CEBPB
-CEBPB gene
 CEBPD
 CFTR F508del
-CFTR F508del:CFTR correctors
 CFTR F508del:ERAD complex
 CFTR G551D
-CFTR correctors
 CHMP1A
 CHUK
-CHUK:IKBKB:IKBKG
 CIN85:endophilin
 CMP
 CMP-Neu5Ac
-CNBP
-CNBP:SARS-CoV-2 G-rich RNA:RTC
 COMT
 COMT inhibitors
 COMT:COMT inhibitors
@@ -282,8 +230,6 @@ CPSF:NS1 Complex
 CQ
 CQ, HCQ
 CQ2+, HCQ2+
-CRB3
-CRB3:PALS1:PATJ complex
 CRBN
 CRBN:IMiDs
 CREB1
@@ -294,7 +240,6 @@ CTNND1
 CTSG
 CTSL inhibitors
 CTSL:CTSL inhibitors
-CUL1:RBX1:SKP1:ZC3HC1
 CVC1
 CVC1:CVC2
 CVC2
@@ -316,19 +261,14 @@ Cl-
 Clathrin
 Cleaved HA Influenza A Viral Particle
 CoA-SH
-Connexin 43 connexon in Golgi transport vesicle
 Core histone octamer
 Covalent EGFR tyrosine kinase inhibitors
 Crm1:Ran GTPase:GDP
 Cul5-SCF complex
-Cx43:TJP1
 D-Glucono-1,5-lactone 6-phosphate
 DAGs
 DBP
 DDX5
-DDX58
-DDX58:N
-DEXM
 DLL/JAG:NOTCH1 HD domain mutants
 DLL/JAG:NOTCH1 HD+PEST Domain Mutants
 DLL/JAG:NOTCH1 PEST Domain Mutants
@@ -353,7 +293,6 @@ DT:HBEGF:CD9
 DUSP16
 DUT
 Daxx:PML
-Decitabine triphosphate
 Dimeric TGFB1
 Dynein complex
 EEF2
@@ -410,8 +349,6 @@ Encapsidated viral core
 Envelope glycoprotein gp160
 Enveloped HCMV Virion Bound to Entry Mediator
 Enveloped HCMV Virion without Pentameric Complex Bound to Entry Mediator
-ExoN inhibitors
-ExoN inhibitors:nsp10:nsp14
 F-actin
 F12 variant
 F12 variant (20-328)
@@ -464,9 +401,9 @@ FGFR3 fusion dimers
 FGFR3 fusions
 FGFR3 mutant dimers
 FGFR3 mutant dimers:TKIs
+FGFR3 mutants:p-FRS2:GRB2:SOS1
 FGFR3 point mutant dimers with enhanced kinase activity
 FGFR3 point mutants with enhanced kinase activity
-FGFR3 point, translocation and fusion mutants:p-FRS2:GRB2:SOS1
 FGFR3c P250R
 FGFR3c P250R mutant dimer bound to FGF
 FGFR3c-binding FGFs
@@ -483,14 +420,10 @@ FLT3 extracellular domain, kinase domain and juxtamembrane domain mutant dimers
 FLT3 extracellular domain, kinase domain and juxtamembrane domain mutants
 FLT3 fusion dimers
 FLT3 fusion proteins
-FNTA:FNTB
-FNTA:FNTB:FTase inhibitors
-FNTB inhibitors
 FOXO1,FOXO3,FOXO4,(FOXO6)
 FOXO3
 FP-1039
 FRS2
-FRS2,3
 FURIN
 FURIN inhibitors
 FURIN:FURIN inhibitors
@@ -506,8 +439,6 @@ G-betagamma
 G-protein alpha (i):GTP:Adenylate cyclase
 G-protein alpha (z):GTP:Adenylate cyclase
 G-protein beta-gamma complex
-G3BP1,G3BP2
-G3BP1,G3BP2:N
 G6P
 GAB2
 GAG Polyprotein (P04591)
@@ -520,15 +451,12 @@ GM1a
 GOLGA2
 GP369
 GRB2
-GRB2- and PLC gamma-binding ALK fusion protein dimers
 GRB2-1
 GRB2-1:SOS1
 GRB2:GAB1
 GRB2:GAB1:PIK3R1
 GRB2:GAB2
 GRSF1
-GSDMD pore complex
-GSDME gene
 GSH
 GSK3
 GSK3A
@@ -558,7 +486,6 @@ H+
 H2O
 H2O2
 HA
-HAVCR1
 HBEGF(20-208)
 HCK
 HCMV B Capsid
@@ -627,21 +554,16 @@ HIV-1 transcription complex containing transcript to +30
 HIV-1 transcription complex with (ser5) phosphorylated CTD containing extruded transcript to +30
 HIV-1 unspliced RNA
 HMGA1
-HMOX1
 HNRNPK
-HOPS Complex
-HOPS:3a
 HS
 HSP90
 HSP90:ATP:FKBP4:PTGES3:NR3C1
 HSP90:ATP:FKBP4:PTGES3:NR3C1:NR3C1 agonists
 HSP90:Benzoquinoid ansamycins
-HSP90:TBK1:IRF3
 HSP90AA1
 HSP90AB1
 HSPA1A
 HSPG
-HSPGs
 Hck-1:Nef
 Heterodimers of ERBB2 KD mutants
 Heterotrimeric G-protein Gs (inactive)
@@ -651,30 +573,21 @@ Host Derived Lipid Bilayer Membrane Rich In Sphingolipids And Cholesterol
 Host genomic  DNA
 Human herpesvirus 5 Genome - Merlin Strain
 I(1,4,5)P3
-IFIH1:TKFC
-IFNA/B:IFNAR2:p-JAK1:STAT2:p-IFNAR1:p-TYK2:p-STAT2
-IFNA/B:IFNAR2:p-JAK1:STAT2:p-IFNAR1:p-TYK2:p-STAT2:p-STAT1
 IFNAR1:TYK2
 IFNAR1:TYK2:TYK2 inhibitors
 IFNAR2:JAK1:STAT2
 IFNAR2:JAK1:STAT2:JAK1,2 inhibitors
-IFNAR2:JAK1:STAT2:type 1 interferon analogs
 IFNGR1:JAK1:INFGR2:JAK2
 IFNGR1:JAK1:INFGR2:JAK2:JAK1,2 inhibitors
 IL10
 IL10 gene
-IL17A dimer,IL17F dimer,IL17A:IL17F
-IL17RA
-IL17RA:IL17RC:IL17A dimer,L17F dimer,IL17A:IL17F
-IL17RC
 IL1R1
 IL1R1 inhibitors
 IL1R1:IL1R1 inhibitors
 IL6
 IL6 gene
 IL6R
-IL6R inhibitors
-IL6R:IL6R inhibitors
+IL6R:tocilizumab
 IMPDH inhibitors
 IMPDH tetramers
 IMPDH tetramers:IMPDH inhibitors
@@ -684,17 +597,7 @@ IN bound to sticky 3' ends of viral DNA in PIC
 IN:viral DNA bound to host genomic DNA with staggered ends
 IP3 receptor homotetramer
 IPO5
-IRF3
-IRF3(2-271)
-IRF3(272-427)
-IRS- and FRS-binding ALK fusion proteins
 IRS1
-IRS:ALK fusion proteins
-ISCU
-ISCU:Fe4S4
-ISG15
-ISGylated IFIH1
-ISGylated IRF3
 ISGylated NS1
 ITGA4:ITGB1
 ITGA4:ITGB1:natalizumab
@@ -765,25 +668,16 @@ JAK3
 JAK3 inhibitors
 JAK3:JAK3 inhibitors
 JUN
-JUNB
-JUNB gene
-JUNB mRNA
 K+
-K63polyUb
-KEAP1:NEDD8-CUL3:RBX1:NFE2L2
 KIT mutant dimers:SFKs
 KIT mutant dimers:SFKs:JAK2
 KIT mutant dimers:SFKs:p-JAK2
 KIT mutant dimers:SFKs:p-JAK2:STATs
 KPNA1
-KPNA2
-KPNA2:6
 KPNB1
 Ku proteins bound to viral DNA
 L-Glu
 LAM
-LARP1
-LARP1:SARS-CoV-2 gRNA:RTC
 LCK
 LGK974
 LIG1
@@ -830,11 +724,8 @@ M1 mRNA
 M2
 M2 Tetramer
 M2 mRNA
-M:MAVS
-M:TBK1
 MAML
 MAP1LC3B
-MAP1LC3B:TUFM:M
 MAP2K homo/heterodimers
 MAP2K1
 MAP2K1(2-8)
@@ -859,18 +750,10 @@ MAPK1
 MAPK3
 MAPK8
 MAPKs
-MAVS
-MAVS:TOMM70
-MAVS:TOMM70:HSP90:TBK1:IRF3
-MBL2 dodecamer:MASP1 dimer:MASP2-1 dimer
 MCP
 MCP:pPR-AP:pAP Complex
 MDM2
-MECP2
-MECP2:STAT5A gene
 MET
-MMP5:E pentamer
-MPP5
 MRC1
 MSH
 MSNO
@@ -878,7 +761,6 @@ MSSM
 MYC
 MYC gene
 MYH9
-MYH9- and RNF213-ALK fusions
 MYS-CoA
 Man(9) N-glycan unfolded Spike
 Mature HIV virion
@@ -887,7 +769,6 @@ Mature intronless transcript derived mRNA with m7G cap removed
 Mce3E
 Mce3E:MAPK1
 Mce3E:MAPK3
-MeR25,27-CNBP
 Microtubule
 Mother filament:ARP2/3:actin:ADP
 Mother filament:branching complex
@@ -903,7 +784,6 @@ MyrG-CDK5R1(2-98)
 MyrG-SRC
 MyrG-p-Y419-SRC
 N
-N dimer
 N-glycan
 N-glycan E
 N-glycan M
@@ -913,14 +793,6 @@ N-glycan nsp3-4
 N-glycan nsp4
 N-myristoyl GAG (P04591) protein
 N4GlycoAsn-PalmS WNT5A(36-380)
-N6GMPLys-nsp7
-N:CHUK:IKBKB:IKBKG
-N:M:PDPK1
-N:MAVS
-N:MBL2 dodecamer:MASP1 dimer:MASP2-1 dimer
-N:NLRP3
-N:TAK1complex
-N:heme
 NA
 NAD+
 NADH
@@ -936,8 +808,6 @@ NELF complex
 NEP/NS2
 NEXT1
 NEXT1 PEST domain mutants
-NFE2L2 inducers
-NFE2L2 inducers:KEAP1:CUL3:RBX1:NFE2L2
 NFKB1(1-433)
 NFKB1(1-433), NFKB2(1-454):RELA
 NFKBIA variants
@@ -946,11 +816,6 @@ NFkB Complex
 NH3
 NICD1 PEST Domain Mutants
 NICD1 PEST domain mutants:RBPJ:SNW1
-NLRP12
-NLRP12(1-240)
-NLRP12(1-937)
-NLRP12(241-1061)
-NLRP12(938-1061)
 NLRP3
 NLRP3 elicitor small molecules
 NLRP3 elicitor small molecules:NLRP3
@@ -991,15 +856,10 @@ NOX4 gene:p-STAT5
 NP
 NP:Lipid Raft
 NP:PARP1
-NPM dimer
 NPM1
-NPM1(1-117)-p-7Y ALK(1058-1620) fusion dimer
-NPM1-p-7Y ALK fusion dimer:CUL1:RBX1:SKP1:ZC3HC1
-NPM1p-7Y ALK fusion dimer:CUL1:RBX1:SKP1:p-S354 ZC3HC1
 NR3C1 agonists
 NR4A1
 NRNAM
-NRP1
 NRPE
 NRTIs
 NS1
@@ -1015,7 +875,8 @@ NS5B
 NS5B:ribavirin
 NTNHA
 NTP
-NTP(4-)
+Ncap
+Ncap tetramer
 Nef:CD28 Complex
 Nef:T cell Receptor zeta:Lipid Raft: Pak 2 Complex
 Nef:class I MHC complex
@@ -1047,7 +908,6 @@ PA
 PABPN1
 PACS1
 PAK2(1-524)
-PATJ
 PB1
 PB1 mRNA
 PB1-F2
@@ -1062,9 +922,7 @@ PDCD6IP
 PDGFR mutant dimers
 PDGFR mutant receptors
 PDGFRA extracellular domain mutants
-PDPK1
 PDPK1:PIP2
-PDPK1:PIP3
 PDPK1:p-S473-AKT1 E17K mutant:PIP2
 PDZD3
 PE
@@ -1078,10 +936,8 @@ PI(4,5)P2:WASP/N-WASP
 PI3K
 PI3K Inhibitors:PI3K
 PI3K alpha
+PI3K inhibitors
 PI3K mutants,Activator:PI3K
-PI3K-binding ALK fusions:PI3K
-PI3K-binding ALK mutants
-PI3K/mutant PI3K inhibitors
 PI3K:p-KIT mutant dimers
 PI3P
 PIC (PreIntegration Complex)
@@ -1095,10 +951,8 @@ PIP3:VAV1,2,3
 PKA catalytic subunit
 PKA tetramer
 PKA tetramer:4xcAMP
-PLC gamma-binding ALK fusion proteins:PLCG1
 PLC gamma1,2
 PLCG1
-PLpro inhibitors
 PORCN
 PORCN:LGK974
 PPE2
@@ -1110,15 +964,12 @@ PR (Protease) (P04585) protein
 PRC2 (EZH2) Core
 PRDX1
 PRDX2
-PRMT1
-PRMT1:type I PRMT inhibitors
 PSIP1
 PSTPIP1 trimer
 PSTPIP1 trimer:Pyrin trimer
 PTPN11
 PTPN11:p-STAT5
 PTPN12
-PTPN6,PTPN11
 PYCARD
 Peptide methionine sulfoxide
 Peptide-Methionine
@@ -1168,7 +1019,6 @@ RAS:GTP:moderate kinase activity p-RAF:p-2S MAP2Ks:p-T,Y MAPKs:scaffold proteins
 RB1
 RBPJ:NCOR corepressor complex
 RBPJ:SNW1
-RBV
 REV (P04618) protein
 RIPK1
 RIPK1:ponatinib
@@ -1184,11 +1034,8 @@ RNA Pol II with phosphorylated CTD: CE complex
 RNA Pol II with phosphorylated CTD: CE complex with activated GT
 RNA Polymerase II (phosphorylated):TFIIF:capped pre-mRNA
 RNA Polymerase II (unphosphorylated):TFIIF complex
-RNA primer:decitabine-DNA primer:origin duplex
-RNA primer:origin duplex:DNA polymerase alpha:primase complex
 RNAP
 RNAP:rifampicin
-RNF135,TRIM25,TRIM4
 RNF213
 RNGTT
 RNMT
@@ -1253,7 +1100,7 @@ S1:S2:M:E:encapsidated SARS-CoV-2 genomic RNA: 7a:O-glycosyl 3a tetramer
 S1PR1
 S1PR1 agonists
 S1PR1:S1PR1 agonists
-S3:M:E:encapsidated  SARS-CoV-2 genomic RNA: 7a:O-glycosyl 3a tetramer:glycosylated-ACE2:HSPGs
+S3:M:E:encapsidated  SARS-CoV-2 genomic RNA: 7a:O-glycosyl 3a tetramer:glycosylated-ACE2
 S3:M:E:encapsidated SARS coronavirus genomic RNA: 7a:O-glycosyl 3a tetramer
 S3:M:E:encapsidated SARS coronavirus genomic RNA: 7a:O-glycosyl 3a tetramer:glycosylated-ACE2
 S3:M:E:encapsidated SARS coronavirus genomic RNA:7a:O-glycosyl 3a tetramer
@@ -1261,10 +1108,7 @@ S3:M:E:encapsidated SARS coronavirus genomic RNA:O-glycosyl 3a tetramer
 S3:M:E:encapsidated SARS-CoV-2 genomic RNA: 7a:O-glycosyl 3a tetramer
 S3:M:E:encapsidated SARS-CoV-2 genomic RNA: 7a:O-glycosyl 3a tetramer:glycosylated-ACE2
 SA
-SAR1B:GTP:SEC23:SEC24
-SARS coronavirus 2 gRNA with secondary structure:RTC
 SARS coronavirus gRNA with secondary structure:RTC
-SARS coronavirus gRNA with secondary structure:RTC:nascent RNA minus strand
 SARS coronavirus gRNA:RTC:RNA primer
 SARS coronavirus gRNA:RTC:RNA primer:RTC inhibitors
 SARS coronavirus gRNA:RTC:nascent RNA minus strand with mismatched nucleotide
@@ -1274,15 +1118,9 @@ SARS-CoV-1 gRNA:RTC
 SARS-CoV-1 gRNA:RTC:nascent RNA minus strand
 SARS-CoV-1 gRNA:RTC:nascent RNA minus strand:RTC inhibitors
 SARS-CoV-1 genomic RNA (plus strand)
-SARS-CoV-1 genomic RNA (plus strand):RTC
-SARS-CoV-1 genomic RNA complement (minus strand):RTC
-SARS-CoV-1 minus strand subgenomic mRNAs:RTC
-SARS-CoV-1 plus strand subgenomic mRNAs:RTC
-SARS-CoV-2 G-rich RNA:RTC
-SARS-CoV-2 GU-rich ssRNA
-SARS-CoV-2 dsRNA intermediates:DDX58
-SARS-CoV-2 dsRNA intermediates:IFIH1
-SARS-CoV-2 dsRNA with poly(U)-containing (-) strand:RTC
+SARS-CoV-1 genomic RNA complement (minus strand)
+SARS-CoV-1 minus strand subgenomic mRNAs
+SARS-CoV-1 plus strand subgenomic mRNAs
 SARS-CoV-2 gRNA complement (minus strand):RTC
 SARS-CoV-2 gRNA complement (minus strand):RTC:RTC inhibitors
 SARS-CoV-2 gRNA:RTC
@@ -1290,29 +1128,23 @@ SARS-CoV-2 gRNA:RTC:RNA primer
 SARS-CoV-2 gRNA:RTC:RNA primer:RTC inhibitors
 SARS-CoV-2 gRNA:RTC:nascent RNA minus strand
 SARS-CoV-2 gRNA:RTC:nascent RNA minus strand:RTC inhibitors
-SARS-CoV-2 genomic RNA (plus strand):RTC
-SARS-CoV-2 genomic RNA complement (minus strand):RTC
-SARS-CoV-2 minus strand subgenomic mRNAs:RTC
-SARS-CoV-2 plus strand subgenomic mRNAs:RTC
+SARS-CoV-2 genomic RNA (plus strand)
+SARS-CoV-2 genomic RNA complement (minus strand)
+SARS-CoV-2 minus strand subgenomic mRNAs
+SARS-CoV-2 plus strand subgenomic mRNAs
 SCP
 SEL1:SYVN1 dimer:DERL2:VCP hexamer
 SFPQ
-SFTPD 12mer
-SFTPD:S3:M:E:encapsidated SARS-CoV-2 genomic RNA: 7a:O-glycosyl 3a tetramer
 SH3 domain proteins
-SHC-binding ALK mutant dimers
 SHC1
-SHC1-2,SHC1-3
 SHH processing variants:ERLEC:OS9:SEL1:SYVN1 dimer:DERL2:VCP hexamer
 SHH processing variants:OS9/ERLEC1
 SHH variants
 SIGMAR1
 SIGMAR1:dextromethorphan
 SIGMAR1:fluvoxamine
-SIKE1
 SKP1
 SLC25A6
-SMN:SM protein complex
 SNAP25
 SNAP25(1-197)
 SNAP25(1-198)
@@ -1322,32 +1154,19 @@ SOD2
 SOD2 gene
 SOH-C326-OGG1 S326C
 SOS1
-STAT1
 STAT1, STAT3
-STAT1,STAT2
-STAT1,STAT2:N
-STAT3
-STAT3-activating ALK mutants
-STAT3-activating ALK mutants:STAT3
-STAT3-activating ALK mutants:p-Y STAT3
 STAT5
-STAT5A
-STAT5A gene
 STAT5A,STAT5B
 STATs
-STING
-STING:3CLpro dimer
-STING:O-glycosyl 3a tetramer
 STX1
 STX1(1-?)
 STX1(?-288)
 SUGT1
 SUGT1:HSP90
-SUMO-p-N dimer
-SUMO-p-N dimer:SARS coronavirus genomic RNA
-SUMO1-K62,ADPr-,p-11S,2T,met-2R,Ac-K375-N dimer
-SUMO1-K62-ADPr-p-S177-N
-SUMO1-K62-p-S177-N dimer
+SUMO-p-Ncap dimer
+SUMO-p-Ncap dimer:SARS coronavirus genomic RNA
+SUMO1-K62-ADPr-p-S177-Ncap
+SUMO1-K62-p-S177-Ncap dimer
 SUMO1:C93-UBE2I
 SV2A,B
 SV2A,B,C
@@ -1355,7 +1174,6 @@ SYK
 SYT1
 SYT1,2
 SapM:RAB7
-Sar1p:GTP:Sec23p:Sec24p:Ag bound MHC class I
 Segment 1 RNP
 Segment 2 RNP
 Segment 3 RNP
@@ -1367,48 +1185,22 @@ Segment 8 RNP
 Sensitive ligand-responsive EGFR mutants:Non-covalent EGFR TKIs
 Sialic Acid Bound Influenza A Viral Particle
 SodB
-Spike inhibitors
-Spike:Spike inhibitors
-Spike:heparin
 Spliced Env mRNA
-Spliceosomal m7G capped snRNAs with SMN:SM protein complex bound
 Src family tyrosine kinases (SFKs)
-TAB1
-TAB1(1-132)
-TAB1(1-444)
-TAB1(133-504)
-TAB1(445-504)
-TAK1 complex
-TBK1
-TBK1/IKBKE:SIKE1
 TBK1:amlexanox
-TBK1:pp1ab-nsp13
-TBK1:pp1ab-nsp6
 TCEA1
 TFIIA
 TFIID
 TFIIE
 TFIIH
-TJP1
-TJP1:E pentamer
-TKFC
 TKIs (ERBB2)
-TLR1:TLR2
 TLR2
-TLR2:TLR1:E:S3:M:encapsidated SARS-CoV-2 genomic RNA: 7a:O-glycosyl 3a tetramer
-TLR7 dimer:SARS-CoV-2 ssRNA
-TLR8 dimer
-TLR8 dimer:SARS-CoV-2 ssRNA
 TMPRSS2
 TMPRSS2 inhibitors
 TMPRSS2:TMPRSS2 inhibitors
 TNKS1/2
 TNKS1/2:XAV939
-TOMM70
-TOMM70:9b
 TR2:TR1
-TRIM25
-TRIM25:N
 TRIM27
 TRIM28
 TRM1
@@ -1416,8 +1208,6 @@ TRS1
 TSC2
 TUBB
 TUBB:colchicine
-TUFM
-TUFM:M
 TXN
 TXNIP
 TXNIP:NLRP3
@@ -1440,16 +1230,11 @@ TrxA
 TrxA(ox.)
 TrxA/B1
 TrxA/B1 (ox.)
-Type I PRMT inhibitors
 Tyrosine kinase inhibitors of FGFR1 fusion mutants
 Tyrosine kinase inhibitors of FGFR2 mutants
 Tyrosine kinase inhibitors of FGFR3 mutants
 Tyrosine kinase inhibitors of overexpressed FGFR1
 Tyrosine kinase inhibitors of overexpressed FGFR2
-U1 snRNA
-U1 snRNA:nsp16
-U2 snRNA
-U2 snRNA:nsp16
 UBE2I
 UDP
 UDP-GalNAc
@@ -1553,9 +1338,7 @@ US34
 US34A
 US8
 US9
-UVRAG
 UVRAG complex
-UVRAG:O-glycosyl 3a tetramer
 Ub
 Ub-3xPalmC-E
 Ub-3xPalmC-E pentamer
@@ -1687,12 +1470,9 @@ cytosolic PDGFR fusion dimers
 cytosolic PDGFR fusions
 cytosolic p-FGFR1 fusion mutant dimers
 cytosolic p-Y PDGFR fusion dimers
-dATP
-dCTP
-dGTP
 dNTP
-dTTP
 dephosphorylated inactive RAFS:YWHAB dimer
+dextromethorphan
 di-antennary N-glycan-PALM-Spike trimer
 dlaT
 dlaT(ox.)
@@ -1732,14 +1512,11 @@ glycosylated-ACE2:ACE2 inhibitors
 ha17
 ha33
 ha70
-heme
 high kinase activity BRAF mutants
 high kinase activity BRAF mutants:scaffold:MAP2K:MAPK complex
 high kinase activity BRAF mutants:scaffold:p-2S MAP2K:MAPK complex
 high kinase activity BRAF mutants:scaffold:p-2S MAP2K:p-T,Y MAPK complex
-high-mannose N-glycan folded Spike
 high-mannose N-glycan unfolded Spike
-hyper 5-mC GSDME gene promoter
 importin-alpha:importin-beta
 importin-alpha:importin-beta complex
 inactive RAF1,BRAF
@@ -1752,7 +1529,6 @@ lef
 lpdC
 lpdC:CORO1A
 lprG
-m7G capped Spliceosomal snRNA
 m7G(5')pppAm-SARS-CoV-1 plus strand subgenomic mRNAs
 m7G(5')pppAm-SARS-CoV-2 plus strand subgenomic mRNAs
 m7G(5')pppAm-capped SARS-CoV-1 genomic RNA (plus strand)
@@ -1768,13 +1544,12 @@ m7G(5')pppAm-capped,polyadenylated mRNA3
 m7G(5')pppAm-capped,polyadenylated mRNA4
 m7G(5')pppAm-capped,polyadenylated mRNA5
 m7G(5')pppAm-capped,polyadenylated-mRNA9
-m7GpppA-SARS-CoV-1 plus strand subgenomic mRNAs:RTC
-m7GpppA-SARS-CoV-2 plus strand subgenomic mRNAs:RTC
+m7GpppA-SARS-CoV-1 plus strand subgenomic mRNAs
+m7GpppA-SARS-CoV-2 plus strand subgenomic mRNAs
 m7GpppA-capped SARS-CoV-1 genomic RNA (plus strand)
-m7GpppA-capped SARS-CoV-1 genomic RNA (plus strand):RTC
-m7GpppA-capped SARS-CoV-1 genomic RNA complement (minus strand):RTC
-m7GpppA-capped SARS-CoV-2 genomic RNA (plus strand):RTC
-m7GpppA-capped SARS-CoV-2 genomic RNA complement (minus strand):RTC
+m7GpppA-capped SARS-CoV-1 genomic RNA complement (minus strand)
+m7GpppA-capped SARS-CoV-2 genomic RNA (plus strand)
+m7GpppA-capped SARS-CoV-2 genomic RNA complement (minus strand)
 membrane-tethered PDGFR fusion dimers
 membrane-tethered PDGFR fusions
 membrane-tethered p-Y PDGFR fusion dimers
@@ -1798,7 +1573,6 @@ nsp1
 nsp1-4
 nsp10
 nsp10:nsp14
-nsp12:2Fe4S4
 nsp13:DDX5
 nsp15 hexamer
 nsp15:RB1
@@ -1807,7 +1581,6 @@ nsp16:nsp10
 nsp2
 nsp3
 nsp3-4
-nsp3:PLpro inhibitors
 nsp3:nsp4
 nsp3:nsp4:nsp6
 nsp4
@@ -1823,14 +1596,11 @@ nsp8
 nsp8:MAP1LC3B
 nsp9
 nsp9 dimer
-nsp9 tetramer
 nucleoporin-associated Rev:Importin-beta:B23 complex
 nucleoside 5'-diphosphate(3-)
 nucleoside 5'-diphosphate(3−)
 nucleotide-sugar
 other viral genomic RNA
-p-11S,2T-N
-p-11S,2T-metR95,177-N
 p-11Y PDGFR mutant dimers:PI3K
 p-11Y PDGFR mutant receptor dimers
 p-11Y PDGFR mutatnt receptors:GRB2:SOS1
@@ -1841,7 +1611,6 @@ p-11Y PDGFRA extracellular domain dimers:PI3K
 p-11Y PDGFRA mutant receptor dimer:STAT
 p-2S MAP2K homo/heterodimers
 p-4Y-PLCG1
-p-5S-RPS6
 p-5Y-EGFRvIII mutant dimer
 p-5Y-EGFRvIII:GRB2:GAB1
 p-5Y-EGFRvIII:GRB2:GAB1:PI3K
@@ -1886,11 +1655,6 @@ p-6Y-ERBB2 TMD/JMD mutants (RAS):Ligand-Activated p-EGFR,p-ERBB3,(p-ERBB4):SHC1
 p-6Y-ERBB2 TMD/JMD mutants:Ligand-Activated p-EGFR,p-ERBB3,(p-ERBB4)
 p-6Y-ERBB2 TMD/JMD mutants:Ligand-Activated p-EGFR,p-ERBB3,(p-ERBB4):p-SHC1
 p-6Y-ERBB2 TMD/JMD mutants:Ligand-Activated p-EGFR,p-ERBB3,(p-ERBB4):p-SHC1:GRB2:SOS1
-p-7Y ALK fusion protein dimers
-p-7Y ALK point mutant dimers
-p-7Y MYH9- and RNF213-ALK fusions
-p-8S,2T-N
-p-8S-N
 p-BRAF/RAF fusion dimers
 p-BRAF/RAF fusion dimers:MAP2Ks:MAPKs:scaffold proteins
 p-BRAF/RAF fusion dimers:p-2S MAP2Ks:MAPKs:scaffold proteins
@@ -1910,16 +1674,14 @@ p-KIT mutants:GRB2:SOS
 p-NICD1 PEST domain mutants
 p-PLCG
 p-S,T-ADAM17(215-827):Zn2+
-p-S-AKT:PDPK1:PIP3
 p-S133-CREB1
 p-S133-CREB1:IL10 gene
 p-S133-CREB1:IL6 gene
 p-S15,S356-RPS6KB2
 p-S166,S188-MDM2
-p-S177,S181-IKKB:IKKA:NEMO
-p-S177-N
+p-S177,S181,S185,S187,S189,S191,S195,T199,S203,S207-N
+p-S177-Ncap
 p-S183,T246-AKT1S1
-p-S188,206-N
 p-S196-CASP9(1-416)
 p-S22, S392-LMNA-1
 p-S23,S393-LMNB1
@@ -1929,7 +1691,6 @@ p-S40,S116,S261-CDC25A
 p-S43,S173,S294,S325-FOXO3
 p-S473-AKT1 E17K mutant:PIP2
 p-S50,T69,S160,S321,S470-CDC25B
-p-S53-9b
 p-S621 RAF1:YWHAB
 p-S63,S73-JUN
 p-S9/21-GSK3
@@ -1940,10 +1701,8 @@ p-STAT5
 p-STAT5:CDKN1A gene
 p-STAT5A, p-STAT5B
 p-SUPT5H
-p-T,Y MAPK monomers and dimers
 p-T,Y MAPKs
 p-T,Y-MAPK8
-p-T,p-S-AKT
 p-T-CDKN1A/B
 p-T23-CHUK
 p-T24,S256,S319-FOXO1,p-T32,S253,S315-FOXO3,p-T32,S197,S262-FOXO4,(p-T26,S184-FOXO6)
@@ -1953,6 +1712,11 @@ p-T89-PRDX2
 p-T90-PRDX1
 p-Y FGFR2 fusion dimers
 p-Y FGFR3 fusion dimers
+p-Y FGFR3 fusion dimers:p-6Y FRS2
+p-Y FGFR3 fusion dimers:p-6Y FRS2:GRB2:SOS1
+p-Y FGFR3 fusions:FRS2
+p-Y FGFR3 fusions:p-6Y FRS2:GRB2:GAB1:PI3K
+p-Y FGFR3 fusions:p-6Y FRS2:GRB2:GAB1:PIK3R1
 p-Y FLT fusions:GRB2:p-Y GAB2:PI3KR1
 p-Y FLT3 fusion dimers
 p-Y FLT3 fusion dimers:GRB2
@@ -1961,14 +1725,12 @@ p-Y FLT3 fusions:GRB2:SOS1
 p-Y FLT3 fusions:GRB2:p-Y GAB2
 p-Y FLT3 fusions:GRB2:p-Y GAB2:PI3K
 p-Y FLT3 fusions:p-STAT5
-p-Y IRS1:ALK fusion proteins
 p-Y,S,T-WRC:IRSp53/58:RAC1:GTP:PIP3
 p-Y-WRC:IRSp53/58:RAC1:GTP:PIP3
 p-Y133-VPS33B
 p-Y177-BCR-pY-FGFR1 mutant:GRB2:p-GAB2:PIK3R1
 p-Y279-GSK3A
 p-Y701-STAT1, p-Y705-STAT3
-p-Y705,S727-STAT3 dimer
 p21 RAS:GDP
 p21 RAS:GTP
 p21 RAS:GTP:'activator' RAF:YWHAB dimer
@@ -1999,7 +1761,7 @@ palmitoyl-CoA
 palmitylated M2 Tetramer
 pertuzumab
 phosphate
-phosphorylated IRF3 and/or IRF7 dimer
+phospho-SUMO1-K62-ADPr-p-S177-Ncap
 plasma membrane FGFR1 fusions
 ponatinib
 pp1a
@@ -2027,6 +1789,7 @@ pp1ab-nsp7
 pp1ab-nsp8
 pp1ab-nsp9
 ppUL84:IE2-p86
+ribavirin
 rifampicin
 ripretinib
 ripretinib-sensitive KIT mutants
@@ -2042,19 +1805,16 @@ tetX HC
 tetX HC:LC dimer
 tetX LC:Zn2+
 tetX:gangliosides
+tocilizumab
 trastuzumab
 tri-antennary N-glycan-PALM-Spike trimer
 trimmed N-glycan Spike
 trimmed N-glycan-PALM-Spike
 trimmed N-glycan-PALM-Spike trimer
 trimmed unfolded N-glycan Spike
-type 1 interferon analogs
-type I ALK-binding TKIs
-type I ALK-binding TKIs:type I-sensitive ALK mutants
 type I FLT3-binding TKIs
 type I KIT binding TKIs
 type I PDGFR-binding tyrosine kinase inhibitors
-type I TKI sensitive ALK mutants
 type I TKI sensitive FLT3 mutants
 type I TKI sensitive PDGFR mutants
 type I TKI-sensitive FLT3 mutants:type I TKIs
@@ -2088,9 +1848,6 @@ vRNP:M1:NEP:NP
 viral DNA bound with Integrase in PIC
 viral DNA:Ku proteins:XRCC4:DNA ligase IV complex
 viral PIC proteins
-viral dsRNA:IFIH1, viral dsRNA:K63polyUb-DDX58:MAVS:K63polyUb-TRAF3
-viral dsRNA:IFIH1, viral dsRNA:K63polyUb-DDX58:MAVS:K63polyUb-TRAF3:2x(TBK1/IKK epsilon)
-viral dsRNA:IFIH1, viral dsRNA:K63polyUb-DDX58:MAVS:K63polyUb-TRAF3:2xIKK related kinases TBK1/IKK epsilon
-viral dsRNA:IFIH1, viral dsRNA:K63polyUb-DDX58:MAVS:K63polyUb-TRAF3:TBK1/IKBKE
 viral mRNA
+α-Ketoamides
 γ-Glu-AA
