@@ -78,11 +78,12 @@ if __name__ == '__main__':
 
     # extract the data from Reactome
     # extract_data_from_reactome()
-    extract_data_from_reactome_with_version("_version_83")
+    # extract_data_from_reactome_with_version("_version_83")
+    # extract_data_from_reactome_with_version("_version_85")
 
 
     # divide the dataset
-    # divide_data_set()
+    divide_data_set()
 
 
 

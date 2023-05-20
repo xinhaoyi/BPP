@@ -809,6 +809,8 @@ class ReactomeProcessor:
 
         self.__link = "bolt://localhost:7687"
 
+        # self.__link = "bolt://localhost:7474"
+
         # user_name = 'neo4j'
         self.__user_name = user_name
 

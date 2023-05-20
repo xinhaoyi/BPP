@@ -1128,7 +1128,7 @@ class ReactomeDataDivider:
         if "Metabolism" == self.__pathway_name:
             adjust_rate = 0.75
         if "Immune System" == self.__pathway_name:
-            adjust_rate = 0.6
+            adjust_rate = 0.55
         if "Signal Transduction" == self.__pathway_name:
             adjust_rate = 0.51
 

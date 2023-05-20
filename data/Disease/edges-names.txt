@@ -7,7 +7,6 @@
 3CLp cleaves nsp6-11
 3CLp cleaves pp1a
 3CLp cleaves pp1ab
-3CLp dimer binds 3CLp inhibitors
 3CLp dimer binds α-Ketoamides
 3CLp forms a homodimer
 3a is externalized together with membrane structures
@@ -42,26 +41,11 @@ AKT1 E17K mutant phosphorylates caspase-9
 AKT1 E17K mutant phosphorylates forkhead box transcription factors
 AKT1 E17K mutant phosphorylates p21Cip1 and p27Kip1
 AKT1 E17K mutant translocates to the nucleus
-ALK fusion proteins bind IRS
-ALK fusion proteins bind PLCG1
-ALK fusions bind FRS
-ALK fusions bind GRB2
-ALK fusions phosphorylate FRS
-ALK fusions phosphorylate IRS1
-ALK fusions phosphorylate PLCG1
-ALK mutants bind PI3KCA
-ALK mutants bind PI3KR1
-ALK mutants bind SHC
-ALK mutants bind STAT3
-ALK mutants bind type I TKIs
-ALK mutants phosphorylate SHC1
-ALK mutants phosphorylate STAT3
-ALK mutants:p-3Y SHC binds GRB2
-ALK-, STAT3- and MECP2-dependent STAT5A gene repression
 ANTXR1-bound pagA(197-794) forms oligomers
 ANTXR2-bound pagA(197-794) forms oligomers
 AP2 binds chlorpromazine
 APP gene expression
+ASC is recruited via a PYD-PYD interaction
 ATP binds P2RX4,7
 ATP translocates from cytosol to extracellular space (stimuated by C3AR1:C3a)
 ATP1A:ATP1B:FXYD binds cardiac glycosides
@@ -92,15 +76,21 @@ Activated FGFR2 mutants:p-FRS2 binds GRB2-SOS1
 Activated FGFR2 mutants:p-FRS2 binds GRB2:GAB1:PIK3R1
 Activated FGFR2 mutants:p-FRS2:GRB2:GAB1:PIK3R1 binds PIK3CA
 Activated FGFR2 mutants:p-FRS2:GRB2:SOS1 activates RAS nucleotide exchange
-Activated FGFR3 point and translocation mutants bind PLCG1
-Activated FGFR3 point and translocation mutants phosphorylate PLCG1
-Activated FGFR3 point, translocation and fusion mutant-associated PI3K phosphorylates PIP2 to PIP3
-Activated FGFR3 point, translocation and fusion mutants bind FRS2
-Activated FGFR3 point, translocation and fusion mutants phosphorylate FRS2
-Activated FGFR3 point, translocation and fusion mutants:p-FRS2 binds GRB2-SOS1
-Activated FGFR3 point, translocation and fusion mutants:p-FRS2 binds GRB2:GAB1:PIK3R1
-Activated FGFR3 point, translocation and fusion mutants:p-FRS2:GRB2:GAB1:PIK3R1 binds PIK3CA
-Activated FGFR3 point, translocation and fusion mutants:p-FRS2:GRB2:SOS1 activates RAS nucleotide exchange
+Activated FGFR3 fusion-associated PI3K phosphorylates PIP2 to PIP3
+Activated FGFR3 fusions bind FRS2
+Activated FGFR3 fusions phosphorylate FRS2
+Activated FGFR3 fusions:p-FRS2 bind GRB2-SOS1
+Activated FGFR3 fusions:p-FRS2 binds GRB2:GAB1:PIK3R1
+Activated FGFR3 fusions:p-FRS2:GRB2:GAB1:PIK3R1 binds PIK3CA
+Activated FGFR3 mutant-associated PI3K phosphorylates PIP2 to PIP3
+Activated FGFR3 mutants bind FRS2
+Activated FGFR3 mutants bind PLCG1
+Activated FGFR3 mutants phosphorylate FRS2
+Activated FGFR3 mutants phosphorylate PLCG1
+Activated FGFR3 mutants:p-FRS2 binds GRB2-SOS1
+Activated FGFR3 mutants:p-FRS2 binds GRB2:GAB1:PIK3R1
+Activated FGFR3 mutants:p-FRS2:GRB2:GAB1:PIK3R1 binds PIK3CA
+Activated FGFR3 mutants:p-FRS2:GRB2:SOS1 activates RAS nucleotide exchange
 Activated FGFR4 mutant-associated PI3K phosphorylates PIP2 to PIP3
 Activated FGFR4 mutants bind FRS2
 Activated FGFR4 mutants bind PLCG1
@@ -115,7 +105,6 @@ Activated MAP2Ks phosphorylate MAPKs downstream of high kinase activity BRAF mut
 Activated MAP2Ks phosphorylate MAPKs downstream of inactive BRAF mutants
 Activated MAP2Ks phosphorylate MAPKs downstream of moderate kinase activity BRAF mutants
 Activated MAP2Ks phosphorylate MAPKs downstream of oncogenic RAS
-Activated TAK1 mediates phosphorylation of the IKK Complex
 Activated cytosolic FGFR1 fusions bind PIK3CA
 Activating ABCC8 mutants cause hyperglycemia in permanent neonatal diabetes mellitus (PNDM) and transient neonatal DM (TNDM).
 Activation of GT
@@ -153,7 +142,6 @@ Association of  XRCC4:DNA ligase IV complex with viral DNA ends
 Association of APOBEC3G with Gag
 Association of APOBEC3G with single-stranded region of forming HIV-1 minus strand
 Association of APOBEC3G:Vif with the Cul5-SCF complex
-Association of Cx43 with TJP1
 Association of HA into rafts
 Association of Ku heterodimer with viral DNA ends
 Association of NP into rafts
@@ -179,12 +167,10 @@ Autocatalytic phosphorylation of FGFR3c P250R mutant
 Autocatalytic phosphorylation of FGFR4 Y367C mutant
 Autocatalytic phosphorylation of FGFR4 mutants with enhanced kinase activity
 Autocatalytic phosphorylation of overexpressed FGFR2 variants
-Autophosphorylation of ALK fusions
 Autophosphorylation of PDGFR mutant dimers
 Autophosphorylation of PDGFRA extracellular domain dimers
 Autophosphorylation of cytosolic PDGFRA and PDGFRB fusion proteins
 Autophosphorylation of membrane-tethered fusions of PDGFRA or PDGFRB
-Autophosphorylation of point mutants of ALK
 B Nucleocapsid Assembly
 BCL2L11 (BIM) gene expression
 BCR-FGFR1 fusion:GRB2:p-GAB2:PIK3R1 binds PIK3CA 
@@ -192,7 +178,6 @@ BCR-FGFR1-associated PI3K phosphorylates PIP2 to PIP3.
 BCR-FGFR1:GRB2:p-GAB2 binds PIK3R1
 BRAF and RAF fusion mutant dimers are phosphorylated
 BRD4 binds fedratinib
-BTK binds BTK inhibitors
 BfrA stores iron
 BfrB stores iron
 Binding of CBL to ligand-responsive p-6Y-EGFR mutants
@@ -221,7 +206,6 @@ Branching and elongation of mother and daughter filaments
 Budding of vesicle with the HA trimer, NA tetramer and M2 tetramer from the endoplasmic reticulum into the cytosol
 C Nucleocapsid Assembly
 C-ter TLR7 dimer binds HCQ
-C-ter TLR7 dimer binds SARS-CoV-2 GU-rich ssRNA
 C-ter TLR9 dimer binds HCQ
 C3a receptor binds anaphylatoxin C3a
 CAST binds Ca2+ bound calpain
@@ -244,26 +228,21 @@ CDK5:p25 phosphorylates lamin A
 CDK5:p25 phosphorylates lamin B1
 CDK5:p25 translocates to the nucleus
 CDK8 phosphorylates NICD1 PEST domain mutants 
-CFTR F508del binds CFTR correctors
 CFTR F508del binds components of the ERAD machinery for ubiquitination and degradation
 CFTR F508del is degraded by the 26S proteasome
-CNBP binds SARS-CoV-2 G-rich RNA
 COMT binds COMT Inhibitors
 CQ, HCQ are protonated to CQ2+, HCQ2+
 CQ, HCQ diffuses from cytosol to endocytic vesicle lumen
 CRBN binds IMiDs
 CREB binds IL6 promoter
 CREB1 binds IL-10 promoter
-CREBBP acetylates SARS-CoV-2 N at K375
 CRKII:DOCK180:ELMO binds FCGR3A
-CSNK1A1 phosphorylates nucleoprotein
 CTSG cleaves CASP1(1-404)
 CTSL bind CTSL inhibitors
 CYSLTR1 binds CYSLTR1 antagonists
 Calcium binds calmodulin
 Calpain activation
 Calpain cleaves p35 to p25
-Capturing cargo and formation of prebudding complex
 Carbocymycobactin binds Fe3+ from LTF:2xFe3+:2xCO3(2-)
 Carboxymycobactin and mycobactin exchange their iron load
 Carboxymycobactin binds LTF:2xFe3+:2xCO3(2-)
@@ -290,11 +269,8 @@ Conversion of Ran-GDP to Ran-GTP
 Covalent tyrosine kinase inhibitors bind and inactivate EGFR kinase domain mutant dimers resistant to non-covalent tyrosine kinase inhibitors
 Covalent tyrosine kinase inhibitors bind and inhibit wild-type EGF:EGFR dimers
 CpnT hydrolyses NAD+
-Crumbs forms a ternary complex with Pals1 and PATJ at tight junctions
 Cytosolic FGFR1 fusion protein-associated PI3K phosphorylates PIP2 to PIP3
 Cytosolic FGFR1 fusion proteins bind PIK3R1
-DDX58 binds SARS-CoV-2 dsRNA intermediates
-DDX58 is K63 polyubiquitinated
 DOCK180 exchanges GTP for GDP on RAC1:GDP
 DSIF complex binds to RNA Pol II (hypophosphorylated)
 DT A:B binds HBEGF and CD9 on the target cell surface
@@ -302,7 +278,6 @@ DT fragment A ADP-ribosylates target cell EEF
 DT fragment B transports DT fragment A from target cell endosome membrane
 DT:HBEGF:CD9 is transported from clathrin-coated vesicle to endosome
 Deamination of C residues during synthesis of HIV-1 reverse transcript minus-strand
-Decitabine triphosphate incorporates into DNA
 Defects in F8 A1 domain accelerate dissociation of the A2 domain
 Defects in F8 A2 domain accelerate dissociation of the A2 domain
 Degradation of CD4
@@ -322,7 +297,6 @@ Dimerization of FGFR4 mutants with enhanced kinase activity
 Dimerization of STATs downstream of KIT mutants
 Dimerization of cytosolic FGFR1 fusion proteins
 Dimerization of overexpressed FGFR2
-Dimerized phospho-IRF3, IRF7 is transported to the nucleus
 Direct Host Cell Membrane Membrane Fusion and Release of SARS-CoV-2 Nucleocapsid
 Disassembly of the Rev-importin beta-B23:Ran-GTP complex
 Disassembly of viral capsid
@@ -384,6 +358,7 @@ FGFR2IIIa TM binds ligand and full length receptors to inhibit signaling
 FGFR2b mutants bind an expanded range of ligands
 FGFR2c mutants bind an expanded range of ligands
 FGFR3 fusions dimerize
+FGFR3 fusions:p-FRS2:GRB2:SOS1 activates RAS nucleotide exchange
 FGFR3 mutants bind and are inactivated by tyrosine kinase inhibitors
 FGFR3c P250R mutant binds to ligand with enhanced affinity
 FGFR4 kinase mutants are inhibited by PD170734
@@ -412,7 +387,6 @@ FLT3 mutants recruit PIK3R1 through phosphorylated GAB2
 FLT3 mutants:GRB2 bind GAB2
 FLT3 mutants:GRB2:SOS1-mediated nucleotide exchange on RAS
 FLT3 mutants:GRB2:p-Y-GAB2 binds PTPN11
-FNTB inhibitors bind FNTA:FNTB
 FP-1039 acts as a ligand-trap for FGFR2b-binding ligands in endometrial cancer
 FURIN Mediated SARS-CoV-2 Spike Protein Cleavage and Endocytosis
 FURIN binds furin inhibitors
@@ -448,9 +422,9 @@ GP369 inhibits activation of amplified FGFR2 signaling
 GRB2:SOS1 binds to phosphorylated heterodimers of ERBB2 ECD mutants and EGFR
 GRB2:SOS1 complex binds to PDGFRA extracellular domain dimers
 GRB2:SOS1 complex binds to mutant PDGFR receptor
-GSK3 phosphorylates Nucleoprotein
-GSK3 phosphorylates nucleoprotein
+GSK3 phosphorylates N
 GSK3B binds GSKi
+GSK3B phosphorylates Ncap
 GTP-bound RAC1 contributes to MAPK8 activation
 GUCY2C trimer binds sta1
 GalNAc is transferred onto 3a
@@ -488,16 +462,13 @@ Hyperactivation of factor X by FVIIIa:FIXa R384L
 Hyperphosphorylation (Ser2) of RNA Pol II CTD by P-TEFb complex
 Hyperphosphorylation (Ser2) of RNA Pol II CTD by the P-TEFb(Cyclin T1:Cdk9) complex
 Hypophosphorylation of RNA Pol II CTD by FCP1P protein
-IFIH1:TKFC binds SARS-CoV-2 dsRNA intermediates 
 IFNAR1:TYK2 binds TYK2 inhibitors
 IFNAR2:JAK1:STAT2 binds JAK1,2 inhibitors
-IFNAR2:JAK1:STAT2 binds type 1 interferon analogs
 IFNGR1:JAK1:INFGR2:JAK2 binds JAK1,2 inhibitors
 IL10 gene produces IL10 protein
-IL17RA and IL17RC bind IL17A dimer,IL17F dimer,IL17A:IL17F
 IL1R1 binds IL1R1 inhibitors
 IL6 gene produces IL6 protein
-IL6R binds IL6R inhibitors
+IL6R binds tocilizumab
 IMPDH tetramers binds IMPDH inhibitors
 IP3 binds to the IP3 receptor, opening the endoplasmic reticulum Ca2+ channel
 IP3R:I(1,4,5)P3 tetramer transports Ca2+ from ER lumen to cytosol
@@ -542,13 +513,11 @@ KIT mutants bind type II TKIs
 KIT mutants:PI3K catalyze synthesis of PIP3
 KatG reduces H2O2
 LAM translocates from the cell wall to the plasma membrane
-LARP1 binds SARS-CoV-2 RNA
 LTC4 binds CyslTR1,2
 LTD4 is converted to LTE4 by DPEP1/2
 LTF:2xCO3(2-) dissociates from Carbocymycobactin:Fe3+
 Late (L) Gene Expression
 Latent Transcriptinally Repressed HCMV Genome
-Ligand-independent dimerization of ALK fusions
 Ligand-independent dimerization of EGFRvIII mutant
 Ligand-independent dimerization of FLT3 fusion proteins
 Ligand-independent dimerization of FLT3 mutants
@@ -560,7 +529,6 @@ Ligand-independent dimerization of cytosolic PDGFRA and PDGFRB fusion proteins
 Ligand-independent dimerization of membrane-tethered fusions of PDGFRA or PDGFRB
 Ligand-independent dimerization of overexpressed FGFR1b
 Ligand-independent dimerization of overexpressed FGFR1c
-Ligand-independent dimerization of point mutants of ALK
 Ligand-independent phosphorylation of overexpressed FGFR1
 Ligand-independent phosphorylation of overexpressed FGFR1c
 Limited elongation of the HIV-1 transcript
@@ -571,13 +539,7 @@ M2 protein synthesis
 MAP2K mutants constitutively phosphorylate MAPKs
 MAP2Ks and MAPKs bind to the activated mutant RAF1 complex
 MAP2Ks phosphorylate MAPKs downstream of RAF1 mutants
-MAPK1 phsophorylates ZC3HCF1 in a NPM-ALK-dependent manner
 MAPKs are phosphorylated downstream of BRAF and RAF fusion dimers
-MAVS:TOMM70 recruits HSP90:TBK1:IRF3
-MECP2 binds the STAT5A gene
-MPP5 binds SARS-CoV-1 E pentamer
-MPP5 binds SARS-CoV-2 E pentamer
-MYH9- and RNF213-ALK fusions are phosphorylated
 Maturation of HIV Virion
 Mce3E binds MAPK1
 Mce3E binds MAPK3
@@ -598,20 +560,17 @@ Mycobactin is exported
 Mycothiol scavenges nitrosyl
 Myristoylation of Nef
 N and C terminal heptad repeat helices of gp41 form six-helix bundle
-N binds to heme
 N-glycan glucose trimming of Spike
 N-glycan mannose trimming of Spike
 N-glycan trimming of Spike
 N-myristoylation of GAG polyprotein by NMT2
 NA activation of TGF-beta
 NEXT1 PEST domain mutants are cleaved to produce NICD1 PEST domain mutants
-NFE2L2 inducers bind to KEAP1:CUL3:RBX1:NFE2L2
 NFKBIA variant binds NFkB complex
 NICD1 PEST domain mutants displace co-repressor complex from RBPJ (CSL)
 NICD1 PEST domain mutants in complex with RBPJ (CSL) bind MAML
 NICD1 PEST domain mutants translocate from cytosol to nucleus
 NLRP3 activation by small molecules
-NLRP3 recruits PYCARD (ASC) via a PYD-PYD interaction
 NOS2 gene produces NOS2 protein
 NOTCH1 HD domain mutants are cleaved to produce NEXT1 irrespective of ligand binding
 NOTCH1 HD domain mutants bind DLL1
@@ -639,12 +598,6 @@ NOTCH1 PEST domain mutants stimulate MYC transcription
 NOTCH1 t(7;9)(NOTCH1:M1580_K2555) is cleaved to produce NEXT1
 NOX1 complex:pp-DVL:RAC1:GTP generates superoxide from oxygen
 NP binds vRNA
-NPM-ALK fusion dimer binds SKP1:CUL1:RBX1:ZC3HC1
-NPM-ALK translocates to the nucleus
-NPM-ALK-dependent BCL2A1 gene expression
-NPM-ALK-dependent CEBPB gene expression
-NPM-ALK-dependent JUNB gene transcription
-NPM-ALK-dependent JUNB translation
 NR3C1 binds NR3C1 agonists
 NRPE condenses with atRAL to form A2PE
 NS5B binds ribavirin
@@ -671,7 +624,6 @@ Nsp3:nsp4 binds to nsp6
 Nucleophillic attack by 3'-hydroxyl oxygen of nascent HIV-1 transcript on the Alpha phosphate of NTP
 Nucleoprotein is ADP-ribosylated
 Nucleoprotein is SUMOylated
-Nucleoprotein is methylated by PRMT1
 Nucleoprotein translocates to the ERGIC outer membrane
 Nucleoprotein translocates to the nucleolus
 Nucleoprotein translocates to the plasma membrane
@@ -683,7 +635,6 @@ PB1-F2 binds to the mitochondrial adenine nucleotide translocator 3 ANT3, induci
 PDCD1 binds PDCD1 inhibitors
 PDGFR mutants bind type I TKIs
 PDGFR mutants bind type II TKIs
-PDPK1 phosphorylates AKT at T308
 PDPK1 phosphorylates AKT1 E17K mutant
 PI(3,4,5)P3 binds VAV1,2,3
 PI3-kinase binds to PDGFRA extracellular domain dimers
@@ -695,7 +646,6 @@ PI3K catalyses the phosphorylation of PIP2 to PIP3 downstream of PDGFRA extracel
 PI3K catalyses the phosphorylation of PIP2 to PIP3 downstream of mutant PDGFR
 PI3K gain of function mutants phosphorylate PIP2 to PIP3
 PI3K inhibitors block PI3K catalytic activity
-PI3K synthesizes PIP3 downstream of ALK mutants
 PIP2-bound p-S473-AKT1 mutant binds PIP2-bound PDPK1
 PKA catalytic subunit translocates to the nucleus
 PKA phosphorylates CREB1
@@ -708,12 +658,10 @@ PPE2 binds KPNA1:KPNB1
 PPE2 binds NOS2 gene
 PPE2:KPNA1:KPNB1 dissociates, releasing PPE2 into the nucleus
 PPE2:KPNA1:KPNB1 translocates to the nucleus
-PRMT1 binds type I PRMT inhibitors
 PSTPIP1 binds Pyrin
 PTPN11:p-STAT5 binds BCL2L1 promoter
 PTPN11:p-STAT5 dissociates from mutant FLT3
 PTPN11:p-STAT5 translocates to nucleus downstream of mutant FLT3
-PYCARD recruits procaspase-1 via CARD
 Packaging of HIV virion on the host cell plasma membrane
 Packaging of Viral Genome Into C Capsids
 Palmitoylation of cysteine residues on HA in the cis-Golgi network
@@ -760,7 +708,6 @@ Phosphorylation of PLCG1 by ligand-responsive p-6Y-EGFR mutants
 Phosphorylation of RAF1 mutants
 Phosphorylation of SHC1 by ligand-responsive p-6Y-EGFR mutants
 Phosphorylation of SHC1 by p-5Y-EGFRvIII
-Phosphorylation of STAT1
 Phosphorylation of STAT5 by cytosolic FGFR1 fusions
 Phosphorylation of STATs downstream of KIT mutants
 Phosphorylation of cytosolic FGFR1 fusion dimers
@@ -857,57 +804,11 @@ Rv3655c binds RNF213
 S1PR1 binds S1PR1 agonists
 SARS coronavirus gRNA:RTC:RNA primer binds RTC inhibitors
 SARS virus buds into ERGIC lumen
-SARS-COV 7a translocates to the late endosome membrane
-SARS-CoV-1 3a tetramer binds to CAV1
-SARS-CoV-1 E transports Ca2+ 
 SARS-CoV-1 gRNA complement (minus strand):RTC binds RTC inhibitors
 SARS-CoV-1 gRNA:RTC:nascent RNA minus strand binds RTC inhibitors
-SARS-CoV-2 3CLpro dimer binds to STING
-SARS-CoV-2 3CLpro dimer cleaves NLRP12
-SARS-CoV-2 3CLpro dimer cleaves TAB1
-SARS-CoV-2 3a binds to STING
-SARS-CoV-2 3a binds to UVRAG
-SARS-CoV-2 3a induces potassium efflux
-SARS-CoV-2 3a tetramer binds to CAV1
-SARS-CoV-2 3a tetramer binds to VPS39 within HOPS complex
-SARS-CoV-2 6 binds KPNA2
-SARS-CoV-2 6 binds NUP98:RAE1 within NPC
-SARS-CoV-2 8 binds IL17RA
-SARS-CoV-2 8 binds class I MHC
-SARS-CoV-2 8:class I MHC binds BECN1
-SARS-CoV-2 9b binds IKBKG
-SARS-CoV-2 9b binds TOMM70
-SARS-CoV-2 E pentamer binds TJP1
-SARS-CoV-2 E pentamer transports Ca2+ 
-SARS-CoV-2 M binds TBK1
-SARS-CoV-2 M protein binds MAP1LC3B
-SARS-CoV-2 M protein binds MAVS
-SARS-CoV-2 M protein binds TUFM
-SARS-CoV-2 M, N bind to PDPK1
-SARS-CoV-2 N binds DDX58
-SARS-CoV-2 N binds IKBKB
-SARS-CoV-2 N binds MASP2
-SARS-CoV-2 N binds MAVS
-SARS-CoV-2 N binds NLRP3
-SARS-CoV-2 N binds TAK1
-SARS-CoV-2 N binds to 14-3-3 proteins
-SARS-CoV-2 N binds to G3BP1,G3BP2
-SARS-CoV-2 N binds to TRIM25
-SARS-CoV-2 N protein binds STAT1, STAT2
-SARS-CoV-2 S binds SFTPD 12mer
 SARS-CoV-2 gRNA complement (minus strand):RTC binds RTC inhibitors
 SARS-CoV-2 gRNA:RTC:RNA primer binds RTC inhibitors
 SARS-CoV-2 gRNA:RTC:nascent RNA minus strand binds RTC inhibitors
-SARS-CoV-2 nsp1 binds to 40S ribosomal complex
-SARS-CoV-2 nsp13 binds TBK1
-SARS-CoV-2 nsp16 binds to U1 snRNA
-SARS-CoV-2 nsp16 binds to U2 snRNA
-SARS-CoV-2 nsp3 cleaves IRF3
-SARS-CoV-2 nsp3 deISGylates ISGylated IFIH1
-SARS-CoV-2 nsp3 deISGylates ISGylated IRF3
-SARS-CoV-2 nsp6 binds TBK1
-SARS-CoV-2 nsp8 binds to 7SL RNA
-SARS-CoV-2 nsp9 binds to 7SL RNA
 SGT1 binds HSP90
 SGT1:HSP90 binds inactive NLRP3
 SHC1 binds phosphorylated ERBB2 homodimer
@@ -924,7 +825,6 @@ SOS1-mediated nucleotide exchange of RAS downstream of FLT3 fusion mutants
 SPT5 subunit of Pol II binds the RNA triphosphatase (RTP)
 SRC autophosphorylation is positively regulated by InlA-bound CDH1
 SRC phosphorylates InlA-bound CDH1 and CTNNB1
-SRPK1/2 phosphorylates nucleoprotein
 STAT binds to p-11Y PDGFRA extracellular domain dimers 
 STAT binds to the mutant PDGFRA receptor
 STAT5-dependent PIM1 gene expression downstream of FLT3 ITD and fusion mutants
@@ -939,16 +839,13 @@ Separation of elongating HIV-1 transcript from template
 SodB gets secreted
 SodB reduces superoxide to H2O2
 SodC reduces superoxide to H2O2
-Spike binds Spike inhibitors
 Spike glycoprotein of SARS coronavirus binds ACE2 on host cell
 Spike glycoprotein of SARS-CoV-2 binds ACE2 on host cell
 Spike protein forms a homotrimer
 Spike protein gets N-glycosylated
 Spike protein gets palmitoylated
-Spike translocates to ERGIC
 Spike trimer glycoside chains are extended
 Spike trimer glycoside chains get additional branches
-Spike trimer moves into the ERGIC membrane
 Spike trimer translocates to ERGIC
 Splicing of HIV RNA transcript
 Spontaneous dimerization of ligand-responsive EGFR mutants
@@ -968,12 +865,8 @@ Synthesis of VPU protein
 Synthesis of full-length duplex viral DNA with a discontinuous plus strand
 Synthesis of minus strand strong stop DNA (-sssDNA)
 TBK1 binds amlexanox
-TBK1, IKBKE are autophosphorylated at Ser172
-TBK1/IKK epsilon complex interacts with MAVS bound TRAF3
 TFIIS-mediated recovery of HIV-1 elongation from arrest
 TFIIS-mediated recovery of elongation from arrest
-TLR2:TLR1 binds SARS-CoV-2 E pentamer
-TLR8 dimer binds SARS-CoV-2 GU-rich ssRNA 
 TMPRSS2 Mediated SARS-CoV-1 Spike Protein Cleavage and Endocytosis
 TMPRSS2 Mediated SARS-CoV-2 Spike Protein Cleavage and Endocytosis
 TMPRSS2 binds TMPRSS2 inhibitors
@@ -983,7 +876,8 @@ TXNIP binds reduced thioredoxin
 TXNIP is released from oxidized thioredoxin
 Target DNA binding
 Terminal (3' end) cleavage of viral DNA
-The GSDME gene promoter is hypermethylated
+Tetramerisation of nucleoprotein
+The CARD domain of ASC recruits Procaspase-1
 The Vpu:CD4:beta-TrCP complex recruits SKP1
 Trans-autophosphorylation of EGFRvIII mutant dimers
 Trans-autophosphorylation of ERBB2 homodimer
@@ -1022,7 +916,6 @@ Ubiquitination of DLL/JAG ligands upon binding to NOTCH1 HD+PEST domain mutants
 Ubiquitination of DLL/JAG ligands upon binding to NOTCH1 PEST domain mutants
 Uncoating of SARS-CoV-1 Genome
 Uncoating of SARS-CoV-2 Genome
-Unknown kinase phosphorylates nucleoprotein
 Unknown kinase phosphorylates p-DVL
 Unphosphorylated nucleoprotein translocates to the plasma membrane
 Unwinding of DNA for the nascent HIV-1 transcript
@@ -1105,14 +998,10 @@ mRNA2 is translated to Spike
 mRNA3 is translated to protein 3a
 mRNA4 is translated to protein E
 mRNA5 is translated to protein M
-mRNA9 is translated to Nucleoprotein
 mRNA9a is translated to Nucleoprotein
 ndkA dephosphorylates RAB5A:GTP,RAB7A:GTP
 nsp1-4 cleaves itself
-nsp10:nsp14 binds to ExoN inhibitors
-nsp12 acquires Fe-S cluster cofactors
 nsp12 binds nsp7 and nsp8
-nsp12 guanylates nsp7
 nsp12 misincorporates a nucleotide in nascent RNA minus strand
 nsp12 synthesizes minus strand SARS-CoV-1 genomic RNA complement
 nsp12 synthesizes minus strand SARS-CoV-2 genomic RNA complement
@@ -1131,7 +1020,6 @@ nsp14 binds nsp10
 nsp14 binds nsp12
 nsp15 binds RB1
 nsp15 binds nsp8
-nsp15 cleaves viral poly(U)-RNA
 nsp15 forms a hexamer
 nsp16 acts as a cap 2'-O-methyltransferase to modify SARS-CoV-1 gRNA (plus strand)
 nsp16 acts as a cap 2'-O-methyltransferase to modify SARS-CoV-1 gRNA complement (minus strand)
@@ -1141,23 +1029,19 @@ nsp16 acts as a cap 2'-O-methyltransferase to modify SARS-CoV-2 gRNA complement 
 nsp16 acts as a cap 2'-O-methyltransferase to modify SARS-CoV-2 mRNAs
 nsp16 binds VHL
 nsp16 binds nsp10
-nsp16 localizes to the nucleus
-nsp3 binds to PLpro inhibitors
 nsp3 binds to nsp7-8 and nsp12-16
 nsp3 cleaves nsp1-4
 nsp3 is glycosylated
 nsp3-4 cleaves itself
 nsp3-4 is glycosylated
 nsp4 is glycosylated
-nsp6 localizes to the nuclear envelope
 nsp7 binds nsp8
 nsp8 binds MAP1LC3B
 nsp8 generates RNA primers
 nsp9 forms a homodimer
-nsp9 forms a homotetramer
 p-4Y- PLCG1 dissociates from activated FGFR1 mutants and fusions
 p-4Y-PLCG1 dissociates from activated FGFR2 mutants
-p-4Y-PLCG1 dissociates from activated FGFR3 point and translocation mutants
+p-4Y-PLCG1 dissociates from activated FGFR3 mutants
 p-4Y-PLCG1 dissociates from activated FGFR4 mutants
 p-6Y-SYK phosphorylates VAV1,2,3
 p-BCR-p-FGFR1 phosphorylates GAB2
@@ -1189,7 +1073,6 @@ ppDVL:RAC1:GTP binds NOX1 complex
 processing defective Hh variants are degraded by the proteasome
 sCD163 binds MYH9 in T-cells
 sCD163 translocates from extracellular region to cytosol
-snRNP complex assembly
 tetX HC transports tetX LC from target cell endosome membrane into cytosol
 tetX HC:LC binds target cell-surface gangliosides
 tetX LC cleaves target cell VAMP2
