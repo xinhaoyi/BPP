@@ -308,6 +308,11 @@ def main(config=None):
             test_labels.to(device),
             validation_labels.to(device),
         )
+
+        hyper_graph_train = hyper_graph_train.to(device)
+        hyper_graph_validation = hyper_graph_validation.to(device)
+        hyper_graph_test = hyper_graph_test.to(device)
+
         if config.model_name != "GCN":
             graph_train = hyper_graph_train
             graph_validation = hyper_graph_validation
