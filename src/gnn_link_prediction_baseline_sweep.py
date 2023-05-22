@@ -236,7 +236,7 @@ def main(config=None):
         validation_labels = data_loader["validation_labels"]
 
         # to device
-        train_all_hyper_edge_list = train_all_hyper_edge_list.to(device)
+        # train_all_hyper_edge_list = train_all_hyper_edge_list.to(device)
 
         # the train hyper graph
         hyper_graph_train = Hypergraph(
