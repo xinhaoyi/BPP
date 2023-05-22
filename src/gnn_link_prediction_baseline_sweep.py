@@ -252,17 +252,9 @@ def main(config=None):
             num_of_nodes, copy.deepcopy(train_all_hyper_edge_list)
         )
 
-        # generate train graph based on hyper graph
-        graph_train = Graph.from_hypergraph_clique(hyper_graph_train, weighted=True)
-
         # the train hyper graph
         hyper_graph_validation = Hypergraph(
             num_of_nodes, copy.deepcopy(train_all_hyper_edge_list)
-        )
-
-        # generate train graph based on hyper graph
-        graph_validation = Graph.from_hypergraph_clique(
-            hyper_graph_validation, weighted=True
         )
 
         # the train hyper graph
@@ -270,8 +262,21 @@ def main(config=None):
             num_of_nodes, copy.deepcopy(train_all_hyper_edge_list)
         )
 
-        # generate train graph based on hyper graph
-        graph_test = Graph.from_hypergraph_clique(hyper_graph_test, weighted=True)
+        if config.model_name == "GCN":
+            # generate train graph based on hyper graph
+            graph_train = Graph.from_hypergraph_clique(hyper_graph_train, weighted=True)
+
+            # generate train graph based on hyper graph
+            graph_validation = Graph.from_hypergraph_clique(
+                hyper_graph_validation, weighted=True
+            )
+
+            # generate train graph based on hyper graph
+            graph_test = Graph.from_hypergraph_clique(hyper_graph_test, weighted=True)
+        else:
+            graph_train = hyper_graph_train
+            graph_validation = hyper_graph_validation
+            graph_test = hyper_graph_test
 
         # the GCN model
         if config.model_name == "GCN":
@@ -302,7 +307,7 @@ def main(config=None):
             )
         else:
             raise Exception("Sorry, no model_name has been recognized.")
-        
+
         model_save_dir = f"../save_model_ckp/{config.model_name}_{config.dataset}_{config.task}_{config.learning_rate}.bin"
         ensureDir("../save_model_ckp")
         net_model.device = device
@@ -320,15 +325,6 @@ def main(config=None):
             test_labels.to(device),
             validation_labels.to(device),
         )
-
-        hyper_graph_train = hyper_graph_train.to(device)
-        hyper_graph_validation = hyper_graph_validation.to(device)
-        hyper_graph_test = hyper_graph_test.to(device)
-
-        if config.model_name != "GCN":
-            graph_train = hyper_graph_train
-            graph_validation = hyper_graph_validation
-            graph_test = hyper_graph_test
 
         graph_train = graph_train.to(device)
         graph_validation = graph_validation.to(device)
