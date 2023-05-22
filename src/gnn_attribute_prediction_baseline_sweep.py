@@ -199,7 +199,10 @@ def main(config=None):
         hyper_graph_train = Hypergraph(num_of_nodes, copy.deepcopy(hyper_edge_list))
 
         # generate graph based on hyper graph
-        graph_train = Graph.from_hypergraph_clique(hyper_graph_train, weighted=True)
+        if config.model_name == "GCN":
+            graph_train = Graph.from_hypergraph_clique(hyper_graph_train, weighted=True)
+        else:
+            graph_train = hyper_graph_train
 
         # the GCN model
         if config.model_name == "GCN":
@@ -249,9 +252,6 @@ def main(config=None):
         test_labels = test_labels.to(device)
 
         net_model = net_model.to(device)
-
-        if config.model_name != "GCN":
-            graph_train = hyper_graph_train
 
         graph_train = graph_train.to(device)
         net_model = net_model.to(device)
