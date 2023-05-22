@@ -18,6 +18,11 @@ learning_rate = 0.01
 weight_decay = 5e-4
 project_name = "gnn_link_prediction_sweep_2023_Jan"
 
+# set device
+device = (
+    torch.device("cuda") if torch.cuda.is_available() else torch.device("cpu")
+)
+
 def ensureDir(dir_path):
     """Ensure a dir exist, otherwise create the path.
     Args:
@@ -50,6 +55,8 @@ def train(
     # edges_embeddings = edges_embeddings[train_idx]
 
     nodes_embeddings = net_model(nodes_features, graph)
+
+    nodes_embeddings = nodes_embeddings.to(net_model.device)
 
     outs = torch.matmul(edges_embeddings, nodes_embeddings.t())
 
@@ -205,12 +212,14 @@ def main(config=None):
         if config is not None:
             wandb.config.update(config)
         config = wandb.config
-        # set device
-        device = (
-            torch.device("cuda") if torch.cuda.is_available() else torch.device("cpu")
-        )
+
+        # # set device
+        # device = (
+        #     torch.device("cuda") if torch.cuda.is_available() else torch.device("cpu")
+        # )
         # initialize the data_loader
         # data_loader = DataLoaderLink("Disease", "input link prediction dataset")
+
         data_loader = DataLoaderLink(config.dataset, config.task)
 
         # get the total number of nodes of this graph
