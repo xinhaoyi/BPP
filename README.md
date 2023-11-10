@@ -3,12 +3,13 @@ BPP: A platform for explainable biochemical pathway prediction
 > Authors: Xinhao Yi, Siwei Liu, Douglas McCloskey, Shiyang Liang, Frank Wu, Zaiqaio Meng
 
 ## Contributions
-1. Develop biochemical pathway predictor (BPP), an interactive biochemical pathway link prediction platform.
+1. We develop BPP, an open-source biochemical pathway analysis platform dedicated to predicting potential links and node attributes in biochemical pathway networks.
 
-2. Enables participant link prediction, product link prediction and node structure prediction for biochemical pathway.
+2.  Based on BPP, we evaluate the performance of four representation learning models on four biochemical pathway datasets. Experimental results suggest that these automated prediction models can achieve reliable performance on link prediction and attribute prediction task.
 
-3. Equip with a pathway prediction explainer to interpret the results and calculate the contributions of participating elements.
+3. BPP integrates an explainer that provides an interpretation of the prediction results, i.g., offering the contribution of nodes and attributes within the reaction for current prediction result.
 
+4. We verify the effectiveness of BPP by conducting a case study on SARS-CoV-2's invasion process. The results indicate that BPP can successfully identify unseen links within pathways.
 
 ## Motivation
 
