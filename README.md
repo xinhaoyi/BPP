@@ -17,5 +17,4 @@ BPP: A platform for explainable biochemical pathway prediction
 2. Traditional experimental methods can impose significant time and labour burdens on researchers, due to a vast number of candidates, consequently, our goal is to enhance the efficiency of pathway studies.
 
 ## Website
-18.134.98.251:5000 (Currently)
-
+[Link to BPP Platform](http://18.134.98.251:5000)
