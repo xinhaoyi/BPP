@@ -1,6 +1,6 @@
 # PathwayGNN
-BPP: A platform for explainable biochemical pathway prediction
-> Authors: Xinhao Yi, Siwei Liu, Douglas McCloskey, Shiyang Liang, Frank Wu, Zaiqaio Meng
+BPP: BPP: A Platform for Automatic Biochemical Pathway Prediction
+> Authors: Xinhao Yi, Siwei Liu, Shiyang Liang, Frank Wu, Douglas McCloskey*, Zaiqaio Meng*
 
 ## Contributions
 1. We develop BPP, an open-source biochemical pathway analysis platform dedicated to predicting potential links and node attributes in biochemical pathway networks.
