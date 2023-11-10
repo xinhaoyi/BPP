@@ -23,4 +23,4 @@ BPP: BPP: A Platform for Automatic Biochemical Pathway Prediction
 ## User Guidance
 In this part, we'll introduce how to use our plaform
 
-### User 
+### Customise Biochemical Reaction
